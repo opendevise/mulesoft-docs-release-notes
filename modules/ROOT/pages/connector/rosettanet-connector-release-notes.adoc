@@ -1,0 +1,152 @@
+= RosettaNet Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: rosettanet-connector-release-notes.adoc
+:keywords: release notes, RosettaNet, b2b, connector
+
+*July 2018*
+
+_Premium_
+
+The Anypoint Connector for RosettaNet sends and receives RosettaNet messages
+using RNIF 2.00.01. The connector automatically handles send timeouts and retries,
+and responds to received messages with the appropriate HTTP response and/or
+signal. Users work directly with the RosettaNet message service content as an XML document.
+
+*Guide:* xref:3.9@mule-runtime::rosettanet-connector.adoc[RosettaNet Connector]
+
+== 1.1.1
+
+*July 26, 2018*
+
+Compatibility:
+
+[%header%autowidth.spread]
+|===
+|Software	|Version
+|Mule Runtime |3.7.0 and later
+|Java |7
+|===
+
+=== Features
+
+* No added features
+
+=== Fixed in this Release
+
+* Corrected tracking of aliases for certificates validating signature.
+* Added DOCTYPE to service content being sent.
+* Fixed shutdown handling to allow clean restart.
+
+=== Known Issues
+
+Only supports:
+
+* Asynchronous response messages
+* RNIF 2.00.01
+* Cluster 3 PIPs (limited selection)
+
+
+== 1.1.0
+
+*July 19, 2017*
+
+Compatibility:
+
+[%header%autowidth.spread]
+|===
+|Software	|Version
+|Mule Runtime |3.7.0 and later
+|Java |7
+|===
+
+=== Features
+
+* Added support for TLS configurations.
+* TLS host name verification controlled by org.mule.modules.rosettanet.client.TlsHostNameVerify property (default is true)
+* Supports multiple partners at the same endpoint in HTTP Listener.
+
+=== Fixed in this Release
+
+* Corrected PIP 3C3 action codes.
+* Corrected problem with alias used for registering action or signal.
+
+=== Known Issues
+
+Only supports:
+
+* Asynchronous response messages
+* RNIF 2.00.01
+* Cluster 3 PIPs (limited selection)
+
+== 1.0.1
+
+*May 2, 2017*
+
+Compatibility:
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime |3.7.0 and later
+|Java | 7
+|===
+
+=== Fixed in this Release
+
+* Properly populated values under <KnownInitiatingPartner>.
+* Fixed a HTTP header issue.
+
+=== Known Issues
+
+Only supports:
+
+* HTTP transport binding
+* Asynchronous response messages
+* RNIF 2.00.01
+* Cluster 3 PIPs (limited selection)
+
+
+== 1.0.0
+
+*April 12, 2017*
+
+Compatibility:
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime |3.7.0 and later
+|Java | 7
+|===
+
+=== Features
+
+* *Receive action message* - The connector acts as the source for flows processing received action messages matching the PIP configuration.
+* *Receive failure notification message* - The connector acts as the source for flows processing received failure notification messages (PIP 0A1).
+* *Receive signal message* - The connector acts as the source for flows processing received acknowledgment or exception signals, or send failures (after retries exceeded).
+* *Set metadata for received action* - The connector adds metadata for a received action message matching the PIP configuration, simplifying DataWeave usage.
+* *Set metadata for received failure* - The connector adds metadata for a received failure notification message, simplifying DataWeave usage.
+* *Set metadata for receive signal* - The connector adds metadata supplied by acknowledgment or exception signals, or by send failures, simplifying DataWeave usage.
+* *Send action message* - The connector sends action messages matching the PIP configuration.
+* *Send failure message* - The connector sends failure notification messages (PIP 0A1).
+
+=== Known Issues
+
+Only supports:
+
+* HTTP transport binding
+* Asynchronous response messages
+* RNIF 2.00.01
+* Cluster 3 PIPs (limited selection)
+
+No support for:
+
+* Message encryption
+* Certificate revocation (directly managed by used in keystore)
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

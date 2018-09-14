@@ -1,0 +1,96 @@
+= Salesforce Marketing Cloud Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: salesforce-marketing-cloud-connector-release-notes.adoc
+:keywords: release notes, salesforce, marketing, cloud, connector
+
+*March 2018*
+
+_Select_
+
+*Connector Guide*: xref:3.9@mule-runtime::salesforce-marketing-cloud-connector.adoc[Salesforce Marketing Cloud Connector]
+
+The Salesforce Marketing Cloud connector allows you to connect to the Salesforce Marketing Cloud web services using the https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/index-api.htm[Salesforce Marketing Cloud API]. The connector exposes convenient methods for managing objects and calling services provided by Salesforce Marketing Cloud.
+
+== 1.1.0
+
+*March 15, 2018*
+
+This release provides new features and a bug fix.
+
+=== Compatibility
+
+The Salesforce Marketing Cloud Connector Version 1.1.0 is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Application/Service|Version
+|Mule Runtime|3.5.2 and later
+|Marketing Cloud API|v145.3
+|===
+
+=== Fixed in this Release
+
+* Fixed NullPointerException when trying to fetch data-sense.
+
+=== Features
+
+* Added OAuth2 authentication support. Check the connector guide for more details.
+* Added documentation in the connector guide on how to set up a system proxy.
+
+== 1.0.0
+
+*February 12, 2016*
+
+Release notes for version 1.0.0 of the Salesforce Marketing Cloud connector. These Release Notes accompany the xref:3.9@mule-runtime::salesforce-marketing-cloud-connector.adoc[Salesforce Marketing Cloud Connector User Guide].
+
+=== Compatibility
+
+The Version 1.0.0 Salesforce Marketing Cloud connector is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Application/Service|Version
+|Mule Runtime|3.5.2 and later
+|Exact Target API|v145.3
+|===
+
+=== Features
+
+* *Configure Create* - Calls the "Configure" command with "Create" as the action attribute when connected to the Marketing Cloud Web service.
+* *Configure Delete* - Calls the "Configure" command with "Delete" as the action attribute when connected to the Marketing Cloud Web service.
+* *Configure Update* - Calls the "Configure" command with "Update" as the action attribute when connected to the Marketing Cloud web service.
+* *Create* - Creates a new object within the Marketing Cloud web server.
+* *Delete* - Deletes an existing object within the Marketing Cloud Web server.
+* *Perform get max count* - Calls the "Perform" command with "GetMaxCount" as the action attribute when connected to the Marketing Cloud web service.
+* *Perform start* - Calls the "Perform" command with "Start" as the action attribute when connected to the Marketing Cloud web service.
+* *Perform stop* - Sends "Perform" command having "Stop" as action to Marketing Cloud SOAP Web service.
+* *Retrieve* - Retrieves objects from the Marketing Cloud web server in a SQL query like fashion.
+* *Schedule start* - Calls the "Schedule" command with "Start" as the action attribute when connected to the Marketing Cloud web service.
+* *Update* - Updates an existing object within the Marketing Cloud Web server.
+* *Upsert* - Creates an object when the object does not already exist, or deleting an existing object from within the Marketing Cloud web server. This operation is completed by using the "Create" method from the Marketing Cloud API.
+
+=== Fixed in this Release
+
+* This is the first version of the connector, thus no fixes were required; there are only new features.
+
+=== Known Issues
+
+==== Providing a Subclass as Type to a Complex Field
+
+* Some objects have complex fields that represent a base class from Salesforce Marketing. So, if instead of the base class, you want to pass a subclass of it as value to that field, that is not possible
+because the connector cannot recognize the fields that do not belong to the base class. You must manually map those fields in Transform Message and add a field named "concreteClassType" with the name of the subclass as value. For more information and an example, read the User Guide.
+
+==== Retrieving Fields From a Hierarchy Not Possible
+
+* Querying fields that are lower than level 1 in the hierarchy is not supported by the API. For example,queries like "Select Attributes.Name from Subscriber" because "Name" is at level 2 in the hierarchy.
+
+==== Server Results that Contain an Automation Object Structure Cause Exception to Be Thrown
+
+* When performing operations on an Automation object, the result of the operation causes an exception to be thrown because the response has a field that cannot be parsed by the API. To bypass this, make those types of operations asynchronous. For more information and an example on this issue, please read the User Guide.
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

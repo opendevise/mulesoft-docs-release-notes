@@ -1,0 +1,57 @@
+= Anypoint Connector DevKit 3.6.1.1 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: anypoint-connector-devkit-3.6.1.1-release-notes.adoc
+:keywords: devkit, release notes
+
+*May 11, 2015*
+
+== Compatibility
+
+[%header,cols="2*"]
+|===
+a|
+Software
+a|
+Version
+|Mule ESB Runtime |3.6.x
+|Anypoint Studio |5.0.2 and later
+|===
+
+[NOTE]
+====
+*Migrating from 3.5?*
+
+*Important*: See xref:connector/connector-migration-guide-mule-3.5-to-3.6.adoc[Connector Migration Guide - Mule 3.5 to 3.6]
+====
+
+== New Features
+
+This release provides a new configuration wizard that lets you easily generate connectors with supported features and components.
+
+* Supported components are: +
+** `@Connector`
+** `@Handler`
+** `@Configuration`
+** `@MetaDataCategory`
+** `@OAuth2`
+** `@ConnectionManagement`
+** `ProviderPagingAwareDelegate`
+* The only name not valid aside from the ones supported for Java Names, is a name that matches the component used.Example: If you are creating an **@Handler**, your class name cannot be *Handler*.
+* All classes have the SuperClass and Interface enabled and can be used, but `ProviderPaginAwareDelegate` cannot specify a parent class, since the generated class needs to extend this one.
+* Connector Type auto-populates for ProviderPagingAwareDelegate, ensure that you specify the collection type after creating it.
+* When an interface is selected, it generates the default implementation for every component. This is resolved by the platform, there is no custom code from our side.
+
+New wizard:
+
+image::connector-devkit/newdevkitcomponent.png[]
+
+== Known Issues
+
+None.
+
+== See Also
+
+* Access MuleSoft’s http://forums.mulesoft.com[Forum] to pose questions and get help from Mule’s broad community of users.
+* To access MuleSoft’s expert support team, https://www.mulesoft.com/support-and-services/mule-esb-support-license-subscription[subscribe] to Mule ESB Enterprise and log in to MuleSoft’s http://www.mulesoft.com/support-login[Customer Portal].

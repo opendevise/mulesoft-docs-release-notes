@@ -1,0 +1,41 @@
+= APIkit 3.8.4 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: apikit-3.8.4-release-notes.adoc
+:keywords: apikit, 3.8.4, release notes
+
+This release contains several bug fixes mainly in the RAML Java Parser, including how the parser resolves included files on Windows machines. This release also fixes some problems related to parsing XML BOM files and handling 32-bit numbers.
+
+This APIKit version solves an XXE vulnerability.
+
+APIKit now includes the latest API Console released version 3.0.15
+
+== Compatibility
+
+* Mule Runtime 3.8.x
+* Anypoint Studio 6.2.3
+* Java Parser RAML 1.0 v1.0.7
+* Java Parser RAML 0.8 v0.8.17
+* Console 3.0.15
+
+== Fixed in this Release
+
+* APIKIT-648  RAML 0.8 deep cloning is not replicating compiled schemas at mime-type level
+* APIKIT-654  RamlModelBuilder does not fully support files with Byte Order Mark (BOM)
+* APIKIT-655  Undefined Security Scheme causes NPE
+* APIKIT-663  Cannot generate flows from RAML 1.0 API definition on Windows
+* APIKIT-681  XXE Attack - Posts can make request to urls defined in doctype
+* APIKIT-702 APIKit fails on XML starting with BOM and containing tab character
+* APIKIT-709 Several paths with same parent resource are not being supported correctly when using Resource Type and Trait Parameters
+
+*https://github.com/raml-org/raml-java-parser[Github RAML Java Parser Issues Fixed in this Release]*
+
+* #300  Parsing fails when an example references an array property and the items attribute is missing (v2)
+* #255  Type declaration type() method returns "null_AnonymousType" when including DataType fragment (v2)
+* #268 Parser does not provides information about multiple inheritance
+* #253 Cannot parse AnnotationTypeDeclaration and DocumentationItem
+* #334 ResourcePathName is not being resolved correctly
+* #327  XmlSchemaValidationRule.validateXmlExample is not secure (XXE)
+* #322 maximum/minimum values are truncated to integer
+* #280 maximum and minimum facets can't handle > 32-bit numbers

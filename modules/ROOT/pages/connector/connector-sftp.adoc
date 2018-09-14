@@ -1,0 +1,97 @@
+= SFTP Connector Release Notes for Mule 4
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: connector-sftp.adoc
+:keywords: mule, SFTP, connector, release notes
+
+*July 2018*
+
+== 1.2.2
+
+*July 19, 2018*
+
+=== Min Mule Version
+
+*Mule 4.1.0*
+
+=== Fixed Issues
+
+* SFTP Connector must not close the connection in a Paging Provider. (MULE-15354)
+
+== 1.2.1
+
+*June 26, 2018*
+
+=== Min Mule Version
+
+*Mule 4.1.0*
+
+=== Fixed Issues
+
+* Change in behavior of the SFTP connector for Mule 4 with regard to directory paths. (MULE-15173)
+* SFTP authentication methods displayed incorrectly / missing (MULE-15185)
+* SFTP is not reconnecting after experiencing a disconnect (MULE-15196)
+
+== 1.2.0
+
+*May 7, 2018*
+
+=== Min Mule Version
+
+*Mule 4.1.0*
+
+=== New Features and Enhancements
+
+* You can make use of timeBetweenSizeCheck to prevent the connector from processing files while they are being written.
+* Fixed an issue that happened when using a filter by filenamePattern, failing to search files recursively in folders.
+
+=== Fixed Issues
+
+* Add CustomSftpLogger for JSCh. (MULE-14738)
+* SFTP getting partial file. (MULE-14824)
+* SFTP Connector does not check for files recursively if a filenamePattern is given. (MULE-14863)
+
+
+== 1.1.2
+
+*Mar 14, 2018*
+
+=== Min Mule Version
+
+*Mule 4.1.0*
+
+=== Fixed Issues
+
+* Connectors doesn't communicate correctly if their POJOs properties are nullable or not. (MULE-14701)
+
+== 1.1.1
+
+*Feb 02, 2018*
+
+=== Fixed Issues
+
+* sftp:listener has undescriptive display name. (MULE-14589)
+
+== 1.1.0
+
+*Jan 19, 2018*
+
+=== New Features and Enhancements
+
+This release includes the following enhancements, changes, and fixes:
+
+* Added a message source that automatically polls for new files, while handling clustering, idempotency, post actions, and watermark automatically.
+
+=== Upgrade Requirements
+
+Mule 4.1
+
+=== Fixed Issues
+
+* SFTP connectors exports internal classes. (MULE-14496)
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

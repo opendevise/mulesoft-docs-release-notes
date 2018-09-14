@@ -1,0 +1,62 @@
+= MUnit 1.3.6 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: munit-1.3.6-release-notes.adoc
+:keywords: munit, 1.3.6, release notes
+
+ This MUnit release is mainly focused on bug fixes and support for Mule 3.9.x
+
+* Mule MUnit Support:
+** 3.7.8
+** 3.8.5
+** 3.9.0
+
+* Munit
+** 1.3.6
+
+* MUnit Studio Plugin
+** 1.6.1
+
+== Hardware and Software Requirements
+
+* Microsoft Windows 8 +
+* Apple Mac OS X 10.10 +
+* Linux (tested on Ubuntu 15)
+* Java 7, Java 8
+* Maven 3.1+
+
+
+== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule |3.7.x, 3.8.x, 3.9.x
+|Anypoint Studio |6.4.0 and newer
+|===
+
+== Features and Functionality
+
+=== Anypoint Studio Plugin
+
+There are no new features in this release
+
+=== MUnit Runtime
+
+There are no new features in this release
+
+== Fixed Issues
+
+* MU-1173 - Munit is not mocking Salesforce Connector
+
+== Enhancements
+
+* MUSP-537 - Improve MP Matching Form for Flows and Sub Flows
+
+
+== Support
+
+* Refer to xref:1.3@munit::index.adoc[MUnit Documentation]
+* Access http://forums.mulesoft.com/[MuleSoft’s Forum] to pose questions and get help from Mule’s broad community of users.
+* To access MuleSoft’s expert support team https://www.mulesoft.com/support-and-services/mule-esb-support-license-subscription[subscribe to Mule ESB Enterprise] and log in to MuleSoft’s http://www.mulesoft.com/support-login[Customer Portal].

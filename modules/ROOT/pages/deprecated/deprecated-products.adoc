@@ -1,0 +1,8 @@
+= Deprecated Products
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: deprecated-products.adoc
+:keywords: release notes
+
+For legacy Mule ESB notes, see xref:deprecated/legacy-mule-release-notes.adoc[Legacy Mule Release Notes] and xref:deprecated/legacy-mule-migration-notes.adoc[Legacy Mule Migration Notes] under xref:mule-runtime/mule-esb.adoc[Mule ESB].

@@ -1,0 +1,47 @@
+= Oracle EBS 12.1 Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: oracle-ebs-connector-release-notes-mule-4.adoc
+:keywords: release notes, oracle, ebs, e-business suite, connector
+
+_Premium_
+
+*November 2017*
+
+The Anypoint Connector for Oracle E-Business Suite provides real-time connectivity to query and update Oracle EBS using web services.
+
+The Oracle EBS Connector requires an Enterprise license.
+
+== 5.0.0
+
+*November 18, 2017*
+
+=== Compatibility
+
+The Oracle EBS Connector is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Application/Service|Version
+|Mule Runtime|4.0 and later
+|Anypoint Studio|7.0.0 and later
+|Oracle EBS|12.1.x
+|Java|8
+|===
+
+=== New Features
+
+- Support for SuiteTalk API version 2017.1.
+- Added support for Mule 4.
+
+=== Fixed in this Release
+
+- Business Events now return JSON.
+- XML Gateway Outbound metadata was fixed. It now declares its output as XML.
+
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

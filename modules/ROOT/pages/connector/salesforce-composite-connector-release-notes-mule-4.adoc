@@ -1,0 +1,33 @@
+= Salesforce Composite Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: salesforce-composite-connector-release-notes-mule-4.adoc
+
+*March 2018*
+
+_Select_
+
+The Anypoint Connector for Salesforce Composite provides a way to integrate with Salesforce Composite API. The connector exposes convenient methods for preparing sub-requests, execute them in one batch and parse the results. It provides DataSense on both preparation of sub-requests and parsing response of their execution.
+
+== 2.0.0
+
+*March 13, 2018*
+
+=== Compatibility
+
+The Salesforce Composite Connector is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Application/Service |Version
+|Mule Runtime |Mule Enterprise Edition 4.0.0 and later
+|Anypoint Studio |Only works with Studio 7.0.0 and later
+|Microsoft Dynamics 365 for Operations API
+|===
+
+== See Also
+
+* https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_composite.htm[Salesforce Composite API]
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

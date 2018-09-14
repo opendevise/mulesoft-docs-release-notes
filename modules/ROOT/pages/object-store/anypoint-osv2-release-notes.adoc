@@ -1,0 +1,104 @@
+= Anypoint Object Store v2 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: anypoint-osv2-release-notes.adoc
+:keywords: osv2, release notes, object store v2, object, store, v2
+
+*July 2018*
+
+The Anypoint Object Store v2 release allows applications and users to share data and share states across batch processes, Mule components, and multiple distributed applications.
+
+== 2.4.6
+
+*July 12, 2018*
+
+This release provides improved connection handling for REST API clients.
+
+=== Fixed in This Release
+
+* Implement exponential backoff in OSv2 client. (MQ-1209)
+
+== 2.4.2
+
+*June 8, 2018*
+
+This release makes Object Store v2 available to every one.
+
+=== Fixed in This Release
+
+* Allow all users to deploy applications using OSv2. (MQ-1148)
++
+*Note:* To go beyond the base 10 TPS rate limit, contact your MuleSoft account team.
+
+== 2.4.1
+
+*June 4, 2018*
+
+=== Fixed in This Release
+
+* Disable TLS 1.0 and 1.1. (MQ-1093)
+* Increase default OSv2 object TTL to 30 days. (MQ-1147)
+
+== 2.4.0
+
+*May 5, 2018*
+
+This version of Object Store adds full partition support to the cloud Object Store V2 service.
+
+=== Fixed in This Release
+
+* Update OSv2 backend service with improved partition support. (MQ-1123)
+* Update OSv2 Mule plugin to work with partitions. (MQ-1128)
+* Update OSv2 UI with partition support. (MQ-1122)
+
+== 2.3.3
+
+*April 20, 2018*
+
+Anypoint Object Store v2 has added EU Ireland as a new region to the EU Control Plane.
+
+== 2.3.2
+
+*March 13, 2018*
+
+This version of Object Store v2 adds a new feature where the maximum length of the storeId and key values are now 256 characters instead of the old 128 characters.
+
+== 2.3.0
+
+*January 27, 2018*
+
+The Object Store v2 is now GA and suitable for both test and production applications.  This new service is a re-architecture of the current Runtime Manager object store with a focus on performance, scalability, and data privacy.  Customers now have the option to select Object Store v2 as a configuration option in the Runtime Manager application deployment settings.
+
+Object Store v2 is supported in the following locations.
+
+Note: If OSv2 is not supported in a region, OSv2 transparently maps to the closest location.
+
+Supported regions:
+
+* ap-northeast-1
+* ap-southeast-1
+* ap-southeast-2
+* ca-central-1
+* eu-central-1
+* eu-west-1
+* eu-west-2
+* sa-east-1
+* us-east-1
+* us-west-2
+
+=== Compatibility
+
+Anypoint Object Store v2 works with Mule 3.7.3 and later, and Mule 4 and later.
+
+Anypoint Object Store v2 works with these browser versions:
+
+* Chrome - Version 34 or later
+* Firefox - Version 29 or later
+* Internet Explorer - Version 10 or later
+* Safari - Version 7 or later
+
+== See Also
+
+* xref:object-store::index.adoc[Object Store v2]
+* xref:object-store/objectstore-release-notes.adoc[Object Store Connector Release Notes]

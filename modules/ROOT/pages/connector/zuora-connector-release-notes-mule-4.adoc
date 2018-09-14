@@ -1,0 +1,33 @@
+= Zuora Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: zuora-connector-release-notes-mule-4.adoc
+
+*February 2018*
+
+_Select_
+
+== 4.0.0
+
+*February 27, 2018*
+
+=== Compatibility
+
+The Zuora connector is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Application/Service |Version
+|Mule Runtime |Mule Enterprise Edition 4.0.0 and later
+|Anypoint Studio |Only works with Studio 7.0.0 and later
+|===
+
+=== Features
+
+This version of the connector is based on the Zuora REST API offering the entire capabilities of this API and no longer supports the SOAP API.
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

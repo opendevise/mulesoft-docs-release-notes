@@ -1,0 +1,54 @@
+= Runtime Manager v2.4.3 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: runtime-manager-2.4.3-release-notes.adoc
+:keywords: arm, runtime manager, release notes
+
+**August 26, 2017**
+
+This release contains the following enhancements:
+
+[cols="2*a"]
+|===
+| Enhancement | Description
+| Internal enhancements | Contains internal changes that improve system performance and stability.
+| Flow Management | Adds Flow Management capabilities to Anypoint Platform Private Cloud Edition
+|===
+
+
+== Hardware and Software Requirements
+
+To use Runtime Manager to specify a cluster IP and port in hybrid deployment scenarios, you must be running Mule runtime, version 3.8.5 or greater.
+
+== Compatibility
+
+Mule Agent plugin integration is compatible with the following component versions:
+
+[cols="2*a"]
+|===
+|Availability | Cloud only
+|Mule Agent Plugin | 1.7.0 is required when specifying clustering ports, retrieving application uptime and Mule runtime shutdown and restart.
+|Mule | 3.6.x and above
+|API Gateway | 2.x and above for API Analytics
+|===
+
+== Deprecated Features or Functionality
+
+No change.
+
+== Resolved Issues
+
+No change.
+
+== Migration
+
+No change.
+
+== Known Issues
+
+None.
+
+== Support
+
+No change.

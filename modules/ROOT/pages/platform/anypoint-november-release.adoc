@@ -1,0 +1,44 @@
+= Anypoint Platform July and November Release: Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: anypoint-november-release.adoc
+
+This topic describes the major feature enhancements added for the July and November releases of Anypoint Platform. To prepare for the upgrade see xref:platform/upgrade.adoc[Anypoint Platform Upgrade to Latest Software Guide].
+
+NOTE: Self-service upgrade option is available. Ask your organization administrator or reach out to your Customer Success contact for information.
+
+== Anypoint Exchange
+
+* July Release: Provides full integration with all components of Anypoint Design Center. Updates also include new repository capabilities, comments/feedback form for assets, and a new platform API for search.
+
+* November Release: Unifies Anypoint Exchange and API portals, making Exchange the single location to manage and share all reusable assets, whether for internal or external use. This update also adds the following tools to Exchange:
+
+** API Console: Adds a new UI, providing a Postman-like experience for consuming and testing APIs.
+
+** Mocking service: Automatically creates an API endpoint for RAML and OAS specifications published to Exchange, allowing the API to be tested without having to implement it.
+
+** API Notebook: Introduces the ability to add API Notebook snippets into content pages within Anypoint Exchange.
+
+== Anypoint Design Center - Mule Flow Design
+
+* July Release: Introduces a new Web-based integration flow designer for ad hoc integrators, who need a simple tool for accomplishing basic integration tasks.
+
+== Anypoint Design Center - API Design
+
+** July: Introduces enhanced discovery, saving and reuse of API fragments and API specs from within Design Center through integration with Exchange.
+
+** November Release: Introduces a visual editing mode for APIs, allowing users to design API specs without the need to understand RAML or API design principles.
+
+== API Manager
+
+** November Release: Adds support for environments and the ability to promote APIs through different environments. Enhances integration with Exchange for automatic update of API endpoints and easier management of APIs.
+
+== See Also
+
+* xref:general:getting-started:api-lifecycle-overview.adoc[About Availability of the November Release]
+* xref:design-center/design-center-release-notes.adoc#1-2-november-18-2017[Design Center Release Notes]
+* xref:exchange/anypoint-exchange-release-notes.adoc[Anypoint Exchange Release Notes]
+* xref:api-manager/api-manager-release-notes.adoc[API Manager Release Notes]
+* xref:access-management/access-management-release-notes.adoc[Anypoint Access Management Release Notes]
+* xref:runtime-manager/runtime-manager-2.6.1-release-notes.adoc[Runtime Manager v2.6.1 Release Notes]

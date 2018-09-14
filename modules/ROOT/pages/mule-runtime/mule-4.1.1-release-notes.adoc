@@ -1,0 +1,158 @@
+= Mule Runtime 4.1.1 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: mule-4.1.1-release-notes.adoc
+:keywords: mule, 4.1.1, runtime, release notes
+
+// Product_Name Version number/date Release Notes
+
+*Mar 20, 2018*
+
+// // <All sections are required. If there is nothing to say, then the body text in the section should read, “Not applicable.”
+http://s3.amazonaws.com/new-mule-artifacts/mule-ee-distribution-standalone-4.1.1.zip[Download Mule 4.1.1 EE Distribution]
+
+// <This section lists all the major new features available with this latest version. Do not provide links to documentation and do not use images, which make reusing the release note content more difficult.>
+
+== New Features and Enhancements
+
+Mule Runtime 4.1.1 is the first GA release of the Mule 4 series. It brings stability and performance improvements over the Early Access Release (4.1.0)
+
+== Core Runtime
+
+=== Changes
+
+Not applicable
+
+=== Known Limitations and Workarounds
+
+[%header,cols="15a,85a"]
+|===
+|Issue |Description
+| MULE-14703 | Error resolving effective POM properties when deploying application
+| MULE-14696 | Static Metadata resolvers doesn't work with nonblocking operations
+| MULE-14660 | Smart connector using HTTP extension fails to deploy
+| MULE-14647 | Smart Connector locations should reflect the operation and not the internal implementation
+| MULE-14635 | SmartConnector - DefaultEventContext responseDone completed with error.
+| MULE-14599 | Unexpected extensionNameNoSpaces archetype parameter value
+| MULE-14597 | ExpressionExecutionException when element that expects a DW starts with space
+| MULE-14557 | When a Service/CoreExtension start fails, not started objects are tried to stop
+| MULE-14528 | Log4JMDCAdaptor introduces significant contention
+|===
+
+=== Upgrade Requirements
+
+Not applicable
+
+=== Fixed Issues
+
+[%header,cols="15a,85a"]
+|===
+|Issue |Description
+// Fixed Issues
+| MULE-14699 | Regression on Policy notifications
+| MULE-14698 | Data format documentation for DW is wrong/incomplete
+| MULE-14694 | Cannot access application resources from KeyResolver for Configurations
+| MULE-14691 | Unable to create a Global Property based on a program property
+| MULE-14690 | set-variable and set-payload behave in a different way than ee:transform
+| MULE-14688 | OAuth Connections doesn't work with the default resourceOwnerId
+| MULE-14686 | Expiration of an ObjectStore doesn't run if there is another one running
+| MULE-14669 | Policy using a XML module that uses another plugin that is also present in the app, is not deployed
+| MULE-14665 | Race condition in reactor causes premature thread interruption resulting in empty payload with repeatable streaming with no error thrown/logged.
+| MULE-14658 | Too many ThreadGroup instances leaked after redeploys
+| MULE-14645 | FlowStack is not working with SmartConnectors
+| MULE-14644 | HTTP Service should support Java network properties to allow the usage of proxies during design time
+| MULE-14642 | SchedulingStrategy and ObjectStore are not declared as imported types
+| MULE-14640 | Various variable scoping errors between Operation Policies, Source Policies and Flow's error handlers
+| MULE-14636 | HTTP Connector is not including in its type catalog the declaration for Origin type
+| MULE-14632 | WSC: Invalid property name on class java.lang.String.
+| MULE-14629 | DefaultConfigurationPropertiesProvider cannot load resources from absolute path
+| MULE-14616 | StreamingHelper doesn't support TypedValue properties
+| MULE-14611 | Dependency resolution failure from an application using HTTP in a domain
+| MULE-14608 | Using the interception API (Debugger) with a web service consumer that fails, throws an exception and keeps looping indefenitely (continuously calling before method).
+| MULE-14607 | Using the interception API (Debugger) with an http request that fails, does not call after method and throws an Exception
+| MULE-14605 | Deadlock when two JDBC connections are created concurrently before the DriverManager classloading takes place
+| MULE-14589 | Leak: Do not cache generated CGLIB classes for connectors
+| MULE-14588 | Deployment failed due to NoSuchMethodError: Error creating bean with name 'http_request' when running parallel deployments
+| MULE-14587 | Properly handle InterruptedException in blocking processors api
+| MULE-14582 | Error has no string representation
+| MULE-14581 | Reduce level of log for RejectedExecutionExceptions that occur when shutdown timeout is exceeded.
+| MULE-14579 | Processing strategy is stopped before processors
+| MULE-14571 | Services are not being injected when using FakeMuleServer
+| MULE-14561 | Expressions containing a opening bracket are not considered as a expression
+| MULE-14560 | Not understandable exception is thrown when a transformation fails over a String with '%d'
+| MULE-14553 | TypeWrapper should not load class until needed
+| MULE-14548 | InfrastructureTypeMapping#TYPE_MAPPING keeps references to applications classloader
+| MULE-14545 | SoapConnect not using default value at RT
+| MULE-14534 | Extension's processor plugin configuration doesn't consider generated sources
+| MULE-14529 | XMLSecureFactories is setting unsupported properties at factories creation.
+| MULE-14526 | Optimize to avoid contention in emission of event to flow
+| MULE-14513 | Add scripting module system test for various languages
+| MULE-14414 | Variables created on error propagate of an operation policy, cannot be read on error continue of a source policy
+| MULE-14293 | CXF ProxyService does not work correctly with proactor processing strategy.
+| MULE-12980 | Operation metadatakey is usind the ID as display name for @Soap based extension
+| MULE-14685 | Add AWS IddleConnectionReaper cleanup to DefaultResourceReleaser
+| MULE-14580 | Update DefaultResourceReleaser for newer mysql versions
+| MULE-14203 | Make IO thread pool have an optimal core size
+| EE-5962 | OOM using AmazonS3
+| EE-5961 | Api Gateway Autodiscovery not loaded on embedded container on Mule EE 4.1.0
+| EE-5960 | Provide capability to transform file names in database cluster object store
+| EE-5958 | Cache Scope doesn't handle correctly streams
+| EE-5930 | Linux kills mule runtime JVM due to Native Memory usage
+| EE-5914 | Metaspace OOM when redeploying app several times
+| EE-5905 | dynamic-evaluator throws NPE if expression variable resolved to null
+| EE-5901 | JDBCMapStore is commiting auto-commit transactions.
+| EE-5900 | Batch continues dispatching work for jobs in stopped flows
+| EE-5898 | Metaspace OOM when redeploying app with multiple plugins
+| EE-5895 | JdbcMapStore is not SQL92 compliant.
+| EE-5894 | Scheduler unavailable when running batch job
+| EE-5863 | Add script to encrypt/decrypt a .properties/.yaml file
+| EE-5773 | Fix CVE-2017-9735
+
+//
+// -------------------------------
+// - Enhancement Request Issues
+// -------------------------------
+| MULE-14693 | Minor performance improvements
+| MULE-14613 | Add the java.home and java.vm.name of the JDK used by mule in the splash log
+| MULE-14569 | Ensure that exported resources in artifact descriptor always use linux file separator
+| MULE-14568 | Reduce objects allocation in order to reduce CG overhead
+| MULE-14566 | Use a CG free thread context implementation for logging
+| MULE-14544 | Provide a singleton MultiMap instance
+| MULE-14519 | HTTP: Performance improvements in requester
+| MULE-14495 | Move static caches form IntrospectionUtils to an object in the app registry
+|===
+
+=== Compatibility Testing Notes
+
+Mule was tested on the following software:
+
+[%header,cols="15a,85a"]
+|===
+|Software |Version
+| JDK | JDK 1.8.0 (Recommended JDK 1.8.0_151/52)
+| OS | MacOS 10.11.x, HP-UX 11i V3, AIX 7.2, Windows 2016 Server, Windows 10, Solaris 11.3, RHEL 7, Ubuntu Server 16.04
+| Application Servers | Tomcat 7, Tomcat 8, Weblogic 12c, Wildfly 8, Wildfly 9, Websphere 8, Jetty 8, Jetty 9
+| Databases | Oracle 11g, Oracle 12c, MySQL 5.5+, DB2 10, PostgreSQL 9, Derby 10, Microsoft SQL Server 2014
+|===
+
+The unified Mule Runtime 4.1.1 and API Gateway is compatible with APIkit 1.1.1.
+
+This version of Mule runtime is bundled with the Runtime Manager Agent plugin version 2.1.1.
+
+== API Gateway v4.1.1 Features and Enhancements
+
+This patch version allows to specify Organization client ID and secret instead of only allowing Environment credentials. This feature allows customers using Business Groups to track all APIs  that are children of the organization which the runtime is configure to use.
+
+Also, this version enhances analytics data with Host name information.
+
+API Gateway 4.1.1 supports again the ability to specify multiple configurations for policies.
+
+=== Fixed Issues
+
+[%header,cols="15a,85a"]
+|===
+|Issue |Description
+| AGW-1967 | Use organizationId per API.
+| AGW-1826 | Add Host Server name as part of the Analytics data.
+|===

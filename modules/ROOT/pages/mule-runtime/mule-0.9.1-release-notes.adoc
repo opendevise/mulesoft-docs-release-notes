@@ -1,0 +1,56 @@
+= Mule 0.9.1 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: mule-0.9.1-release-notes.adoc
+:keywords: release notes
+
+Mule 0.9.1 server sees the introduction of the Mule Extras module that hosts all the Spring Framework, PicoContainer and other extensions, webbapp support, improved Test compatibility Kit for your own extensions and numerous bug fixes and other improvements.
+
+
+*New Mule-Extras Module*
+
+Mule Extras contains all the framework extensions that are not part of the mule core server. These include: +
+Spring Extensions - Spring container component resolver and Spring configuration builder +
+Pico Extensions - Pico container component resolver and Pico component pool support +
+XStream transformers - Java to XML and XML to Java transformers +
+Tyrex transaction factory
+
+
+*Webapp Support*
+
+Mule can now eaisly be embedded inside a webapp so that your webapps can use Mule for their network communication to other applications.
+
+
+*Tck Improvements*
+New Tck test cases have been added to provide almost complete coverage of all Mule's extensible objects.
+
+
+*Distribution Restructure*
+
+The Mule server jars are now broken down into +
+mule-core-0.9.1.jar - The Mule core server and UMO api +
+mule-tck-0.9.1.jar - The Mule Test compatibility kit api +
+mule-provider-xxx-0.9.1.jar - The individual Mule providers, where xxx is jms, email, file etc. +
+mule-extras-xxx-0.9.1.jar - The individual Mule Extras subprojects, where xxx is spring, picocontainer, xstream etc. +
+mule-0.9.1.jar - An aggregation of all of the above jars
+
+
+== Bug Fixes and Other Improvements
+
+MULE-37 TCK: project.xml does contain wrong version information (Tck refactoring) +
+MULE-36 TransactionCounter can fall below zero +
+MULE-35 Remove the ExceptionStrategy on the UMOComponent +
+MULE-34 Remove selector methods from UMODescriptor +
+MULE-33 Rename Jms provider deliveryMode to Acknowledgement mode +
+MULE-32 Interceptors are initialised in reverse order using MuleXmlconfigurationBuilder +
+MULE-31 Duplicate class XmlToBean and BeanToXml +
+MULE-30 Define UMODescriptorAware inversion interface +
+MULE-28 Embedding Mule in a webapp +
+MULE-27 Provider Override properties in the connector are still using namespaces +
+MULE-26 MuleXmlConfigBuilder doesn't set properties on a provider +
+MULE-25 Make programmatic event dispatching a bit more intuitive +
+MULE-23 Set up Mule Extras sub project for Mule extensions +
+MULE-22 setProperties on UMOProviderDescriptor doesn't work when using spring configuration +
+MULE-21 Support for specifying what port the SMTP and POP3 connectors use +
+MULE-18 Expose the provider to the transformer

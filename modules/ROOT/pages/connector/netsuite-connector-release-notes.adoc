@@ -1,0 +1,691 @@
+= NetSuite Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: netsuite-connector-release-notes.adoc
+:keywords: release notes, netsuite, connector
+
+*June 2018*
+
+_Select_
+
+*Note:* The NetSuite version is not the same as the SuiteTalk API version. Your account may be running a different version of NetSuite than the version of the API you are using.
+
+xref:3.9@mule-runtime::netsuite-connector.adoc[Connector User Guide]
+
+== 7.7.0
+
+*June 8, 2018*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime|3.5 and later
+|Java|7
+|API|SuiteTalk 2017.1
+|===
+
+[NOTE]
+The *NetSuite* version is *not* the same as the *SuiteTalk API* version. Your account may be running on a version of NetSuite different to the version of the the API you are using.
+
+=== Features
+
+* *Authentication for RESTlet calls* - Users were not able to make RESTlet calls using the Request Level Token Based authentication. This now works.
+
+=== Fixed in This Release
+
+* *Get Deleted Records processor "type" field* - The Get Deleted Records processor had the "type" parameter marked as mandatory. Since the API allows it to be optional, this was corrected.
+
+== 7.6.1
+
+*March 23, 2018*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime|3.5 and later
+|API|SuiteTalk 2017.1
+|===
+
+[NOTE]
+The NetSuite version is not the same as the SuiteTalk API version. Your account may be running on a version of NetSuite different to the version of the the API you are using.
+
+=== Features
+
+* Multi tenancy support for Request Level Token Based Authentication - Users were not able to define the account ID dynamically to leverage the multi tenancy support provided by DevKit. This was fixed.
+
+=== Fixed in This Release
+
+* Improve startup performance and memory consumption - Internal changes were made so that the delay on the first call to the connector is shorter and the memory consumption is improved.
+* Get Deleted Records processor not filtering by type - The Get Deleted Records processor was ignoring the "type" parameter. This was fixed, and now its output will have the type filter applied.
+
+=== Known Issues
+
+None.
+
+== 7.6.0
+
+*August 4, 2017*
+
+This release provides support for SuiteTalk API version 2017.1 GA and no new web services.
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime|3.5 and later
+|API|SuiteTalk 2017.1 GA
+|===
+
+=== Features
+
+For a detailed list of changes, log into NetSuite, open Help Center and navigate to New Release > Release Notes > NetSuite 2017.1 Release Notes > SuiteTalk (Web Services) Integration.
+
+== 7.5.2
+
+*July 25, 2017*
+
+This release provides internal bug fixes.
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime|3.5 and later
+|API|SuiteTalk 2017.1 preview
+|===
+
+=== Features
+
+None.
+
+=== Fixed in This Release
+
+* The add-record value with `recordType=ITEM_FULFILLMENT`. In version 7.5.1 when trying to use add-record with recordType=ITEM_FULFILLMENT and item fulfillment record included _package_, the connector threw a `java.lang.NoSuchFieldException: package` error. Currently, it's working as expected.
+
+* The connector didn't parse CustomFieldList. In former versions the connector didn't parse CustomFieldList, so it wasn't included into the SOAP request to Netsuite, when the name was different than customFieldList. Now it works as expected.
+
+== 7.5.1
+
+*July 6, 2017*
+
+This release provides internal bug fixes.
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime|3.5 and later
+|API|SuiteTalk 2017.1 preview
+|===
+
+=== Fixed in This Release
+
+* Dynamic endpoint resolving had issues with sandbox accounts. This is fixed in the current version. However, users still have to manually define the endpoints for Web Services and RESTlets when using non-production accounts.
+
+
+== 7.4.3
+
+*July 6, 2017*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime|3.5 and later
+|API|SuiteTalk 2016.2
+|===
+
+=== Fixed in This Release
+
+* Dynamic endpoint resolving had issues with sandbox accounts. This is fixed in the current version. However, users still have to manually define the endpoints for Web Services and RESTlets when using non-production accounts.
+
+== 7.5.0
+
+*June 1, 2017*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime|3.5 and later
+|API|SuiteTalk 2017.1 preview
+|===
+
+=== Features
+
+* Support for SuiteTalk API version 2017.1 preview - No new web services have been added in SuiteTalk API 2017.1, but "getConsolidatedExchangeRate" has been removed. For a detailed list of changes, log into NetSuite, open Help Center and navigate to New Release > Release Notes > NetSuite 2017.1 Release Notes > SuiteTalk (Web Services) Integration.
+
+=== Known Issues
+
+None.
+
+== 7.4.2
+
+*June 1, 2017*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime|3.5 and later
+|API|SuiteTalk 2016.2
+|===
+
+=== Features
+
+* Dynamic discovery of URLs - NetSuite domains can change because accounts are hosted in multiple data centers. For this reason, NetSuite suggests to dynamically resolve the domain URLs for Web Services and RESTlet. In the previous version of the connector, the user had to either explicitly define the URLs for the endpoints or use the default values. The current version implements the logic to fetch these URLs in a dynamic fashion. Still, a user can optionally declare them in the connector configuration.
+* Parameter "Internal ID" wrongly defines a default value - Operation "Get Record" takes the parameters "Internal ID" and "External ID", which are both optional (though at least one of them must be provided). The previous version of the connector, however, defined `\#[payload]` as the default value for the "Internal ID", enforcing the user to either remove the payload or use `#[null]`. In the current version, the default value is no longer present.
+
+== 7.4.1
+
+*April 28, 2017*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime|3.5 and later
+|API|SuiteTalk 2016.2
+|===
+
+=== Fixed in This Release
+
+* Update Record request with missing attributes - When the payload for the `Update Record` operation had the `replaceAll` flag set, it was not being properly mapped to the web service request. Now this, alongside with other boolean values, will be mapped correctly.
+
+
+== 7.4.0
+
+*December 22, 2016*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime|3.5 and later
+|API|SuiteTalk 2016.2
+|===
+
+=== Features
+
+* Support for SuiteTalk API version 2016.2 - No new web services. For a detailed list of changes, log into NetSuite, open *Help Center* and navigate to *New Release* -> *Release Notes* -> *NetSuite 2016.2 Release Notes* -> *SuiteTalk (Web Services) Integration*.
+
+=== Fixed in This Release
+
+* Custom fields were not being properly mapped in search results.
+* RESTlet calls used to fail when the response was a JSON array.
+
+=== Migrating from Older Versions
+
+* GET, PUT and POST RESTlet calls now always return a list. If the RESTlet returned a single JSON object, it will now be wrapped inside a single element list. If the response was a JSON array, the connector returns a list containing all of its elements.
+* From 2016.2 endpoint, the value of externalId is returned as an external attribute. In 2016.1 and earlier endpoint, the value of externalId is returned as an internalId attribute. You can find more information from https://system.na1.netsuite.com/app/help/helpcenter.nl?fid=section_N3950559.html[NetSuite 2016.2 Release Notes] (NetSuite login required)
+
+== 7.3.0
+
+*September 7, 2016*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+
+|Mule Runtime
+|3.5 and later
+
+|API
+|SuiteTalk 2016.1
+|===
+
+=== Features
+
+* Added the ability to call RESTlets. - NetSuite RESTlets allow you to develop custom RESTful web services for your NetSuite account using JavaScript and SuiteScript. RESTlets are an alternative to the standard SuiteTalk SOAP-based APIs.
+
+== 7.2.0
+
+*August 12, 2016*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+
+|Mule Runtime
+|3.5 and later
+
+|API
+|SuiteTalk 2016.1
+|===
+
+=== Features
+
+* Upgraded the connector to make use of SuiteTalk API version 2016.1.
+
+=== Fixed in This Release
+
+* Error while fetching metadata on NetSuite accounts with a large number of customizations.
+
+
+== 7.1.0
+
+*March 8, 2016*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+
+|Mule Runtime
+|3.5 and later
+
+|API
+|SuiteTalk 2015.2
+|===
+
+=== Features
+
+* Upgraded the connector to use SuiteTalk API version 2015.2, including the 20th January 2016 Weekly Update.
+* Support for Request Level Token Based Authentication.
+
+=== Fixed in This Release
+
+* Custom Transaction Types no longer cause issues when retrieving metadata.
+* Error in `returnSearchColumns` when searching for ITEMs.
+
+=== Known Issues
+
+None.
+
+== 7.0.0
+
+*December 11, 2015*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+
+|Mule Runtime
+|3.5 and later
+
+|API
+|SuiteTalk 2015.2
+|===
+
+=== Features
+
+* Upgraded the connector to use SuiteTalk API version 2015.2.
+* Added pagination support to "Search" operation (removed other search processors, see Migration below).
+
+=== Fixed in This Release
+
+* DataSense support for "Get Record" and "Get Custom Record" operations support.
+* Improved metadata for custom fields. Also, support for "Other Custom Fields" has been added. Record types with noticeable changes to custom field placement are:
+** ACCOUNT
+** BIN
+** CASH_SALE
+** CLASSIFICATION
+** CUSTOMER
+** DEPOSIT
+** ESTIMATE
+** EXPENSE_CATEGORY
+** EXPENSE_REPORT
+** INVOICE
+** ITEM_DEMAND_PLAN
+** ITEM_FULFILLMENT
+** ITEM_RECEIPT
+** ITEM_SUPPLY_PLAN
+** JOURNAL_ENTRY
+** LOCATION
+** MANUFACTURING_COST_TEMPLATE
+** MANUFACTURING_ROUTING
+** NOTE
+** PROMOTION_CODE
+** PURCHASE_REQUISITION
+** SUBSIDIARY
+** VENDOR_BILL
+** VENDOR_CREDIT
+** VENDOR_PAYMENT
+** VENDOR_RETURN_AUTHORIZATION
+
+=== Known Issues
+
+None.
+
+=== Migrating from Older Versions
+
+Changes have been made to metadata thus, when upgrading to *NetSuite Connector 7.0.0*, reload metadata during design time.
+
+This release uses *SuiteTalk API version 2015.2* in which NetSuite introduced a new concept called *"Integration Record"*. This requires the use of an application Id. Hence all three connection strategy configurations now have a new parameter called `applicationId`.
+The Integration Record containing an application Id can be set up from within your NetSuite environment by navigating to *Setup* > *Integration* > *Manage Integrations*. The global elements will now look as follows:
+
+* New Global Configurations (from version 7.0.0):
+
+[source,xml,linenums]
+----
+<netsuite:config-login-authentication name="NetSuite" email="${email}" password="${password}" account="${account}" roleId="${roleId}" applicationId="${applicationId}" />
+
+<netsuite:config-request-level-authentication name="NetSuite" email="${email}" password="${password}" account="${account}" roleId="${roleId}" applicationId="${applicationId}" />
+
+<netsuite:config-sso-login-authentication name="NetSuite" email="${email}" password="${password}" account="${account}" roleId="${roleId}" applicationId="${applicationId}" />
+----
+
+Configuration for `getRecord` and `getCustomRecord` has slightly changed due to the DataSense introduction. Also, the `@Default` is now set on the `internalId` with a default value of `#[payload]`.
+
+Configuration prior to 7.0.0:
+
+[source,xml,linenums]
+----
+<netsuite:get-record config-ref="">
+	<netsuite:record-ref internalId="" externalId="" type="" />
+</netsuite:get-record>
+----
+
+* New configuration (from version 7.0.0):
+
+[source,xml]
+----
+<netsuite:get-record config-ref="" internalId="" externalId="" type="" />
+----
+
+Due to the addition of pagination to search we have removed the now redundant processors `searchNext`, `searchMore` and `searchMoreWithId`.
+
+Furthermore, we would like to unify search functionality under just one processor and we feel that with the improvements made so far and the growing use of DataWeave, *`search`* should be the go-to operation. Moreover, `searchWithExpression` and `query` operations are limited when it comes to certain complexities. Hence we have decided to remove the processors `searchWithExpression`, `queryAsNativeResult` and `queryRecords`.
+
+*`search`* will now always return the whole set of results rather than just the first page. This is will be retrieved in the form of a List of Maps that represent all the records found that match your criteria. A new parameter fetchSize can be set to control the page size used by pagination support.
+
+Here is an example of how the configuration for `search` will look:
+
+[source,xml,linenums]
+----
+<netsuite:search config-ref="NetSuite__Login_Authentication" searchRecord="EMPLOYEE_BASIC" criteria-ref="#[payload]" fetchSize="5" />
+----
+
+Here are some examples if you are switching from `searchWithExpression` or `query`. The criteria for search can easily be constructed using DataWeave, generating the script for you and requiring you only to fill in the values (you can also use a Java component or DataMapper should you prefer).
+
+* `searchWithExpression` to `search`:
++
+[source,xml,linenums]
+----
+<netsuite:search-with-expression config-ref="NetSuite__Login_Authentication" searchRecord="EMPLOYEE_BASIC" expression="is(email, '#[map-payload:email]'), contains(address, '#[map-payload:address]')"/>
+----
++
+[source,xml,linenums]
+----
+<dw:transform-message doc:name="Transform Message">
+	<dw:set-payload><![CDATA[%dw 1.0
+%output application/java
+---
+{
+	email: {
+		operator: "IS",
+		searchValue: payload.email
+	} as :object {
+		class : "com.netsuite.webservices.platform.core.SearchStringField"
+	}
+	address: {
+		operator: "CONTAINS",
+		searchValue: payload.address
+	} as :object {
+		class : "com.netsuite.webservices.platform.core.SearchStringField"
+	}
+} as :object {
+	class : "com.netsuite.webservices.platform.common.EmployeeSearchBasic"
+}]]></dw:set-payload>
+</dw:transform-message>
+<netsuite:search config-ref="NetSuite__Login_Authentication" searchRecord="EMPLOYEE_BASIC" fetchSize="50" doc:name="NetSuite"/>
+----
++
+* `query` to `search`:
++
+[source,xml,linenums]
+----
+<netsuite:query-records config-ref="NetSuite__Login_Authentication" query="dsql:SELECT * FROM EMPLOYEE WHERE firstName=#[message.inboundProperties.'http.query.params'.firstName]" fetchSize="50" doc:name="Query EMPLOYEE record"/>
+----
++
+[source,xml,linenums]
+----
+<dw:transform-message doc:name="Transform Message">
+	<dw:set-payload><![CDATA[%dw 1.0
+%output application/java
+---
+{
+	firstName: {
+		operator: "IS",
+		searchValue: inboundProperties.'http.query.params'.firstName
+	} as :object {
+		class : "com.netsuite.webservices.platform.core.SearchStringField"
+	}
+} as :object {
+	class : "com.netsuite.webservices.platform.common.EmployeeSearchBasic"
+}]]></dw:set-payload>
+</dw:transform-message>
+<netsuite:search config-ref="NetSuite__Login_Authentication" searchRecord="EMPLOYEE_BASIC" fetchSize="50" doc:name="NetSuite"/>
+----
++
+Finally, `getDeletedRecords` has also been reworked. This operation  now expects a `SearchDateField` on the payload as its `@Default` value, together with a pageIndex and type as before. The `SearchDateField` can also be manually defined. Here are some examples:
+
+[source,xml,linenums]
+----
+<netsuite:get-deleted-records config-ref="NetSuite__Login_Authentication" type="ACCOUNT">
+    <netsuite:deleted-date ref="#[payload]"/>
+</netsuite:get-deleted-records>
+
+<netsuite:get-deleted-records config-ref="NetSuite__Login_Authentication" type="EMPLOYEE">
+    <netsuite:deleted-date operator="ON" searchValue="#[java.util.Calendar calendar = new GregorianCalendar(); calendar.set(2015, 10, 01); return calendar;]"/>
+</netsuite:get-deleted-records>
+
+<netsuite:get-deleted-records config-ref="NetSuite__Login_Authentication" type="CUSTOMER" doc:name="NetSuite">
+    <netsuite:deleted-date operator="BEFORE" predefinedSearchValue="THIS_MONTH"/>
+</netsuite:get-deleted-records>
+----
+
+== 6.0.1
+
+*July 30, 2015*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+
+|Mule Runtime
+|3.5 and later
+
+|API
+|SuiteTalk 2015_1
+|===
+
+=== Features
+
+None.
+
+=== Fixed in This Release
+
+* Fixed an issue where only one custom field was being passed on the webservice request.
+* Fixed an issue where the DataSense MetaData Category keys for the Search Category were duplicated.
+
+=== Migrating from Older Versions
+
+Changes have been made to metadata thus, when upgrading to *NetSuite Connector 6.0.1*, reload metadata during design time.
+
+In this release, users are now presented with multiple Global Elements, each representing a different way of authenticating to NetSuite.
+
+* Previous Global Configuration:
+
+[source,xml,linenums]
+----
+<netsuite:config name="NetSuite" email="${email}" password="${password}" account="${account}" roleId="${roleId}" authenticationType=${authenticationType} />
+----
+
+* New Global Configurations:
+
+[source,xml,linenums]
+----
+<netsuite:config-login-authentication name="NetSuite" email="${email}" password="${password}" account="${account}" roleId="${roleId}" />
+
+<netsuite:config-request-level-authentication name="NetSuite" email="${email}" password="${password}" account="${account}" roleId="${roleId}" />
+
+<netsuite:config-sso-login-authentication name="NetSuite" email="${email}" password="${password}" account="${account}" roleId="${roleId}" />
+----
+
+== 6.0.0
+
+*July 10, 2015*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+
+|Mule Runtime
+|3.5 and later
+
+|API
+|SuiteTalk 2015_1
+|===
+
+=== Features
+
+* Support for HTTP proxy.
+* Started using Metadata Categories, thus making the Search and Async-search operations Metadata aware.
+* Added a new authentication type that allows Single sign-on logins.
+* Migrated the connector to CXF 2.7.15.
+
+=== Fixed in This Release
+
+* Record type attributes are handled using *Calendar* instead of *XMLGregorianCalendar*.
+* Metadata keys for customizations (except Custom Record Types) are no longer generated with the internalId as part of the key.
+* Operation "Get Saved Search" now shows the appropriate record types.
+* Metadata for the custom fields has been improved. Record types with noticeable changes to custom field placement are:
+** ASSEMBLY_BUILD
+** EXPENSE_REPORT
+** ITEM_FULFILLMENT
+** ITEM_RECEIPT
+** JOURNAL_ENTRY
+** SALES_ORDER
+** OPPORTUNITY
+** PURCHASE_ORDER
+** TRANSFER_ORDER
+** WORK_ORDER
+* Missing fields on the AssemblyItem entity, such as intercoIncomeAccount and intercoCogsAccount, have been added.
+
+=== Migrating from Older Versions
+
+Changes have been made to metadata thus, when upgrading to *NetSuite Connector 6.0.0*, reload metadata during design time.
+
+In this release, we have upgraded the connector to DevKit 3.6.1 and introduced Connection Strategies. The user is now presented with multiple Global Elements, each representing a different way of authenticating to NetSuite.
+
+* Previous Global Configuration:
+
+[source,xml,linenums]
+----
+<netsuite:config name="NetSuite" email="${email}" password="${password}" account="${account}" roleId="${roleId}" authenticationType=${authenticationType} />
+----
+
+* New Global Configurations:
+
+[source,xml,linenums]
+----
+<netsuite:config-login-authentication name="NetSuite" email="${email}" password="${password}" account="${account}" roleId="${roleId}" />
+
+<netsuite:config-request-level-authentication name="NetSuite" email="${email}" password="${password}" account="${account}" roleId="${roleId}" />
+
+<netsuite:config-sso-login-authentication name="NetSuite" email="${email}" password="${password}" account="${account}" roleId="${roleId}" />
+----
+
+
+== 5.0.0
+
+*April 15, 2015*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+
+|Mule Runtime
+|3.5 and later
+
+|API
+|SuiteTalk 2015_1
+|===
+
+=== Features
+
+* Upgraded the connector to SuiteTalk API version 2015_1.
+* Operation "Get Deleted Records" no longer has a limit on the number of records to retrieve. This operation now makes use of a page index as per the new changes to the SuiteTalks API.
+
+=== Fixed in This Release
+
+* WSDLs and XSDs have been excluded from the connector distribution.
+
+
+== 4.0.11
+
+*November 28, 2014*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+
+|Mule Runtime
+|3.5.2 and later
+
+|Anypoint Studio
+|October 2014
+
+|API
+|SuiteTalks 2014_1
+|===
+
+=== Features
+
+* Added an option to switch from login authentication to sending authentication information with every request, to achieve concurrency. Any existing apps built with older versions of this connector do not fail when updating to the new version, as a default value is configured for the login authentication of such apps.   +
+
+=== Fixed in This Release
+
+The following issues have been fixed in this release:
+
+[%header%autowidth.spread]
+|===
+|Fix |Description
+
+|Replaced dependencies
+|Replaced some unnecessary dependencies in the pom.xml file with updated dependencies from the DevKit parent.
+
+|Replaced demo
+|Replaced the existing sample demo with a new demo for NetSuite CRUD operations.
+
+|Fix for null point exceptions
+|Fix to avoid null point exceptions when retrieving metadata.
+|===
+
+=== Known Issues
+
+None.
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

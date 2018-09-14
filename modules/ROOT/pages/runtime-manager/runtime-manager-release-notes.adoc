@@ -1,0 +1,176 @@
+= Anypoint Runtime Manager Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: runtime-manager-release-notes.adoc
+:keywords: arm, runtime manager, release notes
+
+[NOTE]
+
+The releases listed in this page refer to changes made to Runtime Manager in hybrid deployment scenarios, which enables you to deploy Mule applications on user-hosted servers, but continue to manage and monitor them through MuleSoft's cloud based platform.
+
+== Version 2.8.4 - May 19, 2018
+
+See xref:runtime-manager/runtime-manager-2.8.4-release-notes.adoc[Runtime Manager v2.8.2 Release Notes]
+
+== Version 2.8.3
+
+Internal release only. No customer-facing changes.
+
+== Version 2.8.2 - March 24, 2018
+
+See xref:runtime-manager/runtime-manager-2.8.2-release-notes.adoc[Runtime Manager v2.8.2 Release Notes]
+
+== Version 2.8.1 - February 22, 2018
+
+See xref:runtime-manager/runtime-manager-2.8.1-release-notes.adoc[Runtime Manager v2.8.1 Release Notes]
+
+== Version 2.8.0 - January 25, 2018
+
+See xref:runtime-manager/runtime-manager-2.8.0-release-notes.adoc[Runtime Manager v2.8.0 Release Notes]
+
+== Version 2.7.0 - January 13, 2018
+
+See xref:runtime-manager/runtime-manager-2.7.0-release-notes.adoc[Runtime Manager v2.7.0 Release Notes]
+
+== Version 2.6.1 - November 19, 2017
+
+See xref:runtime-manager/runtime-manager-2.6.1-release-notes.adoc[Runtime Manager v2.6.1 Release Notes]
+
+== Version 2.6.0 - October 20, 2017
+
+See xref:runtime-manager/runtime-manager-2.6.0-release-notes.adoc[Runtime Manager 2.6.0 Release Notes].
+
+== Version 2.5.0 - September 9, 2017
+
+See xref:runtime-manager/runtime-manager-2.5.0-release-notes.adoc[Runtime Manager 2.5.0 Release Notes].
+
+== Version 2.4.3 - August 26, 2017
+
+See xref:runtime-manager/runtime-manager-2.4.3-release-notes.adoc[Runtime Manager 2.4.0 Release Notes].
+
+== Version 2.4.0 - June 24, 2017
+
+* Enables Runtime Manager to display additional information about remote server.
+
+See xref:runtime-manager/runtime-manager-2.4.0-release-notes.adoc[Runtime Manager 2.4.0 Release Notes].
+
+== Version 2.3.1 - June 3, 2017
+
+* Enables restart and shutdown of servers in hybrid deployment scenarios.
+
+See xref:runtime-manager/runtime-manager-2.3.1-release-notes.adoc[Runtime Manager 2.3.1 Release Notes].
+
+== Version 2.3.0 - May 20, 2017
+
+This release introduces the following features:
+
+* Enhancements to features supported in hybrid installations.
+
+See xref:runtime-manager/runtime-manager-2.3.0-release-notes.adoc[Runtime Manager 2.3.0 Release Notes].
+
+== Version 2.2.0 - April 8, 2017
+
+This release introduces the following feature:
+
+* Flow Monitoring: Users now have the ability to monitor key metrics in each Mule flow over time. This will help to visualize the evolution of the application and compare their flows.
+
+See xref:runtime-manager/runtime-manager-2.2.0-release-notes.adoc[Runtime Manager 2.2.0 Release Notes].
+
+
+== Version 2.1.0 - March 11, 2017
+
+This release introduces the following capabilities:
+
+* Improved support for promotion of hybrid applications between environment from the UI
+
+* Capability to enable and disable insights at deployment time for hybrid applications
+
+* Capability to configure the log levels at deployment time for hybrid applications
+
+This release also includes significant backend improvements to boost performance and reduce response times.
+
+See the full xref:runtime-manager/runtime-manager-2.1.0-release-notes.adoc[Runtime Manager 2.1.0 Release Notes].
+
+== Version 2.0 - November 19, 2016
+
+This release contains the following new features:
+
+* xref:runtime-manager::insight.adoc[Insight] for Hybrid Users.
+* Flow Management
+* Monitoring V2.0
+
+See the full xref:runtime-manager/runtime-manager-2.0-release-notes.adoc[Runtime Manager 2.0 Release Notes].
+
+== Version 1.5.1 - August 27, 2016
+
+This release includes a few minor enhancements.
+
+
+See the full xref:runtime-manager/runtime-manager-1.5.1-release-notes.adoc[Anypoint Runtime Manager 1.5.1 Release Notes].
+
+== Version 1.5 - July 21, 2016
+
+This release includes the following new features:
+
+* xref:runtime-manager::monitoring-dashboards.adoc[Dashboards] for applications and servers on-premises, and new xref:runtime-manager::alerts-on-runtime-manager.adoc[alerts] linked to the metrics these display
+* xref:runtime-manager::insight.adoc[Insights] for applications deployed on-premises
+* Migration tool to automatically migrate deployments on – soon to be deprecated – Mule Management Console (MMC) to Runtime Manager
+
+See the full xref:runtime-manager/runtime-manager-1.5.0-release-notes.adoc[Anypoint Runtime Manager 1.5.0 Release Notes].
+
+== Version 1.4.1 - May 6, 2016
+
+This release includes the following new features:
+
+* xref:runtime-manager::alerts-on-runtime-manager.adoc[Alerts] for applications and servers on-premises
+* Support for link:/runtime-manager/installing-and-configuring-mule-agent#ports-ips-and-hostnames-to-whitelist[static IP addresses]
+
+See the full xref:runtime-manager/runtime-manager-1.4.1-release-notes.adoc[Anypoint Runtime Manager 1.4.1 Release Notes].
+
+
+== Version 1.4.0 - April 23, 2016
+
+This release includes the following new features:
+
+* xref:access-management::audit-logging.adoc[Audit Logging] for Runtime Manager Events
+* Name change on homepage, the console formerly known as CloudHub is now known as Runtime Manager.
+
++
+[NOTE]
+The name CloudHub is from now on only used to reference the features of the Runtime Manager that involve deploying applications to cloud workers, VPC, and load balancing.
+
+See the full xref:runtime-manager/runtime-manager-1.4.0-release-notes.adoc[Anypoint Runtime Manager 1.4.0 Release Notes].
+
+
+== Version 1.3.1
+
+This release includes the following new features:
+
+* Enhancements to the handler for xref:runtime-manager::sending-data-from-arm-to-external-analytics-software.adoc[sending data to Splunk]
+* JMX handler enhancements
+
+See the full xref:runtime-manager/anypoint-runtime-manager-1.3.1-release-notes.adoc[Anypoint Runtime Manager 1.3.1 Release Notes].
+
+
+== Version 1.3.0
+
+This release includes the following new features:
+
+* Usability Enhancements for xref:runtime-manager::managing-servers.adoc#create-a-cluster[Clustering]
+* RDBMS support (Beta)
+
+
+See the full xref:runtime-manager/anypoint-runtime-manager-1.3-release-notes.adoc[Anypoint Runtime Manager 1.3 Release Notes].
+
+
+== Version 1.2.0
+
+This release includes the following new features:
+
+* xref:runtime-manager::sending-data-from-arm-to-external-analytics-software.adoc[Agent Plugins Integration] for Splunk and generic Logs
+
+* API Gateway runtime Integration
+
+
+See the full xref:runtime-manager/runtime-manager-1.2.0-release-notes.adoc[Anypoint Runtime Manager 1.2.0 Release Notes].

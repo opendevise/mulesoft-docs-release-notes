@@ -1,0 +1,41 @@
+= Anypoint Runtime Manager Version 2.8.2 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: runtime-manager-2.8.2-release-notes.adoc
+
+_March 24, 2018_
+
+This document describes new features and enhancements, known limitations, issues, and fixes in Anypoint Runtime Manager version 2.8.2.
+
+== New Features and Enhancements
+
+This release contains the following new features:
+
+* There are no new features or enhancements in this release.
+
+== Changes in This Release
+
+This release contains the following change in product functionality:
+
+* Flow monitoring is disabled by default on newly deployed applications. You can enable or disable this feature as required per application.
+
+* Support for TLS v1.0 has been deprecated. Runtimes using this protocol to secure communications can no longer connect to the platform. You must upgrade to TLS v1.1 or later.
+
+== Fixed Issues
+
+This section lists the bugs and known limitations that are fixed in this release.
+
+* Fixed issue where some specific new deployments failed to start caused by the runtime receiving empty zip files.
+
+== Known Limitations and Workarounds
+
+There are no known limitations or workarounds in this release.
+
+== Upgrade Requirements
+
+There are no upgrade requirements for this release.
+
+== Compatibility Notes
+
+There are no compatibility notes for this release.

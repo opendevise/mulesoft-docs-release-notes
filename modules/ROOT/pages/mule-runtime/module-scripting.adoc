@@ -1,0 +1,77 @@
+= Scripting Module Release Notes for Mule 4
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: module-scripting.adoc
+:keywords: mule, scripting, groovy, module, release notes
+
+== 1.1.3
+
+*July 12, 2018*
+
+=== Min Mule Version
+
+*Mule 4.1.0*
+
+=== New Features and Enhancements
+
+N/A
+
+=== Fixed Issues
+
+[%header,cols="15a,85a"]
+|===
+|Issue |Description
+| https://www.mulesoft.org/jira/browse/MULE-15294[MULE-15294] | Scripting checks registry on each execution
+| https://www.mulesoft.org/jira/browse/MULE-15339[MULE-15339] | Race condition in Scripting module initialization
+|===
+
+== 1.1.2
+
+*May 7, 2018*
+
+=== Min Mule Version
+
+*Mule 4.0.0*
+
+=== New Features and Enhancements
+
+This release includes the following enhancements, changes, and fixes:
+
+* Improves processing by changing execution type from CPU_LITE to CPU_INTENSIVE
+* Improves context variables binding by only exposing compatibility related ones when such plugin is present.
+
+=== Fixed Issues
+
+* Thread type to be used by scripting component must be CPU_INTENSIVE. (MULE-14720)
+* Limit DW message binding context attribute exposure. (MULE-13297)
+
+== 1.1.1
+
+*March 15, 2018*
+
+=== Min Mule Version
+
+*Mule 4.0.0*
+
+=== New Features and Enhancements
+
+This release includes the following library upgrade:
+
+* JRuby to version 9.1.16.0.
+
+=== Fixed Issues
+
+* Upgrade jruby-stdlib to 9.1.16.0. (MULE-14639)
+
+== 1.1.0
+
+*Jan 23, 2018*
+
+=== Min Mule Version
+
+*Mule 4.0.0*
+
+=== New Features and Enhancements
+
+Initial release.

@@ -1,0 +1,247 @@
+= Box Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: box-connector-release-notes.adoc
+:keywords: release notes, connector, box
+
+*June 2018*
+
+_Select_
+
+xref:3.9@mule-runtime::box-connector.adoc[Box Connector User Guide] +
+https://mulesoft.github.io/mule-box-connector[Box Connector Reference]
+
+Anypoint Connector for Box provides as a bi-directional gateway between Box, a secure content management and collaboration platform, and Mule.
+
+*Important:* Box connector only supports a subset of operations from Box API v2.0.0. See xref:3.9@mule-runtime::box-connector.adoc#supported-api-endpoints[Supported API Endpoints] for a detailed list.
+
+== Installing this Connector
+
+. In Anypoint Studio, click the Exchange icon in the Studio task bar.
+. Click Login in Anypoint Exchange.
+. Search for the connector and click Install.
+. Follow the prompts to install the connector.
+
+== 3.2.0
+
+*June 22, 2018*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime EE |3.6.x and later
+|Java|8
+|Box API | 2.0.0
+|Box Java SDK |2.20.1
+|===
+
+[IMPORTANT]
+Box is deprecating the use of TLSv1 in their API. If using Java 7, make sure to start the Mule application with the following Java option: `-Dhttps.protocols=TLSv1.1`. This isn't required if using Java 8.
+
+In case you have any issue, please refer to https://support.mulesoft.com/s/article/Box-will-disable-TLS-1-0[this Knowledge Base].
+
+=== Features
+
+* *Box removed support for TLS 1.0 in Java SDK version 2.1.1, so we updated the SDK version to latest (2.20.1).
+
+
+== 3.1.2
+
+*August 4, 2017*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime EE |3.6.x and later
+|Java|7
+|Box API | 2.0.0
+|Box Java SDK |2.1.1
+|===
+
+=== Features
+
+None.
+
+=== Fixed in this Release
+
+* *Failure to test the connection in OAuth Server to Sever configuration* - Similar to the issue fixed in Box 3.1.1 but in the context of a mavenized Mule application. The issue was caused by the Bouncy Castle dependencies shaded in version 3.0.0.
+
+=== Known Issues
+
+None.
+
+== 3.1.1
+
+*June 2, 2017*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime EE |3.6.x and later
+|Java|7
+|Box API | 2.0.0
+|Box Java SDK |2.1.1
+|===
+
+
+=== Features
+
+None.
+
+=== Fixed in this Release
+
+* *Failure to test the connection in OAuth Server to Sever configuration* - In the previous version, the Test Connection would throw the exception `NoSuchAlgorithmException: PBKDF-OpenSSL SecretKeyFactory not available`. This was caused by a conflict in the version of the BouncyCastle library used by the connector (1.52) and the one shipped with the Mule Runtime (that is, Mule 3.8.0 bundles 1.54). In the current version, the Test Connection works as expected.
+
+== 3.1.0
+
+*March 8, 2017*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime EE |3.6.x and later
+|Java|1.7 and later
+|Box API | 2.0.0
+|Box Java SDK |2.1.1
+|===
+
+=== Features
+
+* The following operations now support pagination:
+** Folders
+*** Get Folder's Items
+*** Get Trashed Items
+*** Get Folder Collaborations
+** Groups
+*** Get Groups for an Enterprise
+*** Get Memberships for Group
+*** Get User's Memberships.
+** Users
+*** Get Enterprise Users
+* Improvement of exception messages: in addition to the HTTP status code, error messages also return the complete description of the failure cause.
+* Fields are now validated before sending the request: previously only a HTTP 400 response was returned.
+* New operation `Search with Parameters`: unlike the search provided by the Box SDK, which still remains as an operation but deprecated, it provides all the parameters supported by the API, except for `mdfilters` and `filters`.
+
+=== Fixed in This Release
+
+* Shaded a bouncycastle dependency: This was done to fix an issue produced on Mule EE 3.8.0.
+
+
+== 3.0.0
+
+*August 11, 2016*
+
+_Select_
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime EE |3.6.x and later
+|Anypoint Studio|5.4 and later
+|Java|1.7 and later
+|Box API | 2.0.0
+|Box Java SDK |2.1.1
+|===
+
+=== Features
+
+* First SDK-based version of the connector.
+* Supports the following APIs:
+    * Users
+    * Groups
+    * Folders
+    * Files
+    * Comments
+    * Collaborations
+    * Searches
+    * Tasks
+
+[NOTE]
+====
+APIs listed below are **NOT** supported:
+
+    * Metadata
+    * Collections
+    * Events
+    * Devices
+    * Retention Policies
+
+Refer to xref:3.8@mule-runtime::box-connector.adoc#unsupported-api-endpoints[Un-supported API Endpoints] for more information.
+====
+
+== 2.5.2
+
+*April 23, 2015*
+
+_Community_
+
+MuleSoft released this connector under the xref:3.8@mule-runtime::anypoint-connectors.adoc#connector-categories[_Community_] support policy.
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime EE |3.5.x and later
+|Anypoint Studio|5.2.x and later
+|Java|1.6 and later
+|Box API | 2.0.0
+|===
+
+=== Features
+
+None.
+
+=== Fixed in this release
+
+* Retrieval of Remote User ID to enable integration with http://dataloader.io/import-box[Dataloader].
+
+=== Known Issues
+
+None.
+
+== 2.4.1
+
+*September 25, 2013*
+
+_Community_
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime EE |3.3.x and later
+|Anypoint Studio|5.0.x and later
+|Java|1.6 and later
+|Box API | 2.0.0
+|===
+
+=== Features
+
+* New operation **Empty Folder by Id**: recursively deletes all the items inside a folder without actually deleting the folder.
+
+=== Fixed in this release
+
+None.
+
+=== Known Issues
+
+None.
+
+== See Also
+
+* Read more about xref:3.9@mule-runtime::box-connector.adoc[Box Connector].
+* https://forums.mulesoft.com[MuleSoft Forum].
+* https://support.mulesoft.com[Contact MuleSoft Support].

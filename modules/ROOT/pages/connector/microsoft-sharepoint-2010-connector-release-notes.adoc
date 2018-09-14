@@ -1,0 +1,57 @@
+= Microsoft SharePoint 2010 Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: microsoft-sharepoint-2010-connector-release-notes.adoc
+
+*December 2015*
+
+_Select_
+
+*Connector Guide:* xref:3.9@mule-runtime::microsoft-sharepoint-2010-connector.adoc[Microsoft SharePoint 2010 Connector]
+
+== 1.0.4
+
+*Dec 14, 2015*
+
+Changes in this release:
+
+- Fixed NTLM authentication issue that sent cached credentials or current user's logged in credentials during NTLM negotiation.
+
+== 1.0.3
+
+*Oct 26, 2015*
+
+Changes in this release:
+
+- Fixed compatibility issues for older Mule runtimes (3.5+).
+- Fixed Kerberos and Claims authentication when using Java 8 (Mule 3.7+ only).
+
+== 1.0.0
+
+*May 8, 2015*
+
+=== Compatibility
+
+The Microsoft SharePoint 2010 connector is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Application/Service |Version
+|Mule Runtime |3.5.n and later
+|Anypoint Studio |January 2015
+|Microsoft SharePoint |2010
+|===
+
+=== Features
+
+* *SharePoint 2010 API* - Broad support for the SharePoint 2010 SOAP API, including specific operations for Lists and List Items, and Files and Folders.
+* *Lists and List Items* - Ability to query and manipulate Lists or any List-derived type such as Document Libraries, Picture Lists, and to manage the items within those lists.
+* *Files and Folders* - Manage folders and files in any SharePoint library, including the ability to perform advanced workflow operations such as check-out, check-in, publish, unpublished, and recycle.
+* *DataSense and DSQL Support* - Full support for DataSense to expose the input and output schema of operations for entities, making it simple to discover the API during development.
+* *Flexible Authentication* - Provides support for claims-based authentication, NTLM based authentication, and Kerberos authentication.
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

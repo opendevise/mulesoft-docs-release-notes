@@ -1,0 +1,23 @@
+= Legacy Mule Migration Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: legacy-mule-migration-notes.adoc
+:keywords: release notes
+
+[NOTE]
+====
+*Mule ESB 3.3.x and Beyond*
+
+Access the Mule Migration Guides embedded in each software version's xref:index.adoc[Mule ESB Release Notes].
+====
+
+* xref:mule-runtime/migrating-mule-3.1-to-3.2.adoc[Migrating Mule 3.1 to 3.2]
+* xref:mule-runtime/migrating-mule-3.0-to-3.1.adoc[Migrating Mule 3.0 to 3.1]
+* xref:mule-runtime/migrating-mule-esb-2.2-to-mule-esb-3.0.adoc[Migrating Mule ESB 2.2 to Mule ESB 3.0]
+* xref:mule-runtime/migrating-mule-2.x-ce-to-ee.adoc[Migrating Mule 2.x CE to EE]
+* xref:mule-runtime/migrating-mule-2.1-to-2.2.adoc[Migrating Mule 2.1 to 2.2]
+* xref:mule-runtime/migrating-mule-2.0-to-2.1.adoc[Migrating Mule 2.0 to 2.1]
+* xref:mule-runtime/migrating-mule-1.x-to-2.0.adoc[Migrating Mule 1.x to 2.0]
+* xref:migration/1.4.1-migration-guide.adoc[1.4.1 Migration Guide]
+* xref:migration/1.4-migration-guide.adoc[1.4 Migration Guide]

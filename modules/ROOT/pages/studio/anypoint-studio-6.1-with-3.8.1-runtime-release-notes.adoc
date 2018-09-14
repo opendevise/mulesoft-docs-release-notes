@@ -1,0 +1,319 @@
+= Anypoint Studio 6.1 with 3.8.1 Runtime Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: anypoint-studio-6.1-with-3.8.1-runtime-release-notes.adoc
+
+*August 19, 2016* +
+*Build ID: 201608192215*
+
+<<migration,Skip to Migration Guide>>
+
+== Compatibility
+
+[cols="30a,70a"]
+|===
+| *Mule Runtime*
+| Version: 3.8.1 EE
+
+|*Anypoint Studio*
+|Version: 6.1 +
+Build Id:201608192215
+
+|*APIkit*
+|Versions: 3.8.1 - 3.8.0 - 1.7.3 - 1.6.2 - 1.5.3
+
+|*DataWeave* +
+|Version: 1.1.1
+
+|*MUnit* +
+|Version: 1.2.1, 1.3.0 (munit-studio-plugin)
+
+|*SAP Connector*
+|Versions: 3.0.0
+|===
+
+
+== What's New
+
+This release continues to strengthen Studio’s support for composing APIs.  This new release includes improved support for RAML 1.0 and enhanced user experience around API design sync feature between API Designer and Studio based on user feedback. This release also includes the beta release of composing and running API custom policies inside Studio.
+
+* *Improved RAML 1.0 Support*: RAML editor embedded in Studio now has improved auto-completion and implements fully compliant RAML 1.0 validation. We have also enabled DataSense support for JSON and XML data types specified with RAML 1.0.
+* *API Sync Enhancement*: we have made several changes to improve user experience
+** Now, in addition to upload, download, refresh and compare, users can connect and disconnect local projects to an API hosted on API Designer
+** Defined behaviors in team-sharing scenarios are documented xref:6@studio::api-sync-reference.adoc#sync-your-api-definition-with-multiple-projects[here].
+* *API Custom Policy Support in Studio (public Beta)*: To make policies first-class citizen on Anypoint Platform, we are building various functional support to help users compose API custom policies and test them in Studio. We aim to add GUI support and other features to make policy composition as easy as building a Mule application in the future. In this release, we are packaging the basic policy development support as beta^<<footnote1,1>>^:
+** Project wizard for starting a custom policy project
+** Edit YAML/XML files to define a policy with auto-completion and validation support
+** Configure parameters and attach policies to APIs within Studio
+** Run API custom policies locally in Studio and use API Console to debug
++
+For users who would like to try out this beta feature and help us shape the future roadmap around custom policy development support, you can accept the “beta testing terms” when starting a new “API Custom Policy Project” and send your feedback to us through beta@mulesoft.com.
+
+[[footnote1]]
+[NOTE]
+--
+Beta status in this release indicates the functionality is open for customers to trial for the purpose of learning the new functionality and/or testing functionality in a non-production environment. Basic functionalities to enable core use cases are complete, and MuleSoft is in the process of verifying design and evolving feature completeness. There is no SLA or technical support obligations for the Beta features. Beta releases are suitable for use in test environments or for limited-use tests.  Please see our https://www.mulesoft.com/legal/product-trial-commercialfree-licenses[beta trial license] for full terms of use.
+--
+
+In addition to these API-related functionalities inside Studio, the new version of MUnit incorporates many significant improvements, including:
+
+* Improved auto test generation support forto RAML
+** Leveraging more RAML specs in scaffolding tests (e.g. header, query parameters)
+** Improved test generation adding more cases per resource definition based on request type, response code and response type
+** Support for traits
+** Basic Payload generation based in JSON-Schemas
+** Creating and referencing example data files based on RAML in MUnit tests
+* Ignore / enable tests in suites
+* Bug fixes and general improvements on coverage reports and Domain Support
+* Improved on-boarding UX to use MUnit without requiring admin role on Windows
+
+For more, please refer to xref:munit/munit-1.2.1-release-notes.adoc[MUnit release notes].
+
+== Hardware Requirements
+
+* 4GB of free memory available
+* 2GHz CPU
+* 10GB free hard drive space
+
+== Software Requirements
+
+[cols="30a,70a"]
+|===
+|Java Environments |* Oracle JDK 1.8.0 +
+* Oracle JDK 1.7.0
+|Operating Systems |* MacOS 10.10.0 +
+* Windows (32- and 64-bit) Windows 7, Windows 8, Windows 10 +
+* RHEL 7.0 +
+* Ubuntu 15.04 or later
+|Suggested Web Browsers by Platform. +
+_Studio will always use the OS default web browser_ | * Windows: +
+** Microsoft Edge 25.0  +
+** Internet Explorer 11 +
+* Linux +
+** Mozilla Firefox 46.0  +
+* OS X +
+** Safari 9.1
+|===
+
+[NOTE]
+--
+If you are installing Anypoint Studio on a Mac computer with OS X that has no Java installed, the OS may require that you first download and install http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase6-419409.html[JDK 1.6]. Install JDK 1.6 first and then install JDK 1.7.
+--
+
+[NOTE]
+--
+If you are running McAfee VirusScan on your Windows OS, Eclipse-based Anypoint Studio may experience negative performance impacts. McAfee has suggested the following remedy https://kc.mcafee.com/corporate/index?page=content&id=KB58727[options].
+--
+
+== Known Issues
+
+* Studio 6.1 does not support the following Mule 3.8 features:
+** RecordVars and record payload should be editable in a commit block.
+** Object Store support gaps around Idempotent Redelivery Policy, Aggregators and DevKit token manage
+* Create JSON metadata from example does not support Big Integers
+* When importing a zipped project related to the API Gateway's default domain (for example, proxies generated from API Platform), if the domain project does not exist in the workspace already, there is a chance that it will be generated incorrectly, resulting in an entry in the Package Explorer like "api-gateway_2_0_3 : ". The workaround is to delete the corrupt domain project and right click in the imported project -> Mule -> Associate with API Gateway domain, until the project is generated correctly displaying, for example, "api-gateway_2_0_3 : api-gateway".
+* When changing API Platform environments from production to another environment, Studio would try to update offline projects, showing connection error marker. The workaround is to use different workspaces for each environment so that there will no be problem with users authentication.
+* Folder decorators are not being shown correctly when users eliminate them. It shows them as modified and not as eliminated.
+* When creating a new project with an invalid raml zip, Studio does not copy those files to the workspace.
+* API Custom Policy Editing is a beta feature. We have a few known gaps, some of which will be addressed in the future based on customer feedback, including: debugging and MUnit support, Maven support, support to YAML all field types such as key-values and arrays (currently supporting String, Boolean, Int, Expression, and IPAddresses), and support for import/export from Exchange and API Manager.
+
+
+
+[[migration]]
+== Migration Guide
+
+Users running Studio 6.0 can update to this new version directly from the Studio xref:6@studio::studio-update-sites.adoc[Update Site]. +
+If you are running an older version than Studio 6.0, you need to download a new full copy in order to update.
+
+When opening a previous Workspace with projects that were created with Studio 5.1.0 or older, and which has metadata stored in disk, Studio asks you to perform an update to all the projects so that the Metadata Manager can handle the types and to show the types in your project.
+
+[TIP]
+====
+You can easily import all of the external components that you had installed in your old version of Anypoint Studio through a single action. This includes connectors, runtimes, and any other type of extension added through the Anypoint Exchange or the ​*Help -> Install new software*​ menu, as long as there are no compatibility restrictions.
+
+Do this by selecting *File->Import* and then choose *Install->From existing installation*.
+
+image::studio/import-extensions.png[import]
+
+Then specify the location of your old version of Anypoint Studio in your local drive.
+====
+
+== Eclipse Plugin
+
+If you are using Studio as an Eclipse plugin, you can get this version of Studio using the Eclipse update site `+http://studio.mulesoft.org/r5/plugin+`.
+
+This allows you to download Anypoint Studio core and third-party components version 6.x.x and with an embedded version of Mule Runtime v3.8.x along with other optional components. +
+For a detailed description of the update site's content visit the xref:6@studio::studio-in-eclipse.adoc#available-software-in-the-update-site[Studio in Eclipse] section.
+
+== JIRA Ticket List for Anypoint Studio
+
+=== New Features
+
+* STUDIO-7484 - Flat file editor design
+* STUDIO-8064 - Add DataSense support for RAML types for JSON MIME type
+* STUDIO-8065 - Add DataSense support for RAML types for XML MIME type
+* STUDIO-8067 - [Custom Policies] Add a way to create a new policies project
+* STUDIO-8068 - [Custom Policies] Add support for autocompletion and validation on the policies XML editor.
+* STUDIO-8069 - [Custom Policies] Add a way to configure and run custom policies.
+* STUDIO-8070 - [Custom Policies] Create a yaml editor with autocompletion and validation for configuring your policies.
+* STUDIO-8102 - [Custom Policies] Modify the editor for the mule-project.xml file to configure policy project
+* STUDIO-8103 - [Custom Policies] Create run configuration window for policies project.
+* STUDIO-8104 - [Custom Policies] Get information from the run configuration and use mustache to merge that information into the policies xml.
+* STUDIO-8105 - [Custom Policies] Use yaml parser to validate the policies yaml that is used to describe the configuration.
+* STUDIO-8106 - [Custom Policies] Allow to create a project only for EE runtimes.
+* STUDIO-8155 - [Custom Policies] Allow to import/export policies project
+
+
+=== Bug Fixes
+
+* STUDIO-2924 - Property names in the Mule Debugger view are incorrectly set when their values are modified
+* STUDIO-4851 - Convert to Java Project to Studio Project is not creating the mule-project.xml file
+* STUDIO-5828 - HTTP Request: fix the alignment of the text attribute in the Oauth configuration
+* STUDIO-6562 - Transform: keyboard shortcuts don't work in the variable / property name combo
+* STUDIO-6980 - Running Debug As in APIKIT project hangs studio indefinitely
+* STUDIO-7921 - Problem with outline view
+* STUDIO-7978 - Link to raml uncompressed folder (root + includes) are not resolved when creating a project
+* STUDIO-7981 - JSON Metadata does not support big numbers
+* STUDIO-7986 - Refresh option should only refresh the selected project.
+* STUDIO-7987 - Edit Library Button Gives Add Library Dialog
+* STUDIO-7988 - Not possible to use keyboard to select operation in Linux
+* STUDIO-7993 - Quartz pom modified by Studio in local repository
+* STUDIO-8006 - SimpleMetadataModel UNKNOWN error when creating JSON example as metadata target
+* STUDIO-8011 - [APIKit for SOAP] Must only be available for 3.7.0+ runtime versions
+* STUDIO-8062 - [SE] DataWeave migration tool produces wrong mapping
+* STUDIO-8073 - Mule Project that starts with "." cannot be run
+* STUDIO-8079 - New folders are shown as modifed in the API Sync view.
+* STUDIO-8080 - Schema location missing when adding autodiscovery
+* STUDIO-8083 - Studio 6 Crash
+* STUDIO-8089 - Debugger halts execution but doesn't display
+* STUDIO-8092 - DataWeave: drag and drop when using CSV as output erases all writer properties
+* STUDIO-8109 - Validation errors when class does not directly implement interface
+* STUDIO-8110 - Refresh API Sync view when deleting api from Platform.
+* STUDIO-8128 - Disconnect option should not appear when right clicking on folders and files
+* STUDIO-8129 - Add validation when disconnecting a project from API Sync
+* STUDIO-8131 - Anypoint Studio 6.0 erroneously requires that attribute "name" be defined in the "security-manager" component
+* STUDIO-8133 - Web Service Consumer does not auto-populate service, port, and address
+* STUDIO-8147 - Apikit is not generating flows when creating a new project or generating flows
+* STUDIO-8148 - Decorator icons are not shown properly when connecting a new large api.
+* STUDIO-8151 - Error is thrown when using compare option after connecting a project to Platform.
+* STUDIO-8163 - NPE using Array types and having errors in main raml file.
+* STUDIO-8164 - DataSense is not working properly with array types.
+* STUDIO-8175 - StackOverflow error is thrown when using unions as arrays types
+* STUDIO-8179 - Properties which contain patters or slashes are not correctly shown in the metadata tree
+* STUDIO-8180 - File and Date types are not working with datasense.
+* STUDIO-8183 - Do not open all config files when generating flows
+* STUDIO-8185 - [Custom Policies] Missing icon in Mule-policy.xml
+* STUDIO-8186 - [Custom Policies] Convert to Anypoint Studio Project should not be shown
+* STUDIO-8187 - [Custom Policies] File can not be null error
+* STUDIO-8190 - Cannot be able to upload files using the root api.raml file
+* STUDIO-8191 - Generation flow option is not working in an API Sync project
+* STUDIO-8192 - [Custom Policies] Error Message with unsupported YAML types
+* STUDIO-8195 - [Custom Policies] NPE when opening Run Configuration Window
+* STUDIO-8196 - [Custom Policies] Mule Domain projects are not listed in the Run Configuration Window
+* STUDIO-8197 - [Custom Policies] Change RAML icon to YAML
+* STUDIO-8198 - [Custom Policies] Errors in the Policy XML are not propagated to the Package Explorer
+* STUDIO-8199 - [Custom Policies] New Policy Wizard are not filtering supported Runtimes
+* STUDIO-8202 - [Custom Policies] Filter Runtimes that can be added to the project's classpath to the supported list
+* STUDIO-8205 - Studio's API Sync on Windows environment has character encoding problem
+* STUDIO-8206 - Using a definition type is shown as incorrect when it's supported.
+* STUDIO-8207 - [Custom Policies] Mule > Convert to Anypoint Studio project option displayed when deleting the policies files
+* STUDIO-8208 - Union types validation does not work properly with examples.
+* STUDIO-8210 - [Custom Policies] NPE when opening the Run configuration Window
+* STUDIO-8211 - Even raml files are correct, they are shown with errors markers.
+* STUDIO-8212 - [Custom Policies] Empty values should be valid for int
+* STUDIO-8216 - [Custom Policies] NPE when using yaml with missing Type in a property
+* STUDIO-8218 - [Custom Policies] YAML editor validations are not triggered correctly
+* STUDIO-8219 - [Custom Policies] Missing property Name in YAML file generates an exception when creating the Run Configuration
+* STUDIO-8220 - [Custom Policies] Default Files are being recreated
+* STUDIO-8222 - [Custom Policies] We should prompt the user when launching projects with errors
+* STUDIO-8225 - [Custom Policies] in the Run Configuration isHttpEndpoint, isWSDL and isRAML are mutually exclusive
+* STUDIO-8226 - [Custom Policies] CP are not redeployed when modified
+* STUDIO-8227 - [Custom Policies] Can't run offline policies (policies without YAML file)
+* STUDIO-8228 - [Custom Policies] Policies file in the Mule folder should be clean before running everything
+* STUDIO-8229 - [Custom Policies] In the Debug perspective you can't create a new Mule Policy project
+* STUDIO-8230 - [Custom Policies] Problem with Validations in YAML Editor
+* STUDIO-8231 - [Custom Policies] Problem with autocompletion in YAML editor
+* STUDIO-8243 - NPE is thrown using edit sample data option in Windows or Linux.
+* STUDIO-8245 - [Custom Policies] Discard client id and secret when running policy project to avoid gateway connection with apiplatform
+* STUDIO-8246 - [Custom Policies] NPE when launching Run Configuration for a Policy
+* STUDIO-8247 - [Custom Policies] Error thrown in the Run Configuration after deleting the project the config was pointing to
+* STUDIO-8248 - Studio hangs when creating a new project sync with Api Platform
+* STUDIO-8249 - [Custom Policies] Problem with autocompletion case in YAML Editor
+* STUDIO-8250 - [Custom Policies] Default Boolean values are not being populated in the Run Configuration
+* STUDIO-8251 - When configuring output metadata, it configures the input mime type as well.
+* STUDIO-8252 - [Custom Policies] Invalid node type Null Exception when creating a Run Configuration
+* STUDIO-8253 - [Custom Policies] Null error when launching a Run Configuration with no Projects selected
+* STUDIO-8254 - [Custom Policies] Versions list are not correctly being populated in the Run configuration
+* STUDIO-8256 - NPE when using raml definition in the HTTP Request.
+* STUDIO-8257 - [Custom Policies] IndexOutOfBoundsException in Launch configuration
+* STUDIO-8261 - [Custom Policies] Autocompletion in the XML editor is not suggesting the onlline attribute
+* STUDIO-8262 - [Custom Policies] When opening the Run Configuration for an offline CP an error message looking for the YAML is shown
+* STUDIO-8263 - [Custom Policies] Error when running an Offline Policy with an Online Policy
+* STUDIO-8265 - [Custom Policies] Error message thrown when adding invalid characters for an int in the Run Configuration
+* STUDIO-8267 - [Custom Policies] Some default values are not being replaced in the mustache properties
+* STUDIO-8271 - [Custom Policies] When importing, if the runtime configured in the mule-policy.xml is installed, I shouldn't be prompted to select a runtime
+* STUDIO-8274 - Autocompletion for types in typed fragments is not correct
+* STUDIO-8281 - Enable sharing of API Synch related configuration
+* STUDIO-8282 - API Sync's Personal login token should not be persisted in common folder
+* STUDIO-8286 - Contextual menu in the canvas is throwing a ClassCastException
+* STUDIO-8295 - [DW-UI] NPE is thrown when coping and pasting a dw script in XML view
+* STUDIO-8300 - NPE when using studoc with a custom policy project.
+
+=== Epic
+
+* STUDIO-7735 - Design to Implementation
+* STUDIO-8004 - Custom Policies
+
+
+=== Improvements
+
+* STUDIO-6975 - Web Service Consumer WSDL location validates/retrieves too quickly
+* STUDIO-7550 - Cannot edit metadata from the Define Metadata window
+* STUDIO-7649 - Improve auto mapping experience
+* STUDIO-7941 - Add feature to sync an existing local api with a new or existing Api in Platform.
+* STUDIO-7976 - Add feature to change the triggering time of the automatic sync job.
+* STUDIO-7977 - Add feature to delete a connection from Api Sync view.
+* STUDIO-7999 - Improve performance when refreshing projects when file has not been modified
+* STUDIO-8033 - Refresh button is disabled when editing metadata, it is confusing
+* STUDIO-8043 - Add the option to "connect the API" in the package explorer
+* STUDIO-8045 - Improve the API Sync view icons
+* STUDIO-8091 - Change icon folder decorator when the project is not connected in the API Sync view.
+* STUDIO-8193 - [Custom Policies] Add a new icon for the CP Project
+* STUDIO-8194 - [Custom Prolicies] Add 'Run as Mule Policy (Configuration)' option in the Run As menu
+* STUDIO-8217 - [Custom Policies] Add option to create New Policy definition Files (XML and YAML)
+* STUDIO-8223 - [Custom Policies] Improve default files with sample data
+* STUDIO-8224 - [Custom Policies] Run Configuration should have some kind of validation against the project API Autodiscovery
+* STUDIO-8234 - [Custom Policies] Improve default values in the Run Configuration Window and add a Description column
+* STUDIO-8237 - [Custom Policies] Change the New > Mule Custom Policy Project to 'API Custom Policy Project' for consistency with the Platform
+* STUDIO-8238 - [Custom Policies] Change Run Configuration Window category to API Custom Policy
+
+=== Tasks
+
+* STUDIO-7756 - [Autodiscovery] Modify the new project wizard, to add autodiscovery checkbox
+* STUDIO-8017 - Remove support for TLSv1
+* STUDIO-8071 - Validate gaps in RAML 1.0
+* STUDIO-8114 - Categorize RAML Editor
+* STUDIO-8188 - Validate Mule 3.8.1
+* STUDIO-8200 - Add Mule ESB 3.8.1 Release to Studio 6.1.0
+* STUDIO-8201 - [Custom Policies] Add BETA Label to Custom Policy Project
+* STUDIO-8260 - [Custom Policies] Add a check box to accept the Beta License Agreement
+* STUDIO-8272 - [Custom Policies] Change the Run Configuration icon
+* STUDIO-8296 - Remove beta tag from Studio Light Theme label
+* STUDIO-8303 - Add Mule 3.8.0 EE to Runtimes update site
+
+=== Stories
+
+* STUDIO-6799 - Whitelabel extensions
+* STUDIO-8153 - [Custom Policies] When a new CP project is created, start with an example project
+
+
+
+== Support
+
+* Refer to MuleSoft Documentation:
+** xref:6@studio::raml-1-0-data-types-support.adoc[DataSense support to RAML 1.0 Data Types]
+** xref:6@studio::api-sync-reference.adoc[Improved API Sync support]
+** xref:6@studio::studio-policy-editor.adoc[API Custom Policy Project]
+* Access http://forums.mulesoft.com/[MuleSoft’s Forum] to pose questions and get help from Mule’s broad community of users.
+* To access MuleSoft’s expert support team https://www.mulesoft.com/support-and-services/mule-esb-support-license-subscription[subscribe to Mule ESB Enterprise] and log in to MuleSoft’s http://www.mulesoft.com/support-login[Customer Portal].

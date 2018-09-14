@@ -1,0 +1,167 @@
+= DotNet Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: dotnet-connector-release-notes.adoc
+:keywords: release notes, connectors, dotnet
+
+*December 2015*
+
+_Select_
+
+*Other DotNet Documentation*:
+
+* xref:3.9@mule-runtime::dotnet-connector-guide.adoc[DotNet Connector Guide]
+* xref:3.9@mule-runtime::dotnet-connector-user-guide.adoc[DotNet Connector User Guide]
+* xref:3.9@mule-runtime::anypoint-extensions-for-visual-studio.adoc[Anypoint Extensions for Visual Studio]
+* xref:3.9@mule-runtime::dotnet-connector-faqs.adoc[DotNet Connector FAQs]
+* xref:3.9@mule-runtime::dotnet-connector-migration-guide.adoc[DotNet Connector Migration Guide]
+
+== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Application/Service|Version
+|Mule Runtime |3.5+
+|Anypoint Studio |January 2015 and later
+|Microsoft .NET Framework |4.5+ required to run, 2.0+ for hosted assemblies
+|===
+
+== 2.3.2
+
+*December 18, 2015*
+
+Fixed in this release:
+
+* Fixed an issue where the GAC Connection Strategy could not load an assembly.
+* Improved DataSense metadata retrieval speed.
+* Compatibility issue with Anypoint Studio 5.4 resolved.
+
+== 2.3.1
+
+*November 19, 2015*
+
+Fixed in this release:
+
+* Fixed an issue where DataSense metadata could not be determined for generic types with circular references.
+
+== 2.3.0
+
+*October 5, 2015*
+
+Fixed in this release:
+
+* Simplified the display of method signatures to include simple type names where unique and unambiguous.
+* Added support for using .NET Connector as a WCF proxy by surfacing auto-generated code signatures via DataSense.
+* Fixed an issue where DataWeave was not able to determine the structure of a payload coming from the .NET Connector.
+
+== 2.1.1
+
+*July 24, 2015*
+
+Fixed in this release:
+
+* Resolved an issue where string literals passed to the .NET Connector in a flow were being presented to .NET Code in encoded form
+* Resolved an issue where after receiving no requests for 5 minutes, the .NET Connector throws an exception due to an object being disconnected
+
+== 2.1.0
+
+*July 15, 2015*
+
+Fixed in this release:
+
+* Version 2.1.0 includes xref:3.7@mule-runtime::anypoint-extensions-for-visual-studio.adoc[Anypoint Extensions for Visual Studio] and improved user experience for the DotNet Connector 2.1.0.
+* Version 2.1.0 is available for download from https://www.anypoint.mulesoft.com/exchange/org.mule.modules/mule-module-dotnet-connector/2.1.0/[Anypoint Exchange]. Anypoint Extensions for Visual Studio is available to download from the https://visualstudiogallery.msdn.microsoft.com/e8b8fd3e-6ad3-4677-8a2d-8d6ae0bf82fa[Microsoft Visual Studio addin gallery].
+
+== 2.0.2
+
+*April 3, 2015*
+
+This release has the same compatibility and features as version 2.0.0 and adds the following fixes:
+
+* It is now possible to pass a Map with a null property value to a .NET method and have the arguments mapped without error. In previous versions it was necessary to use a JSON data structure to map properties with null values, or an exception would be thrown.
+* After a call into the .NET Connector, flow variables and message properties that contained complex types (POJO and HashMap) were being overwritten. These properties are now preserved and return unmodified after execution of .NET code.
+
+[NOTE]
+If you are using the .NET Connector SDK in addition to the .NET Connector, you should update the assembly reference to the version in the link:{attachmentsdir}/dotnet-connector-sdk.zip[dotnet-connector-sdk.zip]. For more information, see "Mule Context" in the xref:3.7@mule-runtime::dotnet-connector-user-guide.adoc[DotNet Connector User Guide].
+
+
+== 2.0.0
+
+*January 21, 2015*
+
+We are pleased to release the .NET connector v2.0. We've made several enhancements to the connector in this release as well as an important bug fix.
+
+The xref:3.8@mule-runtime::dotnet-connector-guide.adoc[Anypoint Connector for DotNet (.NET)] lets you integrate .NET code written in any language into your Mule Project. Code is executed in-process for high performance, and full debugging support is available using Visual Studio.
+
+=== New Features
+
+[%header%autowidth.spread]
+|===
+|Feature |Description
+|*Anypoint Studio* |Support for the Anypoint Studio January 2015 release and Mule 3.6, allowing the user interface for each supported assembly that references method to be specialized, exposing only the configuration properties required for that scheme.
+|*Accessibility to methods from within Studio* |Users can now browse the methods contained within the assembly they are referencing right within Studio, allowing them to choose the exact method signature to invoke rather than typing the method name. This makes setting up a call to .NET code much simpler and error-free. Selecting an exact method also gives more information to Studio about the expected data types both in and out, which lets Mule more accurately map and validate the data types as the message passes through the flow.
+|*Full DataMapper Support* |The .NET connector now provides full DataMapper support, allowing you to get deep visibility into the structure of objects received and returned by .NET methods. Simply dragging a DataMapper component before or after the .NET connector onto the flow designer presents a detailed view of the properties available for mapping, and you can wire up calls using the full array of auto-mapping or expression based mapping features provided by DataMapper.
+| *Support for Mule logging and events* |Get detailed insight into the behavior and performance of .NET components in a Mule flow by leveraging the Mule logging and events system. Custom events can be started from within the .NET component via the instrumentation framework, and messages logged directly to the Mule console for debugging purposes.
+|*Support for advanced integration scenarios* a|
+The .NET connector now enables additional advanced integration scenarios. By referencing the Mule .NET integration assembly, you can access the Mule message directly to manipulate the payload, inspect inbound and session properties, and modify outbound properties.
+|===
+
+
+=== Bug Fixes
+
+[%header%autowidth.spread]
+|===
+|Issue |Resolution
+|*Array type payloads not mapped correctly to method signatures* |This issue has been fixed. Array type payloads generated by the scatter-gather process are now supported and correctly mapped into compatible method signatures when selected.
+|===
+
+=== Upgrading to DotNet Connector 2.0
+
+The .NET connector 1.x and 2.x versions cannot be run side-by-side in the same Anypoint installation. For migration guidance and tooling to assist in the process of moving from 1.x to 2.x and beyond, refer to the xref:3.7@mule-runtime::dotnet-connector-migration-guide.adoc[DotNet connector migration guide].
+
+
+== 1.0.1
+
+*July 24, 2015*
+
+Fixed in this release:
+
+Added compatibility for Visual Studio 2015 to the tools
+
+== 1.0.0
+
+*July 23, 2014*
+
+The Anypoint Connector for DotNet (.NET) lets you execute native .NET code in a Mule ESB application.  This connector executes .NET code using the Java Native Interface (JNI), which provides interprocess communication between the Java Virtual Machine (JVM) and a native application running in a host operating system.
+
+=== Compatibility
+
+The .NET connector is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Application/Service|Version
+|Mule Runtime|3.5.X
+|Anypoint Studio|July 2014 and October 2014
+|.NET Framework|4.0/4.5
+|===
+
+== Anypoint Extensions for Visual Studio Updates
+
+This section lists changes to the xref:3.7@mule-runtime::anypoint-extensions-for-visual-studio.adoc[Anypoint Extensions for Visual Studio] guide.
+
+The Anypoint Extensions for Visual Studio add-in provides binding and synchronization of Visual Studio projects with Mule applications in Anypoint Studio, the graphical design environment for Anypoint Platform. These MuleSoft extensions enable debug assistance across the two IDE’s and assist with dependency management.
+
+Features:
+
+* *Project binding*: Binds a Visual Studio project to a Mule application in Anypoint Studio, simplifying the experience of leveraging .NET code in integration applications development. Build artifacts of Anypoint Extensions enabled .NET projects, including dependencies, are automatically synchronized with the Mule application in which they are used.
+
+* *F5 debug experience*: Leverages .NET code to help you debug integration applications simpler and faster - just press F5 within Visual Studio on a project, and Anypoint Extensions launches the debugger and attaches the debugger to the running Mule application. This provides a seamless debug experience right from the flow design in Anypoint Studio through to code breakpoints in .NET.
+
+* *Improved Connector UX*: Improves the experience of connecting to .NET code, presenting method signatures grouped by the class in which they are contained to allow simpler discovery and selection. Additionally, improvements in auto-mapping message payloads into .NET method signatures simplifies the developer experience when designing integration flows.
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

@@ -1,0 +1,39 @@
+= Mule Maven Plugin 3.1.5 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: mule-maven-plugin-3.1.5-release-notes.adoc
+
+Mule Maven Plugin 3.1.5 is mainly focused in fixing bugs.
+
+== Hardware and Software Requirements
+
+Hardware and Software Requirements
+
+* Microsoft Windows 8+
+* Apple Mac OS X 10.10+
+* Linux (tested on Ubuntu 15)
+* Java 8
+* Maven 3.3.3, 3.3.9, 3.5.0
+
+== Compatibility
+
+* Mule 4.x
+* Anypoint Studio 7.x
+
+== Features and Functionality
+
+No new feature was introduced on this release.
+
+== Fixed Issues
+
+* MMP-407 - Exported packages feature slash separator instead of dot.
+
+== Enhancement Request
+
+No enhancement requests was introduced on this release.
+
+== Support
+
+* http://forums.mulesoft.com/[MuleSoft’s Forum].
+* http://www.mulesoft.com/support-login[MuleSoft’s Customer Portal].

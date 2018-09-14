@@ -1,0 +1,36 @@
+= Redis Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: redis-connector-release-notes-mule-4.adoc
+:keywords: cluster, redis, release notes, connector, object store
+
+*November 2017*
+
+_Select_
+
+Redis is an open source advanced key-value store that is often referred to as a data structure server because the keys can contain strings, hashes, lists, sets. and sorted sets.
+
+The Redis Connector offers complete support for its CRUD API.
+
+== 5.0.0
+
+*November 18, 2017*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime | 4.0 and later
+|Redis server | 2.8.x, 3.0.x, and 3.2.x
+|===
+
+=== Features
+
+Migrated to Mule 4.0.0 and later runtime.
+
+=== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

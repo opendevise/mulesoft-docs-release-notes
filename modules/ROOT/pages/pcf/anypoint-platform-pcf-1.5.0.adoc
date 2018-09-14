@@ -1,0 +1,33 @@
+= Anypoint Platform for PCF Beta 1.5.0 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: anypoint-platform-pcf-1.5.0.adoc
+
+*October 14, 2016*
+
+The Anypoint Platform for PCF solution is a fully integrated solution that enables organizations to design, develop, deploy, manage and operate APIs, connectivity apps and microservices within the fully automated and transparent infrastructure provided by  https://pivotal.io/platform[Pivotal Cloud Foundry]. The different deployment scenarios that Runtime Manager supports are described in detail here: xref:runtime-manager::deployment-strategies.adoc[Deployment Strategies].
+
+== System Requirements
+
+See xref:1.5@private-cloud::system-requirements.adoc[About Minimum System Requirements] for installing the platform on premises.
+
+== Compatibility
+
+
+[%header%autowidth.spread]
+|===
+|Compatible with |Version
+|Mule Runtime | 3.8.1 and later
+|===
+
+
+== Known issues
+
+. Even though multiple apps with same name are not allowed, the UI does not check this constraint.  This doesn’t affect  functionality. PCF ensures that only one app is created based on `appname`, the UI just doesn't reflect this clearly. As a temporary workaround, prevent manually from creating multiple apps with same name.
+
+. If you manually change status of a mule app using the `cf` command, its status may not reflect on ARM platform UI.  The app will show status in starting mode and with a spinner. As a temporary workaround, force required status from the UI again.
+
+. UI does not block edits until "updated" status is received. If you try to update the app when app is still in starting mode, PCF will throw staging error and your updates will be lost. As a temporary workaround, wait for the spinner to turn green and then do edits.
+
+. Properties of the app cannot be deleted once they are set.  As long as App is not using them it should be fine.  You can always change existing properties or add new and they are updated successfully.  If you are stuck, then as a temporary workaround delete app and create it again.

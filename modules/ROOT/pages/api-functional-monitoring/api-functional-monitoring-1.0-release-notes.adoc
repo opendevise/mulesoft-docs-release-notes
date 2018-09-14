@@ -1,0 +1,11 @@
+= API Functional Monitoring 1.0 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: api-functional-monitoring-1.0-release-notes.adoc
+
+This release of API Functional Monitoring introduces a new user interface that is incorporated into Anypoint Monitoring. To access this user interface, select *Functional Monitoring* after opening Anypoint Monitoring.
+
+For documentation about this new user interface, see xref:api-functional-monitoring::afm-in-anypoint-platform.adoc[API Functional Monitoring in Anypoint Monitoring].
+
+You can still create tests and schedule them using the BDD Test-Writing Language and the Blackbox Automated Testing (BAT) CLI. The documentation for doing that is located at xref:api-functional-monitoring::bat-top.adoc[API Functional Monitoring with the Blackbox Automated Testing (BAT) CLI].

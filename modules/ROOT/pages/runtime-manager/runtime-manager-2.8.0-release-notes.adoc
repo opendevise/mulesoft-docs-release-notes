@@ -1,0 +1,41 @@
+= Anypoint Runtime Manager Version 2.8.0 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: runtime-manager-2.8.0-release-notes.adoc
+
+_January 25, 2018_
+
+This document describes new features and enhancements, known limitations, issues, and fixes in Anypoint Runtime Manager version 2.8.0.
+
+
+== New Features and Enhancements
+
+This section lists the new features and enhancements in the release:
+
+* Improved errors description on alert creation.
+
+== Fixed issues
+
+This section lists the bugs and known limitations that are fixed in the release.
+
+* Fixed multiple issues that prevented users from deleting servers from the Runtime Manager UI.
+* Fixed issue that prevented some users deleting applications that failed to be deployed.
+* Fixed issue that prevented users from deleting servers when one of its applications had configurations applied for some components.
+* Fixed issue where configured ip and port were not shown when users entered their cluster configuration page.
+* Fixed issue where maximum version was not being selected by default when users went to deploy an application via Exchange.
+* Fixed issue where some naming validations were not applied on cluster and server group creation.
+* Fixed issue where an application created with an invalid name couldn’t be deleted.
+* Fixed issue that prevented users from downloading their application artifact.
+
+== Known Limitations and Workarounds
+
+There are no known limitations or workarounds in this release.
+
+== Upgrade Requirements
+
+There are no upgrade requirements in this release.
+
+== Compatibility Notes
+
+There are no compatibility notes in this release.

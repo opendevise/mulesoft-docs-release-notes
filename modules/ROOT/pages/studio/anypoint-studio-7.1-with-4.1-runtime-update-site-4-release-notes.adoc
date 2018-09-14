@@ -1,0 +1,215 @@
+= Anypoint Studio 7.1 with Mule Runtime 4.1.2 Update Site 4 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: anypoint-studio-7.1-with-4.1-runtime-update-site-4-release-notes.adoc
+
+*July 10, 2018* +
+*Build ID: 201807100112*
+
+<<migration,Skip to Migration Guide>>
+
+== Compatibility
+
+[cols="30a,70a"]
+|===
+| Product | Version
+| *Mule Runtime*
+| Version: 4.1.2
+
+|*Anypoint Studio*
+|Version: 7.1.4 +
+Build Id: 201807100112
+
+|*Maven*
+|Version: 3.3.9
+
+|*DataWeave* +
+|Version: 2.1.0
+
+|*MUnit* +
+|Version: 2.1.4 (munit-studio-plugin)
+
+|*Eclipse* +
+|Version: 4.7.2
+
+|===
+
+== What's New
+
+This version of Anypoint Studio introduces the following features:
+
+* Validation for the JDK version running in your machine before opening Studio.
+* Integrates APIKIt for SOAP.
+
+This release also focuses on general bug fixes.
+
+== Hardware Requirements
+
+* For most use cases, Anypoint Studio with the 4.1.1 Runtime does not change hardware or software requirements from the previous Studio 7  versions.
+* MuleSoft recommends a minimum of 4GB of free RAM available on a developer workstation. As applications become complex, consider adding more RAM.
+
+* 4GB of free memory available.
+* 2GHz CPU.
+* 10GB free hard drive space.
+
+== Software Requirements
+
+[cols="30a,70a"]
+|===
+| Software | Version
+|Java Environments
+| * Oracle JDK 1.8.0
+|Operating Systems |* MacOS 10.12.0 +
+* Windows (32- and 64-bit) Windows 7, Windows 8, Windows 10 +
+* RHEL 7.0 +
+* Ubuntu 15.04 or later
+|Suggested Web Browsers by Platform. +
+_Studio always uses the OS default web browser_ | * Windows: +
+** Microsoft Edge 25.0  +
+** Internet Explorer 11 +
+* Linux +
+** Mozilla Firefox 51.0.1  +
+* OS X +
+** Safari 10.1
+| Maven
+| Studio comes with Maven 3.3.9 bundled, but you can externally use the versions: 3.3.3 or your own 3.3.9
+|===
+
+[NOTE]
+--
+If you are running McAfee VirusScan on your Windows OS, Eclipse-based Anypoint Studio may experience negative performance impacts. McAfee has suggested these remedies https://kc.mcafee.com/corporate/index?page=content&id=KB58727[options].
+--
+
+[[migration]]
+== Migration Guide
+
+For first time installment, refer to xref:studio/anypoint-studio-7.1-with-4.1-runtime-release-notes.adoc[Studio 7.1 release notes] for instructions and known issues. +
+
+Studio 7.1 only supports Mule 4.x projects. The structure of the project, export format, XML and scripting language are different. +
+Users must migrate Mule 3 projects to Mule 4 manually, before they can be used in Studio 7. See the Mule migration guide for more information.
+
+Workspaces created using Anypoint Studio 6.x or below are not compatible with Anypoint Studio 7 workspaces.
+
+From version 7.1.1 there is no special migration needed. When opening a previous Workspace which has projects that were created with Studio 7.1.0, and metadata stored in disk, Studio asks you to perform an update to all the projects so that the Metadata Manager can handle the types and to show the types in your project.
+
+
+== JIRA Ticket List for Anypoint Studio
+
+=== Known Issues
+
+* Studio may fail to generate flows from API definitions that have the 'protocols' node set with a String instead of an Array. When this happens, Studio generates an empty flow without throwing any error to the user. +
+You must set the protocols value to an Array.
++
+For example, use
++
+[source,raml,linenums]
+----
+protocol-required:
+ protocols: [ HTTPS ]
+----
++
+Instead of
++
+[source,raml,linenums]
+----
+protocol-required:
+  protocols: HTTPS
+----
++
+To be able to see the error message and location of the issue, you must install the latest version of the RAML Editor using the `+http://studio.mulesoft.org.s3.amazonaws.com/s2/ramleditor/+` update site. +
+Follow the instructions in the xref:7.1@studio::studio-update-sites.adoc[Studio Update Sites] docuemntation.
+* Some existing features in Studio 6.x are not yet supported in Studio 7.1: Custom Policies, API Sync, Anypoint Private Cloud.
+* Anypoint Studio uses your configured default browser to display web content such as Exchange and the Runtime Manager UI when deploying an application to Anypoint Platform. If your default internet browser does not display this content correctly, you can configure Anypoint Studio to use a Mozilla/XULRunner runtime environment as the underlying renderer for the Web UI. +
+Follow the xref:7.1@studio::faq-default-browser-config.adoc[FAQ: Troubleshooting Issues with Your Default OS Browser] for more details.
+* When referencing a RAML spec using Json Schema draft 3, DataSense fails. STUDIO-10033
+* Copybook import fails with no message. STUDIO-10206
+* Copybook import file not copied to project. STUDIO-10207
+* Menu items remain grayed out after opening Exchange using XulRunner. STUDIO-9684
+* Mule modules needs to provide icons, today many of the modules have the generic icon. STUDIO-9628
+* Running application "Pom.xml" is not updated when changing dependencies. STUDIO-9148
+* Debugger: payload shown while debugging is partial but there is no way to view the rest of the payload STUDIO-9704
+* When referencing a RAML spec using Json Schema draft 3, DataSense fails STUDIO-10033
+* When setting WSC, it does not trigger datasense and not update metadata tree automatically. STUDIO-10242
+* Mule plugins with snapshot versions should always be regenerated.STUDIO-8716
+* Studio hangs when trying to open a big sample data file in DataWeave STUDIO-10523
+* When setting WSC, it does not trigger datasense and not update metadata tree automatically STUDIO-10523
+* Datasense/Runtime not working correctly through proxy on connectors using TCP/IP or connectors which don’t yet support it STUDIO-10377
+* When importing a project with a runtime that is not installed in Studio there is no notification to the User STUDIO-10892
+* Required libraries status is not refreshed in dialog after adding them STUDIO-10848
+* When changing version of a module, Studio removes it from project STUDIO-10889
+* Using the "Validate" option in your Mule configuration files is not supported. +
+In your Package Explorer view, when right-clicking your Mule configuration file and selecting *Validate*, Studio runs a non-supported validation inherited from Eclipse. It is not recommended to use this feature. +
+You can choose to disable these validators:
++
+** *At Workspace level*: By clicking *Preferences*, *Validation*, and disabling "Manual" and "Build" checkbox for *XML Schema Validator* and *XML Validator*.
+** *At Project level*: By righ-clicking on your project in your Package Explorer View, select *Properties*, *Validation*, and disabling "Manual" and "Build" checkbox for *XML Schema Validator* and *XML Validator*.
+
+=== Bug Fixes
+
+* STUDIO-8940 - DefaultFigureDecorator draws bottomLeft icon at topLeft position.
+* STUDIO-9160 - False Positive in Test Connection for SMTP.
+* STUDIO-9396 - Multilevel metadata keys are not correctly generated for child level.
+* STUDIO-9798 - Required libraries button is not displayed for DB Connector - Generic Connection Provider.
+* STUDIO-10213 - DW: when segmentIdent is missing a No usable schema definition warning is shown.
+* STUDIO-10247 - When adding a Raml v0.8 from exchange as a dependency, it throws an error and it's not added it.
+* STUDIO-10419 - When renaming a batch step container, it loses its new name after closing the editor.
+* STUDIO-10448 - When adding RAML-APIs from Exchange UI, they are not added to the project.
+* STUDIO-10459 - Object Store value shows DataWeave error in Studio, but works.
+* STUDIO-10474 - In Export Studio Project dialog box, Cloudhub should be CloudHub.
+* STUDIO-10590 - Null pointer on startup.
+* STUDIO-10719 - TRAINING: Running MUnit Test in Debug Mode does not work.
+* STUDIO-10735 - Dragging existing components around sometimes creates duplicate name attributes.
+* STUDIO-10783 - When ApiKit console is opened from show view option, opens empty view with null title.
+* STUDIO-10793 - [SE] Metadata error when using Web Service Consume in a sub-flow.
+* STUDIO-10796 - [SE] 3rd party class sources are not viewable in Studio7.
+* STUDIO-10822 - Pressing 'Enter' key while using search bar throws error.
+* STUDIO-10825 - When running multiple Apikit projects, it opens multiple Apikit console views.
+* STUDIO-10889 - When changing version of a module, Studio removes it from project.
+* STUDIO-10897 - Salesforce 9.2.0 DataSense doesn't work due to ArtifactNotFoundException.
+* STUDIO-10905 - When trying to reference a flow contained in a dependency, it is not offered and is marked as an error if written.
+* STUDIO-10910 - Examples import from Exchange failing with NPE.
+* STUDIO-10934 - Crash event is sent when the preference is unchecked.
+* STUDIO-10974 - When using Webservice Consumer in Windows, global-ref attribute is lost.
+* STUDIO-10975 - When using Webservice Consumer in Windows, the <message> gets duplicated.
+* STUDIO-10994 - When using Autocompletion in the XML view over an operation, it does not work.
+* STUDIO-10998 - Unable to reference Connection Factory from JMS Connector.
+* STUDIO-11027 - When creating a new project, it does not load default HTTP in the palette.
+* STUDIO-11030 - Sometimes studio is writting child element parameters more than once.
+* STUDIO-11044 - In WSC connector, operation box should not be cleared if connector config didn't change.
+* STUDIO-11048 - XML autocompletion is broken.
+* STUDIO-11051 - When trying to open an editor, an error is thrown.
+* STUDIO-11065 - Studio 7.1.4 app icon is Studio 6.
+* STUDIO-11066 - Incorrect Java version pop-up points to Studio 6 docs for Studio 7.
+* STUDIO-9111 - HTTP Custom Editor: none of the info icons have details about the attribute use.
+* STUDIO-10182 - Metadata propagation: JMS - "Failed to solve dynamic model" for generic connection.
+* STUDIO-10440 - When adding a module to an existing flow from search results, it throws an error.
+* STUDIO-10503 - API Manager URI will not always change when changing region.
+* STUDIO-10536 - When having same name of global configuration in project and linked project, it only shows one.
+* STUDIO-10955 - When adding a new module to the project, the others are removed.
+* STUDIO-11024 - When closing projects, several errors are raised.
+
+=== User Stories
+
+No user stories were closed for this release.
+
+=== Enhancement Requests
+
+No enhancement requests were closed for this release.
+
+=== Epics
+
+No epics were closed for this release.
+
+=== Tasks
+
+* STUDIO-10412 - Integrate Apikit for SOAP for Studio 7.
+* STUDIO-10518 - Remove Mule-Commons library from Studio 7 codebase.
+* STUDIO-10894 - Add validation when trying to open Studio with a Java version higher than 8.
+* STUDIO-10925 - Add metric for studio crash events.
+
+
+== Support
+
+* http://forums.mulesoft.com/[MuleSoft’s Forum].
+* http://www.mulesoft.com/support-login[MuleSoft’s Customer Portal].

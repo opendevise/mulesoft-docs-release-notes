@@ -1,0 +1,142 @@
+= Microsoft Service Bus Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: microsoft-service-bus-connector-release-notes.adoc
+:keywords: release notes
+
+*June 2018*
+
+_Select_
+
+== 1.3.3
+
+*June 19, 2018*
+
+=== Fixed in This Version
+
+*  Topic subscriptions didn't take the subscription name into consideration. In past versions, the name was not considered. This caused topics to be incorrectly subscribed. This is fixed in the current version.
+
+
+== 1.3.2
+
+*February 9, 2018*
+
+Fixed: The defined exception strategy was not being used correctly with `<microsoftservicebus:queue-receive>`.
+When a flow was using a `microsoftservicebus:queue-receive` and synchronous processing strategy,
+the connector was not using the proper exception strategy to handle the error.
+
+Starting with 1.3.2 the exception strategy set on the flow is invoked if present.
+
+== 1.3.1
+
+*June 9, 2017*
+
+A hotfix has been released for the Microsoft Service Bus Connector - version 1.3.1.
+Included in this release:
+
+* Fixed several threading and synchronization issues encountered when working with synchronous and asynchronous flow strategies by changing how the connector handles these strategies. For the sync scenario, the message is acknowledged only when the flow finishes with success. In case of an error, the message is not acknowledged, and will be consumed until success. For the async scenario, the message is never auto-acknowledged, so it will be re-consumed no matter if the flow fails or is successful. For the message to be acknowledged, a new *Acknowledge Message* processor must be used in the flow. This processor receives an AmpqMessage as input and acknowledges it.
+- For an example on how to use the  *Acknowledge Message* processor, go to *Synchronous and asynchronous behavior* section
+of the user manual
+
+== 1.3.0
+
+*April 04, 2017*
+
+Included in this release:
+
+* The connector now supports sending/receiving large messages(more than 256KB) through Azure Service Bus queues. To enable this functionality a Azure Storage Account is needed, and the connection credentials for this account must be specified under the Azure Service Bus Connection Strategy. If these credentials are specified then the storage is used to store as a blob every message body sent through the queues using the specific Connection Strategy. When you're expecting to receive large messages the Storage credentials must also be specified so the connector can retrieve the message body from the Blob storage and delete the blob afterwards.
+* Improved the connection management to prevent a potential deadlock issue.
+* Fixed message loss issue when flow was running under Async processing strategies.
+* Exposed additional metadata via DataSense
+* Improved Demo packages including web forms to publish new messages to queues or topics.
+
+
+== 1.2.0
+
+*November 30, 2016*
+
+Included in this release:
+
+* Added custom logic to handle non trivial types at message's properties.
+* Added option to skip connectivity test at connector's startup.
+* Improved performance when sending messages using SAS-based authentication.
+* Improved reliability and stability with high-load.
+
+== 1.1.0
+
+*October 4, 2016*
+
+Included in this release:
+
+* Added support to SAS-based authentication (that is, avoid providing username/password at configuration settings).
+* Fixed message processing and acknowledge to ensure zero message loss high-reliability (that is, at-least-once delivery).
+
+== 1.0.4
+
+*April 7, 2016*
+
+A hotfix has been released for the Microsoft Service Bus Connector - version 1.0.4.
+
+Changes in this release:
+
+* Fixed message's consumption from partitioned topics.
+* Improved error message for invalid property types.
+* Improved message's production performance by caching connections.
+
+== 1.0.3
+
+*October 9, 2015*
+
+A hotfix has been released for the Microsoft Service Bus Connector - version 1.0.3.
+
+Changes in this release:
+
+* Added support for sending mule outbound properties as custom properties in the AMQP message.
+
+== 1.0.2
+
+*September 15, 2015*
+
+A hotfix has been released for the Microsoft Service Bus Connector - version 1.0.2.
+
+Changes in this release:
+
+* Upgraded qpid dependency to 0.3.2
+
+== 1.0.1
+
+*September 9, 2015*
+
+A hotfix has been released for the Service Bus connector - version 1.0.1.
+
+Fixed in this release:
+
+* The connector kept dequeuing message after the Mule application stopped or was undeployed. This has been fixed and the connector now stops dequeuing messages when the Mule application stops or undeploys.
+
+== 1.0.0
+
+*January 21, 2015*
+
+We are pleased to release a new connector for Service Bus. The ServiceBus connector v1.0 enables Windows Service Bus on-premises, or Azure Service Bus cloud-hosted reliable messaging integration scenarios. Support for queues, topics and event hubs is provided, with messages being sent or received via the AMQP 1.0 transport. Dynamic discovery and provisioning of Service Bus objects is possible via the built-in management API.
+
+*Connector Guide*: xref:3.8@mule-runtime::microsoft-service-bus-connector.adoc[Microsoft Service Bus Connector]
+
+=== Compatibility
+
+[%header,cols="2*"]
+|===
+|Application/Service |Version
+|Mule Runtime |3.5+
+|Anypoint Studio |January 2015
+|Service Bus a|
+* Microsoft Azure Service Bus (Cloud)
+* Microsoft Windows Service Bus (on-premises) - 1.1+
+|===
+
+== See Also
+
+* xref:3.8@mule-runtime::microsoft-service-bus-connector.adoc[Microsoft Service Bus Connector]
+* xref:3.8@mule-runtime::microsoft-service-bus-connector-faq.adoc[Microsoft Service Bus Connector FAQ]
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

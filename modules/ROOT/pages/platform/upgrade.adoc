@@ -1,0 +1,292 @@
+= Anypoint Platform Upgrade to Latest Software Guide
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: upgrade.adoc
+
+[IMPORTANT]
+====
+The upgrade to the November 2017 or "Crowd" release changes the existing Anypoint Platform APIs, which affects continuous integration and continuous development (CI/CD) pipelines built against the API Manager API and autodiscovery. See the <<apis-in-api-manager-post-upgrade,APIs in API Manager - Post-Upgrade>> and <<ci-cd-changes-to-make,CI/CD Changes to Make>> sections. A high-level overview is in the <<ci-cd-architecture,CI/CD Architecture>> section.
+
+*Note:* After the upgrade and before classifying your APIs into environments, test your APIs, Notebooks, and Portals. After APIs are classified, your organization cannot roll back in the event you encounter upgrade related issues.
+====
+
+== To Complete Upgrade to November Release
+
+Anypoint Platform provides these steps to complete the upgrade to the November 2017 Anypoint Platform software release:
+
+. Group your APIs. (Optional, recommended)
+. Request a time to upgrade using the green banner that lets you access the self-service upgrade portal. Only the organization owner can schedule the upgrade. If you do not see a banner, contact your Customer Success Manager to coordinate steps to upgrade.
+. After the upgrade, we recommend you classify APIs to your environments. (Optional, recommended).
+
+NOTE: Before the classification step, test your APIs, Notebooks, and Portals. After APIs are classified, your organization cannot roll back in the event you encounter upgrade-related issues.
+
+== Why Group your APIs?
+
+Grouping your APIs helps you organize your APIs by name and version in the new platform experience and improve how you deploy these APIs to environments.
+
+*Note:* If you use Business Groups instead of environments to group your APIs, API grouping is not needed or recommended.
+
+The November 2017 version of the platform supports APIs that are assigned or classified into environments. Prior to the release, you may have stored the name of the environment in the name of the API.
+
+For example, the "Customer API" may have had "Staging" or "Prod" in the name to indicate use in those environments:
+
+_Customer API Staging - v1_ +
+_Customer API Staging - v2_ +
+_Customer API Prod - v1_
+
+If you labeled your APIs or versions using the names of your environments, consider renaming your APIs before scheduling your upgrade. After the upgrade, each API is associated to a single Design Center Project with a corresponding Exchange asset per API version. By removing the environment name you avoid having extraneous Exchange assets.
+
+After the upgrade, you will be able to see the *original API names* so you know which to deploy to each of your environments.
+
+Notes:
+
+* If you do not perform the grouping step, you may find duplicate projects or a degraded platform experience.
+* After you add one or more APIs to an API group (New API Name in the API Grouping screen), you can't ungroup the APIs. However you can change the group for each API individually to direct it to a different API group, by changing an API or API version name.
+
+== To Group your APIs
+
+*Note:* Read the previous <<To Complete Upgrade to November Release>> and <<Why Group your APIs?>> for vital roll back and business group information.
+
+We recommend completing the grouping of your APIs before scheduling your upgrade to remove the name of the environment (dev, stg, etc.), and clean up API names or versions. After the upgrade, you can promote or "classify" an API version into an environment.
+
+. Log into Anypoint Platform and go to API Manager.
+. To the right of each API in API Manager you should see a message that reads Prepare To Group.
+. Click Prepare To Group to add an API to a new or existing group. In the popup, API Manager lists the Current API Name and Current API Version.
+. Click Edit to change the New API Name, New API Version, or to include or exclude your API portal.
++
+*Important*: Only one API portal can be migrated for a group of APIs.
++
+. Specify a New API Name. This can be any string of ASCII characters.
+. Specify a New API Version Name. This can be any string of ASCII characters.
++
+NOTE: Do not store the environment name in the API Name or Version Name. After the upgrade, you can assign your APIs that reference the original names to the environments.
+
+
+== To Request Your Platform Upgrade
+
+The upgrade is triggered automatically at the time you schedule in the self-service portal. Access this portal from the green banner in the Anypoint Platform login. The estimated upgrade time is 15 minutes to upgrade 50 *API versions*.
+
+During this stage, API design projects and API portals are moved into their appropriate new home. API specifications and API portals are stored and versioned in Anypoint Exchange, and new projects are created for them in Anypoint Design Center. SOAP APIs or APIs without specifications are moved to Exchange only and not added to Design Center.
+
+After this process completes, the user who scheduled the upgrade receives an email confirming a successful upgrade. In case MuleSoft encounters issues, MuleSoft automatically rolls back an upgraded account to its previous experience. You can contact MuleSoft Customer Support with any questions on resolving these errors.
+
+== Post-Upgrade: To Classify APIs into Environments
+
+After the upgrade, all APIs are listed in an environment called the Unclassified environment. From here, you can classify APIs into your appropriate environments. Even though API Manager supports tracking APIs by both organization and environment credentials, MuleSoft recommends using environment credentials as the permissions associated to them are more restrictive. But, you need to restart Mule Runtime after changing credentials, which can cause downtime.
+
+NOTE: The names of APIs you see in the Unclassified environment reflect the original API names you had prior to grouping your APIs. This is so that you can easily determine the environment for each API.
+
+. Update the server where the API or API proxy is running. (Optional: only needed if you would like to use environment credentials for API tracking. You can still continue to use organization credentials that don't require any changes on Mule runtime configuration.)
+. Classify the API into the suggested environment.
+
+Using credentials from one environment does not allow:
+
+* Tracking APIs from different environment
+* Tracking APIs from different organizations
+
+For more information see xref:2.x@api-manager::classify-api-task.adoc[To Classify APIs].
+
+== FAQ on Upgrades
+
+*Is there any downtime?*
+
+There is no downtime during the API grouping or the automated migration. We do, however, advise not to use API Manager during the upgrade process to prevent any data inconsistency. After the upgrade, classification of APIs into environments may cause downtime due to proxy restart.
+
+*How do I cancel my upgrade?*
+
+After you accepted the calendar invitation sent to you, open the email with subject "Your booking confirmation". Click "Cancel booking" and click "Cancel this booking" in the window that opens. Once you cancel, a confirmation email will be sent. For help, e-mail crowd@mulesoft.com. When you are ready to select a new time, log back into the platform to schedule the upgrade.
+
+*How can I test the upgrade before scheduling the upgrade for my Anypoint org?*
+
+Our general recommendation is to create a trial account. This will be created as an upgraded account. Therefore, request your Customer Success Manager to convert the account to pre-upgrade with self-service upgrade scheduling for the trial account. Create dummy APIs for your testing purposes. Schedule an upgrade for the trial account using the instructions you will see on login after the trial account is converted to "pre-Crowd".
+
+*Who should I contact for questions during the process?*
+
+Open a case in the https://support.mulesoft.com[support portal].
+
+*After the upgrade, how does API usability change?*
+
+After the upgrade is complete, APIs stored in API Manager before the upgrade will have been moved as follows:
+
+[%header,cols="35a,25a,40a"]
+|===
+|Before the Upgrade |Afterwards |Description
+|API Manager: +
+API Specifications |Design Center: +
+API Specifications
+|All RAML files from API Manager automatically appear as an API Specification Project within Design Center. This project is visible to everyone within a business group.
+|API Manager: +
+API Portals |Anypoint Exchange: +
+API Portals
+|API Portals are available for access through Anypoint Exchange, instead of API Manager.
+|API Manager: +
+API Proxies |API Manager: +
+API Proxies
+|APIs stored in the API Manager move to the Unclassified Environment. API providers need to classify each API to the appropriate environment.
+|===
+
+*Can I bulk classify APIs into a specific environment?*
+
+No.
+
+*What is the "Unclassified" Environment?*
+
+After the migration completes, all APIs appear in the Unclassified Environment. All APIs that haven’t been classified into a real environment can be managed from here. This environment has the same user interface and permissions model as the pre-upgrade API Manager.
+
+All APIs in the Unclassified environment can be classified into a real environment by following the process described in this document. If API grouping information was provided before the migration, that information is used as the API name and version of the API being classified in the target environment.
+
+*Is API classification mandatory before deploying to existing applications?*
+
+No, you can continue to work in the unclassified environment and deploy to existing applications.
+
+*Is there a rollback available?*
+
+Yes. If you have problems with the new experience of Anypoint Platform, you can open a support ticket from MuleSoft Support and we will execute a rollback. Note: Rollback is only available if no APIs were classified. We recommend to request rollback within 24-48 hours. New changes after the upgrade will not be carried over with a rollback.
+
+== New and Changed Features
+
+* All APIs created using pre-upgrade version of API Manager appear in the Unclassified Environment after the upgrade
+* APIs in the Unclassified environment can be classified into the corresponding environment following this process.
+** Configure Autodiscovery element for new APIs after the upgrade in the following way (retrieve all values from the API and the UI):
+** `name=”groupId:{{groupId}}:assetId:{{assetId}}”`
+** `version=”{{version}}:{{instanceId}}”`
+* API Manager API (v2.x) is available to leverage all new API Manager capabilities.
+* User permissions model has changed to be action-based at the environment level, which is aligned to the rest of the management center. After the upgrade, administrators should set environment-level permissions for all users. Default environment-level admin roles are available. The permission model in the Unclassified environment works in the same way as API Manager permission model worked before the upgrade. Assigned permissions for APIs in the Unclassified environment also remain untouched during the upgrade process.
+
+=== API Designer
+
+* To make changes to a RAML of a running or published API, users need to republish any specifications in Exchange that have versions.
+* Design Center projects do not have tags like old API Manager projects.
+* API sync from Studio 6 and 7 only supports pull only.
+
+=== API Portals in Exchange
+
+* External links from the navigation panel are grouped under the Helpful links section in Exchange.
+* Invisible pages are deprecated and replaced with draft functionality of Exchange. All invisible pages become draft after the upgrade is complete.
+* Branding at the API portal level is deprecated and replaced with global branding control. This means that all API portal pages inherit global styles.
+* To update an API specification available in Exchange or used by an API proxy in API Manager, users need to publish a new version of API specification to Exchange using API designer.
+* Internal API consumers can see all API endpoints and versions through an API portal they have access to. Existing API Manager controls permissions per API version.
+* Onboarding of external users of API Public Portals onboarding has been simplified and there’s no need to invite external users for them to be able to consume APIs and request API keys.
+* When APIs are migrated to Exchange, Exchange calls REST Connect to generate connectors for Mule 4 and Mule 3. Because REST Connect only supports RAML v1.0, owners for API specifications based on RAML v0.8 receive an email notification with a message that the connector creation has failed. They can still use Design Center to open and edit these API specifications, but these specifications cannot be used as a connector in Design Center, Studio 6, and Studio 7.
+
+=== APIs in API Manager - Post-Upgrade
+
+* APIs utilizing an autodiscovery element now use API Manager instead.
+* API promotion to environments is a new feature that you can introduce as a step in your CI/CD pipeline.
+* Because the November release upgrade moves all portals and RAMLs, the old API cannot be used to modify, create, or delete them after the upgrade.
+* The pre-upgrade API Manager API can be used with APIs in the Unclassified environment with some restrictions (see below). There are also new environment-aware APIs, which also support the Unclassified environment, that you may start using (see the https://anypoint.mulesoft.com/exchange/portals/anypoint-platform/f1e97bc6-315a-4490-82a7-23abe036327a.anypoint-platform/api-manager-api/1.0.2/console/summary/[new API Manager API portal] and the https://anypoint.mulesoft.com/exchange/portals/anypoint-platform/f1e97bc6-315a-4490-82a7-23abe036327a.anypoint-platform/proxies-xapi/1.0.1/[Proxies xAPI portal]).
+** The following resources for managing RAMLs return 400. Use Design Center APIs instead.
++
+[source,text,linenums]
+----
+/organizations/{organizationId}/apis/{apiId}/versions/{apiVersionId}/addRootRaml
+/organizations/{organizationId}/apis/{apiId}/versions/{apiVersionId}/files/*
+----
++
+** The following resources for managing portals (including permission setting) return 400. Use Exchange APIs instead.
++
+[source,text,linenums]
+----
+/organizations/{organizationId}/apis/{apiId}/portals
+/organizations/{organizationId}/apis/{apiId}/versions/{apiVersionId}/portal/*
+/organizations/{organizationId}/portals/*
+organizations/{organizationId}/public/*
+----
++
+** API creation needs to be done in Exchange first, thus creation of an API from API Manager API returns a 400 response.
+* APIs exported before the upgrade cannot be imported after upgrade.
+
+== CI/CD Changes to Make
+
+The Anypoint Platform APIs section of this doc has links to the API documentation so you can update your pipeline per any of the below criteria:
+
+* CI/CD pipelines need to be reconstructed to accomodate the environments you plan to use for your APIs.
+* If you call API Manager APIs to apply API management or policies, review the API Manager API and
+refactor your pipeline as needed.
+* If publishing to Exchange, review the new Exchange Maven Facade API and refactor as needed.
+* If you apply Policies, SLAs, etc., review API Manager API and refactor as needed.
+
+== Anypoint Platform APIs (November 2017 Release)
+
+The following is a list of platform APIs that orchestrate the API deployment and management CI/CD automation. See the https://anypoint.mulesoft.com/exchange/portals/anypoint-platform/[MuleSoft Developer Portal] to find all the available Anypoint Platform APIs.
+
+[%header%autowidth.spread]
+|===
+|Component |API Portal Before 17/Nov/2017 |Exchange Portal 17/Nov/2017 and Later
+|All Platform Portals |https://anypoint.mulesoft.com/apiplatform/anypoint-platform/#/portals[Anypoint Platform Developer Portal] |https://anypoint.mulesoft.com/exchange/portals/anypoint-platform/[MuleSoft Developer Portal]
+|Access Management |https://anypoint.mulesoft.com/apiplatform/anypoint-platform/#/portals/organizations/68ef9520-24e9-4cf2-b2f5-620025690913/apis/11270/versions/11646/pages/11245[Access Management API] |https://anypoint.mulesoft.com/exchange/portals/anypoint-platform/f1e97bc6-315a-4490-82a7-23abe036327a.anypoint-platform/access-management-api/[Access Management API]
+|CloudHub |https://anypoint.mulesoft.com/apiplatform/anypoint-platform/#/portals/organizations/68ef9520-24e9-4cf2-b2f5-620025690913/apis/8617/versions/2321502[CloudHub API] |https://anypoint.mulesoft.com/exchange/portals/anypoint-platform/f1e97bc6-315a-4490-82a7-23abe036327a.anypoint-platform/cloudhub-api/[CloudHub API]
+
+The CloudHub Public API enables you to access application management services for applications deployed to CloudHub.
+|API Platform / API Manager |https://anypoint.mulesoft.com/exchange/portals/anypoint-platform/f1e97bc6-315a-4490-82a7-23abe036327a.anypoint-platform/api-platform-api/[API Platform API] |https://anypoint.mulesoft.com/exchange/portals/anypoint-platform/f1e97bc6-315a-4490-82a7-23abe036327a.anypoint-platform/api-manager-api/[API Manager API]
+
+The API Manager API enables you to manage an API by applying policies, setting SLAs, configuring alerts for your API instances, and promoting API instances.
+
+https://anypoint.mulesoft.com/exchange/portals/anypoint-platform/f1e97bc6-315a-4490-82a7-23abe036327a.anypoint-platform/api-platform-api/[API Platform v2]
+
+The API Platform API exposes the management capabilities of the Anypoint Platform for APIs, enabling them to be used by external sites.
+|Anypoint Runtime Manager (ARM) |https://anypoint.mulesoft.com/apiplatform/anypoint-platform/#/portals/organizations/ae639f94-da46-42bc-9d51-180ec25cf994/apis/38784/versions/127446/pages/182845[ARM APIs] |https://anypoint.mulesoft.com/exchange/portals/anypoint-platform/f1e97bc6-315a-4490-82a7-23abe036327a.anypoint-platform/arm-rest-services/[ARM Rest Services]
+|Exchange |https://anypoint.mulesoft.com/apiplatform/anypoint-platform/#/portals/organizations/68ef9520-24e9-4cf2-b2f5-620025690913/apis/11181/versions/78579/pages/114971[Anypoint Exchange - 1.6.1] |https://anypoint.mulesoft.com/exchange/portals/anypoint-platform/f1e97bc6-315a-4490-82a7-23abe036327a.anypoint-platform/exchange-experience-api/[Exchange Experience API]
+
+This API basically focuses on assets and portals. It allows doing a lot of operations on different organizations according to the permissions that each user has in Anypoint.
+
+https://anypoint.mulesoft.com/exchange/portals/anypoint-platform/f1e97bc6-315a-4490-82a7-23abe036327a.anypoint-platform/exchange-graph-http/[Exchange Graph Service (API Reference) - v1]
+
+The Exchange Graph API lets you query Exchange assets filtering by multiple criteria and returning only the information you need. To try the https://anypoint.mulesoft.com/graph/api/v1/graphiql/[Graph API], Click the Docs button in the top-right corner.
+
+https://anypoint.mulesoft.com/exchange/portals/anypoint-platform/f1e97bc6-315a-4490-82a7-23abe036327a.anypoint-platform/exchange-maven-facade-api-http/[Exchange Maven Facade (Maven Facade) - v1]
+
+The Exchange Maven Facade API lets you interact with Exchange using the Maven client to publish and consume Exchange assets as Maven dependencies.
+
+You can use the Exchange Maven Facade API for Mule applications, templates, examples, connectors or policies. RAML API specifications are not supported, use the Design Center xAPI to publish those assets.
+|Proxies |N/A |The Proxies XAPI allows you to download or deploy proxies into Runtime Manager.
+https://anypoint.mulesoft.com/exchange/portals/anypoint-platform/f1e97bc6-315a-4490-82a7-23abe036327a.anypoint-platform/proxies-xapi/[Proxies API v1]
+|===
+
+
+=== CI/CD Architecture
+
+The following diagram gives an overview of the CI/CD (continuous integration and delivery) process.
+
+image::platform/upgrade-cicd-architecture.png[CI/CD architecture diagram]
+
+When working with large teams and multiple applications, the manual process for testing and deployment is challenging and teams should consider using a Continuous Integration and Deployment server like Jenkins.
+
+=== About Continuous Integration
+
+The need for continuous integration (CI) for a project is very important. By using Maven as your build tool, you can create a build that gets triggered on every project change, and run all its unit and functional tests automatically.
+
+The advantages of continuous integration are:
+
+* Early notification of issues in the software development lifecycle.
+* Ensures code gets fully tested before release.
+* Successfully tested branches ensure better success when merging to the master branch.
+
+A continuous integration system:
+
+* Listens for new commits to a project’s source code management system. The CI watches many branches for new commits. You can use either polling to find new commits, or the management system can trigger events that inform your program of commits.
+* Pulls the newest branch into a centralized server.
+* Creates build jobs on a centralized server.
+* Runs configurable unit and integration tests on the code base to compile, test, package, and deploy the project in a sandbox to ensure the project works correctly.
+* Stores artifacts in a repository.
+* Displays the results of each build.
+* Deploys passing builds to production.
+
+=== To Prepare Applications for a CI/CD Server
+
+. Use a source code repository, such as GitHub or BitBucket.
+. Add the following configurations to each Maven pom.xml of each application:
+** Mule Maven plugin for CloudHub, ARM, and Standalone deployment.
+** Mule Maven plugin for MUnit.
+. If using a Jenkins pipeline, add the Jenkins files to the Mule project.
+
+
+== See Also
+
+* xref:2.x@api-manager::index.adoc[API Manager 2.x]
+* xref:runtime-manager::runtime-manager-agent.adoc[Runtime Manager Agent]
+* xref:1.3@munit::index.adoc[MUnit]
+* xref:3.9@mule-runtime::mule-maven-plugin.adoc[Mule Maven Plugin]
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

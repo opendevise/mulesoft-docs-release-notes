@@ -1,0 +1,47 @@
+= Runtime Manager 2.1.0 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: runtime-manager-2.1.0-release-notes.adoc
+:keywords: arm, runtime manager, release notes
+
+The Anypoint Runtime Manager V2.1.0, is scheduled for release on March 11th.
+
+This release includes shortcuts to promote hybrid applications to production, and additional configuration capabilities for these. This is yet another step to bridge the feature gap between applications deployed to CloudHub and applications deployed to servers in a hybrid modality.
+
+This release also includes significant backend improvements to boost performance and reduce response times.
+
+
+== Hardware and Software Requirements
+
+No change.
+
+== Compatibility
+
+Agent plugins integration is compatible with the following runtime versions:
+
+[cols="2*a"]
+|===
+|Mule | 3.6.x and above.
+|Availability | Cloud only.
+|API GateWay | 2.x and above for API Analytics
+|Runtime Manager Agent | xref:runtime-manager-agent/runtime-manager-agent-1.5.0-release-notes.adoc[1.5.0 and above] for Insight and xref:runtime-manager-agent/runtime-manager-agent-1.6.0-release-notes.adoc[1.6.0 and above] for xref:runtime-manager::flow-management.adoc[Flow Management] and xref:runtime-manager::monitoring-dashboards.adoc[all metrics charts]
+|===
+
+
+== Features and Functionality
+
+This release introduces the following capabilities:
+
+* Improved support for promotion of hybrid applications between environment from the UI
+* Capability to enable and disable insights at deployment time for hybrid applications
+* Capability to configure the log levels at deployment time for hybrid applications
+
+
+* CHHYBRID-2542	Deployment partially persisted
+* CHHYBRID-2386	Enhance performance of the Audit Logging Aspect
+* CHHYBRID-2517	Add request tracing logging to the Hybrid-Console
+
+== Deprecated Features or Functionality
+
+None.

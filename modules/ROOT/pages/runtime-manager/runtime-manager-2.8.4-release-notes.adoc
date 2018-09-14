@@ -1,0 +1,37 @@
+= Anypoint Runtime Manager Version 2.8.4 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: runtime-manager-2.8.4-release-notes.adoc
+
+_May 19, 2018_
+
+This document describes new features and enhancements, known limitations, issues, and fixes in Anypoint Runtime Manager version 2.8.4.
+
+== New Features and Enhancements
+
+This release contains the following new features:
+
+* *Server certificate renewal*: enables you to renew server certificates directly from Runtime Manager. These certificates are required for secure communication betwee Runtime Manager and the Runtime Manager Agent. This feature requires Runtime Manager Agent, version 1.10.0 and later.
+
+See * xref:runtime-manager::servers-create.adoc[To Renew a Server Certificate] for more information.
+
+== Changes in This Release
+
+This release contains no feature changes.
+
+== Fixed Issues
+
+There are no fixed issues in this release.
+
+== Known Limitations and Workarounds
+
+There are no known limitations or workarounds in this release.
+
+== Upgrade Requirements
+
+There are no upgrade requirements for this release.
+
+== Compatibility Notes
+
+* To use the new server certificate renewal feature added in this release, you must be using Runtime Manager Agent, version 1.10.0 or later.

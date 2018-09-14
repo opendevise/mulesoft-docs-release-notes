@@ -1,0 +1,308 @@
+= API Designer Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: api-designer-release-notes.adoc
+
+* <<API Designer 0.4.13 Release Notes>>
+
+* <<API Designer 0.4.12 Release Notes>>
+
+* <<API Designer 0.4.11 Release Notes>>
+
+* <<API Designer 0.4.9 Release Notes>>
+
+* <<API Designer 0.4.6 Release Notes>>
+
+* <<API Designer 0.4.5 Release Notes>>
+
+* <<API Designer 0.4.4 Release Notes>>
+
+* <<API Designer 0.4.3 Release Notes>>
+
+* <<API Designer 0.4.2 Release Notes>>
+
+* <<API Designer 0.4.1 Release Notes>>
+
+* <<API Designer 0.4.0 Release Notes>>
+
+* <<API Designer 0.3.2 Release Notes>>
+
+* <<API Designer 0.3.1 Release Notes>>
+
+* <<API Designer 0.3.0 Release Notes>>
+
+* <<API Designer 0.2.0 Release Notes>>
+
+== API Designer 0.4.13 Release Notes
+
+August 23, 2018
+
+=== Enhancement
+
+The JS parser is now at version 1.1.45.
+
+=== Fixed Issue
+
+The requirement in the RAML 1.0 specification that the `protocols` node "be a non-empty array of strings, of values HTTP and/or HTTPS" and be case-insensitive, is now enforced. In previous releases, values such as this one were allowed:
+
+```
+protocols: HTTPS
+```
+
+Now, the use of brackets to denote the value as an array is required:
+
+```
+protocols: [ HTTPS ]
+```
+
+
+
+== API Designer 0.4.12 Release Notes
+
+June 28, 2018
+
+=== Fixed Issues
+
+* Importing an API specification written in OAS 2.0 sometimes resulted in the following error: `Failed to parse Swagger: Swagger schema validation failed.`
+* Resolved an issue with a warning message `path exceeds file system root at (_position in file_).` that  should not have appeared for an API specification in the code editor in the following situation: A fragment where the notation `../` is used in a path that references a file that is in a subdirectory of an upper level.
+
+== API Designer 0.4.11 Release Notes
+
+May 19, 2018
+
+* API Console is now at https://github.com/mulesoft/api-console/releases/tag/v3.0.28[v3.0.28].
+* The OAS RAML converter is now at version 1.1.32.
+* There are enhancements to the RAML suggestions made by the editor.
+
+=== Fixed Issues
+* Using facet items in a data type other than Array resulted in an error.
+* Supplying a base URI parameter in the visual API Designer, using the parameter in a base URI, closing the visual API Designer, and then reopening the project resulted in an error message and a blank middle panel.
+* Selecting the type Number for a new Data Type in the visual API Designer, specifying a format, and changing the type to Integer resulted in the RAML viewer still including the specified number format.
+* Changing the type for a base URI parameter caused the RAML viewer to show the new type, but the *Type* field continued to show the previously selected type.
+* The OAS-to-RAML converter did not recognize the API Key authentication type. If you tried to import an OAS file that used this type of authentication, the import failed.
+
+
+== API Designer 0.4.9 Release Notes
+
+February 24, 2018
+
+This release introduces an enhancement and bug fix.
+
+=== Enhancement
+
+Bumped API Console to https://github.com/mulesoft/api-console/releases/tag/v3.0.26[v3.0.26].
+
+=== Fixed Issue
+
+When including a data type, the invalid error in IE _Object doesn’t support property or method `include`_ no longer appears.
+
+== API Designer 0.4.6 Release Notes
+
+November 4, 2017
+
+This release introduces improvements and bug fixes.
+
+=== Improvements
+
+Bump API Console to https://github.com/mulesoft/api-console/releases/tag/v3.0.21[v3.0.21].
+
+=== Resolved Issues
+
+Fixed the issue allowing only the name `body` for the root RAML element type Now, you can use a RAML type to define all XML and JSON input types.
+
+== API Designer 0.4.5 Release Notes
+
+August 26, 2017
+
+This release focuses on minor bug fixes.
+
+=== Improvements
+
+* Bumped RAML Parser to version to https://github.com/raml-org/raml-js-parser-2/releases/tag/1.1.29[1.1.29]
+* Bumped API Console to version https://github.com/mulesoft/api-console/releases/tag/v3.0.20[3.0.20].
+
+== API Designer 0.4.4 Release Notes
+
+July 15, 2017
+
+This release focuses on minor bug fixes.
+
+=== Resolved Issues
+
+Fixed an issue related to a parsing empty RAML files using Internet Explorer 11.
+
+=== Improvements
+
+* Bumped RAML Parser to version https://github.com/raml-org/raml-js-parser-2/releases/tag/1.1.26[1.1.26].
+* Bumped API Console to version https://github.com/mulesoft/api-console/releases/tag/v3.0.19[3.0.19].
+
+== API Designer 0.4.3 Release Notes
+
+June 17, 2017
+
+This release focuses on minor bug fixes.
+
+=== Resolved Issues
+
+* Fixed an issue with validating the length of a string in RAML data types.
+* Fixed an issue causing the OAS import to produce the error “Cannot read properly 'hasOwnProperty' of null”.
+
+=== Improvements
+
+* Bumped RAML Parser to version https://github.com/raml-org/raml-js-parser-2/releases/tag/1.1.24[1.1.24].
+* Bumped API Console to version xref:api-console/api-console-release-notes.adoc#api-console-3-0-18[3.0.18].
+* Bumped OAS RAML Converter to version 0.2.4.
+
+== API Designer 0.4.2 Release Notes
+
+June 3, 2017
+
+This release focuses on bug fixes and closing gaps in RAML 1.0 support.
+
+=== Resolved Issues
+
+* Export to OAS 2.0: RAML https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md/#annotating-scalar-valued-nodes[scalar-valued nodes] are now mapped into OAS vendor extensions.
++
+* Export to OAS 2.0: The value of `baseUri` is now correctly mapped to its corresponding node in OAS 2.0.
+
+=== Improvements
+
+* Bumped RAML Parser to version to https://github.com/raml-org/raml-js-parser-2/releases/tag/1.1.20[1.1.20]
+* Bumped API Console version to xref:api-console/api-console-release-notes.adoc#api-console-3-0-17[3.0.17]
+* Improved security
++
+** API Designer prevents you from importing certain file types.
+** File names having certain characters are not allowed.
++
+See link:/api-manager/designing-your-api#supported-extensions[supported extensions and mime types] and link:/api-manager/designing-your-api#supported-file-names[supported file names].
++
+* Export to OAS 2.0
++
+Improved the efficiency and conversion of RAML 0.8 schemas to OAS 2.0 definitions.
+
+== API Designer 0.4.1 Release Notes
+
+April 8, 2017
+
+This release focuses on minor bug fixes.
+
+=== Resolved Issues
+
+* Fixed an issue with Editor in Chrome that caused the scrollbar bounces up and down when trying to scroll
+* Show warnings for json schema if it is not compliant with the draft-04 JSON schema
+* Fixed an issue so OAS is accepted as value instead of SWAGGER when requesting conversions
+
+=== Improvements
+
+* Bumped RAML Parser to version to https://github.com/raml-org/raml-js-parser-2/releases/tag/1.1.19[1.1.19]
+* Bumped API Console version to xref:api-console/api-console-release-notes.adoc#api-console-3-0-16[3.0.16]
+
+== API Designer 0.4.0 Release Notes
+
+March 11, 2017
+
+This release includes a change, minor bug fixes, and performance improvements. Performance improvements include the introduction of the background worker in the validation process.
+
+=== Auto-completion Change
+
+To use auto-completion, you type part of a word followed by CTRL-SPACE. One or more suggestions appear. Click the suggestion to accept it.
+
+This change improves the overall performance and browser response time.
+
+=== Resolved Issues
+
+* Fixed the issue with the importer generating invalid facets on RAML types by using annotations instead of custom facets.
+* Fixed the issue with loading an XSD file when another XSD file was using it.
+* Fixed the issue with validating `additionalProperties`.
+* Fixed the issue with the OAS-RAML Converter converting `additionalProperties`.
+
+=== Improvements
+
+* Bumped the JS parser version to https://github.com/raml-org/raml-js-parser-2/releases/tag/1.1.14[1.1.14].
+* Bumped the API Console version to xref:api-console/api-console-release-notes.adoc[3.0.14].
+* Added a background process for parsing and validation.
++
+Above the editor, near the file name, there is now a validation indicator.
++
+* Improved performance by no longer rendering the console when the right panel is hidden.
+
+== API Designer 0.3.2 Release Notes
+
+February 3, 2017
+
+This release focuses on minor bug fixes.
+
+=== Resolved Issues
+
+* Fixed an issue that showed an incorrect response code tab in API Console.
+* Fixed an issue that caused API Designer to report a problem with external XSD schemas.
+* OAS importer no longer generates an invalid RAML when an OAS definition names include special characters such as `[`.
+* Fixed an issue with creating a new file from the context menu of a folder.
+
+=== Improvements
+
+* Bumped the JS parser version to https://github.com/raml-org/raml-js-parser-2/releases/tag/1.1.13[1.1.13].
+* Bumped the API Console version to xref:api-console/api-console-release-notes.adoc#api-console-3-0-13[3.0.13].
+* Importing an OAS 2.0 document is greatly improved and is no longer in Beta.
+
+
+== API Designer 0.3.1 Release Notes
+
+January 14, 2017
+
+This release focuses on minor bug fixes.
+
+=== Resolved Issues
+
+ * Fixed several minor issues with the import of an OAS 2.0 document.
+ * Browser crashes when adding a `{` after a resource name in RAML 0.8.
+ * Fixed minor issues around tracing the corrects errors across multiple files.
+ * Fixed other parsing issues.
+
+=== Improvements
+
+ * Bumped the JS parser version to https://github.com/raml-org/raml-js-parser-2/releases/tag/1.1.12[1.1.12].
+ * Bumped the API Console version to xref:api-console/api-console-release-notes.adoc#api-console-3-0-12[3.0.12].
+
+== API Designer 0.3.0 Release Notes
+
+December 3, 2016
+
+This release includes a new, link:/api-manager/designing-your-api#saving-importing-and-exporting-files[improved menu] to simplify creating RAML documents, as well as a beta version for link:/api-manager/designing-your-api#importing-an-oas-2-0-specification[importing OAS 2.0 documents].
+
+=== Resolved Issues
+
+* Several mocking service issues.
+* In the previous version, the baseUri was duplicated after quitting the designer with the mocking service enabled.
+
+=== Improvements
+
+* Improved main menu.
+* Bumped JS parser version to 1.1.8.
+* Bumped API Console version to xref:api-console/api-console-release-notes.adoc#api-console-3-0-11[3.0.11].
+
+=== New Features
+
+Import OAS 2.0 (beta).
+
+== API Designer 0.2.0 Release Notes
+
+November 19, 2016
+
+This release incorporates full support for RAML 1.0 and fixes bugs.
+
+=== Resolved Issues
+
+* The mocking server no longer  returns “unknown type” when type is defined in a library.
+* In the previous versions, importing files did not get automatically saved. This release fixes that issue and also eliminates the confusing error indicator that appeared after import in a valid RAML file.
+
+=== Improvements
+
+Bumped JS parser version to 1.1.6.
+
+=== New Features
+
+* Improved warnings and trace information for better error management.
+* Auto-completion for any named variable such as `paging` trait or `collection` resource type across all RAML typed fragments.
+* Validation of RAML 1.0 typed fragments.

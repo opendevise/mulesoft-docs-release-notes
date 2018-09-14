@@ -1,0 +1,37 @@
+= Microsoft Dynamics GP Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: microsoft-dynamics-gp-connector-release-notes.adoc
+:keywords: release notes, dynamics-gp, connector
+
+*December 2016*
+
+_Select_
+
+The Microsoft Dynamics GP connector enables Mule applications to interact with the Microsoft Dynamics Great Plains (GP) Web Services.
+
+xref:3.9@mule-runtime::microsoft-dynamics-gp-connector.adoc[Microsoft Dynamics GP Connector User Guide]
+
+== 1.0.0
+
+*December 27, 2016*
+
+=== Compatibility
+
+[%header,cols="50,50"]
+|===
+|Software |Version
+|Mule Runtime |3.7.x or higher
+|MS Dynamics GP | 2010 and higher
+|===
+
+=== Features
+
+* Supports the Kerberos authentication and NTLM authentication.
+
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

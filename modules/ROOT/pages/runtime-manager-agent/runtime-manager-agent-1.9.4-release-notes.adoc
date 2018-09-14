@@ -1,0 +1,35 @@
+= Runtime Manager Agent 1.9.4 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: runtime-manager-agent-1.9.4-release-notes.adoc
+
+_March 2, 2018_
+
+This document describes new features and enhancements, known limitations, issues, and fixes in Anypoint Runtime Manager Agent, version 1.9.4.
+
+== New Features and Enhancements
+
+* Added log entries for web socket disconnections to help understand the root cause of server disconnections.
+
+* Reduced logging verbosity of the Runtime Manager Agent to avoid unnecessary log noise
+
+== Changes in This Release
+
+This release contains no changes to existing functionality.
+
+== Fixed Issues
+
+There are no fixed issues in this release.
+
+== Known Limitations and Workarounds
+
+There are no known limitations or workarounds in this release.
+
+== Upgrade Requirements
+
+There are no upgrade requirements for this release.
+
+== Compatibility Notes
+
+There are no compatibility notes for this release.

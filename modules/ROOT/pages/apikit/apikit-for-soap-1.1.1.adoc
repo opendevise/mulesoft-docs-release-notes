@@ -1,0 +1,26 @@
+= APIkit for SOAP 1.1.1 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: apikit-for-soap-1.1.1.adoc
+
+This version of APIkit for SOAP includes a fix to the runtime.
+For Anypoint Studio, this version is distributed as Anypoint APIkit SOAP Extension 1.1.1.
+
+== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime |4.1.0 and later
+|Anypoint Studio |7.1.0 and later
+|===
+
+== Fixed in This Release
+
+* RuntimeException error creating a Config from scratch. (APIKITSOAP-163)
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum].
+* https://support.mulesoft.com[Contact MuleSoft Support].

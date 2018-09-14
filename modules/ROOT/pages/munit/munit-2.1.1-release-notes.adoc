@@ -1,0 +1,70 @@
+= MUnit 2.1.1 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: munit-2.1.1-release-notes.adoc
+:keywords: munit, 2.1.1, release notes
+
+This new release was focused on:
+
+* Fixing bugs.
+* Fixing security issues.
+
+
+== Hardware and Software Requirements
+
+* Microsoft Windows 8+
+* Apple Mac OS X 10.10+
+* Linux (tested on Ubuntu 15)
+* Java 8
+* Maven 3.3.3, 3.3.9
+
+== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule | Mule 4.1.1
+|Anypoint Studio | Anypoint Studio 7.1.1
+|===
+
+== Features and Functionality
+
+=== MUnit Runtime
+
+No new feature was introduced on this release.
+
+=== Anypoint Studio Plugin
+
+The release of MUnit Studio plugin 2.1.3 introduced the fix for the MUnit test debugging.
+
+=== MUnit Runtime
+
+
+== Known Issues
+
+There are no known issues for this release.
+
+== Bug Fixes
+
+* MUSP-607 - Debugger is not working when having empty repository.
+* MUSP-604 - Re-run/debug tests button are not disabled by default.
+* MUSP-601 - Review security vulnerabilities for GA release.
+
+
+== Tasks
+
+There are no tasks for this release.
+
+== Enhancements
+
+There are no enhancements for this release.
+
+== Story
+
+There are no stories for this release.
+
+== Support
+
+* http://forums.mulesoft.com/[MuleSoft’s Forum].
+* http://www.mulesoft.com/support-login[MuleSoft’s Customer Portal].

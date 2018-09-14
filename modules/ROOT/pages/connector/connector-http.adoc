@@ -1,0 +1,158 @@
+= HTTP Connector Release Notes for Mule 4
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: connector-http.adoc
+:keywords: mule, HTTP, connector, release notes
+
+== 1.3.0
+
+*July 13, 2018*
+
+=== Minimum Mule Version
+
+*Mule 4.1.1*
+
+=== New Features and Enhancements
+
+This release includes the following enhancements, changes, and fixes:
+
+* Improves performance by reducing some internal memory usage.
+* Allows response validators to be configured at the configuration level as defaults for all associated operations, which means the Web Service connector can now also reference a default.
+* Upgrades commons-lang3 to 3.7.
+* Upgrades Guava: Google Core Libraries For Java to 25.1.
+* Fixes the provided error messages that previously featured regular streams instead of repeatable ones.
+* Fixes the proxy configuration attribute of the HTTP request operation which mistakenly allowed expressions.
+
+=== Upgrade Requirements
+
+Mule 4.1.1
+
+=== Fixed Issues
+
+* Minor performance improvements. (MULE-15346)
+* Proxy Config in HTTP Requester should not accept expressions. (MULE-15128)
+* Add global ResponseValidator in the requester configuration. (MULE-15174)
+* Upgrade commons-lang3 to 3.7. (MULE-15082)
+* Upgrade Guava to 25.1. (MULE-15079)
+* HTTP error message stream is not handled. (MULE-14864)
+
+== 1.2.2
+
+*July 2, 2018*
+
+=== Minimum Mule Version
+
+*Mule 4.1.1*
+
+=== New Features and Enhancements
+
+This release includes the following enhancements, changes, and fixes:
+
+* Prevents sensitive data such as headers, query and URI parameters values to be exposed when logging.
+* Improves performance by avoiding unnecessary transformations to lower case.
+* Improves logging during certain errors that were too verbose.
+
+=== Upgrade Requirements
+
+Mule 4.1.1
+
+=== Fixed Issues
+
+* HTTP attributes toString features sensitive content. (MULE-15260)
+* Remove unnecessary String.toLowerCase calls. (MULE-15253)
+* HTTP request parse error logs a stacktrace. (MULE-15120)
+
+== 1.2.1
+
+*May 7, 2018*
+
+=== Minimum Mule Version
+
+*Mule 4.1.1*
+
+=== New Features and Enhancements
+
+This release includes the following enhancements, changes, and fixes:
+
+* Improves output metadata for listener and requester
+* Improves TLS/SSL issues logging
+* Improves validations on the listener attributes
+* Fixes a security vulnerability related to unescaped input data when receiving invalid requests
+* Fixes an interoperability issue with Mule 3 by interpreting the MULE_CORRELATION_ID header
+* Fixes a memory leak related to unclosed streams when streaming mode was set to NEVER
+* Fixes a policy issue related to `Content-Length` analysis
+
+=== Upgrade Requirements
+
+Mule 4.1.1
+
+=== Fixed Issues
+
+* HTTP connectors specify incorrect output metadata type for listener/requester. (MULE-14974)
+* SSL issue log message has wrong debug data. (MULE-14949)
+HTTP Listener parse errors expose request data without escaping it. (MULE-14944)
+* Mule 3 and 4 HTTP connectors' correlation IDs should interop. (MULE-14878)
+* HTTP listener does not close streams when NEVER is set. (MULE-14829)
+* Content-length is not recalculated when policy is present. (MULE-14821)
+* HttpRequestAttributesBuilder does not validate entries, (MULE-14457)
+
+== 1.2.0
+
+*Mar 15, 2018*
+
+=== Minimum Mule Version
+
+*Mule 4.1.1*
+
+=== New Features and Enhancements
+
+This release includes the following enhancements, changes, and fixes:
+
+* Fixes the status code validators to allow spaces in their value definition
+* Fixes startup error messages so they show up on logs
+* Improves performance when handling headers
+* Allows requester to keep provided headers case
+
+=== Upgrade Requirements
+
+Mule 4.1.1
+
+=== Fixed Issues
+
+* Status code validators cannot handle spaces in the values. (MULE-14541)
+* Mule swallows HTTP exception. (MULE-14535)
+* HTTP: Allow requester to keep provided headers case. (MULE-14530)
+
+== 1.1.0
+
+*Jan 19, 2018*
+
+=== Minimum Mule Version
+
+*Mule 4.1.0*
+
+=== New Features and Enhancements
+
+This release includes the following enhancements, changes, and fixes:
+
+* Support for X-Correlation-ID
+* Added default headers and query parameters to HTTP Requester config
+* Performance improvements
+
+=== Upgrade Requirements
+
+Mule 4.1
+
+=== Fixed Issues
+
+* HTTP Connector exports internal classes. (MULE-14447)
+* Multi value headers not working when setting HttpPolicyRequestAttributes from DW. (MULE-14380)
+* HTTP Connector should use FAIL BackpressueStrategy by default. (MULE-14271)
+* Send X-Correlation-ID header with outbound requests and parse it with inbound requests. (MULE-14085)
+* Expose host address in HttpRequestAttributes. (MULE-10912)
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

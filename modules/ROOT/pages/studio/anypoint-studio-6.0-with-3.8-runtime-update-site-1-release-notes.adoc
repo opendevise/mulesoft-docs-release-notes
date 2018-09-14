@@ -1,0 +1,145 @@
+= Anypoint Studio 6.0 with 3.8.0 Runtime Update Site 1 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: anypoint-studio-6.0-with-3.8-runtime-update-site-1-release-notes.adoc
+
+*June 14, 2016* +
+*Build ID: 201606141728*
+
+<<migration,Skip to Migration Guide>>
+
+== Compatibility
+
+[cols="30a,70a"]
+|===
+| *Mule Runtime*
+| Version: 3.8.0 EE
+
+|*Anypoint Studio*
+|Version: 6.0.1 +
+Build Id: 201606141728
+
+|*APIkit*
+|Versions:  3.8.0 - 1.7.3 - 1.6.2 - 1.5.3
+
+|*DataWeave* +
+|Version: 1.1.0
+
+|*MUnit* +
+|Version: 1.2.0 , 3.6.3, 3.7.3, 3.8.0 (mule-munit-support), 1.2.0 (munit-studio-plugin)
+
+|*SAP Connector*
+|Versions: 3.0.0
+|===
+
+
+== What's New
+
+In this release, we have completed the maven support for domain within Studio. +
+We recently released link:/munit/v/1.2.0/munit-domain-support[MUnit 1.2.0], which includes domain support as one of the features. +
+Our customers very often relies on Maven for MUnit automated testing, domain support within Studio removes frictions for _mavenizing_ projects and running MUnit tests.
+
+In addition, we have also fixed various issues and improved the xref:general:getting-started:implement-and-test.adoc#create-a-project-based-on-a-raml[API Import] / xref:6@studio::api-sync-reference.adoc[Sync] feature introduced in 6.0.0.
+
+
+[[migration]]
+== Migration Guide
+
+For first time installment, please refer to xref:studio/anypoint-studio-6.0-with-3.8-runtime-release-notes.adoc#hardware-requirements[Studio 6.0.0 release notes] for hardware requirements and known issues.
+
+From the previous versions of Studio 5.1.0, 5.1.1, 5.2.0, 5.2.1, 5.3.0, 5.4.1, 5.4.2 and 5.4.3, there is no special migration needed, but when opening a previous Workspace with projects that were created with Studio 5.1.0 or older, and which has metadata stored in disk, Studio asks you to perform an update to all the projects so that the Metadata Manager can handle the types and to show the types in your project.
+
+
+[TIP]
+====
+You can easily import all of the external components that you had installed in your old version of Anypoint Studio through a single action. This includes connectors, runtimes, and any other type of extension added through the Anypoint Exchange or the ​*Help -> Install new software*​ menu, as long as there are no compatibility restrictions.
+
+Do this by selecting *File->Import* and then choose *Install->From existing installation*.
+
+image::studio/import-extensions.png[import]
+
+Then specify the location of your old version of Anypoint Studio in your local drive.
+====
+
+== Eclipse Plugin
+
+If you are using Studio as an Eclipse plugin, you can get this version of Studio using the Eclipse update site `+http://studio.mulesoft.org/r5/plugin+`.
+
+This allows you to download Anypoint Studio core and third-party components version 6.x.x and with an embedded version of Mule Runtime v3.8.x along with other optional components. +
+For a detailed description of the update site's content visit the xref:6@studio::studio-in-eclipse.adoc#available-software-in-the-update-site[Studio in Eclipse] section.
+
+== JIRA Ticket List for Anypoint Studio
+
+=== Bug Fixes
+
+* STUDIO-7139 - Improve TLS/SSL config labels for HTTP requester and messaging
+* STUDIO-7678 - [Deploy to AMC] When re-deploying an app, sometimes the deploying page doesn't load.
+* STUDIO-7849 - When starting or re-starting Studio in Windows the splash is not shown
+* STUDIO-7862 - When importing API that uses a domain, the domain is generated without name.
+* STUDIO-7863 - When importing API that uses a domain with connectors, no domain is generated.
+* STUDIO-7870 - [RAML1.0] Error marker content shows the same piece of code twice
+* STUDIO-7908 - Custom Metadata Definition: Copybook schema file and structure identification lost
+* STUDIO-7916 - When importing projects using apigateway, Studio does not check existing domains
+* STUDIO-7944 - Connector No Show in Install Window - ex. installing from within studio
+* STUDIO-7945 - Add error message when trying to create an existing API again in your organization
+* STUDIO-7957 - Order of DW tragets in XML when they do not match the UI; embedded Mule throws exceptions in Studio
+* STUDIO-7961 - DW: Sample Data in DataWeave from preview is not setting the schema path and structure ident
+* STUDIO-7973 - Add validation when trying to create a project sync with Platform being offline.
+* STUDIO-7983 - Delete "Compare" option when selecting folders and the project folder
+* STUDIO-7987 - Edit Library Button Gives Add Library Dialog
+* STUDIO-8008 - Default domain is not opened if it doesn't exist in the workspace but it does in the filesystem
+* STUDIO-8016 - Add validation when trying to use unsupported browsers
+* STUDIO-8024 - Add a validation when trying to create a new Api, a new Api version or select an existing api being offline
+* STUDIO-8029 - Error is thrown when having two APIS from same user but different organization
+* STUDIO-8030 - Add validation when trying to create an API with the same name but different organization for the same user
+* STUDIO-8038 - Resources not exported without reloading
+* STUDIO-8039 - Add a validation to check user permissions to see apis of a certain suborganization.
+* STUDIO-8040 - Remove the message of amount of changed lines from the error marker tooltip
+* STUDIO-8060 - Incorrect background color for checkbox / radio button inside a Tab/Group
+* STUDIO-8078 - Refresh option does not bring platform changes in the first time.
+* STUDIO-8081 - Import fails when importing an uncompressed app from formerly Mule app.
+* STUDIO-8090 - Problem creating XML Metadata
+* STUDIO-8094 - [SE] DW - properties window GUI doesn't open with error condition
+* STUDIO-8096 - DW: review the list of keys displayed in autocompletion should match the ones supported in the runtime
+* STUDIO-8099 - [Custom Metadata] Metadata is persisted in the Cache but not in the UI
+* STUDIO-8100 - [Custom Metadata] XML settings schema and root element are not persisted in the UI
+* STUDIO-8101 - [Apikit for SOAP] WSDL Validation error in the new project wizard
+* STUDIO-8109 - Validation errors when class does not directly implement interface
+
+=== Improvements
+
+* STUDIO-7777 - HTTP Connector should provide better and clearer error messages.
+* STUDIO-7815 - Provide maven support for domain and its related projects
+* STUDIO-7948 - Improve error message when creating an APIKit project from an invalid RAML
+* STUDIO-7974 - Improvements for the error message pop up for D2I feature.
+* STUDIO-7975 - Add "Generate Flows from Raml" option in the Api Sync view.
+* STUDIO-7982 - Add validation when downloading/uploading changes and you have local/remotely changes.
+* STUDIO-7990 - Add warning validations for unincluded ramls.
+* STUDIO-7997 - Filter files system in order to avoid unexpected synchronisation files
+* STUDIO-7998 - Improve synchronisation between manual and automatic triggering of the sync job
+* STUDIO-8013 - Add a validation when you are selecting an invalid RAML.
+* STUDIO-8018 - Add missing option "Generate Flows from Raml" in the Raml editor popup menu.
+* STUDIO-8031 - [DW-UI] Adding support to choose structure for copybook metadata
+* STUDIO-8032 - Cleanup metadata type manager UI
+* STUDIO-8041 - Automatically selection of the API version which has just been created.
+* STUDIO-8044 - Remove the automatic API changes update process
+* STUDIO-8045 - Improve the API Sync view icons
+
+=== New Features
+
+* STUDIO-7760 - Add support for logException attribute in exception notification strategy
+* STUDIO-7989 - Timezome attribute in Poll (Cron Scheduler)
+
+=== Tasks
+
+* STUDIO-8015 - Change range of years to 2011 - 2016 in About Anypoint Studio window.
+* STUDIO-8035 - Validate Mule 3.7.4
+* STUDIO-8061 - Add Java Parser V1 dependencies to work with 0.8 in 3.8 APIKit version
+* STUDIO-8074 - Disable gatekeeper behavior
+
+== Support
+
+* Refer to MuleSoft’s documentations related to link:/munit/v/1.2.0/munit-domain-support[Domain Support in MUnit and Studio].
+* Access http://forums.mulesoft.com/[MuleSoft’s Forum] to pose questions and get help from Mule’s broad community of users.
+* To access MuleSoft’s expert support team https://www.mulesoft.com/support-and-services/mule-esb-support-license-subscription[subscribe to Mule ESB Enterprise] and log in to MuleSoft’s http://www.mulesoft.com/support-login[Customer Portal].

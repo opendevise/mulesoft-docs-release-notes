@@ -1,0 +1,324 @@
+= Mule Runtime 4.1.0 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: mule-4.1.0-release-notes.adoc
+:keywords: mule, 4.1.0, runtime, release notes
+
+// Product_Name Version number/date Release Notes
+
+*Jan 19, 2018*
+
+http://s3.amazonaws.com/new-mule-artifacts/mule-ee-distribution-standalone-4.1.0.zip[Download Mule 4.1.0 Early Access]
+
+Mule 4.1 is the second Early Access Program release, not only incorporating feedback from the program’s participants, but also adding lots of new features, performance improvements and bug fixes.
+
+Mule Runtime 4.1.0 includes the following enhancements, changes, and fixes.
+
+== New Features and Enhancements
+
+=== Core Runtime
+
+* Lots of performance improvements and enhancements of the new reactive engine
+* Enhancements in the Tooling API to better support Studio and Flow Designer
+* Dynamic evaluator component to support dynamic expressions
+* Library upgrades: now we use Log4j 2.10 and CXF 3.2.1
+* Transparent capacity overload handling on all message sources, even those released in 4.0
+
+=== SDK
+
+* Support for defining custom capacity overload strategies.
+* Support for emitting notifications
+* Support for inbound/outbound correlation ids
+* Support for Cluster Aware message sources
+* Support for new automatic triggers like "On updated Salesforce Object" or "On new or updated file".
+* Improved support for Routers
+* Support for connectivity testing in SOAP connectors
+* Many bug fixes
+
+This release is supported on Anypoint Private Cloud Edition 1.6.1 and later.
+
+=== API Gateway Features and Enhancements
+
+In this version, the focus is resilience, security, and troubleshooting ease.
+
+* Logs were enriched to enable an easier tracing of errors. In particular, in this release, a mechanism is implemented to allow for viewing the whole trip of a request as it goes through all applied policies to a resource, by specifying on the log4j configuration the package `org.mule.runtime.core.internal.policy` to trace level. Note: Trace level is not currently supported in CloudHub.
+
+* SSL verification for Runtime: API Platform communications is now enabled by default. This means that self-signed certificates, revoked or expired ones belonging to a connected proxy and/or Private Cloud system, will not be accepted. To disable this feature, specify `anypoint.platform.enable_ssl_validation=false`.
+
+* NTLM proxy is now supported, and the proxy basic authentication mechanism is fixed. Note: Deployed applications that need to go through a proxy must use another mechanism. This mechanism applies exclusively to the Runtime - API Platform communication.
+
+* Gatekeeper default mode is now “Flexible”, which is a tradeoff between blocking security and disaster recovery mitigation.
+
+* Introducing a new policy: Spike Control. This policy replaces the former Throttling policy. The policy will be used to smooth network traffic.
+
+* Developer experience improved when creating a custom policy: Clearer and more compact way to develop a custom policy than in v4.0.0.
+
+* This version includes support for Analytics processing through Anypoint Runtime Manager (which is an existing feature not enabled in v4.0.0). This allows for setting third-party systems such as Splunk to consume Analytics info.
+
+== Known Limitations and Workarounds
+
+[%header,cols="15a,85a"]
+|===
+|Issue |Description
+| MULE-14571 | Services are not being injected when using FakeMuleServer
+| MULE-14561 | Expressions containing a opening bracket are not considered as a expression
+| MULE-14560 | Not understandable exception is thrown when a transformation fails over a String with '%d'
+| MULE-14559 | Socket leaked in CLOSE_WAIT after HTTP client dies
+| MULE-14557 | When a Service/CoreExtension start fails, not started objects are tried to stop
+| MULE-14555 | When hot deploying an invalid domain configuration, DeploymentService is answering corrupt MuleApplications
+| MULE-14553 | TypeWrapper should not load class until needed
+| MULE-14550 | @Export annotation does not work for enums
+| MULE-14535 | Mule swallows HTTP exception
+| MULE-14532 | Evaluate possible use of EmitterProcessor in processing strategy to simplify
+| MULE-14528 | Log4JMDCAdaptor introduces significant contention
+| EE-5894 | Scheduler unavailable when running batch job
+|===
+
+////
+== Upgrade Requirements
+
+[%header,cols="15a,85a"]
+|===
+|Issue |Description
+// <TO COMPLETE>
+|===
+////
+
+== Fixed Issues
+
+[%header,cols="15a,85a"]
+|===
+|Issue |Description
+// Fixed Issues
+| MULE-14525 | Scheduler unavailable error
+| MULE-14520 | HTTP: CaseInsensitiveMultiMap loses case insensitiveness after making it immutable
+| MULE-14512 | StackOverflow when compiling an extension with recursive structures
+| MULE-14511 | Python and Ruby are shown as scripting languages
+| MULE-14508 | Immutable transformations are chained in MultiMap
+| MULE-14493 | Spring config module is exporting internal classes
+| MULE-14477 | Nested flows/subflows not being initialized when executing tests on MUnit
+| MULE-14476 | Add @NoImplement to ext-api interfaces
+| MULE-14474 | Add the information about metadata category at the parameter model level
+| MULE-14473 | When a thread pool is exhausted no error is logged
+| MULE-14470 | Avoid pattern matching for every notification fired
+| MULE-14469 | Implicit connection factory cannot find internal parameter group
+| MULE-14468 | NPE When deserializing ArtifactDeclaration config without ref-name
+| MULE-14463 | Fix ObjectStore schema generation
+| MULE-14437 | Exported packages are not communicated when loading an extension with the AST Loader
+| MULE-14435 | Policies: HTTP Requester status code validator doesn't log processor location
+| MULE-14431 | Transformers should use IO pool if they may read or write a stream
+| MULE-14430 | When policies are applied they are shown as applications
+| MULE-14428 | EmbeddedController does not handle spaces in paths
+| MULE-14427 | Compilation should not fail for Scopes and Routers Object output
+| MULE-14424 | Extension packager does not takes the user defined artifact json properly
+| MULE-14421 | After domain full redeployment failure, all dependent applications are removed.
+| MULE-14408 | MVEL error in chained calls where two or more objects of the chain possess the same method signature
+| MULE-14407 | Not repeated names validations should apply to global elements only
+| MULE-14396 | Reducing max concurrency with proactor processing strategy should not block cpu light threads.
+| MULE-14393 | Notification exception kills a running mule app
+| MULE-14387 | Extension documenter fails on document on elements that make usage of @Alias
+| MULE-14386 | Soap Connect extensions not comunicating HTTP Stereotype in http config paraemter
+| MULE-14384 | GroupCorrelation  move to a new package broke backward
+| MULE-14381 | Process empty files In File Connector should be optional
+| MULE-14375 | FunctionalTestCase#getConfigFile should always support / slash
+| MULE-14361 | For each executes first processor even that an execution failed
+| MULE-14359 | When policy does not contain a try element, notifications are not sent in order
+| MULE-14357 | ClassCastException in FileConnector restart
+| MULE-14356 | Policy context is sharing SecurityManager with App's
+| MULE-14345 | Logging message or payload resolves to the same value
+| MULE-14336 | Connectors are trying to stablish connection when mocking them on MUnit
+| MULE-14335 | ObjectStore connector does not work properly with lazy init
+| MULE-14332 | Serializable classes do not define serialVersionUID
+| MULE-14328 | Invalid API defined on mule-metadata-model because of missing mule-module-maven-plugin
+// | MULE-14324 | API broken by MULE-13927
+// | MULE-14323 | API broken by MULE-14048
+// | MULE-14322 | API broken by MULE-14124
+// | MULE-14321 | API broken by MULE-14288
+| MULE-14320 | MessageProcessor post-invoke notification missing when an error occurs
+| MULE-14310 | Empty configuration name causes extension to fail
+| MULE-14309 | Domain is not being disposed with its own classloader.
+| MULE-14308 | @Parameter as operation attribute not working for routers
+| MULE-14305 | Source errors do not contain app location info when logged
+| MULE-14303 | Choice executes start before initialise when inside a router route
+| MULE-14302 | SDK implemented functions fail to receive TypedValue wrapped elements.
+| MULE-14301 | Scope/Routes error callback called twice
+| MULE-14298 | Overriding _muleComponentInitialStateManager doesn't work
+| MULE-14296 | Double exception received to error handler when there is an Internal Server Error
+| MULE-14294 | NPE when setting a payload, using on-error-continue in an operation policy
+| MULE-14287 | MEL caching strategy is inconsistent when the variable accesor is set
+| MULE-14285 | Post interceptors and notifications are not fired when an error occurs in a sub-flow referenced using a flow-ref.
+// | MULE-14281 | API broken by MULE-10912
+// | MULE-14280 | API broken by  MULE-14082
+// | MULE-14279 | API broken by MULE-14171
+| MULE-14269 | XML SchemaValidatorOperation equals
+| MULE-14268 | XML Extensions do not properly set DataType on binded variables
+| MULE-14267 | Parser sets rootContainerName for non Component children of prototype objects
+| MULE-14264 | Fix HttpRequestProxyConfigTestCase
+| MULE-14263 | Plugin bean factories are being loaded with the application classloader.
+| MULE-14262 | Fix NPE in CXF module.
+| MULE-14259 | Classloader issue when working with VM and application patch deployment
+| MULE-14204 | Error count of flow statistics not tracked
+| MULE-14202 | Tooling services doesn't work if operation contains a List as parameter with reference support
+| MULE-14198 | flow-ref is missing target attribute
+| MULE-14194 | HTTP connector fails to close streaming content connection from HEAD request
+| MULE-14193 | Wrong ArtifactType in SpringXmlConfigurationBuilder
+// | MULE-14186 | Support Entitlement for MuleSoft Premium connectors
+// | MULE-14182 | Flaky test failing with java.lang.NoClassDefFoundError: org.mule.test.AbstractIntegrationTestCase
+| MULE-14179 | HTTP connector does not dispose listeners, causing a memory leak
+| MULE-14176 | When melDefault property is set to true, dw: prefix in expressions is ignored
+| MULE-14174 | Classcast Exception when CompositeProcessorChainRouter references SubFlow
+| MULE-14171 | SDK loses the Map DataType generics
+| MULE-14168 | Scatter-gather serialization error
+| MULE-14166 | Smart connectors are not feeding datatype when using Java types to DW
+| MULE-14162 | Variables added in the chain are missing the datatype for DW usage
+| MULE-14160 | HTTP Connector does not route OAuth tokens request through proxy.
+| MULE-14159 | NetSuite connector for Mule 4 does not work under Windows
+| MULE-14158 | Error on HTTP path throws NP
+| MULE-14156 | XML macro expansion fails to detect rootest element for some scenarios
+| MULE-14154 | mule-module-maven-plugin crashes with some invalid .class files present in META-INF
+| MULE-14152 | Poll Doesn't wait for the execution to finish until it sends the next event
+| MULE-14145 | TopLevel parameters not parsed when used as reference
+| MULE-14143 | Scheduler logs in mule_ee.log when SchedulerMessageSource is stopped/started
+| MULE-14142 | Parser error doesn't point to the line with the error
+| MULE-14136 | Optimize BindingContext creation
+| MULE-14134 | For TopLevelObjectStore, DSLSyntax information doesn't match the TypeDslAnnotation information
+| MULE-14131 | No parser found for compatibility component if declared in domain
+| MULE-14122 | Pointing to modules parent 1.1.0-SNAPSHOT still generates minMuleVersion 4.0.0
+| MULE-14116 | SDK Sources doesn't reconnect
+| MULE-14115 | In Db Module, CLOB implementation is JDBC version dependent.
+| MULE-14112 | Iterators are not converted into repeatable iterators when using StreamingUtils
+| MULE-14103 | processingStrategy not applied to sub-flow
+| MULE-14093 | Sources don't support maps as parameters
+| MULE-14091 | Connector's documentation doesn't document Type's parameters descriptions
+// | MULE-14079 | Fix flaky test org.mule.test.core.context.notification.processors.ComponentLocationTestCase.flowWithScatterGather
+| MULE-14078 | Review graceful shutdown with <async/> scope
+| MULE-14075 | Failure to resolve DataSense when using JMS with a JNDI connection factory
+| MULE-14071 | Extensions archetype doesn't handle special characters in extension name
+| MULE-14063 | Exceptions thrown from an error handler are not processed
+| MULE-14062 | Exclusive Optionals validations doesn't consider Tooling Execution
+| MULE-14056 | Log File being created even for muted apps
+| MULE-14055 | Problem with using cache component
+| MULE-14054 | It should be possible to enable http messages logging per app
+| MULE-14048 | Don't reuse cursors on reconnection
+| MULE-14035 | Automatic retry on remote Closed exception does not respect RFC 7320
+| MULE-14029 | ValueProviderService should not start the source when resolving values
+| MULE-14008 | Soap Service NPE if the config is not configured properly.
+| MULE-14006 | java.lang.OutOfMemoryError: Metaspace
+| MULE-14005 | Core extensions disposed before flows finish
+| MULE-13995 | ClassCastException logged when http request is finished after the http server is disposed
+| MULE-13994 | Registry object is not accesible from DW script
+| MULE-13967 | DataWeave Java written functions doesn't work correctly with non-java types
+| MULE-13962 | Different XML writer loaded depending on test execution order
+| MULE-13933 | MVEL functions with object instantiations doesn't work well in heavy load.
+| MULE-13741 | Application itself showing up as application library on deployment
+| MULE-13732 | GraphTransformerResolver is not handling correctly concurrency access
+| MULE-13248 | Conflict between spring-module and any other plugin that contains spring
+| MULE-13070 | Enrichers are applied in wrong order
+| MULE-12798 | Allow parameter groups repeat Display Name
+| MULE-10724 | custom-transformer attributes get mixed up
+| MULE-10304 | Application redeployment fails to undeploy old application
+| MULE-4223 | Fix Mule Runtime script start in Solaris 10
+| EE-5880 | Crypto module exports internal classes
+| EE-5864 | Regression on GW scenario between 4.0 and 4.1
+| EE-5860 | Race condition in tests due to static polling node thread
+| EE-5858 | FailOver not working with more than 2 nodes.
+| EE-5819 | When executing a Dataweave transformation with a "set-variable" inside a sub-flow, the sub-flow creation fails
+| EE-5813 | Race condition between event completion and async outbound endpoints in compatibility transports
+| EE-5794 | Compatibility: File outbound endpoint is not writing content when used with HTTP polling inbound endpoint.
+| EE-5787 | Compatibility JMS topic URIs are not compliant with spec
+// | EE-5776 | Fix flaky CompositeSourceStartDelayTestCase#testProcessMessageWhenAnSourceIsNotStartedYet
+| EE-5762 | BitronixTransactionManager can't be referenced from Spring beans.
+| EE-5737 | Deploying apps with same GAV may FAIL using parallel deployment
+| EE-5700 | Bitronix does not clean ActiveMQ ended transaction contexts in case of failure/recovery
+| EE-5637 | OutOfMemoryError: Metaspace
+// Tasks Tickets Fixed Issues - EE - BEGIN
+| EE-5853 | Fix amc_setup.bat script to install agent in Windows
+| EE-5790 | License validations fails twice when invalid
+// Tasks Tickets Fixed Issues - EE - END
+| AGW-1909 | Analytics violation is not populated when agent consumes the events
+| AGW-1908 | Basic Auth and oAuth policies cannot be applied at the same time.
+| AGW-1885 | Backoff - No INFO log on current step
+| AGW-1874 | OAuth Interceptor IO Exceptions are not being back-offed
+| AGW-1855 | Error applying internal policy when using parallel deployment
+| AGW-1785 | When broken template jar is downloaded policy is never applied
+| AGW-1777 | Proxy authentication for Platform Client not working
+| AGW-1744 | Analytics through agent is not reducing queue size
+| AGW-1735 | When there's an error polling for Apis, log doesn't show the response status code
+| AGW-1718 | Change BadTokenResponse for OpenID
+//
+// -------------------------------
+// - Enhancement Request Issues
+// -------------------------------
+| MULE-14510 | Allows custom schedulers to use a `runInCaller` rejection policy
+| MULE-14478 | Make ParameterGroupObjectBuilder#fieldsCache shared
+| MULE-14465 | Make the SDK Validate extension's exported packages
+| MULE-14410 | mule extensions maven plugin must generate one extension model per run
+| MULE-14409 | Introduce PollingSource
+| MULE-14389 | Expose the DSL TypeCatalog using tooling client
+| MULE-14374 | Update mave-revapi-extension to support mule-api-annotations
+| MULE-14326 | Improve notifications serialization
+| MULE-14288 | SDK sources need to be cluster aware
+| MULE-14272 | [Model] Allow operations to not have a target
+| MULE-14189 | Add the capability of attaching multiple icons in an extension
+| MULE-14183 | Remove patching scenarios
+| MULE-14173 | Add a splash information about the thread configurations calculated by Mule 4
+| MULE-14167 | Listener threads should have the name of the app
+| MULE-14141 | Support ConnectivityTesting on Domains
+| MULE-14137 | Implement Partial fetching in Multilevel DataSense
+| MULE-14121 | Provide embedded container API to deploy Domains
+| MULE-14108 | If a temporary application resource couldn't be deleted a warning message should be displayed
+| MULE-14042 | Add the concept of class parameter to the extension model
+| MULE-14038 | Support static custom types
+| MULE-13928 | CorrelationId should be propagated from flow to other flows or systems via connector operations
+| MULE-13927 | CorrelationId is not propagated from connector sources to Flow
+| MULE-13836 | SDK Router to  be void
+| MULE-13117 | Support env vars as placeholders
+| MULE-12759 | Compilation warnings should be logged with the corresponding level
+| MULE-11659 | Add tool to ensure that Mule API is backward compatible on each release
+| MULE-11256 | Create POLICY artifact type
+| MULE-10607 | HttpListener: add method to find the status of the listener
+| MULE-10597 | mule-extensions-maven-plugin shouldn't require to run clean goal
+| MULE-10137 | Allow AnnotationBasedDescriber to work with AST trees
+| MULE-10121 | Provide a MessageBuilder API in scripting components to improve usability
+// Tasks Tickets ER - CE - BEGIN
+| MULE-14527 | Optimize ProactorProcessingStrategy to avoid scheduling Transformers to IO if payload is small
+| MULE-14082 | Add CRL feature to Mule 4 Runtime
+// Tasks Tickets ER - CE - END
+| EE-5878 | Improve performance of http requester address ring
+| EE-5865 | Add `maxConcurrency` attribute to batch job
+| EE-5816 | Need to validate Hostname resolution and error reporting in Mule HTTP module
+| EE-5774 | Support evaluation of dynamic DW scripts
+| EE-5578 | It should be possible to define error-handler in a case by case basis without duplicating code.
+// Tasks Tickets ER - EE - BEGIN
+| EE-5790 | License validations fails twice when invalid
+| EE-5765 | Upgrade Tanuki wrapper script to the most recent version
+// Tasks Tickets ER - EE - END
+| AGW-1877 | When a policy is applied, show on the logs its corresponding version.
+| AGW-1875 | Platform Client operations which fail due to 401 should return UnauthorizedException
+| AGW-1824 | Enable SSL Cert Validation by default for Platform Client.
+| AGW-1819 | Change default level of Gatekeeper to flexible.
+| AGW-1778 | Enable NTLM Proxy Authentication for Platform Client
+| AGW-1648 | For on prem, Analytics on Mule 4 should add environment Name information to each event.
+| AGW-1457 | When accumulating analytics events locally, it should be possible to place an upper limit on the database size.
+| AGW-1239 | Authentication caches should have an expiration time
+| AGW-1198 | Conciliate existing stored contracts at undeploy/redeploy
+| AGW-906 | Add additional DEBUG or INFO logging to pointcut matching
+|===
+
+== Compatibility Testing Notes
+
+Mule was tested on the following software:
+
+[%header,cols="15a,85a"]
+|===
+|Software |Version
+| JDK | JDK 1.8.0 (Recommended JDK 1.8.0_151/52)
+| OS | MacOS 10.11.x, HP-UX 11i V3, AIX 7.2, Windows 2016 Server, Windows 10, Solaris 11.3, RHEL 7, Ubuntu Server 16.04
+| Application Servers | Tomcat 7, Tomcat 8, Weblogic 12c, Wildfly 8, Wildfly 9, Websphere 8, Jetty 8, Jetty 9
+| Databases | Oracle 11g, Oracle 12c, MySQL 5.5+, DB2 10, PostgreSQL 9, Derby 10, Microsoft SQL Server 2014
+|===
+
+The unified Mule Runtime 4.1.0 and API Gateway is compatible with APIkit 1.1.0.
+
+This version of Mule runtime is bundled with the Runtime Manager Agent plugin version 2.1.0.

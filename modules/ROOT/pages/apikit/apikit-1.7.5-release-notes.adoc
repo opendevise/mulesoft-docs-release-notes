@@ -1,0 +1,30 @@
+= APIkit 1.7.5 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: apikit-1.7.5-release-notes.adoc
+:keywords: apikit, 1.7.5, release notes
+
+This version of APIKit includes a fix for an XXE attack vulnerability and a fix for a stack overflow error when a user sends large list of URI parameters. In addition, this release also delivers various Java parser improvements for RAML 0.8 version including validation services, checking for duplicated properties in JSON, and inconsistency around type `date`.
+
+== Compatibility
+
+* Mule Runtime 3.7.x
+* Anypoint Studio 6.2.3
+* Java Parser RAML 0.8 v0.8.17
+* Console 3.0.10
+
+
+== Fixed in This Release
+
+* APIKIT-692  Replace jaxb-lib version to 2.1.13
+* APIKIT-651  StackOverflowError when there is a huge list of uri parameters
+* APIKIT-610  Flow with XML as response is not generated correctly
+* APIKIT-608  Inconsistency in JSON validation for type "date"
+* APIKIT-583 JSON with duplicate property is considered valid
+* APIKIT-681 XXE Attack - Posts can make request to urls defined in doctype
+
+*https://github.com/raml-org/raml-java-parser[https://github.com/raml-org/raml-java-parser]*
+
+* https://github.com/raml-org/raml-java-parser/issues/224
+* https://github.com/raml-org/raml-java-parser/issues/262

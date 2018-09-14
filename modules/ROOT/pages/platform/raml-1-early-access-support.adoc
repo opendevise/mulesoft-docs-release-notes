@@ -1,0 +1,284 @@
+= Early Access RAML 1.0
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: raml-1-early-access-support.adoc
+
+With the latest releases of the tooling and Anypoint Platform, MuleSoft introduces early access based on the official https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md[RAML 1.0 specification].  The new version introduces a number of new features listed in the RAML.org https://github.com/raml-org/raml-spec/wiki/RAML-1.0-RC1-vs-RC2[comparison of releases].
+
+After months of working closely with the RAML workgroup, MuleSoft is synchronizing the MuleSoft product releases with the RAML 1.0 GA release. MuleSoft customers can explore 1.0 concepts in Anypoint Platform using RAML release candidates. In most cases, customers should be able to write API definitions using RAML 1.0 without issues, despite known gaps in the early access version, which this document describes.
+
+NOTE: Mule 3.8.1 and later provides full RAML 1.0 support.
+
+== Migration Notice
+
+Since RAML 1.0 is early access, the default version used in the tooling is 0.8. To try version 1.0, you have to change the version.
+
+To migrate from RAML 0.8 to RAML 1.0, see the list of https://github.com/raml-org/raml-spec/wiki/Breaking-Changes[breaking changes] between RAML 0.8 and RAML 1.0.
+
+[IMPORTANT]
+RAML proxies based on RAML files written using the 1.0 version are valid only for Mule 3.8.0 runtimes. Previous Gateway versions don’t support RAML 1.0.
+
+== Underlying Parsers and Known Gaps
+
+For RAML 1.0 a new version of the https://github.com/raml-org/raml-js-parser-2/tree/0.2.10[JavaScript] and https://github.com/raml-org/raml-java-parser/tree/v2[Java] parsers have been implemented. MuleSoft tooling relies on these parsers to validate the RAML and expose the required APIs. The following table shows the tooling dependencies for the parser implementations:
+
+[%header,cols="30a,70a"]
+|===
+|Parser  | Tooling
+.5+| JavaScript | * API Designer
+| * Mocking Service
+| * API Console
+| * Notebook
+| * API Console in Studio
+.4+| Java | * Mule 3.8.0
+| * APIkit 3.8.0
+| * RAML Editor in Studio
+| * HTTP Connector
+|===
+
+== JavaScript Parser Known Gaps
+
+The current JavaScript parser is 100% compliant with the specification, without any known gaps.
+
+== Java Parser Known Gaps
+The current Java parser is not yet fully compliant with the specification. The following table lists feature gaps:
+
+[%header,cols="30a,70a"]
+|===
+|Text  | Parameter
+| uses key | The https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md#applying-libraries[spec] supports the `uses` node in any fragment. Currently, the parser only allows the `uses` node in root level RAML documents and libraries.
+| Annotations for scalar fields | The https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md#annotating-scalar-valued-nodes[spec] allows applying annotations to scalar nodes in addition to certain mapping nodes. Annotations at the scalar level are not supported.
+| Overlays restrictions | Overlay application is not enforcing all the required restrictions. The extra restrictions that Overlays enforce versus Extensions are not validated.
+.2+| Security Schemes gaps | * OAuth 1.0 `signatures` setting is not supported
+| * OAuth 2.0 `authorizationUri` is always optional, regardless of authorization grants.
+| XML Examples validations against YAML types | Validation of XML examples against types defined in YAML are not supported. XML validations are only supported for schemas defined in XSD format.
+.8+| type system gaps | These features, related to the definition, are not supported:
+| * Inheritance of primitive types
+| * `discriminator` field
+| * Examples nested in a value
+| * Xml Facet field
+| * Additional properties
+| * `null` type
+| * Properties named with trailing question marks
+|===
+
+Refer to https://github.com/raml-org/raml-java-parser/blob/0.1.0-alpha-2/MISSING.md[“RAML 1.0 Features Gap”] for the latest list.
+
+== Support Gaps by Product
+
+=== API Console and Mocking Service
+
+API Console and Mocking Service depends on the JavaScript parser for parsing out data types and overall API behaviors. API Console and Mocking Service currently don’t support https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md#annotations[annotations]. When you run a RAML file with RAML 1.0 annotations in API Console, annotations do not appear in the Console documentation and Try It tab. Annotations are visible only from the RAML definition in API Designer, and have no effect in API Console and Mocking Service tools.
+
+=== API Notebook
+
+API Notebook supports RAML 1.0 with the following limitations:
+
+* Data types are not meaningful in this context.
+* Overlays are not meaningful in this context.
+
+=== APIkit
+
+APIkit depends on the Java parser for validating and scaffolding the RAML file, therefore it inherits the limitations of the Java parser listed above in the “Java Parser Known Gaps” section. When you try to scaffold a RAML file that contains elements not yet supported by the Java parser, validation fails and the flows are not generated.
+
+OData APIkit extension beta does not support RAML 1.0 or the new APIkit integrated within Studio 6.0. Customers using the OData extension, should postpone upgrading and continue to use Studio 5.4. The GA version of the OData implementation feature with Studio will be released in the near future.
+
+=== Studio
+
+Studio’s embedded RAML editor depends on the Java parser for validating and suggesting RAML 1.0 syntax. The embedded APIkit also depends also on the Java parser for the scaffolding feature (see below). The embedded API Console depends on the JavaScript parser, and has parity with the standalone API Console:
+
+* Suggester for RAML 1.0 does not support RAML types or RAML files without a header. Users might not benefit fully from the editor suggesting certain tags and auto-completion.
+* The embedded RAML 1.0 editor validation feature has parity with the Java parser. Using the syntax related to RAML 1.0 listed above in the “Java Parser Known Gaps” section, might cause incorrect validations.
+* MUnit RAML-to-Test auto-generation feature does not support RAML 1.0. We are actively working to evolve the feature.
+* DataSense currently does not support RAML 1.0 types. When the customer uses RAML 1.0, the metadata is not passed and leveraged by DataSense.
+
+=== API Manager
+
+Mule 3.8.0 depends on the Java parser. API Manager relies on Mule 3.8.0 support for auto-generated proxies based on RAML 1.0. In most cases, the proxy generation feature works well on API Manager for RAML 1.0-defined APIs. However, if a user tries to auto-generate proxies based on a RAML 1.0 file, and definition has known gaps, which are not covered by the Java parser on API Manager, the deployed proxy fails.
+
+== Details on Known Validation Discrepancies among Products
+
+API Designer supports RAML 1.0 based on the JavaScript (JS) parser, while Studio RAML editor and APIkit use the Java parser instead. Due to incomplete support of the Java parser in RAML 1.0,  users might see discrepancies among products.
+
+The following sections describe known discrepancies in validation behavior.
+
+=== A. Annotating scalar annotations
+
+The https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md#annotating-scalar-valued-nodes[spec] allows applying annotations to scalar nodes in addition to certain mapping nodes. If a user specifies the following:
+
+----
+baseUri:
+  value: http://www.example.com/api
+  (redirectable): true
+----
+
+* In current RAML spec: VALID
+* In JavaScript parser (i.e. API Designer): VALID
+* In Java parser (i.e. RAML editor in Studio, APIkit): INVALID
+
+=== B. uses in any fragment
+
+The https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md#applying-libraries[spec] allows using uses in any fragment. The Java parser allows its use only in root level RAML documents and libraries.
+
+----
+#%RAML 1.0 ResourceType
+# This file is located at files-resource.raml
+uses:
+  files: libraries/files.raml
+get:
+  is: files.drm
+----
+
+* In current RAML spec: VALID
+* In JavaScript parser (i.e. API Designer): VALID
+* In Java parser (i.e. RAML editor in Studio, APIkit): INVALID
+
+=== C. Null type
+
+RAML 1.0 introduced the null type. If a user specifies the following:
+
+----
+annotationTypes:
+  deprecated: null
+  testHarness: null | string
+  badge: string? # equivalent to ‘null | string’
+----
+
+* In current RAML spec: VALID
+* In JavaScript parser (i.e. API Designer): VALID
+* In Java parser (i.e. RAML editor in Studio, APIkit): INVALID
+
+=== D. Examples / Example
+
+RAML 1.0 loosened the syntax requirements for examples / example and replaced “content” with “value”. If a user specifies the following:
+
+----
+types:
+  Org:
+    type: object
+    properties:
+      name: string
+      address?: string
+    examples:
+      acme:
+        name: Acme
+      softwareCorp:
+        value:
+          name: Software Corp
+          address: 35 Central Street
+
+-----
+example:
+  height: 12
+  width: 4
+
+-----
+example:
+  (pii): true
+  strict: false
+  value:
+    height: 12
+    width: 4
+----
+
+* In current RAML spec: VALID
+* In JavaScript parser (i.e. API Designer, API Console): VALID
+* In Java parser (i.e. RAML editor in Studio, APIkit): INVALID
+
+=== E. Additional properties (pattern properties)
+
+This is a change from RC1 to RC2 that changed the syntax from `[]` to `//` since because it introduced conflicts with YAML. If a user specifies the following:
+
+----
+types:
+  Person:
+    properties:
+      a: string
+      [a]: number
+----
+
+* In current RAML spec: INVALID
+* In JavaScript parser (i.e. API Designer, API Console): INVALID
+* In Java parser (i.e. RAML editor in Studio, APIkit): VALID
+
+If a user specifies the following:
+
+----
+types:
+  Person:
+    properties:
+      a: string
+      //: number
+----
+
+* In current RAML spec: VALID
+* In JavaScript parser (i.e. API Designer, API Console): VALID
+* In Java parser (i.e. RAML editor in Studio, APIkit): INVALID
+
+=== F. Question Mark
+
+If a user specifies the following:
+
+----
+types:
+  profile:
+    properties:
+      preference?:
+        required: true
+----
+
+* In current RAML spec: VALID
+* In JavaScript parser (i.e. API Designer, API Console): VALID
+* In Java parser (i.e. RAML editor in Studio, APIkit): INVALID
+
+=== G. Inheritance of primitive values
+
+If a user specifies the following:
+
+----
+types:
+  Number1:
+   type: number
+   minimum: 4
+  Number2:
+   type: number
+   maximum: 10
+  Number3: [ Number1, Number2]
+----
+
+* In current RAML spec: VALID
+* In JavaScript parser (i.e. API Designer, API Console): VALID
+* In Java parser (i.e. RAML editor in Studio, APIkit): INVALID
+
+=== H. Discriminator
+
+If a user specifies the following:
+
+----
+application/json:
+   type: Phone | Notebook
+   discriminator: kind
+----
+
+* In current RAML spec: INVALID
+* In JavaScript parser (i.e. API Designer, API Console): INVALID
+* In Java parser (i.e. RAML editor in Studio, APIkit): VALID
+
+=== I. Type within Types
+
+If a user specifies the following:
+
+----
+types:
+  Next:
+    type:
+      properties:
+        another: string
+    properties:
+      name: string
+----
+
+* In current RAML spec: VALID
+* In JavaScript parser (i.e. API Designer, API Console): VALID
+* In Java parser (i.e. RAML editor in Studio, APIkit): INVALID

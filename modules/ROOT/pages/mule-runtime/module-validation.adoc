@@ -1,0 +1,79 @@
+= Validation Module Release Notes for Mule 4
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: module-validation.adoc
+:keywords: mule, validation, validations, validator, module, release notes
+
+== 1.2.2
+
+*July 12, 2018*
+
+=== Min Mule Version
+*Mule 4.1.0*
+
+=== New Features and Enhancements
+
+N/A
+
+=== Fixed Issues
+
+[%header,cols="15a,85a"]
+|===
+|Issue |Description
+| https://www.mulesoft.org/jira/browse/MULE-15342[MULE-15342] | Validation module is-time operation accepts invalid dates
+|===
+
+== 1.2.1
+
+*Mar 14, 2018*
+
+=== Min Mule Version
+
+*Mule 4.1.0*
+
+== 1.2.0
+
+*Jan 31, 2018*
+
+=== Min Mule Version
+
+*Mule 4.1.0*
+
+=== New Features and Enhancements
+
+* Custom Validators are no longer supported since this is covered by the creation of Validators using the SDK.
+
+=== Fixed Issues
+
+* Remove Custom Validators from the validation module. (MULE-14551)
+
+== 1.1.0
+
+*Jan 22, 2018*
+
+=== Min Mule Version
+
+*Mule 4.1.0*
+
+=== New Features and Enhancements
+
+* Fixed Is Null and Is Not Null validations.
+
+=== Fixed Issues
+
+* TRAINING: Is Null and Is Not Null validation not working. (MULE-14472)
+* Validation module exports internal classes. (MULE-14506)
+
+== 1.0.0
+
+*Nov 13, 2017*
+
+=== Min Mule Version
+
+*Mule 4.0.0*
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

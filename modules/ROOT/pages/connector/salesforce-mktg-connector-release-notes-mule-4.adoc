@@ -1,0 +1,69 @@
+= Salesforce Marketing Cloud Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: salesforce-mktg-connector-release-notes-mule-4.adoc
+:keywords: release notes, salesforce, marketing, cloud, connector
+
+*January 2018*
+
+_Select_
+
+The Salesforce Marketing Cloud connector allows you to connect to the Salesforce Marketing Cloud web services using Exact Target API. The connector exposes convenient methods for managing objects and calling services provided by Exact Target API, also known as Salesforce Marketing Cloud.
+
+== 2.0.0
+
+*January 19, 2018*
+
+Release notes for of the Salesforce Marketing Cloud connector.
+
+=== Compatibility
+
+The Salesforce Marketing Cloud connector is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Application/Service |Version
+|Mule Runtime |4.0 and later
+|Anypoint Studio |7 and later
+|Exact Target API |v145.3
+|===
+
+=== Features
+
+* Configure Create - Calls the "Configure" command with "Create" as the action attribute when connected to the Marketing Cloud SOAP web service.
+* Configure Delete - Calls the "Configure" command with "Delete" as the action attribute when connected to the Marketing Cloud API SOAP web service.
+* Configure Update - Calls the "Configure" command with "Update" as the action attribute when connected to the Marketing Cloud API SOAP web service.
+* Create - Creates a new object on the Marketing Cloud API web server.
+* Delete - Deletes an existing object on the Marketing Cloud API web server.
+* Perform get max count - Calls the "Perform" command with "GetMaxCount" as the action attribute when connected to the Marketing Cloud API SOAP web service.
+* Perform start - Sends a "Perform" command having "Start" as an action attribute when connected to the Marketing Cloud API SOAP web service.
+* Perform stop - Sends a "Perform" command having "Stop" as an action attribute when connected to the Marketing Cloud API SOAP Web service.
+* Retrieve - Retrieves objects from the Marketing Cloud API web server in a SQL query-like fashion.
+* Schedule start - Calls the "Schedule" command with "Start" as the action attribute when connected to the Marketing Cloud API SOAP web service.
+* Update - Updates an existing object on the Marketing Cloud API web server.
+* Upsert - Creates an object if the object does not already exist, or delete an existing object on the Marketing Cloud API web server. This operation is achieved by using "Create" method of the Marketing Cloud API SOAP API.
+
+=== Fixed in this Release
+
+This is the first version of the connector, thus no fixes were required; there are only new features.
+
+=== Known Issues
+
+==== Providing a Subclass as Type To a Complex Field
+
+Some objects have complex fields that represent a base class from Salesforce Marketing. So, if instead of the base class, you want to pass a subclass of it as value to that field, that is not possible
+because the connector is not recognize the fields that do not belong to the base class. You must manually map those fields in Transform Message and add a field named "concreteClassType" with the name of the subclass as value. For more information and an example, read the connector guide.
+
+==== Retrieving Fields From a Hierarchy Not Possible
+
+Querying fields that are lower than level 1 in the hierarchy is not supported by the API. For example,queries like `Select Attributes.Name from Subscriber` because Name is at level 2 in the hierarchy.
+
+==== Server Results that Contain an Automation Object Structure Cause Exception to Be Thrown
+
+When performing operations on an Automation object, the result of the operation  causes an exception to be thrown because the response has a field that cannot be parsed by the API. To bypass this, make those types of operations asynchronous.
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

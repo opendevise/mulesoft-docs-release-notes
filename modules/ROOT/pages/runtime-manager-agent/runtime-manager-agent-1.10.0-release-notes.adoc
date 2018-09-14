@@ -1,0 +1,36 @@
+= Runtime Manager Agent 1.10.0 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: runtime-manager-agent-1.10.0-release-notes.adoc
+
+_May 22, 2018_
+
+This document describes new features and enhancements, known limitations, issues, and fixes in Anypoint Runtime Manager Agent, version 1.10.0.
+
+== New Features and Enhancements
+
+This release contains the following new features or enhancements:
+
+* Adds support for renewing server certificate. This feature supports new functionality in Runtime Manager and the Runtime Manager API.
+* Adds logging for buffer handler instance classes.
+
+== Changes in This Release
+
+This release contains no changes to existing functionality.
+
+== Fixed Issues
+
+This release contains no issues fixes.
+
+== Known Limitations and Workarounds
+
+There are no known limitations or workarounds in this release.
+
+== Upgrade Requirements
+
+There are no upgrade requirements for this release.
+
+== Compatibility Notes
+
+There are no compatibility notes for this release.

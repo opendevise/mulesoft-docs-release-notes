@@ -1,0 +1,56 @@
+= FTP Connector Release Notes for Mule 4
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: connector-ftp.adoc
+:keywords: mule, FTP, connector, release notes
+
+== 1.2.2
+
+*July 12, 2018*
+
+=== Fixed Issues
+
+* FtpFileAttributes throw NPE when FTPFile date is null (MULE-15301)
+
+*June 2018*
+
+== 1.2.1
+
+*June 15, 2018*
+
+=== Fixed Issues
+
+* FTP:ILLEGAL_PATH is thrown during ftp write (MULE-15104)
+* FTP:Write deletes the directories and files when no filename is provided (MULE-15172)
+
+== 1.2.0
+
+*April 24, 2018*
+
+=== Fixed Issues
+
+* FTP Connector should better inform on connection errors. (MULE-14993)
+
+== 1.1.1
+
+*Feb 2, 2018*
+
+=== Fixed Issues
+
+* ftp:listener has undescriptive display name. (MULE-14585)
+
+== 1.1.0
+
+*Jan 19, 2018*
+
+=== New Features and Enhancements
+
+This release includes the following enhancements, changes, and fixes:
+
+* Added a message source that automatically polls for new files, while handling clustering, idempotency, post actions and watermark automatically.
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

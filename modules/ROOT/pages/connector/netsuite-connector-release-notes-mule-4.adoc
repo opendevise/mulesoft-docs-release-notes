@@ -1,0 +1,107 @@
+= NetSuite Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: netsuite-connector-release-notes-mule-4.adoc
+:keywords: release notes, netsuite, oracle, connector
+
+*August 2018*
+
+The Anypoint Connector for NetSuite synchronizes data and automates business processes between NetSuite and third-party applications, either on-premises or in the cloud.
+
+== 8.2.0
+
+*August 4, 2018*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software | Version
+|Mule Runtime | 4.0.0 and later
+|SuiteTalk API | 2017.2
+|===
+
+[NOTE]
+The NetSuite version *is not* the same as the *SuiteTalk API* version. Your account may be running on a version of NetSuite different to the version of the the API you are using.
+
+=== Features
+
+* *Triggers* - You can now start a flow with the NetSuite Connector every time an object of a specific type is created, updated, or deleted.
+
+=== Fixed in this Release
+
+None.
+
+=== Known Issues
+
+None.
+
+== 8.1.1
+
+*July 13, 2018*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software | Version
+|Mule Runtime | 4.0.0 and later
+|SuiteTalk API | 2017.2
+|===
+
+[NOTE]
+The *NetSuite* version is *not* the same as the *SuiteTalk API* version. Your account may be running on a version of NetSuite different to the version of the the API you are using.
+
+=== Fixed in this Release
+
+* Search operation returned an empty response in Mac and a parsing error in Windows.
+
+=== Known Issues
+
+None.
+
+== 8.1.0
+
+*March 13, 2018*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software | Version
+|Mule Runtime | 4.0.0 and later
+|SuiteTalk API | 2017.2
+|===
+
+[NOTE]
+The NetSuite version is not the same as the SuiteTalk API version. Your account may be running on a version of NetSuite different to the version of the the API you are using.
+
+=== Features
+
+* Support for SuiteTalk API version 2017.2. For a detailed list of changes, log into NetSuite, open Help Center and navigate to New Release > Release Notes > NetSuite 2017.2 Release Notes > SuiteTalk (Web Services) Integration.
+
+== 8.0.0
+
+*November 18, 2017*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software | Version
+|Mule Runtime | 4.0.0 and later
+|SuiteTalk API | 2017.1
+|===
+
+The NetSuite version is not the same as the SuiteTalk API version. Your account may be running on a version of NetSuite different to the version of the the API you are using.
+
+=== Features
+
+* Support for SuiteTalk API version 2017.1. GA For a detailed list of changes, log into NetSuite, open Help Center and navigate to New Release > Release Notes > NetSuite 2017.1 Release Notes > SuiteTalk (Web Services) Integration.
+* Added support for Mule 4.
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

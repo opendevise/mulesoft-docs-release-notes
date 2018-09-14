@@ -1,0 +1,259 @@
+= AMQP Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: amqp-connector-release-notes.adoc
+:keywords: amqp, release, notes
+
+*June 2018 - 3.8.0* +
+*June 2018 - 3.7.9*
+
+_Select_
+
+== 3.8.0
+
+*June 21, 2018*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime |3.9 and later
+|Anypoint Studio |3.5 and later
+|===
+
+*Note:* This version requires Java 8 or greater.
+
+=== Features
+
+This release consists of the upgrade of amqp-client RabbitMQ library to 5.3.0.
+
+=== Improvements
+
+* Update RabbitMQ client version to 5.x. (AMQP-95)
+
+== 3.7.9
+
+*June 21, 2018*
+
+This release consists of the upgrade of amqp-client RabbitMQ library to 4.6.0.
+
+*Note:* If you are updating from AMQP 3.7.1 and earlier, uninstall your connector from Anypoint Studio before installing the latest version of this connector in Anypoint Exchange.
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime |3.5 and later
+|Anypoint Studio |3.5 and later
+|===
+
+=== Improvements
+
+* Update RabbitMQ client version to 4.x. (AMQP-96)
+
+== 3.7.8
+
+*April 23, 2018*
+
+This release consists of bug fixes.
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime |3.5 and later
+|Anypoint Studio |3.5 and later
+|===
+
+=== Fixed in This Release
+
+* Consumers are not recovered when a queue is temporarily unavailable or deleted. (AMQP-94)
+
+== 3.7.7
+
+*March 01, 2018*
+
+This release consists of bug fixes.
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime |3.5 and later
+|Anypoint Studio |3.5 and later
+|===
+
+=== Fixed in This Release
+
+* Replace Basic.Recover with Basic.Reject to avoid unknown delivery tag issues. (AMQP-92)
+
+== 3.7.6
+
+*February 18, 2018*
+
+This release consists of bug fixes.
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime |3.5 and later
+|Anypoint Studio |3.5 and later
+|===
+
+=== Fixed in This Release
+
+* Race condition can result in more subreceivers created than the number of channels. (AMQP-85)
+
+
+== 3.7.5
+
+*February 9, 2018*
+
+This release consists of bug fixes.
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime |3.5 and later
+|Anypoint Studio |3.5 and later
+|===
+
+=== Fixed in This Release
+
+* Fix MessageDispatcherItCase#testOutboundQueueCreation. (AMQP-72)
+* AMQP is using transactional channels for non-transactional endpoints. (AMQP-83)
+
+== 3.7.4
+
+*December 28, 2017*
+
+This release consists of bug fixes.
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime |3.5 and later
+|Anypoint Studio |3.5 and later
+|===
+
+=== Fixed in This Release
+
+* Revert AMQP-67 where subreceivers in AMQP begin to receive messages before the app is fully started. (AMQP-80)
+
+== 3.7.3
+
+*October 31, 2017*
+
+This release consists of bug fixes.
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime |3.5 and later
+|Anypoint Studio |3.5 and later
+|===
+
+=== Fixed in This Release
+
+* Fix DynamicRoutingKeyItCase so that the needed queues are created through a JSON file. (AMQP-78)
+* AMQP connector does not create a queue. (AMQP-77)
+
+== 3.7.2
+
+*August 2017*
+
+Notes:
+
+* To support Exchange 2.0 the ID of the connector in Anypoint Studio changed to `org.mule.tooling.ui.extension.mule-transport-amqp-tooling.3.5.0.feature.group` - because of this change, version 3.7.2 does not appear as an update in the Connectors Update Site but instead appears as a new connector.
+* The connector category changed from Community to the https://www.mulesoft.com/legal/versioning-back-support-policy#anypoint-connectors[Select] connector support policy.
+* To support Exchange 2.0 properly, the feature ID of AMQP Connector has changed. Before downloading  https://www.anypoint.mulesoft.com/exchange/org.mule.modules/mule-transport-amqp-studio/[AMQP v3.7.x in Exchange 2.0],  uninstall the existing version of this connector in Anypoint Studio.
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime |3.5 and later
+|Anypoint Studio |3.5 and later
+|===
+
+
+=== Fixed in This Release
+
+* AMQP Threading Profile always set to default. (AMQP-65)
+* AMQP Connector is not supporting dynamic routing keys. (AMQP-69)
+* Subreceivers in AMQP begin to receive messages before the app (AMQP-67)
+* Change AmqpConnectorThreadingProfileTestCase to IT folder. (AMQP-71)
+* Fix MessageDispatcherItCase#testOutboundQueueCreation (AMQP-72)
+* Support Exchange 2.0 (AMQP-73)
+
+== 3.7.1
+
+*June 2017*
+
+Bug fixes.
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime |3.5 and later
+|Anypoint Studio |3.5 and later
+|===
+
+=== Fixed in This Release
+
+* Outbound endpoint is not declaring fully defined exchanges and queues. (AMQP-44)
+* Close connection when channel cannot be started. (AMQP-59)
+* AMQPS reconnection strategy is not working after SocketTimeoutException. (AMQP-63)
+* Fix Re-creating queues and exchanges while reconnecting to RabbitMQ. (MULE-11577)
+
+== 3.7.0
+
+*July 2016*
+
+This release includes improvements and fixes.
+
+*Note:* The minimum Mule version for 3.7.0 is Mule 3.5.
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime |3.5 and later
+|Anypoint Studio |3.5 and later
+|===
+
+=== Improvements
+
+* Studio - Support SSL connectivity to the broker. (Support for AMQPS in Studio.) (AMQP-16)
+* Upgrade AMQP Client jar from version 3.3.5 to version 3.6.1. (AMQP-46)
+* Take advantage of TLS protocol/cipher control. (AMQP-47)
+** Support for TLS versions 1.1 and 1.2 (Only available using JDK 7).
+** The sslProtocol attribute now supports the values TLSv1, TLSv1.1, and TLSv1.2 apart from the previously available TLS.
+** The connector now validates its configuration against the `tls-default.conf` parameters and respects the protocols and cipher setup.
+
+=== Fixed Issues
+
+* Method getChannel(...) from `org.mule.transport.amqp.internal.client.ChannelHandler` returns the wrong channel when bridging using different AMQP connectors. (AMQP-51)
+* Studio - Object-to-amqpmessage-transformer operation is not defined for AMQP and AMQPS. (AMQP-52)
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum].
+* https://support.mulesoft.com[Contact MuleSoft Support].

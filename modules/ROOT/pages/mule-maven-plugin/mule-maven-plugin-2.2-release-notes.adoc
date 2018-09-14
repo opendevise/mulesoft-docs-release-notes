@@ -1,0 +1,36 @@
+= Mule Maven Plugin 2.2 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: mule-maven-plugin-2.2-release-notes.adoc
+
+MuleSoft is pleased to announce the release of the Mule Maven Plugin 2.2. This release fixes several issues and introduces support for Maven credentials encryption.
+
+== Hardware and software requirements
+JRE 1.7.0 (Recommended JRE 1.7.0_79/80), JRE 1.8, Maven 3.3.x
+
+== Compatibilities
+* Access Management API 1.0
+* ARM Rest API 1.1
+* CloudHub API 1.0
+* Runtime Manager Agent API 1.0
+* Mule Kernel, Mule 3.x
+
+== Features and Functionality
+
+=== New Features
+
+* MMP-135: Allow configuring credentials via Maven server
+* MMP-19: Implement failIfNotExists for application undeployment
+
+=== Resolved Issues
+
+* MMP-136: Plain text credentials are shown in the debug log
+* MMP-39: Undeploy goal fails to read encrypted credentials from settings.xml
+* MMP-36: Undeploy goal fails when no applications are deployed
+* MMP-68: Plugin properties are not being recognized by the XML schema.
+
+== Support
+
+* Access the http://forums.mulesoft.com[MuleSoft forums] to pose questions and get help from MuleSoft's broad community of users.
+* To access MuleSoft's expert support team, mailto:sales@mulesoft.com[subscribe to Mule ESB Enterprise] and log in to MuleSoft's Customer Portal.

@@ -1,0 +1,17 @@
+= CloudHub Dedicated Load Balancer Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: cloudhub-dedicated-load-balancer-release-notes.adoc
+:keywords: release notes, cloudhub, cloud hub
+
+== CloudHub Dedicated Load Balancer 1.1.4
+
+* Remove deprecated 3DES ciphers from the accepted ciphersuite.
+* Entitlements for Load Balancers are now enforced per business group.
+* Introduce TLS keepalives to upstream HTTPS applications, improving performance.
+
+== CloudHub Dedicated Load Balancer 1.1.2
+
+* Static IPs are no longer required for load balancers.
+* Improved reliability & monitoring of load balancers.

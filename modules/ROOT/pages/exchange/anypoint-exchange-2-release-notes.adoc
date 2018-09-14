@@ -1,0 +1,13 @@
+= Anypoint Exchange 2 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: anypoint-exchange-2-release-notes.adoc
+
+Moved topic:
+
+* xref:exchange/anypoint-exchange-release-notes.adoc[Anypoint Exchange Release Notes]
+
+== See Also
+
+* xref:exchange::index.adoc[Anypoint Exchange Documentation]

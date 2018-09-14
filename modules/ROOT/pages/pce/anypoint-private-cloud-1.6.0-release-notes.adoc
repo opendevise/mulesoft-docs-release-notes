@@ -1,0 +1,199 @@
+= Anypoint Platform Private Cloud Edition 1.6.0 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: anypoint-private-cloud-1.6.0-release-notes.adoc
+
+**June 2, 2017**
+
+== New Features and Enhancements
+
+This version of Anypoint Platform Private Cloud Edition contains the following features and enhancements:
+
+[%header,cols="2*a"]
+|===
+| Feature | Description
+| Update of Anypoint Platform | Includes new Anypoint Platform features from April 2017 and earlier. See <<Anypoint Platform Features>>.
+| Anypoint Platform Audit Logs | Supports a searchable history of actions performed within Anypoint Private Cloud Edition. See xref:access-management::audit-logging.adoc[Audit Logging].
+|SMTP Platform Alerts on High CPU and Memory | Enables the platform to send alerts when CPU and memory usage reach certain thresholds. See xref:1.6@private-cloud::config-alerts.adoc[To Setup Alerts for CPU and Memory Usage].
+|Infrastructure upgrades | Adds improvements to the platform infrastructure, including:
+
+* Upgrade to Kubernetes v1.5.
+* Addition of an automatic installer. See xref:1.6@private-cloud::install-auto-install.adoc[To Install Anypoint Platform Private Cloud Using Automated Installer].
+* Additional performance enhancements.
+|Security improvements | Adds security improvements, including:
+
+* Addition of role-based access
+* Ability to disable local user
+| New platform monitoring dashboard | Allows users to quickly troubleshoot the platform to identify problems
+| Internal and External traffic monitoring | Allow users to see which services are getting the most requests, and see the response times, and throughput.
+| Improved troubleshooting information | Improved logs and information in the diagnose package to simplify troubleshooting of issues.
+| Improved backup and restore | Improved process for performing backup a restore. See xref:1.6@private-cloud::backup-and-disaster-recovery.adoc[To Backup and Restore Your System].
+|===
+
+
+== Installing
+
+See xref:1.6@private-cloud::install-workflow.adoc[Workflow: Install Anypoint Private Cloud] for information on how to install Anypoint Platform Private Cloud Edition.
+
+== Upgrading from 1.5.x to 1.6.x
+
+See xref:1.6@private-cloud::upgrade.adoc[To Migrate to Anypoint Platform Private Cloud Edition, Version 1.6.x] for information on how to upgrade to the current version.
+
+Before upgrading, you must backup your system as described in xref:1.6@private-cloud::backup-and-disaster-recovery.adoc[To Backup and Restore Your System] After the upgrade is complete, perform a restore to return your system to its previous state.
+
+[NOTE]
+The procedures for performing a backup and restore have changed in this release. See xref:1.6@private-cloud::backup-and-disaster-recovery.adoc[To Backup and Restore Your System]
+
+
+== Software Compatibility
+
+[%header,cols="2*a"]
+|===
+| Compatible with |Version
+| Mule runtime | 3.7.x - 3.8.4
+| API Gateway Runtime | 2.1.x - 2.2.x
+| Runtime Manager Agent | 1.5.2 - 1.5.3
+| Infrastructure providers |
+* VMWare
+* Bare Metal
+| Compatible browsers when running the installer |
+* Firefox (latest version)
+* Chrome (latest version)
+* Safari (latest version)
+|===
+
+== Fixed Issues
+
+[%header%autowidth.spread]
+|===
+|Issue ID |Description
+|AOP-1285 |In Demo deployments, the LDAP administration application is not started on the documented port.
+|===
+
+== Known Issues
+
+[%header%autowidth.spread]
+|===
+|Issue ID |Description |Workaround
+|N/A | Problems with volume mounts in one node installations | You must download and run a script to fix the mount points in a one-node installation. The script is available here:
+
+`https://anypoint-anywhere.s3.amazonaws.com/1.6.1-GA/mounts-data-migration.sh?Signature=rt5yMRQrqHEJQh6rMHWJ%2BqdyX6s%3D&Expires=1536705930&AWSAccessKeyId=AKIAITTY5MSTT3INJ7XQ`
+|N/A | Only LVM2 versions 2.02.166-1.el7_3.5 and earlier are supported. Later versions of LVM2 are not supported. |
+|AOP-1253 |Application artifact is deleted if two or more applications are using same .zip file. | Use different file names for each deployed file in the same environment.
+|AOP-1301 |Cannot delete a node that is no longer capable of running the Planet container. Also, cannot add it back to restore it. |
+|AOP-1308 |Update of 1 node environments from 1.5.X to 1.6X does not downscale replicas beforehand, causing the update to fail. | Reduce replicas to 1 on 1.5.x single node installs before upgrading.
+|CS-3225 |Update of identity management settings in UI sends unedited masked values. | Use the API to configure external identity management
+|AOP-1307 |In the Access Management OpenAM form, multiple scopes can not be saved in the UI. | Use the API to configure external identity management
+|AOP-1303 |The microservice label for `api-platform-api-audit-log` and `exchange-api-audit-log-scheduler`causes them to appear in filters where they should not |
+|AOP-1309 |Nodes/Pods/Container are not reporting file system usage |
+|===
+
+== Anypoint Platform Features
+
+The following sections outline the Anypoint Platform features and bug fixes added to this version of Anypoint Platform Private Cloud Edition. This information is compiled from the release notes of each platform component.
+
+=== Anypoint Runtime Manager
+
+[%header,cols="2*a"]
+|===
+| Runtime Manager Release | Features and Issue Fixes
+|2.1.0 |
+* Improves support for promotion of hybrid applications between environment from the UI
+* Adds ability to enable and disable insights at deployment time for hybrid applications
+* Adds ability to configure the log levels at deployment time for hybrid applications
+|2.0.0 |
+* Enhances flow management by providing the ability to manage their problematic flows at runtime. You can disable a flow without disrupting the entire application.
+* Supports flow management, v2.0 functionality.
+|===
+
+=== Anypoint Exchange
+
+No new features or fixes in this release.
+
+=== Access Management
+
+[%header,cols="2*a"]
+|===
+|Access Management Release | Features and Issue Fixes
+|0.20.0 |
+
+* Added support for the client UI configuration forms for PingFederate and OpenAM.
+|0.16.0 |
+
+* Access Management v0.16 enables organization administrators and audit log viewers to see entitlement changes to their organization from the Audit Logs UI.
+* Added support for Ping Federate v8.2.1.1 for External Identity.
+|===
+
+=== API Manager
+
+[%header,cols="2*a"]
+|===
+|API Manager Release | Features and Issue Fixes
+|1.14.4 |
+
+* Adds pagination on the custom policies page.
+* Increases granularity of the Rate Limiting and Throttling policy configuration.
+* Adds ability to specify multiple throughput limits for an SLA tier using different time periods and units.
+|1.14.2 |
+
+* Fixed the View Application link that was not working with Runtime Manager.
+* Fixed the client secret on the developer portal applications detail page.
+* Fixed the link on the notification email when a new application is pending approval and the API belongs to a sub-organization.
+* Fixed an issue with uppercase WSDL on SOAP proxies.
+* Fixed the Basic Authentication template that was not working properly with Mule Runtime 3.8.1 and later when HTTP is used for LDAP instead of HTTPS.
+|1.14.1 |
+
+* API Manager 1.14.1 includes the following new features:
+* An advanced configuration to customize the response timeout of the auto-generated proxy.
+* To customize the response timeout of the deployed proxy, use the advanced options as described in step 5-h of section "Setting up a Proxy".
+* Fixed auto-generated proxy that was configured to an incorrect WSDL.
+* Fixed problems with import/export of an API on Windows.
+* API Designer 0.3.0 support
+|1.14.0 |
+
+* Updated the clients API to show multiple owners as well as the app ID.
+* Added a new API to query by client ID.
+* Fixed API Tooling bugs to support new API tooling.
+* Added performance enhancements
+|1.13.0 |
+
+* Added ability to enable and disable policies.
+* Fixed bugs to support new API tooling.
+* Improved support for dependencies between configurable policies using the required characteristics parameter.
+|===
+
+=== API Designer
+
+[%header,cols="2*a"]
+|===
+|API Designer Release | Features and Issue Fixes
+|0.4.1 |
+
+* Fixed issue so that OAS is accepted as a value instead of SWAGGER when requesting conversions.
+* Updated RAML parser to version 1.0.6-rc.1-patch
+* Updated API Console to version 3.0.16.
+|0.4.0 |
+
+* Enhances auto-completion to improve performance and browser response time.
+* Added a background process for parsing and validation.
+* Added a validation indicator.
+* Improved performance by no longer rendering the console when the right panel is hidden.
+|0.3.2 |
+
+* Added full support for OAS 2.0.
+* Improved OAS 2.0 import.
+|0.3.1 |
+
+* Fixed minor issues related to OAS 2.0 import.
+
+|0.3.0 |
+
+* Improved UI of main menu.
+
+|0.2.0 |
+
+* Improved warnings and trace information for better error management.
+* Improved auto-completion for any named variable such as paging trait or collection resource type across all RAML typed fragments.
+* Added validation of RAML 1.0 typed fragments.
+|===

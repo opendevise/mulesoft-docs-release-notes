@@ -1,0 +1,152 @@
+= Anypoint Studio 6.5 with Mule Runtime 3.9.1 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: anypoint-studio-6.5-with-3.9.1-runtime-release-notes.adoc
+
+*June 7, 2018* +
+*Build ID: 201806071907*
+
+<<migration,Skip to Migration Guide>>
+
+== Compatibility
+
+[cols="30a,70a"]
+|===
+| *Mule Runtime*
+| Version: 3.9.1 EE
+
+|*Anypoint Studio*
+|Version: 6.5 +
+Build Id: 201806071907
+
+|*APIkit*
+|Versions: 3.9.0 - 3.8.3 - 3.8.2 - 3.8.1 - 3.8.0 - 1.7.3 - 1.6.2 - 1.5.3
+
+|*DataWeave* +
+|Version: 1.2.0
+
+|*MUnit* +
+|Version: 1.6.1 (munit-studio-plugin)
+
+|*SAP Connector*
+|Versions: 3.2.0
+
+|*Eclipse*
+|Versions: 4.7.2
+
+|===
+
+
+== What's New
+
+This release of Studio 6.5.0 includes mainly bug fixes and upgrading of its core Eclipse Version.
+
+== Hardware Requirements
+
+* MuleSoft recommends a minimum of 4GB RAM on a developer workstation. As applications become complex, consider adding more RAM.
+* 2GHz CPU
+* 10GB free hard drive space
+
+== Software Requirements
+
+[cols="30a,70a"]
+|===
+|Java Environments |
+This version of Anypoint Studio requires Java 8 to run properly. +
+Depending on which Mule runtime you want to use, you can configure different JDK versions within Anypoint Studio:
+
+* Mule 3.9.x requires Studio running on Java 8.
+* Mule 3.5.x requires Studio running on Java 7.
+* Other supported runtime versions work fine with both Java 7 or 8.
+
+You can configure Anypoint Studio's default VM by following the task corresponding to your OS:
+
+* xref:6.5@studio::studio-configure-vm-task-wx.adoc[To Configure Studio’s Default VM (Windows)]
+* xref:6.5@studio::studio-configure-vm-task-unx.adoc[To Configure Studio’s Default VM (Unix)]
+* xref:6.5@studio::studio-configure-vm-task-lnx.adoc[To Configure Studio’s Default VM (Linux)]
+
+|Operating Systems |* MacOS 10.10.0 +
+* Windows (32- and 64-bit) Windows 7, Windows 8, Windows 10 +
+* RHEL 7.0 +
+* Ubuntu 15.04 or later
+|Suggested Web Browsers by Platform. +
+_Studio will always use the OS default web browser_ | * Windows: +
+** Microsoft Edge 25.0  +
+** Internet Explorer 11 +
+* Linux +
+** Mozilla Firefox 46.0  +
+* OS X +
+** Safari 9.1
+|===
+
+
+[NOTE]
+--
+If you are running McAfee VirusScan on your Windows OS, Eclipse-based Anypoint Studio may experience negative performance impacts. McAfee has suggested the following remedy https://kc.mcafee.com/corporate/index?page=content&id=KB58727[options].
+--
+
+== Known Issues
+
+[[migration]]
+== Migration Guide
+
+Since this version of Anypoint Studio upgrades its core Eclispe version, it is recommended to download and run the latest installer to install a fresh new full copy. +
+
+[TIP]
+--
+Updating your Anypoint Studio version using the update site does not update the bundled version of the Mule runtime. +
+To get the latest runtime version after updating Studio follow xref:6@studio::download-and-launch-anypoint-studio.adoc#updating-studio[these steps].
+--
+
+When opening a previous workspace with projects that were created with Studio 5.1.0 or older, and which has metadata stored in disk, Studio asks you to perform an update to all the projects so that the Metadata Manager can handle the existing types and show them in your project.
+
+[TIP]
+====
+You can easily import all of the external components that you had installed in your old version of Anypoint Studio through a single action. This includes connectors, runtimes, and any other type of extension added through the Anypoint Exchange or the ​*Help -> Install new software*​ menu, as long as there are no compatibility restrictions.
+
+Do this by selecting *File->Import* and then choose *Install->From existing installation*.
+
+image::studio/import-extensions.png[import]
+
+Then specify the location of your old version of Anypoint Studio in your local drive.
+====
+
+== JIRA Ticket List for Anypoint Studio
+
+=== Bug Fixes
+
+* STUDIO-10582 - Training: Studio crashes as I attempt to clean the console (watch the video).
+* STUDIO-10604 - NullPointer when validating wmq listener with transactions.
+* STUDIO-10757 - Clear Project metadata dialog displays incorrectly in Ubuntu
+* STUDIO-10799 - When starting an application in debug mode fails, subsequent debug sessions fail to start
+* STUDIO-10815 - When publishing to exchange and typing a wrong version an invalid hint is displayed.
+* STUDIO-10846 - Message processors not loaded in the palette after changing the Eclipse version
+* STUDIO-10856 - Error exporting studio documentation
+* STUDIO-10858 - Error thrown when using test connection
+* STUDIO-10860 - Salesforce Query builder is not listing options
+* STUDIO-10861 - Metadata is not resolved for Database and Salesforce connectors
+* STUDIO-10879 - Studio offers logException attribute for runtimes that don't support it
+* STUDIO-10906 - Unable to generate flows with API Designer when library is applied using "uses" in fragment type of DataType
+* STUDIO-10907 - DataWeave plugin editor gets stuck for long transformations
+* STUDIO-10908 - Anypoint Studio hanging when editing DataWeave
+* STUDIO-10909 - DataSense loses input data type when Transform Message component is within Until Successful scope
+* STUDIO-10911 - Unable to Connect Project to API Manager when there are more than 100 API's
+* STUDIO-10912 - Show request target metadata
+* STUDIO-10920 - Dataweave preview is unable to evaluate Map-to-Map unless the keys are placed in the right order
+* STUDIO-10921 - Closing projects in Studio causes a workspace rebuild
+* STUDIO-10932 - Not able to login to Anypoint Platform from Studio with proxy
+
+=== Tasks
+
+* STUDIO-10672 - Migrate Studio 6 Eclipse version to 4.7.2
+* STUDIO-10853 - Change Studio 6 splash
+* STUDIO-10877 - Add java crash report to studio 6
+* STUDIO-10926 - Add java memory metrics for studio 6
+
+=== Enhancement Request
+
+== Support
+
+* Access http://forums.mulesoft.com/[MuleSoft’s Forum] to pose questions and get help from Mule’s broad community of users.
+* To access MuleSoft’s expert support team https://www.mulesoft.com/support-and-services/mule-esb-support-license-subscription[subscribe to Mule ESB Enterprise] and log in to MuleSoft’s http://www.mulesoft.com/support-login[Customer Portal].

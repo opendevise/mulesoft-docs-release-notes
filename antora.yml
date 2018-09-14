@@ -1,0 +1,5 @@
+name: release-notes
+title: Release Notes
+version: master
+nav:
+- modules/ROOT/nav.adoc

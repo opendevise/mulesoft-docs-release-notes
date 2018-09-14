@@ -1,0 +1,110 @@
+= Anypoint Platform Private Cloud Edition 1.5.0 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: anypoint-on-premise-1.5.0-release-notes.adoc
+
+*October 14, 2016*
+
+Anypoint Platform Private Cloud Edition takes all the power of the platform MuleSoft developed for the Cloud and enables companies to run the platform inside their data centers.  In this release we are releasing solutions for APIs, Runtime Management and Exchange.
+
+
+
+== Features
+
+=== API Manager
+
+xref:api-manager::index.adoc[API Manager] is a multi-tenant end-to-end platform for enterprise API design, implementation, management, and engagement.
+
+=== Anypoint Runtime Manager
+
+xref:runtime-manager::index.adoc[Runtime Manager] enables users to enhance their unified monitoring experience by easily integrating their on-premises Mule servers and API Gateways with third parties’ monitoring tools, such as Splunk & ELK, for monitoring, analytics and governance.
+
+
+The Private Cloud Edition of Runtime Manager is also enabled to deploy applications to Pivotal Cloud Foundry (Beta). See xref:1.5@anypoint-platform-pcf::pcf-workflow.adoc[Configuring Anypoint Platform for PCF].
+
+
+=== Anypoint Exchange
+
+xref:exchange::index.adoc[Anypoint Exchange] enables users to publish and access Mule-related content within their own organization increasing visibility and reuse across organizations.
+
+=== Anypoint Access Management
+
+xref:access-management::index.adoc[Access Management] is an underlying platform solution that allows customers to seamlessly integrate their existing authentication provider for centralized user management.
+
+
+
+== System Requirements
+
+See xref:1.5@private-cloud::system-requirements.adoc[About Minimum System Requirements] for installing the platform on premises.
+
+== Compatibility
+
+[%header,cols="2*a"]
+|===
+|Compatible with |Version
+|Mule Runtime | 3.7 and later
+
+|API Gateway Runtime | 2.1.1 and later
+
+
+| Runtime Manager Agent | 1.5.2
+
+
+| Infrastructure Providers |
+
+
+* VMWare
+
+* Bare Metal
+
+| Compatible Browsers |
+
+* Firefox (latest version)
+
+* Chrome (latest version)
+
+* Safari (latest version)
+
+* Internet Explorer 10 or newer - Note: The Edge browser is not supported
+
+
+| Minimum screen resolution | 1024x768
+|===
+
+
+[WARNING]
+Version 1.5.2 of the Runtime Manager Agent is the only one that works with this version of the platform. Version 1.5.3 of the Runtime Manager Agent (which is bundled with Mule runtime 3.8.3) is not currently supported by this release.
+
+
+== Current differences with the Cloud Version
+There are some differences between the current On-premises release and the Cloud version.
+
+=== Runtime Manager
+* In the On Premises release, CloudHub is not an available deployment target.
+* xref:runtime-manager::deploying-to-pcf.adoc[PCF] is available as a beta deployment target.
+* Runtime Manager doesn't include dashboards or insights
+* Some alerts (related to server usage) aren't available
+
+=== API Manager
+* The *auto-deploy proxy* is not available via the UI for PCF
+* Proxies can be automatically deployed to PCF via the command line
+* Analytics aren't available
+
+=== Anypoint Exchange
+This is a private version of Anypoint Exchange, so you will not be able to see the public content available in the Cloud Version.
+
+=== Other Differences
+The Private Cloud Edition of the Anypoint Platform only includes the Runtime Manager, API Manager and Exchange. None of the other tools, such as MQ or Data Gateway.
+
+
+== Known issues
+
+[%header%autowidth.spread]
+|===
+|Issue ID |Description |Workaround
+|AOP-510 | ARM Alerts should not show CPU and Memory based Alerts on Server|
+|AOP-525 | Enable TLS connection between API platform and RAML mocking services |
+|AOP-560 | Do lazy initialization of Database Pool |
+|AOP-518 | Updating license takes about 2 minutes to refresh |
+|===

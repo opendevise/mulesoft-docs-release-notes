@@ -1,0 +1,102 @@
+= SuccessFactors Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: successfactors-connector-release-notes.adoc
+:keywords: release notes, connector, sap, successfactors
+
+*December 2017*
+
+_Select_
+
+*Connector Guide:* xref:3.9@mule-runtime::successfactors-connector.adoc[SuccessFactors Connector]
+
+The Anypoint Connector for SuccessFactors provides full support to query, create, update and delete entities using the SFAPI API exposed by SuccessFactors. For more information about the product, visit https://help.sap.com/cloud4hr[SuccessFactors HCM Suite site].
+
+
+== 2.2.0
+
+*December 22, 2017*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime |3.7 and later
+|SuccessFactors API | SFAPI (SOAP API)
+|===
+
+=== Features
+
+* Custom Timeout - Connection Timeout and Reception Timeout are now included as optional configuration properties to be set.
+* Unsafe Query Pagination - The default pagination implementation may present errors when fetching large amounts of data (records). To overcome this limitation, a new pagination option can be used by setting the flag `Use unsafe query pagination` to true. This type of pagination can handle heavy loads of records, but can return inconsistent results if the data is changed while the query is running.
+
+=== Fixed in this Release
+
+* NPE when fetching metadata - In the previous version, when selecting the option Fetch All Entities in the global configuration, both the Test Connection and the metadata calculation would result in a NullPointerException. This also affected the functionality of the Query operation, making the Query Builder display an empty list of entities.
+* Delta queries - When performing delta queries, SuccessFactors would sometimes return an empty `<previous/>` tag which was being mapped to an empty string. In the present version, this tag is no longer part of the connector's response.
+* Timeout during pagination - In the previous version, if there was a timeout in a connection due to network issues when executing a paginated query, the session would be lost and could not be recovered due to issues on the SuccessFactors side. The solution is to check the Unsafe Query Pagination box in the configuration. This setting expects no changes to occur in the values while executing the queries.
+* UnknownHostException when using HTTP Proxy - In certain scenarios, users would get an UnknownHostException on app startup when using an HTTP proxy. This no longer happens.
+
+=== Known Issues
+
+Due to API limitations, fetching metadata for all entities is a slow process. To reduce the wait time, make sure that the Fetch All Entities checkbox is unchecked, and complete the Entity List with an abridged list of entity names. If you need a list of all available entities in your organization to do this, you can obtain it with the List Entities operation.
+
+== 2.1.0
+
+*January 09, 2017*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Application/Service|Version
+|Mule Runtime |3.7 and later
+|Java |7
+|===
+
+=== Features
+
+* Support for Compound Employee API and Delta Transmission - Queries made using the Compound Employee API are now supported.
+* HTTP proxy configuration - You can now configure the connector to use an HTTP proxy when making calls.
+
+=== Known Issues
+
+Due to API limitations, fetching metadata for all entities is a slow process. To reduce the wait time, make sure that the Fetch All Entities checkbox is unchecked, and complete the Entity List with an abridged list of entity names. If you need a list of all available entities in your organization to do this, you can obtain it with the List Entities operation.
+
+
+== 2.0.0
+
+*December 29, 2015*
+
+The release notes for version 2.0.0 of the SuccessFactors Connector accompany the xref:3.8@mule-runtime::successfactors-connector.adoc[SuccessFactors Connector guide].
+
+=== Compatibility
+
+The SuccessFactors Connector is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Application/Service|Version
+|*Mule Runtime* |3.7.0 and later
+|*Anypoint Studio* |5.3.1 and later
+|*Java* |7
+|===
+
+=== Features
+
+- List all the entities in your company instance.
+- Obtain entities metadata.
+- Insert/Update/Upsert/Delete entities.
+- Query the SuccessFactors platform using SFQL (SuccessFactors Query Language).
+- Submit, list and cancel asynchronous query jobs, get their statuses and results.
+
+=== Known Issues
+
+Due to API limitations, fetching metadata for all entities is a slow process. To reduce the wait time, make sure that the Fetch All Entities checkbox is unchecked, and complete the Entity List with an abridged list of entity names. If you need a list of all available entities in your organization to do this, you can obtain it with the List Entities operation.
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

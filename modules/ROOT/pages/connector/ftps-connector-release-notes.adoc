@@ -1,0 +1,771 @@
+= FTPS Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: ftps-connector-release-notes.adoc
+:keywords: ftps, connector, release notes, b2b
+
+*August 2018*
+
+_Premium_
+
+xref:partner-manager::ftps-connector.adoc[FTPS Connector Guide]
+
+== 3.0.0
+
+*August 2, 2018*
+
+Release notes for version 3.0.0 of the FTPS connector. These release notes accompany the xref:partner-manager::ftps-connector.adoc[FTPS Connector Guide]. Compatible Mule versions have been changed from 3.6.x and later to 3.7 and later.
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime | Mule Runtime Enterprise Edition 3.7.0 and later
+|===
+
+== 2.0.2
+
+*February 21, 2018*
+
+Release notes for version 2.0.2 of the FTPS connector. These release notes accompany the xref:partner-manager::ftps-connector.adoc[FTPS Connector Guide].
+
+=== Compatibility
+
+The FTPS connector is compatible with:
+
+|===
+|Application/Service |Version
+|Mule Runtime |3.6.x and later
+|FTPS |This connector works with any FTP server with built-in TLS/SSL support.
+|===
+
+=== Fixed in this Release
+
+- Error reported when trying to append contents to a non existing file (https://www.mulesoft.org/jira/browse/SE-6852[SE-6852]).
+- Potential thread leak regarding file size change detection.
+
+== 2.0.1
+
+*September 20, 2017*
+
+Release notes for version 2.0.1 of the FTPS connector. These release notes accompany the xref:partner-manager::ftps-connector.adoc[FTPS Connector Guide].
+
+=== Compatibility
+
+The FTPS connector is compatible with:
+
+|===
+|Application/Service|Version
+|Mule Runtime|3.6.x and later
+|FTPS|This connector works with any FTP server with built-in TLS/SSL support.
+|===
+
+=== Fixed in this Release
+
+- Binary files corrupted during data transfer.
+
+== 2.0.0
+
+*August 22, 2017*
+
+Release notes for version 2.0.1 of the FTPS connector. These release notes accompany the xref:partner-manager::ftps-connector.adoc[FTPS Connector Guide].
+
+=== Compatibility
+
+The FTPS connector is compatible with:
+
+|===
+|Application/Service |Version
+|Mule Runtime |3.6.x and later
+|FTPS |This connector works with any FTP server with built-in TLS/SSL support.
+|===
+
+=== New Features and Functionality
+
+- Added support for Connection Management in basic configuration mode. Configuration of a reconnection strategy is now possible.
+
+
+=== Migrating from Older Versions
+
+- No migration is required although revision of current flows is suggested in favor of Connection Management.
+
+
+== 1.4.0
+
+*June 22, 2017*
+
+Release notes for version 1.4.0 of the FTPS connector. These release notes accompany the xref:partner-manager::ftps-connector.adoc[FTPS Connector Guide].
+
+=== Compatibility
+
+The FTPS connector is compatible with:
+
+|===
+|Application/Service|Version
+|Mule Runtime|3.6.x and later
+|FTPS|This connector works with any FTP server with built-in TLS/SSL support.
+|===
+
+=== New Features and Functionality
+
+- Added customization of the move to filename as a complement of the moveToDirectory setting.
+- Added MEL expressions support for filename and moveToFilename.
+- Added zero-sized files support.
+- File timestamp is now provided as inbound property for read files.
+- Reading thread pool is now limited by the value of the maxConcurrentReads setting or the file match count, whichever is smaller.
+- Client-Server FTP protocol conversations are being logged when TRACE log level is enabled.
+
+
+=== Migrating from Older Versions
+
+- fileSizeDetectionPollingInterval parameter has been renamed to sizeCheckWaitTime.
+- filename instead of fileName is now set as inbound property for read files.
+
+
+== 1.3.0
+
+*April 10, 2017*
+
+Release notes for version 1.3.0 of the FTPS connector. These release notes accompany the xref:partner-manager::ftps-connector.adoc[FTPS Connector Guide].
+
+=== Compatibility
+
+The FTPS connector is compatible with:
+
+|===
+|Application/Service |Version
+|Mule Runtime |3.6.x and later
+|FTPS |This connector works with any FTP server with built-in TLS/SSL support.
+|===
+
+=== New Features and Functionality
+
+- Cluster awareness on read operations:  only one connector instance in a cluster attempts to fetch a given file.
+- Exception reporting: former versions used to log exceptions instead of throwing them.
+
+=== Migrating from Older Versions
+
+- Exception reporting: applications relying on silent exceptions should handle them accordingly.
+- SSL session reuse is now supported.
+
+=== Known Issues
+
+- Server certificate validation on CloudHub is not supported.
+
+== 1.2.0
+
+*March 23, 2017*
+
+Release notes for version 1.2.0 of the FTPS connector. These release notes accompany the xref:partner-manager::ftps-connector.adoc[FTPS Connector Guide].
+
+=== Compatibility
+
+The FTPS connector is compatible with:
+
+|===
+|Application/Service|Version
+|Mule Runtime|3.6.x and later
+|FTPS|This connector works with any FTP server with built-in TLS/SSL support.
+|===
+
+=== Migrating from Older Versions
+
+No migration steps required.
+
+=== New Features and Functionality
+
+- Adding customization of Initial Delay setting.
+- Adding detection of file size changes before reading a file with configurable detection polling period.
+- Fixing connection issues on implicit passive mode against some server implementations (PBSZ and PROT P commands were missing).
+
+=== Known Issues
+
+- Server certificate validation on CloudHub is not supported.
+- SSL session reuse is not supported.
+
+== 1.1.0
+
+*March 3, 2016*
+
+Release Notes for version 1.1.0 of the FTPS connector. These release notes accompany the xref:partner-manager::ftps-connector.adoc[FTPS Connector Guide].
+
+=== Compatibility
+
+The FTPS connector is compatible with:
+
+|===
+|Application/Service|Version
+|Mule Runtime|3.6.x and later
+|FTPS|This connector works with any FTP server with built-in TLS/SSL support.
+|===
+
+=== Migrating from Older Versions
+
+No migration steps required.
+
+=== New Features and Functionality
+
+- Appending content to existing files.
+- Overriding global connection settings now possible at write operation level.
+
+=== Known Issues
+
+- Server certificate validation on CloudHub is not supported.
+- SSL session reuse is not supported.
+
+== 1.0.9
+
+*October 20, 2016*
+
+Release Notes for version 1.0.9 of the FTPS connector. These release notes accompany the xref:partner-manager::ftps-connector.adoc[FTPS Connector Guide].
+
+=== Compatibility
+
+The FTPS connector is compatible with:
+
+|===
+|Application/Service|Version
+|Mule Runtime|3.6.x and later
+|FTPS|This connector works with any FTP server with built-in TLS/SSL support.
+|===
+
+=== Migrating from Older Versions
+
+No migration steps required.
+
+=== Fixed in this Release
+
+- https://www.mulesoft.org/jira/browse/SE-4598 - When streaming is enabled, moving files to a directory fails.
+
+=== Known Issues
+
+- Server certificate validation on CloudHub is not supported.
+- SSL session reuse is not supported.
+
+== September 23, 2016
+
+Release Notes for version 1.0.8 of the FTPS connector. These Release Notes accompany the xref:partner-manager::ftps-connector.adoc[FTPS Connector Guide].
+
+=== Compatibility
+
+The FTPS connector is compatible with:
+
+|===
+|Application/Service|Version
+|Mule Runtime|3.6.x and later
+|FTPS|This connector works with any FTP server with built-in TLS/SSL support.
+|===
+
+=== Migrating from Older Versions
+
+No migration steps required.
+
+=== Fixed in this Release
+
+- b2b-provider-api updated to the latest release.
+
+=== Known Issues
+
+- Server certificate validation on CloudHub is not supported.
+- SSL session reuse is not supported.
+
+== July 19, 2016
+
+Release Notes for version 1.0.7 of the FTPS connector. These Release Notes accompany the xref:partner-manager::ftps-connector.adoc[user guide].
+
+=== Compatibility
+The FTPS connector is compatible with:
+
+|===
+|Application/Service|Version
+
+|Mule Runtime|3.6.x and higher.
+|FTPS|This connector works with any FTP server with built-in TLS/SSL support.
+|===
+
+=== Migrating from Older Versions
+
+No migration steps required.
+
+=== Fixed in this Release
+
+- Reading threads remained active after application disposal.
+
+=== Known Issues
+
+- Server certificate validation on CloudHub is not supported.
+- SSL session reuse is not supported.
+
+== 1.0.6
+
+*July 11, 2016*
+
+Release Notes for version 1.0.6 of the FTPS connector. These Release Notes accompany the http://modusintegration.github.io/mule-connector-ftps/[user guide].
+
+=== Compatibility
+
+The FTPS connector is compatible with:
+
+|===
+|Application/Service|Version
+
+|Mule Runtime|3.6.x and higher.
+|FTPS|This connector works with any FTP server with built-in TLS/SSL support.
+|===
+
+=== Migrating from Older Versions
+
+No migration steps required.
+
+=== Fixed in this Release
+
+- Anypoint Partner Manager tracking was not sending erroneous partner identifier.
+
+=== Known Issues
+
+ - Server certificate validation on CloudHub is not supported.
+ - SSL session reuse is not supported.
+
+== 1.0.5
+
+*June 13, 2016*
+
+
+=== Compatibility
+
+The FTPS connector is compatible with:
+
+|===
+|Application/Service|Version
+
+|Mule Runtime|3.6.x and higher
+|FTPS|This connector works with any FTP server with built-in TLS/SSL support.
+|===
+
+=== Migrating from Older Versions
+
+No migration steps required.
+
+=== Fixed in this Release
+
+- Connector was throwing an exception upon host and port mismatches between control and data channels.
+- 'Move to' directory existence now checked using CHD instead of STAT prevents connector from failing when not supported.
+
+=== Known Issues
+
+ - Server certificate validation on CloudHub is not supported.
+ - SSL session reuse is not supported.
+
+
+== 1.0.4
+
+*March 30, 2016*
+
+
+=== Compatibility
+The FTPS connector is compatible with:
+
+|===
+|Application/Service|Version
+
+|Mule Runtime|3.6.x and higher.
+|FTPS|This connector works with any FTP server with built-in TLS/SSL support.
+|===
+
+=== Migrating from Older Versions
+
+No migration steps required.
+
+=== Fixed in this Release
+
+- 'Polling frequency' setting in TPM being ignored by the connector configuration.
+- Transmission errors now published to TPM.
+
+=== Known Issues
+
+ - Server certificate validation on CloudHub is not supported.
+
+
+== 1.0.3
+
+*January 14, 2016*
+
+
+=== Compatibility
+The FTPS connector is compatible with:
+
+|===
+|Application/Service|Version
+
+|Mule Runtime|3.6.x and higher.
+|FTPS|This connector works with any FTP server with built-in TLS/SSL support.
+|===
+
+=== Migrating from Older Versions
+
+No migration steps required.
+
+=== Fixed in this Release
+
+- Changes made in the Trading Partner Manager configuration are not being updated on a running Mule application.
+- 'Move to directory' setting on Trading Partner Manager was being ignored.
+
+=== Known Issues
+
+ - Server certificate validation on CloudHub is not supported.
+
+== 1.0.2
+
+*December 18, 2015*
+
+Release Notes for version 1.0.2 of the FTPS connector.
+
+=== Compatibility
+
+The FTPS connector is compatible with:
+
+|===
+|Application/Service |Version
+
+|Mule Runtime |3.6.x and higher.
+|FTPS |This connector works with any FTP server with built-in TLS/SSL support.
+|===
+
+=== Migrating from Older Versions
+
+No migration steps required.
+
+=== Fixed in this Release
+
+-  Solved issue on Windows with failing write operations due to misinterpreted slashes.
+
+=== Known Issues
+
+ - Server certificate validation on CloudHub is not supported.
+ - Changes made in the Trading Partner Manager configuration are not being updated on a running Mule application.
+
+
+== 1.0.1
+
+*November 2015*
+
+=== Compatibility
+The FTPS connector is compatible with:
+
+|===
+|Application/Service|Version
+
+|Mule Runtime|3.6.x and higher.
+|FTPS|This connector works with any FTP server with built-in TLS/SSL support.
+|===
+
+=== Migrating from Older Versions
+
+No migration steps required.
+
+=== Fixed in this Release
+
+- Write operation failed if trailing slash was not included in the path.
+- Polling frequency setting was not being read from APM when a Partner Manager Config was used.
+- If no filename is specified the FTPS Connector will read all files in the set path.
+
+=== Known Issues
+
+- Server certificate validation on CloudHub is not supported.
+
+== 1.0.0
+
+*November 11, 2015*
+
+=== Compatibility
+The FTPS connector is compatible with:
+
+|===
+|Application/Service|Version
+
+|Mule Runtime|3.6.x and higher.
+|FTPS|This connector works with any FTP server with built-in TLS/SSL support.
+|===
+
+=== Migrating from Older Versions
+
+No migration steps required.
+
+=== Features
+
+FTPS Connector goes MuleSoft Certified.
+
+=== Known Issues
+
+ - Server certificate validation on CloudHub is not supported.
+
+////
+== 1.0.0
+
+*October 2015*
+
+==== Contents
+
+- Compatibility
+- Features
+- Fixed in this Release
+- Known Issues
+- Support Resources
+
+Release Notes for version 1.0.0-RC6 of the FTPS connector. These Release Notes accompany the http://modusintegration.github.io/mule-connector-ftps/[user guide].
+
+==== Compatibility
+
+The FTPS connector is compatible with:
+
+|===
+|Application/Service |Version
+|Mule Runtime |3.6.x and higher.
+|FTPS |This connector works with any FTP server with built-in TLS/SSL support
+|===
+
+==== Migrating from older versions of the connector:
+
+No migration steps required.
+
+==== Features
+
+. Connector Configuration has been split between Basic and TPM based configuration.
+. B2B platform compatibility on transmissions updated
+
+
+==== Fixed in this Release
+
+- Incoming transmissions not showing up in the B2B portal.
+- Standard field is now optional.
+
+==== Known Issues
+
+ - Server certificate validation on CloudHub is not supported.
+
+
+=== October 2015
+
+==== Contents
+
+- Compatibility
+- Features
+- Fixed in this Release
+- Known Issues
+- Support Resources
+
+Release Notes for version 1.0.0-RC5 of the FTPS connector. These Release Notes accompany the http://modusintegration.github.io/mule-connector-ftps/[user guide].
+
+==== Compatibility
+The FTPS connector is compatible with:
+
+|===
+|Application/Service|Version
+
+|Mule Runtime|3.6.0 and higher.
+|FTPS|This connector works with any FTP server with built-in TLS/SSL support
+|===
+
+==== Migrating from older versions of the connector:
+
+No migration steps required.
+
+==== Features
+
+. B2B platform compatibility on transmissions updated
+
+
+==== Fixed in this Release
+
+- Incoming transmissions not showing up in the B2B portal.
+- User's password is being logged in debug mode.
+
+==== Known Issues
+
+ - Server certificate validation on CloudHub is not supported.
+
+=== September 2015
+
+==== Contents
+
+- Compatibility
+- Features
+- Fixed in this Release
+- Known Issues
+- Support Resources
+
+Release Notes for version 1.0.0-RC4 of the FTPS connector. These Release Notes accompany the http://modusintegration.github.io/mule-connector-ftps/[user guide].
+
+==== Compatibility
+The FTPS connector is compatible with:
+
+|===
+|Application/Service|Version
+
+|Mule Runtime|3.6.x and higher.
+|FTPS|This connector works with any FTP server with built-in TLS/SSL support
+|===
+
+==== Migrating from older versions of the connector:
+
+No migration steps required.
+
+==== Features
+
+. B2B platform compatibility on transmissions updated
+
+
+==== Fixed in this Release
+
+- No bugs fixed.
+
+==== Known Issues
+
+ - Server certificate validation on CloudHub is not supported.
+ - User's password is being logged in debug mode.
+
+=== August 2015
+
+==== Contents
+
+- Compatibility
+- Features
+- Fixed in this Release
+- Known Issues
+- Support Resources
+
+Release Notes for version 1.0.0-RC3 of the FTPS connector. These Release Notes accompany the http://modusintegration.github.io/mule-connector-ftps/[user guide].
+
+==== Compatibility
+The FTPS connector is compatible with:
+
+|===
+|Application/Service|Version
+
+|Mule Runtime|3.6.x and higher.
+|FTPS|This connector works with any FTP server with built-in TLS/SSL support
+|===
+
+==== Migrating from older versions of the connector:
+
+No migration steps required.
+
+==== Features
+
+. B2B platform compatibility updated
+
+
+==== Fixed in this Release
+
+- No bugs fixed.
+
+==== Known Issues
+
+ - Server certificate validation on CloudHub is not supported.
+ - User's password is being logged in debug mode.
+
+=== July 2015
+
+==== Contents
+
+- Compatibility
+- Features
+- Fixed in this Release
+- Known Issues
+- Support Resources
+
+Release Notes for version 1.0.0-RC2 of the FTPS connector. These Release Notes accompany the http://modusintegration.github.io/mule-connector-ftps/[user guide].
+
+==== Compatibility
+The FTPS connector is compatible with:
+
+|===
+|Application/Service|Version
+
+|Mule Runtime|3.6.x and higher.
+|FTPS|This connector works with any FTP server with built-in TLS/SSL support
+|===
+
+==== Migrating from older versions of the connector:
+
+No migration steps required.
+
+==== Features
+
+. Reads and writes files over FTPS
+. Added support for JKS key stores
+. Supports active and passive FTP transfer modes
+. Supports implicit and explicit FTP SSL modes
+. Read operations also support wildcard filtering
+. Supports file deletion upon successful read
+. Moving files to a given archive folder supported
+. Using a temporary location for uploads supported
+. Spawning multiple concurrent downloads supported
+. B2B platform ready - if you're using the Anypoint B2B Platform you can track your transactions from it.
+
+
+==== Fixed in this Release
+
+- Polling was not working as expected checking for files only once
+- New files were not being discovered while polling a given directory
+
+==== Known Issues
+
+ - Server certificate validation on CloudHub is not supported.
+
+=== June 2015
+
+==== Contents
+
+- Compatibility
+- Features
+- Fixed in this Release
+- Known Issues
+- Support Resources
+
+Release Notes for version 1.0.0-RC1 of the FTPS connector. These Release Notes accompany the http://modusintegration.github.io/mule-connector-ftps/[user guide].
+
+==== Compatibility
+The FTPS connector is compatible with:
+
+|===
+|Application/Service|Version
+
+|Mule Runtime|3.6.0 and higher.
+|FTPS|This connector works with any FTP server with built-in TLS/SSL support
+|===
+
+==== Migrating from older versions of the connector:
+
+This is currently the first version of the connector.
+
+==== Features
+
+. Reads and writes files over FTPS
+. Added support for JKS key stores
+. Supports active and passive FTP transfer modes
+. Supports implicit and explicit FTP SSL modes
+. Read operations also support wildcard filtering
+. Supports file deletion upon successful read
+. Moving files to a given archive folder supported
+. Using a temporary location for uploads supported
+. Spawning multiple concurrent downloads supported
+. B2B platform ready - if you're using the Anypoint B2B Platform you can track your transactions from it.
+
+
+==== Fixed in this Release
+
+- This is currently the first version of the connector.
+
+==== Known Issues
+
+ - Server certificate validation on CloudHub is not supported.
+////
+
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

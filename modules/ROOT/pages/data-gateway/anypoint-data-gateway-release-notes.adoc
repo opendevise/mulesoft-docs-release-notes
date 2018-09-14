@@ -1,0 +1,199 @@
+= Anypoint Data Gateway Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: anypoint-data-gateway-release-notes.adoc
+:keywords: release notes, data gateway
+
+== August 27, 2016 Release
+
+*_Version 1.4.3_*
+
+This new version of Anypoint Data Gateway includes several bug fixes and runtime upgrades for both the DataGateway Designer and the DataGateways.
+
+=== Known Limitations
+
+The same limitations of v1.4.2 apply to this version.
+
+For more information, see the product https://www.mulesoft.com/press-center/anypoint-data-gateway[announcement].
+
+
+== May 14, 2016 Release
+
+*_Version 1.4.2_*
+
+API Data Gateway has been updated to accommodate its UI design to Anypoint Platform's new navigation bar.
+
+=== Known Limitations
+
+The same limitations of v1.4.1 apply to this version.
+
+
+== April 9, 2016 Release
+
+*_Version 1.4.1_*
+
+We are proud to present a new version of Anypoint Data Gateway that includes new features such as a new set of Data Gateway roles and runtime upgrades for both the DataGateway Designer and the DataGateways. Also a new free form string is supported as a connection parameter for JDBC based DataGateways.
+
+=== Features and Functionality
+
+*New Roles for DataGateway*
+
+Besides the existing Organization Owner, two new DataGateway Admin and DataGateway Viewer roles were created to manage the access to the DataGateway Designer.
+
+*Connection String for JDBC DataGateways*
+
+A free form connection string is now available for the DB2, Oracle and MySQL DataGateways, allowing to introduce custom parameters in the database connection URL.
+
+*New Runtimes for the Designer and the DataGateways*
+
+The Designer now runs on the latest Mule 3.7.3, and the DataGateways were upgraded to run on API Gateway 1.3.2
+
+=== Known Limitations
+
+The same limitations of v1.4.0 apply to this version.
+Also:
+
+* When using a connection string to set up a DB2, Oracle or MySQL DataGateway, Cloud Extender will be disabled. Cloud Extender needs the initial host and ports defined to open a tunnel, and these can not be safely derived from a connection string. The connection string can be used with either a public database, or through a VPC.
+
+
+== January 9, 2016 Release
+
+*_Version 1.4.0_*
+
+This new version of Anypoint Data Gateway includes two new features: full integration with the Anypoint Platform and support for connecting to Salesforce through a single API endpoint.
+
+=== Features and Functionality
+
+*Full integration with the Anypoint Platform*
+
+Anypoint Data Gateway is now a full Anypoint Platform application, accessible through the main Anypoint Platform management center. Over the next month it will be enabled for all API solution customers. Anypoint Data Gateway continues to be also be available through Salesforce for those using the embedded experience.
+
+*Single OData API endpoint for Salesforce*
+
+Anypoint Data Gateway can now publish all your gateways on a single OData API for Salesforce. This means a single Salesforce Lightning Connect license is required per environment, reducing costs and simplifying the integration.
+
+=== Known Limitations
+
+The same limitations of v1.3.1 apply to this version.
+Also:
+
+* Due to known issues in the Salesforce API, any publishing or synchronization issue can be easily fixed by going to Setup > Develop > External Data sources, selecting the published data source and clicking on Validate and Sync (In Salesforce)
+* If you are publishing more than 100 objects to Salesforce, you will need to create a separate environment for additional gateways, since Salesforce only allows 100 objects per endpoint.
+* Since all the objects within an environment are now published through a single OData API, there must not be duplicate object names across the Data Gateways in a given environment.
+* Any preexisting DataGateway must be republished through the Salesforce link in the left navigation bar to ensure it uses the new single OData API.
+* In order to use the latest fixes on data mapping, new Data Gateways must be created to replace the old ones with blob, double and datetime field issues.
+
+
+== December 5, 2015 Release
+
+*_Version 1.3.1_*
+
+We are excited to announce the next release of Anypoint Data Gateway. This release adds tighter integration with the Anypoint Platform, adding trials and enterprise users controls. It also features many UI improvements including an all new copy objects feature.
+
+=== Features and Functionality
+
+==== Copy Objects feature
+
+Data Gateway allows you to copy an object from one gateway to another. This feature is especially useful when working with multiple environments that you wish to maintain in a similar state, such as a development and a production environment.
+
+==== Cloud Extender authenticated proxy support
+
+Cloud Extender has been enhanced to support authenticated or transparent proxies, making it possible to expose your internal datasources through Data Gateway in an easy and friendly way.
+
+==== UI improvements
+
+The latest release includes several UI improvements such as:
+
+* Empty states indicators.
+* Environment dropdown changes.
+* Link to the subscription page.
+
+==== Self service
+
+Now the users can request a subscription through a link in the left navigation bar.
+
+==== Link to Support
+
+A new link to request support has been included in the top navigation bar, allowing enterprise users to request support through the support portal in just one click.
+
+=== Known Limitations
+
+The same limitations of v1.2.1 apply to this version.
+
+For more information, see the product http://www.mulesoft.com/press-center/anypoint-data-gateway[announcement].
+
+
+== May 13, 2015 Release
+
+*_Version 1.1.0_*
+
+=== Features and Functionality
+
+==== Cloud Extender
+
+Cloud Extender is an agent that enables you to connect to your on-premise data source during the trial period without undergoing VPC configuration to evaluate the product. Cloud Extender relays data between Data Gateway and the data source within the private network through an SSH over HTTP tunnel. The advantage of Cloud Extender is that it eliminates the need to open ports in your firewall and that it configures itself automatically — all you have to do is run it.
+
+==== UX/UI improvements
+
+Several minor UI/UX fixes and improvements:
+
+* Object edition buttons were moved into the object details view
+* Synchronization against Salesforce is performed only for the profiles assigned to the current user
+* Improved connection creation experience
+
+==== Support for Mule ESB 3.6.1
+
+This version works on top of the latest version of the Mule ESB.
+
+==== Known Limitations
+
+The same limitations of <<February 25, 2015 Release>> apply to this version.
+
+For more information, see the product http://www.mulesoft.com/press-center/anypoint-data-gateway[announcement].
+
+== March 11, 2015 Release
+
+*_Version 1.0.1_*
+
+Following the initial (1.0.0) release of Anypoint Data Gateway on February 25th, we have released version 1.0.1, incorporating user feedback, minor bug fixes and enhancements including:
+
+* Improved Object creation and management:
+** Support for assigning a primary key to an object when a primary key doesn't exist
+** Fix around identifying primary keys when building objects on Oracle DB
+** New validation logic to prevent creating 2+ objects with identical names (which would cause an error within Salesforce Lightning Connect)
+* Improved Connections management:
+** Ability to delete a connection
+** Fix for Oracle DB connectivity issues
+
+For all other known issues, prerequisites and product functionality, see the next section.
+
+== February 25, 2015 Release
+
+*_Version 1.0.0_*
+
+We are excited to release the first version of Anypoint Data Gateway, built for https://www.youtube.com/watch?v=OZWneVt_1Mk[Salesforce Lightning Connect]! You can install this product from https://appexchange.salesforce.com[Salesforce AppExchange].
+
+== Hardware and Software Requirements
+
+* Salesforce Lightning Connect Integration - Winter ‘14 release
+
+== Compatibility
+
+* Salesforce metadata API version 34+
+
+== Features and Functionality
+
+* Read-only connectivity and virtualization of SAP R/3 data by Remote Function Call (RFC)
+* Read-only connectivity and virtualization of OracleDB, SQL Server, DB2, and MySQL
+* Anypoint Gateway Designer: a browser interface for:
+** Configuring connections to application and database sources.
+** Creating gateways to connect to Salesforce.
+** Designing External Objects for use in Salesforce forms, search, workflow, and reporting.
+* Automated configuration of External Data Sources and External Objects within Salesforce Lightning Connect admin settings.
+* Support for seamless and secure connectivity to on-premises data sources through use of Virtual Private Cloud (VPC).
+* Ability to secure and throttle Data Gateway services through integration to the MuleSoft Anypoint Platform, and API Management functionality
+
+== Known Issues - All Versions
+
+For known issues, see xref:data-gateway::troubleshooting-data-gateway.adoc[Troubleshooting Data Gateway].

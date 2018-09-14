@@ -1,0 +1,206 @@
+= Mule ESB 3.7.5 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: mule-esb-3.7.5-release-notes.adoc
+:keywords: mule, 3.7.5, release notes
+
+Release notes for Mule 3.7.5 release, an Enterprise Only maintenance release for 3.7.x users, includes fixed issues, library changes, and <<migration-guidance,migration information>>.
+
+*January 18, 2017*
+
+== Supported Software
+
+Mule was tested on the following software:
+
+[%header,cols="30a,70a"]
+|===
+|Software|Version
+|JDK |JRE 1.7.0 (Recommended JRE 1.7.0_79/80) +
+ JRE 1.8
+|OS | MacOS 10.10.3 +
+HP-UX 11i V3 +
+AIX 7.1 +
+Windows 2012 R2 Server +
+Windows 8.1 +
+Solaris 11.2 +
+RHEL 7.0 +
+Ubuntu Server 15.04
+|Application Servers | Tomcat 7 +
+Tomcat 8 +
+WebLogic 12c +
+Enterprise 6.1 +
+Community 8 +
+Community 8 +
+WebSphere 8 +
+Jetty 8 +
+Jetty 9 +
+Wildfly 8
+|Databases | Oracle 11g +
+MySQL 5.5+
+DB2 10 +
+PostgreSQL 9 +
+Derby 10 +
+Microsoft SQL Server 2014
+|===
+
+== Bundled Runtime Manager Agent
+
+This version of Mule ESB comes bundled with the Runtime Manager Agent plugin version 1.4.1.
+
+See xref:runtime-manager-agent/runtime-manager-agent-release-notes.adoc[Runtime Manager Agent Release Notes].
+
+== Fixed Issues
+
+[%header,cols="30a,70a"]
+|===
+|Issue |Description
+| EE-4963 | Modify Agent to retrieve OperatingSystem information in IBM JVM 7
+| EE-4978 | Log Resource leak - Upgrade c3p0 to version 0.9.5.2 or newer
+| EE-4986 | Bitronix transaction manager used the wrong thread to shrink resource pools
+| EE-5023 | Bitronix caching connection factory does not work in cluster
+| EE-5028 | MMC agent not started in embedded mode
+| EE-5055 | Batch should auto stop job instances when queues are corrupted
+| EE-5182 | Poll watermark got updated in batch input phase even there's an exception
+| EE-5195 | Create new BatchTransactionContextFactory each time the DefaultBatchEngine is started
+| EE-5250 | Resuming batchjob that finished all batch steps (send to on complete)
+| EE-5008 | Add missing 3.6 version to spring.schemas
+| MULE-11282 | Fix: QuartzMessageReceiver handles the stop message by default and does not stop current scheduled jobs.
+| MULE-11274 | MVEL optimizer does not refresh when the payload type changes
+| MULE-11271 | Fix: Multiple Quartz connectors register quartz scheduler with the same name.
+| MULE-11240 | Apply changes from CXF-7162
+| MULE-11206 | Prevent possible hash collision attacks in Java 7
+| MULE-11204 | Memory leak on mule db module on high load scenario when streaming is enabled
+| MULE-11147 | Retry HTTP requests where connection has become stale since obtaining it from connection pool
+| MULE-11145 | Apply Processors to Custom Validators
+| MULE-11124 | content-type set in HTTP request builder should not be case sensitive
+| MULE-11118 | Return a 5xx response when thread pool is exhausted instead of ignoring the request
+| MULE-11002 | Increase of contention found using xpath due to high classloading usage
+| MULE-10996 | Content-Length header case conflicts with streaming
+| MULE-10985 | Parallel deployment causes runtime contention on Logger.
+| MULE-10921 | FtpWork never processes file if lock is not granted
+| MULE-10913 | DB Pool retrieving invalid connections
+| MULE-10911 | Poll component should ignore scheduling when application is being stopped
+| MULE-10909 | MySQL objects leaked after undeployment
+| MULE-10882 | Unregister resources from Bitronix (ResourceRegistrar and ManagementRegistrar)
+| MULE-10881 | AsyncInterceptingMessageProcessor#processNextAsync not rethrowing exception
+| MULE-10870 | Duplicate content-type created in response builder
+| MULE-10854 | Use scrollable ResultSet when supported for stored procedure calls
+| MULE-10817 | ExpressionMuleEventKeyGenerator does not evaluates composite expressions
+| MULE-10773 | Jaxb unmarshaller doesn't support namespaces anymore
+| MULE-10722 | Not Handling FTP Connection Errors in FTPMessageReceiver
+| MULE-10721 | Simultaneous Http requests with MuleClient produce error
+| MULE-10717 | Flows can start processing messages before referenced flows are completely started
+| MULE-10686 | Disable entity expansion when processing XML to avoid DoS
+| MULE-10620 | Envelope namespace used in body produces broken XML when getting the body
+| MULE-10598 | Apply changes from CXF-7058
+| MULE-10593 | App with missing config fails to deploy but has status created
+| MULE-10581 | Batch process cannot resume after a crash if there is a corrupted file in the ObjectStore
+| MULE-10578 | Exception thrown form a Work#run() is ignored by the WorkManager
+| MULE-10573 | File Transport processes files that did not finish copying
+| MULE-10527 | Error processing stored procedure with output params
+| MULE-10500 | SoapFaultException must keep the original SoapFault
+| MULE-10417 | When sending multiple HTTP headers with the same key using a Requester the format is not the expected by HTTP spec
+| MULE-10356 | Http inbound endpoint returns additional headers in 100 Continue response
+| MULE-10352 | Make HttpClient Startable instead of Initialisable to match Stoppable
+| MULE-10348 | Processors in DefaultMessageProcessorChain are not completely initialized
+| MULE-10306 | Add option to disable internal entity expansion in XML (leads to DoS)
+| MULE-10268 | Proxy Authentication Header is not included when using proxy for HTTPS target server
+| MULE-10242 | Dynamic Pipeline can not be obtained after failure while updating for the first time
+| MULE-10233 | HTTP Requester is not sending custom headers for multipart requests
+| MULE-10230 | SQL query parser prevents SQL variable assignment
+| MULE-10196 | When AbstractConnector fails to connect receivers it leaves the connector connection active
+| MULE-10193 | HttpListener - MuleMessage cast exception when sending duplicate Content-Type header
+| MULE-10191 | Query named parameters are not validated properly
+| MULE-10187 | HTTPS Requester thread hangs intermittently
+| MULE-10186 | Classloader leak due to shutdown listeners are not cleared
+| MULE-10180 | Classloader leak when Oracle JDBC Driver is not used but included in application lib folder
+| MULE-10178 | InputStream not closed on core, launcher, and spring-config
+| MULE-10171 | String attachments do not maintain content type when sent on HTTP transport
+| MULE-10107 | High contention when many threads try to create exceptions
+| MULE-10095 | OOM when starting mule with large tx log file
+| MULE-10094 | Incomplete application is continuously redeployed
+| MULE-10091 | Properties missing when using jetty-ssl
+| MULE-10089 | Ensure that QueueManagers are initialized before connectors
+| MULE-10078 | Properly handle disposal of XaTransactedJmsMessageReceiver
+| MULE-10003 | OAuth2 authorization-code-grant-type should reuse refresh_token
+| MULE-9996 | First successful is not notifying all paths
+| MULE-9933 | RestrictedSSLSocketFactory needs to implement getDefault method so it can be set as the socket factory used by the Ldap provider in the JVM
+| MULE-9891 | doc:name in reference exception strategy overrides doc:name of the flow
+| MULE-9886 | HttpResponseBuilder does not override Content-Length header after recalculating it
+| MULE-9826 | HTTP timeout when sending x-www-form-urlencoded POST
+| MULE-9757 | SFTP: Returning of sftp clients to the pool are blocked waiting for the reconnection strategy
+| MULE-9741 | Deadlocks comparing MuleEndpointURI
+| MULE-9740 | No object DCH for MIME type
+| MULE-9737 | Chunked transfer encoding is not given precedence when both chunked and content-length headers exist in response
+| MULE-9659 | Lifecycle error when deploying application if there are two inbound-endpoints with the same URI registered
+| MULE-9567 | AHC/Grizzly: Readd locally closed connection validation
+| MULE-8989 | Mule gives error when making http request from JBoss
+| MULE-8777 | HttpMapParam expects multiple values in ParameterMap but ParameterMap only returns one
+| MULE-8414 | Jetty-ssl transport not setting some HTTP inbound properties
+| MULE-8413 | xpath3 function not working with output from WebService Consumer component
+| MULE-8196 | Listener 503 responses do not include an informative http body.
+| MULE-11293 | Fix: Session property disappearing after dispatchEvent()
+| MULE-11281 | Fix: SFTP Inbound Endpoint doesn't set the MimeType
+| MULE-11273 | ER: When a null value is passed to a request query param it should be removed.
+| MULE-11203 | Add Error Message about not supported Asynchronous Retry Policies in DB Connection.
+| MULE-11191 | Fix: FTP reconnect Notifier is not working
+| MULE-11185 | Fix: sftpclient unable to validate duplicate files for relative paths involving ~ symbol
+| MULE-11161 | Update the cipher block used in PGP encryption
+| MULE-11159 | Fix: FileToString Transform is not able to process incoming message payload retrieved from file connector when streaming attribute is set to false.
+| MULE-11138 | Make easier to work with UDT on DB connector
+| MULE-11110 | Fix: fileAge of Connector is replaced by fileAge of endpoint
+| MULE-11080 | Add support to auto convert Strings to CLOB values
+| MULE-11079 | Fix: Set Payload doesn't work correctly with special characters in a variable value.
+| MULE-11022 | Http Conflicts with Wildcard in the middle of the path.
+| MULE-11008 | Fix: JsonData doesn't have to implement Serializable
+| MULE-10986 | Fix conflict Similar HTTP Listener Path with Wildcards
+| MULE-10979 | Remove System Properties Configuration
+| MULE-10709 | Use custom factory builder for XML parsers to avoid vulnerabilities
+| MULE-10643 | ResourceBundle class loader leak when undeploying application
+| MULE-10510 | Remove final modifier from process method in MessageProcessor implementations
+| MULE-10298 | Deploy applications in parallel
+| MULE-10079 | Avoid Quartz update check
+| MULE-9931 | Allow to configure the size of the transaction log
+| MULE-7608 | New Database: Add support for user defined data types
+|===
+
+== Library changes
+[%header,cols="30a,70a"]
+|===
+|Issue |Description
+| MULE-10158 | Upgrade Spring to 4.1.9 & Spring Security to 4.0.4
+| MULE-10164 | Upgrade Grizzly to version 2.3.26
+| MULE-10165 | Upgrade AHC to 1.9.39
+| MULE-10599 | Upgrade XStream to Version 1.4.9
+| MULE-11262 | Update commons-net to 3.5
+| MULE-11326 | Update JUnit to 4.12 and disable timeout when debugging
+| MULE-9785 | Upgrade c3p0 to 0.9.5.2 or newer
+|===
+
+== Migration Guidance
+
+This section lists issues that can affect migration to Mule 3.7.5. Also, see xref:mule-runtime/updating-mule-versions.adoc[these general guidelines].
+
+=== MULE-10306
+
+XML entity expansion in XML transformers is now disabled by default because it allows DoS attacks. To restore previous behavior use the `expandInternalEntities="true"` attribute.
+
+=== MULE-10686
+
+XML entity expansion in Jersey is now disabled by default because it allows DoS attacks. To restore previous behavior use the `mule.xml.expandInternalEntities=true` property.
+
+=== MULE-10979
+
+The default response timeout and default transaction timeout can't be configured using system properties on the command line or in the wrapper.conf file anymore. Instead, use the configuration element. For example:
+
+`<configuration defaultResponseTimeout="20000"  defaultTransactionTimeout="40000"/>`
+
+=== MULE-11118
+
+The HTTP listener now replies with status code 503 when the thread pool is exhausted (and `poolExhaustedAction="ABORT"`) instead of closing the socket.
+
+== Support
+
+* http://forums.mulesoft.com/[MuleSoft Forum].
+* To access MuleSoft Support https://www.mulesoft.com/support-and-services/mule-esb-support-license-subscription[subscribe to Mule ESB Enterprise] and log in to the MuleSoft http://www.mulesoft.com/support-login[Customer Portal].

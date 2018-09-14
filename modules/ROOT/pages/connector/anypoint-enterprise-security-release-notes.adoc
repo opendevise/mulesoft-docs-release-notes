@@ -1,0 +1,292 @@
+= Anypoint Enterprise Security Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: anypoint-enterprise-security-release-notes.adoc
+:keywords: release notes, security, enterprise
+
+== Current Release Version
+
+[%header,cols="4*"]
+|===
+|  |Enterprise |Community |Mule ESB Version Compatibility
+|Anypoint Enterprise Security |1.7.3 |n/a |3.9.x
+|===
+
+== New Features and Functionality Per Release
+
+=== 1.7.3 - February 28, 2018
+
+* Studio update site: +http://anypoint-enterprise-security-update-site.s3.amazonaws.com/1.7.3+
+
+** MULE-14382: Upgrade BouncyCastle to 1.59
+** SEC-319: Race condition when concurrent request use the same refresh
+** SEC-322: It is not possible to encrypt using a public key from a certificate in a keystore.
+
+=== 1.7.2 - December 12, 2017
+* Studio update site: +http://anypoint-enterprise-security-update-site.s3.amazonaws.com/1.7.2+
+
+** SEC-317: In JCE signature verification, key password is mandatory. Add extra validation for avoiding NPE.
+** SEC-318: Bug when sending String type payload to encrypt with PGP.
+
+=== 1.7.1 - October 24, 2017
+* Studio update site: +http://anypoint-enterprise-security-update-site.s3.amazonaws.com/1.7.1+
+
+** SEC-313: Unsigned content warning when installing Mule Studio Properties File Editor
+** MULE-13825: Users must be able to set the name of a stream inside encrypted file of PGP.
+
+=== 1.7.0 - October 6, 2017
+* Support for Mule 3.9.0.
+* Studio update site: +http://anypoint-enterprise-security-update-site.s3.amazonaws.com/1.7.0+
+
+** MULE-11161: make PGP encryption cipher configurable. Set AES-256 as default algorithm in PGP Encryption.
+** MULE-13305: Add support for PGP Binary Encryption.
+** MULE-11246: Improve PGP Encrypter
+** SEC-236: Add support for PGP in the signature module
+** SEC-309: Improvements in XML Signature
+
+=== 1.6.8 - December 12, 2017
+
+* Studio update site: +http://anypoint-enterprise-security-update-site.s3.amazonaws.com/1.6.8+
+
+** SEC-317: In JCE signature verification, key password is mandatory. Add extra validation for avoiding NPE.
+** SEC-318: Bug when sending String type payload to encrypt with PGP.
+
+=== 1.6.7 - October 23, 2017
+
+* Studio update site: +http://anypoint-enterprise-security-update-site.s3.amazonaws.com/1.6.7+
+
+** SEC-313: Unsigned content warning when installing Mule Studio Properties File Editor
+** MULE-13825: Users must be able to set the name of a stream inside encrypted file of PGP.
+
+=== 1.6.6 - October 6, 2017
+
+* Studio update site: +http://anypoint-enterprise-security-update-site.s3.amazonaws.com/1.6.6+
+
+** SEC-309: Improvements in XML Signature
+
+=== 1.6.5 - July 3, 2017
+
+* Studio update site: +http://anypoint-enterprise-security-update-site.s3.amazonaws.com/1.6.5+
+
+** SEC-298: Incorrect logs when deploying the Mule OAuth provider.
+** SEC-304: LazyTransformedInputStream is not being closed, which causes a memory leak.
+**	SEC-305: Wrong grant type with special characters that should be escaped.
+
+=== 1.6.4 - May 30, 2017
+
+* Studio update site: +http://anypoint-enterprise-security-update-site.s3.amazonaws.com/1.6.4+
+
+** MULE-12273: Add validations in PGP Module to avoid NPE.
+** MULE-12068: add TransformerFactory to XMLSecureFactories, and update existing providers.
+** SEC-301: Xml decrypter only decrypts the first node when XPath is used.
+** SEC-294: Inconsistent behavior of FilterModule, when the IP/expiration is filtered.
+** MULE-11075: Upgrade BouncyCastle to 1.56
+** SEC-297: Avoid including mule dependencies inside the app when using a Maven project app.
+
+=== 1.6.3 - March 31, 2017
+* Studio update site: +http://anypoint-enterprise-security-update-site.s3.amazonaws.com/1.6.3+
+
+** SEC-293: Location in secure-property-placeholder does not escape environment on Windows
+** SEC-294: Inconsistent behavior of FilterModule, when the IP/expiration is filtered
+
+=== 1.6.2 - January 6, 2017
+* Studio update site: +http://anypoint-enterprise-security-update-site.s3.amazonaws.com/1.6.2+
+
+** SEC-288: Refresh tokens expiration new features: Support expiration of refresh tokens and when refreshing an access token whether to provide a new refresh token or not should be configurable.
+** SEC-277: allow url encoded passwords in oauth (characters like '+' and '%')
+** SEC-290: Exception handling not reporting correct exception.
+** SEC-289: Fix OAuth2 test assertions to compare JSON Objects instead o
+** SEC-286: Encrypt/decrypt operations should support OutputHandler
+** SEC-223: Update commons-net to 3.5
+** SEC-285: Add SHA512withRSA algorithm to Signature module
+** SEC-283: Adding a Token Generator Strategy pattern
+** SEC-282: Custom flow in auto-generated endpoints is not stopping further processing.
+** SEC-279: Change scope of security-api dependency
+** SEC-271: Configure secure XML parsers
+** SEC-223: Update Bouncy-Castle to bcpg-jdk15on version 1.54.
+
+
+=== 1.6.0 - May 16, 2016
+* Support for Mule 3.8.0.
+* Studio update site: +http://security-update-site-1.6.s3.amazonaws.com+
+
+** SEC-257: OAuth2 provider: Invalid request/token return wrong status codes
+** SEC-262: Mule Properties Editor is not preserving the order of key/value pairs from file to editor and back to file
+** SEC-261 PGPEncrypterModule should validate if publicKey/privateKeyFile and all the attributes needed by PGPKeyRingImpl
+** SEC-256 IP Filter should use x-forwarded-for if present instead of http.remote.address or MULE_REMOTE_CLIENT_ADDRESS
+** SEC-223: Update Bouncy-Castle to bcpg-jdk15on version 1.50.
+
+
+=== 1.5.4 - May 30, 2017
+* Studio update site: +http://anypoint-enterprise-security-update-site.s3.amazonaws.com/1.5.4+
+
+** SEC-292: Update JUnit to 4.12 (#104)
+**	SEC-293: Location in secure-property-placeholder does not escape environment on Windows
+** SEC-294: Inconsistent behavior of FilterModule, when the IP/expiration is filtered
+** MULE-12068: add TransformerFactory to XMLSecureFactories, and update existing providers
+** SEC-301: Xml decrypter only decrypts the first node when XPath is used
+** MULE-11075: Upgrade BouncyCastle to 1.56
+** SEC-297: Avoid including mule dependencies inside the app when using a Maven project app.
+
+=== 1.5.3 - January 6, 2017
+* Studio update site: +http://anypoint-enterprise-security-update-site.s3.amazonaws.com/1.5.3+
+
+** SEC-277: allow url encoded passwords in oauth (characters like '+' and '%')
+** SEC-289: Fix OAuth2 test assertions to compare JSON Objects instead o
+** SEC-290: Exception handling not reporting correct exception.
+** SEC-286: Encrypt/decrypt operations should support OutputHandler
+** SEC-223: Update commons-net to 3.5
+** SEC-285: Add SHA512withRSA algorithm to Signature module
+** SEC-282: Custom flow in auto-generated endpoints is not stopping further processing.
+** SEC-279: Change scope of security-api dependency
+** SEC-271: Configure secure XML parsers
+** SEC-256 IP Filter should use x-forwarded-for if present instead of http.remote.address or MULE_REMOTE_CLIENT_ADDRESS
+
+=== 1.5.2 - December 3, 2015
+* Support for Mule 3.7.3.
+* Studio update site: +http://security-update-site-1.5.s3.amazonaws.com+
+
+=== 1.5.1 - June 30, 2015
+* Support for Mule 3.7.0.
+* Studio update site: +http://security-update-site-1.5.1.s3.amazonaws.com+
+
+=== 1.4.2 - January 6, 2016
+* Studio update site: +http://anypoint-enterprise-security-update-site.s3.amazonaws.com/1.4.2+
+
+** SEC-277: allow url encoded passwords in oauth (characters like '+' and '%')
+** SEC-289: Fix OAuth2 test assertions to compare JSON Objects instead o
+** SEC-290: Exception handling not reporting correct exception.
+** SEC-286: Encrypt/decrypt operations should support OutputHandler
+** SEC-223: Update commons-net to 3.5
+** SEC-279: Change scope of security-api dependency
+** SEC-271: Configure secure XML parsers
+** SEC-256 IP Filter should use x-forwarded-for if present instead of http.remote.address or MULE_REMOTE_CLIENT_ADDRESS
+
+
+=== 1.4.1 - December 4, 2015
+* Support for Mule 3.6.4.
+* Studio update site: +http://anypoint-enterprise-security-update-site.s3.amazonaws.com/1.4.1+
+
+** SEC-241: Fixing Access Token flow when HTTP method is GET
+** SEC-239: Decrypting from file InputStream leaks thread
+
+=== 1.4.0 - April 22, 2015
+
+* Fixed compatibility of IP Filter with the new xref:3.7@mule-runtime::migrating-to-the-new-http-connector.adoc[HTTP Connector]
+* Support for the new HTTP connector in the OAuth2 provider module +
+* Studio update site: +http://security-update-site-1.4.s3.amazonaws.com+
+
+=== 1.3.4 - January 6, 2017
+* Studio update site: +http://anypoint-enterprise-security-update-site.s3.amazonaws.com/1.3.4+
+
+** SEC-289: Fix OAuth2 test assertions to compare JSON Objects instead o
+** SEC-290: Exception handling not reporting correct exception.
+** SEC-286: Encrypt/decrypt operations should support OutputHandler
+** SEC-223: Update commons-net to 3.5
+** SEC-279: Change scope of security-api dependency
+** SEC-272: Change timestamp server
+** SEC-271: Configure secure XML parsers
+
+
+=== 1.3.3 - November 19, 2015
+* Support for Mule 3.5.4.
+* Studio update site: +http://security-update-site-1.3.s3.amazonaws.com+
+
+** SEC-239: Decrypting from file InputStream leaks thread
+** SEC-232: Fix compatibility of IP Filter with the new HTTP module
+
+=== 1.3.2 - November 28, 2014
+
+* Removed dependency to log4j 1.2.
+* joda-time version now matches the one in Mule 3.6 and is not bundled in the distribution
+* Studio update site: +http://security-update-site-1.3.s3.amazonaws.com+
+
+=== 1.3
+
+[NOTE]
+ AES 1.3  requires Mule 3.5 or a newer version
+
+*  Fixed Jetty compatibility issues on the OAuth provider login screens  +
+*  AES modules support and honor the FIPS compliant security model
+
+
+=== 1.2.6 - January 6, 2017
+* Studio update site: +http://anypoint-enterprise-security-update-site.s3.amazonaws.com/1.2.6+
+
+** SEC-223: Update commons-net to 3.5
+** SEC-279: Change scope of security-api dependency
+** SEC-272: Change timestamp server
+** SEC-271: Configure secure XML parsers
+** SEC-220: Thread leak after pgp encryption
+** SEC-212: Make sure static flow is initialized after dispose
+** SEC-211: Avoid generating the authorization and token flows if already created
+** SEC-210: The Oauth module should stop and dispose the autogenerated flows
+
+=== 1.2.5
+
+*  OAuth module correctly disposes auto generated flows. This should fix redeployment problems
+*  Fixed inconsistent behavior of OAuth OnValidate when the token is sent both on header and parameters. This situation now correctly sets a Null payload and the correct error code.
+*  The OAuth provider now supports adding a default scope for clients
+*  Fixed Pretty Good Privacy (PGP) document decryption failing when the document is provided as an InputStream
+*  Stop bundling Spring dependencies that are provided by Mule
+
+=== 1.2.4
+
+*  Upgrade httpcore version to match Mule’s version (fixes incompatibility with Mule 3.5)
+
+=== 1.2.3
+
+*  Support multiple files in "location" of secure-property-placeholder:config
+
+=== 1.2.2 - Oct 22, 2013
+
+* Fixed XML Signature operations not taking into account the document’s encoding
+* Allow security-property-placeholder to use any Spring resource type (like  url:<location>, classpath:<location>, file:<location>)
+
+=== 1.2.1 - Oct 01, 2013
+
+*  Fixed compatibility issues with Studio 3.5
+*  Updated security examples
+
+=== 1.2.0 - May 14, 2013
+
+* *Delete Client* – A message processor which removes clientIDs from the clientStore.
+* *Revoke Token* – A message processor which revokes access or refresh tokens, invalidating the corresponding pair as well (that is, if the message processor revokes the access token, it automatically revokes any refresh token associated with it, and vice versa).
+* *Use with Mule ESB Standalone and Maven* – beyond Mule Studio, Anypoint Enterprise Security is now available for use with Mule Standalone and Maven.
+
+== Version Compatibility
+
+[%header%autowidth.spread]
+|===
+|AES version |Mule ESB version
+|1.7.3 |3.9.0 or newer
+|1.7.2 |3.9.0 or newer
+|1.7.1 |3.9.0 or newer
+|1.7.0 |3.9.0 or newer
+|1.6.9 |3.8.1 or newer
+|1.6.8 |3.8.1 or newer
+|1.6.7 |3.8.1 or newer
+|1.6.6 |3.8.1 or newer
+|1.6.5 |3.8.1 or newer
+|1.6.4 |3.8.1 or newer
+|1.6.3 |3.8.1 or newer
+|1.6.2 |3.8.1 or newer
+|1.6.0 |3.8.0 or newer
+|1.5.4 |3.7.3
+|1.5.3 |3.7.3
+|1.5.2 |3.7.3
+|1.5.1 |3.7.x (3.7.0, 3.7.1, 3.7.2)
+|1.4.2 |3.6.4
+|1.4.1 |3.6.4
+|1.4.0 |3.6.x (3.6.0, 3.6.1, 3.6.2, 3.6.3)
+|1.3.4 |3.5.4
+|1.3.3 |3.5.4
+|1.3.2 |3.5.x (3.5.0, 3.5.1, 3.5.2, 3.5.3)
+|1.2.6 |3.4.x (3.4.0, 3.4.1, 3.4.2, 3.4.3)
+|1.2.5 |3.4.x (3.4.0, 3.4.1, 3.4.2, 3.4.3)
+|===
+
+== See Also
+
+* xref:3.8@mule-runtime::anypoint-enterprise-security.adoc[Anypoint Enterprise Security]

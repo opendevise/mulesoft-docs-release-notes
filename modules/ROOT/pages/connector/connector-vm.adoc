@@ -1,0 +1,53 @@
+= VM Connector 1.1.0 Release Notes for Mule 4
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: connector-vm.adoc
+:keywords: mule, VM, connector, release notes
+
+== 2.0.0
+
+*July 18, 2018*
+
+=== Min Mule Version
+*Mule 4.1.0*
+
+=== New Features and Enhancements
+
+The main difference in this version with respect to v1.1.0 is how the `publish-consume` operation manages errors. In previous versions, if the flow at the receiving end failed, the operation would fail with a `VM:QUEUE_TIMEOUT` error.
+
+In this new version, a `VM:PUBLISH_CONSUMER_FLOW_ERROR` will be thrown instead, signaling the difference between a timeout and an actual failure. Notice however that it's still possible for the `publish-consume` operation to fail with a timeout error, if the receiving flow doesn't fail but doesn't respond in time either.
+
+=== Fixed Issues
+
+[%header,cols="15a,85a"]
+|===
+|Issue |Description
+| https://www.mulesoft.org/jira/browse/MULE-15236[MULE-15236] | `validateNoListenerOnQueue` fails with NPE when generating the error message.
+| https://www.mulesoft.org/jira/browse/MULE-15217[MULE-15217] | Listener does not send response when an error happens in the flow.
+| https://www.mulesoft.org/jira/browse/MULE-15214[MULE-15214] | `publish-consume` with transactions is broken.
+|===
+
+== 1.1.0
+
+*Jan 19, 2018*
+
+=== New Features and Enhancements
+
+This release includes the following enhancements, changes, and fixes:
+
+* Added support for message correlation
+* Added hinting of available queues in Listener
+
+=== Upgrade Requirements
+
+Mule 4.1
+
+== Fixed Issues
+
+* VM Connector exports internal classes. (MULE-14444)
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

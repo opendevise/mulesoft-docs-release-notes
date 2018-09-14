@@ -1,0 +1,11 @@
+= Anypoint Platform for Pivotal Cloud Foundry (PCF)
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: anypoint-platform-pcf-release-notes.adoc
+
+The following versions of this product are available:
+
+* xref:pcf/anypoint-platform-pcf-1.5.2.adoc[Anypoint Platform for Pivotal Cloud Foundry 1.5.2 Release Notes]
+* xref:pcf/anypoint-platform-pcf-1.5.1.adoc[Anypoint Platform for Pivotal Cloud Foundry 1.5.1 Release Notes]
+* xref:pcf/anypoint-platform-pcf-1.5.0.adoc[Anypoint Platform for PCF Beta 1.5.0 Release Notes]

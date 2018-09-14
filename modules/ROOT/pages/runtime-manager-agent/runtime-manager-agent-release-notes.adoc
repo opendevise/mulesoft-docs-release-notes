@@ -1,0 +1,45 @@
+= Runtime Manager Agent Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: runtime-manager-agent-release-notes.adoc
+
+_Enterprise Edition_
+
+
+The xref:runtime-manager::runtime-manager-agent.adoc[The Runtime Manager Agent] is a plugin extension for a Mule runtime which exposes the Mule API. Using the Runtime Manager Agent, you can monitor and control your Mule ESB servers by calling APIs from external systems, and/or have Mule publish its own data to external systems.
+
+*Mule Agent Plugin 2.n:*
+
+* xref:runtime-manager-agent/runtime-manager-agent-2.1.6-release-notes.adoc[Runtime Manager Agent 2.1.6 Release Notes]
+
+*Mule Agent Plugin 1.n:*
+
+* xref:runtime-manager-agent/runtime-manager-agent-1.11.0-release-notes.adoc[Runtime Manager Agent 1.11.0 Release Notes]
+* xref:runtime-manager-agent/runtime-manager-agent-1.10.0-release-notes.adoc[Runtime Manager Agent 1.10.0 Release Notes]
+* xref:runtime-manager-agent/runtime-manager-agent-1.9.5-release-notes.adoc[Runtime Manager Agent 1.9.5 Release Notes]
+* xref:runtime-manager-agent/runtime-manager-agent-1.9.4-release-notes.adoc[Runtime Manager Agent 1.9.4 Release Notes]
+* xref:runtime-manager-agent/runtime-manager-agent-1.9.3-release-notes.adoc[Runtime Manager Agent 1.9.3 Release Notes]
+* xref:runtime-manager-agent/runtime-manager-agent-1.9.2-release-notes.adoc[Runtime Manager Agent 1.9.2 Release Notes]
+* xref:runtime-manager-agent/runtime-manager-agent-1.9.1-release-notes.adoc[Runtime Manager Agent 1.9.1 Release Notes]
+* xref:runtime-manager-agent/runtime-manager-agent-1.9.0-release-notes.adoc[Runtime Manager Agent 1.9.0 Release Notes]
+* xref:runtime-manager-agent/runtime-manager-agent-1.8.0-release-notes.adoc[Runtime Manager Agent 1.8.0 Release Notes]
+* xref:runtime-manager-agent/runtime-manager-agent-1.7.1-release-notes.adoc[Runtime Manager Agent 1.7.1 Release Notes]
+* xref:runtime-manager-agent/runtime-manager-agent-1.7.0-release-notes.adoc[Runtime Manager Agent 1.7.0 Release Notes]
+* xref:runtime-manager-agent/runtime-manager-agent-1.6.4-release-notes.adoc[Runtime Manager Agent 1.6.4 Release Notes]
+* xref:runtime-manager-agent/runtime-manager-agent-1.6.3-release-notes.adoc[Runtime Manager Agent 1.6.3 Release Notes]
+* xref:runtime-manager-agent/runtime-manager-agent-1.6.2-release-notes.adoc[Runtime Manager Agent 1.6.2 Release Notes]
+* xref:runtime-manager-agent/runtime-manager-agent-1.6.1-release-notes.adoc[Runtime Manager Agent 1.6.1 Release Notes]
+* xref:runtime-manager-agent/runtime-manager-agent-1.6.0-release-notes.adoc[Runtime Manager Agent 1.6.0 Release Notes]
+* xref:runtime-manager-agent/runtime-manager-agent-1.5.3-release-notes.adoc[Runtime Manager Agent 1.5.3 Release Notes]
+* xref:runtime-manager-agent/runtime-manager-agent-1.5.2-release-notes.adoc[Runtime Manager Agent 1.5.2 Release Notes]
+* xref:runtime-manager-agent/runtime-manager-agent-1.5.1-release-notes.adoc[Runtime Manager Agent 1.5.1 Release Notes]
+* xref:runtime-manager-agent/runtime-manager-agent-1.5.0-release-notes.adoc[Runtime Manager Agent 1.5.0 Release Notes]
+* xref:runtime-manager-agent/runtime-manager-agent-1.4.2-release-notes.adoc[Runtime Manager Agent 1.4.2 Release Notes]
+* xref:runtime-manager-agent/runtime-manager-agent-1.4.1-release-notes.adoc[Runtime Manager Agent 1.4.1 Release Notes]
+* xref:runtime-manager-agent/runtime-manager-agent-1.4.0-release-notes.adoc[Runtime Manager Agent 1.4.0 Release Notes]
+* xref:runtime-manager-agent/runtime-manager-agent-1.3.3-release-notes.adoc[Runtime Manager Agent 1.3.3 Release Notes]
+* xref:runtime-manager-agent/runtime-manager-agent-1.3.1-release-notes.adoc[Runtime Manager Agent 1.3.1 Release Notes]
+* xref:runtime-manager-agent/runtime-manager-agent-1.3.0-release-notes.adoc[Runtime Manager Agent 1.3.0 Release Notes]
+* xref:runtime-manager-agent/runtime-manager-agent-1.2.0-release-notes.adoc[Runtime Manager Agent 1.2.0 Release Notes]
+* xref:runtime-manager-agent/runtime-manager-agent-1.1.1-release-notes.adoc[Runtime Manager Agent 1.1.1 Release Notes]

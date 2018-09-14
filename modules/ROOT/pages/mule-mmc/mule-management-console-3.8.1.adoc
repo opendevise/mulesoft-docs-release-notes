@@ -1,0 +1,31 @@
+= Mule Management Console 3.8.1
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: mule-management-console-3.8.1.adoc
+:keywords: release notes, mmc mule management console
+
+The Mule Management Console, also known as MMC, is a platform for managing Mule applications deployed on premises. Currently, no new functionality is being added to the MMC, this release includes only bug fixes and security fixes. Hybrid & cloud users can check out our latest monitoring & management tool xref:runtime-manager::cloudhub.adoc[Runtime Manager].
+
+[NOTE]
+The V3.8.1 version of MMC is compatible with Mule runtime V3.5 and above.
+
+
+== Sept 13, 2016 Release
+== Resolved
+
+
+* SE-4310: Removed unused libraries in order to avoid future security issues.
+* SE-4006: Fixed multiple bugs and improved stability in permission management.
+* SE-4094: Improved messaging in case stop-flow action fails.
+* SE-4216: Updated libraries to address CVE-2016-3092.
+* SE-1889: Usability improvements for Servers list scroll in Flows tab.
+* SE-3990: MMC was reporting incorrect deployment status when an application in a Server Group was stopped.
+* SE-3759: Alerts targeting clusters were not activated upon Mule node restart.
+* Usability improvement for clusters when you have multiple mules running on the same machine.
+
+
+
+== Known Issues
+
+* Issues w/ unicast clusters when you use Mule Runtime Version 3.8.0

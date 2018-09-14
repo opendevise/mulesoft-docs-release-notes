@@ -1,0 +1,33 @@
+= Microsoft .NET Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: microsoft-dotnet-connector-release-notes-mule-4.adoc
+
+*June 2018*
+
+_Select_
+
+The .NET connector lets you execute native .NET code in a Mule Runtime application.
+
+== 3.0.0
+
+*June 22, 2018*
+
+This release provides Mule 4 support.
+
+=== Compatibility
+
+The Microsoft .NET Connector is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Application/Service |Version
+|Mule Runtime |Mule Enterprise Edition 4.0.0 and later
+|Anypoint Studio |Only works with Studio 7.0.0 and later
+|===
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

@@ -1,0 +1,28 @@
+= Mule Management Console 3.8.2
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: mule-management-console-3.8.2.adoc
+:keywords: release notes, mmc mule management console
+
+The Mule Management Console, also known as MMC, is a platform for managing Mule applications deployed on premises. Currently, no new functionality is being added to the MMC, this release includes only bug fixes and security fixes. Hybrid & cloud users can check out our latest monitoring & management tool xref:runtime-manager::cloudhub.adoc[Runtime Manager].
+
+[NOTE]
+The V3.8.2 version of MMC is compatible with Mule runtime V3.5 and above.
+
+
+== Resolved
+
+
+* SE-3972: MMC mark transaction as Completed incorrectly
+* SE-4157: HTTP endpoints are not reported by MMC API call
+* SE-4639: Quit onEnter event listener in Alerts pages
+* SE-4718: Update jackrabbit patch version
+* SE-4981: Implemented permissions caching in Deployments list
+* SE-4981: High CPU Performance issues with MMC 3.8.1
+* SE-4758: On Deployments, when a checkbox is checked to select a deploy, checkbox is unchecked
+
+
+== Known Issues
+
+No new known issues with this release

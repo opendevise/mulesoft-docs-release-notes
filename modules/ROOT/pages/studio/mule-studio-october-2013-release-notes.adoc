@@ -1,0 +1,545 @@
+= Mule Studio October 2013 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: mule-studio-october-2013-release-notes.adoc
+:keywords: release notes, anypoint studio
+
+October 4, 2013
+
+MuleSoft is pleased to announce the release of **Mule Studio (October 2013) with CloudHub Mule Runtime (October 2013)**.
+
+Our new version of Studio functions as a single download with two runtimes:
+
+* Mule 3.4.1 Enterprise Runtime - available for deployment on premises and to CloudHub
+* CloudHub Mule Runtime (October 2013) - available for deployment to CloudHub
+
+These release notes apply to Mule Studio (October 2013) and the CloudHub Mule Runtime (October 2013). Note that the new features and functionality described here are only available for deployment in CloudHub using the CloudHub Mule Runtime (October 2013). If you intend to deploy your application to an on-premise production server, use a Mule 3.4.1 runtime when you begin a new project in Mule Studio. Access link:/mule-user-guide/v/3.4/[Mule 3.4 documentation] for details.
+[TIP]
+Refer to our Release Strategy for full details about our most recently released runtimes and their deployment options.
+http://www.mulesoft.com/mule-esb-open-source-esb[Download Mule Studio (October 2013)] to take advantage of the latest and greatest!  +
+Access the xref:cloudhub/cloudhub-release-notes.adoc[Release Notes for the October 2013 release of CloudHub].
+
+== Document Revision History
+
+October 4, 2013, v1.0 Initial Publication. +
+October 17, 2013, v1.1 Added to Migration Guide for clearing ObjectStore and QueueManager. +
+October 17, 2013, v1.2 Added details of SAP Connector version released with the October 2013 release.
+
+== Current Release Version
+
+[%header,cols="34,33,33"]
+|===
+|  |Enterprise Edition |Community Edition
+|ESB |n/a  | n/a
+|Studio a|
+Version: 3.5.0
+Build number: 201310031601
+ |
+|Management Console a|
+n/a | n/a
+|===
+
+
+== New Features and Functionality
+
+* **xref:5@studio::datasense-query-editor.adoc[DataSense Query Editor Improvements:] *Even more connectors support* **Studio's graphical query editor. Further, the query editor itself now supports syntax highlighting, nested fields, and advanced filtering options.
+* xref:3.7@mule-runtime::auto-paging-in-anypoint-connectors.adoc[*Auto-Paging Support for Anypoint Connectors:*] Selected connectors now support pagination of output to prevent memory issues.
+* *DevKit Support for DataSense-enabled Connectors and Auto-Paging:* You can now enable DataSense support and auto-paging on any connector that you build with DevKit.
+* *DataMapper Runtime Performance Improvement:* Improvements to the DataMapper runtime mean better runtime performance when working with tree-structured data formats such as XML, map, JSON and POJO. Further, the new in-memory cache property enables fast and performant memory caches in order to speed up the task of generating data structures.
+* xref:3.7@mule-runtime::poll-reference.adoc[*Simplified Poll Debugging:*] Studio's Visual Debugger now offers the ability to pause and resume polling in debug mode to improve the user experience while testing and debugging with polls.
+* *Improved Environment Management in CloudHub:* CloudHub administrators can now move applications between environments.
+* *Anypoint Service Registry Service Autodiscovery:* You can now configure your Mule Studio applications to be automatically registered by the Anypoint agent to your Anypoint Service Registry account.
+* *Anypoint Connectors Compatibility:* The majority of connectors available on MuleSoft's http://www.mulesoft.org/connectors[Anypoint Connectors website] are compatible with CloudHub Mule Runtime (October 2013), although not all connectors support DataSense. Refer to the complete list of xref:5@studio::using-perceptive-flow-design.adoc[DataSense-enabled] connectors.
+* *SAP Transport*: version 2.2.0 supports DataSense.
+
+
+== Hardware and Software System Requirements
+
+For most use cases, Mule Studio (October 2013) does not change the hardware and software system requirements established by Mule 3.4.1. Please https://www.mulesoft.com/support-and-services/mule-esb-support-license-subscription[contact MuleSoft Support] with any questions you may have about system requirements.
+
+== Important Notes and Known Issues in this Release
+
+This list covers some of the known issues with Mule Studio (October 2013) with CloudHub Mule Runtime (October 2013). Please read this list before reporting any issues you may have spotted.
+
+=== Mule ESB
+
+[%autowidth.spread]
+|===
+|MULE-7029 |Several exceptions thrown when pooling in the objectstore
+|MULE-7017 | initialise() phase is triggered before all objects are registered
+|===
+
+=== Mule Studio
+
+[cols="2*"]
+|===
+|STUDIO-3786 a|
+Cannot cancel metadata retrieval in DataSense when incorrect credentials provided in the connector configuration.
+
+*Workaround*: Cancel or fail three times, then the operation will cancel, giving you an opportunity to correct the incorrect credentials.
+
+|STUDIO-3848 |Properties placeholders do not work for DataSense with ESB 3.4.X runtimes.
+|STUDIO-3837 |Attempting to maximize the properties editor causes a blank screen and any configuration to be lost.
+|STUDIO-3831 a|
+In imported projects including both JDBC and a 3.5 connector in the classpath, connection testing will not work in the 3.4.1 runtime.
+
+*Workaround*: Remove the 3.5 connector from the classpath.
+
+|STUDIO-3849 |When editing the build path of the project, changes are not always reflected consistently.
+|STUDIO-3516 |Issues with the response arrow when using Composite Source.
+|n/a |DataSense is not supported for SAP XML version 1
+|n/a |Studio as an Eclipse plugin does not work with Eclipse 3.6
+|===
+
+== Fixed in this Release
+
+=== Mule ESB
+
+
+==== NewFeatures
+
+[cols="2*"]
+|===
+
+|MULE-6872
+|Poll 2.0
+|MULE-6970
+|Add json schema support to the json schema validation filter
+|MULE-6988
+|The jetty transport does not have an option to configure the number of acceptor threads
+|MULE-6982
+|Upgrade jsch to version 0.1.50
+|EE-3328
+|Provide a way to disable throttling
+|MULE-6172
+|Upgrade apache-commons-pool
+|MULE-6956
+|Watermark - unable to access default user Object Store instance
+|MULE-6968
+|Http endpoint with path="" or path="/" do not attend requests at root level
+|EE-3395
+|Add license manager jar to studio distribution
+|MULE-6974
+|Support defaultAccessTokenId expression in OAuth connectors
+|MULE-6901
+|Create a Schedulers module to provide schedulers strategies
+|EE-3388
+|Merge Clover Single Threading Model
+|MULE-6844
+|Connector Auto-Paging
+|MULE-6843
+|Move OAuth from DevKit to ESB
+|MULE-7016
+|Make RefreshTokenManager lazy on ObjectStoreManager
+|===
+==== Fixed
+
+[cols="2*"]
+|===
+|MULE-6968
+|Http endpoint with path="" or path="/" do not attend requests at root levelhttps://www.mulesoft.org/jira/browse/MULE-6968[]
+|MULE-6955
+|Watermark - unable to inject OS instance
+|EE-3394
+|Populate M2 Repo does not populate Clover
+|MULE-7004
+|Fixed Frequency Scheduler allows negative value on startDelay
+|MULE-6947
+|flow names with slashes (/) break MPs notification paths
+|MULE-6959
+|Race condition creating MVELExpressionLanguage instances
+|MULE-6990
+|OOM exception using foreach
+|MULE-6993
+|ClassCast exception when using cxf:proxy-service and validationEnabled, and the request contains a CDATA field.
+|MULE-6995
+|DynamicOutboundEndpoint does not use the connector's service overrides
+|MULE-6577
+|Failure to propagate the correlation ID across JMS queues
+|MULE-6997
+|Rollback Exception Strategy retries an incorrect number of times
+|MULE-6999
+|File Transport delays the processing of files when pollingFrequency attribute is uncomfortably narrow
+|MULE-6920
+|Race condition on startup of Mule Context
+|MULE-6989
+|Quartz synchronous is not using the configured exception strategy
+|EE-2784
+|Cannot serve static content on root domain
+|MULE-6986
+|http:static-resource-handler fails when request path is '/'
+|MULE-6969
+|InputStream not closed on Scriptable
+|===
+=== Mule Studio
+
+
+==== New Features
+[cols="2*"]
+|===
+|STUDIO-1695
+|OAuth-based connectors cannot be used in Studio
+|STUDIO-3270
+|Studio support for filter, split, aggregate and routing record level data
+|STUDIO-3574
+|Support for primitive types in DataSense.
+|STUDIO-3575
+|Add information about the actual implementation class at the field label in DataSense metadata
+|hSTUDIO-3577
+|Disable Order By/Limit/Offset in the query builder UI if the connector does not support any of them.
+|STUDIO-3578
+|Add ASCENDING/DESCENDING while ordering in QueryBuilder
+|STUDIO-3583
+|Query Builder: changing the selected type doesn't reset the selected fields
+|STUDIO-3618
+|Provide Debugger Client API to manage poll
+|STUDIO-3622
+|Remove popup editor
+|STUDIO-3628
+|Add A Way To make an editor force save
+|STUDIO-3648
+|Data Mapper Should support XML metadata model
+|STUDIO-3650
+|Update Jetty connector editor
+|STUDIO-3651
+|Query builder: ability to browse and select the single fields inside each pojo
+|STUDIO-3665
+|SE-330: Anypoint Enterprise Security incompatible with 3.5.0-Andes
+|STUDIO-3710
+|Use only the selected connector's jars in Connectivity Testing and DataSense
+|STUDIO-3713
+|Add Automated tests for Batch Module two way editing
+|STUDIO-3775
+|Change CloudHub Runtime name
+|STUDIO-3262
+|DataSense for SAP
+|STUDIO-3269
+|Update Salesforce Connector to support Paging
+|STUDIO-3482
+|Hide native query editor support
+|STUDIO-3501
+|DSQL should support spaces in field name
+|STUDIO-3503
+|Query Builder UI support for non field selection
+|STUDIO-3507
+|Merge new DataMapper threading model
+|STUDIO-3509
+|Spec Hybrid Metadata
+|STUDIO-3525
+|Populating Query Builder with filtered values
+|STUDIO-3656
+|Add support in Studio to allow the contribution of external folders to export and import wizards
+|===
+==== Fixed
+[cols="2*"]
+|===
+|STUDIO-2111
+|<message-properties-transformer> scope="invocation" property missing after ui interaction
+|STUDIO-2154
+|error adding `contextproperty-place-holder`.
+|STUDIO-2347
+|Export to Mule Deployable Archive should not include files under src/test/*
+|STUDIO-2932
+|Selecting the text() attribute of XML elements in data mapping files causes a NullPointerException
+|STUDIO-3073
+|Saving a Mapping in DataMapper
+|STUDIO-3265
+|APIkit 0.2 causes DataMapper issues
+|STUDIO-3305
+|DataMapper Not able to handle spaces in element name
+|STUDIO-3312
+|Start, stop and execute polls via debugger
+|STUDIO-3383
+|Studio does not rebuild the project when you hit clean
+|STUDIO-3390
+|FTP Namespaces is not correctly updated when changing the runtime (EE to CE)
+|STUDIO-3441
+|Creating empty Maven-maintained Mule project against 3.5.0-ANDES shows dependencies on dev.ee
+|STUDIO-3443
+|DataMapper does not release memory
+|STUDIO-3467
+|APIKIT: Unable to read schema document because there is a space in it
+|STUDIO-3479
+|Choice: when updating the Default expression in the New Properties Editor the branches in the Choice doesn't get redrawn until you go to the XML view and back to the Message Flow View
+|STUDIO-3485
+|APIKIT: Drag and Dropping apikit router to the flow is breaking the project
+|STUDIO-3490
+|Multiple Cloud Connectors: problem when trying to load libraries (backward compatibility)
+|STUDIO-3494
+|Debugger does not stop on breakpoints in flows used by APIKit
+|STUDIO-3495
+|Cannot add an element inside a poll after deleting an element inside of it
+|STUDIO-3512
+|Problem when drawing flows that uses transactional
+|STUDIO-3513
+|Apikit: src/main/api folder is not being imported from previously exported mule projects
+|STUDIO-3514
+|APIkit: When importing a Mule project with apikit router component the apikit library is not added to the project
+|STUDIO-3515
+|APIkit: APIkit router component is adding non required empty fields in the xml
+|STUDIO-3519
+|Query loses selected fields when opened and closed without changing anything
+|STUDIO-3523
+|New maven project has a mule ee repository dependency
+|STUDIO-3526
+|Newly installed/updated cloud connectors don't always show in the pallete
+|STUDIO-3529
+|tracking:enable-default-events="false" is removed from the flow configuration
+|STUDIO-3532
+|Autodelete attribute get removed from the sftp connector if you edit the flow from the visual UI
+|STUDIO-3535
+|Studio is trying to reach external system for arguments with no dynamic metadata available
+|STUDIO-3536
+|QueryBuilder dialog has slow refresh
+|STUDIO-3539
+|AssertionFailedError when using Zuora with QueryBuidler
+|STUDIO-3540
+|Phantom errors in Mule Studio project
+|STUDIO-3546
+|Datamapper does not map XMLGregorianCalendar correctly
+|STUDIO-3562
+|Select by type doesn't work in DataMapper
+|STUDIO-3565
+|Cannot use flow-ref inside a scope. ClassCastException
+|STUDIO-3570
+|Inconsistent display with HTTP endpoint
+|STUDIO-3581
+|Maximizing DataMapper flow window maximizes an empty "Mule Properties View" instead
+|STUDIO-3584
+|Update HTTP Request-Response with Logging Example to use MEL instead of old-style expression
+|STUDIO-3586
+|IllegalArgumentException: Argument cannot be null when opening mule-project.xml
+|STUDIO-3588
+|DataMapper doesn't use the global MEL configuration
+|STUDIO-3589
+|tracking:enable-default-events="false" Flow parameter is being removed when switching from XML to canvas and to XML views again
+|STUDIO-3593
+|SAP Inbound endpoints configures TID handler for sRFC type
+|STUDIO-3594
+|Refresh issues in Studio canvas
+|STUDIO-3597
+|NullPointerException when doing test connection in SAP
+|STUDIO-3601
+|Publishing From Mule Studio to Application Repository Forces HTTP Endpoint to "localhost"
+|STUDIO-3604
+|flowref lookup input-output parameters cannot share name
+|STUDIO-3607
+|Inconsistency with "Do you want to save Data Mapping" popup window
+|STUDIO-3608
+|Cloud Connector - values added via UI did not get saved
+|STUDIO-3609
+|Running "Check Update" resulted in error
+|STUDIO-3610
+|UI not saving values for variables
+|STUDIO-3611
+|DataMapper: problem with flow ref lookup table
+|STUDIO-3612
+|DataMapper: mapping is not saved when clicking in the save icon
+|STUDIO-3620
+|Adjust Hello World Example to use a literal string (Hello, World) instead of a string inside MEL brackets (#['Hello World'])
+|STUDIO-3631
+|Maven: importing a maven project might fail because repo population is not done
+|STUDIO-3632
+|Detached connector's window properties does not save the modifications
+|STUDIO-3635
+|NPE when adding any element after importing a project
+|STUDIO-3642
+|Jar files in other projects added to classpath of current project are not exported
+|STUDIO-3643
+|Drop a Flow ref into a poll scope update the XML but not the UI
+|STUDIO-3645
+|DataMapper: after saving a mapping DataMapper still ask me to save the changes
+|STUDIO-3646
+|Data Mapper Should Support Implementation Class
+|STUDIO-3649
+|Update Legacy Modernization example to use MEL expression instead of old-style expression
+|STUDIO-3658
+|Studio not getting output metadata in operations that do not have a "default payload" input argument
+|STUDIO-3662
+|When importing a project from zip and choosing an ESB runtime different than the one in the project, the runtime is inconsistent
+|STUDIO-3663
+|Adding catch exception strategy erase flow processingStrategy
+|STUDIO-3664
+|DM Errors are not clean when it is fixed
+|STUDIO-3666
+|Native Query Metadata is not being propagated to DataMapper
+|STUDIO-3674
+|Metadata Propagation Does not work for SAP
+|STUDIO-3675
+|Property Place Holders Is not working for test connectivity
+|STUDIO-3677
+|APIkit example name, description
+|STUDIO-3680
+|Blank properties view for s3 delete-objects
+|STUDIO-3681
+|Error creating MS Dynamics 3.5-BIGHORN global configuration
+|STUDIO-3682
+|Problem when changing the focus of the properties window
+|STUDIO-3683
+|NPE when dragging a JDBC endpoint over a catch exception strategy
+|STUDIO-3684
+|Closing and reopening a Studio project overwrites the selected ESB server version
+|STUDIO-3686
+|Classloader leaks with DataSense
+|STUDIO-3694
+|SAP is not able to find jar inside maven repo
+|STUDIO-3695
+|Removing SAP libraries does not update mule-project.xml in development environment (running from Eclipse)
+|STUDIO-3700
+|Unsupported Metadata model for Map<String, String>
+|STUDIO-3702
+|CMIS:apply-aspect:DataMapper displays wrong type
+|STUDIO-3703
+|DM input objects missing for CMIS operations
+|STUDIO-3708
+|Assertion error (probably caused by response block)
+|STUDIO-3711
+|When creating flow with Anypoint Service Registry element, an exception is thrown.
+|STUDIO-3712
+|Processors with emtpy dsql values hangs the flow indefinitely when executing the flow
+|STUDIO-3714
+|Assertion error when using JMS and global Service Configuration
+|STUDIO-3717
+|Import / Export inconsistent with libraries
+|STUDIO-3718
+|Native library path should always be absolute
+|STUDIO-3719
+|After creating the XML only SOAP Web Service Example in Mule Studio 3.5 I get an error in Problems tab: No extension was found for Mule Extension "LDAP".
+|STUDIO-3724
+|Incorrect XML is generated when switching runtimes in Mule Studio
+|STUDIO-3725
+|Metadata Propagation: metadata does not propagate to the default section of a Choice router
+|STUDIO-3726
+|Netsuite - Object builder doesn't open
+|STUDIO-3727
+|Netsuite - Metadata error messages
+|STUDIO-3729
+|Errors in the error log when closing the Connections Explorer window
+|STUDIO-3734
+|After adding Cloud Connector jars to build path from Studio, pom is not updated
+|STUDIO-3735
+|DataSense is not working for inbound-endpoints
+|STUDIO-3737
+|Maven import in Mule Studio copies project into workspace, causing the project to be imported wrongly
+|STUDIO-3740
+|Widget is disposed Exception when creating beans with the Connection Explorer closed
+|STUDIO-3741
+|DataMapper not showing Twitter return types
+|STUDIO-3743
+|Output metadata is not properly retrieved when changing config elements within a same processor
+|STUDIO-3745
+|Salesforce oauth version - Object builder doesn't open
+|STUDIO-3748
+|Typo in DataSense Query Builder window
+|STUDIO-3749
+|Google Contacts connector is not being picked up by DataMapper
+|STUDIO-3751
+|Exception when adding breakpoints to a Foreach or any other scope
+|STUDIO-3752
+|Information from the editors is lost when you work with a maximised canvas
+|STUDIO-3757
+|Sometimes when rebooting Studio you get some problems with the metadata cache
+|STUDIO-3764
+|Poll debugging: when debugging a poll you should not have an Stop button icon in it
+|STUDIO-3765
+|Poll Debugging: after stopping the debugging session the icons to execute stop the poll are not removed from the canvas UI
+|STUDIO-3766
+|Query builder allows multiple DataSense requests to be made
+|STUDIO-3769
+|Problems when using Connectors with multiple configuration files in DataSense
+|STUDIO-3770
+|When adding a Connector or a Message Processor with libraries to one mflow it modifies your other mflow file
+|STUDIO-3776
+|Problem when adding Message Processors that have libraries associated
+|STUDIO-3779
+|Database connection testing fails in Mule Studio 3.5
+|STUDIO-3787
+|Poll debugging: icon is to stop and play poll is not refreshed when you stop de debugging and start debugging again
+|STUDIO-3790
+|Widget is Dispose exception hangs Studio
+|STUDIO-3791
+|Connection Explorer: NPE when creating connectors from the All tab
+|STUDIO-3792
+|Debugger: when removing all breakpoints from the breakpoints view they are not removed from the canvas
+|STUDIO-3794
+|DataMapper: when trying to create a mapping I get a NullPointerException
+|STUDIO-3798
+|ClassCastException when dragging and dropping some elements
+|STUDIO-3799
+|DataMapper: NPE when trying to get the Metadata from a CC
+|STUDIO-3801
+|Import: problem when importing a project that has native libraries
+|STUDIO-3802
+|Import: InvocationTargetException when exporting a project
+|STUDIO-3805
+|PropertyPlaceHolders defined in configuration file are not taken into account when using DataSense from another configuration file
+|STUDIO-3807
+|Export: Environment variables are not being export
+|STUDIO-3808
+|Connection Explorer: NPE when doing Test Connection
+|STUDIO-3809
+|Problem when removing libraries of the project
+|STUDIO-3810
+|Query Builder: problem when parsing advanced filters in the query
+|STUDIO-3813
+|When having error markers and modifying the XML the mflow is not updated
+|STUDIO-3816
+|DataSense: problem when retrieving metadata and the cache it's empty and there were not changes in the editor (importing a project)
+|STUDIO-3823
+|CDATA elements are not wrapped inside their parent element
+|STUDIO-3824
+|SAP attribute is outputXml not xmlOutput
+|STUDIO-3826
+|Error Trying to export projects with extra attributes in classpaths entries which are not native libs
+|STUDIO-3830
+|Connection Explorer: NPE when opening a Connector after changing the Mule Runtime version
+|===
+==== Improvements
+[cols="2*"]
+|===
+|STUDIO-3123
+|Test Connection doesn't work with property placeholders
+|STUDIO-3560
+|If DataSense metadata doesn't exist, connector should load it
+|STUDIO-3561
+|Metadata is queried every time you leave the query editor
+|STUDIO-3571
+|Support a configuration entry that allows defining a default group ID for new Maven-driven Studio projects
+|STUDIO-3623
+|Re-write tooltips for new watermark feature
+|STUDIO-3626
+|Provide a way for an editor to force property value saving in the model.
+|STUDIO-3630
+|Support DataSense Queries in Message Processors where the attribute for queries is not called 'query'
+|STUDIO-3772
+|Poll debugger functionality should be disabled for runtimes previous to 3.5
+|===
+=== Anypoint Enterprise Security
+
+[%autowidth.spread]
+|===
+|SEC-166 |Dependencies conflict with Studio
+|SEC-167 |Security example application fails to run due to incorrect schema references
+|===
+
+
+== Migrating from Mule Studio Andes to Mule Studio (October 2013)
+
+[NOTE]
+It is recommended that you create a **new workspace in Mule Studio (October 2013)**, then import any existing projects into your new workspace.
+
+* With Mule Studio October 2013, the ObjectStore interface adds a new clear() method that empties the contents of an object store without disposing of it. In case of persistent object store, the actual files backing the content are deleted. In case of transient object stores, the reference to the items are severed. The ObjectStoreManager's dispose() method should first delegate into the store's clear method and then dispose() it if necessary.
+* With Mule Studio October 2013, the QueueManager interface includes a clear() method that empties the queue. In case of persistent object store, the actual files backing the content are deleted. In case of transient object stores, the reference to the items will be severed. ObjectStoreManager's dispose() method should first delegate into the store's clear method and then dispose() it if necessary.
+
+For more details on how to migrate from previous versions of Mule Studio, access the migration guide embedded within the release notes for previous versions of Mule, or the xref:deprecated/legacy-mule-migration-notes.adoc[library of legacy Migration Guides].
+
+== Third Party Extensions
+
+At this time, not all of the third party extensions you may have been using with previous versions of Mule ESB have been upgraded to work with Mule Studio (October 2013). https://www.mulesoft.com/support-and-services/mule-esb-support-license-subscription[Contact MuleSoft Support] if you have a question about a specific module.
+
+== Support Resources
+
+* Refer to MuleSoft’s online documentation at {site-url}[MuleSoft Docs] for instructions on how to use the new features and improved functionality in Mule Studio (October 2013) with CloudHub Mule Runtime (October 2013).
+* Access MuleSoft’s http://forums.mulesoft.com/[Forum] to pose questions and get help from Mule’s broad community of users.
+* To access MuleSoft’s expert support team, https://www.mulesoft.com/support-and-services/mule-esb-support-license-subscription[subscribe] to Mule ESB Enterprise and log in to MuleSoft’s http://www.mulesoft.com/support-login[Customer Portal].

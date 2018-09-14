@@ -1,0 +1,12 @@
+= Release Notes for Mule IDE 2.0.1
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: release-notes-for-mule-ide-2.0.1.adoc
+:keywords: release notes, mule, ide
+
+This is a bugfix release.
+
+== Fixed issues
+
+Error rendering macro 'jiraissues' : Unable to determine if sort should be enabled.

@@ -1,0 +1,8 @@
+= Mule 2.1.0 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: mule-2.1.0-release-notes.adoc
+:keywords: release notes, esb
+
+The 2.1.0 release of Mule includes support for component interceptors, an upgrade to CXF 2.1.1 for web services, improvements to routers, JMX, transactions, and cleaner shutdown. Various improvements have been made to Mule's configuration schemas, more and more documentation has been updated and created for 2.x, and as always, many bug fixes and increased test coverage.

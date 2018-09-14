@@ -1,0 +1,8 @@
+= Anypoint Platform On-Premises Edition Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: anypoint-onpremise-release-notes.adoc
+
+[WARNING]
+Beginning with the 1.5.1 release this  product was renamed Anypoint Platform Private Cloud Edition. See xref:pce/anypoint-private-cloud-release-notes.adoc[Anypoint Platform Private Cloud Edition Release Notes] for the release notes for both versions.

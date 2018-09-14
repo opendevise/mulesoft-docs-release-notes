@@ -1,0 +1,99 @@
+= Anypoint Platform Private Cloud Edition 1.6.1 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: anypoint-private-cloud-1.6.1-release-notes.adoc
+
+**September 2017**
+
+== Changes in this release
+
+There are several improvements in this release. These are the highlights
+
+- Added support for Mule Runtime 3.8.5 and Mule Agent 1.6.4 and 1.7.1.
+- Security improvements across the different components.
+- Increased tmp folder space requirement to 20GB.
+- Performance improvements allowing to reach 7000 APIs under management in 6 node deploy.
+- Added Configuration of file types allowed by API Designer.
+- Turned off additional save of DB logs, as it could cause those files to be stored forever.
+- Fixed RAML parser issue that cause RAML based proxies fail to configure and API Notebook not working.
+
+
+== Installing
+
+See xref:1.6@private-cloud::install-workflow.adoc[Workflow: Install Anypoint Private Cloud] for information on how to install Anypoint Platform Private Cloud Edition.
+
+== Upgrading from 1.5.x or 1.6.0 to 1.6.1
+
+See xref:1.6@private-cloud::upgrade.adoc[To Migrate to Anypoint Platform Private Cloud Edition, Version 1.6.x] for information on how to upgrade to the current version.
+
+Before upgrading, you must backup your system as described in xref:1.6@private-cloud::backup-and-disaster-recovery.adoc[To Backup and Restore Your System].
+
+[NOTE]
+The load balancer healthz endpoint used in previous version changed to port 10248.
+
+
+== Software Compatibility
+
+[%header,cols="2*a"]
+|===
+| Compatible with |Version
+| Mule runtime | 3.7.x - 3.8.5
+| API Gateway Runtime | 2.1.x - 2.2.x
+| Runtime Manager Agent | 1.5.2 - 1.5.3 - 1.6.4 - 1.7.1
+| Infrastructure providers |
+* VMWare
+* Bare Metal
+| Compatible browsers when running the installer |
+* Firefox (latest version)
+* Chrome (latest version)
+* Safari (latest version)
+|===
+
+== Fixed Issues
+
+[%header%autowidth.spread]
+|===
+| Issue
+| Server Group add member: existing app takes long to be deployed on added member
+| Turn off Kapacitor stats reporting to usage.influxdata.com
+| Backup is not backing up individual permissions on each table for each user
+| Setting up a cluster of serves is not working in PCE with 3.8.5 OOB
+| API Designer fails when having schema and example files
+| Remove hybrid '/mule' endpoint from nginx
+| Increase pithos heap defaults
+| Fix permissions for cs-config app
+| Hybrid-rest is not supporting the database url as a parameter in its migration script
+| Include RAML tooling updates
+| Bandwagon is allowing to repeatedly create admin users
+| CS Auth Maintenance / Pod to remove permissions frequently failing on DB connection
+| Audit Log Schedulers are failing with DB connection errors
+| API Notebook is not loading
+| Add ccs updates for caching cs tokens
+| Communicate to customers to change health check to HTTP:10248/healthz
+| Disable wal-e in stolon
+| Update exchange-api component and validate SQLi
+| Once backup is completed successfully, delete the k8s job
+| Raml Parser Service deployment configuration is not valid
+| Increase tmp requirements to 20GB
+| Migration jobs must receive same environment variables than the respective service
+| Add SSL support in the contract caching service migration script
+| PCF entitlements are not created upon install.
+| 1-node installation must have only 1 replica (install and update)
+| Demo LDAP on inconsistent port
+| Installer log: spans incorrectly and no space beneath console window
+| Reduce replicas in single node installation for CS and API Manager
+| CS Update Node JS version
+| Decouple application secrets and tokens from each component config file
+| Platform needs to support LDAP servers that use referrals
+| LDAP query for "User's Groups By username filter" doesn't escape characters
+
+|===
+
+== Known Issues
+
+[%header%autowidth.spread]
+|===
+|Issue |Description |Workaround
+| Upgrading 1 node installation does not work | Upgrading 1 node installations from version 1.6.0 to 1.6.1 does not work. | Since 1 node installations are only supported in demo environments, you should install version 1.6.1 directly.
+|===

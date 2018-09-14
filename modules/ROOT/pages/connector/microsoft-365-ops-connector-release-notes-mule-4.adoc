@@ -1,0 +1,32 @@
+= Microsoft Dynamics 365 for Operations Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: microsoft-365-ops-connector-release-notes-mule-4.adoc
+
+*January 2018*
+
+_Select_
+
+The Dynamics 365 for Operations connector allows you to connect to the Microsoft Dynamics 365 for Operations instance.
+
+== 2.0.0
+
+*January 27, 2018*
+
+=== Compatibility
+
+The Microsoft Dynamics 365 for Operations connector is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Application/Service |Version
+|Mule Runtime|Mule Enterprise Edition 4.0.0 and later
+|Anypoint Studio|Only works with Studio 7.0.0 and later
+|Microsoft Dynamics 365 for Operations API
+|===
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

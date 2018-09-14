@@ -1,0 +1,100 @@
+= Anypoint Studio 6.1 with 3.8.2 Runtime Update Site 2 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: anypoint-studio-6.1-with-3.8.2-runtime-update-site-2-release-notes.adoc
+
+*October 11, 2016* +
+*Build ID: 201610111809*
+
+<<migration,Skip to Migration Guide>>
+
+== Compatibility
+
+[cols="30a,70a"]
+|===
+| *Mule Runtime*
+| Version: 3.8.2 EE
+
+|*Anypoint Studio*
+|Version: 6.1.2 +
+Build Id: 201610111809
+
+|*APIkit*
+|Versions: 3.8.2 - 3.8.1 - 3.8.0 - 1.7.4 - 1.6.2 - 1.5.3
+
+|*DataWeave* +
+|Version: 1.1.2
+
+|*MUnit* +
+|Version: 1.2.1, 1.3.0 (munit-studio-plugin)
+
+|*SAP Connector*
+|Versions: 3.0.0
+|===
+
+
+== What's New
+
+In this release, we have fixed various defects, and added a DataWeave beta feature to support excel.
+
+We are also excited to have the GA release of our OData Studio plugin.
+
+[[migration]]
+== Migration Guide
+
+For first time installment, please refer to xref:studio/anypoint-studio-6.1-with-3.8.1-runtime-release-notes.adoc#hardware-requirements[Studio 6.1 release notes] for hardware requirements and known issues.
+
+Users running Studio 6.0 can update to this new version directly from the Studio xref:6@studio::studio-update-sites.adoc[Update Site]. +
+From the previous versions of Studio 6.0.0, 6.0.1 and 6.1.0, there is no special migration needed. If you want to migrate from Studio 5.4.3 or older to 6.1.1, you must download the latest version from Anypoint Studio download site https://www.mulesoft.com/platform/studio[here].
+
+When opening a previous Workspace with projects that were created with Studio 5.1.0 or older, and which has metadata stored in disk, Studio asks you to perform an update to all the projects so that the Metadata Manager can handle the types and to show the types in your project.
+
+
+[TIP]
+====
+You can easily import all of the external components that you had installed in your old version of Anypoint Studio through a single action. This includes connectors, runtimes, and any other type of extension added through the Anypoint Exchange or the ​*Help -> Install new software*​ menu, as long as there are no compatibility restrictions.
+
+Do this by selecting *File->Import* and then choose *Install->From existing installation*.
+
+image::studio/import-extensions.png[import]
+
+Then specify the location of your old version of Anypoint Studio in your local drive.
+====
+
+== Eclipse Plugin
+
+If you are using Studio as an Eclipse plugin, you can get this version of Studio using the Eclipse update site `+http://studio.mulesoft.org/r5/plugin+`.
+
+This allows you to download Anypoint Studio core and third-party components version 6.x.x and with an embedded version of Mule Runtime v3.8.x along with other optional components. +
+For a detailed description of the update site's content visit the xref:6@studio::studio-in-eclipse.adoc#available-software-in-the-update-site[Studio in Eclipse] section.
+
+== JIRA Ticket List for Anypoint Studio
+
+=== Bug Fixes
+
+* STUDIO-6548 - Wrong syntax check when using url, user and pass with derby-config
+* STUDIO-6589 - Expression code completion marks this as a keyword when string literal is open
+* STUDIO-6613 - Undo deleting a flow changes the order of flows
+* STUDIO-7979 - Duplicated config not marked as error between domains an projects
+* STUDIO-8244 - [Custom Policies] When creating / deleting policies files the mule-policy.xml is not refreshed if it is opened
+* STUDIO-8311 - [SE] Unneeded dependencies are added to the export of a mavenized project
+* STUDIO-8371 - [DW - UI] Preview result is not shown in correct way
+* STUDIO-8372 - [DW - UI] The UI is taking too long to open
+* STUDIO-8373 - DW Studio parser doesn't support specific match mapping
+* STUDIO-8375 - [SE] Studio using the wrong default for Batch threading
+
+
+=== New Features
+
+* STUDIO-8358 - Excel DW support for studio
+
+
+== Support
+
+* Refer to MuleSoft’s documentations related to OData:
+** link:/apikit/creating-an-odata-api-with-apikit#installing-the-apikit-odata-extension[Installation] and link:/apikit/creating-an-odata-api-with-apikit#odata-mysql-example[Example].
+** link:/apikit/apikit-odata-extension-reference[EDM and Annotation Reference].
+** https://github.com/mulesoft/apikit-odata-example[Example in Exchange].
+* Access http://forums.mulesoft.com/[MuleSoft’s Forum] to pose questions and get help from Mule’s broad community of users.
+* To access MuleSoft’s expert support team https://www.mulesoft.com/support-and-services/mule-esb-support-license-subscription[subscribe to Mule ESB Enterprise] and log in to MuleSoft’s http://www.mulesoft.com/support-login[Customer Portal].

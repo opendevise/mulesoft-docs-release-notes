@@ -1,0 +1,106 @@
+= Anypoint Platform Private Cloud Edition 1.7.0 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: anypoint-private-cloud-1.7.0-release-notes.adoc
+
+**December 15, 2017**
+
+== New Features and Enhancements
+
+This version of Anypoint Platform Private Cloud Edition contains the following features and enhancements:
+
+[%header,cols="2*a"]
+|===
+| Feature | Description
+| Support for Amazon Web Services | Anypoint Private Cloud is supported on AWS for 3 and 6 node production environments. It also supports a 1 node demo environment.
+| Enhanced platform alerts | Alerts are now generated for:
+
+* Docker on the host went down
+* IPV4 forwarding on the host is off
+* Br_netfilter is off
+* Etcd is down
+* Free space (including /tmp) on the mounts high watermark
+* High CPU watermark
+* High memory watermark
+* Node down or not ready in K8s
+
+| Kubernetes upgrade | Upgraded to Kubernetes 1.7, which has multiple security enhancements
+| ELK integration | Anypoint Private Cloud supports analyzing log data with ELK.
+| Updated version of RedHat/CentOS | Anypoint Private Cloud now supports version 7.4
+|===
+
+
+== Installing
+
+See xref:1.7@private-cloud::install-workflow.adoc[Workflow: Install Anypoint Private Cloud] for information on how to install Anypoint Platform Private Cloud Edition.
+
+== Upgrading to 1.7.0
+
+See xref:1.7@private-cloud::upgrade.adoc[To Migrate to Anypoint Platform Private Cloud, Version 1.7.0] for information on how to upgrade to the current version.
+
+Before upgrading, you must backup your system as described in xref:1.7@private-cloud::backup-and-disaster-recovery.adoc[To Backup and Restore Your System].
+
+== Software Compatibility
+
+[%header,cols="2*a"]
+|===
+| Compatible with |Version
+| Mule runtime | 3.7.x - 3.9.0
+| API Gateway Runtime | 2.1.x - 2.2.x
+| Runtime Manager Agent | 1.5.3 - 1.9.0
+| Infrastructure providers |
+* VMWare
+* Bare Metal
+| Compatible browsers when running the installer |
+* Firefox (latest version)
+* Chrome (latest version)
+* Safari (latest version)
+|===
+
+== Fixed Issues
+
+There are no fixed issues in this release.
+
+== Known Issues
+
+[%header%autowidth.spread]
+|===
+| Description |Workaround
+| Runtime Manager: Autodiscovery of server properties is not enable by default.
+| Deploying applications to Pivotal Cloud Foundry directly from Runtime Manager is not supported in this release. You can still deploy applications to PCF using the Mule Runtime Buildpack.
+| In rare cases where AWS adds a new AZ for region where cluster is running, rerunning terraform might have unpredictable results. | If you need to re-run Terraform, carefully review the execution plan before confirming.
+|===
+
+== Anypoint Platform Features
+
+The following sections outline the Anypoint Platform features and bug fixes added to this version of Anypoint Platform Private Cloud Edition. This information is compiled from the release notes of each platform component.
+
+=== Anypoint Runtime Manager
+
+[%header,cols="2*a"]
+|===
+| Runtime Manager Release | Features and Issue Fixes
+|2.3.0 | Application uptime information: Runtime Manager displays the amount of time an application has been running. This information is displayed on the Settings page and information panel for each application.
+| | View and edit server properties on hybrid servers: Runtime Manager enables you to define, view, and edit properties for servers running in a hybrid deployment scenario. Properties are defined as key/value pairs on the Manage Servers page.
+| | Specify the IP address and port for a cluster node: Runtime Manager enables you to specify the IP address and port of a cluster running in a hybrid deployment scenario. To use this feature, your server must be running Mule runtime, version 3.8.5 or greater.
+| 2.3.1 | Restart and shutdown hybrid servers: Runtime Manager enables you to start, shutdown, and restart servers running in a hybrid deployment scenario.
+| 2.4.0 | Server Properties: Runtime Manager enables you to view additional information about a remote server, including: the server operating system, VM vendor, and license expiration date.
+| 2.4.3 | Flow Management: Adds Flow Management capabilities to Anypoint Platform Private Cloud Edition.
+| 2.5.0 | Increase application file size: The maximum application file size increased from 100MB to 200MB.
+| 2.6.0 | Autodiscovery of remote server properties: Enables Runtime Manager to display environment and system properties of remote servers and Mule runtimes. This feature is applicable to hybrid deployment scenarios only.
+| | Application properties: Enables you to set application properties from Runtime Manager during application deployment. This feature is applicable to hybrid deployment scenarios only.
+| | Schedule management: Adds support for polls to applications deployed in a hybrid deployment scenario. The feature is only supported on single-server environments. It is not supported on servers within server groups or clusters.
+| | Increased application size: Adds support for asynchronous uploads of files and increased the supported application file size from 100MB to 200MB.
+|===
+
+
+=== Access Management
+
+[%header,cols="2*a"]
+|===
+|Access Management Release | Features and Issue Fixes
+| 0.22.0 | Supports OpenID Connect-compliant identity providers (IdPs) for Single Sign On to Anypoint Platform. Through a new UI for external identity configurations, this release also brings the client UI configuration forms for PingFederate and OpenAM into the platform.
+| 0.23.1 | Enhances the user experience for configuring external identity forms through tooltips and form validation mechanisms. It provides several infrastructure improvements. MuleSoft has also validated our OpenID Connect SSO solution with Okta, OpenAM, and Ping Federate.
+| 0.27.0 | Access Management v0.27.0 supports identity providers, such as Okta, that are compliant with the OpenID Connect Dynamic Client Registration protocol for API Client Management. You can now use these providers to protect API Gateways through a generic access token enforcement policy. This release also includes infrastructure improvements to help with performance.
+|===

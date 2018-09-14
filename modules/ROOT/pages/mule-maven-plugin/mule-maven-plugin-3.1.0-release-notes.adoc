@@ -1,0 +1,80 @@
+= Mule Maven Plugin 3.1.0 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: mule-maven-plugin-3.1.0-release-notes.adoc
+
+Mule Maven Plugin 3.1.0 is the first iteration after our major release of Mule Maven Plugin 3. +
+We have manage to fix a small number of issues that were affecting the product and also added several key features that were intentionally left out of Mule Maven Plugin 3.0.0.
+
+== Hardware and Software Requirements
+
+Hardware and Software Requirements
+
+* Microsoft Windows 8 \+
+* Apple Mac OS X 10.10 \+
+* Linux (tested on Ubuntu 15)
+* Java 8
+* Maven 3.3.3, 3.3.9, 3.5.0
+
+== Compatibility
+
+* Mule 4.x
+* Anypoint Studio 7.x
+
+== Features and Functionality
+
+The first new feature we added is Domain Support. +
+You can now package and deploy Mule Domains in the same way you did with the rest of the artifacts.
+
+There is a new artifact type, the `mule-domain-bundle`. This new artifact is a ZIP file (not a JAR file as all the other artifacts). +
+A mule domain bundle is a project with a pom.xml file which list dependencies to a Mule Domain artifact and at least one Mule Application. When packaged this artifact contains the JAR files of the Domain and all related Mule Applications. It will also run several validation cross dependencies to ensure not only that the Applications and the Domains are properly related but also to ensure no dependency conflict exists.
+
+We’ve create the _muleExclude file. This file contains a list of paths and regular expressions that instruct the Mule Maven Plugin to ignore certain files when attaching the source code to the generated artifact.
+
+Finally we’ve added a number of extra validations to ensure that we stop any problem with the artifact beforehand, thus avoiding time wasting in deployments that will fail.
+
+== Fixed Issues
+
+* MMP-132 - Validate Packaging in Jenkins when "Process plugins during pom parsing" is on.
+* MMP-293 - Address dependency policy violations.
+* MMP-324 - Redirect project build directory does not affect all mojos in lifecycle.
+* MMP-334 - Mule-artifact.json auto gen should not override unknown values.
+* MMP-327 - If projectBuildDirectory belongs to project base folder, a recursive copy is done.
+* MMP-199 - Cloudhub domain availability verifications occasionally fail.
+
+== Enhancement Request
+
+* MMP-320 - Implement deployment timeout when deploying through Agent.
+* MMP-322 - Implement deployment timeout to ARM deployment.
+* MMP-321 - Implement deployment timeout to CloudHub deployment.
+* MMP-288 - Create _muleExclude.
+* MMP-249 - Implement Domain Deployment Standalone.
+* MMP-318 - Implement Domain Deployment Agent.
+* MMP-299 - replace usage of json for gson.
+* MMP-165 - Create blacklist.
+* MMP-271 - Update DefaultValuesMuleArtifactJsonGenerator to remove reflection.
+* MMP-273 - Add Mojo property to override output directory.
+* MMP-280 - Create strictCheck systemproperty.
+* MMP-274 - When Maven version is less than v3.3.3, build should fail..
+* MMP-298 - Ensure all mule instances are killed after deployment integration test.
+* MMP-286 - Verify project groupid when deploying to Exchange.
+* MMP-282 - Move to Plexus 3.1.0.
+* MMP-305 - Mule 4 Examples should have attachMuleSources as true by default.
+* MMP-308 - Deprecate libraries/run script feature from mule-maven-plugin.
+* MMP-283 - Remove Jersey client dependencies with vulnerabilities.
+* MMP-278 - Validate artifact deployment.
+* MMP-312 - Deprecate timeout property.
+* MMP-314 - The MuleVersion element should validate the minimum runtime version for the application being deployed in all deployment targets.
+* MMP-238 - Resolve mule plugins compatibility with semver4j.
+* MMP-289 - Some tests fail in Windows due to test set up errors.
+* MMP-275 - Project dependencies is not really necessary.
+* MMP-90 - Change user-agent of jersey client.
+* MMP-309 - Validate plugin compatibility between apps and domains.
+* MMP-330 - Update default values on CH deployer since new changes on last release.
+* MMP-310 - Remove httpClient exclusion.
+
+== Support
+
+* http://forums.mulesoft.com/[MuleSoft’s Forum].
+* http://www.mulesoft.com/support-login[MuleSoft’s Customer Portal].

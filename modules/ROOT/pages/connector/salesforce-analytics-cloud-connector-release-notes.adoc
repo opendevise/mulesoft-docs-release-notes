@@ -1,0 +1,258 @@
+= Salesforce Analytics Cloud Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: salesforce-analytics-cloud-connector-release-notes.adoc
+:keywords: release notes, salesforce, analytics, cloud, connector
+
+*February 2018*
+
+_Select_
+
+The Anypoint Connector for Salesforce Analytics Cloud lets you connect to the Salesforce Analytics Cloud application using the Salesforce External Data API. The connector exposes convenient methods for creating and populating data sets into Salesforce Analytics Cloud system.
+
+== 2.2.0
+
+*February 20, 2018*
+
+This release adds new features.
+
+=== Compatibility
+
+The Salesforce Analytics Cloud connector is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Application/Service |Version
+|Mule Runtime | 3.5.0 and later
+|External Data API | v36.0
+|===
+
+=== Features
+
+* Added support to allow wildcardmetadata/*.json for OAuth 2.0 JWT Bearer and OAuth 2.0 SAML Bearer.
++
+A wildcard can now be used for the Metadata File Name field when configuring the connector's Global Basic authentication.
+* Added support to disable session invalidation.
++
+The authentication configuration now lets you disable session invalidation by checking the Disable session invalidation checkbox.
+
+== 2.1.1
+
+*January 11, 2018*
+
+Release notes for version 2.1.1 of the Salesforce Analytics Cloud connector.
+
+=== Compatibility
+
+The Salesforce Analytics Cloud connector is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Application/Service |Version
+|Mule Runtime | 3.5.0 and later
+|External Data API | v36.0
+|===
+
+
+=== Fixed in this Release
+
+* Fixed exception message when TLS version is not supported.
++
+The error message "Failed logging in into Salesforce system" was not reflecting the root cause of TLS version not supported.
++
+* Record duplication while using connector concurrently.
+* Added metadata fields:
++
+** canTruncateValue - Indicates whether to truncate a value when the value exceeds the precision. The default is true. canTruncateValue Boolean No: if true, truncates the value. If false, the row is rejected.
++
+Example: `"canTruncateValue": true`
++
+** decimalSeparator - For numeric fields only. The character that separates digits in a decimal number. Can be used to handle international number formats where the decimal separator is “,”. The default is “.”.
++
+Example: `decimalSeparator String No "decimalSeparator": ","`
++
+** isYearEndFiscalYear - For date fields only. Indicates whether the fiscal year is the year in which the fiscal year ends or begins. Because the fiscal year can start in one isYearEndFiscalYear Boolean No calendar year and end in another, specify which year to use for the fiscal year.  If true, then the fiscal year is the year in which the fiscal year ends. The default is true.  If false, then the fiscal year is the year in which the fiscal year begins.
++
+Example: `"isYearEndFiscalYear": true` - This field is relevant only when fiscalMonthOffset is greater than 0.
++
+** firstDayOfWeek - For date fields only. The first day of the week for the calendar year and, if applicable, fiscal year. Use 0 to set the first day to be Sunday, 1 to set firstDayOfWeek Number No the first day to be Monday, and so on. Use -1 to set the first day to be January 1. The default is -1.
++
+Example: `"firstDayOfWeek": 0` - See also Date Handling in Datasets.
++
+** isSkipped - Indicates whether to skip the field when the data is uploaded. Example: isSkipped Boolean No "isSkipped": true
++
+* Made security token field optional for basic authentication.
++
+The connector was enforcing the use of a security token even though it was optional.
+
+== 2.1.0
+
+*October 5, 2016*
+
+Release notes for version 2.0.4 of the Salesforce Analytics Cloud connector.
+
+=== Compatibility
+
+The Salesforce Analytics Cloud connector is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Application/Service |Version
+|Mule Runtime | 3.5.0 and later
+|External Data API | v36.0
+|===
+
+=== Features
+
+Support for multiple metadata files. On "Metadata File Name" from configuration you can provide a file (for example, metadata/meatadata.json) or a wildcard (for example, metadata/*.json)
+
+=== Fixed in this Release
+
+Nothing.
+
+=== Known Issues
+
+None.
+
+== 2.0.3
+
+*June 3, 2016*
+
+Release notes for of the Salesforce Analytics Cloud connector.
+
+=== Compatibility
+
+The Salesforce Analytics Cloud connector is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Application/Service |Version
+|Mule Runtime | 3.5.0 and later
+|External Data API | v36.0
+|===
+
+=== Features
+
+None.
+
+=== Fixed in this Release
+
+Support for TLS version configuration for JWT, SAML authentication can be specified the same way as for JVM, by adding the `https.protocols` VM option (for example,  `-Dhttps.protocols=TLSv1.1,TLSv1.2`)
+
+== 2.0.2
+
+*April 4, 2016*
+
+Release Notes for of the Salesforce Analytics Cloud connector.
+
+=== Compatibility
+
+The Salesforce Analytics Cloud connector is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Application/Service |Version
+|Mule Runtime | 3.5.0 and later
+|External Data API | v36.0
+|===
+
+=== Features
+
+* Upgraded External Data API to version 36.0.
+
+== 2.0.1
+
+*November 06, 2015*
+
+Release Notes for version 2.1 of the Salesforce Analytics Cloud connector. These Release Notes accompany the
+xref:3.9@mule-runtime::salesforce-analytics-cloud-connector.adoc[Salesforce Analytics Cloud Connector User Guide].
+
+=== Compatibility
+
+The Salesforce Analytics Cloud connector is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Application/Service |Version
+|Mule Runtime | 3.5.0 and later
+|External Data API | v34.0
+|===
+
+=== Features
+
+This is a minor release and it contains only fixes.
+
+=== Fixed in this Release
+
+* When metadata was sent to server the "fiscalMonthOffset" was sent as string instead of integer which is what server expects.
+* Fixed an issue in previous versions of the connector, where the login error response was parsed incorrectly.
+
+== 2.0
+
+*August 28, 2015*
+
+Release Notes for of the Salesforce Analytics Cloud connector.
+
+=== Compatibility
+
+The Salesforce Analytics Cloud connector is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Application/Service |Version
+|Mule Runtime | 3.5.0 and later
+|External Data API | v34.0
+|===
+
+Note that this is a Major version release which breaks backwards compatibility.
+
+=== Features
+
+* Added new field "Operation" on "Create data set"/"Upload external data into new data set and start processing" operations which provides the ability to choose the operation executed against the data set. Accepted values: OVERWRITE, APPEND, UPSERT, DELETE.
+* Added new field "Notification Sent" on "Create data set"/"Upload external data into new data set and start processing" operations which provides the ability to choose when to get email notifications based on processing results. Accepted values: ALWAYS, FAILURES, WARNINGS, NEVER.
+* Added new field "Notification Email" on "Create data set"/"Upload external data into new data set and start processing" operations which provides the possibility to choose the email where notifications to be sent.
+
+=== Fixed in this Release
+
+* Added "Authorization URL" to "Basic Authentication" configuration in order to provide the ability to change login server. So now you can point the connector to a Salesforce environment of your choosing
+* Added "Token Endpoint" to "OAuth 2.0 SAML Bearer"/"OAuth 2.0 JWT Bearer" configurations in order to give the ability to change the token provider server.
+* Removed support for multiple formats of metadata file, so removed "Metadata File Type" from all the configurations.
+* Added a warning message for when the data provided to a batch commit step is bigger than the maximum allowed size (10 MB) to upload one chunk into the Analytics Cloud using the InsightsExternalDataPart objects. This will help the user to maximize performance of the connector. For more details, please refer to the API documentation https://developer.salesforce.com/docs/atlas.en-us.bi_dev_guide_ext_data.meta/bi_dev_guide_ext_data/bi_ext_data_add_data.htm[Add the Data].
+
+
+== 1.1
+
+*April 17, 2015*
+
+Release Notes for of the Salesforce Analytics Cloud connector.
+
+=== Compatibility
+
+The Salesforce Analytics Cloud connector is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Application/Service |Version
+|Mule Runtime | 3.5.0 and later
+|External Data API | v31.0
+|===
+
+=== Features
+
+* *Create data set* - This operation provides the ability to create a schema in the Analytics cloud for data ingestion
+* *Upload external data* - This operation uploads the data into an existing data set in the Analytics Cloud.
+* *Start processing data* - This operation communicates with Salesforce to start the processing of uploaded data to enable data visualizations and other features within Wave.
+* *Upload external data into new data set and start processing* - This operation combines the aforementioned three operations into a single operation.
+
+=== Fixed in this Release
+
+First version.
+
+
+== See Also
+
+* xref:3.9@mule-runtime::salesforce-analytics-cloud-connector.adoc[Salesforce Analytics Cloud Connector User Guide]
+* https://developer.salesforce.com/docs/atlas.en-us.bi_dev_guide_ext_data.meta/bi_dev_guide_ext_data/[Salesforce External Data API]
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

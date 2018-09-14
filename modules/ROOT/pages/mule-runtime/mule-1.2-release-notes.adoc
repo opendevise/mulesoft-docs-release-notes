@@ -1,0 +1,52 @@
+= Mule 1.2 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: mule-1.2-release-notes.adoc
+:keywords: release notes, esb
+
+The Mule team are pleased to announce the release of Mule 1.2! You can Download it here!
+
+== Mule 1.2
+
+*Oracle Advanced Queuing Support*
+
+* Mule now has specific support for Oracle AQ, and handling for Oracle Message types.
+
+*Secure Mail Protocols Support*
+
+* Built in support for SMTPs, POP3s, and IMAPs secure protocols.
+
+*Transport Improvements*
+
+* Soap named parameter handling has been improved.
+* Quartz Provider Can now schedule events rather than just trigger components. This means you can do things like schedule a call on one endpoint and dispatch the results of the call to another endpoint.
+* Ftp Provider can now do receives on an FTP endpoint.
+* Ejb Provider can now poll a remote EJB to trigger events.
+* Rmi Provider can now poll a remote service to trigger events.
+* Http Provider can now poll a URL/REST service to trigger events.
+
+*Performance*
+
+* Transacted Jms threads are now handled correctly to give much better throughput
+* Non-transacted Jms now using an optimized message receiver, rather than the transacted Message Receiver.
+* Fixed Http performance, which was greatly reduced due to some erroneous keep-alive handling. This also affects the performance of SOAP calls.
+
+== New Sample Applications
+
+* LoanBroker ESB - Implements the Loan Broker Example using a ESB architecture with a shared Message Bus.
+* Voip Service Example +
+The Voip Service example is taken from a Java.net featured article, https://community.oracle.com/docs/DOC-983402[Provisioning Services Through ESB]
+* Stock Quote Example Now includes an example of invoking a .NET service using SOAP and REST.
+
+* Tools: Config Graph*
+
+* Generate Visio-style Configuration Graphs from Mule Xml files. Very cool!
+
+== Japanese Language Support
+
+* There is now a Japanese language pack for Mule!
+
+== Bug Fixes and Documentation
+
+* We've added lots of new documentation and fixed the bugs/improvements listed below.

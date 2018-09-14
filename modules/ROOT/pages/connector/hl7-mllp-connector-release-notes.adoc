@@ -1,0 +1,69 @@
+= HL7 MLLP Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: hl7-mllp-connector-release-notes.adoc
+:keywords: release notes, connectors, mllp, transport
+
+*July 3, 2017*
+
+*Guide:* xref:3.0@healthcare-toolkit::mllp-connector.adoc[MLLP Connector]
+
+The Mule MLLP transport provides connectivity and parsing functionality for MLLP messages.
+
+[IMPORTANT]
+To support Exchange 2.0 properly, the feature ID of HL7 MLLP Connector has changed. Before you download  https://anypoint.mulesoft.com/exchange/org.mule.modules.hl7-connector.mule-transport-mllp.mule-mllp-ui-eclipse/mule-transport-mllp-studio/[v1.0.1 from Exchange 2.0], **uninstall** the existing version of this connector in Studio.
+
+== 1.0.2
+
+*July 3, 2018*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime |3.7.0 and later
+|===
+
+=== Fixed in this Release
+
+* HL7 MLLP inbound endpoint was leaking HL7MessageReceiver workers, sockets and file descriptors. Now the issue is fixed.
+
+== 1.0.1
+
+*August 12, 2017*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime |3.7.0 and later
+|===
+
+=== Fixed in this Release
+
+* Exchange 2.0 support.
+
+== 1.0.0
+
+*January 6, 2017*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime |3.7.0 and later
+|===
+
+=== Features
+
+* Receive Message - The MLLP transport provides the functionality to receive MLLP messages.
+* Send Message - The MLLP transport provides the functionality to send MLLP messages.
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

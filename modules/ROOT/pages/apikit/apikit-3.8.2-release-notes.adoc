@@ -1,0 +1,30 @@
+= APIkit 3.8.2 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: apikit-3.8.2-release-notes.adoc
+:keywords: apikit, 3.8.2, release notes
+
+This release contains several bug fixes including: Non-blocking processing strategy fix, console rendering problems when !include is used in a resourceType definition and various Java parser fixes for both RAML 0.8 and 1.0 versions.
+
+
+== Compatibility
+
+* Mule Runtime 3.8.x
+* Anypoint Studio 6.0.x and 6.1.0
+* Java Parser 1.0.1
+* Javascript Parser 0.2.32
+* Console 3.0.6
+
+== Fixed in This Release
+
+* APIKIT-566 Sending a request with an invalid mimetype to a flowName specified with method:resource:mimetype, status code 500 is received
+* APIKIT-571 Schema validation response is not including as much information as before
+* APIKIT-573 Flows are duplicated when editing existing raml
+* APIKIT-574 Headers ignored when resourceType specified as an include
+* APIKIT-575 Non-Blocking fails when APIkit is not used at flow level
+* APIKIT-602 SecuritySchemes doesn't support queryString in describedBy
+* APIKIT-603 API method BodyLike#schemaContent() always returns null
+* APIKIT-604 Schema validation in request should give more information
+* APIKIT-605 cannot be accessed with the public API
+* APIKIT-606 Security scheme "type" is specified as required but parser allows null

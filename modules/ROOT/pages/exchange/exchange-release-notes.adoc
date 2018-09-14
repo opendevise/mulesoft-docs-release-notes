@@ -1,0 +1,13 @@
+= Anypoint Exchange Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: exchange-release-notes.adoc
+
+Anypoint Exchange provides a user interface consisting of asset cards that you can filter and click to provide information on connectors, APIs, examples, templates, and custom assets.
+
+* xref:exchange/anypoint-exchange-release-notes.adoc[Exchange Release Notes]
+* xref:connector/rest-connect-release-notes.adoc[Exchange 2 REST Connect Release Notes]
+* xref:exchange/exchange-on-prem-release-notes.adoc[Anypoint Exchange On-Premises Release Notes]
+
+See Also: xref:exchange::index.adoc[Anypoint Exchange Guide]

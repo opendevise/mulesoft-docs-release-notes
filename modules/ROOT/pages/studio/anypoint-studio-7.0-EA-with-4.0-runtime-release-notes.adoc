@@ -1,0 +1,159 @@
+= Anypoint Studio 7.0.0 EA with Mule Runtime 4.0.0 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: anypoint-studio-7.0-EA-with-4.0-runtime-release-notes.adoc
+
+*December 5, 2017* +
+*Build ID: 201712011152*
+
+
+== Compatibility
+
+[cols="30a,70a"]
+|===
+| Product | Version
+| *Mule Runtime*
+| Version: 4.0.0
+
+|*Anypoint Studio*
+|Version: 7.0.0 EA  +
+Build Id: 201712011152
+
+|*Maven*
+|Version: 3.3.9
+
+|*DataWeave* +
+|Version: 2.0.0
+
+|*MUnit* +
+|Version: 2.0.0 (munit-studio-plugin)
+
+|*Eclipse* +
+|Version: 4.6.2
+
+|===
+
+== What's New
+
+This release focuses on bug fixes and stability improvements for Studio 7.0. +
+
+== Hardware Requirements
+
+* For most use cases, Anypoint Studio with the 4.0.0 Runtime does not change hardware or software requirements from the previous Studio 6x versions.
+* MuleSoft recommends a minimum of 4GB of free RAM available on a developer workstation. As applications become complex, consider adding more RAM.
+
+* 4GB of free memory available.
+* 2GHz CPU.
+* 10GB free hard drive space.
+
+== Software Requirements
+
+[cols="30a,70a"]
+|===
+| Software | Version
+|Java Environments
+| * Oracle JDK 1.8.0
+|Operating Systems |* MacOS 10.12.0 +
+* Windows (32- and 64-bit) Windows 7, Windows 8, Windows 10 +
+* RHEL 7.0 +
+* Ubuntu 15.04 or later
+|Suggested Web Browsers by Platform. +
+_Studio will always use the OS default web browser_ | * Windows: +
+** Microsoft Edge 25.0  +
+** Internet Explorer 11 +
+* Linux +
+** Mozilla Firefox 51.0.1  +
+* OS X +
+** Safari 10.1
+| Maven
+| Studio comes with Maven 3.3.9 bundled, but you can externally use the versions: 3.3.3 or your own  3.3.9
+|===
+
+[NOTE]
+--
+If you are running McAfee VirusScan on your Windows OS, Eclipse-based Anypoint Studio may experience negative performance impacts. McAfee has suggested the following remedy https://kc.mcafee.com/corporate/index?page=content&id=KB58727[options].
+--
+
+== Known Issues
+
+* Some existing features in Studio 6.x are not yet supported in Studio 7: Domains, Custom Policies, API Sync, Anypoint Private Cloud, Gateway runtime connectivity.
+* Anypoint Studio freezes during start up if your installed JDK runtime is 1.8 Update 152 (1.8.0_152). +
+It is recommended that you downgrade back to 1.8.0_151.
+* Anypoint Studio uses your configured default browser to display web content such as Exchange and the Runtime Manager UI when deploying an application to Anypoint Platform. If your default internet browser does not display this content correctly, you can configure Anypoint Studio to use a Mozilla/XULRunner runtime environment as the underlying renderer for the Web UI. +
+Follow the xref:7.1@studio::faq-default-browser-config.adoc[FAQ: Troubleshooting Issues with Your Default OS Browser] for more details.
+* When referencing a RAML spec using Json Schema draft 3, DataSense fails.
+* When adding a Raml v0.8 from exchange as a dependency, it throws an error and it's not added it.
+* In MUnit test configuration files, DataSense shows "Any" type for any message field.
+* When creating a flow based on RAML 0.8 and the example is not schema compliant, the metadata is not created.
+* Copybook import fails with no message.
+* Copybook import file not copied to project.
+* When creating a new http listener config, cors interceptors allowed headers are not saved in the XML.
+* DataSense does not work for connectors not shipped with Studio.
+* Menu items get grayed out after opening Exchange using XulRunner.
+* Mule modules needs to provide icons, today many of the modules have the generic icon.
+* Running application "Pom.xml" is not updated when changing dependencies.
+* DW script errors related to schemas validations don't have the line location of the error.
+* DW: Copybook to Copybook mapping doesn't work.
+* Metadata propagation does not work when the root file is stored in src/test/resources.
+* Test Connection in HTTP Request / SMTP are throwing false positives.
+* Metadata: Actual and Expected metadata are being shown even when it's the same type.
+* Debugger: payload shown while debugging is partial but there is no way to view the rest of the payload.
+* When referencing a RAML spec using Json Schema draft 3, DataSense fails.
+* When setting WSC, it does not trigger datasense and not update metadata tree automatically.
+* Mule plugins with snapshot versions should always be regenerated.
+
+
+== Migration Guide
+
+Studio 7 only supports Mule 4 projects. The structure of the project, export format, XML and scripting language are different. +
+Users must migrate Mule 3 projects to Mule 4 manually, before they can be used in Studio 7. See the Mule migration guide for more information.
+
+Workspaces created using Anypoint Studio 6.x or below are not compatible with Anypoint Studio 7 workspaces.
+
+== JIRA Ticket List for Anypoint Studio
+
+=== Epic
+
+* [STUDIO-9090] - Visual Redesign (Phase 2).
+* [STUDIO-9705] - Generated Editors (Phase 3).
+* [STUDIO-9707] - Connectivity and DataSense (Phase 3).
+* [STUDIO-9708] - Mule 4 Elements (Phase 3).
+* [STUDIO-9967] - DW Support (Phase 3).
+* [STUDIO-9968] - MUnit Integration (Phase 3).
+
+=== Bug Fixes
+
+* [STUDIO-8805] - You can not run an application from Studio until you manually build it in the command line.
+* [STUDIO-9283] - Removing connector (not one Studio bundles) does not remove dependency from pom.
+* [STUDIO-9325] - Import: When importing a project from pom file studio is adding the source folder src/main/app.
+* [STUDIO-9411] - Downloading dependencies feedback.
+* [STUDIO-9413] - Improve error message when connectors fail to be downloaded.
+* [STUDIO-9553] - First time pom.xml file is updated changes are not taken into account.
+* [STUDIO-9673] - When adding invalid parameters to the Maven run configuration you get an error with no details or log.
+* [STUDIO-9710] - Debugger: UX issues when executing expressions with big payloads.
+* [STUDIO-9719] - Palette: search feedback text is too long and not wrapped.
+* [STUDIO-9725] - DataSense medatadata fails when the application is running.
+* [STUDIO-9950] - When setting a specific type of encoding, it fails on runtime.
+* [STUDIO-9957] - Add Modules: inconsistency between modules name in the tables.
+* [STUDIO-10141] - After adding Spring module Studio adds the spring dependencies but not as shared libraries.
+* [STUDIO-10161] - DW: Writer properties defined in the Custom Type are not autofilled when setting the output type in a transformation.
+* [STUDIO-10209] - DW: autocompletion inside lookup function throws a StackOverflowError and you don't get any help about the parameters.
+
+=== Enhancement Request
+
+* [STUDIO-8864] - Inform the user when importing a project from file system/Exchange in order to resolve dependencies.
+* [STUDIO-9176] - Add support for error types at sources.
+* [STUDIO-9649] - Use SDK Value Providers.
+* [STUDIO-9650] - Create Release Notes + Mule Champion + Welcome dialog.
+* [STUDIO-9653] - Install connectors from Exchange Web UI.
+* [STUDIO-10013] - Remove filter on flow-refs inside MUnit suites.
+* [STUDIO-10038] - When a module defines required dependencies they should be added automatically.
+* [STUDIO-10040] - Add support for reader properties for DW in output MIME Type.
+* [STUDIO-10180] - Order the added module list alphabetically.
+* [STUDIO-10197] - Add a verification pop up when installing a connector from Exchange UI.
+
+== Support
+
+* http://forums.mulesoft.com/[MuleSoft’s Forum].
+* http://www.mulesoft.com/support-login[MuleSoft’s Customer Portal].

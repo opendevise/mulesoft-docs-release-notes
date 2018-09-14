@@ -1,0 +1,114 @@
+= JMS Connector Release Notes for Mule 4
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: connector-jms.adoc
+:keywords: mule, JMS, connector, release notes
+
+== 1.3.0
+
+*August 29, 2018*
+
+=== New Features and Enhancements
+
+* JMS is Non-Blocking for Publish, Consume, and Publish-Consume Operations, improving
+the scalability of Mule Applications.
+* Support for XA Transactions. The connector can participate of multi-resource
+transactions, like DB, IBM MQ, and other XA compatible connectors.
+* ActiveMQ SSL Configuration Support. ActiveMQ Connections can be configured with
+SSL/TLS Configuration for secure connections.
+* JMS Listener. Can now configure how to propagate the Correlation ID
+on the JMS Listener Response.
+
+=== Fixed Issues
+
+* JMS Publish consume operation throws a JmsIllegalBodyException when returning a ManagedCursorStreamProvider as payload (https://www.mulesoft.org/jira/browse/MULE-14852[MULE-14852])
+* Support JMS Non-Blocking API (https://www.mulesoft.org/jira/browse/MULE-14875[MULE-14875])
+* JMS throws ClassCastException when receiving a message (https://www.mulesoft.org/jira/browse/MULE-15431[MULE-15431])
+* Add support for SSL on JMS Connector (https://www.mulesoft.org/jira/browse/MULE-12341[MULE-12341])
+* Implement human-readable toString() implementations (https://www.mulesoft.org/jira/browse/MULE-15477[MULE-15477])
+* JmsHeaders is not Serializable but JmsAttributes is (https://www.mulesoft.org/jira/browse/MULE-15455[MULE-15455])
+* XA: NPE on JmsListener#onError after flow stop (https://www.mulesoft.org/jira/browse/MULE-15488[MULE-15488])
+* JMS: Cannot configure sendCorrelationId in a listener, for sending a response (https://www.mulesoft.org/jira/browse/MULE-15502[MULE-15502])
+
+
+== 1.2.3
+
+*August 7, 2018*
+
+=== Fixed Issues
+
+* Fixed issue that prevented receiving messages published through the Artemis Management Console. (MULE-15431)
+
+== 1.2.2
+
+*May 7, 2018*
+
+=== New Features and Enhancements
+
+Minor internal upgrades.
+
+=== Fixed Issues
+
+* Update spring-jms to version 5.0.5.RELEASE. (MULE-14966)
+* Upgrade Jackson to 2.9.5. (MULE-14795)
+
+== 1.2.1
+
+*April 11, 2018*
+
+=== New Features and Enhancements
+
+This release includes the following enhancements, changes, and fixes:
+
+* JMS Listener failed to reply to a destination if the response was provided
+by a transformation inside the `Response Body`.
+
+=== Fixed Issues
+
+* JMS Publish consume operation throws a JmsIllegalBodyException when returning a ManagedCursorStreamProvider as payload. (MULE-14852)
+
+== 1.2.0
+
+*Mar 26, 2018*
+
+=== New Features and Enhancements
+
+This release includes the following enhancements, changes, and fixes:
+
+* JMS Listener when running on a cluster will only start in the main node.
+This is configurable setting: `primaryNodeOnly="false"`
+
+=== Upgrade Requirements
+
+Mule 4.1.1
+
+=== Fixed Issues
+
+* jms:listener should only run on primary node when listening to a topic. (MULE-14678)
+* Upgrade Spring JMS to 5.0.4 release. (MULE-14633)
+
+== 1.1.0
+
+*January 19, 2018*
+
+=== New Features and Enhancements
+
+This release includes the following enhancements, changes, and fixes:
+
+* Added the capability to define whitelist packages in ActiveMQ Configuration
+* Added support for message correlation
+* Improved UX
+
+=== Upgrade Requirements
+
+Mule 4.1
+
+=== Fixed Issues
+
+* JMS Config - ActiveMQ label incorrectly displayed. (MULE-14105)
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

@@ -1,0 +1,59 @@
+= Runtime Manager Agent 1.7.1 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: runtime-manager-agent-1.7.1-release-notes.adoc
+:keywords: mule, agent, release notes
+
+_Enterprise Edition_
+
+*June 26, 2017*
+
+Runtime Manager Agent 1.7.1 provides a new downloadable zip file to easily update Runtime Manager Agent. Download the Runtime Manager agent from the following URL.
+
+https://support.mulesoft.com/s/downloads
+
+You must supply your Anypoint login and password to access this page.
+
+
+*Runtime Manager Agent Install Guide*: xref:runtime-manager::installing-and-configuring-runtime-manager-agent.adoc[installing and configuring Runtime Manager Agent]
+
+== Compatibility
+
+[%header,cols="2*a",width=70%]
+|===
+|Software|Version
+|Mule Runtime|3.6.n, 3.7.n, 3.8.n
+|API Gateway|2.n and above
+|Runtime Manager | V2.0
+|===
+
+
+== Hardware and Software Requirements
+
+No change.
+
+== Improvements and resolved issues
+
+* SE-5702: Flows of apps created with ApiKit are shown as Failed.
+* SE-6207: When writing business events to the ELK file, the process generates contention with a large number of events.
+* SE-5779: There seems to be some network contention when the disk buffering is enabled, causing network timeouts.
+
+
+
+== Known Issues
+
+None
+
+== Migration Guide
+
+
+The 1.7.1 release of the runtime manager agent changes the disk buffering implementation. In case you were using disk buffering on a previous version, you will be asked to manually remove remaining buffer files when running the runtime manager agent update.
+
+
+See xref:runtime-manager::installing-and-configuring-runtime-manager-agent.adoc#updating-a-previous-installation[updating the Runtime Manager agent].
+
+== See Also
+
+* xref:runtime-manager::runtime-manager-agent.adoc[Runtime Manager Agent]
+* https://support.mulesoft.com[Contact MuleSoft]

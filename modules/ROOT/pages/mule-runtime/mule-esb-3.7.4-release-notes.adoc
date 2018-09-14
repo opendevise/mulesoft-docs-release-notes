@@ -1,0 +1,214 @@
+= Mule ESB 3.7.4 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: mule-esb-3.7.4-release-notes.adoc
+:keywords: mule, 3.7.4, release notes
+
+MuleSoft is pleased to announce the release of Mule 3.7.4, an Enterprise Only maintenance release for 3.7.x users. +
+We updated libraries due to security vulnerabilities and fixed more than 80 bugs.
+
+*May 31, 2016*
+
+== Supported Software
+
+Mule was tested on the following software:
+
+[%header,cols="30a,70a"]
+|===
+|Software|Version
+|JDK |JRE 1.7.0 (Recommended JRE 1.7.0_79/80) +
+ JRE 1.8
+|OS | MacOS 10.10.3 +
+HP-UX 11i V3 +
+AIX 7.1 +
+Windows 2012 R2 Server +
+Windows 8.1 +
+Solaris 11.2 +
+RHEL 7.0 +
+Ubuntu Server 15.04
+|Application Servers | Tomcat 7 +
+Tomcat 8 +
+WebLogic 12c +
+Enterprise 6.1 +
+Community 8 +
+Community 8 +
+WebSphere 8 +
+Jetty 8 +
+Jetty 9 +
+Wildfly 8
+|Databases | Oracle 11g +
+MySQL 5.5+ +
+DB2 10 +
+PostgreSQL 9 +
+Derby 10 +
+Microsoft SQL Server 2014
+|===
+
+== New Features
+
+For apps deployed to CloudHub, you can now access diagnostics for the CloudHub workers running your app. Just enable the enhanced logs feature, and head to the application's logs page to download this diagnostics file. See xref:runtime-manager::viewing-log-data.adoc#downloading-logs-in-enhanced-logging[Viewing log data].
+
+
+== Bundled Runtime Manager Agent
+
+This version of Mule ESB comes bundled with the Runtime Manager Agent plugin version 1.4.1.
+
+See xref:runtime-manager-agent/runtime-manager-agent-release-notes.adoc[Runtime Manager Agent Release Notes].
+
+== Fixed Issues
+
+[%header,cols="30a,70a"]
+|===
+|Issue |Description
+|EE-3226|	Cannot read or write the MQMD ApplicationId header of a message when using WMQ connector
+|EE-4946|	Exception in Batch commit causes memory leak
+|EE-4920|	replyToHandler should not be serialized when using cache scope and non-blocking
+|EE-4915|	When batch logs exception in steps, the exception message is not logged
+|EE-4906|	Batch commit streaming leaves queue brokers active that reference already finished jobs
+|EE-4895|	Ensure transactions properly cleaned up when managing batch jobs
+|EE-4894|	Batch commit streaming leaves open transactions
+|EE-4878|	It is not possible to change the log level through the MMC agent
+|EE-4745|	Obsolete directory for patches
+|EE-4740|	Batch ignoring ONLY_FAILURE step
+|EE-4723|	Large stack traces when serializing a ParameterMap
+|EE-4721|	FunctionalTestCase throws exception when having a non-blocking processing strategy
+|EE-4712|	Exception locking polling lock: OperationTimeoutException
+|EE-4711|	In-memory object store not expiring for cache
+|EE-4705|	BatchJobInstanceId is not available if the job does not have an input phase
+|EE-4682|	MMC agent needs to send the instanceId back to MMC when pairing directly (no Discovery)
+|MULE-9075|	Remove RC4 cipher suites from tls-default.conf
+|MULE-9368|	Add known_hosts validation to SFTP Transport
+|MULE-9670|	Reason phrase and entity are mistaken in RequestHandler
+|MULE-9660|	OAuth2 authorization-code-grant-type is always expecting a refresh_token when it is optional according to the spec
+|MULE-9636|	Can't call method in Java-Component when argument is primitive data type
+|MULE-9619|	NestedProcessors generates leaks of OperationMessageProcessor instances
+|MULE-9592|	MuleEndpointURI fails to extract right user and password
+|MULE-9570|	SFTP: Pooled connections not returned to pool on server/network error
+|MULE-9566|	Content-Type set in request builder is not considered
+|MULE-9558|	HTTP failing response streaming calls exception strategy but returns generic error
+|MULE-9546|	JMSMessage-to-object-transformer doesn't propagate DataType
+|MULE-9544|	Reconnect Strategy not triggered for JMS with XA transactions
+|MULE-9540|	HTTP Connector MESSAGE_REQUEST_END notification message has no information about the HTTP response
+|MULE-9505|	Message Processors invocations inside an Until Successful are not notified
+|MULE-9501|	Wildcard-filter not working properly
+|MULE-9497|	Until-successful synchronous processing strategy leaves the RequestContext inconsistent
+|MULE-9446|	TransactionManager created by TestTransactionManagerFactory returns null for hashCode()
+|MULE-9405|	NullPointerException when setting a context-property with a null value on org.mule.module.xml.transformer.XsltTransformer
+|MULE-9403|	App logger is creating an invalid filename when it rotates
+|MULE-9399|	Mule throws a LifecycleException when disposing an Extension Source
+|MULE-9389|	Mule Context's getTransactionManager randomly returns null if called during context start
+|MULE-9383|	Allow to receive/send http content with invalid content-type headers
+|MULE-9382|	StackOverflowError when circular dependency with Spring
+|MULE-9364|	DecryptStreamTransformer does not close original input stream
+|MULE-9363|	Infinite loop encrypting/decrypting zero length values
+|MULE-9346|	MESSAGE_SEND_BEGIN event for EndpointMessageNotification is sent after the outbound call is executed
+|MULE-9334|	DB Connection leak with an invalid table in Select statement
+|MULE-9324|	No exception is thrown when folder in path is removed
+|MULE-9323|	WS consumer fails when reading secured WSDL
+|MULE-9322|	MuleMessage owner not reset when using non-blocking and CxfOutboundMessageProcessor sendWithProxy()
+|MULE-9319|	Async Reconnection strategies can't be defined globally
+|MULE-9317|	HTTP outbound credentials not picked up if credentials exist from inbound
+|MULE-9312|	HttpMessageProcessTemplate is consuming request content twice
+|MULE-9306|	When dispatch an event to a sub-flow from a Processor or Component using MuleClient the original event no longer present in RequestContext
+|MULE-9265|	Potential StackOverflow attempting to send response to closed connection when using NB and component that doesn't support NB
+|MULE-9244|	Set property http.reason is not working on HTTP Connector
+|MULE-9237|	Null pointer while catching the exception thrown from Enricher processor
+|MULE-9229|	UntilSuccessfulTestCase is throwing NPE
+|MULE-9226|	Logging issues when using domain configuration with JMS connector
+|MULE-9224|	Using multiple threads in an until successful causes an exception if the message is rejected
+|MULE-9205|	XmppMessageDispatcher doesn't reconnect
+|MULE-9193|	Big memory footprint on XMPP Transport: org.jivesoftware.smack.PacketCollector
+|MULE-9189|	RegistrationException "More than one AbstractJmxAgent" when using domain and enabling jmx
+|MULE-9185|	Cleanup of Events put in ThreadLocal with RequestContext
+|MULE-9182|	CXF proxy trying to send response for one-way operations
+|MULE-9175|	JSON validate doesn't pick up redirects if it's in the application classpath
+|MULE-9174|	Security credentials not passed to JMS broker when using 1.0.2b spec
+|MULE-9167|	MEL expressions in Groovy Transformer/Component property bindings not being resolved
+|MULE-9163|	MVEL gets in an infinite loop in CompileException
+|MULE-9156|	JSON schema validation fails when schema contains ref to local file
+|MULE-9146|	AsyncUntilSuccessful uses a fixed thread pool
+|MULE-9144|	SFTP Request doesn’t autoDelete original file
+|MULE-9140|	"host" header expected even for HTTP 1.0 clients
+|MULE-9132|	Ensure proper closing of Statements and ResultSets
+|MULE-9074|	WebService Consumer: xsd:import for external resources through HTTP fails with java.io.FileNotFoundException
+|MULE-9066|	set-property throws runtime exception if the propertyName is empty
+|MULE-9065|	IndexOutOfBoundsException when header key has empty value
+|MULE-9051|	ForEach fails to provide path elements when not initialised
+|MULE-9046|	ClassLoading leaks after redeploys
+|MULE-9045|	HTTP Listener not sending reason phrase when error occurs
+|MULE-9044|	HTTP Listener returning 500 instead of 400 on invalid Content-Type
+|MULE-9009|	[FIX INCLUDED] MimeType is not set in DataTypeFactory
+|MULE-8916|	Unclear message when more than one transformer is available
+|MULE-7680|	Custom Connector Bug with HTTP Transport
+|MULE-7663|	tls-default.conf entries are ignored sometimes
+|MULE-6417|	/ by zero in ComponentStatistics
+|MULE-6298|	Flow with a splitter followed by a filter, returns original collection if no item passes the filter, instead of null message
+|===
+
+== Library changes
+[%header,cols="30a,70a"]
+|===
+|Issue |Description
+|MULE-9032|	Upgrade BouncyCastle to 1.54
+|MULE-9620|	Updated log4j version to 2.3 for versions previous 3.8
+|MULE-9607|	Upgrade MVEL to 2.1.9-MULE-010
+|MULE-9522|	jruby was upgraded to version 1.7.24. +
+Also, the following dependencies were updated:	+
+	* bytelist	from version 1.0.10 to 1.0.11 +
+	* jcodings	1.0.10 to 1.0.16 +
+	* jffi	1.2.9 to 1.2.10 (-native too) +
+	* jline	removed +
+	* jnr-constants	0.8.4 to 0.9.0 +
+	* jnr-enxio	0.4 to 0.9 +
+	* jnr-ffi	1.0.4 to 2.0.5 (shaded into mule-module-scripting-jruby) +
+	* jnr-posix	2.5.2 to 3.0.27 +
+	* jnr-unixsocket	0.3 to 0.8 +
+	* joni	2.0.0 to 2.1.9 +
+	* jruby-core	1.7.4 to 1.7.24 (shaded into mule-module-scripting-jruby) +
+	* jruby-stdlib	1.7.4 to 1.7.24 +
+	* jzlib	1.1.2 to 1.1.3 +
+	* nailgun-server	0.9.1 (new) +
+	* options	1.3 (new) +
+	* yecht	1.1 (new) +
+
+|MULE-9362|	Update xmlsec version 1.5.3 which has vulnerabilities to 1.5.8
+|MULE-9235|	Async HTTP Client 1.9.32 +
+Grizzly Framework 2.3.24
+|MULE-9318|	Joda Time 2.9.1
+|MULE-9193|	Smack 3.4.1
+|===
+
+== Migration Guidance
+
+[%header,cols="30a,70a"]
+|===
+|Issue |Description
+|MULE-9032| BouncyCastle was upgraded to version 1.54. +
+[NOTE]
+--
+DESede algorithm now requires keys of 16 or 24 bytes unlike the prior version which required 16 or 22 bytes.
+--
+|MULE-9337| TLSv1 is no longer listed as an enabled protocol, by default only TLSv1.1 and TLSv1.2 will be enabled. +
+If you wish to use TLSv1 you can edit the xref:3.7@mule-runtime::tls-configuration.adoc#global-tls-configuration[TLS configuration file] (tls-default.conf) and add it back to the enabled protocols entry.
+
+|MULE-9501| The wildcard-filter will only work with prefix (*.log), suffix (java.util.*) or enclosing strings (*util*) patterns, as well as the deprecated payload based filter (java.lang.Throwable+) and regular strings.
+
+In any other case no match will be possible, regardless of the input. The regex-filter should be used for other cases.
+
+This also affects the wildcard patterns allowed by the file-wildcard-filter, request-wildcard-filter, expression-filter, message-property-filter, exceptions strategies commit-transaction and rollback transaction exception patterns, wildcard patterns used in expressions, among others (complete list can be found in https://www.mulesoft.org/jira/browse/MULE-9501[MULE-9501]).
+|===
+
+== Known Issues
+
+[%header,cols="30a,70a"]
+|===
+|Issue |Description
+|MULE-9203|	MTOM attachments not working with WS consumer and HTTP listener
+|MULE-9201|	HTTP request should throw a ConnectException when it fails to send a request
+|MULE-9197|	Idempotent redelivery policy is not apply to http:listener with `rollback-exception-strategy`|
+|===
+
+== Support
+* Access http://forums.mulesoft.com/[MuleSoft’s Forum] to pose questions and get help from Mule’s broad community of users.
+* To access MuleSoft’s expert support team https://www.mulesoft.com/support-and-services/mule-esb-support-license-subscription[subscribe to Mule ESB Enterprise] and log in to MuleSoft’s http://www.mulesoft.com/support-login[Customer Portal].

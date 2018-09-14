@@ -1,0 +1,122 @@
+= MUnit 1.2.1 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: munit-1.2.1-release-notes.adoc
+:keywords: munit, 1.2.1, release notes
+
+*August 19, 2016*
+
+We are happy to announce the new release of MUnit version MUnit 1.2.1. +
+In this release we’ve worked heavily on quality.  As with any release that follow a major release (1.2.0) we’ve taken some time to acquire as much feedback as possible from our users and we have been looking very closely at anything that may not be perfect with our new features. +
+But we have also created a few new cool features, mainly in our Anypoint Studio Plugin which we think we’ll make your day to day activity easier.
+
+
+In this opportunity we’ll be releasing new versions of several artifacts:
+
+* MUnit:
+** 1.2.1
+* MUnit Studio Plugin:
+** 1.3.0
+
+== Hardware and Software Requirements
+
+* Microsoft Windows 8 +
+* Apple Mac OS X 10.10 +
+* Linux (tested on Ubuntu 15)
+* Java 7, Java 8
+* Maven 3.1+
+
+
+== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule |3.6.x, 3.7.x, 3.8.x
+|Anypoint Studio |6.1.0 and newer
+|===
+
+== Features and Functionality
+
+=== Anypoint Studio Plugin
+
+In this release of the MUnit Anypoint Studio plugin we have include a few cool features:
+
+* RAML Scaffolding improvements
+** Support for RAML 1
+** Moved payload examples to files
+** Better error handling UX during scaffolding and RAML validations
+** Generation of default values when no examples are provided
+** Generation of payloads based on json schemas
+* New feature to disable Coverage Calculation
+* New context menu to Ignore/Enable tests
+
+=== MUnit Runtime
+
+This last release of the MUnit Runtime includes mainly bug fixes, related to minor issues in Domain Support and the Coverage Module.
+
+== Fixed Issues
+
+* MU-520 - RAML scaffolding generates tests combining mime types from body and response
+* MU-521 - No exception displayed when generating tests with RAML schema that doesn't have properties defined
+* MU-523 - MPs not being covered in a linear flow
+* MU-524 - HttpHeader need to be nested inside Request builder when setting Http request connector
+* MU-533 - Improve http requests on tests scaffolder for POST requests
+* MU-534 - MUnit scaffolder fails with null message when having a response with no body
+* MU-537 - Namespaces set by NamespaceManager/Namespace are ignored
+* MU-543 - RAML scaffolding is adding a jump line when sets query parameters example from Traits
+* MU-517 - Coverage wrong calculation
+* MU-554 - SubFlow not being count on Coverage
+* MU-555 - Flow reference inside SubFlow not getting count on Coverage
+* MU-558 - First Successful not reporting correct coverage
+* MU-559 - References to Global Catch ES not being reported as covered
+* MU-560 - Apikit flows not reporting as covered when running from Maven
+* MU-561 - Coverage report not showing flow ref inside Choice ES
+* MU-587 - Coverage Calculation not loading files in multi module project
+* MU-562 - Multiple Catch ES makes coverage report to not display correct info
+* MU-568 - Properties placeholder on Domain not loading when running tests on Windows
+* MU-575 - Wrong Coverage when having one MP inside Round Robin
+* MU-584 - MUnit scaffolder creates empty suite
+* MU-585 - Parser failure on test scaffolder
+* MU-588 - Running tests on multimodule app with domain fail
+* MU-591 - Assertion errors on Spy are shown as errors and not failures for sub-flows
+* MU-618 - Scaffolding stop working with schemas/samples defined from URL's
+* MUSP-255 - Find a fix for jansi-32.dll (Access is denied
+* MUSP-272 - Update warning about domain outdated on M2
+* MUSP-275 - RAML scaffolding query params fail
+* MUSP-277 - Validate Exchange Download with different workspaces/releases
+* MUSP-289 - Studio should run test with complex flow names
+* MUSP-291 - Missing DLL when running MUnit tests on Windows
+* MUSP-292 - Disable Generate Report button when using CE runtime
+* MUSP-293 - Unable to run test for project with spaces in the path
+* MUSP-294 - Not run coverage when using CE runtime
+
+== Improvements
+
+* MU-351 - Prevent exceptions for HTTP error status when generating scaffolded tests
+* MU-415 - Improve APIKit Scaffolder validations
+* MU-507 - Add support for RAML 1.0 test scaffolding
+* MU-511 - Improve scaffolder payload to files
+* MU-514 - Add support for Request Payload RAML scaffolder
+* MU-516 - Remove curly braces {} from flow names
+* MU-535 - Add support for headers on RAML Scaffolding
+* MU-553 - Migrate RAML java parser to v2
+* MUSP-214 - Improve Interactions between Studio Plugin and APIKit Scaffolder
+* MUSP-265 - Provide a way for the user to disable coverage calculation
+* MUSP-270 - Remove domain preferences from nero and olympus
+* MUSP-267 - Improve ignore/enable tests in the suite
+
+== Migration Guidance
+
+Tests that work in 1.0.0 also work in 1.2.1
+
+== Known Issues
+
+Scaffolding tests for RAML 0.8 containing Query parameters, URI parameters or Headers of type Date the corresponding flow variables for the http-request will not generated.
+
+== Support
+
+* Refer to link:/munit/v/1.2.1/[MUnit Documentation]
+* Access http://forums.mulesoft.com/[MuleSoft’s Forum] to pose questions and get help from Mule’s broad community of users.
+* To access MuleSoft’s expert support team https://www.mulesoft.com/support-and-services/mule-esb-support-license-subscription[subscribe to Mule ESB Enterprise] and log in to MuleSoft’s http://www.mulesoft.com/support-login[Customer Portal].

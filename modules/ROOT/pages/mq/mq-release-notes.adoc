@@ -1,0 +1,264 @@
+= Anypoint MQ Cloud Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: mq-release-notes.adoc
+:keywords: mq, release, notes
+
+*April 2018*
+
+Anypoint MQ provides cloud and enterprise messaging services in MuleSoft. Anypoint MQ lets you perform advanced asynchronous messaging scenarios between your applications and is fully integrated with Anypoint Platform, offering role-based access control, client application management, and connectors.
+
+Locations where MQ is available:
+
+* North America: Northern Virginia (us-east-1) and Oregon (us-west-2), Central Canada (ca-central-1).
+* EU: Ireland (eu-west-1), London (eu-west-2).
+* APAC: Singapore (ap-southeast-1), Sydney (ap-southeast-2).
+
+See Also:
+
+* xref:connector/mq-connector-release-notes.adoc[Mule 3 Anypoint MQ Connector Release Notes]
+* xref:connector/anypoint-mq-connector-release-notes-mule-4.adoc[Mule 4 Anypoint MQ Connector Release Notes]
+* xref:mq::index.adoc[Anypoint MQ Documentation]
+
+== 2.0.3
+
+*April 20, 2018*
+
+Anypoint MQ has added EU Ireland as a new region to the EU Control Plane.
+
+== 2.0.2
+
+*April 4, 2018*
+
+This release fixes a single issue.
+
+=== Fixed in This Release
+
+The names for queues, message exchanges, and client applications can now contain one or more dot characters. (MQ-1118)
+
+== 2.0.1
+
+*March 24, 2018*
+
+This release adds access to London (eu-west-2) and Central Canada (ca-central-1).
+
+== 2.0.0
+
+*February 24, 2018*
+
+This release provides a new user interface backend implementation along with a suite of other major internal implementation changes. This release also fixes a number of user interface issues.
+
+=== Fixed in This Release
+
+* Anypoint MQ Message Browser does not display all messages. (SE-6899)
+* Anypoint MQ statistics are not updated. (SE-6607)
+* Unable to update MQ settings. (SE-6180)
+* MQ UI is not refreshing in-flight messages correctly. (SE-4654)
+* Disable submit button while pending request. (MQ-1024)
+* Cannot create a client app name with the maximum length characters allowed. (MQ-993)
+* Switching environments from Client Apps redirects to Destinations. (MQ-992)
+* Inconsistent chart rendering. (MQ-913)
+* Stats: data points are not shown on mouseover if values appear at the top of the chart. (MQ-332)
+* Statistics tooltip doesn't disappear on mouse left. (MQ-321)
+* Ellipsis is not part of the link. (MQ-320)
+* When you want to create a queue or message exchange and click on the corresponding option when the dialog modal is open, you need to click again on the Name field to start creating the destination. (MQ-305)
+
+== 1.7.4
+
+*September 23, 2017*
+
+This release adds new functionality to the Anypoint MQ Statistics API and fixes a FIFO DLQ issue.
+
+New: +
+MQ-748 - The Statistics API provides these new metrics that apply to both FIFO and non-FIFO queues:
+
+* messagesVisible - The number of messages that can be retrieved from a queue.
+* messagesSent - The number of messages added to a queue.
+* messagesReceived - The number of messages received in a queue.
+* messagesAcked - The number of messages ACKed or deleted in the UI.
+
+Fixed: +
+MQ-706 - Can now send messages to FIFO DLQs correctly.
+
+== 1.7.1
+
+*July 15, 2017*
+
+FIFO access is now available in Oregon (us-west-2), Northern Virginia (us-east-1), and Ireland (eu-west-1).
+
+== 1.6.1
+
+*May 20, 2017*
+
+Added MQ access to Singapore (ap-southeast-1).
+
+== 1.6.0
+
+*March 25, 2017*
+
+This release of Anypoint MQ introduces the following new feature:
+
+* xref:access-management::audit-logging.adoc#to-query-audit-logging-for-anypoint-mq[Audit Logging for Anypoint MQ].
+
+== 1.5.0
+
+*January 28, 2017*
+
+This release of Anypoint MQ introduces the following new features:
+
+* xref:mq::mq-queues.adoc#fifoqueues[FIFO queues]
+* xref:mq::mq-queues.adoc#about-fifo-exactly-once-delivery[Exactly once delivery]
+* Rollout of Anypoint MQ to US-West (Oregon) region
+* Enables encoding and support for UTF-8/non-Ascii characters
+
+== 1.4.0
+
+*November 5, 2016*
+
+This release of Anypoint MQ fixes issues with Analytics usage and with OAuth.
+
+=== Fixed in this Release
+
+[%header,cols="30s,70a"]
+|===
+|Issue |Description
+|MQ-572 |Modify `startDate` and `endDate` in metrics to use a standard date format, such as `2016-11-01T19:00Z`. This change
+preserves both the old format and the new format for backward compatibility.
+|MQ-556 |Fixed memory leak that occurred when reporting usage metrics
+|MQ-548 |Created support for sending a message without a body
+|MQ-543 |When sending an Ack without bearer token, report 401 error instead of 500
+|MQ-535 |Report 500 error when trying to create a queue with the same name as the dead letter queue
+|MQ-534 |Return a 400 error if user tries to configure the DLQ of a queue as itself
+|===
+
+== 1.3.0
+
+*August 27, 2016*
+
+This release of Anypoint MQ contains the following features:
+
+* xref:mq::mq-queues.adoc#about-dead-letter-queues[Dead Letter Queue (DLQ)] feature enables a queue to receive undeliverable messages.
+* Bug fixes and UI improvements.
+
+[IMPORTANT]
+====
+The Anypoint MQ API lets you configure a queue to be its own dead letter queue; however, the MQ user interface does not let a queue to be its own DLQ, only the REST API permits this. MuleSoft recommends that you do not do this except for testing purposes because if left in production, this can result in infinite retries thus causing a client application to burn through its monthly usage quota quickly.
+====
+
+=== Fixed in this Release
+
+[%header,cols="30s,70a"]
+|===
+|Issue |Description
+|MQ-339 |Ability to use Dead Letter Queues
+|MQ-488 |Correction to encoding logic when sending messages between 200-300KB
+|MQ-489 |Add a new header to messages specifying the encoding
+|MQ-493 |Dead Letter Queue UI
+|MQ-507 |Return the error status when creating a queue with no body
+|MQ-511 |Usage of correct property attributes for retry policy
+|MQ-531 |Dead Letter Queue UI state updates
+|===
+
+== 1.2.0
+
+*June 25, 2016*
+
+This release of Anypoint MQ contains the following features:
+
+* Improved Usage Tracking UI. For more information, see xref:mq::mq-usage.adoc[Anypoint MQ Usage Information]
+* Metrics and usage tracking API
+* MQ billing management
+
+*Fixed in This Release:*
+
+[%header,cols="30s,70a"]
+|===
+|Issue |Description
+|MQ-391 |UI for usage tracking
+|MQ-394 |Metrics Query API
+|MQ-404 |MQ detailed usage pane and improvements to other UI screens
+|MQ-411 |Stats API - Standardize the date format we use for the different calls
+|MQ-412 |Cannot get statistics of queues
+|MQ-413 |Broker API - Cannot get message
+|MQ-416 |Admin API - Operations are not being counted in analytics in the apiRequestCount field
+|MQ-420 |Better error messages and logging for stats/analytics requests
+|MQ-434 |Support histograms of message sizes per queue
+|MQ-442 |Support MQ billing management
+|MQ-444 |MQ UI should not be displayed if the organization doesn't have it enabled
+|MQ-445 |Some components doesn't look properly
+|MQ-446 |Several errors in modal to create a queue
+|MQ-449 |When deleting a queue, displays "Deletion Fail" message even when there's no failure
+|===
+
+
+== 1.1.2
+
+*May 14, 2016*
+
+This release provides user interface updates and bug fixes.
+
+=== Fixed Issues
+
+[%header,cols="30s,70a"]
+|===
+|Issue |Description
+|MQ-327 |Message browser list should not be ordered by message ID
+|MQ-357 |Add IDs to HTML elements for test automation
+|MQ-374 |[UI] Exchange Settings are not visible as soon as the user access to the details
+|MQ-385 |Integrate notifications with analytics for billing
+|MQ-388 |[UI][Chrome] unreadable list of queues during the creation of an exchange
+|===
+
+== 1.1.0
+
+*May 5, 2016*
+
+This release is the General Availability release for Anypoint MQ.
+
+=== Features
+
+This release includes these features:
+
+* Users can view and track their MQ usage.
+* 10 MB maximum message size limitation is now enforced.
+* Updated API error and return codes reflect the proper status.
+
+=== Fixed in this Release
+
+[%header,cols="30s,70a"]
+|===
+|Issue |Description
+|MQ-201 |(Admin API) The system returns 204 ok even when the org ID doesn't exist
+|MQ-205 |Enforced maximum message size limit to 10 MB
+|MQ-241 |Exchange historical statistics as delta from 0
+|MQ-301 |Ability to count delivered/received messages
+|MQ-306 |Request to non-existing API returns bad error message
+|===
+
+== 1.0.1
+
+*January 23, 2016*
+
+Features:
+
+* Anypoint MQ now supports Internet Explorer 11.
+
+== 1.0.0
+
+*December 21, 2015*
+
+This release includes the following capabilities:
+
+* Queues and Message Exchanges: Send messages to queues, pull messages from queues, create a message exchange to perform pub/sub scenarios and send a message to multiple queues. Management console: monitor queue statistics, purge queues, and see how many messages are in flight via the management console.
+* Anypoint MQ connector: Send/receive messages from any Mule application, whether it’s deployed in CloudHub or used in a hybrid scenario and deployed on-premises.
+* Client management: Create client applications tokens.
+* Large payloads: Anypoint MQ supports payloads up to 10 MB in size.
+* Disaster recovery and multi-data center availability: Anypoint MQ provides persistent data storage across multiple data centers, ensuring that it can handle data center outages and have full disaster recovery.
+* Encrypted queues: Queue data can optionally be encrypted, ensuring that companies can be compliant with their data at rest policies.
+
+== See Also
+
+* xref:mq::index.adoc[Anypoint MQ]
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

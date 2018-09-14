@@ -1,0 +1,519 @@
+= API Manager Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: api-manager-release-notes.adoc
+:keywords: release notes, apis, anypoint platform for apis, anypoint platform
+
+API Manager release notes include information about changes, new features, improvements, and resolved issues in releases of API Manager.
+
+*Note:* Only API Manager 2.x can manage Mule 4 APIs.
+
+== Browser Support
+
+Anypoint Platform supports the following browsers:
+
+* Firefox (latest version)
+* Chrome (latest version)
+* Internet Explorer 11 and newer
+
+== 2.2.5
+
+*August 30, 2018*
+
+This release provides this new feature:
+
+* User-defined ports for CloudHub deployments
+* Added "Manage Runtime Fabric" proxy link
+* Auto populate implementation URI from Exchange
+* Support for Analytics chart to every granular permission
+
+=== Fixed in This Release
+
+* Bug when users couldn't add tags
+* Bug when users with custom roles weren't receiving email notifications for API access
+
+
+== 2.2.4
+
+*June 30, 2018*
+
+This release provides this new feature:
+
+* Caching Policy for Mule 4 APIs
+
+== 2.2.3
+
+*June 2, 2018*
+
+This release provides this new feature:
+
+* Changes in platform APIs for unclassified environments to facilitate CI/CD pipelines.
+
+=== Fixed in This Release
+
+* Bug when cannot save a change in API configuration. (AP-4030)
+* Bug when Mule 4 Runtime in a business group is unable to retrieve contracts. (AP-4081)
+
+== 2.2.2
+
+*May 17, 2018*
+
+This release provides these features:
+
+* Fine-grained access control for the November release of API Manager 2.0.
+* Logging and Header injection and removal policy for 3.8.5+ runtimes.
+* On the API Settings page "Client Applications" has been renamed to "Contracts".
+* Bug fixes.
+
+=== Fixed in This Release
+
+* Bug when displaying client ID enforcement details. (AP-3976)
+* Exporting a Mule 4 API containing a policy resulted in a "TypeError: Cannot read property" message. (AP-3941)
+* If a valid URL with OAuth was copied from API Manager, and the user then logged out, subsequent attempts to access the URL failed with an NPE. (AP-3907)
+* Redeploy button incorrectly disabled after a deploy. (AP-3955)
+* When a user only has Asset Admin permission in Anypoint Exchange, the action of making the API Instance public or private fails. (AP-3860)
+* Allow updating these fields, which were set to read-only after the November upgrade: api.name, api.groupId (also updates the apiversion.groupId), api.assetId (also updates the apiversion.assetId), and apiversion.name. (AP-4020)
+
+== 2.2.1
+
+*April 23,2018*
+
+This release includes these improvements and bug fixes.
+
+* Support for 3.9 proxies.
+* Fixes an issue when approval email was not sent after requesting access for published APIs with manual approval.
+* Fixes an issue with autocomplete on import from Exchange.
+* Improved error message when deleting Client Applications with OKTA as the IM provider.
+* When autodiscovery looks for API ID that does not exist, Platform returns 403 instead of 404.
+
+== 2.2.0
+
+*January 27, 2018*
+
+This release supports deployment for Mule 4.1.0 proxies on the November release.
+
+== 2.0.0
+
+*November 18, 2017*
+
+This release of API Manager includes new and enhanced features for accounts that have upgraded to the November release. If your account hasn’t been upgraded yet, please contact your Customer Success representative.
+
+=== Key Changes and Enhancements
+
+* A tight integration of Anypoint Platform components extends the link:/api-manager/environments-concept[use of environments] to API management.
+* API permissions are now environment-based.
+* You can now link:/api-manager/create-instance-task[create multiple instances] of an API.
+* APIs in Exchange can be link:/api-manager/manage-exchange-api-task[managed from API Manager].
+* There are two new APIs for managing APIs:
+** API Manager API v1.0 to manage API.
+** API Manager proxy API v1.0 to manage deployment of API proxies through API Manager.
+* Support for Mule 4 Early Access. Mule 4-related changes to API Manager are:
+** Classloader isolation exists between the application, the runtime and the connectors, and policies.
+** This release of Mule 4 link:/api-manager/policy-scope-size-concept[changes the packaging, size, and scope] of a policy.
+** All policies are non-blocking.
+** All policies except CORS, which is executed first, can be ordered.
+* link:/api-manager/develop-custom-policies-reference[Custom policy development] has changed.
+* Header propagation no longer occurs by default and needs to be configured.
+* Resource level policy support, which was restricted to RAML-based APIs, is extended to any HTTP API.
+
+=== Changes Related to Using Mule 4 Early Access
+
+* API Manager link:/api-manager/latest-overview-concept[does not support auto-generation and deployment of proxies].
+* The Throttling policy is not supported in this Mule release.
+* Mule 4 replaces the security manager policies with two HTTP Basic Authentication policies:
+** A combination of HTTP Basic Authentication and Simple Security Manager
+** A combination of HTTP Basic Authentication and LDAP Security Manager
++
+The policy protects an API by expecting and validating a user name and password.
++
+* You can configure the Rate Limiting policy if the quota is shared among the cluster nodes or not. By default, the quota is shared among the cluster nodes.
+
+== 1.16.2
+
+*August 26, 2017*
+
+This release includes bug fixes and the following enhancements:
+
+* You can now specify a client ID and client secret when you create a client application. There is no UI support for specifying the credentials. This is supported through the https://anypoint.mulesoft.com/apiplatform/anypoint-platform/#/portals/organizations/68ef9520-24e9-4cf2-b2f5-620025690913/apis/11197/versions/126378/pages/181952[API Platform 2.1.0 API]. API Manager uses the credentials you specify instead of generating a unique 32-digit string.
+* You no longer set the client ID when you create a custom policy.
+* This release supports API Designer 0.4.5.
+* This release supports RAML Parser https://github.com/raml-org/raml-js-parser-2/releases/tag/1.1.29[1.1.29].
+
+== 1.16.0
+
+*July 15, 2017*
+
+This release includes bug fixes and an enhancement that warns users when uploading custom policies without the requiredContracts tag, which is necessary for offline behavior.
+
+== 1.15.0
+
+*April 8, 2017*
+
+In this release, the invalid console path generated for RAML proxies with paths ending with /* was fixed. This release includes the following enhancements:
+
+* Resource Level Policies
+* Layout Changes
+* Display OAuth Grant Types
+
+=== Resource Level Policies
+
+This feature provides the flexibility to apply policies to specific resources and/or methods of an API instead to the entire API. This feature is enabled only for RAML-based APIs or proxies. For more information, see link:/api-manager/resource-level-policies-about["About Resource Level Policies"] and link:/api-manager/tutorial-manage-an-api["To Apply Policies and SLA Tiers."]
+
+Custom policies require changes to enable Resource Level granularity. For more information, see link:/api-manager/add-rlp-support-task["To Add Resource Level Policy Support to a Custom Policy."]
+
+=== Layout Changes
+
+This release includes layout changes to improve the user experience and align the UX with the rest of the platform.
+
+=== Display OAuth Grant Types
+
+Now, the OAuth Grant Types of the application are shown on the application detail page and for the API Owner at the time of approving an access request.
+
+== 1.14.4
+
+*March 11, 2017*
+
+This release introduces the following enhancements:
+
+* Added pagination on the custom policies page.
+* Increased granularity of the Rate Limiting and Throttling policy configuration.
++
+You can now specify multiple throughput limits for an SLA tier using link:/api-manager/rate-limiting-and-throttling-sla-based-policies#creating-an-sla-tier-or-layered-slas[different time periods and units].
+
+== 1.14.2
+
+*January 14, 2017*
+
+This release resolves a number of issues.
+
+=== Resolved Issues
+
+* Fixed the "View application" link that wasn't working with Hybrid.
+* Obfuscated the client secret on the developer portal applications detail page.
+* Fixed the link on the notification email when a new application is pending approval and the API belongs to a sub-organization.
+* Fixed an issue with uppercase WSDL on SOAP proxies.
+* Fixed the Basic Authentication template that was not working properly with Mule Runtime 3.8.1 and later when HTTP is used for LDAP instead of HTTPS.
+
+== 1.14.1
+
+*December 3, 2016*
+
+This release includes new API Manager features, support for xref:api-designer/api-designer-release-notes.adoc#api-designer-0-3-0-release-notes[API Designer 0.3.0], and bug fixes.
+
+=== New Features
+
+API Manager 1.14.1 includes the following new features:
+
+* The capability to link:/api-manager/using-api-alerts[set alerts] for policy violations, response time, count, and codes.
+* An advanced configuration to customize the response timeout of the link:/api-manager/setting-up-an-api-proxy[auto-generated proxy].
++
+To customize the response timeout of the deployed proxy, use the advanced options as described in step 5-h of section "link:/api-manager/setting-up-an-api-proxy#setting-up-a-proxy[Setting up a Proxy]".
+
+=== Resolved Issues
+
+* Fixed auto-generated proxy that was configured to an incorrect WSDL.
+* Fixed problems with import/export of an API on Windows.
+* API xref:api-designer/api-designer-release-notes.adoc#api-designer-0-3-0-release-notes[Designer 0.3.0] support
+
+== 1.14.0
+
+*November 19, 2016*
+
+This release includes improvements and bug fixes.
+
+=== Resolved Issues and Improvements
+
+* Updated the clients API to show multiple owners as well as the app ID.
+* Added a new API to query by client ID.
+* Fixed API Tooling bugs to support new API tooling.
+* Made performance improvements.
+
+== 1.13.0
+
+*November 5, 2016*
+
+This release includes a new feature, an improvement, and bug fixes.
+
+=== New Feature
+
+API Manager 1.13.0 includes the capability to link:/api-manager/using-policies#disabling-and-enabling-policies[enable and disable policies].
+
+=== Resolved Issues and Improvements
+
+API Manager 1.13.0 fixes API Tooling bugs to support new API tooling. API Manager has been improved to support dependencies between policies that you configure using the link:/api-manager/custom-policy-reference#policy-definition-yaml-file[required characteristics] parameter.
+
+== 1.12.0
+
+*September 24, 2016*
+
+This release includes bug fixes and a security improvement related to Regular expression Denial of Service (ReDoS).
+
+=== Resolved Issues
+
+* In previous releases, all apps appeared in the Developer Portal to users in the Organizational Administrator role. Now, users in this role see only their own apps.
+* An incomplete URL of an app deployed to CloudHub appeared on the API Version details page. The URL now includes the AWS region of deployment.
+* The error message associated with a URI conflict during Autodiscovery API deployment has been improved and now returns the appropriate HTTP error code.
+* Mule Runtime 3.8.1 now supports the configuration of scopes for the OpenAM token enforcement policy.
+* The Anypoint Platform UI indicated the 3.8.0 version of Mule. Now, the UI indicates 3.8.x.
+* The Client ID Enforcement policy problem that occurred during migration from API Gateway 2.2.0 or earlier to Mule 3.8.1 has been resolved.
+
+== 1.10.0
+
+*July 16, 2016*
+
+This release includes an important entitlement change, new sorting features, and several bug fixes.
+
+=== Entitlement Change
+
+As of this release, Anypoint Platform accounts must have the appropriate API entitlements to continue running apps and using APIs. User accounts not properly entitled will no longer have access to API Manager functionality. If you have purchased API Management and experience account access issues following this release, contact your account representative.
+
+=== New Features
+
+API Manager 1.10.0 includes the capability to sort the list of API Portals and the list of applications on the Developer Portal, as described in the link:/api-manager/engaging-users-of-your-api#developer-portal[Developer portal documentation].
+
+* Search/sort API portals on the Developer portal
++
+On the *API portals* tab you can now search for and sort the list of API portals.
++
+* Search/sort apps that access an API
++
+On the *My applications* tab, you can search for and sort apps approved to access an API.
+// (kris 7.11.2016 not ready for release on the 16th * Search/sort your own APIs
+//+
+//You can search, browse, and sort the apps listed on //Applications tab on the link:/api-manager/tutorial-set-up-and-deploy-an-api-proxy#navigate-to-the-api-version-details-page[API version details] page.
+//* Search/sort your organization's APIs
+//+
+//On the *API administration* page, click the hamburger menu and select *Applications*. The list of APIs appears. Click the sort icon to sort alphabetically by name in ascending or descending.
+
+=== Resolved Issues
+
+API Manager 1.10.0 resolves the following issues:
+
+* Fields are no longer missing when rendering custom policies with multiple configurations.
+* The RAML parser now applies Traits and ResourceTypes to the final RAML output.
+* The spinning activity indicator now works in FireFox.
+
+
+== May 2016 Release
+
+This release includes the following enhancements:
+
+* xref:platform/raml-1-early-access-support.adoc[Early Access RAML 1.0]
++
+This release introduces API Gateway Runtime 3.8.0 that provides early access to RAML based on the https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md[RAML 1.0 specification]. RAML 1.0 introduces several new features, listed in the RAML.org https://raml.org/developers/whats-new-raml-10[comparison of releases]. For those users migrating to RAML 1.0, see the list of https://github.com/raml-org/raml-spec/wiki/Breaking-Changes[breaking changes] between RAML 0.8 and RAML 1.0. Before using the early access RAML 1.0, see <<Important Information about the May 2016 Release>>.
++
+* Client ID enforcement
++
+When you apply link:/api-manager/client-id-based-policies[client ID-based policies], the credentials are expected in the form of expressions, the default being query parameters named client_id and client_secret. The default configuration of the policy requires the link:/api-manager/client-id-based-policies#required-fields-in-api-calls[Client Id and Client Secret expressions]. In Mule Runtime 3.8.0, another option is available. You can also select HTTP Basic Authorization Header to use Basic Authentication as the origin of the credentials.
++
+* Add property referencesUserDomain to endpoint
+* Add validation to avoid having CloudHub endpoints with custom port
+* Include referencesUserDomain when exporting API Version
+* Include v3 proxy assets in Mule Runtime 3.8.0
+* Add logic for Mule Runtime 3.8.0 support
+
+=== Important Information about the May 2016 Release
+
+For details about these issues, see xref:platform/raml-1-early-access-support.adoc[RAML 1.0 Early Access].
+
+* API Manager relies on API Gateway runtime 3.8.0 for auto-generated proxies based on RAML 1.0. In most cases, the proxy generation feature works well on for RAML 1.0-defined APIs. However, if a user tries to auto-generate proxies based on a RAML 1.0 file, and the definition has known gaps, which are not covered by the Java parser on API Manager, the deployed proxy fails.
+* Proxies generated for the latest version, Mule 3.8.0 runtime, will fail to deploy on previous API Gateway runtime versions. Previously created proxies will continue to work on Mule 3.8.0 runtime because Mule 3.8.0 runtime is backward compatible.
+
+=== Resolved Issues
+
+* Research feasibility of RAML/Swagger roundtrip.
+* Support map of objects on custom policies.
+* Update RAML snippets in Policies tab.
+* When generating a proxy for Mule Runtime 3.8, a new option to use a domain is needed.
+
+
+== April 2016 Release
+
+In this release, MuleSoft has improved accessibility to certain features of our API solution. Customers without the appropriate API entitlement may also notice some features have been disabled within their account. These capabilities continue to be available in Anypoint Platform, but only for customers with the required API entitlement.
+
+Customers with API entitlements will now see more controls and analytics on the API version page:
+
+image::api-manager/api-entitlement2.png[]
+
+Customers without API entitlements will notice the following:
+
+* The controls for deploying an API to CloudHub do not appear.
+* Analytics and controls for deploying a proxy, listing applications, setting up SLAs, applying policies, and changing permissions do not appear on the API version page.
+
+As a result, the API version page will look a bit different:
+
+image::api-manager/api-entitlement.png[]
+
+Please contact your account team if you have any questions on these changes.
+
+=== Enhancements and Bug Fixes
+
+Additionally, this release includes the following enhancements and bug fixes:
+
+*Enhancements*
+
+* UI redesign
++
+The user interface has a new look, designed for easier use.
++
+* Policies numbers show order of application
++
+In addition to listing applied policies in the order that you apply them, Anypoint Platform now includes the order number.
+* Improved audit log detail
++
+The audit log now reveals the permission level of the users when you assign a permission to a user.
+
+*Bug Fixes*
+
+* A tooltip is now displayed when the full API name is truncated in the UI.
+* The problem related to resetting the client secret when using Internet Explorer 11 has been resolved.
+* A list of grant types are now displayed in the application sidebar.
+* An example or default value that you set in the RAML is no longer hidden in the console.
+* The API Designer is no longer overriding example files. The import process now overrides example files when configured to do so.
+
+== January 2016 Release
+
+This release includes the following new features and functionality:
+
+* Redesign of API management page which now makes more information available at a glance and provides a drop-down API version menu for easier access. The analytics panel has been removed, providing more space for the display of API management-related information. To access, you can use the navigation menu towards the top and right of the page.
+* New applications management page, the single point of access for all client applications for an organization’s APIs. Explore and manage your client applications from here. To reach it you can use the navigation menu towards the top and right of the API management page.
+* From the applications management page, clients can now add or remove owners of an application. This feature makes it
+easier to keep information about applications up to date.
+* Gateway Awareness and Policy Ordering. Policy configuration is now aware for the set of policies supported by the Gateway tracking your API proxy. Because of this, unsupported policies are not available to be applied, and applied policies that are not supported by the tracking gateway are highlighted so that you can easily detect and correct problems.
+
+There are no new known issues or any changes that impact compatibility or that require migration considerations.
+
+== November 2015 Release
+
+This release has the following updates:
+
+* IP whitelisting and blacklisting policies provide the option to specify a comma-separated list of IPs for bulk edits.
+* API owners can modify the configuration of a policy without having to add or remove the policy every time
+* Ability to select an API Gateway Cluster as the target of deployment from the API platform proxy auto-deployment window.
+
+
+== September 2015 Release
+
+This release includes the following new features and functionality:
+
+* link:/api-manager/defining-sla-tiers[Layered SLAs]﻿ that can impose multiple limiting policies on the API.
+* xref:access-management::audit-logging.adoc[Audit Logging]﻿ of change events made within the API management and platform services capabilities of the Anypoint Platform.
+* link:/api-manager/engaging-users-of-your-api#adding-terms-and-conditions[Adding Terms and Conditions] ﻿of an API Portal can now be defined in two different ways.
+* Files and Attachments can be imported/exported to an link:/api-manager/engaging-users-of-your-api[API Portal]﻿.
+* Improved API for portal search.
+
+There are no new known issues or any changes that impact compatibility or that require migration considerations.
+
+== April 2015 Release
+
+The April 2015 release of the Anypoint Platform for APIs offers the following new feature:
+
+You can now use *OpenAM* as a SAML 2.0 identity federation provider across the platform. Additionally, you can use OpenAM as an external OAuth 2.0 server if you are using API Gateway version 1.3.2 or later. For more information, see xref:access-management::external-identity.adoc[Setting up External Identity].
+
+== February 2015 Releases
+
+There were two releases in the February 2015 timeframe for the Anypoint Platform for APIs.
+
+=== February 24th Release
+
+The February 24th release of the Anypoint Platform for APIs offers the following new features and functionality:
+
+* *Improved API Portal Publishing Experience:* We have made improvements to the API portal publishing experience to make it more user-friendly. +
+Specifically:
+** Simplified draft editing and publishing
+** Ability to bulk publish and delete pages
+** Now easier to preview the entire portal
+
+=== February 18th Release
+
+The February 18th release of the Anypoint Platform for APIs offers the following features and functionality:
+
+* *New RAML Console:* We have made significant improvements to the RAML console to drive even greater developer productivity. We’ve redesigned the interface as well as introduced a number of new capabilities that makes using an API easier including the ability to add custom query parameters/headers as well as support for all OAuth 2.0 grant types.
+* *Proxy Auto-Deployment to CloudHub Gateways*: As part of the configuration of a proxy, users can now automatically deploy the proxy to CloudHub (within the same organization) thus removing the need for manual configuration.
+
+=== Known Issues in the February Releases
+
+* APIkit's RAML console in Anypoint Studio is not yet updated with the new functionality described above. Updates to Studio can be downloaded by clicking *Help* and then *Check for Updates* in the Studio menu.
+* Auto-deployment to CloudHub may fail for some users. If your deployment fails, simply retry the deployment. This issue was fixed shortly after this release.
+
+== November 2014 Release
+
+The November 2014 release of the Anypoint Platform for APIs offers the following new features and functionality:
+
+* API Version deprecation
+* Support for API Gateway 1.3
+* Custom Terms and Conditions per API version
+* Folder support in API Designer
+* File import support in API Designer (Beta)
+* Swagger file import and conversion in API Designer (Beta)
+* Automatic role assignment from external groups via SAML assertion
+* Improved SLA tier management workflow
+* Improved proxy support for load balancing, shared port, and HTTPS configurations
+* API Gateway logging enhancements for improved API request troubleshooting
+* Proxy configuration UI enhancements
+* Policy violation analytics tracking
+* Stacked bar chart support in Analytics
+
+=== Known Issues in the November 2014 Release
+
+The following issues are already being tracked by our development team. See this list before reporting any issues with the platform.
+
+* Custom policies are only supported on API Gateway version 1.3.
+* In API Designer, when importing RAML files, an error may indicate that included files are not present. Clicking the included file resolves the error.
+* Proxy applications generated prior to November 19th are not compatible with API Gateway version 1.3.
+* If an API version that is being managed is deleted and then a new API is created with the same name and version name, the API Gateway must be restarted in order to manage the API version.
+* When viewing a public portal for an API in an organization other than the one your user belongs to you, you may be required to login again.
+
+== July 2014 Release
+
+The July 2014 version of the Anypoint Platform for APIs offers the following new features and functionality.
+
+* Single-sign on and all-new shared user interface across the platform.
+* Self-sign up for Anypoint Platform organizations.
+* link:/api-manager/configuring-an-api-gateway[New API Gateway distribution] with enhanced API Autodiscovery, including Autodiscovery for APIkit projects, and improved HTTP transport performance using an NIO-based transport.
+* link:/api-manager/setting-up-an-api-proxy[Automatic proxy generation] for API endpoints defined by HTTP, WSDL, and RAML.
+* xref:access-management::roles.adoc[Fine grained permissions and role-based access] support from an administrative dashboard, as well as in-context permissions for API versions.
+* link:/api-manager/browsing-and-accessing-apis[Streamlined application registration and management] for application developers.
+* link:/api-manager/viewing-api-analytics[New, robust API Analytics] with customizable charts and dashboards and export capabilities.
+* xref:access-management::external-identity.adoc[External identity management] support with PingFederate.
+* link:/api-manager/using-policies[Three new governance policies]: PingFederate Access Token Enforcement, JSON Threat Protection, XML Threat Protection.
+
+This release includes selected limitations that you need to be aware of as you create new organizations and populate them with your API metadata.
+
+=== Known Issues in the July 2014 Release
+
+==== Localhost Behavior
+
+Note that defining an endpoint using localhost has important behavior implications for on-premises deployments of APIs and proxies.
+
+==== Limitations
+
+* The REST APIs for the Anypoint Platform for APIs are not currently exposed publicly for customer use.
+* It is not possible to visit the Developer Portal or any public API Portals when signed in as a user of a different organization.
+* Developers cannot currently revoke their contracts with API Versions, only API Version Owners have the ability to revoke and delete contracts.
+* API Portals cannot currently be deleted.
+* Throttling and Rate Limiting policies do not currently work for APIs or proxies deployed to multiple API Gateway workers in CloudHub.
+* It is only possible to register new applications from a portal for a specific API version rather than globally from the main Developer Portal page.
+* Batch approval of applications is not currently supported.
+* Copying content from one API Version to another is not currently supported.
+* The IP whitelisting and IP blacklisting policies do not function for endpoints defined with the Jetty transport.
+* Session timeouts occur after a three-hour window irrespective of user activity.
+
+==== Key Differences for Users Migrating from Previous Versions
+
+If you have an existing Anypoint Platform for APIs account on a previous version, you need to migrate to this version during the migration period. Be aware of the following major differences between the previous versions and the July 2014 release:
+
+* Terminology has changed to standardize around APIs and applications rather than services and consumers.
+* Each API version now has only a single endpoint.
+* The administrative view of your API version (called the link:/api-manager/tutorial-set-up-and-deploy-an-api-proxy#navigate-to-the-api-version-details-page[API version details page]) is now accessible only to API Version Owners or Organization Administrators. The Developer Portal, containing the API Portals that you create and share, now acts as the developer-facing view of your API.
+* link:/api-manager/using-policies[Policy application] has been streamlined to a single step for each policy. Contract enforcement and related policies have been replaced with client ID and secret enforcement. SLA-based policies now incorporate client ID and secret enforcement automatically.
+* link:/api-manager/browsing-and-accessing-apis[Application management] flows have changed. You can now set SLA tiers for automatic approval to reduce your management overhead. Manual approval is also available.
+* link:/api-manager/viewing-api-analytics[Analytics] are now available only to Organization Administrators.
+* Taxonomies, policy characteristic tags, and environments are deprecated.
+* API Designer is now accessible through the API Version Details page rather than in the Developer Portal.
+
+== See Also
+
+* https://developer.mulesoft.com/anypoint-platform[Mule Community Edition]
+* https://www.mulesoft.com/platform/studio[Anypoint Studio]

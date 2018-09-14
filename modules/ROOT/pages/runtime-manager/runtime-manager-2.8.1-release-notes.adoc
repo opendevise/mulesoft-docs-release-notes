@@ -1,0 +1,40 @@
+= Anypoint Runtime Manager Version 2.8.1 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: runtime-manager-2.8.1-release-notes.adoc
+
+_February 22, 2018_
+
+This document describes new features and enhancements, known limitations, issues, and fixes in Anypoint Runtime Manager version 2.8.1.
+
+== New Features and Enhancements
+
+There are no new features or enhancements in this release.
+
+== Changes in This Release
+
+This release contains the following change in product functionality:
+
+* The maximum number of application alerts was increased from 10 to 100.
+
+== Fixed Issues
+
+This section lists the bugs and known limitations that are fixed in the release.
+
+* Increased the maximum number of application alerts.
+* Fixed issue where deployments to a server group were failing.
+* Fixed issue related to redeployment of applications.
+* Incorporated multiple internal bug fixes and improvements.
+
+== Known Limitations and Workarounds
+
+There are no known limitations or workarounds in this release.
+
+== Upgrade Requirements
+
+There are no upgrade requirements for this release.
+
+== Compatibility Notes
+
+There are no compatibility notes for this release.

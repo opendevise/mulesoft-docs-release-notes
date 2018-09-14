@@ -1,0 +1,316 @@
+= Amazon SQS Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: amazon-sqs-connector-release-notes.adoc
+:keywords: release notes, connectors, amazon, sqs
+
+*December 2017*
+
+_Select_
+
+The Amazon SQS cloud connector provides an easy way to interface with the Amazon SQS API, allowing users to manage SQS queueing services without having to deal with the API directly.
+
+*Connector Guide*: xref:3.9@mule-runtime::amazon-sqs-connector.adoc[Amazon SQS Connector]
+
+[IMPORTANT]
+Starting with v.4.0.0, the SQS Connector is licensed commercially with Anypoint Platform as with other Select connectors. Prior versions will remain freely available to the community.
+
+== 4.2.1
+
+*December 19, 2017*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Application/Service|Version
+|Mule Runtime|3.8.x and later
+|AWS SDK for Java|1.11.79
+|===
+
+=== Features
+
+* References Devkit 3.9.4
+
+=== Fixed in this Release
+
+* messageId and md5OfMessageAttributes swapped. - In previous versions the messageId was mapped to the md5OfMessageAttributes attribute and vice versa. In version 4.2.1, these attributes are correctly mapped.
+* SendMessageBatchREquestEntry SQS DataType only from Java code. - In past versions, the only way to use SendMessageBatchREquestEntry SQS DataType was by using Java Code. In version 4.2.1, it is also possible by DataWeave.
+* TestConnection fails when queue name contains dot (".") character. - In past versions when the name contained a dot character, TestConnection failed when using the queue name. In version 4.2.1, the TestConnection works correctly.
+* Application hangs after stopping and restarting sequence. - In the previous version when stopping the application and then restarting it, the application hung with an org.mule.api.lifecycle.LifecycleException. In version 4.2.1, the stop and restart sequence works correctly.
+
+=== Known Issues
+
+* None
+
+== 4.2.0
+
+*March 30, 2017*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Application/Service|Version
+|Mule Runtime|3.8.x and later
+|AWS SDK for Java|1.11.79
+|===
+
+=== Features
+
+* FIFO queue support in addition to standard queues. FIFO queues ensure the order of messages.
+* AssumeRole for authentication in addition to IAM AccessKey and SecretKey.
+
+=== Fixed in this Release
+
+* In earlier versions, when the SQS connector is used as an inbound endpoint then the custom exception strategy can not be invoked and source stops polling messages when exception occurs. Now SQS as a source does not stop polling messages when uncaught exception and custom exception strategy can be invoked.
+* Handling of binary attributes in sendMessage operation.
+
+=== Known Issues
+
+* None
+
+
+== 4.1.0
+
+*September 30, 2016*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Application/Service|Version
+|Mule Runtime|3.6 and later
+|AWS SDK for Java|1.11.21
+|===
+
+=== Features
+
+* Connector built with Anypoint DevKit v3.9.0
+* Upgraded to AWS SDK to v1.11.21
+* Support for Temporary Credentials - A checkbox named *Try Default AWS Credentials Provider Chain* has been added to the Global Element configuration. If selected, the connector will first try to obtain the credentials from a AWS environment.
+* Support for Retry Policy - The connector will perform a maximum of 10 retries when a request fails due to server-side throttling or dropped connection.
+
+=== Fixed in this Release
+
+* Custom exception strategies are now called. In previous versions the connector didn't fire the custom strategy.
+
+=== Known Issues
+
+* When the SQS connector is used as an inbound endpoint then the custom exception strategy is not invoked.
+
+== 4.0.2
+
+*May 5, 2016*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Application/Service|Version
+|Mule Runtime|3.5.x and later
+|AWS SDK for Java|1.10.1
+|===
+
+=== Features
+
+None.
+
+=== Fixed in this Release
+
+- Messages are now consumed from the queue when the client receives an exception.
+Previously, when receiving an Exception, the queue stopped consuming messages.
+
+=== Known Issues
+None.
+
+== 4.0.1
+
+*Jan 15, 2015*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Application/Service|Version
+|Mule Runtime|3.5.x and later
+|AWS SDK for Java|1.10.1
+|===
+
+=== Features
+None.
+
+=== Fixed in this Release
+
+- Allows evaluation licenses. Previous versions of the connector didn't let users use evaluation licenses.
+
+
+=== Known Issues
+
+None.
+
+== 4.0.0
+
+*Dec 15, 2015*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Application/Service|Version
+|Mule Runtime|3.5.x and later
+|AWS SDK for Java|1.10.1
+|===
+
+=== Features
+
+* Upgraded Devkit to v3.7.2
+
+=== Fixed in this Release
+
+None.
+
+=== Known Issues
+
+None.
+
+
+== 3.2.0
+
+*Oct 21, 2015*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Application/Service|Version
+|Mule Runtime|3.5.x and later
+|AWS SDK for Java|1.10.1
+|===
+
+=== Features
+
+* Upgraded Devkit to v3.7.1
+* Upgraded AWS SDK to v1.10.1
+
+=== Fixed in this Release
+
+* The Send Message processor parameters has been wrapped in a Message Object to fix the XML generation issues by studio.
+
+=== Known Issues
+
+None.
+
+
+== 3.1.1
+
+* Upgraded to Devkit v3.7.0
+* The Test Connection feature in the Global Configuration settings has been modified to test queue level action rather
+than the generic system wide Amazon SQS action.
+* The prefix “Proxy” for all the parameters in Proxy Settings has been removed.
+* Fixed exception handling of shaded exceptions thrown by the connector.
+* Data type for Message Attributes retrieved by Receive Messages Source has been fixed.
+
+== 3.0
+
+*June 9, 2015*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Application/Service|Version
+|Mule Runtime|3.5.x and later
+|AWS SDK for Java|1.9.39
+|===
+
+=== Features
+
+* Upgraded AWS SDK for Java to 1.9.39
+* Upgraded Anypoint Connector Devkit to 3.6.1.
+* Added the following new operations:
+** ChangeMessageVisibility
+** ChangeMessageVisibilityBatch
+** CreateQueue
+** DeleteMessageBatch
+** ListDeadLetterSourceQueues
+** ListQueues
+** PurgeQueue
+** SendMessageBatch
+* Renamed the GetURL operation to Get Queue URL.
+* Added support for proxy settings.
+
+=== Fixed in this Release
+
+None.
+
+=== Known Issues
+
+None.
+
+== 2.5.5
+
+*April 10, 2015*
+
+=== Compatibility
+
+Amazon S3 connector 2.5.5 is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Application/Service |Version
+|Mule Runtime |3.5.x and later
+|Amazon SQS API |AWS-JAVA-SDK-1.7.13
+|===
+
+=== Features
+
+* Upgraded Anypoint Connector DevKit to v3.5.2 and later.
+
+=== Fixed in this Release
+
+* Added support for Mule Runtime v3.6.n and later.
+
+=== Known Issues
+
+None.
+
+== 2.5.4
+
+* Upgraded Anypoint Connector DevKit to v3.5.1.
+
+== 2.5.1
+
+* Added support for sending message attributes.
+* Updated AWS JAVA SDK version to 1.7.13.
+* Improved the performance of the _receiveMessages_ operation using asynchronous delivery instead of polling. The _pollPeriod_ parameter has been preserved but deprecated to maintain backwards compatibility.
+* Bug fix: Message source threads weren't shutting down when Mule shut down or was redeployed, causing applications to hang. This has been fixed now.
+
+== 2.3.1
+
+* Upgraded Anypoint Connector DevKit to v3.5.0.
+* Added Studio interoperability tests.
+* Added a 65 second sleep between tests to cater for new SQS restriction on creating and deleting a queue of the same name within 60 seconds of itself.
+
+== 2.2.0
+
+* Migrated to AWS JAVA SDK.
+* Cleaned up files and dependencies.
+
+== 2.1.0
+
+* Upgraded to Anypoint Connector DevKit v3.4-RC1.
+* Added connectivity testing.
+* Updated documentation.
+
+== 2.0.0
+
+* Upgraded to Anypoint Connector DevKit v3.3.2.
+* Added Studio demo.
+* Fixed tests and examples.
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

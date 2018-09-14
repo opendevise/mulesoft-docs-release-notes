@@ -1,0 +1,276 @@
+= Mule Runtime 4.0 RC Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: mule-4.0-rc-release-notes.adoc
+:keywords: mule, 4.0, runtime, release notes
+
+*September 29, 2017*
+
+Mule 4 beta evolves Mule 3 significantly to enable developers to accomplish common tasks in fewer steps, learn fewer concepts to be successful, simplify upgrades, and support for new web based tools, such as the Flow Designer in Design Center. +
+For a detailed overview of what’s new in Mule 4, please see the xref:4.1@mule4-runtime::mule-runtime-updates.adoc[What’s New in Mule 4 guide].
+
+Beyond the updates introduced on Mule Runtime 4.0 Beta, this RC release includes:
+
+* Set payload and set variable have been added to provide easier ways to control data flows.
+* Each connector now has a targetValue attribute, which allows users to control what is stored in the variable specified by the target attribute. A message, attribute, a payload, or any expression can be used to control what is stored.
+* Scripting component has been added
+* Scatter-gather has been added, along with an improved output structure that allows you to clearly understand the data types for each route at design time.
+* The ObjectStore module now allows users to define their own custom stores, controlling TTL, persistence, and other options. There are also new operations to support listing keys and values.
+* Batch is now supported. In Mule 3, batch jobs, were top level concerns - like flows. But we’ve simplified this so a scope can live inside a flow - making it easier to understand, invoke dynamically and interact with other Mule components. Also, we no longer have a special set of variables (a.k.a. * recordVars) for Batch. You can now just use flow variables directly, reducing the complexity and making it easier to learn.
+* VM Connector is now supported
+* DataWeave now supports flat file, COBOL, fixed width, forms, url-encoding
+* XA Transactions are now supported
+* The new Spring module provides clearer separation between the runtime’s internal use of Spring and the user’s. Users can now completely control which Spring version the run. To use Spring beans, add the Spring module to your application, and import the Spring bean files.
+* There is a new <configuration-properties> syntax that enables users to load configuration properties into their app, without needing to add the Spring module or learn Spring.
+* In Mule 4 Beta, connectivity was tested on all connectors when an application is started, and deployment could fail if it was not established successfully. Now, connectivity is tested, but if it fails, default behavior is to log a warning message and continue with the deployment. There’s an option * however to force the app to fail if users desire.
+* Connector operations can now have a reconnection strategy different from the one in the connector’s config.
+* WS Consumer now returns a single object with the body, headers and attachments
+* Email connector now returns a single object with the body and attachments
+* The binding for variables was renamed from “variables” to “vars” and referencing variables without going through that binding is no longer possible.
+
+== Fixed Issues
+
+[%header,cols="20,80"]
+|===
+| Issue | Description
+| MULE-12930 | No DataSense support for JMS
+| MULE-12884 | deleteAfterRetrieve only deletes half of the listed emails
+| MULE-12786 | File/FTP read and list should not receive a MediaType as parameter
+| MULE-12774 | Db connector bulk-insert operation throws a NPE when bulkInputParameters is null
+| MULE-12747 | @Query text does not allow for dynamic values.
+| MULE-12703 | Expression language does not suppot accessing system properties
+| MULE-12355 | OAuth operations are always executed in a blocking manner
+| MULE-12321 | When an app with OAuth Client Credentials doens't can connect at deployment it doesn't show the HTTP requester response as in 3.x
+| MULE-12284 | NPE when trying to serialize a MultiPartPayload
+| MULE-11897 | When filter throws exception, the handler loses the reference to the filter
+| MULE-11484 | ParameterGroup's order are not populated automatically is a value was not configured manually
+| MULE-10375 | MuleArtifactClassLoader dispose fail
+| MULE-10878 | HTTP does not support multiple headers/query params (same name)
+| MULE-9196 | JAXBMarshallerTransformer fails to transform to byte array
+| MULE-9142 | Transformation service must always update message once payload has been consumed
+|===
+
+== Known Issues
+
+[%header,cols="20,80"]
+|===
+| Issue | Description
+
+|===
+
+== Updates from Beta Release
+
+=== Target and TargetValue
+
+In mule 4 beta, all non void operations have a target attribute. If provided, the output message is put in a variable instead of in the event. Notice that the entire message is put there, not just the payload.
+
+In RC, we added a targetValue which allows to customize what is exactly going to be put into that flowVar. The targetValue parameter defaults to #[payload] but is only considered if the target attribute is provided.
+
+For example:
+
+[source,xml,linenums]
+----
+<file:read path="readme.txt" target="myVar" />
+----
+
+The content of readme.txt is put into the myVar variable. FileAttributes and anything else in the message is lost
+
+
+[source,xml,linenums]
+----
+<file:read path="readme.txt" target="myVar" targetValue="#[message]" />
+----
+
+The entire message goes into the var. Equivalent to the beta behavior
+
+[source,xml,linenums]
+----
+<file:read path="readme.txt" target="size" targetValue="#[attributes.size]" />
+----
+
+just the filesize makes it into the var.
+
+[source,xml,linenums]
+----
+<file:read path="readme.txt" target="size" targetValue="#[vars.someOtherVar]" />
+----
+
+ERROR: only payload, message and attributes keywords are available in the targetValue expression
+
+=== Reconnection and Connectivity testing
+
+In Mule Beta (and Mule 3.x for that matter), connectivity was tested on all connectors when an application started. If connectivity testing failed on any connector, the deployment was aborted.
+
+This behavior changes on the RC. Connectivity is tested but if it fails, default behavior is to log a warning message and continue with the deployment. There’s an option however to force the app to fail.
+
+[source,xml,linenums]
+----
+<ftp:config name="ftp">
+  <ftp:connection host="localhost" user="me">
+                <reconnect count="2">
+         </ftp:connection>
+</ftp:config>
+----
+
+This BETA config reattempts connectivity testing 2 times and fails the deployment if not successful.
+
+If you want it to not fail, you had to do this:
+
+[source,xml,linenums]
+----
+<ftp:config name="ftp">
+  <ftp:connection host="localhost" user="me">
+                <reconnect count="2" blocking="false">
+         </ftp:connection>
+</ftp:config>
+----
+
+In RC this changed to:
+
+[source,xml,linenums]
+----
+<ftp:config name="ftp">
+  <ftp:connection host="localhost" user="me">
+<reconnection>
+<reconnect count="2">
+<reconnection>
+         </ftp:connection>
+</ftp:config>
+----
+
+If you want deployment to fail:
+
+[source,xml,linenums]
+----
+<ftp:config name="ftp">
+  <ftp:connection host="localhost" user="me">
+<reconnection failsDeployment="true">
+<reconnect count="2">
+<reconnection>
+         </ftp:connection>
+</ftp:config>
+----
+
+As you can see, the reconnect element no longer has a blocking attribute.
+
+
+=== Operations
+
+
+Another new capability is to allow operations to have a reconnection strategy different from the one in the connector’s config.
+
+[source,xml,linenums]
+----
+<ftp:read path="bleh.txt" config-ref="ftp">
+  <reconnect count="10" />
+</ftp:read>
+----
+
+It the operation doesn’t define a reconnection strategy, then the one configured in the config will be used. If the config doesn’t define any, then no reconnection is applied.
+
+=== Web Service Consumer
+
+
+==== Removing Multipart Payload and Soap Connect Extensions
+
+WSC and SC based extensions used to return a MultipartPayload with the content of the envelope body and attachments if any or just a simple XML if no attachments were involved, in favour of removing the MultipartPayload from all connectors now the consume operation ALWAYS returns an object with the following structure:
+
+output +
+| - body +
+| - headers +
+| - attachments
+
+Note that the payload now carries the soap headers, that previously were being bundled in the attributes (This is because we want that the whole SOAP ENVELOPE is represented in the payload)
+
+==== Output Migration
+
+*Soap Body*
+
+For accessing the body previously there were two ways:
+* An operation with attachments #[payload.body].
+* An operation without attachments #[payload].
+
+Now with or without attachments is just #[payload.body]
+
+*Soap Headers*
+
+Soap Headers used to live in the attributes, now they have been moved to the payload.
+
+[#attributes.headers] -> #[payload.headers]
+
+*Attachments*
+
+To access the attachments nothing has changed. #[payload.attachments.myAtt] accesing an attachment called "myAtt".
+
+
+=== Email Connector
+
+==== Removing Multipart Payload
+
+The Email extension used to return a MultipartPayload when the response contains attachments making it confusing to access the body. +
+The new retrieved email content structure is the following:
+
+output +
+| - body +
+| - attachments
+
+==== OUTPUT MIGRATION
+
+*Body*
+
+For accessing the body previously there were two ways:
+
+* An operation with attachments #[payload.body].
+* An operation without attachments #[payload].
+
+Now with or without attachments is just #[payload.body]
+
+*Attachments*
+
+Attachments can be accessed the same wat as before [#payload.attachments.myAttachment]
+
+=== HTTP Connector
+
+==== Expression Language
+
+The binding for variables was renamed from “variables” to “vars” and referencing variables without going through that binding is no longer possible. This means that all expressions and scripts must be updated to rename any “variables.myVar” to “vars.myVar” and any “myVar” to “vars.myVar”.
+
+==== DSL Misc
+
+*Scripting*
+
+The scripting module was converted to an extension to be usable by Mozart/Studio. It also required changes in the XML structure because of the SDK framework, but the migration could be automated.
+
+The main changes are:
+
+* Instead of allowing to specify the file path of a script, there is only a text content field which can be combined with the property placeholder file expansion.
+* Parameters can be declared through Dataweave.
+
+Before:
+
+[source,xml,linenums]
+----
+<script:component>
+  <script:script file="test.py">
+    <scripting:property key="one" value="1"/>
+    <scripting:property key="two" value="2"/>
+  </script:script>
+</script:component>
+----
+
+After:
+
+[source,xml,linenums]
+----
+<script:execute engine="python">
+  <script:code>
+    ${file::test.py}
+  </script:code>
+  <script:parameters>
+    #[{one: "1", two: "2"}]
+  </script:parameters>
+</script:execute>
+----
+
+In case of inline scripts `<script:text>return "hello"</script:text>` can be replaced with `<script:code>return "hello"</script:code>` as shown above.

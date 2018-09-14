@@ -1,0 +1,55 @@
+= JSON Module Release Notes for Mule 4
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: json-module-release-notes.adoc
+:keywords: mule, json, module, release notes
+
+== 2.0.0
+
+*July 5, 2018*
+
+=== Min Mule Version
+*Mule 4.1.0*
+
+=== New Features and Enhancements
+
+Errors are no longer reported as a List of Strings. Errors are now reported as an actual JSON document. For more details please refer to the xref:connectors::json/json-schema-validation.adoc[Validating Documents against a JSON Schema with the JSON Module] article.
+
+=== Fixed Issues
+
+[%header,cols="15a,85a"]
+|===
+|Issue |Description
+| https://www.mulesoft.org/jira/browse/MULE-15303[MULE-15303] | JSON Schema Validator does not flag errors in identical JSON objects
+|===
+
+
+== 1.0.1
+
+*May 7, 2018*
+
+=== Min Mule Version
+*Mule 4.1.0*
+
+=== New Features and Enhancements
+
+* Input metadata is more accurate. The connector used to communicate that required
+any kind of structure. Now, it is more accurate and shows that it requires any *JSON* structure.
+* Upgraded Jackson version due to https://nvd.nist.gov/vuln/detail/CVE-2018-7489[this vulnerability]
+
+=== Fixed Issues
+
+[%header,cols="15a,85a"]
+|===
+|Issue |Description
+| https://www.mulesoft.org/jira/browse/MULE-14753[MULE-14753] | Stream consumed when static input resolver is used
+| https://www.mulesoft.org/jira/browse/MULE-14795[MULE-14795] | Upgrade Jackson to 2.9.5
+|===
+
+== 1.0.0
+
+*Jan 23, 2018*
+
+=== Min Mule Version
+*Mule 4.1.0*

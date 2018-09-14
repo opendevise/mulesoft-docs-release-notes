@@ -1,0 +1,75 @@
+= Anypoint Platform - EU Control Plane, December 15 2017 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: anypoint-eu-control-plane.adoc
+
+This document describes new features and enhancements, known limitations, issues, and fixes in EU control plane.
+
+== New Features and Enhancements
+
+Beginning on December 15, 2017 the Anypoint Platform control plane is available in the European Union. This enables all customer and MuleSoft data remain entirely within the EU.
+
+This release includes the following new features and enhancements:
+
+* EU control plane deployed in EU
+* Runtime Manager supports deploying to applications to CloudHub hosted in the EU.
+* The `amc_setup` command supports `eu1` as value of the `region` option. This enables you to connect a customer-managed Mule runtime to the EU control plane.
+* Mule runtime includes changes to the `wrapper.conf` file and the command line that support connecting to the EU control plane.
+* Support for Object Store v2.
+
+== Changes in This Release
+
+There are no changes in this release.
+
+== Fixed Issues
+
+There are no fixed issues in this release.
+
+== Known Limitations and Workarounds
+
+This section lists known limitations and workarounds for this release.
+
+* Public exchange is not fully supported in this release. Although certain public assets are available in the EU control plane, the full set of public assets are not available.
++
+To take advantage of assets available in the public Exchange of the US control plane, copy those assets to a private Exchange within the EU control plane. Private Exchange is fully supported in the EU control plane.
+
+* When deploying to CloudHub, you can only deploy applications and gateways to the Frankfurt region. Additionally, the number of supported Mule runtime versions is smaller.
+
+* Object Store v1 is not supported.
+
+* Anypoint Platform users must create a separate account to access the EU control plane.
+
+* You can only create dedicated load balancers and virtual private clouds (VPCs) in the Frankfurt region. The default name of the dedicated load balance in the EU control plane is `lb-prod-eu-rt.anypointdns.net`
+
+* Migration between regions is a manual process. You must manually copy each asset from the US control to the EU control plane.
+
+== Upgrade Requirements
+
+There are no upgrade requirements in this release.
+
+== Compatibility Notes
+
+* CloudHub
++
+When deploying an application to CloudHub in the EU control plane, only the following versions of the Mule runtime are supported:
++
+** 3.8.5 or later
+** 3.9.0 or later
+** 4.0.0 or later
+** API Gateway 2.2.0
+
+
+* Customer-managed Mule Runtimes (Hybrid)
++
+When deploying to a customer-managed runtime, Mule runtime version 3.x is supported as long as you are using Mule Runtime Manager Agent, version 1.9.2. This version is bundled with Mule runtime, version 3.8.x and later. To use earlier versions of Mule runtime, you must download version 3.8.x and install version 1.9.2 of the Runtime Manager Agent in your environment.
+
+* Anypoint Studio
++
+Anypoint Studio versions 6.4.2 and 7.0.1 support the Anypoint Platform EU control plane.
+
+== See Also
+
+* xref:eu-control-plane::index.adoc[About the EU Control Plane]
+* xref:eu-control-plane::app-deploy-eu.adoc[To Deploy an Application (EU Control Plane)]
+* xref:eu-control-plane::object-store-eu.adoc[About Object Store in the EU Control Plane]

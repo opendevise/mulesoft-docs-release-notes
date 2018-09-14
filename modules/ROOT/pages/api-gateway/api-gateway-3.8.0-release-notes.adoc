@@ -1,0 +1,39 @@
+= API Gateway 3.8.0 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: api-gateway-3.8.0-release-notes.adoc
+:keywords: api, gateway, 2.2.0, release notes
+
+== Compatibility
+
+[%header,cols="2*a"]
+|===
+|Software |Version
+|APIkit |3.8.0
+|Anypoint Studio |6.0
+|===
+
+== New Features
+
+* AGW-498: Add support for handling the X-Forwarded-For headers in the generated proxies.
+* AGW-693: Add support for RAML 1.0.
+* AGW-695: Honor the tls-default configuration in the client communication with API Manager.
+* AGW-741: Now that api-gateway domain is not bundled with the distribution, create a script to generate API Gateway domain.
+* AGW-746: Enhance security when Gateway is started and policies are not yet applied. This feature doesn’t include support for Cluster scenarios yet.
+* AGW-767: Support persistence of throttling and rate limiting quota. This feature doesn’t include support for quota persistence in Cluster or Cloudhub.
+* AGW-779: Enable order granularity at the before and after components level on the policy template configuration.
+* AGW-785: Extend the Client Id Enforcement policy to extract client credentials from the Authorization Header.
+
+== Fixed in This Release
+
+* AGW-411: When Gateway is started in offline mode, and comes when online again, it never communicates with API Manager again.
+* AGW-675: Custom policies are not picking up common beans defined in the `default-mule-config.xml`.
+* AGW-720: Duplicated autodiscovery elements are present in the registry when Gateway is restarted.
+* AGW-732: When a contract service URL is unreachable, no log is generated.
+* AGW-745: When offline, restarting API Gateway removes all online policies currently applied.
+* AGW-755: A spring injected property is null when a policy is applied.
+* AGW-759: The Extended CORS policy is not validating headers.
+* AGW-782: In the federated policies, invalid requests return incorrect status codes.
+
+Follow the xref:api-gateway/api-gateway-runtime-to-mule-3.8.0-migration-guide.adoc[migration instructions] in this section to continue using API Gateway domain with Mule 3.8.0.

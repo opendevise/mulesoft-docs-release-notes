@@ -1,0 +1,488 @@
+= Mule Runtime 4.0 Early Access Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: mule-4.0-release-notes.adoc
+:keywords: mule, 4.0, runtime, release notes
+
+*November 19, 2017*
+
+This is an Early Access release of Mule 4. We do not recommend that existing Mule customers migrate applications to Mule 4 at this time. This release is suitable for the following scenarios:
+
+* Users of the Design Center web-based flow designer who are deploying on CloudHub, where this is a GA-supported release.
+* Customers who are interested in testing upcoming enhancements to Mule Runtime.
+* Partners and community who are updating their Mule connectors and other materials
+
+== What’s new?
+This release contains only bug fixes. See xref:4.1@mule4-runtime::mule-runtime-updates.adoc[What’s New in Mule 4] for a complete overview of what’s included in Mule 4.
+
+== Gateway 4
+Gateway leverages many of the improvements added in Mule 4. See xref:4.1@mule4-runtime::mule-runtime-updates.adoc[What’s New in Mule 4] for a complete overview.
+
+* There is classloading isolation between the policies, the application and the runtime.
+* Policies can be distributed outside of the runtime, providing frictionless upgrades
+* All policies are non-blocking.
+* All policies can be ordered. The only policy with a fixed order is CORS that it is executed first.
+* Resource-level policy support has been extended to any HTTP API and not restricted to RAML based APIs.
+* Custom policies can leverage Mule core concepts and language. See https://docs.mulesoft.com/api-manager/custom-policy-4-reference[Custom Policy General Reference] (on `+https://docs.mulesoft.com/+`).
+
+Note that Mule 4 is only supported on the new API Manager. See new API Manager documentation, xref:2.x@api-manager::configure-autodiscovery-4-task.adoc[Configuring API Autodiscovery in a Mule 4 Application] (on `+https://docs.mulesoft.com/+`), for how to configure API Gateway.
+
+=== Not supported on Early Access
+
+* Exporting API Analytics to external analytics tool.
+* Auto-generating and deploying proxies from API Manager.
+* Throttling and Throttling SLA Based policies.
+* Studio 7 doesn’t offer support for Gateway.
+
+== Fixed Issues
+
+The issues have been fixed since the Mule 4 RC.
+
+[%header,cols="20,80"]
+|===
+| Issue | Description
+| MULE-13956
+| Mule should not log OVERLOAD errors caused by flow back-pressure at ERROR level
+
+| MULE-13881
+| JMS reconnection strategies do not seem to work
+
+| MULE-13873
+| SFDC Connector failing while trying to delete records by id
+
+| MULE-13871
+| VM consume operation collides with listener
+
+| MULE-13859
+| Streaming OutOfMemoryError on Soak Testing
+
+| MULE-13840
+| Bad performance in DefaultSourceCompletionHandler#createResponseParameters
+
+| MULE-13759
+| JMS Publish operation throws a JMS:ILLEGAL_BODY error type while overriding ContentType or Encoding
+
+| MULE-13747
+| Batch: "ConcurrentModificationException" when payload or variable of type "ManagedCursorIterator" is sent between batch steps
+
+| MULE-13745
+| Valid XML names throw an "Invalid Name" exception
+
+| MULE-13742
+| Operations in SC are missing displayName
+
+| MULE-13740
+| Invalid error model in validation module
+
+| MULE-13739
+| Wrong HTTP and WSC stereotypes
+
+| MULE-13694
+| Provide support for fetching all the xsd dependencies from a xsd file
+
+| MULE-13687
+| ExtensionModel DTO missing the ErrorModel attribute
+
+| MULE-13657
+| DataBase connector throws a DB:QUERY_EXECUTION error type when cannot get a connection
+
+| MULE-13632
+| Exception thrown when doing a hot redeploy of an app using the derby driver
+
+| MULE-13629
+| DB extension module not handling 'null' values as input parameters in stored procedures
+
+| MULE-13594
+| Issue reading properties for runtime and tooling
+
+| MULE-13576
+| Stackoverflow error when getting notifications for WSC
+
+| MULE-13571
+| Request hanged if response statusCode is less than 200
+
+| MULE-13563
+| Request hanged when overriding attributes in the error handler of a policy, without setting status code
+
+| MULE-13557
+| Jar content cannot be read by URL.openStream() on Windows
+
+| MULE-13526
+| Policy hangs when using more than one policy
+
+| MULE-13521
+| JMS does not communicate properly it's ExternalLibs
+
+| MULE-13506
+| ConfigurationComponentLocator.findAll does not return all components
+
+| MULE-13505
+| Registry NPE looking for componentLocation
+
+| MULE-13502
+| OutOfMemory using For Each to iterate a JSON
+
+| MULE-13467
+| ArtifactSerializationService is generating trustStore parameter of tls context with camelCase format
+
+| MULE-13329
+| WSC fails to resolve metadata for wsdl.
+
+| MULE-13202
+| Object bean showing error message with null references
+
+| MULE-12953
+| Mule Core operations don't expose any error models
+
+| MULE-12935
+| Try's scope not handled correctly on Message History
+
+| MULE-12896
+| Metadata: json schemas with import do not work unless they have a full path
+
+| MULE-12892
+| [DB] Wrong error message when bulk-insert operation fails
+
+| EE-5760
+| BatchJobInstance does not wait for all dispatched records to finish before shutting down
+
+| EE-5742
+| Batch aggregator fails when flushing the records.
+|===
+
+== Enhancement Requests from RC
+
+These enhancement requests were fulfilled in this release.
+
+[%header,cols="20,80"]
+|===
+| Issue | Description
+| MULE-14022
+| Introduce the concept of Path location classification
+
+| MULE-13984
+| Missing start/stop application notification
+
+| MULE-13902
+| Support initialisable operation parameters
+
+| MULE-13764
+| When a MULE:UNKNOWN error is logged, always log the stacktrace
+
+| MULE-13760
+| ConfigOverride type annotation should be private
+
+| MULE-13752
+| Re enable validation:all scope
+
+| MULE-13659
+| Add the concept of ConnectionProvider which doesn't support connectivity testing
+
+| MULE-13637
+| String and Binary operations should always have a mime type
+
+| MULE-13634
+| Domain information must be determined using the classloader model instead of the mule-artifact.json
+
+| MULE-13460
+| Add get all keys to actual object store implementation
+
+| MULE-13454
+| Add domain bundle deployment
+
+| MULE-13284
+| Maven settings proxy and mirror configurations are not considered for resolving dependencies
+
+| MULE-13245
+| Revamp SDK support for validators
+
+| MULE-13211
+| Correlation information is not exposed in the interception API.
+
+| MULE-12809
+| Make MetadataTestCase use LazyMetadataService
+
+| MULE-12773
+| Typo on FILE:ILLEGAL_PATH error message
+
+| MULE-12716
+| Remove registries from API
+
+| MULE-12454
+| Redefine expression language API
+
+| MULE-12278
+| Create archetype for SDK extensions.
+
+| MULE-11677
+| Implement lifecycle behavior for spring beans
+
+| MULE-11566
+| Rename AnnotatedObject to Component
+
+| MULE-11304
+| Cannot add @Alias annotation to operation parameter, function parameters and function names
+
+| MULE-11120
+| Improve logs for tracking log lines related to a transaction
+
+| MULE-11086
+| Improve ErrorModel serialization in ExtensionModels
+|===
+
+== Known Issues
+
+[%header,cols="20,80"]
+|===
+| Issue | Description
+| MULE-14101
+| JCo initialization error when using SAP operations
+
+| MULE-14075
+| Failure to resolve DataSense when using JMS with a JNDI connection factory
+
+| MULE-14020
+| FTP connector fails to write when called from a MUnit test
+
+| MULE-13964
+| SAXParseException when deploying apps using parallel deployment
+
+| EE-5523
+| IllegalMonitorStateException when trying to dispose HA module
+|===
+
+== Fixed Issues that were present in 3.x
+
+[%header,cols="20,80"]
+|===
+| Issue | Description
+| MULE-13954
+| Tests using TransactedPollingMessageReceiver generate very big logs
+
+| MULE-13946
+| Cannot handle multipart data with repeated names
+
+| MULE-13935
+| In Message Filter, unacceptedMessageProcessor is not being notified
+
+| MULE-13788
+| Oauth authentication using refreshTokenWhen parameter is not retaining attachments and properties
+
+| MULE-13738
+| Is not possble to tell in some DeploymentListener notifications if they're fired by an app or domain
+
+| MULE-13723
+| Support out-of-browser applications in OAuth module redirect url
+
+| MULE-13356
+| Application's log config logs to console when no appender is configured
+
+| MULE-12559
+| BlockingTransferInputStream should implement read(byte[] b, int off, int len)
+
+| MULE-12411
+| Benchmarking a simple proxy in a big instance, load threads hangs waiting for the request to end.
+
+| MULE-11331
+| Statements leaked when auto key generation fails while executing stored procedure
+
+| MULE-9562
+| mule udp connector create new socket object for same address
+
+| MULE-9290
+| Extensions fail to build if parameter has a wildcard generic
+
+| MULE-9203
+| MTOM attachments not working with WS consumer and HTTP listener
+
+| MULE-9200
+| Fix context shutdown test cases with http:listener
+
+| EE-5760
+| BatchJobInstance does not wait for all dispatched records to finish before shutting down
+
+| EE-5214
+| Delayed startup on macOS Sierra
+
+| EE-4927
+| Cluster quorum - uncaught NumberFormatException when quorum size has an illegal value
+|===
+
+== Enhancements Requests from 3.x
+
+These requests have been fulfilled in this release.
+
+|===
+| Issue | Description
+| MULE-13293
+| Allow relative path for IdentityFile
+
+| MULE-9746
+| add redelivery delay JMS XA transaction
+
+| MULE-9539
+| Consider making TCP socket methods public
+
+| MULE-9180
+| Add support for a Palette Name so that extension can define the display name (like the friendlyName of @Connector)
+
+| MULE-9080
+| When building an extension all existing errors should be shown
+
+| MULE-9079
+| Allow users to build Extension that don't need a Config
+
+| MULE-8753
+| Give the Extension model the concept of vendor
+
+| MULE-8725
+| Implememnt multitenant configuration eviction policy
+
+| MULE-8476
+| Spike on on inferring extension version from project version
+
+| MULE-8244
+| Create SFTP directories if they don't exist
+
+| MULE-8175
+| Upgrade Xerces to 2.11.0
+
+| MULE-8009
+| Add support for consuming wsdl files with more than 1 part
+
+| MULE-7843
+| Allow extensions code to be splitted in several units
+
+| SE-6800
+| Unable to write files through SFTP without STAT permissions
+
+| SE-5537
+| Upgrade Jackson Libraries
+
+| SE-5511
+| HTTP listener not handling multipart with keys with same name
+
+| SE-5363
+| High number of stale (TCP half-open) sockets seen on mule server side due to HTTP listener worker thread not closing server side socket endpoint when client already has closed the TCP channel on timeout while having long-running transactions
+
+| SE-5254
+| Enable FTP connector to recover from 'connection reset' when processing big files synchronously
+
+| SE-5153
+| Request for Seamless Application Migration tool during runtimes upgrades
+
+| SE-4814
+| System Exception Strategy doesn't work with SFTP inbound endpoint
+
+| SE-4668
+| Disable server SSL certificate validation on SMTPS Transport
+
+| SE-4657
+| Disable server SSL certificate validation on IMAPS Transport
+
+| SE-4445
+| File Inbound Endpoint with scheduling feature
+
+| SE-3715
+| Enable the Response Transformer feature in new HTTP module
+
+| SE-3642
+| Allow multiple rollback exception strategy
+
+| SE-3596
+| Adding NamedParameterJdbcTemplate capability to DB connectors
+
+| SE-3566
+| Throw an exception from Exception Strategy
+
+| SE-3544
+| SMTP transport doesn't send emails until connection is closed
+
+| SE-3160
+| Dependency Upgrade Request (Spring 4.2)
+
+| SE-3079
+| Exception Trace should include name/description of the message processor which failed
+
+| SE-3060
+| Improve handling of invalid XML through XSD for set-property within outbound-endpoint
+
+| SE-2890
+| WS consumer with dynamic serviceAddress
+
+| SE-2801
+| Add a standard way for attachments to generate the filename attribute
+
+| SE-2761
+| Improve configuration reference in the Validation module
+
+| SE-2717
+| Usability: Add option to force mime type in enricher
+
+| SE-2635
+| mule-app.properties is processed after others properties files loaded by the context:property-placeholder
+
+| SE-2560
+| Allow FileConnector to process a directory even when a file is opened by another process
+
+| SE-2506
+| Allow the usage of MEL for the 'identityFile' attribute in the SFTP connector
+
+| SE-2486
+| Add support for IBM-specific headers in WMQ Transport
+
+| SE-2308
+| Subject attribute MEL issue in SMTP transport
+
+| SE-2081
+| Add the capability of not deleting processed files to the FTP Connector
+
+| SE-1903
+| SFTP: Create directories if they don't exist
+
+| SE-1635
+| Add support for MEL expression in sftp:outbound-endpoint
+
+| SE-1339
+| Creating FTP directories if they don't exist
+
+| SE-1270
+| Add "moveToDirectory" to SFTP
+
+| SE-1155
+| Pop3 synchronous not calling exception strategy
+
+| SE-1070
+| Enhance SFTP connector to accept classpath resource of identityFile and MEL expression for other attributes
+
+| SE-939
+| Provide formal support for SMTP Connector in Mule Shared Resources
+
+| SE-849
+| Introduce moveTo in SFTP
+
+| SE-755
+| Need to allow connecting to SFTP servers with both certificate AND user/pass
+
+| SE-697
+| Be able to close the SMTP connection after the smtp outbound endpoint is executed
+
+| SE-585
+| FTP - Add support for authentication using certificates
+
+| SE-496
+| Add recursiveness to FTP transport
+
+| SE-494
+| Outbound property overriding e-mail subject
+
+| SE-421
+| Provide timeout for SFTP outbound endpoint
+
+| SE-172
+| When file append is enabled, the connector should log write to file only one
+
+| SE-98
+| Add a FileRequest processor
+|===

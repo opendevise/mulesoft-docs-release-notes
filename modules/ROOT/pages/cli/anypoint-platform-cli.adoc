@@ -1,0 +1,217 @@
+= Anypoint Platform Command Line Interface Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: anypoint-platform-cli.adoc
+:keywords: cli, command line interface, command line, release notes, anypoint platform cli
+
+== Version 2.3.2 - April 3, 2018
+
+This release of the Anypoint CLI fixes the following issue:
+
+* Wrong JSON formatting of `runtime-mgr standalone-application describe-json`
+
+
+== Version 2.3.1 - March 16, 2018
+
+This release of the Anypoint CLI fixes the following issue:
+
+* Fixed a bug due to the way 'runtime-mgr standalone-application copy' was referencing target applications
+
+
+== Version 2.3.0 - March 9, 2018
+
+This release of the Anypoint CLI introduces:
+
+* Ability to pass a Bearer token to the CLI instead of login & password (`--bearer` option or `ANYPOINT_BEARER` environment variable)
+
+
+== Version 2.2.0 - January 29, 2018
+
+This release of the Anypoint CLI introduces:
+
+* Added command `exchange asset describe`
+* Added commands `exchange asset (deprecate|undeprecate)`
+* Added command `exchange asset page list` to list the published pages of a given assets
+* Added command `api-mgr proxy download` to dowload a ZIP archive of a given gateway proxy
+* Added support for "http" classifier in `exchange asset upload`
+
+Introduces the following change:
+
+* Made `groupID` default to the current session's `organizationID` in all `exchange asset *` commands where `<assetIdentifier>` is required
+
+And fixes the following issue:
+
+* Fixed `designcenter project list` always returning version "0"
+
+
+== Version 2.1.2 - December 7, 2017
+
+This release of the Anypoint CLI fixes the following issues:
+
+* Fixed an issue with with `exchange asset page (upload|delete)` commands that were failing with "Request failed to validate against RAML definition".
+* Fixed several autocompletion issues throughout anypoint-cli.
+* Fixed an issue with with `exchange asset (download|copy)` commands that were failing with assets of type "rest-api".
+* Fixed the legend for `exchange asset upload`
+* Fixed an issue with with `exchange asset delete` to perform a hard delete.
+* Fixed an issue with 404 errors when connecting to onprem instances in interactive mode.
+* Fixed pagination for `exchange asset list` and `designcenter project list`
+* Fixed thet syntax for `exchange asset copy`, the new syntax for target is <groupId>/<assetId>/<version>
+
+
+== Version 2.1.1 - Oct 19, 2017
+
+This release fixes the following issue:
+
+* Fixed an issue with the conversion of Swagger files when using the `api-mgr definition upload` command
+
+
+== Version 2.1.0 - Sept 19, 2017
+
+This release of the Anypoint CLI introduces:
+
+* Support for Design Center, including: listing (+ searching), creating, deleting, uploading, downloading, as well as publishing projects to Exchange
+* Support for Exchange 2.0, including: listing (+ searching), modifying, deleting, uploading and copying assets, as well as managing asset description pages
+* Added `account environment describe [name]` command. When "name" is not specified, returns the current session's environment information
+
+And introduces the following changes:
+
+* `api-mgr applications list`: added the `--tier-requests` option to only list applications that have their "Current SLA Tier" different than their "Requested SLA Tier"
+* `api-mgr policy copy`: ability to pass a "policyId" in order to copy a single policy
+* `api-mgr endpoint configure`: added a "Response Timeout" option
+* Disabled `use` and `portal open` commands in non-interactive mode
+* Passing `--fields` to any command will display the list of all available fields for that command
+* Ability to configure default options in `~/.anypoint/defaults` for any of the default options, E.g. `--output`, `--fields`
+* Added a message log to confirm environment and business group change upon using executing `use (environment|business-group)` commands
+* Made "name" optional in `account business-group describe`. When "name" is not specified, defaults to the current session's business group
+* Added `--type <type>` option to `account environment create`. `--sandbox` remains for backward-compatibility
+* Made pagination consistent across all commands (interactive mode)
+
+This release fixes the following issues:
+
+* Fixed an error when a file passed as `--propertiesFile` to a `runtime-mgr *` command contained a blank line
+* Fixed an issue with `api-mgr definition (copy|upload)` when the target API definition already existed and had a different structure than the source API definition
+
+
+== Version 2.0.8 - August 1, 2017
+
+This release of the Anypoint CLI fixes the following issues:
+
+* Fixed `--username` option fails when username is a number
+* Fixed `api-mgr * copy` commands return `Error: Unauthorized` for users that have limited roles
+
+
+== Version 2.0.7 - July 27, 2017
+
+This release of the Anypoint CLI fixes the following issue:
+
+* Fixed an issue with `api-mgr endpoint configure` failing to validate options such as `--type`
+
+
+== Version 2.0.6 - July 12, 2017
+
+This release of the Anypoint CLI fixes the following issue:
+
+* Fixed an issue running `runtime-mgr standalone-application` commands using application names against Anypoint On Premises version 1.5 and under
+
+
+== Version 2.0.5 - July 6, 2017
+
+This release of the Anypoint CLI fixes the following issues:
+
+* Added the ability to pass an application name to the `runtime-mgr standalone-application (describe|describe-json|modify|delete|stop|restart|start|artifact)` commands
+* Added the ability to pass a target name to the `runtime-mgr standalone-application (deploy|copy)` commands
+* Fixed `runtime-mgr standalone-application deploy` failing when application already exists. Will now re-deploy the application if application exists.
+
+
+== Version 2.0.4 - June 15, 2017
+
+This release of the Anypoint CLI fixes the following issues:
+
+* Added option `--dynamic-ips` to `cloudhub load-balancer create` to force new load balancers to use dynamic IPs instead of static ones
+* Added `cloudhub load-balancer dynamic-ips (enable|disable)` commands to turn that option on/off for existing load balancers
+
+
+== Version 2.0.3 - June 8, 2017
+
+This release of the Anypoint CLI fixes the following issues:
+
+* Fixed `cloudhub load-balancer describe` fails to show LB information if the sslEndpoint doesn't have publicKeySANs
+* Fixed `anypoint-cli api-mgr definition copy` does not copy RAML files in folders on Windows
+* Fixed `api-mgr definition copy` creates a new file "api.raml" in the target API which does not exist in the source API.
+* Fixed `api-mgr portal copy` does not preserve order of portal pages
+
+
+== Version 2.0.2 - May 17, 2017
+
+This release of the Anypoint CLI fixes the following issues:
+
+* Fixed `api-mgr definition download` raises multiple errors when trying to download to an empty folder.
+* Fixed `api-mgr definition upload` creates nested folders incorrectly. E.g. users/employees turns into users/users/employees.
+* Fixed `api-mgr definition copy` individual files in the root folder arent’t copied properly.
+* Fixed `api-mgr definition copy` when the source contains nested directories (>=2 levels), content is not copied properly.
+* Fixed `api-mgr definition copy` & `* upload` after 2+ concecutive runs, copy fails with a message saying “This name already exists in your organization”.
+
+
+== Version 2.0.1 - May 16, 2017
+
+This release of the Anypoint CLI fixes the following issue:
+
+* Fixed `runtime-mgr cloudhub-application deploy` not working properly when `--property` is passed
+
+
+== Version 2.0.0 - April 28, 2017
+
+This release of the Anypoint CLI introduces:
+
+* Ability to copy information across organizations (and environments for `runtime-mgr`).
+* Ability to deploy applications to hybrid servers and PCF with runtime manager.
+
+It also fixes the following issues:
+
+* Fixed an issue when a command had arguments surrounded with quotes and containing spaces.
+* Fixed an issue with `api-mgr definition copy` when the source definition contained folders.
+* Fixed an issue with `api-mgr definition copy` not copying notebooks.
+
+And introduces the following changes:
+
+* The `cloudhub applications` commands have been renamed.
+* The syntax for the `copy` commands has changed.
+
+See the xref:runtime-manager::anypoint-platform-cli.adoc[Anypoint Platform CLI documentation] for more details.
+
+
+== Version 1.1.4 - March 15, 2017
+
+This release of the Anypoint CLI fixes the following issues:
+
+* `runtime-mgr application download-logs` not working properly on Windows/Linux.
+* `--fields <field_list>` option returns misleading warning.
+
+
+== Version 1.1.3 - February 25, 2017
+
+This release of the Anypoint CLI fixes the following issues:
+
+* `runtime-mgr application restart` throws an error in non-interactive mode.
+* Some arguments should not be converted to integers.
+
+See the xref:runtime-manager::anypoint-platform-cli.adoc[Anypoint Platform CLI documentation] for more details.
+
+
+== Version 1.1.2 - January 10, 2017
+
+This release of the Anypoint Platform CLI introduces xref:runtime-manager::anypoint-platform-cli.adoc#list-of-commands[support for API Manager commands] and a lot of API lifecycle/promotion scenarios.
+
+It also introduces new features such as:
+
+* Support for API Manager, including managing APIs, policies, definitions, portals, client applications, and more.
+* Copying API definitions, portals, and policies from one API to another for easy promotion
+* More control over the CLI output:
+** Ability to format the output in plain text, JSON or tables.
+** Ability to specify the fields you want the output to display.
+* Improved security
+// ** Your interactive mode session asks for credentials renewal after the current session expires based on your configuration on Anypoint Platform.
+* Support for Anypoint Platform Private Cloud Edition
+
+See the xref:runtime-manager::anypoint-platform-cli.adoc[Anypoint Platform CLI documentation] for more details.

@@ -1,0 +1,43 @@
+= Neo4J Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: neo4j-connector-release-notes.adoc
+:keywords: release notes, connector, neo4j
+
+*June 2017*
+
+_Select_
+
+xref:3.8@mule-runtime::neo4j-connector.adoc[Neo4J Connector User Guide]
+
+Anypoint Connector for Neo4J provides the capability of execute Cypher Query Language(CQL) statements and run basic operations (such as create, update, delete, select nodes) against a Neo4J Graph DB instance.
+
+== 2.0.0
+
+*June 30, 2017*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime EE |3.7.0 and later
+|Neo4J Java SDK |1.2.1
+|===
+
+=== Features
+
+* The present version supports the following operations:
+** CQL
+*** Execute any CQL statement in Neo4J Graph DB instance
+** Nodes
+*** Create
+*** Update
+*** Select
+*** Delete
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

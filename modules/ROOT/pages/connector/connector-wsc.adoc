@@ -1,0 +1,52 @@
+= WSC Connector Release Notes for Mule 4
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: connector-wsc.adoc
+:keywords: mule, WSC, connector, release notes, Web Service, Consumer, SOAP
+
+*March 2018*
+
+== 1.1.1
+
+*Mar 26, 2018*
+
+=== Known Limitations and Workarounds
+
+* RPC WSDLs are not supported
+
+=== Fixed Issues
+
+* WSC is affected by CVE-2017-9735. (EE-5773)
+
+== 1.1.0
+
+*Jan 19, 2018*
+
+=== New Features and Enhancements
+
+This release includes the following enhancements, changes, and fixes:
+
+* Support for multipart messages
+* Added configuration hints through Value Providers
+* Same experience for MTON and Soap with Attachments
+* Improved UX
+
+=== Known Limitations and Workarounds
+
+* RPC WSDLs are not supported
+
+=== Upgrade Requirements
+
+Mule 4.1
+
+=== Fixed Issues
+
+* WSC Connector exports internal classes. (MULE-14445)
+* Upgrade to CXF 3.2.1. ((MULE-14060)
+* Correct event is not used when running with custom HTTP transport config. (MULE-14388)
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

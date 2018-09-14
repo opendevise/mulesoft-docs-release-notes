@@ -1,0 +1,131 @@
+= LDAP Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: ldap-connector-release-notes.adoc
+:keywords: release notes, ldap, active directory, connector
+
+*November 2017*
+
+_Select_
+
+The Lightweight Directory Access Protocol (LDAP) is an open, vendor-neutral, industry standard application protocol for accessing and maintaining distributed directory information services over an Internet Protocol (IP) network. The LDAP connector allows Mule applications to interact with LDAP servers.
+
+Guide: xref:3.9@mule-runtime::ldap-connector.adoc[LDAP Connector] +
+Reference: https://mulesoft.github.io/mule-ldap-connector/[Mule LDAP Connector]
+
+== 2.2.0
+
+*January 5, 2018*
+
+Release notes for version 2.2.0 of the LDAP connector.
+
+=== Compatibility
+
+The LDAP Connector is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Application/Serice|Version
+|Mule Runtime|3.5.0 and later
+|Java|1.7 or 1.8
+|===
+
+=== Features
+
+* Custom truststore - Custom truststore is supported now, this allows to specify which servers the connector is allowed to communicate with using TLS Config.
+
+=== Observations
+
+* Active Directory demo - A demo to use active directory from the ldap connector has been added.
+
+=== Fixed in this Release
+
+* Pool properties support - In the previous versions initialPoolSize, maxPoolSize and poolTimeout were ineffective. Now, with an implementation of a custom pool, these properties are supported.
+* AD range retrieval with schema enabled - When a lookup is done for retriving ranges in AD with schema enabled as true a LDAPJNDIConnection exception was thrown. This has been fixed and exception is not thrown now.
+
+=== Known Issues
+
+None.
+
+== 2.1.0
+
+*October 13, 2016*
+
+Release notes for version 2.1.0 of the LDAP connector.
+
+=== Compatibility
+
+The LDAP Connector is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Application/Serice|Version
+|Mule Runtime|3.5.0 and later
+|Java|1.7 and later
+|===
+
+=== Features
+
+* Bind Operation now accepts authDN, authPassword and authentication.
+
+=== Fixed in this Release
+
+* Fixed TLS connection to use the correct context on which TLS is initialised, now TLS can be used to set password for Active Directory.
+* LDAP Entry allows DN to be obtained by getting attribute dn. Get call on LDAPEntry for DN returns the distinguished name.
+* LDAP Entry allows having null attribute value. Get call on LDAPEntry for a null valued attribute returns null instead of throwing a null pointer exception.
+
+=== Known Issues
+
+None.
+
+== 2.0.1
+
+*April 8, 2016*
+
+Release notes for version 2.0.1 of the LDAP connector.
+
+=== Compatibility
+
+The LDAP Connector is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Application/Service|Version
+|Mule Runtime|3.6.x and later
+|Java|1.7.0_x or higher
+|Anypoint Studio|5.2 and later
+|===
+
+=== Features
+
+* Upgraded connector for compatibility with Anypoint Connector DevKit v3.8.1
+* The following operations are supported:
+** Bind - Authenticates against the LDAP server. This occurs automatically before each operation but can also be performed on request.
+** Search - Performs a LDAP search in a base DN with a given filter.
+** Search one - Performs a LDAP search that is supposed to return a unique result.
+** Paged result search - Performs a LDAP search and streams result to the rest of the flow.
+** Lookup - Retrieves a unique LDAP entry.
+** Exists - Checks whether a LDAP entry exists in the LDAP server or not.
+** Add - Creates a new LDAP entry.
+** Add single value attribute - Adds specific single valued attribute to an existing LDAP entry.
+** Add multi-value attribute - Adds specific multi-valued attribute to an existing LDAP entry.
+** Modify - Update an existing LDAP entry.
+** Modify single value attribute - Updates specific single valued attribute of an existing LDAP entry.
+** Modify multi-value attribute - Updates specific multi-valued attribute of an existing LDAP entry.
+** Delete - Delete an existing LDAP entry.
+** Delete single value attribute - Deletes specific single valued attribute to an existing LDAP entry.
+** Delete multi-value attribute - Deletes specific multi-valued attribute to an existing LDAP entry.
+
+=== Fixed in this Release
+
+* Deprecated message processors (addFromMap & modifyFromMap) have been sunset and no longer available.
+
+=== Known Issues
+
+None.
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum].
+* https://support.mulesoft.com[Contact MuleSoft Support].

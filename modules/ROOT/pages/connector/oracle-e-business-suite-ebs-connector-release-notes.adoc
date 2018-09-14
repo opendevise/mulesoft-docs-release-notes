@@ -1,0 +1,267 @@
+= Oracle EBS Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: oracle-e-business-suite-ebs-connector-release-notes.adoc
+:keywords: release notes, oracle, ebs, e-business suite, connector
+
+*December 2016*
+
+_Premium_
+
+The Anypoint Connector for Oracle E-Business Suite provides real-time connectivity to query and update Oracle EBS using web services.
+
+Note that the Oracle EBS Connector requires an Enterprise license. The Anypoint Connector for Oracle EBS 12.2.x is developed and released separately.
+
+Guide: xref:3.9@mule-runtime::oracle-ebs-connector-user-guide.adoc[Oracle EBS Connector]
+
+== 4.0.1
+
+*December 14, 2016*
+
+Release notes for version 4.0.1 of the Oracle EBS Connector. These release notes accompany the xref:3.9@mule-runtime::oracle-ebs-connector-user-guide.adoc[Oracle E-Business Suite Connector] guide.
+
+=== Compatibility
+
+The Oracle EBS Connector is compatible with:
+
+|===
+|Application/Service|Version
+
+|Mule Runtime|3.7 and later
+|Anypoint Studio|5.2.1 and later
+|Oracle EBS|12.1.x
+|Java|7
+|===
+
+=== Fixed in this Release
+
+* XML External Entities (XXE) vulnerability - By default, XML parsers are weakly configured thus enabling XML External Entity attack (for example, disclosure of confidential data, denial of service, server side request forgery) when the application parses XML input. To prevent XXE, DTDs (External Entities) have been completely disabled in all the XML parsers used by the connector.
+
+== 4.0.0
+
+*July 19, 2016*
+
+Release notes for version 4.0.0 of the Oracle EBS Connector. These release notes accompany the xref:3.9@mule-runtime::oracle-ebs-connector-user-guide.adoc[Oracle E-Business Suite Connector] guide.
+
+=== Compatibility
+
+The Oracle EBS Connector is compatible with:
+
+|===
+|Application/Service|Version
+
+|Mule Runtime|3.7 and later
+|Anypoint Studio|5.2.1 and later
+|Oracle EBS|12.1.x
+|Java|7
+|===
+
+=== Migrating from Older Versions of the Connector
+
+If you’re currently using the 3.0.0 version of this connector, migrating to the current version implies the steps listed below depending on the use case:
+
+If you are using the connector to consume web services:
+
+* Edit your global configuration element using the XML editor.
+* Remove the following parameters: dbUser, dbPassword, dbHost, dbPort and dbSid.
+* You can also remove the `aqapi.jar` and `ojdbc6.jar` files from the classpath.
+
+If you are using the connector to subscribe to Business Events or XML Gateway Outbound messages:
+
+* Create a new "Oracle EBS: JMS Configuration" element.
+* Add the database connection parameters: host, port, username, password and SID.
+* Add the required dependencies (`aqapi.jar` and `ojdbc6.jar`). You can find them in your EBS instance, under the following paths:
+** `$ORACLE_HOME/rdbms/jlib/aqapi.jar`
+** `$ORACLE_HOME/jdbc/lib/ojdbc6.jar`
+* Reference this new configuration in all references to the EBS Connector as a message source in your Mule app.
+* If you are not using the connector to consume web services, you can remove the old configuration as it is no longer needed.
+
+=== New Features
+
+*Durable subscriptions*: when subscribing to Business Events, a durable subscription can be registered. This way, all messages sent to the topic while the client is offline will be retrieved as soon as it regains connectivity.
+
+=== Fixed in this Release
+
+- *Business Events and XML Gateway Outbound*: Fixed bug in which the Mule app would stop responding for a period of time when receiving a large number of messages.
+- *User Permission*: The connector used to require the ALL_USER permission in order for PL/SQL web services to be called in EBS, but this release supports a specific user permission.
+
+== 3.0.0
+
+*January 26, 2016*
+
+Release notes for version 3.0.0 of the Oracle EBS Connector. These release notes accompany the xref:3.8@mule-runtime::oracle-ebs-connector-user-guide.adoc[Oracle E-Business Suite Connector] guide.
+
+=== New Features
+
+- *TrustStore support*: the connector can now be configured with a custom Trust Store, which would prevent calls to web services from failing when using self-signed certificates.
+
+=== Fixed in this Release
+
+- *Business Events*: parsing messages from the Business Events topic is now done dynamically, meaning that all attributes, regardless of whether they are custom or not, will be present in the connector's output.
+
+
+== 2.0.1
+
+*October 2, 2015*
+
+Release Notes for version 2.0.1 of the Oracle EBS Connector. These release notes accompany the xref:3.9@mule-runtime::oracle-ebs-connector-user-guide.adoc[Oracle E-Business Suite Connector] guide.
+
+This is a minor release, including only bug fixes since the release of 2.0.0.
+
+=== Fixed in this Release
+
+- *Test Connection* button in Global Element Properties screen had not been working. After entering host details and credentials when creating the configuration for Oracle EBS, clicking the *Test Connection* button produced an error. It has been fixed to check whether the connection to Oracle EBS can be established or not.
+
+=== Known Issues
+
+None.
+
+
+== 2.0.0
+
+*September 30, 2015*
+
+Release notes for version 2.0.0 of the Oracle EBS Connector. These Release Notes accompany the xref:3.9@mule-runtime::oracle-ebs-connector-user-guide.adoc[Oracle E-Business Suite Connector] guide.
+
+=== Compatibility
+
+The Oracle EBS Connector is compatible with:
+
+|===
+|Application/Service|Version
+
+|Mule Runtime|3.6 and later
+|Anypoint Studio|5.2.1 and later
+|Oracle EBS|12.1.x
+|Java|7
+|===
+
+
+=== Migrating from Older Versions of the Connector
+
+If you’re currently using connector 1.1.0 to migrate to this connector you need to:
+
+* Edit the Connector Configuration.
+* Add the database connection configuration.
+* Add the required dependencies (aqapi.jar and ojdbc6.jar). You can find them in your EBS instance, under the following paths:
+** `$ORACLE_HOME/rdbms/jlib/aqapi.jar`
+** `$ORACLE_HOME/jdbc/lib/ojdbc6.jar`
+
+
+=== New Features
+
+. XML Gateway Inbound - The ability to send messages to the XML Gateway Inbound queue in your EBS instance.
+. XML Gateway Outbound - You can subscribe to the XML Gateway Outbound queue and receive any messages that are sent to it.
+. Business Events - You can subscribe to the Business Events topic to receive messages every time an event is fired.
+. New PL/SQL modules.
+
+=== Supported Web Service Operations
+
+The connector supports create/read/save/update operations for the entities listed below through SOA Gateway.
+
+* DQM Search Service
+* Organization Business Object Service
+* Organization Customer Business Object Service
+* Organization Contact Business Object Service
+* Person Business Object Service
+* Person Customer Business Object Service
+* Location Business Object Service
+* Email Business Object Service
+* Phone Business Object Service
+* Relationship Business Object Service
+* Web Business Object Service
+
+=== Supported PL/SQL Modules
+
+* Suppliers Package (AP_VENDOR_PUB_PKG)
+* Invoice Creation (AR_INVOICE_API_PUB)
+* Manage Item Instances (CSI_ITEM_INSTANCE_PUB)
+* Purchase Order Acknowledgments Extension Columns API (EC_POAO_EXT)
+* Purchase Order Change Acknowledgments Extension Columns API (EC_POCAO_EXT)
+* Location (HZ_LOCATION_V2PUB)
+* Party Contact (HZ_PARTY_CONTACT_V2PUB)
+* Sales Agreement API (OE_BLANKET_PUB)
+* Process Order API (OE_ORDER_PUB)
+* Ship Confirmation (OE_SHIP_CONFIRMATION_PUB)
+* XXGet Party Details (XXONT_XOA_PARTY)
+* Custom PL/SQL operations
+
+
+=== Fixed in this Release
+
+- Improve error descriptions on Test Connection: previously, when testing connectivity via the _Test Connection_ button, error messages were not helpful. Now, not only does this feature show clearer messages, but it also verifies that the version of EBS is supported by the connector.
+- Date fields on web service responses are mapped to the `java.util.Calendar` class.
+
+
+=== Known Issues
+
+- Test connectivity button in Oracle EBS Global Element Config screen is not working. It shows an error message like `"Test connection failed: No suitable driver found for jdbc:oracle:thin@..."`, even if the required jars have been supplied.
+
+== 1.1.0
+
+*April 17, 2015*
+
+=== Compatibility
+
+The Oracle EBS connector 1.1.0 is compatible with:
+
+[%header,cols="2*"]
+|===
+a|
+Application/Service
+
+ a|
+Version
+
+|Mule Runtime |3.6.0 and later
+|Oracle EBS |v12.1.x
+|Java |1.7.0_x
+|===
+
+=== Features
+
+* Renamed `invokePLSQL` method to `invokePlSql`.
+* Migrated CXF to 2.7.15.
+* Removed the `mule-` prefix from the names of all demo projects.
+* Added `@RequiresEntitlement` annotation to the connector's main class.
+
+=== Known Issues
+
+Quarantined the following test cases from the Regression Test Suite because of intermittent failure of the service:
+
+* GetOrganizationCustomerTestCases
+* GetPersonCustomerTestCases
+
+== 1.0
+
+*March 31, 2015*
+
+=== Compatibility
+
+The Oracle EBS connector 1.0 is compatible with:
+
+[%header,cols="2*"]
+|===
+a|
+Application/Service
+
+ a|
+Version
+
+|Mule Runtime |3.6.0 and later
+|Oracle EBS |v12.1.x
+|Java |1.7.0_x
+|===
+
+=== Features
+
+This release of the Oracle EBS connector provides integration to the following Oracle EBS Suite components:
+
+*  Financial Management and Order Management Modules: Full API coverage for Financials and Order Management services
+*  PL/SQL Integration: Standard PL/SQL and user defined PL/SQL can be invoked.
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

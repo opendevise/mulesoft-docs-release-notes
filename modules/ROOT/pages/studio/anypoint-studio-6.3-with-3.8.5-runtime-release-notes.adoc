@@ -1,0 +1,181 @@
+= Anypoint Studio 6.3 with Mule Runtime 3.8.5 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: anypoint-studio-6.3-with-3.8.5-runtime-release-notes.adoc
+
+*July 30, 2017* +
+*Build ID: 201707282110*
+
+<<migration,Skip to Migration Guide>>
+
+== Compatibility
+
+[cols="30a,70a"]
+|===
+| *Mule Runtime*
+| Version: 3.8.5 EE
+
+|*Anypoint Studio*
+|Version: 6.3 +
+Build Id: 201707282110
+
+|*APIkit*
+|Versions: 3.8.1 - 3.8.0 - 1.7.3 - 1.6.2 - 1.5.3
+
+|*DataWeave* +
+|Version: 1.1.1
+
+|*MUnit* +
+|Version: 1.2.1, 1.3.0 (munit-studio-plugin)
+
+|*SAP Connector*
+|Versions: 3.0.0
+|===
+
+
+== What's New
+
+This release is part of our Crowd Release for Anypoint Platform, with support to our new Design Center and Anypoint Exchange. Crowd Release introduces our brand new Exchange v2.0 and more easy-to-use and powerful API Designer in Design Center. We have updated Studio to support our upgraded platform, and integrate with them for a seamless development cycle. +
+These include:
+
+* Import RAML files from our brand new API Designer in Design Center into Studio 6.3 through a new feature called “Import from Design Center”. Please note that for customers who use legacy API designer inside API Manager, the existing APISync feature in Studio will continue to function, and allow users to conduct two-way syncs between the local RAML file and the one hosted on API Manager. The new “Import from Design Center” feature does not support two-way syncs.
+* Publish a mule project from Studio directly to our newly launched Exchange 2.0, through a new feature called “Publish to Exchange”
+
+In addition, Studio 6.3 continues to deliver quality improvements and bug fixes.
+
+== Hardware Requirements
+
+* 4GB of free memory available
+* 2GHz CPU
+* 10GB free hard drive space
+
+== Software Requirements
+
+[cols="30a,70a"]
+|===
+|Java Environments |* Oracle JDK 1.8.0 +
+* Oracle JDK 1.8.0
+* Oracle JDK 1.7.0
+|Operating Systems |* MacOS 10.10.0 +
+* Windows (32- and 64-bit) Windows 7, Windows 8, Windows 10 +
+* RHEL 7.0 +
+* Ubuntu 15.04 or later
+|Suggested Web Browsers by Platform. +
+_Studio will always use the OS default web browser_ | * Windows: +
+** Microsoft Edge 25.0  +
+** Internet Explorer 11 +
+* Linux +
+** Mozilla Firefox 46.0  +
+* OS X +
+** Safari 9.1
+|===
+
+[NOTE]
+--
+If you are installing Anypoint Studio on a Mac computer with OS X that has no Java installed, the OS may require that you first download and install http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase6-419409.html[JDK 1.6]. Install JDK 1.6 first and then install JDK 1.7.
+--
+
+[NOTE]
+--
+If you are running McAfee VirusScan on your Windows OS, Eclipse-based Anypoint Studio may experience negative performance impacts. McAfee has suggested the following remedy https://kc.mcafee.com/corporate/index?page=content&id=KB58727[options].
+--
+
+== Known Issues
+
+* For all users adopting new API Designer in Design Center, Studio 6.3+ Studio versions prior to 6.3 will not be able to import RAML project folders from new API Designer in Design Center. When attempting to import a zip folder downloaded from new API Designer in side Design Center, users will not see any error message, but import will fail.
+* Publishing assets to Exchange inside Studio 6.3 only works with Exchange 2.0. If a user configures the url to exchange under preference to Exchange 1.0 url, assets will still be published to Exchange 2.0.
+* Studio 6.3 does not support the following Mule 3.8 features:
+** RecordVars and record payload should be editable in a commit block.
+** Object Store support gaps around Idempotent Redelivery Policy, Aggregators and DevKit token manage
+* Create JSON metadata from example does not support Big Integers
+* When importing a zipped project related to the API Gateway's default domain (for example, proxies generated from API Platform), if the domain project does not exist in the workspace already, there is a chance that it will be generated incorrectly, resulting in an entry in the Package Explorer like "api-gateway_2_0_3 : ". The workaround is to delete the corrupt domain project and right click in the imported project -> Mule -> Associate with API Gateway domain, until the project is generated correctly displaying, for example, "api-gateway_2_0_3 : api-gateway".
+* When changing API Platform environments from production to another environment, Studio would try to update offline projects, showing connection error marker. The workaround is to use different workspaces for each environment so that there will no be problem with users authentication.
+* Folder decorators are not being shown correctly when users eliminate them. It shows them as modified and not as eliminated.
+* When creating a new project with an invalid raml zip, Studio does not copy those files to the workspace.
+* API Custom Policy Editing is a beta feature. We have a few known gaps.
+* When having some projects connected to the Platform and using an invalid On Premises URL, two error messages per project will be thrown. This issue will be fixed in 6.2.1 (STUDIO-8541)
+
+[[migration]]
+== Migration Guide
+
+Users running Studio 6.0 can update to this new version directly from the Studio xref:6@studio::studio-update-sites.adoc[Update Site].
+
+[TIP]
+--
+Updating your Anypoint Studio version using the update site does not update the bundled version of the Mule runtime. +
+To get the latest runtime version after updating Studio follow xref:6@studio::download-and-launch-anypoint-studio.adoc#updating-studio[these steps].
+--
+
+If you are running an older version than Studio 6.0, then instead of updating your existing version of Studio, you would need to download and run the latest installer to install a fresh new full copy.
+
+When opening a previous workspace with projects that were created with Studio 5.1.0 or older, and which has metadata stored in disk, Studio asks you to perform an update to all the projects so that the Metadata Manager can handle the existing types and show them in your project.
+
+[TIP]
+====
+You can easily import all of the external components that you had installed in your old version of Anypoint Studio through a single action. This includes connectors, runtimes, and any other type of extension added through the Anypoint Exchange or the ​*Help -> Install new software*​ menu, as long as there are no compatibility restrictions.
+
+Do this by selecting *File->Import* and then choose *Install->From existing installation*.
+
+image::studio/import-extensions.png[import]
+
+Then specify the location of your old version of Anypoint Studio in your local drive.
+====
+
+== JIRA Ticket List for Anypoint Studio
+
+=== Bug Fixes
+
+* STUDIO-7679 - API Project import fails when importing several apis with domain
+* STUDIO-8968 - Cannot run maven projects with finalName/appName configured in mule plugins
+* STUDIO-9051 - Wrong validation error when adding global connector to MUnit test configuration
+* STUDIO-9052 - Validation issues in Anypoint Studio for oauth2 module
+* STUDIO-9060 - JSON schema relative reference for array items causes file not found
+* STUDIO-9063 - Empty .dwl file generated erroneously
+* STUDIO-9086 - Problem when doing multiple test connection with Derby JDBC
+* STUDIO-9087 - DB Stored Proc operation parameters get sorted breaking the stored procedure
+* STUDIO-9114 - Studio for Windows error when there is a literal unicode character in a DW script
+* STUDIO-9123 - [SE] SAP missing jar file error
+* STUDIO-9166 - Export Documents fails for large projects - Windows Studio
+* STUDIO-9200 - [SE] Studio showing confusing dialog title for API Sync
+* STUDIO-9201 - Update CXF library to 2.7.18 (same version from Mule 3.8+)
+* STUDIO-9216 - Generate Flows from WSDL is failing after upgrading the library
+* STUDIO-9217 - APIKit: Business groups is listing the users instead of the Organizations
+* STUDIO-9218 - [SE] Flow generation from WSDL fails when service name changes
+* STUDIO-9267 - Add empty fields validations in Publish to Exchange dialog
+* STUDIO-9268 - Add pop validation to alert users that the app will be deployed to Exchange
+* STUDIO-9271 - Add undefined default option when project does not have a classifier defined
+* STUDIO-9275 - Studio does not add TLS namespace when specifying a trust store for OAuth authorization
+* STUDIO-9295 - [SE] Maven variables in finalName prevent project deployment from Studio
+* STUDIO-9302 - APIKit does not work with Studio 6.3
+* STUDIO-9306 - Cannot deploy to Cloud from Studio using Mac
+* STUDIO-9384 - Problem with APIKit scaffold from zip file
+
+=== Enhancement Request
+
+* STUDIO-7267 - When mavenizing a project include in the pom src/main/api as source folder
+* STUDIO-8849 - Add Support to Import APIs from VCS from Exchange 2.0
+* STUDIO-8850 - Support version selection for RAML from VCS
+* STUDIO-8851 - API Sync modification for API Manager RAMLs
+* STUDIO-8852 - RAML Editor for APIs in VCS should be read only
+* STUDIO-8853 - Alter New Project wizard to select RAML from Exchange 2.0
+* STUDIO-8854 - Support publish Studio projects to Exchange 2.0
+* STUDIO-9129 - [Publish to Exchange 2.0] Create a dialog with artifact type, progress bar, information and cancellation button
+* STUDIO-9131 - [Publish to Exchange 2.0] Show an Exchange 2.0 link to the artifact after a successful publishing
+* STUDIO-9132 - [Publish to Exchange 2.0] Create reusable Login Widget
+* STUDIO-9141 - [VCS integration] Add support for "Import from VCS" *
+
+=== Tasks
+
+* STUDIO-9326 - Update Raml Java parser version 1.0.10 in Wizard and Raml editor (Studio 6.3)
+
+
+== Support
+
+* Refer to MuleSoft Documentation:
+** Crowd Release Notes
+** xref:6@studio::import-api-def-dc.adoc[Import API RAML specs from Design Center].
+** xref:6@studio::exchange-integration.adoc[Publish Mule projects into Exchange].
+// ** Configure Exchange url.
+* Access http://forums.mulesoft.com/[MuleSoft’s Forum] to pose questions and get help from Mule’s broad community of users.
+* To access MuleSoft’s expert support team https://www.mulesoft.com/support-and-services/mule-esb-support-license-subscription[subscribe to Mule ESB Enterprise] and log in to MuleSoft’s http://www.mulesoft.com/support-login[Customer Portal].

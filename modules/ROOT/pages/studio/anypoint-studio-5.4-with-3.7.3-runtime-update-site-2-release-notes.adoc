@@ -1,0 +1,87 @@
+= Anypoint Studio 5.4 with 3.7.3 Runtime Update Site 2 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: anypoint-studio-5.4-with-3.7.3-runtime-update-site-2-release-notes.adoc
+:keywords: release notes, anypoint studio
+
+*February 19, 2016* +
+*Build ID:* 201602191313
+
+
+== Compatibility
+
+*Mule Runtime*
+Version: 3.7.3 EE
+
+*Anypoint Studio*
+Version: 5.4.2
+Build Id: 201602191313
+
+*APIkit*
+Versions: 1.6.3 - 1.7.3
+
+*SAP Connector*
+Versions: 2.1.2 - 2.2.7
+
+*DataWeave*
+Version 1.0.3
+
+
+== What's New
+
+This release fixes several bugs including:
+* Memory and performance improvements
+* Fixes an issue with new lines in DataWeave on Windows
+* Prevents a deadlock that could occur
+
+And many more...
+
+For a complete list, please see the JIRA list below.
+
+== Migration Guide
+
+From the previous versions of Studio 5.1.0, 5.1.1, 5.2.0, 5.2.1, to 5.3.0 there is no special migration needed, but when opening a previous Workspace with projects that were created with Studio 5.1.0 or older, and which has metadata stored in disk, Studio asks you to perform an update to all the projects so that the Metadata Manager can handle the types and to show the types in your project.
+
+[NOTE]
+Studio as an Eclipse plugin only works with Eclipse 4.3 or 4.4 due to an SWT dependency.
+
+[TIP]
+====
+You can easily import all of the external components that you had installed in your old version of Anypoint Studio through a single action. This includes connectors, runtimes, and any other type of extension added through the Anypoint Exchange or the ​*Help -> Install new software*​ menu, as long as there are no compatibility restrictions.
+
+Do this by selecting *File->Import* and then choose *Install->From existing installation*.
+
+image::studio/import-extensions.png[import]
+
+Then specify the location of your old version of Anypoint Studio in your local drive.
+====
+
+== Eclipse Plugin
+
+If you are using Studio as an Eclipse plugin, you can get this version of Studio using the Eclipse update site `+http://studio.mulesoft.org/r4/plugin+`.
+
+This allows you to download Anypoint Studio core and third-party components version 5.x.x and with an embedded version of Mule Runtime v3.7.x along with other optional components. +
+For a detailed description of the update site's content visit the xref:5@studio::studio-in-eclipse.adoc#available-software-in-the-update-site[Studio in Eclipse] section.
+
+== Jira Ticket List
+
+
+=== Bug Fixes
+
+* [STUDIO-7469] - [SE] When using SMTP endpoints Studio adds invalid attributes, requiring manual fix on the XML file
+* [STUDIO-7471] - [SE] Class loading issue with AS2 Connector
+* [STUDIO-7486] - When installing M2Eclipse in Studio (Eclipse 4.4.2), it uninstalls maven and apikit plugins
+* [STUDIO-7503] - Drag & drop, autocomplete does not work properly when they are used as a variables(example: flowVars)
+* [STUDIO-7508] - DataWeave UI doesn't build List<Object> output correctly
+* [STUDIO-7511] - Double Click does not include as object conversion when the output is java
+* [STUDIO-7539] - [DW-UI] DataWeave editor in Windows uses 0D0A sequence as new line duplicating number of lines
+* [STUDIO-7578] - [ApiKit] Even "From folder" option was removed, Studio still allows to create a project
+* [STUDIO-7587] - High memory usage when redeploying an app while the debugger is running (in Studio 5.4.1 + Mule 3.7.3)
+* [STUDIO-7588] - Studio freezes and crashes in version 5.4.1
+* [STUDIO-7601] - Fixing memory leaks in MultiPageMessageFlowEditor
+
+
+=== Improvements
+
+* [STUDIO-6800] - Update RAML parser to parse relative paths correctly

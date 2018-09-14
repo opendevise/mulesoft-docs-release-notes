@@ -1,0 +1,35 @@
+= PeopleSoft Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: peoplesoft-connector-release-notes-mule-4.adoc
+:keywords: release notes, peoplesoft, connector
+
+*November 2017*
+
+_Premium_
+
+Anypoint Connector for PeopleSoft provides real-time connectivity to query and update any PeopleSoft module using a common integration interface known as the Component Interface.
+
+== 3.0.0
+
+*November 18, 2017*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software|Version
+|Mule Runtime|4.0.0 and later
+|PeopleSoft|9.2
+|PeopleTools|8.53.02
+|===
+
+=== Features
+
+This version is compatible with Mule 4.0.0.
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

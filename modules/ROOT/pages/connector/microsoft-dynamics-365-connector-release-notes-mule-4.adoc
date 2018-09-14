@@ -1,0 +1,34 @@
+= Microsoft Dynamics 365 Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: microsoft-dynamics-365-connector-release-notes-mule-4.adoc
+:keywords: Microsoft Dynamics 365 connector, user guide, Dynamics 365, 365, release notes
+
+_Select_
+
+*November 2017*
+
+The Dynamics 365 connector allows you to connect to the Microsoft Dynamics 365 instance.
+
+== 2.0.0
+
+*November 18, 2017*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime | Mule Runtime Enterprise Edition 4.0.0 and later
+|Microsoft Dynamics 365 | 2.0.0
+|===
+
+=== Features
+
+* Migrated to Mule 4.0.0 runtime.
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

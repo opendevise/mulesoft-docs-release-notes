@@ -1,0 +1,180 @@
+= Mule Runtime 3.8.6 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: mule-3.8.6-release-notes.adoc
+:keywords: mule, 3.8.6, runtime, release notes
+
+*Dec 15, 2017*
+
+Mule Runtime 3.8.6 includes enhancements, changes, and fixes.
+
+This release is supported on Anypoint Private Cloud Edition 1.6.1 and later.
+
+== Key Enhancements
+
+Key Enhancements
+
+* Local Analytics DataBase size can be specified. This is a security enhancement to avoid a possible system crash if analytics events, because of not being consumed, consumes all available system disk space.
+
+* As part of disaster recovery initiative, Gatekeeper enhancements introduced in v3.9.0 are backported to this version. Gatekeeper default level is now “flexible”.
+
+* Some fixes regarding ARM, performance, and recovery from lost connectivity scenarios.
+
+* In this release, CORS module is upgraded to v2.1.3. HTTP Client is upgraded to v4.5.3 and Jackson library is upgraded to v2.9.2.
+
+== Changes
+
+* MULE-14169: Remove Drools module from distribution (check the Drools doc for details in case you need to use it: https://docs.mulesoft.com/mule-user-guide/v/3.8/drools-module-reference)
+
+== Software Compatibility Testing
+
+Mule was tested on the following software:
+
+[%header,cols="15a,85a"]
+|===
+|Software |Version
+| JDK | JDK 1.7.0, JDK 1.8.0 (Recommended JDK 1.8.0_151/52)
+| OS | MacOS 10.11.x, HP-UX 11i V3, AIX 7.2, Windows 2016 Server, Windows 10, Solaris 11.3, RHEL 7, Ubuntu Server 16.04
+| Application Servers | Tomcat 7, Tomcat 8, Weblogic 12c, Wildfly 8, Wildfly 9, Websphere 8, Jetty 8, Jetty 9
+| Databases | Oracle 11g, Oracle 12c, MySQL 5.5+, DB2 10, PostgreSQL 9, Derby 10, Microsoft SQL Server 2014
+|===
+
+The unified Mule Runtime 3.8.6 and API Gateway is compatible with APIkit 3.8.6.
+
+This version of Mule Runtime is bundled with the Runtime Manager Agent plugin version 1.9.2.
+
+== Fixed Issues
+
+[%header,cols="15a,85a"]
+|===
+|Issue |Description
+| EE-5384 | In WS endpoint, queue is a required attribute when it shouldn't be.
+| EE-5448 | Merge changes for Remote Hazelcast changes into 3.9.x and potentially 3.8.x.
+| EE-5521 | Race condition when finishExecution in batch blocks dispatcher for any job till on complete phase finishes.
+| EE-5563 | An option to set Hazelcast transactions as TWO_PHASE should be available.
+| EE-5570 | When create table is a cluster db store the transaction must be committed.
+| EE-5595 | Database object store in cluster does not use a pool of jdbc connections.
+| EE-5646 | Add callables library in EE distributions for hazelcast client mode.
+| EE-5686 | When stopping a cluster, dispose is not invoked.
+| EE-5689 | Batch test cases do not dispose context if final assertions fail.
+| EE-5723 | Fix Serialization problems when AMQP and Caching Strategy are used together.
+| EE-5760 | BatchJobInstance does not wait for all dispatched records to finish before shutting down.
+| EE-5762 | BitronixTransactionManager can't be referenced from Spring beans.
+| MULE-12551 | Fix commons-beanutils vulnerability.
+| MULE-12961 | WSC: Add support for WS-SecurityPolicy.
+| MULE-13175 | Upgrade ahc and grizzly to 1.13 and 2.3.31 respectively.
+| MULE-13246 | Cxf proxy does not retrieve the correct XMLStreamReader in the payload if interceptors are involved.
+| MULE-13280 | In File Endpoints, FileAge is not always honored.
+| MULE-13286 | FTP is not honoring connection timeout in some particular scenarios.
+| MULE-13296 | SMTP Transformer is not overriding endpoints attributes in the same flow.
+| MULE-13326 | Http non-blocking error handler nor cleaning thread local.
+| MULE-13398 | Propagation of SSL prevents Jackson serialization of InboundProperties.
+| MULE-13469 | WSDL parsing fails with nested included/imported XSDs.
+| MULE-13476 | In Message Filter, unaccepted processor doesn't modify message nor payload.
+| MULE-13490 | In WSC resolution of URIs containing a long concatenation of relative paths fails.
+| MULE-13558 | Http requesters built with the same tlsContext are not cached.
+| MULE-13577 | Statements not closed on when searching metadata.
+| MULE-13582 | In domain scenarios, MuleMessage is losing its original context after MuleClient.request().
+| MULE-13585 | XSD's imported in WSDL referenced as bare file results in warning while creating request body.
+| MULE-13678 | When more than one regex is used as a file system, trim is not performed.
+| MULE-13698 | PollingReceiverWorker should clean RequestContext after performing poll.
+| MULE-13718 | ClusterCoreExtension is not being loaded as a domain deployment listeners.
+| MULE-13723 | Support out-of-browser applications in OAuth module redirect url.
+| MULE-13729 | Collection Aggregator does not honor the arrival order.
+| MULE-13732 | GraphTransformerResolver is not handling correctly concurrency access.
+| MULE-13737 | SftpClient are not released in permission failure scenarios.
+| MULE-13738 | Is not possble to tell in some DeploymentListener notifications if they're fired by an app or domain.
+| MULE-13746 | Race condition when verifying group expiration just before resequencer finishes.
+| MULE-13761 | Add serial version UID in SimpleDataType to allow migration in case of changes from older version.
+| MULE-13788 | Oauth authentication using refreshTokenWhen parameter is not retaining attachments and properties.
+| MULE-13811 | EventGroup is not disposing unused object store partitions.
+| MULE-13825 | Users must be able to set the name of a stream inside encrypted file of PGP.
+| MULE-13833 | Change default sslType to use the JVM's one.
+| MULE-13916 | Race condition when firing rules from concurrent threads in drools module.
+| MULE-13933 | MVEL functions with object instantiations doesn't work well in heavy load.
+| MULE-13934 | Failure when attempting to access an XSD file with an WSDL with an HTTP/HTTPS base path.
+| MULE-13935 | In Message Filter, unacceptedMessageProcessor is not being notified.
+| MULE-13941 | Dynamic flow reference from a For-Each causes 'ConcurrentModificationException'.
+| MULE-13963 | idempotent-message-filter throws null pointer exception when onUnaccept forwards to a sub-flow.
+| MULE-13969 | SFTP receiver reconnection is invoking exceptionListener twice.
+| MULE-13970 | MEL expression not working for null optional property.
+| MULE-13974 | ObjectToJMSMessage does not register source types.
+| MULE-13978 | SFTP logging does not mask credentials when special regex chars in password.
+| MULE-14004 | TransactionManager and TransactionManagerFactory definition should be mutually exclusive.
+| MULE-14009 | Mule context not disposed if doTearDown method fails.
+| MULE-14019 | Deserialization does not handle primitive types.
+| MULE-14024 | Create system property to pass copy event in exception handling in enricher in 3.8.x.
+| MULE-14035 | Automatic retry on remote Closed exception does not respect RFC 7320.
+| MULE-14053 | Update commons-io to 2.6 to avoid problems when deserialize primitive types.
+| MULE-14098 | When resolving importBase for JAR files in WSDL solving, Unix separator has to be preserved.
+| MULE-14115 | In Db Module, CLOB implementation is JDBC version dependent.
+| MULE-14133 | Change DISCARD and DISCARD_OLDEST behavior so that the http connector does not timeout.
+| MULE-14135 | getFullStackTrace has to be added to ExceptionUtils to guarantee retrocompatibility.
+| MULE-7081 | SFTP sizeCheckWaitTime should be applied per poll cycle instead of per file.
+| MULE-9218 | Http Calls performance degrades after time due grizzly connection pool.
+| AGW-1128 | API Gateway version is not sent when negotiating JWT token from API Platform.
+| AGW-1213 | When API Platform connectivity is lost and system is restarted, Client ID enforcement policy does not work anymore.
+| AGW-1213 | When API Platform connectivity is lost and system is restarted, Client ID enforcement policy does not work anymore.
+| AGW-1297 | Improve autodiscovery performance by making only one call to API Platform.
+| AGW-1320 | Double lifecycle invocation on app redeploy and runtime shutdown.
+| AGW-1330 | Improve requests to identify if runtime is running on CH.
+| AGW-1333 | Only one CORS policy is active when having two versions of the same API in one application.
+| AGW-1336 | Race condition when restarting from ARM.
+| AGW-1457 | When accumulating analytics events locally, it should be possible to place an upper limit on the database size.
+| AGW-1458 | Backport entry limits to Analytics cache.
+| AGW-1483 | Add S3 backup service provider to CH distribution.
+| AGW-1525 | Port Backon connection pool exhaust bug fix to v3.8.6.
+| AGW-1530 | Port fix about requesting platform policies right after deploying an application to v3.8.6.
+| AGW-1545 | Backport Gatekeeper last known state on CH to v3.8.6.
+| AGW-1556 | Avoid unnecessary wrapping of inbound endpoints with GatewayMessageSource.
+| AGW-1563 | SLA tiers change [agw-policy-watcher] warns about a policy direct modification.
+| AGW-1640 | S3 backup access forbidden to bucket.
+| AGW-1737 | API Gateway Agent does not work with proxy with authentication.
+| AGW-1740 | Port flexible Gatekeeper.
+| AGW-1741 | Port backup of policies and contracts on Cloudhub.
+| AGW-1772 | Error saving policy cache file when api name or version have invalid filename characters.
+| AGW-1780 | Analytic sending 200 when the flow ended with a 500.
+| AGW-1786 | Missing logs in CloudHub.
+| AGW-1809 | Apply backoff on IOException.
+| AGW-1816 | Change default level of Gatekeeper from "strict" to "flexible".
+| SE-7045 | DataWeave: Kryo serialization exception with DW exception in flatfile in batch step.
+| SE-6696 | DataWeave: Avoid StringIndexOutOfBoundsException  When converting an empty String to a Number.
+| SE-6886 | DataWeave: double escaping on large XML payloads.
+| SE-6441 | DataWeave: UTF-8 BOM mapping issue.
+| SE-6424 | DataWeave: Avoid leaking dw-buffer-input*.tmp files.
+| SE-5946 | DataWeave: Infinite loop when using array multi key value selector (.*) in CSV.
+| SE-5835 | DataWeave: Exception while transforming excel file.
+|===
+
+== Known Issues
+
+[%header,cols="15a,85a"]
+|===
+|Issue |Description
+| MULE-13174 | Subreceivers in AMQP begin to receive messages before the app is fully started.
+| MULE-13304 | Log exception that may occur in notification processing.
+|===
+
+== LibraryChanges
+
+[%header,cols="15a,85a"]
+|===
+|Issue |Description
+| EE-5792 | Upgrade Jackson to version 2.8.10.
+| MULE-12766 | Move from AHC (async-http-client) to Grizzly AHC (grizzly-http-client) version 1.14.
+| MULE-13176 | Upgrade commons-validator to 1.6.
+| MULE-13336 | Update Grizzly to version 2.3.33.
+| MULE-13443 | Upgrade CXF to 2.7.19-MULE-002 patch release.
+| MULE-14052 | Upgrade MVEL to 2.1.9-MULE-013 version.
+| MULE-14053 | Update commons-io to 2.6.
+| MULE-14144 | Upgrade Spring LDAP to 2.3.2.
+| MULE-14172 | Upgrade Jackson 1 to 1.9.14.
+| AGW-1340 | Release CORS Module 2.1.3.
+| AGW-1761 | Upgrade httpclient to 4.5.3 or newer.
+| AGW-1762 | Upgrade Jackson to 2.9.2.
+|===
+
+== Issues Impacting Migration
+
+N/A

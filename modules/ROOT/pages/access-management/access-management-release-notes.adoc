@@ -1,0 +1,303 @@
+= Anypoint Access Management Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: access-management-release-notes.adoc
+:keywords: release notes, access management, anypoint platform, permissions, entitlements, roles, users, administrator, gear icon
+
+== August 25, 2018
+*_Version 0.46.0_*
+
+MuleSoft supports using https://developer.salesforce.com/page/Identity[Salesforce Identity] as a SSO (single sign-on) provider with the https://openid.net/connect/[OpenID Connect] protocol. Salesforce is a https://openid.net/certification/[certified OpenID Provider].
+
+=== Deprecated Functionality
+
+* Deleted federated users are no longer able to sign in from the SSO login page. Organization administrators must re-enable deleted users before they can continue operations on Anypoint Platform.
+
+* You can't createa a Business Group name using special characters. Only the following characters are valid:
++
+** Letter
+** Number
+** Apostrophe
+** Space
+** Comma
+** Period
+** Hyphen
+** Underscore
+
++
+Existing Business Groups whose names contain special characters aren't affected.
+
+== November 18, 2017
+*_Version 0.29.0_*
+
+Access Management v0.29.0 enables external Anypoint users to create client applications on public API  portals. These external users will be shown under a New tab for external users in the Users section of the Access Management UI. This release also includes infrastructure changes that improve platform performance.
+
+=== Hardware and Software Requirements
+
+No change.
+
+=== Compatibility
+
+NA
+
+=== Deprecated Features or Functionality
+
+None.
+
+=== Resolved Issues
+
+None.
+
+=== Migration Guidance
+
+No migration required.
+
+== October 7, 2017
+*_Version 0.27.0_*
+
+Access Management v0.27.0 supports identity providers, such as Okta, that are compliant with the OpenID Connect Dynamic Client Registration protocol for API Client Management. You can now use these providers to protect API Gateways through a generic access token enforcement policy. This release also includes infrastructure improvements to help with performance. For more information, see the xref:access-management::managing-api-clients.adoc[client management documentation].
+
+== June 24, 2017
+*_Version 0.23.1_*
+
+Access Management v0.23.1 enhances the user experience for configuring external identity forms through tooltips and form validation mechanisms. It provides several infrastructure improvements. MuleSoft has also validated our OpenID Connect SSO solution with Okta, OpenAM, and Ping Federate.
+
+=== Hardware and Software Requirements
+
+No change.
+
+=== Compatibility
+
+NA
+
+=== Deprecated Features or Functionality
+
+None.
+
+=== Resolved Issues
+
+None.
+
+=== Migration Guidance
+
+No migration required.
+
+== May 6, 2017
+*_Version 0.22.0_*
+
+Access Management v0.22  supports OpenID Connect-compliant identity providers (IdPs) for Single Sign On to Anypoint Platform. Through a new UI for external identity configurations, this release also brings the client UI configuration forms for PingFederate and OpenAM into the platform.
+
+=== Hardware and Software Requirements
+
+No change
+
+=== Compatibility
+
+N/A
+
+=== Deprecated Features or Functionality
+
+The process for OAuth client management configuration is now self-serve through forms made available in the External Identity section of Access Management. The google forms for OpenAM and PingFederate configuration are now deprecated.
+
+=== Resolved Issues
+
+None
+
+=== Migration Guidance
+
+No migration required
+
+== January 14, 2017
+*_Version 0.18.0_*
+
+Access Management v0.18 adds a https://www.google.com/recaptcha/intro/index.html[no CAPTCHA reCAPTCHA] verification step in our xref:access-management::managing-your-account.adoc#how-to-create-your-account[sign up process].
+
+=== Hardware and Software Requirements
+
+No change.
+
+=== Compatibility
+
+NA
+
+=== Deprecated Features or Functionality
+
+None.
+
+=== Resolved Issues
+
+None.
+
+=== Migration Guidance
+
+No migration required.
+
+
+
+== November 19, 2016
+*_Version 0.17.0_*
+
+Access Management v0.17 is a minor release that addresses some marketing requirements in our platform.
+
+=== Hardware and Software Requirements
+
+No change.
+
+=== Compatibility
+
+NA
+
+=== Deprecated Features or Functionality
+
+None.
+
+=== Resolved Issues
+
+None.
+
+=== Migration Guidance
+
+No migration required.
+
+
+== October 22, 2016
+*_Version 0.16.0_*
+
+Access Management v0.16 allows *Organization administrators* and *Audit Log Viewers* to view entitlement changes to their organization from the xref:access-management::audit-logging.adoc[Audit Logs UI].
+
+Additionally, Access Management now supports Ping Federate v8.2.1.1 for xref:access-management::external-identity.adoc[External Identity].
+
+
+=== Hardware and Software Requirements
+
+No change.
+
+=== Compatibility
+
+NA
+
+=== Deprecated Features or Functionality
+
+None.
+
+=== Resolved Issues
+
+None.
+
+=== Migration Guidance
+
+No migration required.
+
+
+
+== September 24, 2016
+*_Version 0.15.0_*
+
+Access Management v0.15 improves the user invitation experience and allows users to accept organization invitations with an existing Anypoint username.
+
+If a user has different usernames associated with an email address and receives an invitation to a new organization, the user is now given the option to accept the invitation with any one of her existing accounts, thereby,  associating the selected username with this new organization. +
+If the selected username is already associated with another Anypoint organization, the user is then given the option to detach this username from the existing organization. If she is the only user in that org, she is also given the ability to delete that organization as usernames must remain unique across all Anypoint organizations. At any stage in the invite process, she can always chose to create a new username.
+
+=== Hardware and Software Requirements
+
+No change.
+
+=== Compatibility
+
+NA
+
+=== Deprecated Features or Functionality
+
+None.
+
+=== Resolved Issues
+
+None.
+
+=== Migration Guidance
+
+No migration required.
+
+
+== August 27, 2016
+*_Version 0.14.0_*
+
+The Access Management V0.14.0 release makes minor improvements to Anypoint Platform's notifications about your Trial subscription period.
+
+If you are in your 30 day trial period, you can see the expiration date under the *Subscription* section in the Access Management UI. After your trial period expires your account will be converted to a “Free” subscription tier where you will lose the ability to deploy apps and APIs along with other Enterprise functionality within Anypoint Platform. +
+You will still be able to login to your account.
+
+=== Hardware and Software Requirements
+
+No change.
+
+=== Compatibility
+
+NA
+
+=== Deprecated Features or Functionality
+
+None.
+
+=== Resolved Issues
+
+None.
+
+=== Migration Guidance
+
+No migration required.
+
+== June 25, 2016 Release
+*_Version 0.13.0_*
+
+The Access Management V0.13.0, is a minor release that fixes a few bugs improving the platform's performance.
+
+=== Hardware and Software Requirements
+
+No change.
+
+=== Compatibility
+
+NA
+
+=== Deprecated Features or Functionality
+
+None.
+
+=== Resolved Issues
+
+None.
+
+=== Migration Guidance
+
+No migration required.
+
+== May 14, 2016 Release
+*_Version 0.12.0_*
+
+The Access Management V0.12.0, is a minor release that makes the Audit Logs UI a GA functionality. Using this UI users can query and filter Audit logs.
+
+=== Hardware and Software Requirements
+
+No change.
+
+=== Compatibility
+
+NA
+
+=== Features and Functionality
+
+Audit Logs UI for Anypoint Platform: Changes made by users within an Anypoint Platform organization are logged through an audit logging service. You can now access the data logs through the  Audit Logs UI under Access Management  or by leveraging the Audit Logging Query API. See Audit Logs.
+
+=== Deprecated Features or Functionality
+
+None.
+
+=== Resolved Issues
+
+None.
+
+=== Migration Guidance
+
+No migration required.

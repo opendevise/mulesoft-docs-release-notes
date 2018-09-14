@@ -1,0 +1,56 @@
+= Runtime Manager 1.4.1 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: runtime-manager-1.4.1-release-notes.adoc
+:keywords: arm, runtime manager, release notes
+
+The Anypoint Runtime Manager, V1.4.1, is a minor release that officially GAs Unified Alerts for Cloud & Hybrid deployments. Runtime Managers (hybrid) users now have the alerts functionality and existing cloud users now have a global view of all their alerts.
+
+
+
+== Hardware and Software Requirements
+
+No change.
+
+== Compatibility
+
+
+Agent plugins integrations is compatible with the following runtime versions:
+
+[cols="2*a"]
+|===
+|Mule | 3.6.x and above.
+|Availability | Cloud only.
+|API GateWay | 2.x and above for API Analytics
+|Runtime Manager Agent | 1.2.0 and above. However it is recommended that you use the latest version of Agent. Click xref:runtime-manager-agent/runtime-manager-agent-1.4.0-release-notes.adoc[here] for the latest version of Agent.
+|===
+
+
+
+== Features and Functionality
+
+
+* *Unified Alerts for Cloudhub + Anypoint Runtime Manager*: Unified event based alerts for CloudHub and Runtime Manager. It enables IT Operations users to have the ability to proactively monitor several incidents. Support for business groups enables admins to manage read & write access to alerts. See xref:runtime-manager::alerts-on-runtime-manager.adoc[Alerts on Runtime Manager].
+
+* *Support for static IP addresses*: Agent can now support specific static addresses. See link:/runtime-manager/installing-and-configuring-mule-agent#ports-ips-and-hostnames-to-whitelist[static IP addresses].
+
+
+
+== Deprecated Features or Functionality
+
+None.
+
+== Resolved Issues
+
+None.
+
+== Migration Guidance
+
+No migration required.
+
+== Known Issues
+
+* An application running on a cluster or group may not be able to send an alert when one or more of its nodes restarts. If an alert is triggered while a node is restarting, the alert will not be sent even if the node successfully comes back online.
+* Application with the same names deployed on different servers do not have a clear distinction while setting up alerts.
+* When a server group or cluster is deleted, any alerts associated with it *_need to be removed at the same time_*. If the Alerts aren't deleted, they will NOT be triggered.

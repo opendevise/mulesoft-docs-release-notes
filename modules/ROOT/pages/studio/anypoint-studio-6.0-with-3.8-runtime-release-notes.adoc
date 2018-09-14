@@ -1,0 +1,486 @@
+= Anypoint Studio 6.0 with Mule Runtime 3.8.0 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: anypoint-studio-6.0-with-3.8-runtime-release-notes.adoc
+
+*May 16, 2016* +
+*Build ID: 201605161739*
+
+<<migration,Skip to Migration Guide>>
+
+== Compatibility
+
+[cols="30a,70a"]
+|===
+|*Mule Runtime*
+|Version: 3.8.0
+
+|*Anypoint Studio*
+|Version: 6.0.0 +
+Build Id: 201605161739
+
+|*APIkit*
+|Versions:  3.8.0 - 1.7.3 - 1.6.2 - 1.5.3
+
+|*DataWeave* +
+|Version: 1.1.0
+
+|*MUnit* +
+|Version: 1.2.0 , 3.6.3, 3.7.3, 3.8.0 (mule-munit-support), 1.2.0 (munit-studio-plugin)
+
+|*SAP Connector*
+|Versions: 3.0.0
+|===
+
+
+== What's New
+
+This release incorporates major improvements around Studio’s support for the API development lifecycle, incorporating more seamless integration between Studio and API Designer, expanding support for APIkit, and unifies the API Gateway runtime with the core Mule runtime. These capabilities include:
+
+* Seamlessly navigate between API designer and Studio by synchronizing (pull, push, compare) your APIs
+* Ability to register your APIs in API Manager from within Studio
+* Ability to select an API from API Manager to implement from within Studio
+* Support for SOAP APIs in APIkit
+* An enhanced New Project wizard which supports both REST and SOAP API implementation
+* Browse for WSDLs and RAMLs in Exchange to consume APIs in HTTP and WS Consumer
+* An Early-Access version of RAML 1.0 support to help users explore newly-released RAML 1.0 features and create / edit API definitions and implement flows using APIkit
+
+In addition to these API-related functionalities, Studio also includes many other improvements:
+
+* More detailed data for debugging on some connectors, such as HTTP and Database
+* Improved error messages, which allow you to clearly see where the error is coming from and click to navigate to that point in the flow
+* DataWeave now includes supports for new file formats, allowing you to read and write fixed-width and other flat files using DataWeave. The structure of these files can be easily defined via a new xref:3.8@mule-runtime::dataweave-flat-file-schemas.adoc[Flat File Definition file] format. You can also import COBOL Copybook files into this schema format using Studio (Early Access). Finally, if you have previous DataMapper transformations, you can use the xref:3.8@mule-runtime::dataweave-migrator.adoc[migration tool] to convert them to DataWeave transformations now.
+* The xref:3.8@mule-runtime::dataweave-language-introduction.adoc[DataWeave language] also adds several new xref:3.8@mule-runtime::dataweave-operators.adoc[operators].
+* DataWeave functions can now be called from other Mule components via a second MEL function, called xref:3.8@mule-runtime::mel-dataweave-functions.adoc#split[split].
+* MUnit now can run multiple suites, and allow link:/munit/v/1.2.0/using-munit-in-anypoint-studio#running-a-tests-inside-a-folder[nested folders for tests]. Users can also now create MUnit link:/munit/v/1.2.0/munit-maven-support#coverage[coverage reports from inside Studio]. We have also added autocompletion support for MUnit’s MEL functions and metadata support to MUnit message processors
+* Metadata support to MUnit message processors
+
+SAP R/3 Business Suite Connector v3.0.0:
+
+* Support of MEL expressions to define JCo Client Extended Properties.
+* Enhancement of DataSense to display additional information. For Functions and BAPIs, it is now possible to identify tables and structures, optional and required fields, the 'real' data type  associated with them (such as Char, Number), their length and a description. For IDocs, segments are also clearly labeled.
+
+This release also provides support for all the new capabilities in Mule 3.8, which are found in the xref:mule-runtime/mule-3.8.0-release-notes.adoc[Mule 3.8 release notes].
+
+== Hardware Requirements
+
+* 4GB of free memory available
+* 2GHz CPU
+* 10GB free hard drive space
+
+== Software Requirements
+
+[cols="30a,70a"]
+|===
+|Java Environments |* Oracle JDK 1.8.0 +
+* Oracle JDK 1.7.0
+|Operating Systems |* MacOS 10.10.0 +
+* Windows (32- and 64-bit) Windows 7, Windows 8, Windows 10 +
+* RHEL 7.0 +
+* Ubuntu 15.04 or later
+|Suggested Web Browsers by Platform. +
+_Studio will always use the OS default web browser_ | * Windows: +
+** Microsoft Edge 25.0  +
+** Internet Explorer 11 +
+* Linux +
+** Mozilla Firefox 46.0  +
+* OS X +
+** Safari 9.1
+|===
+
+
+[NOTE]
+--
+If you are installing Anypoint Studio on a Mac computer with OS X that has no Java installed, the OS may require that you first download and install http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase6-419409.html[JDK 1.6]. Install JDK 1.6 first and then install JDK 1.7.
+--
+
+[NOTE]
+--
+If you are running McAfee VirusScan on your Windows OS, Eclipse-based Anypoint Studio may experience negative performance impacts. McAfee has suggested the following remedy https://kc.mcafee.com/corporate/index?page=content&id=KB58727[options].
+--
+
+== Known Issues
+
+* Early-Access support to RAML 1.0 is meant for our customers to explore the newly released RAML 1.0 specification. RAML 1.0 Early-Access support gaps for MuleSoft products are documented xref:platform/raml-1-early-access-support.adoc[here]
+* When running an MUnit test over Windows without admin right,  you may find a `could not load library jansi` error. This is due to jar file that log4j uses that tries to use this dll library and if it can not find it then it tries to create it under `java.io.tmpdir` system property. +
+If the user do not have write permissions to that directory which Windows always returns as `C:\Windows` it will fail. The workaround is to overwrite that property in the lunch configuration: +
+`Djava.io.tmpdir=D:\Users\myUserName` or run Studio as an Administrator
+* Studio 6.0 does not support the following Mule 3.8 features: +
+** RecordVars and record payload should be editable in a commit block.
+** Object Store support gaps around Idempotent Redelivery Policy, Aggregators and DevKit token manage.
+* Create JSON metadata from example does not support Big Integers
+* When importing a zipped project related to the API Gateway's default domain (for example, proxies generated from API Platform), if the domain project does not exist in the workspace already, there is a chance that it will be generated incorrectly, resulting in an entry in the Package Explorer like `api-gateway_2_0_3 : `. +
+The workaround is to delete the corrupt domain project and right click in the imported project -> *Mule* -> *Associate with API Gateway domain*, until the project is generated correctly displaying, for example, `api-gateway_2_0_3 : api-gateway`.
+* When changing API Platform environments from production to another environment, Studio would try to update offline projects, showing connection error marker. The workaround is to use different workspaces for each environment so that there will no be problem with users authentication.
+* In the API Sync View, when clicking on _refresh_ option and having selected one project, the expected behavior is to refresh only that project, However, it is refreshing all projects.
+* When uploading an entire API from Studio, it takes more than one automatic synchronization job to see files and folders decorators correctly.
+* Folder decorators are not being shown correctly when users eliminate them. It shows them as modified and not as eliminated.
+* When creating a new project with an invalid raml zip, Studio does not copy those files to the workspace.
+
+
+[[migration]]
+== Migration Guide
+
+From the previous versions of Studio 5.1.0, 5.1.1, 5.2.0, 5.2.1, 5.3.0, 5.4.1, 5.4.2 and 5.4.3, there is no special migration needed, but when opening a previous workspace with projects that were created with Studio 5.1.0 or older, and which has metadata stored in disk, Studio asks you to perform an update to all the projects so that the Metadata Manager can handle the types and to show the types in your project.
+
+
+[TIP]
+====
+If you are migrating from Studio 5.x to Studio 6, *you need to perform a clean install of Studio* . +
+
+You can easily import all of the external components that you had installed in your old version of Anypoint Studio through a single action. This includes connectors, runtimes, and any other type of extension added through the Anypoint Exchange or the ​*Help -> Install new software*​ menu, as long as there are no compatibility restrictions.
+
+Do this by selecting *File->Import* and then choose *Install->From existing installation*.
+
+image::studio/import-extensions.png[import]
+
+Then specify the location of your old version of Anypoint Studio in your local drive.
+====
+
+== Eclipse Plugin
+
+If you are using Studio as an Eclipse plugin, you can get this version of Studio using the Eclipse update site `+http://studio.mulesoft.org/r5/plugin+`.
+
+This allows you to download Anypoint Studio core and third-party components version 6.x.x and with an embedded version of Mule Runtime v3.8.x along with other optional components. +
+For a detailed description of the update site's content visit the xref:6@studio::studio-in-eclipse.adoc#available-software-in-the-update-site[Studio in Eclipse] section.
+
+== JIRA Ticket List for Anypoint Studio
+
+=== New Features
+
+* STUDIO-7415 - [API Design to Implementation] Add ability to pull/push APIs from Studio to the Platform
+* STUDIO-7416 - [API Design to Implementation] Add API file synchronization information in a new view
+* STUDIO-7417 - [API Design to Implementation] Add visual diff between local/remote API files
+* STUDIO-7443 - [API Design to Implementation] Implement API from API Manager
+* STUDIO-7454 - [DW-UI] Improve remove mapping experience
+* STUDIO-7482 - Add new field "Expiration Time" to SAP global config
+* STUDIO-7512 - Simplified Fixed Width configuration experience
+* STUDIO-7513 - Generate flat file schema from Copybook
+* STUDIO-7584 - Bundle Anypoint MQ connector
+* STUDIO-7598 - [API Design to Implementation] Add ability to create an API from Studio and upload it to the platform
+* STUDIO-7599 - [RAML1.0] Implement JSON and XML types propagation in DataSense
+* STUDIO-7612 - [RAML1.0] Validate examples against declared types/schemas
+* STUDIO-7632 - [ApiKit for SOAP] Merge APIKit and APIKit for SOAP plugins
+* STUDIO-7633 - [ApiKit for SOAP] Create unified RAML/WSDL UX for New Project wizard
+* STUDIO-7634 - Update eclipse platform target to 4.5.2
+* STUDIO-7700 - Timezone attribute in Quartz connector and scheduler module
+* STUDIO-7703 - When exporting a mule application with raml files, the src/main/api folder should be at root level
+* STUDIO-7802 - [DW-UI] Create format screen for each type in fixed width
+* STUDIO-7866 - Add support for configuring queryTimeout in db operations
+* STUDIO-7867 - Add support for knownHostsFile attribute in sftp endpoint
+
+=== Bug Fixes
+
+* STUDIO-2461 - In the SOAP dialog box, when operation is set to JAX-WS client, no browse button exists for setting the client class
+* STUDIO-4825 - New Database: bulk execute operation does not have a default value in the radio button
+* STUDIO-5680 - New Containers: when drag and drop a inbound endpoint from the composite source the process area the MP disappears from the canvas
+* STUDIO-5702 - Changing field value doesn't mark file as unsaved
+* STUDIO-5833 - Wrong background color in certain components
+* STUDIO-5969 - User is able to drop any kind of message processor inside a choice-exception-strategy
+* STUDIO-6551 - Create new RAML file doesn't add ".raml" extension if the file name ends with RAML
+* STUDIO-6931 - Debugger: Problem displaying where debugger stops when debugging mapping exception strategies
+* STUDIO-7064 - When 2.0.0+ GW runtime is not installed in studio you can not choose between 1.3.2 GW or 3.7.2 ESB runtimes
+* STUDIO-7116 - When copying and pasting flows with choices, the choice condition is not copied
+* STUDIO-7210 - Outline view does not work after going to the XML view.
+* STUDIO-7264 - Mule properties tab shows description label of unselected MP.
+* STUDIO-7405 - Munit and Breakpoint icons are superimposed in light theme
+* STUDIO-7429 - Studio fails to find flow in imported xml
+* STUDIO-7445 - [Palette] After searching in palette profile preferences, categories are expanded.
+* STUDIO-7472 - Problem with copy paste on canvas
+* STUDIO-7491 - [Palette] Palette view goes blank when creating a project.
+* STUDIO-7504 - DataSense is not propagated in flows generated by ApiKit.
+* STUDIO-7546 - Inconsistency in errors messages when no operation is selected in Connectors
+* STUDIO-7562 - [D2I] Filter search does not work properly
+* STUDIO-7563 - [D2I] Api results should be sorted by name - A to Z.
+* STUDIO-7567 - [D2I] Creating a project using API Platform, it doesn't retrieve existing API files properly
+* STUDIO-7587 - High memory usage when redeploying an app while the debugger is running (in Studio 5.4.1 + Mule 3.7.3)
+* STUDIO-7588 - Studio freezes and crashes in version 5.4.1
+* STUDIO-7590 - [RAML1.0] It's not possible to parse RAML files with includes from URLs.
+* STUDIO-7597 - Lists are being display as Maps instead of Arrays
+* STUDIO-7608 - Shorcut to open inspect window is not working.
+* STUDIO-7621 - Anypoint Studio is Crashing
+* STUDIO-7622 - SOAP Component in Anypoint Studio 5.3 version misses "Service Class" tab when the operation is Simple Client
+* STUDIO-7625 - [DW-UI] Dataweave List of Script Errors is keep increased
+* STUDIO-7626 - DW Grammar in Studio is not supporting nested functions after map operator
+* STUDIO-7628 - When creating a new element on canvas, the mule properties view shows the properties of the previously created element
+* STUDIO-7635 - Problem Importing projects with older versions of CCs
+* STUDIO-7636 - Studio + Dataweave - Cannot reset preference to delete associated resources
+* STUDIO-7638 - Wrong validation on threadWaitTimeout
+* STUDIO-7639 - Maven Populate Repo action shouldn't overwrite existing artifacts in local repo
+* STUDIO-7642 - Studio fails to import proxies generated by API Platform
+* STUDIO-7647 - [DW-UI] Drag and Drop does not add As expression in Java collection
+* STUDIO-7648 - Function keys no longer working when switching perspectives
+* STUDIO-7650 - Properties in mule-app.properties with double quote
+* STUDIO-7652 - Project import does not pick up correct runtime version
+* STUDIO-7654 - When typing a Mel expression, focus is lost by autocompletion.
+* STUDIO-7673 - Change labels for Flow generation to Generate flows from RAML and Generate from WSDL
+* STUDIO-7676 - Autocomplete doesn't work with <tracking:meta-data/>
+* STUDIO-7681 - Apikit router does not have Refresh Metada link.
+* STUDIO-7682 - NPE when opening CXF Editor
+* STUDIO-7685 - "Generate SOAP Flows" option should not be selectable if project does not use ApiKit
+* STUDIO-7686 - New icon and image for the API Sync window
+* STUDIO-7687 - Add a progress bar when loading APIs from Platform
+* STUDIO-7688 - Folder decorator is not correctly shown if it is empty.
+* STUDIO-7689 - Sync between Studio and Platform is not working properly.
+* STUDIO-7690 - Existing API without RAML file should not be selectable from Studio
+* STUDIO-7691 - [Apikit for SOAP] http bindings must not appear as an option in the wizard
+* STUDIO-7692 - [Apikit for SOAP] metadata options disappears once you lost focus on any of them using the SOAP Fault message processor
+* STUDIO-7693 - Opening a file inside of a folder in Api Sync , a NPE is thrown.
+* STUDIO-7697 - Deprecate global HTTP Response builder element in Mule 3.7.x and 3.8+
+* STUDIO-7698 - File created in Platform cannot be opened from Api Sync
+* STUDIO-7702 - Sync from project does not work when renaming and deleting files.
+* STUDIO-7704 - Studio performance is affected using some Apikit for soap projects
+* STUDIO-7706 - Disable download / upload options in Api Sync menu when correspond.
+* STUDIO-7708 - Compare files option is not working multiple times.
+* STUDIO-7709 - DataWeave: default window Size is too small (Windows OS)
+* STUDIO-7712 - Project import does not pick up project name specified in mule-project.xml from a .zip file
+* STUDIO-7714 - NPE when trying to push or pull API from package explorer
+* STUDIO-7715 - NPE when changing user in API Manager for APis window.
+* STUDIO-7718 - Remove Service Autodiscovery (deprecated) Global Configuration from Studio.
+* STUDIO-7719 - [Apikit for SOAP] Add feedback in the SOAP Router when adding an invalid WSDL file
+* STUDIO-7721 - Improve Copybook type definition window
+* STUDIO-7725 - [Apikit for SOAP] Studio can't manage WSDL with references at same level or higher
+* STUDIO-7726 - Download API action copies the API file into an incorrect project
+* STUDIO-7727 - Download API action must update the StatusNode
+* STUDIO-7728 - [Apikit for SOAP] SOAP fault editor is broken
+* STUDIO-7729 - [Apikit for SOAP] Error when deleting wsdl reference from SOAP router
+* STUDIO-7730 - [6.0 beta BUG-001] Reference to a bean raises incorrect error message.
+* STUDIO-7731 - [Apikit for SOAP] Changes in Enable DataSense checkbox in SOAP Router not saved
+* STUDIO-7736 - Test Connection is not working due to the Merge with APIKit for SOAP
+* STUDIO-7739 - FollowRedirects attribute is true by default
+* STUDIO-7743 - Api Sync view goes blank when user authentication expires.
+* STUDIO-7744 - Folder decorators are being shown synchronized in Api Sync view when they are not.
+* STUDIO-7745 - [Deploy to AMC] Change file maximum size allowed to upload to 209715200 bytes
+* STUDIO-7746 - Error is thrown when refreshing a not connected project.
+* STUDIO-7748 - Deleting file from Platform, API sync view goes blank.
+* STUDIO-7749 - Compare tab is opened multiple times
+* STUDIO-7754 - Metadata not saved due to NullPointer on MetadataDefinitionCustomPage.java:281
+* STUDIO-7758 - Delete decorators over folders are not shown in Apy Sync
+* STUDIO-7761 - Error markers are not updated after saving changes without errors.
+* STUDIO-7772 - Api Compare view should only open once.
+* STUDIO-7775 - Refresh Metadata in Web Service consumer is not working
+* STUDIO-7776 - Disable download / upload options from menu when no project is selected.
+* STUDIO-7778 - Api sync view is not updated when deleting projects from package explorer
+* STUDIO-7779 - [RAML1.0] Raml editor does not validate in every change.
+* STUDIO-7780 - [RAML1.0] Autocomplete is lost after deleting any tag
+* STUDIO-7782 - [RAML1.0] There is not autocompletion when starting to type
+* STUDIO-7783 - [RAML1.0] Single and Multiple inheritance is not being parsed.
+* STUDIO-7787 - Conflict files cannot be uploaded or downloaded.
+* STUDIO-7788 - [RAML1.0] Properties with same name generates conflict in union type definition
+* STUDIO-7789 - [RAML1.0] Change autocompletion behavior for new RAML files
+* STUDIO-7793 - [Apikit for SOAP] Scaffolder only works for existing configurations
+* STUDIO-7794 - [RAML1.0] Raml editor does not validate included files existence
+* STUDIO-7795 - [RAML1.0] URL params are not being generated using RAML 1.0 files in HTTP Request
+* STUDIO-7796 - Autocompletion is displaying scala functions
+* STUDIO-7798 - DataWeave: can not create Metadata with copybook samples
+* STUDIO-7799 - [ApiKit] Introspecting a RAML file with spaces throws an exception
+* STUDIO-7800 - Selecting Flow-Ref hangs due to infinite loop
+* STUDIO-7801 - WSDL urls are not being parsed in Windows.
+* STUDIO-7808 - Modifying the display name of the flow or MP does not update the canvas
+* STUDIO-7809 - Fixed Width: DW runtime errors are not shown when opening the Preview
+* STUDIO-7810 - FixedWidth: text gets visually cut when editing the field name
+* STUDIO-7811 - FixedWidth: can not change the type of a Field
+* STUDIO-7813 - Fixed Width: there is no error when the schema is not configured in the Reader
+* STUDIO-7814 - Fixed Width: remove unused attributes from reader settings
+* STUDIO-7816 - [DW] Using expressions as child in objects is generating some slowness in the parsing
+* STUDIO-7817 - NPE thrown when using a logger with a MEL
+* STUDIO-7819 - Fixed Width: Improvements for Layout when defining type
+* STUDIO-7820 - Fixed Width: problem with boolean editor when defining type
+* STUDIO-7821 - Fixed Width: format pattern checkbox selection lost when editing the Metadata
+* STUDIO-7822 - Fixed Width: when defining the type and deleting a key the format button is left behind
+* STUDIO-7823 - Metadata: problem with Refresh Type
+* STUDIO-7825 - Fixed Width editor: when clicking on the button to format the type it always open in String
+* STUDIO-7826 - Fixed Width: when changing the type combo with the keyboard it takes too long to render
+* STUDIO-7828 - Fixed Width: date and datetime format is not saved in the schema
+* STUDIO-7834 - Changes in the Authentication preferences does not upload Api Sync view
+* STUDIO-7836 - Network is unreachable error when trying to retrieve APIs without Internet.
+* STUDIO-7837 - Token field cannot be erase when editing it.
+* STUDIO-7838 - Disable all buttons when there is any project or file selected.
+* STUDIO-7839 - Not connected projects can be expanded in the API view
+* STUDIO-7840 - When deleting current sync user, Api sync view goes blank.
+* STUDIO-7841 - Files cannot be deleted from Studio to Platform.
+* STUDIO-7842 - Deleting same file from Platform and Studio, generates wrong file status
+* STUDIO-7843 - Local folders with same name, generates wrong folder structure in the Api Sync view
+* STUDIO-7844 - Package explorer does not get updated after syncing it with the Api Sync view.
+* STUDIO-7845 - Cannot upload an entire API from Studio to Platform into one request.
+* STUDIO-7848 - [SE-3403] DataSense fails with ClassCastException
+* STUDIO-7850 - FlatFiles: NPE thrown when generating Script
+* STUDIO-7851 - Display name isn't updated unless I switch to XML view
+* STUDIO-7852 - When importing API that uses a domain, the domain is generated without listeners.
+* STUDIO-7855 - When using autodiscovery on Mule 3.8.0 or later, Studio displays incorrect warning about missing ID.
+* STUDIO-7857 - [D2I] Changes on the workspace should be reflected on the view as soon as they are made.
+* STUDIO-7859 - Provide better validation messages in HTTP request.
+* STUDIO-7860 - When importing API with domain, wrong Runtime is assigned.
+* STUDIO-7868 - Errors in the the ".repository" folder should not be shown in Problems view.
+* STUDIO-7872 - [RAML1.0] Custom media types are shown as not valid in Raml 1.0
+* STUDIO-7877 - [RAML1.0] Error markers are not displayed correctly when they come from included files
+* STUDIO-7879 - Inconsistency in errors messages when method field is empty in HTTP Request
+* STUDIO-7880 - Metadata Dialog: resize the window so that it doesn't cut the Fixed Width table
+* STUDIO-7881 - Metadata Dialog: you are able to delete and select a type when nothing is selected
+* STUDIO-7883 - FlatFiles: when using an schema with no structures and with segments, the list of segments should be shown when creating the metadata
+* STUDIO-7884 - Fixed Width: key names are shown twice in the tree
+* STUDIO-7885 - FlatFiles: NPE when selecting metadata
+* STUDIO-7886 - Problem with import
+* STUDIO-7888 - Metadata dialog: in Windows the default size it's too small
+* STUDIO-7889 - Fixed Width: In Windows the default format window is too small and can not be resized
+* STUDIO-7890 - Fixed Width: when setting the metadata in the input the Schema property in the reader should be set
+* STUDIO-7891 - Fixed Width: when the schema location is not valid you get a java.io.IOException: Stream closed error
+* STUDIO-7892 - Metadata: Input tree not refreshed when modifying type from the output tree
+* STUDIO-7893 - NPE when moving a mp into a choice
+* STUDIO-7894 - Deleting a mp inside of a choice mp, the arrow line is not deleted.
+* STUDIO-7895 - Hover selector is not deleted when undoing hovered component.
+* STUDIO-7896 - NPE when MP retrieving metadata and closing its editor
+* STUDIO-7897 - IndexOutOfBounds exception when moving MP's from a flow to a subflow
+* STUDIO-7898 - Invalid thread access studio import
+* STUDIO-7900 - Custom Metadata Definition: can't resize CSV window on Windows
+* STUDIO-7901 - Copybook: Preview is not being shown in the Metadata definition Window
+* STUDIO-7902 - Copybook: when setting the type in DW the schema path is not added
+* STUDIO-7908 - Custom Metadata Definition: Copybook schema file and structure identification lost
+* STUDIO-7909 - [DW-UI] Script is throwing an error if the namespace used is not defined
+* STUDIO-7910 - Custom Metadata: Flat File metadata configuration lost
+* STUDIO-7912 - Connector-Ref field is constantly filled with Unknown global element
+* STUDIO-7913 - src/main/api folder is not refreshed when creating a new project sync with Platform
+* STUDIO-7914 - Upload the entire project option does not work if the api.raml is involved.
+* STUDIO-7917 - [RAML1.0] Raml editor should show error when having duplicated types
+* STUDIO-7918 - Deploy to CH when using API Gateway app is incorrect due to mandatory properties not being populated.
+* STUDIO-7919 - Manage Metadata Types: the type is not refreshed in the tree when saved
+* STUDIO-7920 - Api files from platform are not copied to Studio if the api.raml file has errors
+* STUDIO-7926 - Studio decorates projects that are not mule projects
+* STUDIO-7927 - Add BETA label to Copybook and Flat Files format
+* STUDIO-7929 - Flat Files: When using Structures the Metadata should be a MAP when using Segments it should be a List
+* STUDIO-7931 - Studio light theme does not work when unknown elements are in the canvas
+* STUDIO-7933 - [RAML1.0] Studio does not copy to the project the referenced files when using 'uses'
+* STUDIO-7934 - Studio UI - studio 5.4.3 build id 201603290717 user cannot use UI
+* STUDIO-7935 - Wrong decorators in Api Sync view when uploading an api folder
+* STUDIO-7936 - DW: Problem with Sample Data editor
+* STUDIO-7937 - Enable always the refresh button in the Api Sync view
+* STUDIO-7938 - Wrong status in Api sync view when manual and automatic sync job are triggered at the same time
+* STUDIO-7942 - Classpath isolation is not working when retrieving metadata
+* STUDIO-7943 - Flat File: Stream closed error in preview does not give any clue of what is the issue
+* STUDIO-7946 - Flat File: Problem with Slash Bar in Flat File metadata across different OSs
+* STUDIO-7953 - FlatFiles encoding setting is not being shown in reader configurations
+* STUDIO-7959 - DW: Problem with spacing and Warning icon in input tree
+* STUDIO-7960 - [DW-UI] Set Metadata is not cleaning the reader properties
+* STUDIO-7962 - [DW-UI] Clear metadata is not deleting previous properties
+* STUDIO-7965 - D2I's url must be selected from Preferences page
+* STUDIO-7968 - Remove "Connect API Manager" option from the right click menu.
+* STUDIO-7969 - Filter *.meta files from Api Sync view
+* STUDIO-7970 - Change label's name for upload and download option from right click menu in Api Sync view.
+* STUDIO-7971 - Empty api.raml file not created in src/main/api
+* STUDIO-7972 - api.properties file not created in an empty apikit project
+* STUDIO-7984 - Fixed Width metadata editor fails on load metadata without format configuration
+* STUDIO-8000 - NPE opening HTTP request view when referencing a invalid RAML file
+* STUDIO-8001 - HTTP Request operation's parameters are not being automatically generated.
+* STUDIO-8002 - HTTP Request parameters are being deleted when opening HTTP view.
+* STUDIO-8003 - Filter .repository folder when selecting raml files in HTTP Request.
+* STUDIO-8007 - Metadata should be shown without ordering in Metadata definition
+
+=== Improvements
+
+* STUDIO-6811 - [Custom Metadata Definition] Should support wrap existing types in a collection
+* STUDIO-7292 - Upgrade SAP to latest version of connector
+* STUDIO-7464 - Add a checkbox field to show only the latest Anypoint Connector Dependencies
+* STUDIO-7543 - DataWeave: add separation line between script and toolbar in the Sample Data Editor
+* STUDIO-7585 - Simplify Flat File schema definition format
+* STUDIO-7663 - Project import does not pick up project name specified in mule-project.xml
+* STUDIO-7674 - Add pin option to Mule inspect window.
+* STUDIO-7677 - Operation selection dropdown should have type-ahead functionality
+* STUDIO-7683 - Remove Refresh link for MPs without metadata
+* STUDIO-7699 - [DW-UI] Improve sample data creation behavior
+* STUDIO-7710 - [DW-UI] adding option to provide sample file when creating fixed width metadata
+* STUDIO-7722 - Change Choice default box design for the S.Gather async box design
+* STUDIO-7733 - [DW-UI] Drag and drop for elements inside list should take the first element if there is not map action
+* STUDIO-7737 - [D2I] Remove pull and push options from Package Explorer
+* STUDIO-7740 - [DW-UI] Improving autocomplete for filter selector
+* STUDIO-7771 - Improve message processor path calculation in order to improve performance
+* STUDIO-7791 - Add placeholder in the Connector Configuration field
+* STUDIO-7792 - Fix domain deploy properties file
+* STUDIO-7803 - Remove the "Enable DataSense" checkbox from editors
+* STUDIO-7812 - Add an go to option in the right click menu on the flow-ref mp.
+* STUDIO-7829 - Add placeholders when there are not values in the credentials and organization fields
+* STUDIO-7831 - Eliminate wrong error maker in authentication preference page
+* STUDIO-7833 - Add placeholder in credential field when you are not logged in with any user.
+* STUDIO-7846 - Even a Apikit project does not have a valid zip, copy zip files into the project.
+* STUDIO-7854 - Ask for credentials before you can open the APIs manage window
+* STUDIO-7858 - Improve manage metadata capabilities and select metadata editor
+* STUDIO-7869 - [RAML1.0] Add missing header validation in raml files
+* STUDIO-7878 - Anypoint Studio - HTTP Connector (any connector) - XML Config auto import issue
+* STUDIO-7915 - Show the automatic sync job only when it really refreshes files on the projects
+* STUDIO-7939 - Add a pop up when trying to delete the api.raml file and upload it to Platform.
+* STUDIO-7940 - Add an processing icon in the Api Sync view
+* STUDIO-7967 - Automatically selection of the API which has just been created.
+
+=== Tasks
+
+* STUDIO-7481 - Add new URI in API Manager configuration
+* STUDIO-7741 - Change SOAPKit scaffolder api calls, to provide domains support
+* STUDIO-7958 - Upgrade SAP libraries to 3.0.0
+* STUDIO-7964 - Create 3.8.0 CE runtime plugin
+* STUDIO-7996 - Enable right-click > "Associate API Gateway domain" for 3.8.x projects
+
+=== Stories
+
+* STUDIO-7594 - [RAML1.0] APIKit Editor support for RAML 1.0
+* STUDIO-7595 - [RAML1.0] HTTP Request support for RAML 1.0
+* STUDIO-7596 - [RAML1.0] RAML Editor support for RAML 1.0
+* STUDIO-7602 - [RAML1.0] Show error markers
+* STUDIO-7603 - [RAML1.0] Provide suggestions in RAML editor
+* STUDIO-7609 - Please remove all mentions to XML version from SAP connector editors
+
+
+== JIRA Ticket List for DataWeave
+
+=== Bug Fixes
+
+* MDF-107 - lookup function should only be executed once
+* MDF-145 - Dataweave - multiple outputs do not use original input payload in subsequent steps.
+* MDF-148 - DataType in lookups are wrong
+* MDF-150 - Weave fails if the /tmp dir doesn't exist
+* MDF-151 - Flow Ref Not Working with json
+* MDF-153 - Attributes are not persisted between function calls
+* MDF-169 - Iterators not working as expected
+* MDF-173 - joinBy throws exception with empty array
+* MDF-174 - Avg Min Max Reduce Not Working with empty arrays
+* MDF-177 - Inconsistency between distinctBy, equals and contains
+* MDF-178 - Json Parser not parsing correct numbers
+* MDF-187 - Variable resolution is not working as expected
+* MDF-193 - Dataweave - Add the ability to quote headers in CSV
+* MDF-195 - Can't change or specify locale when parsing dates
+* MDF-198 - DataWeave plugin references repository-master
+* MDF-200 - Fixed Width: cant' create a simple output fixed width message
+* MDF-201 - FlatFiles: Improve package and classes names
+* MDF-203 - Fixed Width: incompatibility with datetime function in DataWeave
+* MDF-210 - Fixed Width: boolean type is not working
+* MDF-216 - FlatFiles: runtime is not able to read the flat files IndexOutOfBoundsException
+
+=== Improvements
+
+* MDF-156 - DataWeave cannot transform from String to Enum
+* MDF-207 - Flat file reader needs to take an encoding
+
+=== New Features
+
+* MDF-144 - Add support for ignoreEmptyLines in csv reader
+* MDF-152 - DataWeave Notification System
+* MDF-159 - Add mathematical operators
+* MDF-161 - Add immediate execution mode (no output-handler)
+* MDF-171 - Simplified flat file schema and structures
+* MDF-185 - Add a function to parse strings with different contentTypes
+
+=== Story
+
+* MDF-181 - Find a way to use DW to replace DataMapper on Dataloader.io
+
+== Support
+
+* For support, refer to the relevant MuleSoft documentation.
+** API-related: Building APIs in Studio User Guide
+*** xref:6@studio::api-sync-reference.adoc[API Sync View]
+*** Implementing a link:/apikit/apikit-tutorial#creating-a-new-project[REST API] / link:/apikit/apikit-for-soap#creating-a-new-project[SOAP API] /
+*** xref:general:getting-started:implement-and-test.adoc#automatically-create-a-test-suite[Testing an API using MUnit]
+** xref:3.8@mule-runtime::dataweave-flat-file-schemas.adoc[DataWeave flat file]
+** xref:3.8@mule-runtime::dataweave.adoc[Improved DataWeave docs].
+
+* Access http://forums.mulesoft.com/[MuleSoft’s Forum] to pose questions and get help from Mule’s broad community of users.
+* To access MuleSoft’s expert support team https://www.mulesoft.com/support-and-services/mule-esb-support-license-subscription[subscribe to Mule ESB Enterprise] and log in to MuleSoft’s http://www.mulesoft.com/support-login[Customer Portal].

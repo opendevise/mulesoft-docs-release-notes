@@ -1,0 +1,39 @@
+= Salesforce Analytics Cloud Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: salesforce-analytics-connector-release-notes-mule-4.adoc
+:keywords: release notes, salesforce, analytics, cloud, connector
+
+*January 2018*
+
+_Select_
+
+The Anypoint Connector for Salesforce Analytics Cloud lets you connect to the Salesforce Analytics Cloud application using Salesforce External Data API. The connector exposes convenient methods for creating and populating data sets into Salesforce Analytics Cloud system.
+
+== 3.0.0
+
+*January 15, 2018*
+
+=== Compatibility
+
+The Salesforce Analytics Cloud connector is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Application/Service |Version
+|Mule Runtime|Mule Enterprise Edition 4.0.0 and later
+|Anypoint Studio|Only works with Studio 7.0.0 and later
+|External Data API | v36.0
+|===
+
+=== Features
+
+* Added Delete Data Set operation so the user is now able to delete datasets that are not needed anymore.
+* Changed the DataSense mechanism of the connector to provide dynamic metadata for Upload External Data, Start Data Processing and Delete Data Set operations. Now the user can select the dataset ID for which one of the mentioned operations executes. For the Upload External Data operation, we also provide dynamic input metadata that describes the format of the data to be uploaded to the selected dataset.
+* Create Data Set and Upload External Data Into New Data Set And Start Processing operations now allow the user to select a file that serves as a schema description of the dataset to be created. These operations do not have data sense support anymore, as the file describing the dataset schema can't be read at design time.
+
+== See Also
+
+* https://developer.salesforce.com/docs/atlas.en-us.bi_dev_guide_ext_data.meta/bi_dev_guide_ext_data/[Salesforce External Data API]
+* https://developer.salesforce.com/docs/atlas.en-us.bi_dev_guide_ext_data.meta/bi_dev_guide_ext_data/bi_ext_data_add_data.htm[Add the Data]

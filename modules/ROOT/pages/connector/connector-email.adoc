@@ -1,0 +1,54 @@
+= Email Connector Release Notes for Mule 4
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: connector-email.adoc
+:keywords: mule, email, connector, release notes, pop3, smtp, imap
+
+*May 2018*
+
+== 1.0.2
+
+*May 8, 2018*
+
+=== Fixed Issues
+
+* Email connector "replyToAddresses" is not populated when sending an Email. (MULE-14965)
+* Email connector does not work with Gmail SSL port. (MULE-14673)
+* IMAP List operation not retrieving attachments. (MULE-14762)
+
+== 1.0.1
+
+*Mar 15, 2018*
+
+=== Fixed Issues
+
+* Email connector doesn't work with IMAP gmail OOTB. (MULE-14606)
+* Email Connector doesn't communicate correctly if their output types fields can be null. (MULE-14701)
+
+== 1.0.0
+
+*Jan 19, 2018*
+
+=== New Features and Enhancements
+
+This release includes the following enhancements, changes, and fixes:
+
+* Seamless UX between email protocols.
+* Retrieving emails from POP3 and IMAP mailboxes.
+* Retrieving, deleting, and storing emails from IMAP mailboxes.
+* Sending emails over the SMTP protocol.
+* Supporting secure connections for all protocols over Transport Layer Security (TLS).
+
+=== Upgrade Requirements
+
+Mule 4.1
+
+=== Fixed Issues
+
+* Email connector pop3 does not delete all emails with deleteAfterRetrieve. (MULE-13101)
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

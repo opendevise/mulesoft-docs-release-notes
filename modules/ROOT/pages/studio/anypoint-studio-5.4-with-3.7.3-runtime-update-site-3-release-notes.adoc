@@ -1,0 +1,91 @@
+= Anypoint Studio 5.4 with 3.7.3 Runtime Update Site 3 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: anypoint-studio-5.4-with-3.7.3-runtime-update-site-3-release-notes.adoc
+:keywords: release notes, anypoint studio
+
+*March 28, 2016* +
+
+
+*Build ID:* 201603291217
+
+== Compatibility
+
+
+*Mule Runtime*
+Version: 3.7.3 EE
+
+*Anypoint Studio*
+Version: 5.4.3
+Build Id: 201603291217
+
+
+*APIkit*
+Versions: 1.6.3 - 1.7.3
+
+*DataWeave*
+Version 1.0.3
+
+
+== What's New
+
+In this release, we have made some changes regarding TLS support in Studio and embedded runtimes (Mule and API Gateway). As TLS 1.0 is no longer accepted by PCi compliance and many companies (e.g. Salesforce has started to https://help.salesforce.com/apex/HTViewSolution?id=000221207[disable it]), we have started to move towards enabling more users to adopt TLS 1.1 and 1.2 as default. The specifics are as following:
+
+. API Gateway 1.3.2, 2.0.3 and 2.1.0 still have TLS 1.0, 1.1 and 1.2 enabled by default.
+. API Gateway 2.1.1, 2.0.4 and 2.2.0 have TLS 1.0 *disabled* by default, with 1.1 and 1.2 enabled by default.
+. Mule 3.7.3 has TLS 1.0, 1.1 and 1.2 enabled by default.
+. We encourage all users to use TLS 1.1/1.2. This release has made the change to expose TLS default setting in Studio folder, which makes it easy for users to custom configure. For users who want to use TLS 1.0 with newer API Gateway and Mule runtimes that do not have 1.0 enabled by default, please refer to documentation here for xref:3.7@mule-runtime::tls1-0-migration.adoc[configuration instruction].
+
+In addition to this, we included bug fixes and performance improvements. For a complete list, please see the JIRA list below.
+
+
+== Migration Guide
+
+From the previous versions of Studio 5.1.0, 5.1.1, 5.2.0, 5.2.1, 5.3.0, 5.4.1 and 5.4.2, there is no special migration needed, but when opening a previous Workspace with projects that were created with Studio 5.1.0 or older, and which has metadata stored in disk, Studio asks you to perform an update to all the projects so that the Metadata Manager can handle the types and to show the types in your project.
+
+
+[NOTE]
+Studio as an Eclipse plugin only works with Eclipse 4.3 or 4.4 due to an SWT dependency.
+
+[TIP]
+====
+You can easily import all of the external components that you had installed in your old version of Anypoint Studio through a single action. This includes connectors, runtimes, and any other type of extension added through the Anypoint Exchange or the ​*Help -> Install new software*​ menu, as long as there are no compatibility restrictions.
+
+Do this by selecting *File->Import* and then choose *Install->From existing installation*.
+
+image::studio/import-extensions.png[import]
+
+Then specify the location of your old version of Anypoint Studio in your local drive.
+====
+
+[NOTE]
+When updating using the ​*Help -> Install new software*​ menu, it's important that you choose to update all components marked in the update wizard.
+
+== Eclipse Plugin
+
+If you are using Studio as an Eclipse plugin, you can get this version of Studio using the Eclipse update site `+http://studio.mulesoft.org/r4/plugin+`.
+
+This allows you to download Anypoint Studio core and third-party components version 5.x.x and with an embedded version of Mule Runtime v3.7.x along with other optional components. +
+For a detailed description of the update site's content visit the xref:5@studio::studio-in-eclipse.adoc#available-software-in-the-update-site[Studio in Eclipse] section.
+
+== Jira Ticket List
+
+
+=== Bug Fixes
+
+* STUDIO-7560 - Studio is not considering the tls-default.conf
+* STUDIO-7605 - Studio dock icon changes to old Studio icon when opening Exchange
+* STUDIO-7732 - When changing a project's runtime, the Mule Runtime library gets duplicated if the original one was not installed
+
+=== Improvements
+
+* STUDIO-7701 - Improve performance opening mule XML file configuration
+* STUDIO-7707 - Release Gateway Update Site for Studio for 2.0.4, 2.1.1 and tls default conf support for previous versions
+
+
+== Support Resources
+
+* Refer to MuleSoft’s documentations related to TLS: xref:3.7@mule-runtime::https-transport-reference.adoc[HTTPS Transport], xref:3.7@mule-runtime::tls-configuration.adoc[TLS configuration], xref:3.6@mule-runtime::ssl-and-tls-transports-reference.adoc[SSL and TLS Transport], and xref:3.8@mule-runtime::tls1-0-migration.adoc[TLS 1.0 migration].
+* Access MuleSoft’s http://forums.mulesoft.com[Forum] to pose questions and get help from Mule’s broad community of users.
+* To access MuleSoft’s expert support team, https://www.mulesoft.com/support-and-services/mule-esb-support-license-subscription[subscribe] to Mule ESB Enterprise and log in to MuleSoft’s http://www.mulesoft.com/support-login[Customer Portal].

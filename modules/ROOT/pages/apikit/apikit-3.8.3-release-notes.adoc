@@ -1,0 +1,62 @@
+= APIkit 3.8.3 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: apikit-3.8.3-release-notes.adoc
+:keywords: apikit, 3.8.3, release notes
+
+APIkit 3.8.3 solves the problem that occurs when a load balancer or reverse proxy is configured in front of an APIkit application. By default the console uses the URL as defined in the listener or the URL provided by CloudHub. When you need a different URL, configure the keepRamlBaseUri attribute. When enabled, APIkit uses the RAML baseUri unmodified. This attribute is false by default. If the RAML Base URI is relative, APIkit now uses the relative URI without overwriting it.
+
+When you send a request that includes a query parameter without `=` to an APIkit 3.8.3 app, the value of the query parameter is null. For example, in http://localhost:8080/resource?queryParameter the value of queryParameter is null. Consequently, only query parameters of type `nil` pass APIkit validation; query parameters of any other type fail.
+
+This release also fixes bugs listed in "<<Fixed in this Release>>", most notably:
+
+* A stack overflow error that occurs when you send a large number of URI parameters
+* Java parser fixes for RAML 0.8 and 1.0, including custom facets access through the API and support for question mark syntactic sugar in custom facets and parameters.
+
+== Compatibility
+
+* Mule Runtime 3.8.x
+* Anypoint Studio 6.2.0
+* Java Parser RAML 1.0 and 1.0.3
+* Java Parser RAML 0.8 and 0.8.17
+* Console 3.0.10
+
+== Known Issues
+
+The fix for the problem that occurs when a load balancer or reverse proxy is configured in front of an APIkit application does not solve the problem of accessing the application from different domains. This problem cannot be solved with relative paths. The issue CONSOLE-176 is addressing this problem.
+
+== Fixed in this Release
+
+This release fixes the following APIkit and RAML Java parser issues.
+
+*APIkit Issues*
+
+* APIKIT-545  New property: keepRamlBaseUri
+* APIKIT-570  Optional fields using ? flag in RAML are parsed as mandatory fields ending in ?
+* APIKIT-584  Duplicated query parameters are considered valid
+* APIKIT-610  Flow with XML as response is not generated correctly.
+* APIKIT-651  StackOverflowError when there is a huge list of uri parameters
+
+
+*https://github.com/raml-org/raml-java-parser[Github RAML Java Parser Issues Fixed in this Release]*
+
+* APIKIT-582  RAML v1.0 with JSON Schema draft 4 and $ref to external files
+* APIKIT-586  Parser v1 doesn't allow to use relative baseUris
+* APIKIT-643  Parser is not validating header's minLength
+
+* #144  Parser v 0.8 doesn't allow to use relative baseUris bug major (v1)
+* #237  Add optional synctactic sugar for URI parameters, headers and query params bug major (v2)
+* #244 Default type of parameters in v0.8 should be string bug major RAML 0.8 (v2)
+* #248  The Api object method version() may violate its signature return type bug major (v2)
+* #254 Example validation failure when using union types with logical OR and optional property bug critical (v2)
+* #261  String type validation is too restrictive enhancement (v2)
+* #266  RAML Parser is not capable to understand optional facets bug major (v2)
+* #267  RAML Parser is not able to resolve cyclic references in uses bug major (v2)
+* #274  Custom facets not accessible through public API bug enhancement major (v2)
+* #277  Cannot resolve JSON Schema external refs in included file bug (v2)
+* #282  JSON with duplicated keys is considered valid (v2)
+* #288 Don't show absolute "loadingURI" when displaying JSON Schema errors enhancement (v2)
+* #289 Inconsistency in JSON Schema validation for type "date" enhancement (v2)
+* #290  v08 type "date" causes NPE bug critical RAML 0.8 (v2)
+* #294 Default media type is not supported bug critical RAML 0.8 (v2)

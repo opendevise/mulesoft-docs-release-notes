@@ -1,0 +1,140 @@
+= Anypoint Connector DevKit 3.9.x Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: anypoint-connector-devkit-3.9.x-release-notes.adoc
+:keywords: devkit, release notes, jdk8, connector
+
+xref:3.8@connector-devkit::index.adoc[Anypoint Connector DevKit Guide]
+
+== Version 3.9.5 - May 2, 2018
+
+=== Fixed Issues
+
+* Polling sources used to share the same *Polling Period* cross sources of the
+same type in the same application, now these can be configured separately.
+
+=== Compatibility
+
+DevKit version 3.9.5 is compatible with the following software versions.
+
+[%header,cols="2*a"]
+|===
+|Software|Version
+|Mule Runtime|3.5.0 or later
+|Anypoint Studio | 6.0.0 or later
+|===
+
+
+== Version 3.9.4 - December 4, 2017
+
+=== Fixed Issues
+
+* Polling sources stopped working after an exception occurred in the flow.
+
+=== Compatibility
+
+DevKit version 3.9.4 is compatible with the following software versions.
+
+[%header,cols="2*a"]
+|===
+|Software|Version
+|Mule Runtime|3.5.0 or later
+|Anypoint Studio | 6.0.0 or later
+|===
+
+=== Additional Information
+
+In this version, DevKit started to use *Mule 3.9.0* as the compile Mule Version.
+This does not change the compatibility range from a DevKit-based connector.
+
+== Version 3.9.1 - February 2, 2017
+
+=== Fixed Issues
+
+* *@Summary* didn't worked is some scenarios.
+* Inhered POJO properties were not available in Studio.
+
+=== Compatibility
+
+DevKit version 3.9.1 is compatible with these software versions:
+
+[%header,cols="2*a"]
+|===
+|Software|Version
+|Mule Runtime|3.5.0 or later
+|Anypoint Studio | 6.0.0 or later
+|===
+
+== Version 3.9.0 - June 21, 2016
+
+Anypoint Connector DevKit 3.9.0 supports two new features for DevKit-built connectors, as well as several fixes for earlier versions.
+
+=== Features
+
+Building a connector using DevKit 3.9.0 (that is, specifying this version number in the connector project's `pom.xml`) allows the connector's end user to retrieve information about the connector's `@Processor`(s) in the Mule Debugger in Anypoint Studio.
+
+For Studio 6.0.2 and later, this version allows the developer to package multiple sets of connector icons to be presented in the Studio Visual Editor depending on the connector end user's preference of Studio UI.
+
+With 3.9.0, you can support two sets of icons for each Studio UI theme by first creating two different folders in your connector:
+
+* ​*`theme.light`*​ _(new look)_
+* ​*`theme.classic`* _(old look)_
+
+=== Compatibility
+
+DevKit version 3.9.0 is compatible with:
+
+[%header,cols="2*a"]
+|===
+|Software|Version
+|Mule Runtime|3.5.0 or later
+|Anypoint Studio |*Debugging support for DevKit-built connector*:
+
+* Studio 6.0.0 and later
+
+*Support for Light and Classic Studio themed icons*:
+
+* Expected for Studio 6.0.2 and later
+|===
+
+
+==== Icon Folder Structure
+
+----
+   icons/
+            /theme.light
+                                /icon.png
+            /theme.classic
+                                /icon.png
+----
+
+[NOTE]
+====
+The new light theme icons must have the following sizes:
+
+- 16 x 16 for small icons
+- 26 x 26 for large icons
+====
+
+==== Icon Naming Conventions
+
+
+
+*Old Look Icon Naming Convention Changes*
+
+- Previously was `<connectorName>-connector-​*48x24*​.png` and now is `<connectorName>-connector-​*large*​.png`
+- Previously was `<connectorName>-connector-​*24x16*​.png` and now is `<connectorName>-connector-​*small*​.png`
+
+*New Look Icon Naming Convention Changes*
+
+- Previously was `<connectorName>-connector-​*26x26*​.png` and now is `<connectorName>-connector-​*large*​.png`
+- Previously was `<connectorName>-connector-​*16x16*​.png` and now is `<connectorName>-connector-​*small*​.png`
+
+
+=== Fixed Issues
+
+This release includes several fixes:
+
+* DevKit now correctly sets category, instead of setting it to `DEFAULT`, when building `DefaultComposedMetaDataKey` from `MetaDataKey`
+* Supports connector icons for Anypoint Studio's "Light" Theme, along with the "Classic" theme

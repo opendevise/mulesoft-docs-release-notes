@@ -1,0 +1,33 @@
+= BMC Remedy Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: remedy-connector-release-notes.adoc
+:keywords: release notes, bmc, remedy, connector
+
+*Guide*: xref:3.9@mule-runtime::remedy-connector.adoc[Remedy Connector]
+
+== 2.0.0
+
+*September 30, 2016*
+
+=== Compatibility
+
+The Remedy connector 2.0.0 is compatible with the following applications:
+
+[%header%autowidth.spread]
+|===
+| Application/Service | Version
+|Mule Runtime	| 3.5.0 and later
+|BMC Remedy AR System Java API | 8.1
+|BMC Remedy AR System  |7.x and later
+|===
+
+=== Features
+
+* Support for 8.1 API version
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

@@ -1,0 +1,20 @@
+= OData Extension Studio Plugin 1.0.1 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: odata-extension-release-notes-101.adoc
+
+October 10, 2017
+
+== Compatibility
+
+* Mule 3.8.1+
+* APIkit 3.8.2+
+* Anypoint Studio 6.2.3+
+
+== Fixed in this Release
+
+* ODATA-1 OData plugin does not recognize nullable types and strings with only numbers.
+* ODATA-2 Files of type RAML are not supported by the OData plugin.
+* ODATA-3 Wrong response from APIkit OData Extension.
+* ODATA-4 OData API plugin returns the wrong collection href.

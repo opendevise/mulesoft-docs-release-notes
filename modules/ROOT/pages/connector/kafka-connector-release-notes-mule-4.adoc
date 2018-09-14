@@ -1,0 +1,60 @@
+= Apache Kafka Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: kafka-connector-release-notes-mule-4.adoc
+:keywords: apache kafka connector, user guide, apachekafka, apache kafka, release notes
+
+*November 2017*
+
+_Select_
+
+The Anypoint Connector for Kafka allows you to connect to the Apache Kafka messaging system over Mule runtime, enabling seamless integration between your applications and an Apache Kafka cluster.
+
+== 3.0.1
+
+*June 26, 2018*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime | Mule Runtime Enterprise Edition 4.0.0 and later
+|Apache Kafka | 0.10.2.0
+|===
+
+=== Features
+
+* No new features added
+
+=== Fixed in this Release
+
+* Kafka connector was not serializing/deserializing properly the messages that were not plain text. Now the content of the messages can be sent as any type (plain, XML, JSON) as the value is serialized and deserialized properly.
+
+
+== 3.0.0
+
+*November 18, 2017*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime | Mule Runtime Enterprise Edition 4.0.0 and later
+|Apache Kafka | 0.10.2.0
+|===
+
+=== Features
+
+* Compatibity with Mule 4.0.0.
+
+=== Fixed in this Release
+
+* First release.
+
+=== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

@@ -1,0 +1,55 @@
+= Runtime Manager 1.5.1 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: runtime-manager-1.5.1-release-notes.adoc
+:keywords: arm, runtime manager, release notes
+
+The Anypoint Runtime Manager, V1.5.1, release that includes enhancements and bug fixes.
+
+[NOTE]
+*To be released on August 27*
+
+
+== Hardware and Software Requirements
+
+No change.
+
+== Compatibility
+
+
+Agent plugins integrations is compatible with the following runtime versions:
+
+[cols="2*a"]
+|===
+|Mule | 3.6.x and above.
+|Availability | Cloud only.
+|API GateWay | 2.x and above for API Analytics
+|Runtime Manager Agent | xref:runtime-manager-agent/runtime-manager-agent-1.5.1-release-notes.adoc[1.5.1 and above for Insight and Dashboards]
+|===
+
+
+
+== Deprecated Features or Functionality
+
+None.
+
+== Resolved Issues
+
+* Several Application/Server dashboards enhancements
+* *CHHYBRID-1954* - New timepicker in the applications tab of SG/Cluster Dashboard
+* *CHHYBRID-1957* - Increase applications and targets timeouts
+* *CHHYBRID-1956* - Fix "Last updated" label style in latest Chrome version
+* *CHHYBRID-1968* - Alerts now have links to the pertinent dashboards
+* *CHHYBRID-1961* - Ability to filter per resource type in alert conditions
+* *CHHYBRID-1980* - Warning in server group/Cluster page if the plugins are incompatible
+
+
+
+== Migration Guidance
+
+No migration required.
+
+== Known Issues
+
+Apps/servers report a false state of “Not Connected” state even though they are online. This is a rare event that occurs in extremely short bursts and does not affect the performance or activity of the system. It fixes itself without any intervention.

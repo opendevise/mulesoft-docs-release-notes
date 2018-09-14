@@ -1,0 +1,383 @@
+= Microsoft Dynamics CRM Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: microsoft-dynamics-crm-connector-release-notes.adoc
+:keywords: release notes, connectors, microsoft crm
+
+*September 2017*
+
+_Select_
+
+*Guide*:  xref:3.9@mule-runtime::microsoft-dynamics-crm-connector.adoc[Microsoft Dynamics CRM Connector]
+
+== 2.9.1
+
+*Sep 12, 2017*
+
+===  Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime | Mule Runtime Enterprise Edition 3.5.0 and newer
+|Microsoft Dynamics CRM | 8.2, On-Premises and Online versions
+|===
+
+=== Fixed in this Release
+
+* *Error when calling a custom action*. When calling a custom action, a ClassNotFoundException was displayed even for valid actions. Now the Warning is not displayed anymore in console. It is logged only in Debug mode.
+
+
+== 2.9.0
+
+*March 30, 2017*
+
+Added in this release:
+
+* Federated authentication with the Online Connection configuration for for Dynamics 365 (Dynamics CRM 8.2)
+
+== 2.8.0
+
+*Sep 1, 2016*
+
+Added in this release:
+
+* New "Execute Multiple" operation available
+* Support efficient/compact data input at execute and execute multiple operations (using Map instances in addition to typed POJOs)
+* Support to use single transaction on multiple operations (Create, Update, Delete & Execute Multiple) for Dynamics CRM 2016 and later
+* Support to federate with a custom STS with Dynamics CRM Online version
+
+== 2.7.0
+
+*Jun 28, 2016*
+
+Added in this release:
+
+* New customizable metadata retrievers whom cache metadata for data sense as well as some operations (allowing to customize behavior)
+* Fix to execute operation to allow calling custom actions
+* Fix to support claims connection strategy on new CRM versions
+
+== 2.6.0
+
+*Jun 7, 2016*
+
+Added in this release:
+
+* Use GZIP compression for NTLM connection (through the Windows Anypoint Gateway)
+* Fix POJO to XML mapping when using the execute operation with defined organization request descendants
+* Fix parameters mapping issue when executing custom actions
+
+== 2.5.2
+
+*May 13, 2016*
+
+Added in this release:
+
+* Update to request/response types used at the execute operation to integrate properly with data wave component
+* Fix to XML parsing when executing custom action with parameters throwing 'A cycle is detected in the object graph'
+
+== 2.5.1
+
+*May 6, 2016*
+
+Added in this release:
+
+* Fix to request/response types used at the execute operation
+* Support GZIP encoding when retrieving multiple pages
+* Improvements on paging to avoid unnecessary fetch
+
+== 2.5.0
+
+*Apr 14, 2016*
+
+Added in this release:
+
+* Support to retrieve just one page by providing the page number at the retrieve multiple operation (or within the native query if that option chosen)
+
+== 2.4.7
+
+*Apr 1, 2016*
+
+Added in this release:
+
+* New supported request & response types for the Execute operation added
+* Fix to support paging a large result sets
+
+== 2.4.6
+
+*March 21, 2016*
+
+Added in this release:
+
+* Handling Owner data type properly when querying metadata for datasense.
+* Adding formatted values collection to the query results as metadata.
+
+== 2.4.5
+
+*November 23, 2015*
+
+A hotfix has been released for the MS Dynamics CRM Connector - version 2.4.5.
+
+Added in this release:
+
+* Fixed the `ClassCastException` during 'Test Connection' and metadata retrieval in Anypoint Studio.
+
+
+== 2.4.4
+
+*November 2, 2015*
+
+A hotfix has been released for the MS Dynamics CRM Connector - version 2.4.4.
+
+Added in this release:
+
+* Allow the ability to define a proxy configuration specific for the connector.
+
+== 2.4.3
+
+*August 27, 2015*
+
+A hotfix has been released for the MS Dynamics CRM Connector - version 2.4.3.
+
+Fixed in this release:
+
+* When inserting a list of entity references in a Party List data type, only the last entity reference was actually created. Now, all the entity references in the list are created.
+
+== 2.4.2
+
+*August 21, 2015*
+
+A hotfix has been released for the MS Dynamics CRM Connector - version 2.4.2.
+
+Fixed in this release:
+
+* An exception occurred against Microsoft Dynamics CRM Online when a token that was expired or about to expired had to be renewed. Now the token is renewed successfully.
+
+== 2.4.1
+
+*July 23, 2015*
+
+New in this release:
+
+* Fixed an issue where the security token used to connect to CRM was not being renewed after expiring.
+Note: Supports Mule 3.7
+
+== 2.4.0
+
+*July 16, 2015*
+
+New in this release:
+
+* Adds support for Party Lists
+* Adds the ability to configure HTTP receive timeout in global element configuration for long running or slow transactions
+* Adds support for Mule 3.7
+
+== 2.3.4
+
+*July 23, 2015*
+
+New in this release:
+
+* Fixed an issue where the security token used to connect to CRM was not being renewed after expiring.
+* Supports Mule 3.6 (but not Mule 3.7).
+
+== 2.3.2
+
+*June 17, 2015*
+
+New in this release:
+
+Added support for 3rd party STS providers for users of federated authentication when using the connector with CRM Online.
+
+
+== 2.3.1
+
+*May 7, 2015*
+
+New in this release:
+
+* Compatibility fix for Studio 5.1.2 due to library version conflicts
+* Moved connector into new Select category from Standard
+
+== 2.3.0
+
+*April 24, 2015*
+
+New in this release:
+
+* An issue was identified where the format dates returned by the CRM Connector were unable to be interpreted by the batch watermark selector. This has been fixed by returning the date in a string format supported by the watermark.
+* The Execute operation has been extended to support all possible message types accepted by CRM. In order to provide in and out schema to DataSense, the messages are now exposed as POJOs.
++
+[NOTE]
+this is a breaking change for users of the previous implementation of the Execute operation.
+
+== 2.2.0
+
+*March 17, 2015*
+
+The CRM Connector 2.2 release is a minor feature release:
+
+New in this release:
+
+* The CRM Connector now offers a bulk version of Create, Update, and Delete that performs multiple operations in one web service call. This dramatically improves performance where a large volume of records are being acted upon (approximately 5x throughput). DataSense schemas for each operation provide easy mapping of records into the list based payload.
+
+* Leveraging the new bulk operations, the CRM Connector has also been made batch aware. This allows the batch scopes to be leveraged, with the commit step performing a bulk create, update or delete operation.
+
+* The Execute operation has been reworked to make it significantly easier to use. A small set of commonly requested Execute messages are now supported with DataSense schemas, no longer requiring custom crafting of bean definitions in the Mule project to invoke them. Note: The revised Execute operation is not backward compatible with the model used in previous CRM Connector versions, so flows utilizing the old model must be migrated.
+
+=== Compatibility
+
+The Microsoft Dynamics CRM connector is compatible with:
+
+[%header,cols="2*"]
+|===
+|Application/Service |Version
+|Mule Runtime |3.6 and later
+|Anypoint Studio |January 2015
+|Microsoft Dynamics CRM a|
+* CRM 2011 and 2013 on-premises versions
+* CRM on-demand (cloud)
+
+|===
+
+== 2.1.2
+
+*February 20, 2015*
+
+Fixed an issue where the data type of State and Status fields were incorrectly marked as String types. These fields are now marked as Integer data types.
+
+=== Compatibility
+
+The Microsoft Dynamics CRM connector is compatible with:
+
+[%header,cols="2*"]
+|===
+|Application/Service |Version
+|Mule Runtime |3.6 and later
+|Anypoint Studio |January 2015
+|Microsoft Dynamics CRM a|
+* CRM 2011 and 2013 on-premises versions
+* CRM on-demand (cloud)
+
+|===
+
+== 2.1.1
+
+*February 6, 2015*
+
+Release Notes for version 2.1.1 of the Microsoft Dynamics Customer Relationship Management (CRM) connector.
+
+=== Compatibility
+
+The Microsoft Dynamics CRM connector is compatible with:
+
+[%header,cols="2*"]
+|===
+|Application/Service |Version
+|Mule Runtime |3.6 and later
+|Anypoint Studio |January 2015
+|Microsoft Dynamics CRM a|
+* CRM 2011 and 2013 on-premises versions
+* CRM on-demand (cloud)
+
+|===
+
+=== New Features
+
+None.
+
+=== Fixed in this Release
+
+* The form of references has changed to address the case where field names or entity names contain underscore characters, which is common in the case of custom entities. The old notation previously used in a flow is recognized and honored, for example, _fieldname_entityname_ *_reference*, but from now on, express all new queries in the form _fieldname_ *_referenceto_* _entityname_. For more information, see
+xref:3.8@mule-runtime::microsoft-dynamics-crm-connector.adoc#entity-reference[Entity Reference] in the xref:3.8@mule-runtime::microsoft-dynamics-crm-connector.adoc[Microsoft Dynamics CRM Connector] guide.
+* After you update your connector to 2.1.1, clear the DataSense metadata cache by right clicking the CRM connector project name in Package Explorer, and clicking *DataSense* > Wipe all project metadata cache:
++
+image::connector/datasenseclear.png[DataSenseClear]
+
+=== Known Issues
+
+Creating a many-to-many association via the Associate operation of the connector is not currently supported. One-to-many associations are fully supported.
+
+
+== 2.1.0
+
+*February 4, 2015*
+
+Release Notes for of the Microsoft Dynamics Customer Relationship Management (CRM) connector.
+
+=== Compatibility
+
+The Microsoft Dynamics CRM connector is compatible with:
+
+[%header,cols="2*"]
+|===
+|Application/Service |Version
+|Mule Runtime |3.6 and later
+|Anypoint Studio |January 2015
+|Microsoft Dynamics CRM a|
+* CRM 2011 and 2013 on-premises versions
+* CRM on-demand (cloud)
+|===
+
+=== New Features
+
+* Added support for Anypoint Studio 3.6 release, allowing the user interface for each supported authentication scheme to be specialized, and exposing only the configuration properties required for that scheme.
+* Improved the ability for single property override for Kerberos auto-configuration making it simpler to configure Kerberos authentication when not in the same subnet as the KDC.
+
+=== Fixed in this Release
+
+* Some association entities were missing from the list of available entities in the object browser. These entities are now included as expected.
+
+=== Known Issues
+
+Creating a many-to-many association via the Associate operation of the connector is not currently supported. One-to-many associations are fully supported.
+
+== 2.0.0
+
+*November 12, 2014*
+
+Release Notes for of the Microsoft Dynamics Customer Relationship Management (CRM) connector.
+
+=== Compatibility
+
+The Microsoft Dynamics CRM connector is compatible with:
+
+[%header,cols="2*"]
+|===
+|Application/Service |Version
+|Mule Runtime |3.5.X and later
+|Anypoint Studio |October 2014
+|Microsoft Dynamics CRM a|
+* CRM 2011 and 2013 on-premises versions
+* CRM on-demand (cloud)
+|===
+
+=== New Features
+
+* *Improved connection troubleshooting*: The Test Connection functionality of the connector is now much more robust, and provides detailed and helpful error messages for the most common configuration or connectivity problems.
+
+* *Kerberos auto-configuration*: Configuration of Kerberos authentication is now much simpler for on-premises installations, with autodiscovery of KDC and SPN reducing the need to supply these details. Most installations now typically only require providing the domain account and a password to connect with.
+
+* *Claims authentication*: Support for claims-based authentication is now provided in the Dynamics CRM connector, allowing flexibility of authentication model choice for ADFS-enabled enterprises.
+
+* *NTLM authentication*: It is now possible to use NTLM authentication to connect to CRM via the Anypoint Gateway Service for Windows.
+
+* *Improved DSQL support*: DSQL has been improved to provide better translation to the native FetchXML format used by CRM, covering more operators and exposing more detailed view of the object graph to be returned in query builder. Support is provided for both in-built and custom entities.
+
+* *More complete object model:* The object model for CRUD of CRM objects is now more complete, allowing you to get deep visibility into the structure and properties of messages in and out of CRM. This is particularly helpful for reference fields, for example where one entity has a relationship with another entity.
+
+* *CRM 2013 support*: The Dynamics CRM connector now provides support for CRM 2011 + CRM 2013 On-Premises installs and hosted CRM Online instances in a single unified connector. Simply drop the connector into your flow, and specify the connection details for your specific instance.
+
+=== Fixed in this Release
+
+There are no bug fixes in this release.
+
+=== Known Issues
+
+Creating a many-to-many association via the Associate operation of the connector is not currently supported. One-to-many associations are fully supported.
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

@@ -1,0 +1,128 @@
+= MUnit 1.2.0 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: munit-1.2.0-release-notes.adoc
+:keywords: munit, 1.2.0, release notes
+
+*May 16, 2016*
+
+We are happy to announce the new release of MUnit version MUnit 1.2.0. +
+In this release we tackled mainly bug fixes.
+
+This release provides the following new artifact versions:
+
+* MUnit:
+** 1.2.0
+* Mule MUnit Support:
+** 3.8.0­
+** 3.7.3
+** 3.6.3
+* MUnit Studio Plugin:
+** 1.2.0
+
+== Hardware and Software Requirements
+
+* Microsoft Windows 8 +
+* Apple Mac OS X 10.10 +
+* Linux (tested on Ubuntu 15)
+* Java 7, Java 8
+* Maven 3.1+
+
+
+== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule |3.6.x, 3.7.x, 3.8.x
+|Anypoint Studio |6.0.0 and newer
+|===
+
+== Features and Functionality
+
+=== Anypoint Studio Plugin
+
+* Multiple Suite Run
+* MUnit link:/munit/v/1.2.0/using-munit-in-anypoint-studio#running-a-tests-inside-a-folder[Nested Folders]
+* Create link:/munit/v/1.2.0/munit-maven-support#coverage[Coverage Reports from inside Studio]
+* Support Autocompletion for MUnit’s MEL functions
+* Add Metadata support to MUnit message processors
+
+=== MUnit Runtime
+
+The release of MUnit 1.2.0 is mainly aimed to support the new features offered through the MUnit Studio Plugin
+
+== Fixed Issues
+
+* MUSP-260	NullPointerException listing suites on MUnit runner
+* MUSP-259	FunctionalMunitSuite execution from Studio is failing
+* MUSP-257	MUnit runner view refresh extra time
+* MUSP-244	Configuring Pom Fails if there is no "build" tag in it
+* MUSP-243	NPE listing test suites on Windows
+* MUSP-239	Changing from Message Flow view to Configuration XML throws Exception
+* MUSP-201	Properties table on Mock is not displaying correctly
+* MUSP-191	MUnit doesn't work with data sense
+* MU-491	FunctionalMunitSuite not running on maven
+* MU-490	Debugging not working with MUnit tests
+* MU-487	Fix ConcurrentModificationException in multithreaded scenarios
+* MU-486	Fix NPE in MUnit Support spring parent bean definitions
+* MU-484	MUnit interceptor can't properly id the proper method to intercept
+* MU-476	Cannot retrieve properties from the registry in MUnit
+* MU-473	Improve warnings when application has default domain
+* MU-467	Running MUnit tests on Maven not displaying debug logs on console
+* MU-463	Spring Util:Properties is not being supported on MUnit Support 3.8.0
+* MU-458	Remove MunitLoggerConfigurer code
+* MU-454	Rolling appender file name too long
+* MU-453	munit-extension-loader fails to create temp dir in windows
+* MU-441	Continue running suites even if one fails
+* MU-437	getFlowsExcludedOfInboundDisabling Not working
+* MU-436	Running MUnit test on Batch or Subflow is showing incorrect coverage
+* MU-432	mule-app.properties not found
+* MU-429	Create new Munit remote runner that support to run several suites
+* MU-421	ApiKit tests failing on Maven with MUnit Support 3.8
+* MU-420	MUnit does not fail properly when running spy over void mule events
+* MU-419	MUnit Coverage Report not showing correct information when testing APIKit app
+* MU-416	Coverage failing when calculating application paths
+* MU-390	TestsLogConfigurationHelper does not load correctly the Log4j config file in Windows
+* MU-373	Foreach iterating wrong over a map when run from munit test
+* MU-369	MUnit seems to fail to mock db connector under certain conditions
+* MU-366	MUnit not loading mule-app.properties for FunctionalMunitSuite test
+* MU-321	Define just one way to load mule app properties
+
+
+== Improvements
+
+* MU-408	Create MUnit support version for 3.8
+* MUSP-227	Create coverage reports from Studio
+* MU-295	Allow test suites in nested directories
+* MUSP-161	Update munit runner view to support several test suits
+* MUSP-120	Cannot run all test suites when selecting MUnit dir
+* MUSP-237	Support Autocompletion for MUnit functions
+* MUSP-247	Add Metadata to MUnit MP
+* MUSP-242	Respect user's jars arrangement in classpath
+* MUSP-241	Show stackTrace on the test runner view when a suite fail to start
+* MUSP-246	Migrate all tables to use the new Dynamic Tables
+* MU-459	Refactor munit console output to use log4j
+* MUSP-233	Improve the exchange project download experience
+* MU-440	Refactor Coverage Features
+* MU-483	Create JSON Reports
+
+== Migration Guidance
+
+Tests that work in 1.0.0 also work in 1.2.0
+
+== Known Issues
+
+* MUnit RAML-to-Test autogeneration feature does not support RAML 1.0. We are actively working to evolve the feature.
+* When running an MUnit test over Windows without admin right, you may find a "_could not load library jansi_" error. This is due to jar file that log4j uses that tries to use this _dll_ library and if it can not find it then it tries to create it under `java.io.tmpdir` system property. +
+If the user do not have write permissions to that directory which Windows always returns as `C:\Windows` it will fail. +
+The workaround is to overwrite that property in the lunch configuration: `Djava.io.tmpdir=D:\Users\myUserName` or run Studio as an Administrator
+
+== See Also
+
+* link:/munit/v/1.2/[MUnit Documentation]
+* link:/munit/v/1.1[MUnit 1.1 Documentation]
+* link:/munit/v/1.0[MUnit 1.0 Documentation]
+* https://forums.mulesoft.com/search.html?q=munit[MuleSoft MUnit Forum]
+* https://support.mulesoft.com[Contact MuleSoft]

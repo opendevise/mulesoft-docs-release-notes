@@ -1,0 +1,193 @@
+= Salesforce Composite Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: salesforce-composite-connector-release-notes.adoc
+:keywords: release notes, salesforce, composite, connector
+
+*March 2018*
+
+_Select_
+
+The Anypoint Connector for Salesforce Composite provides a way to integrate with Salesforce Composite API https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_composite.htm[Salesforce Composite API]. The connector exposes convenient methods for preparing sub-requests, executing them in one batch, and parsing the results. It provides DataSense on both the preparation of sub-requests and parsing responses of their execution.
+
+[[sco-connector-1.0.2]]
+== 1.0.2
+
+*March 15, 2018*
+
+[[sco-connector-1.0.2-compatibility]]
+=== Compatibility
+
+The Salesforce Composite 1.0.2 connector is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Application/Service|Version
+|Mule Runtime | 3.7.5 and later
+|Salesforce Rest API | v36.0
+|===
+
+[[sco-connector-1.0.2-features]]
+=== Features
+
+* No new features added in this release.
+
+[[sco-connector-1.0.2-fixes]]
+=== Fixes
+
+* SalesForce Composite Connector cannot retrieve metadata.
+** The connector is able to connect to Salesforce without problems. But metadata is not refreshing in Studio and the timeout message is displayed. The problem occurs only for a Composite instance having big hierarchy of objects defined.
+** Fixed by decreasing the depth level (=2) when computing metadata for objects/fields.
+
+[[sco-connector-1.0.2-known-issues]]
+=== Known Issues
+
+* Support for TLS1.0 is discontinued in Salesforce.
+* If by default the application tries to use TLS1.0, then when running it, the following VM argument should be added: -`Dhttp.protocols=TLSv1.1,TLSv1.2` - This ensures that TLS1.1 or TLS1.2 is used for communication with Salesforce.
+
+[[sco-connector-1.0.1]]
+== 1.0.1
+
+*September 5, 2017*
+
+[[sco-connector-1.0.1-compatibility]]
+=== Compatibility
+
+The Salesforce Composite 1.0.1 connector is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Application/Service|Version
+|Mule Runtime | 3.7.5 and later
+|Salesforce Rest API | v36.0
+|===
+
+[[sco-connector-1.0.1-features]]
+=== Features
+
+* *Addition of Proxy Support*: Starting with version 1.0.1 the Salesforce Composite Connector allows the connection using a PROXY.
+
+[[sco-connector-1.0.1-fixes]]
+=== Fixes
+
+* *INVALID_SESSION_ID not triggering reconnection strategy:* Previously, when the Invalid Session Id exception occurred the reconnection strategy did not kick in as expected. Now, when such an exception occurs the reconnection strategy is successfully started.
+* *Propagate errors from Salesforce Composite connector*: In previous versions, the exception handling for the Salesforce specific errors was hidden by the connector and no details about the error encountered was visible to the user. Now, error details such as status code and exception message are forwarded to the end user.
+
+[[sco-connector-1.0.1-known-issues]]
+=== Known Issues
+
+* Support for TLS1.0 is discontinued in Salesforce.
+* If by default the application tries to use TLS1.0, then, when running it, the following VM argument should be added: -Dhttp.protocols=TLSv1.1,TLSv1.2
+This will ensure the fact that TLS1.1 or TLS1.2 will be used for the communication with Salesforce.
+
+[[sco-connector-1.0.0]]
+== 1.0.0
+
+*March 10, 2016*
+
+Release Notes for version 1.0.0 of the Salesforce Composite connector. These Release Notes accompany the
+xref:3.8@mule-runtime::salesforce-composite-connector.adoc[Salesforce Composite Connector User Guide].
+
+[[sco-connector-1.0.0-compatibility]]
+=== Compatibility
+
+The Salesforce Composite connector is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Application/Service |Version
+|Mule Runtime | 3.5.0 and later
+|Salesforce Rest API | v36.0
+|===
+
+[[sco-connector-1.0.0-features]]
+=== Features
+
+* Prepare sub-request for "Create" new SObject.
++
+This method provides metadata for create operation based on the object that is going to be created and generates the sub-request.
++
+* Prepare sub-request for "Update" existing SObject.
++
+This method provides metadata for update operation based on the object that is going to be updated and generates the sub-request.
++
+* Prepare sub-request for "Delete" existing SObject.
++
+This method provides metadata for delete operation based on object that is going to be deleted and generates the sub-request.
++
+* Prepare sub-request for "Retrieve" existing SObject.
++
+This method provides metadata for delete operation based on object that is going to be deleted and generates the sub-request.
++
+* Prepare sub-request for "GetLimits".
++
+This method provides metadata for getLimits operation and generates the sub-request.
++
+* Prepare sub-request for "Query" existing SObjects.
++
+This method provides metadata for query operation based on the object that is going to be queried and generates the sub-request.
++
+* Prepare sub-request for "QueryAll" existing SObjects.
++
+This method provides metadata for query operation based on object that is going to be queried and generates the sub-request.
++
+* Prepare sub-request for "Search" into existing SObjects.
++
+This method provides the user a way to input a SOSL String and generates the sub-request.
++
+* Execute a list of sub-requests in one API call.
++
+The purpose of this method is to send all the sub-requests in one batch for execution to server.
++
+* Parse sub-request result for "Create".
++
+This method provides metadata for the result of the create operation.
++
+* Parse sub-request result for "Update".
++
+This method provides metadata for the result of the update operation.
++
+* Parse sub-request result for "Delete".
++
+This method provides metadata for the result of the delete operation.
++
+* Parse sub-request result for "Retrieve".
++
+This method provides metadata for the result of the retrieve operation.
++
+* Parse sub-request result for "GetLimits".
++
+This method provides metadata for the result of the getLimits operation.
++
+* Parse sub-request result for "Query".
++
+This method provides metadata for the result of the query operation.
++
+* Parse sub-request result for "QueryAll".
++
+This method provides metadata for the result of the queryAll operation.
++
+* Parse sub-request result for "Search".
++
+This method provides metadata for the result of the search operation.
++
+* Create SObject Trees
++
+* The method sends a list of SObject trees to Salesforce to be created.
+
+[[sco-connector-1.0.0-fixes]]
+=== Fixed in this Release
+None.
+
+[[sco-connector-1.0.0-known-issues]]
+=== Known Issues
+
+* Support for TLS1.0 is discontinued in Salesforce.
+* If by default the application tries to use TLS1.0, then, when running it, the following VM argument should be added: `-Dhttp.protocols=TLSv1.1,TLSv1.2`
+This ensures that TLS1.1 or TLS1.2 isbe used for communication with Salesforce.
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

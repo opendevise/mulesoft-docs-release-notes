@@ -1,0 +1,52 @@
+= Runtime Manager Agent 1.9.2 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: runtime-manager-agent-1.9.2-release-notes.adoc
+
+*December 15, 2017*
+
+Download Runtime Manager Agent, version 1.9.2 at the following URL:
+
+https://support.mulesoft.com/s/downloads
+
+== Compatibility
+
+[%header,cols="2*a",width=70%]
+|===
+|Software|Version
+|Mule Runtime|3.6.x, 3.7.x, 3.8.x, 3.9.x
+|API Gateway|2.x and above
+|Runtime Manager | V2.0
+|===
+
+
+== Hardware and Software Requirements
+
+No change.
+
+== Improvements
+
+* Added support for the EU control plane.
+* Added correlationSequence and correlationGroupSize to the event tracking notification.
+* Added the ability to collapse comments.
+
+
+== Fixed Issues
+
+* Added a check for application properties feature availability.
+* Made the command line agent installer URLs take precedence over the service registry ones.
+* Upgraded the `log4j` library from 2.5 to version 2.8.2 due to end of support and vulnerability(CVE-2017-5645).
+* Upgraded the Grizzly library version due to security vulnerability(CVE-2017-1000028).
+* Ensured that null application properties are not applied at deployment/redeployment time.
+
+
+== Known Issues
+
+There are no known issues in this release.
+
+== See Also
+
+* xref:runtime-manager::runtime-manager-agent.adoc[Runtime Manager Agent]
+* xref:runtime-manager::installing-and-configuring-runtime-manager-agent.adoc[Installing and configuring Runtime Manager Agent]
+* xref:runtime-manager::installing-and-configuring-runtime-manager-agent.adoc#updating-a-previous-installation[Updating the Runtime Manager Agent]

@@ -1,0 +1,33 @@
+= APIkit 3.8.5 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: apikit-3.8.5-release-notes.adoc
+
+*June 30, 2017*
+
+This release resolves the `{version}` parameter problem at the resource level and supports the `content-type` coordinate when using the router. This release also delivers Java parser improvements for RAML 0.8 and RAML 1.0.
+
+APIKit now includes the latest API Console 3.0.19.
+
+== Compatibility
+
+* Mule Runtime 3.8.x
+* Anypoint Studio 6.2.5
+* Java Parser RAML 1.0 v1.0.9
+* Java Parser RAML 0.8 v0.8.18
+* API Console 3.0.19
+
+== Fixed in this Release
+
+* APIKIT-692  Replace jaxb-lib version with version 2.1.13
+* APIKIT-651  StackOverflowError when there is a huge list of uri parameters
+* APIKIT-610  Flow with XML as response is not generated correctly
+* APIKIT-608  Inconsistency in JSON validation for type "date"
+* APIKIT-583  JSON with duplicate property is considered valid
+* APIKIT-681  XXE Attack - Posts can make request to urls defined in doctype
+
+https://github.com/raml-org/raml-java-parser[Github RAML Java Parser Issues Fixed in this Release]
+
+* #224: Don't throw ResourceNotFoundException when RAML file does not exist
+* #262: Nested includes on resource types do not work in some scenarios

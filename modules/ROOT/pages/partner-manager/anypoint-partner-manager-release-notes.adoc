@@ -1,0 +1,1072 @@
+= Anypoint Partner Manager Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: anypoint-partner-manager-release-notes.adoc
+:keywords: b2b, partner manager, mule, release notes
+
+*xref:partner-manager::anypoint-partner-manager.adoc[Anypoint Partner Manager User Documentation]*
+
+== 1.25.2
+
+*July 26, 2018*
+
+=== Browser Support
+
+Anypoint Partner Manager, as a component of https://anypoint.mulesoft.com[Anypoint Platform], supports the following browsers:
+
+* Firefox (latest version)
+* Chrome (latest version)
+
+=== Compatibility
+
+Compatible with:
+
+* X12 Module 1.2.1
+* EDIFACT Module 1.2.1
+* Partner Manager Connector 3.0.x
+* FTPS Connector 1.0.8
+* AS2 Connector 2.0.1
+
+=== Fixed in this Release
+
+Inability to open the Partner Manager web application for users assigned only to a master organization.
+
+Note: Users may need to clear their browser cache to see the benefit of the fix.
+
+== 1.25.1
+
+*July 24, 2018*
+
+=== Browser Support
+
+Anypoint Partner Manager, as a component of https://anypoint.mulesoft.com[Anypoint Platform], supports the following browsers:
+
+* Firefox (latest version)
+* Chrome (latest version)
+
+=== Compatibility
+
+Compatible with:
+
+* X12 Module 1.2.1
+* EDIFACT Module 1.2.1
+* Partner Manager Connector 3.0.x
+* FTPS Connector 1.0.8
+* AS2 Connector 2.0.1
+
+=== Fixed in this Release
+
+Inability to open the Partner Manager web application for users assigned only to a sub business group.
+(Note: users may need to clear their browser cache to see the benefit of the fix.)
+
+
+== 1.25.0
+
+*June 2, 2018*
+
+=== Browser Support
+
+Anypoint Partner Manager, as a component of https://anypoint.mulesoft.com[Anypoint Platform], supports the following browsers:
+
+* Firefox (latest version)
+* Chrome (latest version)
+
+=== Compatibility
+
+Compatible with:
+
+* X12 Module 1.2.1
+* EDIFACT Module 1.2.1
+* Partner Manager Connector 3.0.x
+* FTPS Connector 1.0.8
+* AS2 Connector 2.0.1
+
+=== Fixed in this Release
+
+* Audit Log inconsistencies.
+* UI error while creating a lookUp table entry using a duplicate selection.
+* Expression in FileName field on the AS2 Endpoint configuration is now allowed.
+* Eliminated incorrect duplicate checking for batches.
+* EDI documents are now imported with their default properties.
+
+
+== 1.24.2
+
+*February 1, 2018*
+
+=== Browser Support
+
+Anypoint Partner Manager, as a component of https://anypoint.mulesoft.com[Anypoint Platform], supports the following browsers:
+
+* Firefox (latest version)
+* Chrome (latest version)
+
+=== Compatibility
+
+Compatible with:
+
+* X12 Module 1.2.1
+* EDIFACT Module 1.2.1
+* Partner Manager Connector 3.0.x
+* FTPS Connector 1.0.8
+* AS2 Connector 2.0.1
+
+=== Fixed in this Release
+
+* Inconsistencies in display of edited lookup data entries.
+* Inconsistent auditing of lookup data entry changes.
+* Release of onhold transactions issues when multiple status windows defined or when edits made to a status window.
+
+== Related Information
+
+* xref:partner-manager::anypoint-partner-manager.adoc[Introduction to Anypoint Partner Manager]
+* xref:partner-manager::transaction-monitoring.adoc[Transaction Monitoring]
+* xref:partner-manager::partner-configuration.adoc[Partner Configuration]
+
+
+== 1.24.0
+
+*December 16, 2017*
+
+=== Browser Support
+
+Anypoint Partner Manager, as a component of https://anypoint.mulesoft.com[Anypoint Platform], supports the following browsers:
+
+* Firefox (latest version)
+* Chrome (latest version)
+
+=== Compatibility
+
+Compatible with:
+
+* X12 Module 1.2.1
+* EDIFACT Module 1.2.1
+* Partner Manager Connector 3.0.x
+* FTPS Connector 1.0.8
+* AS2 Connector 2.0.1
+
+=== New Features
+
+* New Transaction Designer screen simplifies end-to-end configuration of B2B transactions.
+* Improved response time for Tracker release operation.
+* Ordering of released transactions by priority.
+* Improved API request validation and error reporting.
+* Ability to set OnHold/InActive status windows to granularity of one minute.
+
+=== Fixed in this Release
+
+* Eliminated unexpected HTTP 409 status code error that sometimes occurred when tracking errors.
+* Removed deprecated 'events' endpoint from Tracker API.
+* Added validations in OnHold/InActive status windows to require time for caching refresh to complete before changes take effect.
+* Changed validations in Lookup Table screens to make duplicate field name check case- insensitive.
+* Fixed issue in which, in some cases, the *Download* button was disabled for message payload screen.
+
+== Related Information
+
+* xref:partner-manager::anypoint-partner-manager.adoc[Introduction to Anypoint Partner Manager]
+* xref:partner-manager::transaction-monitoring.adoc[Transaction Monitoring]
+* xref:partner-manager::partner-configuration.adoc[Partner Configuration]
+
+
+
+== 1.23.0
+
+*September 23, 2017*
+
+=== Browser Support
+
+Anypoint Partner Manager, as a component of https://anypoint.mulesoft.com[Anypoint Platform], supports the following browsers:
+
+* Firefox (latest version)
+* Chrome (latest version)
+
+=== Compatibility
+
+Compatible with:
+
+* X12 Module 1.2.1
+* EDIFACT Module 1.2.1
+* Partner Manager Connector 3.0.x
+* FTPS Connector 1.0.8
+* AS2 Connector 2.0.1
+
+=== New Features
+
+* "Pretty-print" formatting for JSON and XML payloads in xref:partner-manager::transaction-monitoring.adoc[Transaction Monitoring].
+* Type Manager screens in xref:partner-manager::administration.adoc[Administration] allow editing of Property Types and Identifier Types.
+* Changed Partnership filters in xref:partner-manager::transaction-monitoring.adoc[Transaction Monitoring] to explicitly display both Partners in the Partnership.
+
+=== Fixed in this Release
+
+* Lookup table *Modify Entry* action now properly captures object Id in auditing.
+* Resolved several issues related to Async tracking that sometimes resulted in missing or duplicated tracking entries.
+
+== Related Information
+
+* xref:partner-manager::anypoint-partner-manager.adoc[Introduction to Anypoint Partner Manager]
+* xref:partner-manager::transaction-monitoring.adoc[Transaction Monitoring]
+* xref:partner-manager::partner-configuration.adoc[Partner Configuration]
+
+== 1.22.0
+
+*August 26, 2017*
+
+This release included changes made to streamline and enhance performance; however, these changes are transparent to and do not affect users.
+
+== 1.21.0
+
+*August 12, 2017*
+
+=== Browser Support
+
+Anypoint Partner Manager, as a component of https://anypoint.mulesoft.com[Anypoint Platform], supports the following browsers:
+
+* Firefox (latest version)
+* Chrome (latest version)
+
+=== Compatibility
+
+Compatible with:
+
+* X12 Module 1.2.1
+* EDIFACT Module 1.2.1
+* Partner Manager Connector 3.0.x
+* FTPS Connector 1.0.8
+* AS2 Connector 2.0.1
+
+=== New Features
+
+* Support for assigning priority to transactions to control order of releasing from Onhold state.
+* Support for Onhold/Inactive/Release functionality when xref:partner-manager::partner-manager-connector.adoc[Partner Manager Connector] is in Async mode.
+
+=== Fixed in this Release
+
+Statistics now automatically reload on tracking UI after changing environment.
+
+== Related Information
+
+* xref:partner-manager::anypoint-partner-manager.adoc[Introduction to Anypoint Partner Manager]
+* xref:partner-manager::transaction-monitoring.adoc[Transaction Monitoring]
+* xref:partner-manager::partner-configuration.adoc[Partner Configuration]
+
+== 1.20.0
+
+*July 29, 2017*
+
+=== Browser Support
+
+Anypoint Partner Manager, as a component of https://anypoint.mulesoft.com[Anypoint Platform], supports the following browsers:
+
+* Firefox (latest version)
+* Chrome (latest version)
+
+=== Compatibility
+
+Compatible with:
+
+* X12 Module 1.2.1
+* EDIFACT Module 1.2.1
+* Partner Manager Connector 3.0.x
+* FTPS Connector 1.0.8
+* AS2 Connector 2.0.1
+
+=== Fixed in this Release
+
+* Updated Cache Refresh API to only export cache if changes have occurred since last export.
+* Blank screen for Export/Import/Promote.
+
+== Related Information
+
+* xref:partner-manager::anypoint-partner-manager.adoc[Introduction to Anypoint Partner Manager]
+* xref:partner-manager::transaction-monitoring.adoc[Transaction Monitoring]
+* xref:partner-manager::partner-configuration.adoc[Partner Configuration]
+
+
+== 1.19.0
+
+*July 15, 2017*
+
+=== Browser Support
+
+Anypoint Partner Manager, as a component of https://anypoint.mulesoft.com[Anypoint Platform], supports the following browsers:
+
+* Firefox (latest version)
+* Chrome (latest version)
+
+=== Compatibility
+
+Compatible with:
+
+* X12 Module 1.2.1
+* EDIFACT Module 1.2.1
+* Partner Manager Connector 3.0.x
+* FTPS Connector 1.0.8
+* AS2 Connector 2.0.1
+
+=== New Features
+
+* Improved performance for /transmission endpoint searches
+* Ability to set Custom Notification Scopes to be assigned to Error Codes
+* Added *MaxRetries* field to Error Codes
+* RosettaNet system-defined Document Types are hidden unless user chooses to view them
+* Ability to assign priority of transactions
+* Added scrollbars in popup picker forms to indicate ability to scroll long lists
+* HTTP endpoints can be assigned an affinity for use in transports such as AS2 or RNIF
+* Renamed Clear Filters button to Reset Filters and changed behavior to revert to default filter settings in order to better match users expectations.
+* Numerous refinements in UI layout and interaction for configuring partners
+
+=== Fixed in this Release
+
+*  Audit logging for *StatusWindows* now includes correct *parentId*
+*  Deleted Error Codes can now be recreated without problems
+*  Search in Transactions view now correctly returns transaction when searching by transactionId without requiring checking the hasTransactions checkbox
+
+
+== Related Information
+
+* xref:partner-manager::anypoint-partner-manager.adoc[Introduction to Anypoint Partner Manager]
+* xref:partner-manager::transaction-monitoring.adoc[Transaction Monitoring]
+* xref:partner-manager::partner-configuration.adoc[Partner Configuration]
+
+== 1.18.0
+
+*June 17, 2017*
+
+=== Browser Support
+
+Anypoint Partner Manager, as a component of https://anypoint.mulesoft.com[Anypoint Platform], supports the following browsers:
+
+* Firefox (latest version)
+* Chrome (latest version)
+
+=== Compatibility
+
+Compatible with:
+
+* X12 Module 1.2.1
+* EDIFACT Module 1.2.1
+* Partner Manager Connector 3.0.x
+* FTPS Connector 1.0.8
+* AS2 Connector 2.0.1
+
+=== New Features
+
+* Bulk select of transactions for replay
+* Ability to filter transactions by presence or absence of errors and by specific error codes
+
+=== Fixed in this Release
+
+* Filter on large lookup filters with paging no longer lost when you change pages
+* Certificate page:
+** Now reflects successful certificate upload correctly
+** No longer returns an error when uploading a certificate for which the common name includes null characters
+
+=== Known Issues
+
+Deleting an error code and then attempting to recreate the same error code results in an error.
+
+Workaround:: To make changes to an error code, xref:partner-manager::error-codes.adoc#edit-an-existing-error-code[edit the error code] rather than deleting and re-adding it.
+
+== Related Information
+
+* xref:partner-manager::anypoint-partner-manager.adoc[Introduction to Anypoint Partner Manager]
+* xref:partner-manager::transaction-monitoring.adoc[Transaction Monitoring]
+* xref:partner-manager::partner-configuration.adoc[Partner Configuration]
+
+
+== 1.17.0
+
+*June 3, 2017*
+
+=== Browser Support
+
+Anypoint Partner Manager, as a component of https://anypoint.mulesoft.com[Anypoint Platform], supports the following browsers:
+
+* Firefox (latest version)
+* Chrome (latest version)
+
+=== Compatibility
+
+Compatible with:
+
+* X12 Module 1.2.1
+* EDIFACT Module 1.2.1
+* Partner Manager Connector 3.0.x
+* FTPS Connector 1.0.8
+* AS2 Connector 2.0.1
+
+=== New Features
+
+* Refinements to RosettaNet configuration pages
+
+=== Fixed in this Release
+
+* Consolidated steps required to view a payload in xref:partner-manager::transaction-monitoring.adoc[Transaction Monitoring]
+* Deleting an endpoint from an existing source or target channel now works correctly
+
+Now possible to:
+
+* Filter large number of records when xref:partner-manager::lookup-tables.adoc#working-with-lookup-table-data[Working with Lookup Table Data].
+
+== Related Information
+
+* xref:partner-manager::anypoint-partner-manager.adoc[Introduction to Anypoint Partner Manager]
+* xref:partner-manager::transaction-monitoring.adoc[Transaction Monitoring]
+* xref:partner-manager::partner-configuration.adoc[Partner Configuration]
+
+== 1.16.0
+
+*May 20, 2017*
+
+=== Browser Support
+
+Anypoint Partner Manager, as a component of https://anypoint.mulesoft.com[Anypoint Platform], supports the following browsers:
+
+* Firefox (latest version)
+* Chrome (latest version)
+
+=== Compatibility
+
+Compatible with:
+
+* X12 Module 1.2.1
+* EDIFACT Module 1.2.1
+* Partner Manager Connector 3.0.x
+* FTPS Connector 1.0.8
+* AS2 Connector 2.0.1
+
+=== New Features
+
+* Refinements to RosettaNet configuration pages
+
+=== Fixed in this Release
+
+* Document types not loading properly in some environments
+* Partners list not loading for Firefox
+* Import feature not working when subset of partners exported
+
+== Related Information
+
+* xref:partner-manager::anypoint-partner-manager.adoc[Introduction to Anypoint Partner Manager]
+* xref:partner-manager::transaction-monitoring.adoc[Transaction Monitoring]
+* xref:partner-manager::partner-configuration.adoc[Partner Configuration]
+
+== 1.15.0
+
+*May 6, 2017*
+
+=== Browser Support
+
+Anypoint Partner Manager, as a component of https://anypoint.mulesoft.com[Anypoint Platform], supports the following browsers:
+
+* Firefox (latest version)
+* Chrome (latest version)
+
+=== Compatibility
+
+Compatible with:
+
+* X12 Module 1.2.1
+* EDIFACT Module 1.2.1
+* Partner Manager Connector 3.0.x
+* FTPS Connector 1.0.8
+* AS2 Connector 2.0.1
+
+=== New Features
+
+Ability to:
+
+* Configure RosettaNet Transactions
+* Adjust column widths in grids
+* Edit Severity, Category, and Notification scope for system-defined error codes
+
+
+=== Fixed in this Release
+
+* Configuration validation for xref:partner-manager::partner-conversations.adoc[Partner Conversations] improved
+* Improved performance for Transaction Monitoring screen for large numbers of transactions
+* Large message payloads no longer obscure Download button in Transaction Monitoring
+* Retrieving DocumentMaps no longer introduces possibility of latency or timeouts
+* Removed many impediments to monitoring transactions
+* Releasing now works properly when more than one channel is set on an Onhold or Inactive Status Window.
+
+== Related Information
+
+* xref:partner-manager::anypoint-partner-manager.adoc[Introduction to Anypoint Partner Manager]
+* xref:partner-manager::transaction-monitoring.adoc[Transaction Monitoring]
+* xref:partner-manager::partner-configuration.adoc[Partner Configuration]
+
+== 1.13.1
+
+*April 9, 2017*
+
+Fixed: Track Errors operation not working for Partner manager Connector 5.2.0
+
+== 1.13.0
+
+*April 8, 2017*
+
+=== Browser Support
+
+Anypoint Partner Manager, as a component of https://anypoint.mulesoft.com[Anypoint Platform], supports the following browsers:
+
+* Firefox (latest version)
+* Chrome (latest version)
+
+=== Compatibility
+
+Compatible with:
+
+* X12 Module 1.2.1
+* EDIFACT Module 1.2.1
+* Partner Manager Connector 3.0.x
+* FTPS Connector 1.0.8
+* AS2 Connector 2.0.1
+
+=== New Features
+
+* Ability to configure On-hold or Inactive status windows for xref:partner-manager::transaction-monitoring.adoc[transactions] and xref:partner-manager::partner-configuration.adoc[partners]
+* Ability to edit the following attributes for system-defined xref:partner-manager::error-codes.adoc[Error Codes]:
+** Severity
+** Notification Scope
+** Category
+
+=== Fixed in this Release
+
+* xref:partner-manager::x12-settings.adoc[X12 Settings] save functionality.
+* AS2 and FTPS xref:partner-manager::endpoints.adoc[Endpoints] can now be made defaults even if they were not initially made defaults.
+* Track errors operation (wasn't working properly with older versions of Partner Manager Connector)
+
+=== Known Issues
+
+Releasing doesn't work properly when more than one channel is set on an Onhold or Inactive Status Window.
+
+== Related Information
+
+* xref:partner-manager::anypoint-partner-manager.adoc[Introduction to Anypoint Partner Manager]
+* xref:partner-manager::transaction-monitoring.adoc[Transaction Monitoring]
+* xref:partner-manager::partner-configuration.adoc[Partner Configuration]
+
+== 1.12.0
+
+*March 25, 2017*
+
+=== Browser Support
+
+Anypoint Partner Manager, as a component of https://anypoint.mulesoft.com[Anypoint Platform] supports the following browsers:
+
+* Firefox (latest version)
+* Chrome (latest version)
+
+=== Compatibility
+
+Compatible with:
+
+* X12 Module 1.2.1
+* EDIFACT Module 1.2.1
+* Partner Manager Connector 3.0.x
+* FTPS Connector 1.0.8
+* AS2 Connector 2.0.1
+
+=== New Features
+
+* Ability to configure Document Properties harvested from searches against xref:partner-manager::lookup-tables.adoc[Lookup Tables]
+* Added *PingFederate OAuth - Client Credentials* as a *Scheme* option in xref:partner-manager::security.adoc[Security]
+* Extended properties of xref:partner-manager::error-codes.adoc[Error Codes] to support notifications
+
+
+=== Fixed in this Release
+
+* Validation for:
+** Date ranges
+** Saving new xref:partner-manager::routes.adoc[Routes]
+* Visibility of Custom Error messages in the xref:partner-manager::errors-view.adoc[Errors View]
+
+
+
+== Related Information
+
+* xref:partner-manager::anypoint-partner-manager.adoc[Introduction to Anypoint Partner Manager]
+* xref:partner-manager::transaction-monitoring.adoc[Transaction Monitoring]
+* xref:partner-manager::partner-configuration.adoc[Partner Configuration]
+
+== 1.11.0
+
+*March 11, 2017*
+
+=== Browser Support
+
+Anypoint Partner Manager, as a component of https://anypoint.mulesoft.com[Anypoint Platform] supports the following browsers:
+
+* Firefox (latest version)
+* Chrome (latest version)
+
+=== Compatibility
+
+Compatible with:
+
+* X12 Module 1.2.1
+* EDIFACT Module 1.2.1
+* Partner Manager Connector 3.0.x
+* FTPS Connector 1.0.8
+* AS2 Connector 2.0.1
+
+=== New Features
+
+* API Keys scoped to each environment
+* Multiple Target Channels per Document Type within a partner allowed
+
+=== Fixed in this Release
+
+Minor bug fixes
+
+== Related Information
+
+* xref:partner-manager::anypoint-partner-manager.adoc[Introduction to Anypoint Partner Manager]
+* xref:partner-manager::transaction-monitoring.adoc[Transaction Monitoring]
+* xref:partner-manager::partner-configuration.adoc[Partner Configuration]
+
+== 1.10.1
+
+*February 28, 2017*
+
+=== Browser Support
+
+Anypoint Partner Manager, as a component of https://anypoint.mulesoft.com[Anypoint Platform] supports the following browsers:
+
+* Firefox (latest version)
+* Chrome (latest version)
+
+=== Compatibility
+
+Compatible with:
+
+* X12 Module 1.2.1
+* EDIFACT Module 1.2.1
+* Partner Manager Connector 3.0.x
+* FTPS Connector 1.0.8
+* AS2 Connector 2.0.1
+
+=== Fixed in this Release
+
+Issue updating X12 settings
+
+== Related Information
+
+* xref:partner-manager::anypoint-partner-manager.adoc[Introduction to Anypoint Partner Manager]
+* xref:partner-manager::transaction-monitoring.adoc[Transaction Monitoring]
+* xref:partner-manager::partner-configuration.adoc[Partner Configuration]
+
+== 1.10.0
+
+*February 25, 2017*
+
+===  Browser Support
+
+Anypoint Partner Manager, as a component of https://anypoint.mulesoft.com[Anypoint Platform] supports the following browsers:
+
+* Firefox (latest version)
+* Chrome (latest version)
+
+===  Compatibility
+
+Compatible with:
+
+* X12 Module 1.2.1
+* EDIFACT Module 1.2.1
+* Partner Manager Connector 3.0.x
+* FTPS Connector 1.0.8
+* AS2 Connector 2.0.1
+
+===  New Features
+
+* Refinements to Lookup Table administration and data entry screens
+
+===  Fixed in this Release
+
+* Minor issue fixes
+
+== Related Information
+
+* xref:partner-manager::anypoint-partner-manager.adoc[Introduction to Anypoint Partner Manager]
+* xref:partner-manager::transaction-monitoring.adoc[Transaction Monitoring]
+* xref:partner-manager::partner-configuration.adoc[Partner Configuration]
+
+== 1.9.0
+
+*February, 2017*
+
+===  Browser Support
+
+Anypoint Partner Manager, as a component of https://anypoint.mulesoft.com[Anypoint Platform] supports the following browsers:
+
+* Firefox (latest version)
+* Chrome (latest version)
+
+===  Compatibility
+
+Compatible with:
+
+* X12 Module 1.2.1
+* EDIFACT Module 1.2.1
+* Partner Manager Connector 3.0.x
+* FTPS Connector 1.0.8
+* AS2 Connector 2.0.1
+
+===  New Features
+
+* Completely updated Partner Manager portal providing improved UI performance and many UI enhancements
+* New Identifiers Page providing ability to configure multiple identifiers of any type for each partner
+* _Content-based Routing_ - ability to define expressions based on context properties extracted during message processing, then use the expressions as filters for route resolution
+* Improved display of large number of columns on Lookup Data Entry Page, and ability to control the order in which Lookup Table columns are displayed
+* UI for defining _B2B Conversations_ - multi-document exchanges between partners that fulfill a larger business process or transaction
+
+
+===  Fixed in this Release
+
+Lookup Table filter now correctly uses *AND* instead of *OR* for multi-field keys.
+
+===  Known issues
+
+In some cases, for existing FTP transmissions,  data may not appear in the
+xref:partner-manager::transmissions-view.adoc#detail-pane[Transmissions Detail Pane].
+
+== Related Information
+
+* xref:partner-manager::anypoint-partner-manager.adoc[Introduction to Anypoint Partner Manager]
+* xref:partner-manager::transaction-monitoring.adoc[Transaction Monitoring]
+* xref:partner-manager::partner-configuration.adoc[Partner Configuration]
+
+== 1.8.0
+
+*January, 2017*
+
+===  Browser Support
+
+Anypoint Partner Manager, as a component of https://anypoint.mulesoft.com[Anypoint Platform] supports the following browsers:
+
+* Firefox (latest version)
+* Chrome (latest version)
+
+===  Compatibility
+
+Compatible with:
+
+* X12 Module 1.2.1
+* EDIFACT Module 1.2.1
+* Partner Manager Connector 3.0.x
+* FTPS Connector 1.0.8
+* AS2 Connector 2.0.1
+
+===  New Features
+
+Add support for DUNS (http://www.dnb.com/duns-number.html[Data Universal Number System]) number to Identifiers Page.
+
+===  Fixed in this Release
+
+* Inconsistent error popup functionality
+* Label field in Tracking doesn't show long values
+
+
+== Related Information
+
+* xref:partner-manager::anypoint-partner-manager.adoc[Introduction to Anypoint Partner Manager]
+* xref:partner-manager::transaction-monitoring.adoc[Transaction Monitoring]
+* xref:partner-manager::partner-configuration.adoc[Partner Configuration]
+
+== 1.7.0
+
+*December, 2016*
+
+===  Browser Support
+
+Anypoint Partner Manager, as a component of https://anypoint.mulesoft.com[Anypoint Platform] supports the following browsers:
+
+* Firefox (latest version)
+* Chrome (latest version)
+
+===  Compatibility
+
+Compatible with:
+
+* X12 Module 1.2.1
+* EDIFACT Module 1.2.1
+* Partner Manager Connector 3.0.x
+* FTPS Connector 1.0.8
+* AS2 Connector 2.0.1
+
+===  New Features
+
+* Added validation for Start and Stop dates to custom Date picker in tracking screen
+* Added ability to enter custom message type and version for RosettaNet
+* Added date options to Overview and Filters for all views
+* Added Property Source Type field to Document Properties
+* Added support for Context Properties on Endpoints
+// * Added support for correlating multiple document exchange in Business Process View to Tracker UI screen
+* Enable creation of multiple Maps for same Document Type
+* Added auditing for Anypoint Partner Manager
+
+
+== 1.6.0
+
+*December, 2016*
+
+===  Browser Support
+
+Anypoint Partner Manager, as part of https://anypoint.mulesoft.com[Anypoint Platform] supports the following browsers:
+
+* Firefox (latest version)
+* Chrome (latest version)
+
+===  Compatibility
+
+Compatible with:
+
+* X12 Module 1.2.1
+* EDIFACT Module 1.2.1
+* Partner Manager Connector 3.0.x
+* FTPS Connector 1.0.8
+* AS2 Connector 2.0.1
+
+===  New Features
+
+* Add support for lookup tables
+
+===  Fixed in This Release
+
+* Fixed - Error on Channels Page while choosing map
+* Fixed - Validation error during channel creation at partner level when using a document defined at home org level
+* Fixed - On Document Definition page, if schema file is already uploaded for a document, the label says no file uploaded and there is no indication that a schema has already been uploaded.
+* Fixed - B2B Transactions Overview dashboard does not show correct Transmission/Tracking/Error count
+
+== 1.5.0
+
+*November, 2016*
+
+===  Browser Support
+
+Anypoint Partner Manager, as part of https://anypoint.mulesoft.com[Anypoint Platform] supports the following browsers:
+
+* Firefox (latest version)
+* Chrome (latest version)
+
+===  Compatibility
+
+Compatible with:
+
+* X12 Module 1.2.1
+* EDIFACT Module 1.2.1
+* Partner Manager Connector 3.0.x
+* FTPS Connector 1.0.8
+* AS2 Connector 2.0.1
+
+===  New Features
+
+* Client-side processing of documents - send metadata to Tracking API only (increases processing speed, enhances security)
+* Caching of document property information (increases processing speed)
+* Support for SMTP, POP3, and IMAP endpoints
+
+===  Fixed in This Release
+
+* Fixed - Issues with creating channels across Home Org and Partners.
+* Fixed - Display of long names jumbled in many places across APM system.
+* Fixed - No error message if Channel information is provided incorrectly.
+* Fixed - No validation or error message is provided preventing creating a duplicate partner.
+
+
+== 1.4.0
+
+*October, 2016*
+
+===  Browser Support
+
+Anypoint Partner Manager, as part of https://anypoint.mulesoft.com[Anypoint Platform] supports the following browsers:
+
+* Firefox (latest version)
+* Chrome (latest version)
+
+===  Compatibility
+
+Compatible with:
+
+* X12 Module 1.2.1
+* EDIFACT Module 1.2.1
+* Partner Manager Connector 3.0.x
+* FTPS Connector 1.0.8
+* AS2 Connector 2.0.1
+
+===  New Features
+
+* Configuration of persisted message security settings
+* Configuration of security settings for HTTP send endpoints
+* Configuration of FTP Endpoints
+* Configuration of RosettaNet document definitions
+
+
+== 1.3.0
+
+October, 2016
+
+=== Browser Support
+
+Anypoint Partner Manager, as part of https://anypoint.mulesoft.com[Anypoint Platform] supports the following browsers:
+
+* Firefox (latest version)
+* Chrome (latest version)
+
+=== Compatibility
+
+Compatible with:
+
+* X12 Module 1.2.1
+* EDIFACT Module 1.2.1
+* Partner Manager Connector 3.0.x
+* FTPS Connector 1.0.8
+* AS2 Connector 2.0.1
+
+=== New Features
+
+* Configuration of SFTP endpoints
+* Configuration of JMS endpoints
+* Configuration of custom error codes
+
+=== Fixed in this Release
+
+* Resolve routes not matching partner by ISA identifier
+
+== 1.2.2
+
+=== Browser Support
+
+Anypoint Partner Manager, as part of https://anypoint.mulesoft.com[Anypoint Platform], supports the following browsers:
+
+* Firefox (latest version)
+* Chrome (latest version)
+
+=== Compatibility
+
+Compatible with:
+
+* X12 Module 1.2.1
+* EDIFACT Module 1.2.1
+* Partner Manager Connector 3.0.x
+* FTPS Connector 1.0.8
+* AS2 Connector 2.0.1
+
+=== New Features
+
+* Made import/export/promote jobs asynchronous in background, with update for user in UI when complete
+* Extended max length of error message to 5000 characters
+* Added an operation to Partner Manager Connector to search for a document definition
+* Updated Error Message Pop Up window in Tracking screen to display error messages with multiple lines when new line characters are included in message.
+* Added Refresh button to update the dashboard to reflect new transactions
+* Added infinite scrolling in Tracking screen grids
+
+
+=== Fixed in this Release
+
+* Various validations and UI enhancements for maintaining Document Types, Maps, Endpoints, Channels, and Routes
+* Document Type Screen - CSV options check boxes are not defaulted to checked
+* Added message why user can't delete an artifact when it is being referenced by other artifacts.
+* Partner list not filtering properly
+* If the Error Message is empty (undefined) and the user clicks on that row, the UI goes into a state where it doesn't refresh the right detail panel.
+* Replays of replays  in Tracking screen not linking correctly to original transaction
+
+
+=== Deprecated Features or Functionality
+
+Display and search of “Custom Metadata” in B2B Transactions monitoring screen.  Can still be written and can be retrieved using the apis.  Will be brought back to B2B Transactions monitoring screen in future release.
+
+
+=== Known Issues
+
+* On the B2B Transmissions screen, for the Documents View, clicking the Clear Filters button does not clear the filename filter.  Filter can be cleared by manually deleting the text.
+* When you click *New Partner* on the Trading Partner page, the Partner page appears; before you can use the left-hand navigation bar, you must type a character in the Company Name box.
+* Business Property extraction currently does not work for CSV files.
+
+==  1.2.1
+
+=== Browser Support
+
+Anypoint Partner Manager, as part of https://anypoint.mulesoft.com[Anypoint Platform], supports the following browsers:
+
+* Firefox (latest version)
+* Chrome (latest version)
+
+=== Compatibility
+
+Compatible with:
+
+* X12 Module 1.2.0
+* EDIFACT Module 1.2.0
+* Partner Manager Connector 2.0.x
+* FTPS Connector 1.0.6
+* AS2 Connector 2.0.1
+
+=== New Features
+
+* Implemented throttling of tracking events to prevent tracking delays
+* Added all X12 Versions for Document Definitions
+* Added auto-naming to endpoints screen
+* Updated TPM UI rules to support configuring routes in external partner with channels from home partner
+* Ability to display originalTransactionId in detail pane for replays
+* Ability to navigate from replay to original transaction id and all associated replays
+
+
+=== Fixed in this Release
+
+* Track Document operation no longer fails when you select JSON as type of document
+* Prevented user entry of spaces in object names for Partners, Document Types, Maps, Channels, Endpoints, and Routes fields
+* Added user message indicating that names for Partners, Document Types, Maps, Channels, Endpoints, and Routes must be unique
+* Error tracking message now appears in pop-up modal window
+
+
+=== Deprecated Features or Functionality
+
+* Display and search of “Custom Metadata” in B2B Transactions monitoring screen.  Can still be written and can be retrieved using the apis.  Will be brought back to B2B Transactions monitoring screen in future release.
+
+=== Migration Guidance
+
+* The following API endpoints for transmissions have been removed.  Applications that depend on these should be re-written to use the /businessDocuments endpoint:
+** /ediX12Transmissions
+** /edifactTransmissions
+** /xmlTransmissions
+* The /query API endpoint has been removed.  Applications that depend on this endpoint should be re-written to use the endpoints for specific resources, which have been changed to support the “searchable” trait.
+
+=== Known Issues
+
+* On the B2B Transmissions screen, for the Documents View, clicking the Clear Filters button does not clear the filename filter.  Filter can be cleared by manually deleting the text.
+* When you click *New Partner* on the Trading Partner page, the Partner page appears; before you can use the left-hand navigation bar, you must type a character in the Company Name box.
+* Business Property extraction currently does not work for CSV files.
+
+== 1.0.0
+
+*January 2016*
+
+
+=== Features
+
+* Integration into Anypoint Platform top navigation bar
+* Support for Anypoint Permissions, Environments, Business Groups, and Entitlements
+* Added *executionId* to expand ability to correlate multiple B2B-related events
+* Local caching of Partner Manager settings
+
+
+For more information, see
+xref:partner-manager::anypoint-partner-manager.adoc[Introduction to Anypoint Partner Manager].
+
+=== Compatibility
+
+[%header,cols="2*"]
+|===
+|Application/Service |Version
+|Mule Runtime |Mule 3.6.0 and above
+|===
+
+== See Also
+
+* xref:partner-manager::anypoint-partner-manager.adoc[Introduction to Anypoint Partner Manager]
+* xref:partner-manager::transaction-monitoring.adoc[Transaction Monitoring]
+
+* xref:partner-manager::partner-configuration.adoc[Partner Configuration]

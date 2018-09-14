@@ -1,0 +1,37 @@
+= Microsoft MSMQ Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: msmq-connector-release-notes-mule-4.adoc
+
+*February 2018*
+
+_Select_
+
+== 2.0.0
+
+*February 2, 2018*
+
+Microsoft Message Queueing connector for Mule 4.
+
+=== Compatibility
+
+The Microsoft MSMQ connector is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Application/Service |Version
+|Mule Runtime |Mule Enterprise Edition 4.0.0 and later
+|Anypoint Studio |Only works with Studio 7.0.0 and later
+|===
+
+=== Features
+
+Supports Mule 4.
+
+== See Also
+
+* xref:connectors::msmq/msmq-connector.adoc[Microsoft MSMQ Connector Guide]
+* xref:connectors::windows/windows-gw-services-guide.adoc[Windows Gateway Services Guide]
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

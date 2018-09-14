@@ -1,0 +1,115 @@
+= Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:keywords: release notes
+
+[%header,cols="25a,75a"]
+|===
+|Release Notes |Description
+|xref:analytics/anypoint-analytics-release-notes.adoc[Anypoint Analytics Release Notes]
+|Gathers analytics data for each API that is managed by API Manager, and displays data visually in the API’s dashboard.
+
+*Documentation*: xref:api-manager::index.adoc[Anypoint Analytics]
+
+|xref:partner-manager/anypoint-b2b-release-notes.adoc[Anypoint B2B Release Notes]
+|Connect to trading partners using EDI over AS/2, FTP, and other protocols using Mule.
+
+Release Notes for: Anypoint Partner Manager, AS2 Connector, FTPS Connector, EDI Module, and
+X12/EDIFACT EDI Modules
+
+*Documentation*: xref:partner-manager::index.adoc[Anypoint B2B]
+
+|xref:connector/anypoint-connector-release-notes.adoc[Anypoint Connector Release Notes] |Individual release notes for different versions of the most important connectors that can be used in Mule Projects.
+
+*Documentation*: xref:3.8@mule-runtime::anypoint-connectors.adoc[Anypoint Connectors]
+
+|xref:connector-devkit/anypoint-connector-devkit-release-notes.adoc[Anypoint Connector DevKit] |A tool to create and maintain custom made connectors, coding in Java, that can then be used in Mule Projects.
+
+*Documentation*: xref:3.8@connector-devkit::index.adoc[Anypoint Connector DevKit] +
+xref:connector/connector-migration-guide-mule-3.6-to-3.7.adoc[Connector Migration Guide - Mule 3.6 to 3.7] +
+xref:connector-devkit/anypoint-connector-devkit-studio-plugin-release-notes.adoc[DevKit Studio Plugin Release Notes]
+
+|xref:connector/anypoint-enterprise-security-release-notes.adoc[Anypoint Enterprise Security] |Multi-version release notes. Provides a set of extensions to the out of the box functionality of your Mule Projects, these help you build more secure applications.
+
+*Documentation*: xref:3.7@mule-runtime::anypoint-enterprise-security.adoc[Anypoint Enterprise Security]
+
+|xref:exchange/exchange-release-notes.adoc[Anypoint Exchange Release Notes]
+|A discovery interface (UI and API) where you can find Anypoint Connectors, Templates, Examples, and API descriptions in RAML and WSDL that help make the adoption of the Anypoint Platform a lot easier and faster for you. Also covers REST Connect.
+
+*Documentation*: xref:exchange::index.adoc[Anypoint Exchange]
+
+|xref:mq/anypoint-mq-release-notes.adoc[Anypoint MQ Release Notes]
+|A multi-tenant, cloud messaging service that helps customers perform advanced asynchronous messaging scenarios between their applications.
+
+*Documentation*: xref:mq::index.adoc[Anypoint MQ]
+
+|xref:cli/anypoint-platform-cli.adoc[Anypoint Platform Command Line Interface] | The Command Line Interface tool to operate Anypoint Platform.
+
+*Documentation*: xref:runtime-manager::anypoint-platform-cli.adoc[Anypoint Platform CLI]
+
+|xref:runtime-manager/runtime-manager-release-notes.adoc[Anypoint Runtime Manager] |The enterprise Anypoint Platform tool used to deploy and manage all of your Mule applications in one central location, whether your apps are running in the cloud or on-premises.
+
+*Documentation*: xref:runtime-manager::index.adoc[Runtime Manager]
+
+|xref:studio/anypoint-studio.adoc[Anypoint Studio] |A development environment that accelerates productivity for cloud and on-premises integration and API development.
+
+*Documentation*: xref:6@studio::index.adoc[Anypoint Studio Essentials]
+
+|xref:apikit/apikit-release-notes.adoc[APIkit] | A toolkit that facilitates implementing a REST or SOAP API.
+
+*Documentation*: xref:apikit::index.adoc[APIkit]
+
+|xref:api-manager/api-manager-release-notes.adoc[API Manager] |Multi-version release notes. An online platform for handling the entire life cycle of an API, including design, engagement, tracking and enforcement of policies.
+
+*Documentation*: xref:api-manager::index.adoc[API Manager]
+
+|xref:cloudhub/cloudhub-release-notes.adoc[CloudHub] |An iPaaS platform that allows quick deployment, management, and scaling of Mule applications in the cloud. Multi-version release notes.
+
+*Documentation*: xref:runtime-manager::cloudhub.adoc[CloudHub]
+
+|DataWeave |A language you use to query and transform data in a Mule application. See Studio and Mule release notes.
+
+*Documentation*: xref:3.8@mule-runtime::dataweave.adoc[DataWeave]
+
+|xref:design-center/design-center-release-notes.adoc[Design Center]
+|Build applications and API definitions that enable connectivity throughout your application network.
+
+*Documentation*: link:/design-center/v/1.0/[Design Center]
+
+|xref:healthcare/healthcare-release-notes.adoc[Healthcare Toolkit]
+|Sends and receives HL7 messages over MLLP (using the HL7 connector) and other transport protocols.
+
+*Documentation*: xref:3.0@healthcare-toolkit::index.adoc[Healthcare Toolkit]
+
+|xref:mule-maven-plugin/mule-maven-plugin-release-notes.adoc[Mule Maven Plugin]
+|The mule-maven-plugin lets you deploy Mule applications to different kinds of servers.
+
+*Documentation*: xref:3.8@mule-runtime::mule-maven-plugin.adoc[Mule Plugin for Maven]
+
+|xref:mule-runtime/mule-esb.adoc[Mule Runtime]
+|The latest *Enterprise* and *Community* release of Mule and the Mule Management Console. Applications built with this runtime are deployable both on premises and on Runtime Manager.
+
+*Documentation*: xref:3.8@mule-runtime::index.adoc[Mule Runtime]
+
+|xref:munit/munit-release-notes.adoc[MUnit Release Notes]
+|Build automated tests for integrations and APIs using a full suite of integration and unit test capabilities that integrate with Maven and Surefire.
+
+*Documentation*: xref:1.3@munit::index.adoc[MUnit]
+
+|xref:runtime-manager-agent/runtime-manager-agent-release-notes.adoc[Runtime Manager Agent]
+|Plugin extension for Mule that exposes the Mule API.
+
+*Documentation*: xref:runtime-manager::runtime-manager-agent.adoc[Runtime Manager Agent]
+
+|xref:7.1@tcat-server::release-notes.adoc[TCat Server] |A powerful enterprise solution for developing, deploying, managing, integrating, and troubleshooting your web applications in Apache Tomcat.
+
+*Documentation*: xref:7.1@tcat-server::index.adoc[Tcat Server]
+
+|xref:connector/windows-gateway-services-release-notes.adoc[Windows Gateway Services Release Notes]
+|Provides connectivity to proprietary functionality on the Windows platform, and is used by the MSMQ connector, PowerShell Connector, Dynamics CRM Connector, and Dynamics AX Connector.
+
+*Documentation*: xref:3.7@mule-runtime::windows-gateway-services-guide.adoc[Windows Gateway Services Guide]
+|===
+
+MuleSoft currently supports Mule 3.1.0 and newer.  Access our xref:deprecated/deprecated-products.adoc[Deprecated Products] to learn how to migrate from previous versions of Mule to the latest version.

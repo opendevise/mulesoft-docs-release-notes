@@ -1,0 +1,155 @@
+= Mule Runtime 3.8.3 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: mule-3.8.3-release-notes.adoc
+:keywords: mule, 3.8.3, runtime, release notes
+
+*December 2, 2016*
+
+Mule Runtime 3.8.3 includes enhancements, an important change affecting default policy polling time, bug fixes, and a library change.
+
+Mule Runtime 3.8.3 key enhancements are:
+
+* Support for Mule xref:3.8@mule-runtime::application-deployment.adoc#deploying-applications-in-parallel[parallel application deployment]
++
+Deploying applications in parallel reduces the startup time when you deploy a large number.
+* Availability of the link:/api-manager/gatekeeper[gatekeeper feature] on clusters
++
+APIs on a cluster are blocked and return a 503 status code until a complete reconciliation cycle with API Manager occurs. Policies declared as applied on the UI are applied. Policies unapplied since the last restart are removed.
++
+* Refactored throttling algorithm
++
+Functionality, scalability, and performance are improved by algorithm changes. Throttling headers work correctly on a cluster. A counter persistent state has been added to standalone and cluster deployments.
++
+* Response time
++
+Policies are now applied to an API version as soon as retrieved instead of waiting for all policies to be fetched. Policies are now cached to avoid unnecessary processing.
++
+* COBOL Copybook bug fixes and support for DEPENDING ON clauses. This feature is now GA.
++
+* Support for larger than memory XML payloads (up to 2 GB)
+
+*Important change*:
+
+The default policy polling time has been extended to reduce the load on API Manager and improve scalability. MuleSoft based this change on careful examination of actual customer experiences. A minimum 60-second delay now occurs between the time you apply a policy in the UI and the time the policy actually goes into effect. The same delay occurs when you disable or edit a policy. You can link:/api-manager/using-policies#configuring-the-policy-polling-time[configure the length of the delay].
+
+
+== Supported Software
+
+Mule was tested on the following software:
+
+// updated per DOCS 1749 https://github.com/mulesoft/mulesoft-docs/commit/4bd356c8f2cc5d0952ee99622c0c7f0b360455df
+
+[%header,cols="15a,85a"]
+|===
+|Software |Version
+|JDK |Oracle JDK 1.7.0 and 1.8.0, JRE 1.8.0 (JRE 1.8.0_91/92 recommended), JRE 1.7.0, IBM JRE 1.8, 1.7, OpenJDK 8
+|OS |MacOS 10.11.4, AIX 7.2, Windows 2012 R2 Server, Windows 8.1, Solaris 11.3, RHEL 7
+|Application Servers |Tomcat 7 and 8, WebLogic 12c, WebSphere 8, WildFly 8 and 9, Jetty 8 and 9
+|Databases |Oracle 11g, Oracle 12c, MySQL 5.5+, IBM DB2 10, PostgreSQL 9, Derby 10, Microsoft SQL Server 2014
+|===
+
+The unified Mule Runtime 3.8.3 and API Gateway is compatible with APIkit 3.8.3.
+
+
+== Bundled Runtime Manager Agent
+
+This version of Mule runtime comes bundled with the Runtime Manager Agent plugin version 1.6.0.
+
+See xref:runtime-manager-agent/runtime-manager-agent-release-notes.adoc[Runtime Manager Agent Release Notes].
+
+== DataWeave Language Improvements
+
+* Added support for default namespaces on XML parser
+* Cached the result of the property access function
+* Removed the reader property `encoding`
++
+The reader property `encoding` is not available as of version 3.8.3. Apps created in earlier versions that use the property should be modified so that the source of the message data sets the correct character encoding.
+
+
+== Enhancements
+
+[%header,cols="15a,85a"]
+|===
+|Issue |Description
+| AGW-933 | Rate limit/throttling--Add persistence feature flag and implementation feature flag.
+| AGW-930 | Support Gatekeeper in cluster.
+| AGW-915 | Externalize RAML injection with a property.
+| AGW-903 | Improve logs on rate limit/throttling algorithm.
+| AGW-898 | Support Hazelcast on rate limit/throttling algorithm.
+| AGW-897 | Modify polling of online policies to be updated per API.
+| AGW-890 | New rate limiting/throttling algorithm on cluster.
+| AGW-887 | Improve statistics on throttling algorithm when running on cluster.
+| AGW-881 | Log detailed policy application time per app and policy polling time.
+| AGW-769 | Persist rate limiting/throttling quota: cluster.
+|===
+
+== Fixed issues
+
+[%header,cols="15a,85a"]
+|===
+|Issue |Description
+| EE-5182    | Poll watermark got updated in batch input phase even if there's an exception.
+| EE-5190    | Many Request attributes get duplicated when doing name resolving failover.
+| MULE-8413  | xpath3 function not working with output from WebService Consumer component.
+| MULE-10573 | File transport processes files that did not finish copying.
+| MULE-10581 | Batch process cannot resume after a crash if there is a corrupted file in the Object Store.
+| MULE-10620 | Envelope namespace used in body produces broken XML when getting the body.
+| MULE-10643 | ResourceBundle class loader leak occurs when undeploying application.
+| MULE-10644 | Ensure MULE-9534 fix only applies to one-way endpoints and add tests for JMS Message ID request-response correlation pattern.
+| MULE-10646 | Refactor GrizzlyHttpClient to use BodyDeferringAsyncHandler.
+| MULE-10717 | Flows can start processing messages before referenced flows are completely started.
+| MULE-10721 | Simultaneous Http requests with MuleClient produce error.
+| MULE-10722 | Not Handling FTP Connection Errors in FTPMessageReceiver.
+| MULE-10773 | Jaxb unmarshaller doesn't support namespaces anymore.
+| MULE-10817 | ExpressionMuleEventKeyGenerator does not evaluates composite expressions.
+| MULE-10854 | Use scrollable ResultSet when supported for stored procedure calls.
+| MULE-10870 | Duplicate content-type created in response builder.
+| MULE-10881 | AsyncInterceptingMessageProcessor#processNextAsync not rethrowing exception.
+| MULE-10882 | Unregister resources from Bitronix (ResourceRegistrar and ManagementRegistrar).
+| MULE-10887 | GrizzlyHttpClient#createGrizzlyRequest: separate RequestBuilderCreation from its actual configuration.
+| MULE-10909 | MySQL objects leaked after undeployment.
+| MULE-10911 | Poll component should ignore scheduling when application is being stopped.
+| MULE-10913 | DB Pool retrieving invalid connections.
+| MULE-10918 | `Until successful` is losing session vars.
+| MULE-10921 | FtpWork never processes file if lock is not granted.
+| AGW-577 | Avoid parsing policies when they are already applied.
+| AGW-913 | When applying throttling SLA in cluster only the polling node has access to the contracts DB.
+| AGW-919 | Configure XML parsers to disable external entities.
+| AGW-921 | Rate limit/throttling: Endpoint and resource pointcut create invalid algorithm id on cluster.
+| AGW-924 | Clients database is deleted after mule is shutdown.
+| AGW-925 | RAML Proxy--Add keepRamlBaseUri property.
+| AGW-934 | Existing policies are not re-applied after stopping and starting the API.
+| AGW-941 | RejectedExecutionException when throttling on cluster after application restart.
+| AGW-944 | No quota manager is defined when throttling on cluster.
+| AGW-961 | Stored policies are deleted when Gateway fails to track APIs.
+|===
+
+== DataWeave Language Bug Fixes
+
+[%header,cols="15a,85a"]
+|===
+|Issue |Description
+| N/A | Fixed MEL execution in Studio preview
+| SE-4824 | No support for default namespaces on the XML parser
+| N/A | Generate log-to info (Mule)
+| MDF-253 | Array list facade is consumed by the iterator
+| SE-4623 | Support `java.io.Reader` as a String value
+| N/A | Problem caching the result of the property access function
+| SE-4734 | FlowVar needs to support Java Value directly
+| N/A | Encoding should be set on output message
+| SE-4591 | DataWeave operation resulting in OutputStream instead of InputStream
+| SE-4614 | Avoid calculating hash on variables
+| SE-4620 |Fixed DW buffer files leak
+| N/A | Fixed CSV index selector
+| N/A | CSV Writer produces empty line when using mapObject
+|===
+
+== Library Changes
+
+[%header,cols="15a,85a"]
+|===
+|Issue |Description
+| Mule-10466 | Update javax transport version to 1.2.
+|===

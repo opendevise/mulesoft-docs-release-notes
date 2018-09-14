@@ -1,0 +1,363 @@
+= SAP Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: sap-connector-release-notes.adoc
+:keywords: java connector, jco, release notes, sap
+
+*October 2017*
+
+_Premium_
+
+The Mule Runtime supports SAP integration through our Anypoint Connector for SAP, which is an SAP-certified Java connector that leverages the SAP Java Connector (JCo) libraries.
+
+xref:3.9@mule-runtime::sap-connector.adoc[SAP Connector User Guide]
+
+== 3.2.0
+
+*October 3, 2017*
+
+[%header%autowidth]
+|===
+|Software |Version
+|Mule Runtime|3.5.x and later
+|Anypoint Studio|6.3 and later
+|Java|7, 8
+|SAP Solution| ECC 6.0 and later
+|Supported modules|SAP CRM, SAP ERP, SAP SRM, SAP SCM, and any other modules compatible with the NetWeaver platform.
+|===
+
+=== Features
+
+None.
+
+=== Fixed in this Release
+
+* *Transaction ID (TID) not copied to the outbound scope* - This issue occurs when making outbound calls with the *Mule Runtime 3.8.x EE*, which introduced modifications in the transaction management implementation that affected the connector. The SAP transaction component would never initialize a transaction, resulting in a null TID when executing `#[message.outboundProperties.sapTid]`. The issue is now fixed and transactions are again working with Mule Runtime 3.5.x to 3.8.x. In addition to the present patch, a workaround is also available by wrapping the SAP component in a Transactional scope.
+
+* *NoSuchMethodError `getDefaultEncoding()`* - A regression bug introduced in SAP 3.1.1 as a result of fixing an encoding issue. This exception arises only in *Mule Runtime 3.5.x EE* because the method `getDefaultEncoding()` is not present in that version. It was introduced in 3.6.x.
+
+* *IDocs containing negative numbers fail to be parsed* - When sending an IDOC to SAP with a field of datatype NUMC, the conversion fails. A similar situation occurs if, for example, an unknown field is added to the IDoc. JCo can handle this content by configuring a series of parsing options but not the SAP connector. In the current version, these options are exposed through the System property `mule.sap.idoc.parserOptions`. Multiple options can be combined using a comma (",") separator, for example: `mule.sap.idoc.parserOptions=PARSE_WITH_FIELD_VALUE_CHECKING,PARSE_IGNORE_UNKNOWN_FIELDS`. Below is the list of supported options:
+    ** PARSE_WITH_FIELD_VALUE_CHECKING
+    ** PARSE_IGNORE_UNKNOWN_FIELDS
+    ** PARSE_IGNORE_INVALID_CHAR_ERRORS
+    ** PARSE_WITHOUT_FIELD_DATATYPE_CHECKING
+    ** PARSE_REFUSE_UNKNOWN_XMLVERSION
+    ** PARSE_REFUSE_XMLVERSION_10
+    ** PARSE_REFUSE_XMLVERSION_11
+    ** PARSE_ACCEPT_ONLY_XMLVERSION_10
+    ** PARSE_ACCEPT_ONLY_XMLVERSION_11
+    ** PARSE_ACCEPT_ONLY_XMLVERSIONS_10_TO_11
+
+*Note:* option `PARSE_WITH_IGNORE_UNKNOWN_FIELDS` is deprecated.
+
+=== Known Issues
+
+* Destination Provider reference gets lost after hot redeploy of an application (that is, modifying the `mule-config.xml`)
+* When a field doesn't have a name, SAP Connector presents a metadata for this field as _ANONYMOUS_
+
+
+
+== 3.1.1
+
+*July 31, 2017*
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime|3.5.x and later
+|Anypoint Studio|6.3 and later
+|Java|7, 8
+|SAP Solution| ECC 6.0 and later
+|Supported modules|SAP CRM, SAP ERP, SAP SRM, SAP SCM, and any other modules compatible with the NetWeaver platform.
+|===
+
+=== Features
+
+None.
+
+=== Fixed in this Release
+
+* *Failure to refresh metadata* - This is related to the previously fixed issue _"Incomplete disposal of JCo classloader"_ though, this time, it affected the metadata when loading JCo libs at Mule application level (from the Global Configuration). In this version, the issue has been resolved and JCo can be used both in a shared and in a standalone environment.
+* *DataSense cannot display metadata for extended IDocs* - IDoc (and BAPI) names may contain namespaces in the form of `/PACKAGE/IDOC_TYPE`, `PACKAGE-IDOC_TYPE`, `PACKAGE1-/PACKAGE2/IDOC_TYPE`, etc. In previous versions of the connector, these namespaces were incorrectly escaped when building the metadata for DataSense, resulting in a truncated XML. In the present version, this issue is fixed and the XML is properly generated for any compound IDoc or BAPI name.
+* *Wrong encoding for XML output* - Until this version, if the encoding attribute was set in the endpoint but there was also a Message Transformer (that is, DataWeave) present in the flow, placed before the SAP component, *explicitly overriding the encoding*, the latter would be applied to the XML output. This was not the right behavior. Now, if the encoding attribute is defined in the endpoint and it is different to the System's default, it will have precedence over any other encoding configured before.
+
+=== Known Issues
+
+* Destination Provider reference gets lost after hot redeploy of an application (that is, modifying the `mule-config.xml`)
+
+
+
+== 3.1.0
+
+*March 10, 2017*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime|3.5.x and later
+|Anypoint Studio|6.2 and later
+|Java|7, 8
+|SAP Solution| ECC 6.0 and later
+|Supported modules|SAP CRM, SAP ERP, SAP SRM, SAP SCM, and any other modules compatible with the NetWeaver platform.
+|===
+
+=== Features
+
+* *Enhanced IDoc Metadata* - Additional information has been added to both DataSense/DataWeave and XML templates:
+** For every segment, the optional/required segments and the allowed number of segments (minimum and maximum occurrences). Example: E1LFA1M [segment, required, min. 1, max. 1].
+** For each segment field and each field in the control record, the field position is now present. Example: TABNAM [char, 10, pos. 1]
+* *Repository Cache Invalidation* - When a customer modifies the structure of an SAP Function Module or BAPI, the changes are not reflected in the payload of the call, no matter if the change has already been applied and activated in the SAP instance. Re-deploying the application that made the call to the FM or BAPI has no effect either since the repository is common and shared by all the applications running in the same Mule runtime. JCo provides a functionality to remove current FM/BAPI information from the cache. However, *this feature is transparent to the user*. The disposal of the cache is triggered before any outbound or inbound call is made.
+
+=== Fixed in this Release
+
+* *Incomplete disposal of JCo classloader when sharing JCo dependencies between several applications* - The _second time_ a user performed a Test Connection, a Refresh Metadata or a Search of a Function/IDoc inside a shared JCo environment, a `Destination XX could not be created: java.lang.RuntimeException: File XX.jcoDestination does not exist` or `Destination XX does not exist` exception was thrown. This happened because the JCo destination reference wasn't properly unregistered from the DestinationDataProvider. However, the issue it *not* present when installing JCo libraries in the local classpath of a Mule application.
+* *Failure to send outbound IDoc of type ByteArrayInputStream* - Previously, since version 3.0.0, when trying to transform an IDoc built from a ByteArrayInputStream, the conversion failed with an `IllegalArgumentException` because the payload was passed with a NULL value. Now, the issue is fixed and the transformation correctly performed.
+
+=== Known Issues
+
+* Destination Provider reference gets lost after hot redeploy of an application (that is, modifying the `mule-config.xml`)
+
+
+== 3.0.1
+
+*December 2, 2016*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime|3.5.x and later
+|Anypoint Studio|5.x and higher
+|Java|7, 8
+|SAP Solution| ECC 6.0 and later
+|Supported modules|SAP CRM, SAP ERP, SAP SRM, SAP SCM, and any other modules compatible with the NetWeaver platform.
+|===
+
+=== Features
+
+* Enhanced DataSense for IDocs -  For every IDoc field, additional information is displayed as part of the UI label: the data type, its length and a description.
+
+=== Fixed in this Release
+
+* *XML External Entities (XXE) vulnerability* - By default, XML parsers are weakly configured and are therefore vulnerable to XML External Entity attacks (for example, disclosure of confidential data, denial of service, server side request forgery) when the application parses XML input. To prevent XXE,  DTDs (External Entities) have been completely disabled in all the XML parsers used by the connector.
+* *Metadata retrieval results in timeout* - This is a result of additional information being displayed to enhance DataSense in version 3.0.0. The implementation has been improved and timeout is no longer being triggered. However, metadata generation takes a bit longer than in previous versions.
++
+NOTE: Due to the metadata retrieval timeout fix, both Input and Output tabs in DataSense UI display the same information (import, export, tables, etc). When using DataWeave, make sure you select the correct Input / Ouptut parameters.
++
+* *IDoc attributes "BEGIN" and "SEGMENT" not displayed in DataSense* - Regression issue introduced in version 3.0.0. Now both DataSense UI and DataWeave correctly display these attributes, which are required to properly build the XML of a given IDoc.
++
+NOTE: DataSense will display unwanted fields, such as: @begin and @segment. This is DS default behavior when working with XML data. Skip these when binding data with DataWeave.
+* `Redundant XSD attribute names` - To improve readability, the `sap` prefix has been removed from the XSD/XML template. Attributes `sapOptional`, `sapType`, `sapLength` and `sapDescription` have been renamed to `optional`. `dataType`, `length` and `description` respectively.
+* *Parameters of type XSTRING are passed as String* - XSTRING represents a byte array in ABAP. This data type was not being handled by the connector. The value was passed without any conversion. In this version, XSTRING parameters are received as a Base64 string (the user is in charge of encoding it) and converted to a byte array.
+* *Connector hangs when application is redeployed* - This occurs when deploying an application that uses an *Inbound endpoint* inside a *Mule EE Standalone* distribution. When un-deploying the app and performing a second re-deploy attempt, the Mule Runtime gets stuck and does not finish deploying it completely (the log will end at _New app 'my-sap-app'_ instead of _Started app 'my-sap-app'_). As a *workaround*, the default value of `operationTimeout` has been changed from *0 (zero)* -Mule would block forever until the JCo server operations to execute- to *30 (thirty) seconds*. For *previous versions* of the connector, where the default value is 0, the workaround is to *explicitly declare* `operationTimeout` with a value greater than 0, similarly to the example below:
+```xml
+<sap:inbound-endpoint connector-ref="SAP" operationTimeout="5" type="idoc" ... />
+```
+
+=== Known Issues
+
+* Though the Connector hangs when application is redeployed a *workaround* has been provided in the previous section. The underlying issue persists and will be addressed in a future release.
+* Destination Provider reference gets lost after hot redeploy of an application (that is, modifying the `mule-config.xml`)
+
+== 3.0.0
+
+*May 17, 2016*
+
+SAP connector version 3.0.0 was released and packaged with Anypoint Studio 6.0.0.
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime|3.5.x and later
+|Anypoint Studio|5.x and later
+|Java|7, 8
+|SAP Solution| ECC 6.0 and later
+|Supported modules|SAP CRM, SAP ERP, SAP SRM, SAP SCM, and any other modules compatible with the NetWeaver platform.
+|===
+
+=== Features
+
+* Supports definition of SAP JCo Client Extended Properties using MEL.
+* Metadata generated at inbound endpoint by SAP is now organized by input and output.
+* Enhanced DataSense, displaying additional information:
+** For Functions and BAPIs, it is now possible to identify tables and structures, optional and required fields, the 'real' data type associated with them (such as Char, Number), their length and a description. For IDocs, segments are also clearly labeled.
+
+=== Fixed in this Release
+
+* Support for *XML Version 1* was *removed* for Functions/BAPIs. This means that attribute `xmlVersion` is deprecated and templates for V1 no longer can be exported.
+* Connection Pool for outbound requests didn't work when configured from the connector global configuration because it was missing the property `jcoExpirationTime`, needed along with `jcoPeakLimit` and `jcoPoolCapacity` to establish the connection pooling.
+** When set to a value above "0", the connector should support connection pooling.
+
+=== Known Issues
+
+* Destination Provider reference gets lost after hot redeploy of an application (that is, modifying the mule-config.xml)
+
+== 2.2.8
+
+*January 28, 2016*
+
+=== Compatibility
+
+The MuleSoft Enterprise Java Connector for SAP connector is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime|3.5.x and later
+|Anypoint Studio|5.x
+|Java|7
+|SAP R/3|Release 3.1 and later
+|SAP ERP|6.0 EhP 7 (SAP_APPL 607) and later
+|===
+
+=== Features
+
+* Transaction ID (TID) has been added as a property of the Mule Message. Thus, when sending or receiving IDocs, the user will be able to call RFC-enabled Function Modules on SAP (`INBOUND_IDOCS_FOR_TID` and `OUTBOUND_IDOCS_FOR_TID`) to retrieve the IDoc number.
+
+=== Fixed in this Release
+
+* Java's UTF-8 encoding had not been recognizing initial character BOM (Byte Order Marker).
+
+* Metadata retrieval in DataSense for BAPI names containing slashes ("/"), for example, "/DSD/ME_GETLIST_TR", is fixed.
+
+=== Known Issues
+
+* Destination Provider reference gets lost after hot redeploy of an application (that is, modifying the mule-config.xml)
+
+== 2.2.7
+
+*July 1, 2015*
+
+=== Compatibility
+
+The MuleSoft Enterprise Java Connector for SAP connector is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime|3.5.x and later
+|Anypoint Studio|5.x and later
+|Java|7
+|SAP R/3|Release 3.1 and later
+|SAP ERP|6.0 EhP 7 (SAP_APPL 607) and later
+|===
+
+=== Features
+
+* None
+
+=== Fixed in this Release
+
+* Compatibility issue with Anypoint Studio 5.2: when making a BAPI call or sending an IDoc, the SAP outbound endpoint could not parse an XML input built with a DataWeave Message Transformer.
+
+* XML version 2 parser displayed confusing ERROR messages expected when defining the record type.
+
+* The "MINIMAL" metadata mode now generates sample rows for tables.
+
+=== Known Issues
+
+* Destination Provider reference gets lost after hot-redeploy of an application (that is, modifying the mule-config.xml)
+
+== 2.2.6
+
+*June 17, 2015*
+
+=== Compatibility
+
+The MuleSoft Enterprise Java Connector for SAP connector is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime|3.5.x and later
+|Anypoint Studio|5.x
+|Java|7
+|SAP R/3|Release 3.1 and later
+|SAP ERP|6.0 EhP 7 (SAP_APPL 607) and later
+|===
+
+=== Features
+
+* Added demo examples to public site, available for download at http://mulesoft.github.io/mule-sap-connector/[SAP Connector Demos]
+
+* Extended multi-tenancy support to all the connection parameters (jcoAsHost, jcoUser, jcoLang, jcoClient, jcoPasswd & jcoSysnr) so that the connections can be defined dynamically in runtime. This way, the connector can now be used in real multi-tenant scenarios within Data Gateway.
+
+* Set the correct mimeType for payload to each message created by the SAP Transport to be fully compatible with the new Data Framework.
+
+=== Fixed in this Release
+
+* Operation timeout cannot be configured for SAP Inbound Endpoint.
+
+* XML definition not removed from config file after deletion from Studio GUI.
+
+* NullPointerException when using Scalable Node Controller (SNC) and the password attribute is null. The SNC connection mode uses digital certificates to execute the authentication and hence no username and password are required.
+
+* Defective IDoc to XML conversion after upgrading to SAPJCo 3.0.13 and SAPidoc 3.0.12.
+
+=== Known Issues
+
+* Destination Provider reference gets lost after hot-redeploy of an application (that is modifying the mule-config.xml)
+
+== 2.2.5
+
+*November 28, 2014*
+
+=== Compatibility
+The MuleSoft Enterprise Java Connector for SAP connector is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime|3.5.x and later
+|Anypoint Studio|5.x
+|Java|7
+|SAP R/3|Release 3.1 and later
+|SAP ERP|6.0 EhP 7 (SAP_APPL 607) and later
+|===
+
+=== Features
+
+* Full-featured SAP Editor - SAP Editor includes more options to browse SAP objects (IDocs & Functions), display complete details of the selected SAP Object metadata (XML Template and/or XSD) and export the data to the desired directory. DataSense has also been improved in order to reload metadata whenever any of the following changes: SAP Object, Type (IDoc / Function), Output XMl, XML Version.
+
+* Support for IDoc Extensions - Is is now possible to generate the metadata structure for a custom IDoc.
+
+* Support for XML version 2 - It is set as the default XML version to configure a BAPI request.
+
+* Improved DataSense metadata discovery - for SAP Objects, Type (IDoc/Function), Output XML and XML Version. It also provides better coverage of failure messages.
+
+=== Fixed in this Release
+
+* Inbound endpoint support for qRFC doesn't work with IDocs.
+
+* Nested BAPI structures cannot be parsed when trying to convert from XML to JCoFunction.
+
+* When parsing a JCo response with empty tables using XML version 2, an empty row is attached to them.
+
+* Failure to convert a BAPI result to XML.
+
+* Object finder doesn't return inbound IDocs, only outbound.
+
+* XML parsers cannot process IDocs or BAPIs with slash (/) character in their name.
+
+* BAPI tables with name-less fields cannot be processed.
+
+* Inbound endpoint fails in some Mule Cluster configurations.
+
+* JCo library generates classloader leaks (only when JCo dependencies and the SAP connector lib are in the application lib directory and the latter is redeployed).
+
+=== Known Issues
+
+* Operation timeout cannot be configured for SAP Inbound Endpoint.
+
+* Destination Provider reference gets lost after hot-redeploy of an application (such as modifying the mule-config.xml).
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

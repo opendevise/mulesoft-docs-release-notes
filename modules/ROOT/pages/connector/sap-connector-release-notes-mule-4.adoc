@@ -1,0 +1,95 @@
+= SAP Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: sap-connector-release-notes-mule-4.adoc
+:keywords: java connector, jco, release notes, sap
+
+*July 2018*
+
+_Premium_
+
+The Mule Runtime supports SAP integration through our Anypoint Connector for SAP, which is an SAP-certified Java connector that leverages the SAP Java Connector (JCo) libraries.
+
+Note: This connector is not supported for use with Anypoint Design Center.
+
+== 4.1.0
+
+*July 25, 2018*
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime|4.1.1 and later
+|Anypoint Studio|7.0 and later
+|Java|8
+|SAP Solution| ECC 6.0 and later
+|Supported modules|SAP CRM, SAP ERP, SAP SRM, SAP SCM, and any other modules compatible with the NetWeaver platform.
+|===
+
+=== Features
+
+* Minimum Mule Runtime version set to 4.1.1.
+
+=== Fixed in this Release
+
+* Trying to access row values in a table which does not have any rows yet was throwing an error. It doesn't do that anymore now.
+* Connector can now be downloaded without having to add the releases repository in the settings.xml.
+
+=== Known Issues
+
+* None.
+
+== 4.0.1
+
+*July 17, 2018*
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime|4.0.0 and later
+|Anypoint Studio|7.0 and later
+|Java|8
+|SAP Solution| ECC 6.0 and later
+|Supported modules|SAP CRM, SAP ERP, SAP SRM, SAP SCM, and any other modules compatible with the NetWeaver platform.
+|===
+
+=== Features
+
+* No new features added.
+
+=== Fixed in this Release
+
+* Information was missing when Idocs are reveived in connector. The information is now properly transmitted.
+
+=== Known Issues
+
+* None.
+
+== 4.0.0
+
+*November 18, 2017*
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime|4.0.0 and later
+|Anypoint Studio|7.0 and later
+|Java|8
+|SAP Solution| ECC 6.0 and later
+|Supported modules|SAP CRM, SAP ERP, SAP SRM, SAP SCM, and any other modules compatible with the NetWeaver platform.
+|===
+
+=== Features
+
+* Added support for Mule 4.
+
+=== Known Issues
+
+* Destination Provider reference gets lost after hot redeploy of an application (such as modifying mule-config.xml).
+* This connector is only available in Studio 7 and not available in the Design Center feature of Anypoint Platform.
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

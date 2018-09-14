@@ -1,0 +1,98 @@
+= Anypoint Studio 5.4 with 3.7.3 Runtime Update Site 1 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: anypoint-studio-5.4-with-3.7.3-runtime-update-site-1-release-notes.adoc
+:keywords: release notes, anypoint studio
+
+*December 17, 2015* +
+*Build ID:* 201512161232
+
+== Compatibility
+
+*Mule Runtime*
+Version: 3.7.3 EE
+
+*Anypoint Studio*
+Version: 5.4.1
+Build Id: 201512161232
+
+*APIkit*
+Versions: 1.6.3 - 1.7.3
+
+*SAP Connector*
+Versions: 2.1.2 - 2.2.7
+
+*DataWeave*
+Version 1.0.3
+
+== What's New
+
+This release includes many improvements and bug fixes, including:
+
+* Support for auto mapping Map types in DataWeave
+* Improved DataWeave error markings
+* Studio deadlock fix
+* Bug fixes to the new light theme
+
+...And many more
+
+
+For a complete list, please see the JIRA list below.
+
+== Migration Guide
+
+== Migration Guide
+
+* From the previous versions of Studio 5.1.0, 5.1.1, 5.2.0, 5.2.1, to 5.3.0 there is no special migration needed, but when opening a previous Workspace with projects that were created with Studio 5.1.0 or older, and which has metadata stored in disk, Studio asks you to perform an update to all the projects so that the Metadata Manager can handle the types and to show the types in your project.
+
+[NOTE]
+Studio as an Eclipse plugin only works with Eclipse 4.3 or 4.4 due to an SWT dependency.
+
+[TIP]
+====
+You can easily import all of the external components that you had installed in your old version of Anypoint Studio through a single action. This includes connectors, runtimes, and any other type of extension added through the Anypoint Exchange or the ​*Help -> Install new software*​ menu, as long as there are no compatibility restrictions.
+
+Do this by selecting *File->Import* and then choose *Install->From existing installation*.
+
+image::studio/import-extensions.png[import]
+
+Then specify the location of your old version of Anypoint Studio in your local drive.
+====
+
+== Eclipse Plugin
+
+If you are using Studio as an Eclipse plugin, you can get this version of Studio using the Eclipse update site `+http://studio.mulesoft.org/r4/plugin+`.
+
+This allows you to download Anypoint Studio core and third-party components version 5.x.x and with an embedded version of Mule Runtime v3.7.x along with other optional components. +
+For a detailed description of the update site's content visit the xref:5@studio::studio-in-eclipse.adoc#available-software-in-the-update-site[Studio in Eclipse] section.
+
+== Jira Ticket List
+
+
+=== Bug Fixes
+
+* [STUDIO-5360] - Autocomplete with ENTER in a dialog, closes the dialog
+* [STUDIO-7335] - DW: Warning errors in the DW Script are not marked in the editor
+* [STUDIO-7366] - DW: when the script starts to grow (assuming having too many parenthesis) at some point it hangs Studio
+* [STUDIO-7368] - DW: auto-mapping of fields does not work for MAP and CSV
+* [STUDIO-7384] - [Palette] Hover effect for Munit categories in Light theme
+* [STUDIO-7389] - [Palette] Suggestion search shows category without any match.
+* [STUDIO-7395] - [Palette] When changing the Runtime of a Project the palette is not refreshed until you filter
+* [STUDIO-7406] - [Light Theme] When using security module MPs, Studio visual goes wrong.
+* [STUDIO-7407] - Studio fails to open configs when the editor contains a nested element that contains it self
+* [STUDIO-7408] - NPE when the palette is reloaded and no mule editor was open before
+* [STUDIO-7414] - Drag and drop not working when the script has only warnings
+* [STUDIO-7418] - Format in drag and drop after dropping element is not working if there is any selection in the script
+* [STUDIO-7419] - [DW-UI] Setting metadata within DW transformer is not saved if using new type
+* [STUDIO-7425] - Assign metadata does not work properly
+* [STUDIO-7426] - [DW-UI] Drag and drop does not work properly when the output is not payload
+* [STUDIO-7431] - [DW-UI] Issue drag XML element to XML attribute
+* [STUDIO-7432] - [DW-UI] Preview issue with multiples output
+* [STUDIO-7434] - Studio deadlock when starting after a crash
+* [STUDIO-7439] - [Palette] When opening palette preferences from Preferences menu, an error is thrown.
+
+=== Improvements
+
+* [STUDIO-1751] - Import the WSDL in Mule Studio in SOAP Component - Option to browse for WSDL
+* [STUDIO-6944] - Focus in Finish button in pop-up for nested elements is interfeering with autocompletion

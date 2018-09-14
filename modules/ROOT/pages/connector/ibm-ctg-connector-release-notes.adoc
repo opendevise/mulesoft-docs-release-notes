@@ -1,0 +1,158 @@
+= IBM CICS Transaction Gateway Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: ibm-ctg-connector-release-notes.adoc
+:keywords: release notes, ibm ctg, cics, jca, connector
+
+*April 2018*
+
+_Premium_
+
+The IBM CICS Transaction Gateway (IBM CTG) connector provides integration with back-end CICS applications using the CICS Transaction Gateway. For Java platforms, CTG implements the JCA resource adapter to connect Java applications to the CICS system.
+The connector serves as a handrail between Mule applications and the CTG.
+
+== 1.1.0
+
+*April 4, 2018*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime |3.8
+|IBM CICS TG (for Multiplatforms and for z/OS) |9.1 and 9.2
+|IBM CICS TG SDK |9.1 and 9.2
+|===
+
+[IMPORTANT]
+====
+* The remote CICS TG must be at the same or a higher release level than the version of the JCA resource adapter.
+* The JCA resource adapter must match the CICS TG platform. For example, if you have CICS TG for Multiplatforms, you cannot connect to it from a CICS TG for z/OS resource adapter.
+====
+
+The following are required JAR files to set up the connector configuration:
+
+* ccf2.jar (CICS Common Connector Framework)
+* cicsjee.jar (CICS JEE)
+* ctgclient.jar (CTG Client Library)
+* ctgserver.jar (CTG Server Library)
+* geronimo-j2ee-connector_1.6_spec-1.0.jar (JCA 1.6 Specification)
++
+IMPORTANT: JCA 1.6 is needed as a required library to overcome conflicts with JCA 1.5 shipped with the Mule Runtime.
+
+=== Features
+
+* Calls with multiple containers - The connector now allows users to invoke CICS programs using Channels with multiple Containers.
+
+=== Fixed in this Release
+
+* Transactions not working after first call - Transactions after the first one were not being rollbacked properly in some scenarios. This was fixed and now transactions work as expected.
+
+=== Known Issues
+
+* Although the inclusion of JCA 1.6 as a required library is meant to solve compatibility conflicts with the JCA 1.5 shipped with the Mule Runtime, it is yet unknown if this will cause side effects.
+
+
+== 1.0.2
+
+*January 19, 2018*
+
+IBM CICS Transactions Gateway (IBM CTG) connector is available in Mule 4.0.
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime |4.0 and later
+|Java | 8
+|IBM CICS TG (for Multiplatforms and for z/OS) |9.1 and 9.2
+|IBM CICS TG SDK |9.1 and 9.2
+|===
+
+Notes:
+
+* The remote CICS TG must be at the same or a higher release level than the version of the JCA resource adapter.
+* The JCA resource adapter must match the CICS TG platform. For example, if you have CICS TG for Multiplatforms, you cannot connect to it from a CICS TG with the z/OS resource adapter.
+
+The following JAR files are required to set up a connector configuration:
+
+* ccf2.jar (CICS Common Connector Framework)
+* cicsjee.jar (CICS JEE)
+* ctgclient.jar (CTG Client Library)
+* ctgserver.jar (CTG Server Library)
+* geronimo-j2ee-connector_1.6_spec-1.0.jar (JCA 1.6 Specification)
++
+Note: JCA 1.6 is needed as a required library to overcome conflicts with JCA 1.5 shipped with the Mule Runtime.
+
+=== Features
+
+* Authentication - The connector uses, under the hood, the IPIC (IP interconnectivity) protocol to establish communication with CICS regions over TCP/IP. This type of client also supports SSL authentication.
+* Execution of CICS Programs - The connector allows users to invoke CICS programs in two manners:
+** Using Channels and Containers.
+** Using a COMMAREA. Data transfers are limited to 32 KB.
+* Transactions - The connector leverages XA Transactions by means of Mule's Transactional scope and the Bitronix Transaction Manager components.
+* DataSense - The connector supports adding metadata using through the Custom Metadata Tab option. Using the Copybook feature, a user can import a schema that describes the data structure going in and out of CTG so as to be used by a DataWeave component.
+
+=== Fixed in this Release
+
+* None.
+
+=== Known Issues
+
+* Although the inclusion of JCA 1.6 as a required library is meant to solve compatibility conflicts with the JCA 1.5 shipped with the Mule Runtime, it is yet unknown if this causes side effects.
+
+== 1.0.0
+
+*September 28, 2017*
+
+=== Compatibility
+
+[%headercols="50a,50a"]
+|===
+|Software |Version
+|Mule Runtime |3.8
+|IBM CICS TG (for Multiplatforms and for z/OS) |9.1 and 9.2
+|IBM CICS TG SDK |9.1 and 9.2
+|===
+
+*Notes:*
+
+* The remote CICS TG must be at the same or a higher release level as the version of the JCA resource adapter.
+* The JCA resource adapter must match the CICS TG platform. For example, if you have CICS TG for Multiplatforms, you cannot connect to it from a CICS TG for the z/OS resource adapter.
+
+Required JAR files to configure this connector:
+
+* ccf2.jar (CICS Common Connector Framework)
+* cicsjee.jar (CICS JEE)
+* ctgclient.jar (CTG Client Library)
+* ctgserver.jar (CTG Server Library)
+* geronimo-j2ee-connector_1.6_spec-1.0.jar (JCA 1.6 specification)
+
+*Note:*
+
+* JCA 1.6 is needed as a required library to overcome conflicts with JCA 1.5 shipped with the Mule Runtime.
+
+=== Features
+
+* Authentication - The connector uses the IPIC (IP interconnectivity) protocol to establish communication with CICS regions over TCP/IP. This type of connection also supports SSL authentication.
+* Execution of CICS Programs - The connector allows users to invoke CICS programs:
+** Using Channels and Containers.
+** Using a COMMAREA. Data transfers are limited to 32 KB.
+* Transactions - The connector leverages XA Transactions by means of Mule's Transactional scope and the Bitronix Transaction Manager components.
+* DataSense - The connector supports adding metadata using through the Custom Metadata Tab option. Using the copybook feature, you can import a schema that describes the data structure going in and out of CTG for use with DataWeave.
+
+See: xref:6@studio::defining-metadata.adoc[User-defined metadata in Anypoint Studio].
+
+=== Fixed in this Release
+
+* None.
+
+=== Known Issues
+
+* Although the inclusion of JCA 1.6 as a required library is meant to solve compatibility conflicts with the JCA 1.5 shipped with the Mule Runtime, it is yet unknown if this causes side effects.
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum].
+* https://support.mulesoft.com[Contact MuleSoft Support].

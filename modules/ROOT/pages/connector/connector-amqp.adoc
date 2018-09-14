@@ -1,0 +1,26 @@
+= AMQP Connector Release Notes for Mule 4
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: connector-amqp.adoc
+:keywords: mule, AMQP, connector, release notes
+
+*May 2018*
+
+== 1.0.0
+
+*May 24, 2018*
+
+=== New Features and Enhancements
+
+Initial Release.
+
+=== Upgrade Requirements
+
+Mule 4.1
+
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

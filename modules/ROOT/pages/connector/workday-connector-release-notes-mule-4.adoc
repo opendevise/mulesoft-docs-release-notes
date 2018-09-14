@@ -1,0 +1,67 @@
+= Workday Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: workday-connector-release-notes-mule-4.adoc
+:keywords: workday, connector, release notes
+
+*March 2018*
+
+_Select_
+
+Workday is a software as a service (SaaS) solution developed by Workday comprising of a set of management applications that cover areas such as human resources management, staffing, recruiting, and performance management.
+
+The Workday connector requires an Enterprise license.
+
+[IMPORTANT]
+Depending on the connectivity conditions while using Workday connector in Anypoint Studio, there can be a timeout while obtaning Workday metadata. See xref:connectors::workday/workday-studio.adoc#to-increase-timeout-in-studio[To Increase Timeout in Studio].
+
+== 9.2.0
+
+*March 15, 2018*
+
+This release provides a bug fix.
+
+[%header%autowidth]
+|===
+|Software |Version
+|Mule Runtime |4.0.0 and later
+|Workday API |v29.1
+|===
+
+=== Fixed in this Release
+
+Fixed test connectivity.
+
+== 9.1.0
+
+*December 22, 2017*
+
+This release provides support for Workday v29.1.
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime |4.0.0
+|Workday API |v29.1
+|===
+
+== 9.0.0
+
+*November 18, 2017*
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime |4.0.0
+|Workday API |v28.0
+|===
+
+=== Features
+
+This version is compatible with Mule 4.0.0.
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

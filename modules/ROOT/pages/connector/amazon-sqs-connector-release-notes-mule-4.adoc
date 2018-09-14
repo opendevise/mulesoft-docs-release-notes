@@ -1,0 +1,74 @@
+= Amazon SQS Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: amazon-sqs-connector-release-notes-mule-4.adoc
+:keywords: release notes, connectors, amazon, sqs
+
+*May 2018*
+
+_Select_
+
+The Amazon SQS cloud connector provides an easy way to interface with the Amazon SQS API, allowing users to manage SQS queueing services without having to deal with the API directly.
+
+Starting with v.4.0.0, the SQS Connector is licensed commercially with Anypoint Platform as with other Select connectors. Prior versions remain freely available to the community.
+
+== 5.1.1
+
+*May 2, 2018*
+
+This release provides a bug fix.
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Application/Service |Version
+|Mule Runtime |4.1.0 and later
+|AWS SDK for Java |1.11.79
+|===
+
+=== Fixed in this Release
+
+Receive Message Source was failing to retrieve the Messages on the Queue rendering it useless. This version fixes this by making it work using an asynchronous client.
+
+== 5.1.0
+
+*February 21, 2018*
+
+This release provides a bug fix.
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Application/Service |Version
+|Mule Runtime |4.1.0 and later
+|AWS SDK for Java |1.11.79
+|===
+
+=== Fixed in this Release
+
+AWS connectors shared a common library for the supported region endpoints that caused an issue when two different AWS connectors were used in a Mule app. This version fixes this issue.
+
+== 5.0.0
+
+*November 18, 2017*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Application/Service |Version
+|Mule Runtime |4.0.x and later
+|AWS SDK for Java |1.11.79
+|===
+
+=== Features
+
+* Migrated to Mule 4.
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

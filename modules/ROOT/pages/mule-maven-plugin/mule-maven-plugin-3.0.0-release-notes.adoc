@@ -1,0 +1,109 @@
+= Mule Maven Plugin 3.0.0 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: mule-maven-plugin-3.0.0-release-notes.adoc
+
+Mule Maven Plugin 3.0.0 is our first major release to package and deploy Mule artifacts running on Mule 4.x Runtime. +
+This new version of the Mule Maven Plugin aggregates everything a user should need to package any Mule artifact and/or to deploy to an Anypoint Environment (CloudHub, ARM, Standalone, and Agent).
+
+== Hardware and Software Requirements
+
+Hardware and Software Requirements
+
+* Microsoft Windows 8 \+
+* Apple Mac OS X 10.10 \+
+* Linux (tested on Ubuntu 15)
+* Java 8
+* Maven 3.3.3, 3.3.9, 3.5.0
+
+== Compatibility
+
+* Mule 4.x
+* Anypoint Studio 7.x
+
+== Features and Functionality
+
+For this new version of the Mule Maven Plugin we improved the wiring of the plugin to leverage a full power of the Maven lifecycle which allows the user to manipulate the resources that will end up composing the artifact generated.
+
+This version of the plugin allows you to:
+
+* Create a Jar package for:
+** Applications
+** Templates
+** Examples
+** Policies
+* Create heavy or lightweight packages
+* Attach the source code of your application to the artifact
+* Auto completion of mule-artifact.json descriptor file (some fields only)
+* Strong validation policies to ensure the artifact is well formed
+* Deploy to Anypoint Environments
+** Standalone
+** Standalone Agent
+** ARM
+** CloudHub
+
+== Fixed Issues
+
+* MMP-160 - Failure to deploy 4.0.0-BETA-SNAPSHOT application.
+* MMP-123 - MUnit suites end up both in test-mule and test-classes.
+* MMP-161 - Integration test do not take elements from the reactor.
+* MMP-162 - Maven packager downloads many unused dependencies.
+* MMP-287 - avoid shipping .classpath & .project.
+* MMP-270 - Maven Packager ignores provided dependencies when creating the classloader model.
+* MMP-284 - Ignore hidden folder when attaching source.
+* MMP-285 - Parameters are not being injected by plexus.
+* MMP-255 - Multiple plugin executions is not supported.
+* MMP-169 - pom artifacts are not being resolved.
+* MMP-263 - When running the packages, use the maven config injected by Maven in the POJO.
+* MMP-265 - Filter files from munit folder when generating test package.
+* MMP-152 - Packager should resolved all pom files when there are conflicts of different versions.
+* MMP-150 - Broken Mule 4 app is created successfully when packaging statement is missing from the POM..
+* MMP-254 - Validation does not fail when validating requiredProduct in mule-artifact.json.
+* MMP-239 - Validation uses default maven dependency tree to check mule plugin versions compatibility.
+* MMP-176 - LifecycleMapping workaround fails in maven 3.5.0.
+* MMP-149 - Repository does not contains all the necessary dependencies.
+
+== Enhancement Request
+
+* MMP-158 -  Ensure coverage of mule-maven-plugin
+* MMP-164 -  Leverage pom information from mule-maven-client
+* MMP-120 -  Refactor org.mule.tools.artifact.archiver
+* MMP-27 - Create folder structure in target folder
+* MMP-28 - Adapt maven plugin to new archiver API
+* MMP-26 - Add plugin validation logic to packager
+* MMP-63 - Building a mule project without a clean ends up in an error
+* MMP-65 - Add CheckStyle to mule-maven-plugin build
+* MMP-223 -  Run validations between app plugins and domain plugins
+* MMP-43 - As a system administrator I want to undeploy a Mule application so I can clean an environment.
+* MMP-163 -  Resolve application dependencies separate from the mule-plugins
+* MMP-214 -  Implement ARM deploy
+* MMP-267 -  Separate properties in deploymentConfiguration
+* MMP-248 -  Update DefaultValuesMuleArtifactJsonGenerator for test package
+* MMP-268 -  Validate mule version compatibility between mule-artifact.json and deploymentConfiguration
+* MMP-235 -  Avoid resolving domain dependencies for applications
+* MMP-241 -  Remove mule-embedded-distribution as compile dependency
+* MMP-245 -  Generate Test package
+* MMP-264 -  Force semantic versioning
+* MMP-262 -  Test resources are not taken into account when generating mule-artifact.json default values
+* MMP-261 -  Update MuleArtifactContentResolver based con packaging options
+* MMP-257 -  When lightweight package avoid moving classloader-model.json
+* MMP-258 -  Provide domain information on classloader-model.json
+* MMP-155 -  Use repository generation from mule-maven-client
+* MMP-226 -  ArtifactInstaller class in mule-packager should use Artifact from classloader model
+* MMP-237 -  Extract Maven verifier configuration of IT
+* MMP-216 -  Implement mule-domain-bundle package
+* MMP-246 -  Create ArtifactGenerator interface
+* MMP-224 -  Domain Bundle validations
+* MMP-234 -  Autogeneration mule-artifact.json
+* MMP-242 -  Substitute ArtifactDescription by ArtifactCoordinates
+* MMP-154 -  Refactor MOJO logic to make it maven agnostic
+* MMP-215 -  Create mule-domain package
+* MMP-213 -  Implement CH Deploy
+* MMP-250 -  Autogenerate mule-artifact.json exportedResources
+* MMP-78 - Avoid generating binary structure for templates and examples
+
+== Support
+
+* http://forums.mulesoft.com/[MuleSoft’s Forum].
+* http://www.mulesoft.com/support-login[MuleSoft’s Customer Portal].

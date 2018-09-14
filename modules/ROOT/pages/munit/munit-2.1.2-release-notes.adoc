@@ -1,0 +1,63 @@
+= MUnit 2.1.2 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: munit-2.1.2-release-notes.adoc
+:keywords: munit, 2.1.2, release notes
+
+This release is focused on fixing bugs.
+
+== Hardware and Software Requirements
+
+* Microsoft Windows 8+
+* Apple Mac OS X 10.10+
+* Linux (tested on Ubuntu 15)
+* Java 8
+* Maven 3.3.3, 3.3.9
+
+== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule | Mule 4.1.1
+|Anypoint Studio | Anypoint Studio 7.1.2
+|===
+
+== Features and Functionality
+
+=== MUnit Runtime
+
+No new feature was introduced on this release.
+
+== Known Issues
+
+There are no known issues for this release.
+
+== Bug Fixes
+
+* MUSP-593 - Mule4 Application deployment fails when enabling MUnit on Studio7
+* MUSP-613 - Run fails to send lifecycle when tmpdir path has space in Windows
+* MUSP-612 - Canvas icon to run a project is not updated after running an MUnit test in a different project
+
+== Tasks
+
+* MU-1372 - Point to Embedded API 1.1.2
+
+== Enhancements
+
+* MU-1322 - Change maven configuration to read pom repositories
+
+== Story
+
+There are no stories for this release.
+
+=== Anypoint Studio Plugin
+
+This release introduces MUnit Studio plugin 2.1.4.
+
+
+== Support
+
+* http://forums.mulesoft.com/[MuleSoft’s Forum].
+* http://www.mulesoft.com/support-login[MuleSoft’s Customer Portal].

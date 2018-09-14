@@ -1,0 +1,42 @@
+= OData Extension Studio Plugin 1.0.0 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: odata-extension-studio-plugin-release-notes.adoc
+:keywords: apikit, apikit extension, odata
+
+October 11, 2016
+
+
+== What’s New
+
+We are excited to announce the GA release of APIKit OData Extension. We released a beta version of the extension earlier this year. Since then, we have replaced the json model with RAML 1.0. The APIKit Odata Extension provides the following support:
+
+* Support OData Version 2 for creating HTTP-based data services
+* Write EDM (entity data model) in RAML, using EDM-compatible data types to represent API entities
+* Generate Mule flows to handle Odata requests
+
+Customers can now use the APIkit OData Extension to expose a legacy API as an OData API, orchestrate data before exposing it in Salesforce, or create a bidirectional OData API for Oracle, DB2, or Azure DB, for example.
+
+== Prerequisites
+
+The following software is required for creating and using an OData-enabled API with APIkit:
+
+* APIkit OData Extension
+* Mule EE 3.8.2 and later
+* Studio 6.1.2
+* https://maven.apache.org/download.cgi[Maven]
++
+The latest version of Maven is recommended.
+
+== Resources
+
+* link:/apikit/creating-an-odata-api-with-apikit#installing-the-apikit-odata-extension[Installation] and link:/apikit/creating-an-odata-api-with-apikit#odata-mysql-example[Example]
+* link:/apikit/apikit-odata-extension-reference[EDM and Annotation Reference]
+* link:/apikit/creating-an-odata-api-with-apikit[Example in Exchange]
+
+== Known Issues
+
+* Open Data Protocol (OData) enables the creation of HTTP-based data services, which allow resources identified using Uniform Resource Identifiers (URIs) and defined in an abstract data model, to be published and edited by Web clients using simple HTTP messages. We are currently supporting OData protocol version 2.0.  We are not supporting the latest protocol version 4.0
+* We are not supporting relations between Entities. For example, to create a new product that is associated with a category entry making reference to that category in the Post request.
+* HYDRA-1112: Using `api` for the project name retrieves an error when generating flows for an OData API for RAML.

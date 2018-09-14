@@ -1,0 +1,28 @@
+= Anypoint Monitoring Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: anypoint-monitoring-release-notes.adoc
+
+This document describes any new features and enhancements, known limitations, issues, and fixes in Anypoint Monitoring.
+
+== Version 1.05
+
+=== New Features and Enhancements
+
+* Performance Improvements
+** All static resources are stored on a content delivery network (CDN).
+** Resources are prefetched on page load.
+** Changes to built-in dashboards load more quickly.
+** Extended connection pools life before timeout.
+* Improvements to Deployment and Management:
+** New capabilities to associate an Organization with an environment so that you can build proofs of concept (POCs) without relying on engineering work.
+** Provisioning Configuration Management: Allows for changes to the data sources without requiring a new deployment. Versioning to allow controlled roll out.
+** Log Orchestration Service updates periodically from the Provisioning System: allows the creation of an Organization log index without requiring a deployment.
+** Admin console now exposes data from Provisioning: it allows easier visualization and editing of the environment properties.
+* Minor user experience (UX) improvements.
+* Log search share URL.
+
+=== Fixed Issues
+
+* General bug fixes.

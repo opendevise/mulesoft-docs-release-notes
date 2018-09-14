@@ -1,0 +1,8 @@
+= API Functional Monitoring Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: api-functional-monitoring-release-notes.adoc
+
+* link:api-functional-monitoring-1.1-release-notes[API Functional Monitoring 1.1 Release Notes]
+* link:api-functional-monitoring-1.0-release-notes[API Functional Monitoring 1.0 Release Notes]

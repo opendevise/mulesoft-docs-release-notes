@@ -1,0 +1,248 @@
+= Mule 3.5.0 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: mule-esb-3.5.0-release-notes.adoc
+:keywords: mule, 3.5.0, release notes
+
+*May 14, 2014*
+
+MuleSoft is pleased to announce the release of the 3.5.0 Runtime.
+
+== Compatibility Information
+
+[%header,cols="2*a"]
+|===
+|Software |Version
+|Anypoint Studio |January 2014
+|Anypoint DevKit |Version: 3.5.0
+|APIkit |Version: 1.5.0
+|SAP Connector |Version: 2.2.4
+|===
+
+== Enterprise Edition Fixes in This Release
+
+[%header,cols="20a,80a"]
+|===
+|Issue |Description
+|EE-2784 |Cannot serve static content on root domain
+|EE-2916 |java.io.NotSerializableException at org.mule.config.spring.parsers.assembly.MapEntryCombiner when having a JDBC Inbound in a clustered environment
+|EE-3199 |Starting Mule Standalone EE on Mac OS 10.6 with i7 processor runs with wrapper-macosx-universal-32 instead of 64
+|EE-3258 |JDBC transport complains about invalid expression template #[payload]
+|EE-3264 |MMC agent not working in Embedded WAR file
+|EE-3265 |DeploymentService lock not released under error conditions
+|EE-3273 |Remove ReplyToParameterProcessor from internalMessageProcessorNames list
+|EE-3314 |Bootstrap script doesn't recognize whether Windows is running in 32 or 64 bits
+|EE-3315 |Bootstrap script doesn't recognize Linux running on System z (IBM Mainframe)
+|EE-3316 |Bootstrap script doesn't recognize whether the AIX kernel is running in 32 or 64 bits
+|EE-3317 |Running the same mule.bat from two terminals shouldn't be possible
+|EE-3322 |ClassCastException using inbound file endpoint in cluster
+|EE-3322 |ClassCastException using inbound file endpoint in cluster
+|EE-3344 |populatem2repo script does not include mmc related jars
+|EE-3356 |Supported JDKs are not properly defined
+|EE-3370 |HTTP <-> JMS Queue <-> CXF Service bridge failing in 3.4.1 EE, working in 3.4.0 EE
+|EE-3394 |Populate M2 Repo does not populate Clover
+|EE-3419 |NullPointerException is Thrown when shutting down Mule with the MMC Agent disabled
+|EE-3423 |Mule should do clean up of JDBC Driver threads to avoid ClassLoader leaks
+|EE-3449 |Incorrect validation for node ID in cluster causes error on removal if node IDs are not reassigned
+|EE-3459 |ConcurrentModificationException when getting finished records count or executing instances
+|EE-3470 |Queues with limited size behave differently in standalone and cluster mode
+|EE-3474 |ObjectStore is not synchronized properly
+|EE-3496 |Expensive lookup in Spring Registry is performed every time a MEL expression is evaluated
+|EE-3535 |Change MVEL dependency to use mule's MVEL
+|EE-3540 |No way to retrieve stack trace for record, input or on-complete exceptions
+|EE-3563 |max-failed-records only works on the last step
+|EE-3682 |MissingResourceException thrown when gracefully shutting down mule.
+|EE-3780 |Reduce HA Verbosity when a node goes down
+|EE-3809 |Upgrade Guava to avoid incompatibilities with latest JDK7
+|EE-3847 |String format exception when logging exception in streaming commit
+|EE-3859 |Widget example fails to start because does not find mule-app.properties.
+|EE-3865 |Widget example script fails to start because of renamed jars
+|EE-3903 |WMQ connector doesn't allow the setting of a transportType in the connection factory
+|EE-3923 |Mule fails to start when running in legacy mode (Tanuki wrapper license seems invalid)
+|EE-3955 |Test cases override DefaultObjectStoreFactoryBean static delegate causing other tests to fail when split and aggregate operations are used.
+|EE-3969 |MEL behavior is not consistent between maps and POJOs for property access
+|===
+
+== Community Edition Fixes in This Release
+
+[%header,cols="20a,80a"]
+|===
+|Issue |Description
+|MULE-3704 |AttachmentsPropagationTestCase needs XML config file
+|MULE-5301 |The MailMessageFactory adds inbound email headers to the outbound scope of the message
+|MULE-5685 |Unformatted log line when a property is optional
+|MULE-6367 |FTP Inbound endpoint fails when reading empty file
+|MULE-6559 |Wrong messages on JDK version validation
+|MULE-6560 |Incorrect value in recommended JDK version checking
+|MULE-6564 |Using cxf:configuration element prevents generation of WSDL on JAXWS SOAP component
+|MULE-6577 |Failure to propagate the correlation ID across JMS queues
+|MULE-6630 |Expression component serializes requests
+|MULE-6783 |HTTP inbound keep-alive attribute not overriding the keepAlive attribute of HTTP connector
+|MULE-6790 |File transport sets the Directory attribute incorrectly
+|MULE-6791 |Jetty inbound endpoint configured with useContinuations="true" sets http.method as outbound rather than inbound
+|MULE-6800 |Thread leak on Mule redeployments for embedded
+|MULE-6808 |When running salesforce operations in parallel (with OAuth integration), in some scenarios we are getting an exception related to the access token for OAuth
+|MULE-6816 |Shutdown timeout is not respected
+|MULE-6829 |cxf_operation is wrong when using proxy-client of a soap 1.1 request
+|MULE-6831 |Applications deleted when deployment fails
+|MULE-6833 |GZip transformer failing
+|MULE-6837 |Mule application fails when doing stop/start
+|MULE-6849 |ReplyToDestination is not properly configured in some scenarios
+|MULE-6853 |Sftp does not support files with no extension when using tempDir and useTempFileTimestampSuffix
+|MULE-6858 |Filename-wildcard filter to fails with SFTP
+|MULE-6863 |File, FTP and SFTP message factories sets outbound properties.
+|MULE-6864 |SFTP: Jsch issue in java 1.7 and Kerberos
+|MULE-6870 |HTTP Patch body is ignored
+|MULE-6871 |DefaultMuleSession got broken between mule 3.2 and 3.3
+|MULE-6874 |Memory leak with dynamic endpoints
+|MULE-6880 |FTP responseTimeout has no effect
+|MULE-6882 |TCP Outbound Endpoint ignores responseTimeout
+|MULE-6884 |HTTP/HTTPS Connectors: tcpNoDelay
+|MULE-6887 |Duplicating instanceName in quartz connectors cause weird application failures
+|MULE-6889 |Concurrent Modification Exception when using the Async Message Processor inside a foreach
+|MULE-6917 |set-attachment adds attachments that Mule can't really use
+|MULE-6920 |Race condition on startup of Mule Context
+|MULE-6944 |Thread leak for asynchronous calls in embedded mode
+|MULE-6947 |Flow names with slashes (/) breaks message procesors' notification paths
+|MULE-6959 |Race condition creating MVELExpressionLanguage instances
+|MULE-6965 |Error during mule message serialization when using byte array as payload
+|MULE-6969 |InputStream not closed on Scriptable
+|MULE-6972 |jersey:resources component doesn't register multiple exception mappers
+|MULE-6973 |jersey:resources component doesn't register multiple jersey:context-resolver
+|MULE-6986 |http:static-resource-handler fails when request path is '/'
+|MULE-6989 |Quartz synchronous is not using the configured exception strategy
+|MULE-6990 |OOM exception using foreach
+|MULE-6991 |postAuth() method does not catch token expiration exception
+|MULE-6991 |postAuth() method does not catch token expiration exception
+|MULE-6992 |Race condition when refreshing access tokens
+|MULE-6992 |Race condition when refreshing access tokens
+|MULE-6993 |ClassCast exception when using cxf:proxy-service and validationEnabled, and the request contains a CDATA field.
+|MULE-6995 |DynamicOutboundEndpoint does not use the connector's service overrides
+|MULE-6997 |Rollback Exception Strategy retries an incorrect number of times
+|MULE-6998 |Incorrect maven dependency for drools
+|MULE-6999 |File Transport delays the processing of files when pollingFrequency attribute is uncomfortably narrow
+|MULE-7004 |Fixed Frequency Scheduler allows negative value on startDelay
+|MULE-7005 |ServerNotification completing work after listener failure
+|MULE-7008 |Private flow sends duplicate message when replyTo property is set
+|MULE-7012 |HTTP/HTTPS outbound endpoints ignore the keep-alive attribute
+|MULE-7015 |ObjectToHttpClientMethodRequest fails to process DefaultMessageCollection when http.version is set to 1.0
+|MULE-7019 |AccessTokenPool is not closed after disposal
+|MULE-7021 |AbstractListeningMessageProcessor needs to implement MessageProcessorContainer To be debuggable
+|MULE-7024 |DataSense core doesn't support inbound endpoints
+|MULE-7025 |Serialization exception using persistent queues
+|MULE-7027 |ExpiringGroupMonitoringThread must process event groups only when the node is primary
+|MULE-7028 |MuleMessageToHttpResponse not evaluating outbound scope to set the content type header
+|MULE-7028 |MuleMessageToHttpResponse not evaluating outbound scope to set the content type header
+|MULE-7034 |MuleEvent is not serializable when using a JDBC inbound endpoint with a nested query
+|MULE-7036 |QueuedAsynchronousProcessingStrategy ignores queue store configuration
+|MULE-7040 |Request-reply throwing ResponseTimeoutException on Mule shutdown
+|MULE-7041 |EventProcessingThread must manage exceptions thrown by implementation classes
+|MULE-7042 |Event correlation timeout incorrectly detected on cluster
+|MULE-7043 |Cannot put a Foreach after an OAuth authorize
+|MULE-7050 |MuleApplicationClassLoader loadClass() method not synchronized
+|MULE-7053 |Make DevkitBasedMessageProcessor.process not final
+|MULE-7059 |The generated Studio runtime bundle needs to have a different internal structure
+|MULE-7062 |It is not possible to send outbound attachments over HTTP
+|MULE-7080 |Race condition checking file attributes on SFTP transport
+|MULE-7087 |NullSessionHandler - Empty Mule Session header
+|MULE-7091 |IllegalStateException when doing OAuth dance with InMemoryObjectStore
+|MULE-7092 |DevkitBasedMessageProcessor does not implement MessageProcessor
+|MULE-7114 |Outbound HTTP Patch call is not sending the payload as message body
+|MULE-7116 |Message receiver fail when trying to schedule work after reconnection
+|MULE-7118 |Incompatible usage of MVEL on Drools
+|MULE-7119 |MEL DateTime is not serializable
+|MULE-7121 |OAuth support throws raw exception when authorization code not found
+|MULE-7122 |Fix flaky test LoanBrokerSyncTestCase
+|MULE-7123 |MuleExceptions are not all Serializable
+|MULE-7125 |requireClientAuthentication="true" not working on jetty SSL connector
+|MULE-7137 |DefaultMessageProcessor chain needs to decouple from Pipeline
+|MULE-7149 |Flow variables should not be propagated to / from other flow invoked with flow-ref
+|MULE-7151 |Add new http/s outbound endpoint attribute to enable behavior provided by http.disable.status.code.exception.check property
+|MULE-7152 |When using cxf:proxy-service with a WSDL having multiple ports, the proxy only redirects the first one.
+|MULE-7153 |JMS Queue <-> CXF Service failing in 3.4.1 EE, working in 3.4.0 EE
+|MULE-7156 |QueueProducer should have a variable generic type
+|MULE-7165 |Request Body is not closed in the HttpMessageReceiver
+|MULE-7189 |CXF Proxy service: When specifying a wsdlLocation of a non .net based SOAP api and requesting the proxy to use only the body of the envelope, the payload gets modified and loses part of it.
+|MULE-7193 |gzip-compress-transformer does not work correctly if the input is a string
+|MULE-7194 |Improper handling of UnknownHostException in Outbound TCP
+|MULE-7198 |Build fails due to error downloading dependencies of jBPM module.
+|MULE-7204 |Race condition when compiling MEL expressions
+|MULE-7223 |HTTP transport does not trigger exceptions when client closes connection
+|MULE-7224 |Body-to-parameter-map-transformer only works with GET and POST
+|MULE-7228 |Confusing log message in EventProcessingThread
+|MULE-7230 |Changes in HttpMuleMessageFactory and AbstractMuleMessageFactory breaks 3.4.x DevKit's generated code
+|MULE-7248 |Supported JDKs are not properly defined
+|MULE-7258 |Request reply does not work when using specific connector
+|MULE-7260 |Generated DataSense mule config is invalid when there are multiple property placeholders
+|MULE-7264 |DevKit Support module should use Apache Commons StringUtils instead of Spring
+|MULE-7265 |When a flow is not fully started up, some message processors remain started and could not be disposed.
+|MULE-7287 |CXF: MustUnderstand header must not be considered by the proxy-service
+|MULE-7293 |TransientRegistry does not dispose all registered objects on dispose.
+|MULE-7297 |NullPointerException when trying to override a class with loader.override
+|MULE-7307 |Disallow multiple transaction manager to be used within an application
+|MULE-7311 |Lack of synchronization causes multiple expiration requests on Aggregator groups
+|MULE-7312 |Upgrade Guava to avoid incompatibilities with latest JDK7
+|MULE-7322 |MuleApplicationContext renamed to MuleArtifactContext breaks backwards compatibility
+|MULE-7329 |Number of JMS consumers decreases to 1 after reconnection
+|MULE-7331 |JMS inbound do not reconnect to queue after broker restart
+|MULE-7335 |Transformer resolution in TypeBasedTransformerResolver fails depending on which order transformers are found
+|MULE-7358 |org.mule.config.bootstrap.SimpleRegistryBootstrap.registerTransactionFactories can't handle optional factories
+|MULE-7366 |Mule logs switch to DEBUG level when application uses the Salesforce Connector
+|MULE-7373 |DevKit intercepting message processors fail if they are the last element of a chain
+|MULE-7373 |DevKit intercepting message processors fail if they are the last element of a chain
+|MULE-7376 |NullPointerException while initializing body
+|MULE-7376 |NullPointerException while initializing body
+|MULE-7382 |RefreshTokenManager's ObjectStore is not expiring entries
+|MULE-7382 |RefreshTokenManager's ObjectStore is not expiring entries
+|MULE-7390 |XSLT transformer is vulnerable to XXE
+|MULE-7399 |Flows can start processing messages before referenced flows are completely started
+|MULE-7400 |Deployment service is not locked when started
+|MULE-7408 |StageName generation should be decoupled from Flow
+|MULE-7411 |SXC filter router fails due to uninitialized transformer
+|MULE-7417 |Log4j config watch dog thread is not being stopped when undeploying applications
+|MULE-7419 |Session is lost when a message is returned by a JMS request-response outbound-endpoint
+|MULE-7425 |XPATH function should not have any side effects on the message
+|MULE-7429 |Fix UntilSuccessfulWithQueuePersistenceObjectStoreTestCase recoversFromPersistedQueue test
+|MULE-7431 |AbstractMessagingExceptionStrategy accessing an incorrect Even when using RequestContext
+|MULE-7459 |Echo example Maven build fails because of test error.
+|MULE-7463 |Monitored ObjectStores should behave consistently
+|MULE-7465 |XPATH Expression Language - Dom4J creates separate text-nodes
+|MULE-7489 |AbstractRegistryBroker.lookupObjects() throws NPE when registries are added/removed concurrently.
+|MULE-7491 |JDBC reconnect policy is not working when setting blocking=true
+|MULE-7494 |Test cases override DefaultObjectStoreFactoryBean static delegate causing other tests to fail when split and aggregate operations are used.
+|MULE-7504 |Applications sharing connectors mix endpoint MBeans
+|MULE-7509 |Transactional Queue Recovery fails when recovery queue has transient queue config.
+|MULE-7510 |MEL behavior is not consistent between maps and POJOs for property access
+|MULE-7512 |Synchronous until-successful waits in milliseconds instead of seconds
+|MULE-7515 |Big HTTP Header is impacting HTTP transport performance
+|MULE-7518 |Parameterized query broken when CDATA is preceded by a new line
+|MULE-7520 |Avoid writing app log entries in container log file when not using an specific log4j config file for the app.
+|MULE-7521 |The DevKit oAuth module should log the body contents even after a failure
+|MULE-7524 |Encoded characters not working when using expressions for dynamic endpoints
+|MULE-7532 |Cleanup org.mule.el.* code warning and add JavaDoc
+|MULE-7533 |Eliminate unnecessary copying of inbound message properties
+|MULE-7534 |JMS connector doesn't reconnect to ActiveMQ broker 5.6 when using blocking=true
+|MULE-7535 |Remove OutboundRewriteResponseEventMessageProcessor
+|MULE-7538 |Application fails to start when having 16 or more connectors with async reconnection that fail to connect
+|MULE-7542 |Response MuleEvent/MuleMessage do not need to be copied in AbstractMessageDispatcher.process()
+|MULE-7548 |Lifecycle does not start a QueueManager in the right order
+|MULE-7552 |Transaction isRollbackOnly() should considered already finished transactions
+|MULE-7558 |Fix failing test CxfSoapJmsTestCase due to MULE-7546
+|MULE-7569 |CopyOnWriteCaseInsensitiveMap implementation leaks changes to original map
+|MULE-7571 |Persistent queue logs and data remove after shutdown
+|MULE-7572 |CopyOnWriteCaseInsensitiveMap should fully implement Map
+|MULE-7577 |OAuth regression - RC1 OAuth connectors not working at all
+|===
+
+== Hardware and Software System Requirements
+
+For most use cases, 3.5.0 Runtime does not change the hardware and software system requirements established by earlier runtimes. MuleSoft recommends a minimum of 4 GB RAM on a developer workstation. As applications become complex, consider adding more RAM.
+
+== Deprecated in this Release
+
+Nothing was deprecated in the 3.5.0 Runtime.
+
+== Migration Guide
+
+For a full and detailed list of considerations when migrating from the previous version to this one, see the  MIGRATION.txt file, located in the root folder of Mule.

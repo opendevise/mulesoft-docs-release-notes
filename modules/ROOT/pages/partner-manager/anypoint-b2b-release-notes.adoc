@@ -1,0 +1,30 @@
+= Anypoint B2B Product Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: anypoint-b2b-release-notes.adoc
+:keywords: b2b, release notes
+
+Access the entire release notes set for each Anypoint B2B product.
+
+== Anypoint Partner Manager
+
+* xref:partner-manager/anypoint-partner-manager-release-notes.adoc[Anypoint Partner Manager Release Notes]
+
+== Partner Manager Connector
+
+* xref:connector/partner-manager-connector-release-notes.adoc[Partner Manager Connector Release Notes]
+
+== AS2 Connector
+
+* xref:connector/as2-connector-release-notes.adoc[AS2 Connector Release Notes]
+
+
+== FTPS Connector
+
+* xref:connector/ftps-connector-release-notes.adoc[FTPS Connector Release Notes]
+
+
+== X12/EDIFACT EDI Modules
+
+* xref:connector/x12-edifact-modules-release-notes.adoc[X12/EDIFACT EDI Modules Release Notes]

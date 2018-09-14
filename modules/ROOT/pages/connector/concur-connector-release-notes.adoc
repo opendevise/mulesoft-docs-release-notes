@@ -1,0 +1,336 @@
+= Concur Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: concur-connector-release-notes.adoc
+:keywords: release notes, connectors, concur
+
+*January 2018*
+
+_Select_
+
+Concur is a SaaS provider of integrated travel and expense management solutions. The Anypoint Connector for Concur operates as a bi-directional gateway between instances of Concur and Mule. The Concur connector is available for deployment on-premises and in the cloud.
+
+xref:3.9@mule-runtime::concur-connector.adoc[Concur Connector User Guide]
+
+== 3.1.1
+
+*January 29, 2018*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime | 3.6.1 and later
+|===
+
+Concur connector supports only a subset of operations from certain Concur API versions available in the Concur Developer Sandbox.
+
+See xref:3.9@mule-runtime::concur-connector.adoc#concur-api-availability[Concur API Availability] for complete information on supported operations.
+
+=== Features
+
+None.
+
+=== Fixed in this Release
+
+* Improved response for Batch List Items processor - When submitting a Batch List Items request, the connector only returned the number of `recordsFailed` and `recordsSucceeded`. It now also returns the list of errors with its respective error code.
+
+=== Known Issues
+
+None.
+
+== 3.1.0
+
+*July 18, 2016*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Mule Runtime | 3.6.1 and later
+|Anypoint Studio | 5.4.3
+|===
+
+Concur connector supports only a subset of operations from certain Concur API versions available in the Concur Developer Sandbox.
+
+See xref:3.9@mule-runtime::concur-connector.adoc#concur-api-availability[Concur API Availability] for complete information on supported operations.
+
+=== Features
+
+- The following APIs have been added:
+
+* *Expense*
+** Allocations
+** Attendee Types
+** Delegators
+** Digital Tax Invoices
+** Entry Attendee Associations
+** Itemizations
+** Form
+** Form Field
+* *Reports*
+** Added support for adding exceptions to reports
+* *Users*
+** Added support for bulk password update
+
+
+=== Fixed in this Release
+
+None.
+
+=== Known Issues
+
+- Post Expense Report Submit Request will not be able to submit reports that have been created with API V3. That is why we have removed this operation, until Concur fixes their issues.
+- The same occurs with Update Expense Entry Attendee and Delete Expense Entry Attendee. Both throw an Internal Server Error due to a Concur known issue.
+
+=== Supported Concur API Versions
+
+[%header%autowidth.spread]
+|===
+
+| *Name* | *Version* ^| *Supported operations*
+
+| Attendees | v3.0  a| * Get List Of Attendees
+                     * Get Expense Entry Attendee Details By Id
+                     * Post Expense Entry Attendee
+
+| Attendee Types | v3.0  a| * Get List Of Attendee Types
+                     * Get Attendee Type By Id
+                     * Post Attendee Type
+                     * Update Attendee Type
+                     * Delete Attendee Type
+
+| Digital Tax Invoices | v3.0  a| * Retrieve Tax Invoices
+                     * Get Digital Tax Invoice By Id
+                     * Update Digital Tax Invoice by Id
+
+| Entry Attendee Associations | v3.0  a| * Get Entry Attendee Associations
+                   * Get Entry Attendee Association By Id
+                   * Post Entry Attendee Association
+                   * Update Entry Attendee Association
+                   * Delete Entry Attendee Association
+
+| Expense Allocations | v3.0  a| * Retrieve Allocations
+                     * Retrieve Single Allocation By Id
+
+| Expense Entries | v3.0  a| * Get List Of Expense Entries
+                   * Get Expense Entry Details By Id
+                   * Post Expense Entry Request
+                   * Update Expense Entry Request
+                   * Delete Expense Entry
+
+| Expense Itemizations | v3.0  a| * Get Expense Itemizations
+                     * Get Expense Itemization By Id
+                     * Post Expense Itemization
+                     * Update Expense Itemization
+                     * Delete Expense Itemization
+
+| Image | v3.0 a| * Get List Of Receipts
+                * Get Receipt Image Uri
+                * Create Receipt Image
+                * Delete Receipt Image
+
+| Expense Reports | v3.0 a| * Get List Of Expense Reports
+                  * Get Expense Report Details By Id
+                  * Post Expense Report Header
+                  * Update Expense Report Header
+
+| Quick Expense | v3.0 a| * Quick Expense List
+                        * Quick Expense By Id
+                        * Quick Expense
+                        * Update Quick Expense
+                        * Delete Quick Expense
+
+| Expense Group Configuration | v1.1 a| * Get Expense Group Configuration
+
+| Trips | v1.1 a| * List Itineraries
+                  * Get Itinerary
+
+| Payment Batches | v1.1 a| * Get List Of PaymentBatches
+
+| Expense | v1.1 a| * Post Expense Report Header Batch
+                    * Post Expense Report Submit Request
+
+| Expense Delegators | v1.1  a| * Get Expense Delegators
+
+| Expense Form | v1.1  a| * Get Form Data
+                     * Get Form Fields
+                     * Get Form Types
+
+| Expense Reports | v1.1 a| * Post Report Exception
+
+| Attendees | v1.0 a| * Batch Attendee List
+
+| Expense | v1.0 a| * Batch List Items
+                    * Get List Details
+                    * Get List Items
+                    * Get List Of Form Fields
+                    * Get List Of Forms Of Payment
+                    * Get List Of Lists
+
+| Loyalty Program a| v1.0 a| * Update Loyalty Program
+
+| Trips | v1.0 a| * Get Travel Profile
+                  * Get Travel Requests List
+                  * Get Updated Travel Profiles
+                  * Trip Approval
+
+| User | v1.0 a| * Create Or Update Users
+                 * Get User Profile
+                 * Update Users Password
+|===
+
+
+== 3.0.0
+
+*December 21, 2015*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Mule Runtime | 3.6.1 and later
+|Anypoint Studio | 5.4.2
+|===
+
+
+Concur connector supports only a subset of operations from certain Concur API versions available in the Concur Developer Sandbox.
+
+See xref:3.8@mule-runtime::concur-connector.adoc#concur-api-availability[Concur API Availability] for complete information on supported operations.
+
+
+=== Features
+
+- Get User Profile allows the retrieval of other user profiles by providing the loginId of a User.
+- The following APIs have been migrated to API v3.0:
+
+* Expense:
+** Attendees
+** Entries
+** Reports
+** Quick Expense
+* Image:
+** Receipt Image
+
+
+=== Fixed in this Release
+
+None.
+
+=== Known Issues
+
+- Post Expense Report Submit Request will not be able to submit reports that have been created with API V3. That is why we have removed this operation, until Concur fixes their issues.
+- The same occurs with Update Expense Entry Attendee and Delete Expense Entry Attendee. Both throw an Internal Server Error due to a Concur known issue.
+
+== 2.0.0
+
+*July 14, 2014*
+
+Concur Connector 2.0.0 is compatible with the following versions of Mule Runtime and Concur APIs respectively.
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Mule Runtime | 3.5.0 and later
+|Anypoint Studio | May 2014 Release Build Number: 201405161032
+|===
+
+=== Fixed in this Release
+
+None.
+
+=== Known Issues
+
+None.
+
+== 1.0.0 and 2.0.0
+
+(Supported Concur APIs and Operations)
+
+Both Concur connector versions 1.0.0 and 2.0.0 support the following Concur APIs and corresponding operations:
+
+[%header%autowidth.spread]
+|===
+|API |Operations
+|Attendee a|
+* Batch Attendee List
+* Get Attendee Details
+
+|Expense Report a|
+* Expense Entry Attendee (API v1.1)
+* Expense Entry
+* Expense Report Header
+* Get Expense Report (API v2.0)
+* Submit Expense Report
+
+| Imaging a|
+* Get Receipt Image URL
+* Create Receipt Image
+
+|Itinerary a|
+* All operations except Itinerary cancellations
+
+|Bookings a|
+* Get List of Itineraries
+* Get Itinerary Details
+
+|List Items a|
+* List of Items
+
+|Payment Batch File a|
+* Get List of Payment Batches
+* Create/Close Payment Batch
+
+|Quick Expenses (API v3.0) a|
+* Create New Quick Expense
+* Create All Quick Expense List
+
+|Travel Request a|
+* Get List of Travel Requests
+
+|Travel Profile a|
+* Get the List of Travel Updated Travel Profiles
+
+|Trip Approval a|
+* Create Trip Approval
+
+|User a|
+* Create User Information
+* Update User Information
+* Get User Information
+* Get List of Form Fields
+|===
+
+== 1.0.0
+
+*May 16, 2014*
+
+Concur Connector 1.0.0 is compatible with the following versions of Mule Runtime and Concur APIs respectively.
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Mule Runtime | 3.4.0 and later
+|Anypoint Studio | May 2014 Release Build Number: 201405161032
+|Concur API |v1 +
+v1.1 +
+v2 +
+v3
+|===
+
+=== Fixed in this Release
+
+None.
+
+=== Known Issues
+
+None.
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum].
+* https://support.mulesoft.com[Contact MuleSoft Support].

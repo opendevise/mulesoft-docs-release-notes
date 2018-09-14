@@ -1,0 +1,71 @@
+= Anypoint Studio January 2015 with 3.6.1 Runtime - Update Site 2 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: anypoint-studio-january-2015-with-3.6.1-runtime-update-site-2-release-notes.adoc
+:keywords: release notes, anypoint studio
+
+*<<Migration Guide, Skip to Migration Guide>>*
+
+*February 25, 2015*
+
+This January 2015 release is an update to the Studio January 2015 with 3.6.0 runtime, and complements the xref:studio/anypoint-studio-january-2015-with-3.6.0-runtime-release-notes.adoc[Anypoint Studio January 2015 with 3.6.0 Runtime Release Notes].
+
+== Current Release Versions
+
+[%header,cols="3*"]
+|===
+|
+| Enterprise Runtime
+| Community Runtime
+
+| ESB Runtime
+| n/a
+| n/a
+
+| Studio
+2+^| Version: January 2015 with 3.6.1 Runtime - Update Site 2 +
+Build Number:  n/a
+
+| Management Console
+| n/a
+| n/a
+
+| Mule DevKit
+2+^| 3.6.0
+
+|===
+
+
+== Fixed Issues
+
+This update addresses the following issues:
+
+* Descriptions for fields are now shown in DataSense Explorer.
+* Studio no longer deletes SQL queries in a project when deleting global elements.
+* A connector configuration now correctly creates in a project when switching between editors.
+* The mule-deploy.properties file now updates when launching applications using Maven.
+* The *Search RAML library* in an HTTP Connector configuration now correctly opens a new tab in the system browser.
+* Fixed: Cannot edit a Run Configuration that has configured a missing Mule runtime.
+* Fixed parsing of complex WSDLs for WS Consumer.
+* Fixed NullPointerException when resolving Types with duplicate fields in Query Builder.
+* Fixed NullPointerException when exporting/running a domain project that uses the Database component.
+
+This release also supports the Mule ESB 3.6.1 runtime which addresses a critical security issue. You can install this by going to *Help* > *Install New Software* and selecting the *Anypoint Studio Update Site* update site.
+
+== Migration Guide
+
+This section presents configuration considerations you may want to adjust when migrating from a previous version of a Mule runtime, or previous version of Studio. https://www.mulesoft.com/support-and-services/mule-esb-support-license-subscription[Contact MuleSoft Support] if you have a question about a specific migration activity or concern.
+
+To migrate from a previous version of Studio, use *Help* > *Check for Updates.*
+
+[TIP]
+====
+You can easily import all of the external components that you had installed in your old version of Anypoint Studio through a single action. This includes connectors, runtimes, and any other type of extension added through the Anypoint Exchange or the ​*Help -> Install new software*​ menu, as long as there are no compatibility restrictions.
+
+Do this by selecting *File->Import* and then choose *Install->From existing installation*.
+
+image::studio/import-extensions.png[import]
+
+Then specify the location of your old version of Anypoint Studio in your local drive.
+====

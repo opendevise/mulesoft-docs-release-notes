@@ -1,0 +1,44 @@
+= Runtime Manager 2.2.0 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: runtime-manager-2.2.0-release-notes.adoc
+:keywords: arm, runtime manager, release notes
+
+The Anypoint Runtime Manager V2.2.0, is scheduled for release on April 8th.
+
+This release includes new functionality for monitoring flows.
+
+== Hardware and Software Requirements
+
+No change.
+
+== Compatibility
+
+Agent plugins integration is compatible with the following runtime versions:
+
+[cols="2*a"]
+|===
+|Mule | 3.6.x and above.
+|Availability | Cloud only.
+|API GateWay | 2.x and above for API Analytics
+|Runtime Manager Agent | xref:runtime-manager-agent/runtime-manager-agent-1.5.0-release-notes.adoc[1.5.0 and above] for Insight and xref:runtime-manager-agent/runtime-manager-agent-1.6.0-release-notes.adoc[1.6.0 and above] for xref:runtime-manager::flow-management.adoc[Flow Management] and xref:runtime-manager::monitoring-dashboards.adoc[all metrics charts]
+|===
+
+
+== Features and Functionality
+
+This release introduces the following capabilities:
+
+* Flow Monitoring: Users now have the ability to monitor key metrics in each Mule flow over time with the help of monitoring charts for flow metrics. This release includes metrics for:
+** Mule messages
+** Errors
+** Response time
+
+[NOTE]
+Flow Monitoring is only available for integration applications deployed On-Premises, but management occurs through a cloud console.
+
+
+== Deprecated Features or Functionality
+
+None.

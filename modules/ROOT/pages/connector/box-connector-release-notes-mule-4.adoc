@@ -1,0 +1,39 @@
+= Box Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: box-connector-release-notes-mule-4.adoc
+
+*February 2018*
+
+_Select_
+
+Anypoint Connector for Box provides a bi-directional gateway between Box, a secure content management and collaboration platform, and Mule.
+
+== 4.0.0
+
+*February 27, 2018*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime EE |4.1 and later
+|Java|1.8 and later
+|Box API | 2.0
+|===
+
+The Box connector only supports a subset of operations from Box API v2.0. See the Connector Reference for the list of Box Connector Operations.
+
+=== Features
+
+* The Box connector is an auto-generated connector built using the REST Connect which takes RAML 1.0 API specification files that are prepared for the Box 2.0 API as an input.
+* This connector has been migrated to support Mule 4.1 and later.
+
+== See Also
+
+* xref:connectors::box/box-connector.adoc[Box Connector Guide]
+* xref:connectors::box/box-connector-reference.adoc[Box Connector Reference]
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

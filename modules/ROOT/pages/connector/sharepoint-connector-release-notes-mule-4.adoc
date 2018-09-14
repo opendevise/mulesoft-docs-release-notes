@@ -1,0 +1,32 @@
+= SharePoint Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: sharepoint-connector-release-notes-mule-4.adoc
+:keywords: release notes, sharepoint, connector
+
+*January 2018*
+
+_Select_
+
+The Anypoint Connector for SharePoint lets you connect to the Microsoft SharePoint application. The connector exposes convenient methods to work with Microsoft SharePoint API.
+
+== 3.0.0
+
+*January 19, 2018*
+
+=== Compatibility
+
+The SharePoint connector is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Application/Service |Version
+|Mule Runtime|Mule Enterprise Edition 4.0.0 and later
+|Anypoint Studio|Only works with Studio 7.0.0 and later
+|===
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

@@ -1,0 +1,129 @@
+= MUnit 1.3.0 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: munit-1.3.0-release-notes.adoc
+:keywords: munit, 1.3., release notes
+
+*December 2, 2016*
+
+We are happy to announce the new release of MUnit version 1.3.0. +
+In this release, we focused our efforts on xref:1.3@munit::munit-maven-support.adoc[Maven usability]. We’ve also corrected many bugs and improved testing applications that make use of Dataweave.
+
+In this opportunity we’ll be releasing new versions of several artifacts:
+
+* MUnit:
+** 1.3.0
+* Mule MUnit Support:
+** 3.8.2
+** 3.7.5
+** 3.6.5
+* MUnit Studio Plugin:
+** 1.4.0
+
+== Hardware and Software Requirements
+
+* Microsoft Windows 8 +
+* Apple Mac OS X 10.10 +
+* Linux (tested on Ubuntu 15)
+* Java 7, Java 8
+* Maven 3.1+
+
+
+== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule |3.6.x, 3.7.x, 3.8.x
+|Anypoint Studio |6.0.0 and newer
+|===
+
+== Features and Functionality
+
+=== Anypoint Studio Plugin
+
+
+For this release, we mainly adapted the tool to work properly with the new MUnit 1.3.0. +
+We also fixed a few bugs.
+
+
+=== MUnit Runtime
+
+The release of MUnit 1.3.0 is all about Maven usability. We have dramatically improved the way our tests run from the Maven command line, starting with the fact that we now run in a whole different VM. We’ve added a xref:1.3@munit::munit-maven-plugin-configuration.adoc[new set of features to our MUnit Maven Plugin], to allow the user to have as much control as possible, over this new VM. Thus providing support for really common use cases such as running test over applications using connectors who depend on native libraries, such as the xref:1.3@munit::testing-sap.adoc[SAP connector use case].
+
+This is a short list of the new features:
+
+* Run Tests in a separate VM.
+* Allow setting argument lines from the Maven Plugin.
+* Allow to add/remove classpath entries from the Maven Plugin.
+* Allow to set environment variables from the Maven Plugin.
+* Allow to set the Mule Working Directory.
+* Allow test output redirection to a file.
+* Allow shutting down Surefire reports.
+
+== Fixed Issues
+
+* MU-439 - MUnit Maven plugin failing to load flows with SAP connector outbound endpoints
+* MU-470 - Test doesn't finish when failing because missing jar
+* MU-503 - app.home variable is resolving to test-classes
+* MU-517 - Coverage wrong calculation
+* MU-526 - No HTTP traffic Log
+* MU-537 - Namespaces set by NamespaceManager/Namespace are ignored
+* MU-576 - Attribute Resolving & Matching not working properly for http-requester
+* MU-587 - Coverage Calculation not loading files in multi module project
+* MU-591 - Assertion errors on Spy are shown as errors and not failures for sub-flows
+* MU-592 - MUnit Maven Support for SAP Connector dependencies
+* MU-627 - NullPointerException is thrown instead of other exception when http is inside choice
+* MU-633 - NullPointerException is thrown instead of other exception inside subflow or processor chain
+* MU-669 - Define a proper way to define the mule working directory
+* MU-676 - munit-maven-plugin says "mule.home does not exist, defaulting to ./" even it is set in parent pom
+* MU-680 - Failure on before suite, after test and after suite are not being correctly notified
+* MU-687 - When redirect to file is on, jvm execution error message get losts
+* MU-691 - Set system property variables on multi module project is not working as expected on MUnit 1.2.1
+* MU-692 - Apps with Non-Blocking processing strategy config end prematurely when using Http Request
+* MU-694 - Avoid loading domain config if it not came from the domain itself
+* MU-725 - Unable to assert inbound/outbound properties in Spy
+* MU-743 - New Remote runner gets stuck when excluding some particular dependencies from classpath
+* MU-765 - SubFlow with Scripting Component fails to Start
+* MU-801 - MEL exp on DW objects not working properly on munit tests
+* MU-804 - Using XPath over an InputStream fails with "premature end of file"
+* MUSP-302 - Failure on Before and After Suite is not displayed correctly on Studio
+* MUSP-320 - Coverage Tree is not being displayed if "Check covered message processors" is unchecked
+
+== Improvements
+
+* MU-472 - Maven build mixing up build output and Mule Context console logging
+* MU-607 - Upgrade Maven Plugin API
+* MU-700 - More descriptive errors on suite failure
+* MU-705 - Refactor Listener classes in MUnit runtime code
+* MUSP-313 - Extract VMRunner creation code from MUnitLaunchConfigurationDelegate
+* MU-574 - Create asReusableStream feature in the getresource function
+* MU-686 - Catch UnsupportedOperationException when calling processNext method
+* MU-500 - Use File.separator instead of "/" to create paths for coverage
+* MUSP-339 - Set mule.testingMode to true in Studio
+* MUSP-314 - Extract sub views creation from TestRunnerViewPart code
+
+== Enhancements
+
+* MU-683 - Show suite result when redirecting run output to file
+
+== New Features
+
+* MU-608 - New MUnit Remote Runner
+* MU-610 - Implement parser for new Remote Runner Protocol
+* MU-611 - Provide way to set arglines to jvm in the maven plugin
+* MU-615 - Provide way to set add/remove classpath entries the maven plugin
+* MU-617 - Provide a way to set environment variables
+* MU-690 - Provide a way to set Mule Working Directory from Maven
+* MUSP-304 - Make Studio use new Remote Runner
+
+== Migration Guidance
+
+Tests that work in 1.2.0 also work in 1.3.0
+
+== Support
+
+* Refer to xref:1.3@munit::index.adoc[MUnit Documentation]
+* Access http://forums.mulesoft.com/[MuleSoft’s Forum] to pose questions and get help from Mule’s broad community of users.
+* To access MuleSoft’s expert support team https://www.mulesoft.com/support-and-services/mule-esb-support-license-subscription[subscribe to Mule ESB Enterprise] and log in to MuleSoft’s http://www.mulesoft.com/support-login[Customer Portal].

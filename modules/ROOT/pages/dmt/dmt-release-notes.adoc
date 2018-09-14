@@ -1,0 +1,90 @@
+= Devkit Migration Tool (DMT) Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: dmt-release-notes.adoc
+:keywords: mule, dmt, connector, release notes, migration, tool, dmt
+
+The DMT enables the migration of a Connector built with Devkit that runs on Mule 3.x
+to a Mule 4 SDK compatible project.
+
+== 1.0.0
+*May 18, 2018*
+
+=== New Features and Enhancements
+
+None
+
+=== Known Limitations and Workarounds
+
+* `mule-devkit-maven-plugin` needs to be removed from the pom.xml file of Connectors that
+overrides it.
+
+=== Upgrade Requirements
+
+None
+
+=== Fixed Issues
+
+[%header,cols="15a,85a"]
+|===
+|Issue |Description
+| https://www.mulesoft.org/jira/browse/DEVKIT-2260[DEVKIT-2260]	| DMT should fail gracefully when Restcall annotations & Soap Connect are used
+|===
+
+== 0.9.1
+*April 17, 2018*
+
+=== New Features and Enhancements
+
+None
+
+=== Known Limitations and Workarounds
+
+* `mule-devkit-maven-plugin` needs to be removed from the pom.xml file of Connectors that
+overrides it.
+
+=== Upgrade Requirements
+
+None
+
+=== Fixed Issues
+
+[%header,cols="15a,85a"]
+|===
+|Issue |Description
+| https://www.mulesoft.org/jira/browse/DEVKIT-2256[DEVKIT-2256]	| DMT beta fails when devkit plugin is redefined in the extension POM
+| https://www.mulesoft.org/jira/browse/DEVKIT-2257[DEVKIT-2257]	| DMT: Migrate BulkOperationResult
+| https://www.mulesoft.org/jira/browse/DEVKIT-2258[DEVKIT-2258]	| DMT: @Transformer is not being replaced/migrated
+| https://www.mulesoft.org/jira/browse/DEVKIT-2259[DEVKIT-2259]	| DMT: Replace processor XMLTypes output for InputStream
+|===
+
+== 0.9.0
+*Mar 26, 2018*
+
+=== New Features and Enhancements
+
+Supports:
+
+* Processors
+* Sources
+* Connection Management
+* Configurations
+* Paged Processors
+* Metadata (MetaData Objects are not migrated, manual migration to the MetadataTypes is required)
+* OAuth 2
+* Display Annotations
+* OnException Handlers
+
+=== Known Limitations and Workarounds
+
+* `mule-devkit-maven-plugin` needs to be removed from the pom.xml file of Connectors that
+overrides it.
+
+=== Upgrade Requirements
+
+None
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]

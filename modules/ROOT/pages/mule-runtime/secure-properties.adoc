@@ -1,0 +1,27 @@
+= Secure Configuration Properties Extension Release Notes for Mule 4
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: secure-properties.adoc
+:keywords: mule, release notes, secure configuration properties, secure properties, extension
+
+// Product_Name Version number/date Release Notes
+
+== 1.0.1
+
+*May 2, 2018*
+
+=== Min Mule Version
+*Mule 4.1.1*
+
+=== Known Limitations and Workarounds
+
+None
+
+=== Fixed Issues
+
+[%header,cols="15a,85a"]
+|===
+|Issue |Description
+| EE-6050 | Secure Properties cannot be defined depending on another secure property
+|===

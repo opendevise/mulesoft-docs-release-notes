@@ -1,0 +1,127 @@
+= Anypoint Studio 6.1 with 3.8.1 Runtime Update Site 1 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: anypoint-studio-6.1-with-3.8.1-runtime-update-site-1-release-notes.adoc
+
+*September 13, 2016* +
+*Build ID: 201609131828*
+
+<<migration,Skip to Migration Guide>>
+
+== Compatibility
+
+[cols="30a,70a"]
+|===
+| *Mule Runtime*
+| Version: 3.8.1 EE
+
+|*Anypoint Studio*
+|Version: 6.1 +
+Build Id: 201609131828
+
+|*APIkit*
+|Versions:  3.8.1 - 3.8.0 - 1.7.3 - 1.6.2 - 1.5.3
+
+|*DataWeave* +
+|Version: 1.1.1
+
+|*MUnit* +
+|Version: 1.2.1, 1.3.0 (munit-studio-plugin)
+
+|*SAP Connector*
+|Versions: 3.0.0
+|===
+
+
+== What's New
+
+In this release, we are adding Single-Sign-On support inside Studio, for users who leverage 3rd party identity management to log into Anypoint Platform (e.g. Exchange, Cloudhub) from Studio. +
+The users can choose to use their Anypoint Platform credential or SSO credential under “Preferences”.
+
+In addition, Studio 6.1.1 also includes various other improvements, including improving debugging experience (as a response to various customer requests) and objectstore support within Studio.
+
+[[migration]]
+== Migration Guide
+
+For first time installment, please refer to xref:studio/anypoint-studio-6.1-with-3.8.1-runtime-release-notes.adoc#hardware-requirements[Studio 6.1 release notes] for hardware requirements and known issues.
+
+Users running Studio 6.0 can update to this new version directly from the Studio xref:6@studio::studio-update-sites.adoc[Update Site]. +
+From the previous versions of Studio 6.0.0, 6.0.1 and 6.1.0, there is no special migration needed. If you want to migrate from Studio 5.4.3 or older to 6.1.1, you must download the latest version from Anypoint Studio download site https://www.mulesoft.com/platform/studio[here].
+
+When opening a previous Workspace with projects that were created with Studio 5.1.0 or older, and which has metadata stored in disk, Studio asks you to perform an update to all the projects so that the Metadata Manager can handle the types and to show the types in your project.
+
+
+[TIP]
+====
+You can easily import all of the external components that you had installed in your old version of Anypoint Studio through a single action. This includes connectors, runtimes, and any other type of extension added through the Anypoint Exchange or the ​*Help -> Install new software*​ menu, as long as there are no compatibility restrictions.
+
+Do this by selecting *File->Import* and then choose *Install->From existing installation*.
+
+image::studio/import-extensions.png[import]
+
+Then specify the location of your old version of Anypoint Studio in your local drive.
+====
+
+== Eclipse Plugin
+
+If you are using Studio as an Eclipse plugin, you can get this version of Studio using the Eclipse update site `+http://studio.mulesoft.org/r5/plugin+`.
+
+This allows you to download Anypoint Studio core and third-party components version 6.x.x and with an embedded version of Mule Runtime v3.8.x along with other optional components. +
+For a detailed description of the update site's content visit the xref:6@studio::studio-in-eclipse.adoc#available-software-in-the-update-site[Studio in Eclipse] section.
+
+== JIRA Ticket List for Anypoint Studio
+
+=== Bug Fixes
+
+* STUDIO-4924 - Radio Booleans: when changing the radio button, the one previously selected should be disabled and greyed
+* STUDIO-5338 - Mave: pom is not being updated when updating the Libraries from the build path configuration
+* STUDIO-5626 - Maven Dependency has missing parts in the coordinates
+* STUDIO-7124 - HTTP Connector - content is not resized properly
+* STUDIO-7136 - Remove assembly plugin from pom templated
+* STUDIO-7433 - Preferences displays error message with no context
+* STUDIO-7515 - Studio fails to update on Windows
+* STUDIO-7785 - Adding a component just before a breakpoint messes up breakpoints
+* STUDIO-7925 - Exporting application duplicates configuration
+* STUDIO-7978 - Link to raml uncompressed folder (root + includes) are not resolved when creating a project
+* STUDIO-8005 - [SE] The XML editor in Anypoint Studio allows for the embedding of extra Exception Strategies in a flow
+* STUDIO-8087 - [SE] Mavenize ApiKit project won't add mule-module-apikit dependency to POM.xml
+* STUDIO-8167 - [SE] Exported domain does not contain full resources
+* STUDIO-8273 - Autocompletion suggests library identifiers at incorrect places
+* STUDIO-8277 - Autocompletion for types breaks when having a multiple inheritance type defined
+* STUDIO-8280 - [Custom Policies] Run Configuration is too wide
+* STUDIO-8313 - [SE] SFTP Connector pooling size unable to set to negative value
+* STUDIO-8314 - [SE] Anypoint Studio 6.x does not display the red breakpoint indicators in scope components
+* STUDIO-8315 - [SE] Mavenize project is not adding src/main/api as source folder in POM.xml
+* STUDIO-8324 - Maven: properties used in the version tag should be resolved
+* STUDIO-8330 - [SE] Running a maven project that inherits version from parent pom fails in Studio 5.3.1
+* STUDIO-8333 - [SE] MUnit files are packaged in the deployable zip of an application
+* STUDIO-8336 - Deploy to amc, problem while uploading apps with properties that have \ on their name or value.
+* STUDIO-8343 - Selecting mute breakpoint option before running the project, it does not work
+
+=== Improvements
+
+* STUDIO-3818 - New default debugging perspective
+* STUDIO-4229 - Add file type name filter tags to file endpoint
+* STUDIO-4734 - There is no general tab to clear application data when running junits
+* STUDIO-5497 - set payload to scroll
+* STUDIO-7580 - More room for Parameterized query
+* STUDIO-7827 - Change Set Payload value text field for a text box with scroll bar
+* STUDIO-8331 - Move the validation message from Customize tab
+* STUDIO-8338 - [Studio login] Single sign on
+
+=== New Features
+
+* STUDIO-7115 - Debugger: Mute all breakpoints
+* STUDIO-7651 - Support configurable ObjectStore in every mule component
+
+=== Tasks
+
+* STUDIO-6953 - [Autodiscovery] Populate fields with RAML information
+* STUDIO-8341 - Replace "RAML" mentions to REST API in labels throughout Studio
+
+== Support
+
+* Refer to MuleSoft’s xref:6@studio::setting-up-your-development-environment.adoc#configure-anypoint-platform-credentials[documentation related to SSO Support] and the additions to the xref:6@studio::studio-visual-debugger.adoc[debugger perspective].
+* Access http://forums.mulesoft.com/[MuleSoft’s Forum] to pose questions and get help from Mule’s broad community of users.
+* To access MuleSoft’s expert support team https://www.mulesoft.com/support-and-services/mule-esb-support-license-subscription[subscribe to Mule ESB Enterprise] and log in to MuleSoft’s http://www.mulesoft.com/support-login[Customer Portal].

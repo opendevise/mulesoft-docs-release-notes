@@ -1,0 +1,63 @@
+= Runtime Manager Agent 1.5.2 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: runtime-manager-agent-1.5.2-release-notes.adoc
+:keywords: mule, agent, release notes
+
+_Enterprise Edition_
+
+*October 17, 2016*
+
+Runtime Manager Agent 1.5.2 provides a new downloadable zip file to easily update Runtime Manager Agent. Download the Runtime Manager agent from the following URL.
+
+https://support.mulesoft.com/s/downloads
+
+You must supply your Anypoint login and password to access this page.
+
+*Runtime Manager Agent Install Guide*: link:/runtime-manager/installing-and-configuring-mule-agent[installing and configuring Runtime Manager Agent]
+
+== Compatibility
+
+[%header,cols="2*a",width=70%]
+|===
+|Software|Version
+|Mule Runtime|3.6.n, 3.7.n, 3.8.n
+|API Gateway|2.n and above
+|Runtime Manager | V1.5.0 + For Insight and Dashboards
+|===
+
+[NOTE]
+====
+This version (as a minimum) is required to access features released as part of Runtime Manager Cloud V1.5+.
+It's also required to access Runtime Manager in the Anypoint Platform Private Cloud Edition V 1.0 & V1.5
+
+Onprem V1.5 only currently does not include monitoring functionality or insight, but will be available in a future release.
+====
+
+== Hardware and Software Requirements
+
+No change.
+
+== Features and Functionality
+
+* *SE-4321*: Added a configurable property to exclude the payload from the tracking notifications.
+* *SE-4507*: Added a rolling file appender to the `mule_agent.log` by default, and the possibility to configure a `mule-agent-appender` which will be used by the Mule Agent Plugin in the case is provided on the `$MULE_HOME/conf/log4j2.xml` file. See xref:3.8@mule-runtime::logging-in-mule.adoc#configuring-logs-for-runtime-manager-agent[Logging in Mule].
+* URI creation for the `conf/log4j2.xml` file is now fixed
+* Added timezone to the log4j PatternLayout.
+* Ability to configure proxy settings when executed with the -P option.
+* DiskBuffer no longer throws an error with CustomEventProperties
+
+== Known Issues
+
+* SE-4508 - Add a MuleSoft NTP server to retrieve the server date
+
+
+== Migration Guide
+
+See xref:runtime-manager::installing-and-configuring-runtime-manager-agent.adoc#updating-a-previous-installation[updating the Runtime Manager agent].
+
+== See Also
+
+* xref:runtime-manager::runtime-manager-agent.adoc[Runtime Manager Agent]
+* https://support.mulesoft.com[Contact MuleSoft]

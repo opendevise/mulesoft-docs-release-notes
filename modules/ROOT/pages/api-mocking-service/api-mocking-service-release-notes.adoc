@@ -1,0 +1,129 @@
+= API Mocking Service Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: api-mocking-service-release-notes.adoc
+
+* <<API Mocking Service 1.1.9>>
+* <<API Mocking Service 1.1.8>>
+* <<API Mocking Service 1.1.7>>
+* <<API Mocking Service 1.1.6>>
+* <<API Mocking Service 1.1.5>>
+* <<API Mocking Service 1.1.4>>
+* <<API Mocking Service 1.1.3>>
+* <<API Mocking Service 1.1.2>>
+* <<API Mocking Service 1.1.1>>
+
+== API Mocking Service 1.1.9
+
+May 19, 2018
+
+The parser is now at version 1.1.42.
+
+== API Mocking Service 1.1.8
+
+April 21, 2018
+
+* Invoking a resource that required the `uriParameter` (e.g., “/master/{attname}”) returned the example response for root instead of the defined example.
+* Invoking a resource that required a `uriParameter` and then using the example parameter in a GET or PUT method resulted in a response containing the complete API specification.
+
+
+== API Mocking Service 1.1.7
+
+March 24, 2018
+
+This release bumps the parser and includes bug fixes.
+
+=== Improvements
+
+Bumped parser to 1.1.41.
+
+=== Fixed Issues
+
+* Parsing no longer returns an Error for XML and Schema valid.
+* Fixed an issue with getting validation errors while building RAML for XML with Attributes and Inner text.
+* Fixed an issue that prevented some methods that return an Array from correctly showing the response example.
+
+
+== API Mocking Service 1.1.6
+
+February 24, 2018
+
+This release fixes several bugs.
+
+=== Fixed Issues
+
+* A problem that prevented validation datetime query parameters with format
+RFC3339.
+* The issue causing RAML with a null response to return &quot;message&quot;: in the HTTP
+response with 0 length.
+* The `multipleOf` facet validation issue.
+
+== API Mocking Service 1.1.5
+
+January 13, 2018
+
+This release resolves a few issues:
+
+=== Resolved Issues
+
+* Fixed a problem related to a URI parameter name containing a hyphen (-) character.
+* Fixed an issue with making a request that has a empty body of type application/json.
+* Fixed a bug that returned a 400 "body: unknown type any" when using a body with an example that has no type definition.
+
+== API Mocking Service 1.1.4
+
+December 16, 2017
+
+This release introduces the following improvements and resolved issues:
+
+=== Improvements
+
+* Using the mocking service from a proxy application overrides the mocking service of the API itself.
+* The Authorization header check for path simulation has been removed.
+* When you don't specify the main example for a DataType, the mocking service provides the examples defined for each property.
+
+== Resolved Issues
+
+* Using a proxy application, the mocking service now validates the Body of the method when you try to POST it.
+* Using a base URI ending with / no longer causes a 404 error.
+* The mocking service now recognizes object type as an enum in a URI parameter.
+* Enforcement of a required data type has been fixed. An absent data type or one that does not include all required fields is rejected.
+* The problem related to using the RAML anonymous security scheme has been fixed.
+
+== API Mocking Service 1.1.3
+
+October 21, 2017
+
+This release focuses on bug fixes.
+
+=== Improvements
+
+* Enhanced the Mocking Server to respond with random examples if more than one is available.
+* A successful mock creation POST request now returns a 201 response status code instead of 200.
+
+=== Resolved Issues
+
+Fixed API Mocking Service to work properly when the RAML has URI parameters.
+
+== API Mocking Service 1.1.2
+
+August 26, 2017
+
+This release focuses on bug fixes.
+
+== Resolved Issues
+
+* Examples defined in datatypes were not displayed properly.
+* Mocking server was returning 404 for calls with query parameters.
+
+
+== API Mocking Service 1.1.1
+
+July 15, 2017
+
+This release focuses on bug fixes and closing gaps for RAML 1.0 support.
+
+== Resolved Issues
+
+Fixed an issue preventing API Notebook text from expanding properly.

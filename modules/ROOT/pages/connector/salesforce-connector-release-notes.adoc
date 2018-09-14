@@ -1,0 +1,863 @@
+= Salesforce Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: salesforce-connector-release-notes.adoc
+:keywords: release notes, salesforce, connector
+
+*March 2018*
+
+_Select_
+
+Starting with v.6.0.2, the Salesforce Connector is licensed commercially with Anypoint Platform as with other Select connectors. Prior versions are freely available to the community.
+
+== 8.6.0
+
+*March 28, 2018*
+
+=== Compatibility
+
+Salesforce connector version 8.6.0 is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Application/Service|Version
+|Mule Runtime|Mule Enterprise Edition 3.5.2 and later
+|Anypoint Studio|Only works with Studio 5.4.0 and later
+|Salesforce|v37.0, v38.0, v39.0, v40.0, v41.0
+|===
+
+=== Features
+
+Added extra parameter bufferSizeInBytes for Replay Streaming Channel source.
+User can set the internal buffer size for the message consumer. Default value is 26 MB.
+
+=== Fixed in this Release
+
+* Customer received no error or exception on 403::Organization total events daily limit exceeded.
++
+In previous versions when 'error=403::Organization total events daily limit exceeded' occurred,
+the connector would throw an exception to let the customer know about this issue.
+The connector now fires an event when the reconnection count is greater than
+10, but in case this never occurs, a custom notification is fired. The notification
+ID for this error is always 100888 and it also contains the appropriate message.
++
+* Salesforce connector invoked REST apex and ignored null values.
++
+When Salesforce connector invoke-apex-rest-method sends JSON to Salesforce, it ignores all null fields.
+We need those null fields so we can update fields in Salesforce to null, otherwise Salesforce won't update those fields.
++
+* Salesforce Streaming flow when set to processingStrategy as Synchronous does not catch exception strategy.
++
+Using Salesforce connector with operation "Replay Streaming Channel" as message listener and explicitly
+specifying the flow processing strategy as "synchronous" does not forward the exception thrown to the
+exception strategy defined. Whereas if no processingStrategy is defined in the flow then the exception
+is handled by the exception strategy.
++
+* Salesforce topic disconnected when proxy with CONNECT.
++
+Using previous versions to subscribe to a Salesforce Topic will fail with exception when the connection goes throw a proxy.
+The bug is documented here: https://bugs.eclipse.org/bugs/show_bug.cgi?id=475546. Fixed by upgrading to jetty-9.2.24.
++
+* CVE Security Vunerabilities in jackson-databind-2.4.3.
++
+CVE-2017-7525 jackson-databind: Deserialization vulnerability via readValue method of ObjectMapper See `+https://bugzilla.redhat.com/show_bug.cgi?id=1462702+` and `+https://nvd.nist.gov/vuln/detail/CVE-2017-7525+`.
+Upgraded to 2.9.4 jackson-databind dependency.
+
+== 8.5.0
+
+*February 22, 2018*
+
+This release adds support for Salesforce API v41.0.
+
+=== Compatibility
+
+Salesforce connector version 8.5.0 is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Application/Service |Version
+|Mule Runtime |Mule Enterprise Edition 3.5.2 and later
+|Anypoint Studio |Only works with Studio 5.4.0 and later
+|Salesforce |v37.0, v38.0, v39.0, v40.0, v41.0
+|===
+
+=== Features
+
+The connector is now updated to support the new Salesforce API v41.0.
+
+== 8.4.1
+
+*January 19, 2018*
+
+=== Compatibility
+
+Salesforce connector version 8.4.1 is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Application/Service|Version
+|Mule Runtime|Mule Enterprise Edition 3.5.2 and later
+|Anypoint Studio|Only works with Studio 5.4.0 and later
+|Salesforce|v37.0, v38.0, v39.0, v40.0
+|===
+
+=== Fixed in this Release
+
+* SFDC Connector: Buffering capacity exceeded. In previous versions, low buffering capacity could cause the capacity to be exceeded when several events have been queued. Now, the buffering capacity has been increased.
+* Reply topic losing messages. In previous versions, when there's a network failure for less than 40 seconds (the amount of time needed to pass so that a resubscription to the topic triggers) and there are events that are sent for the pending HTTP request, those events are lost. Currently a resubscription is triggered when the connection is lost.
+
+== 8.4.0
+
+*October 26, 2017*
+
+This version of the Salesforce connector provides support for Salesforce v40.0 and new operations.
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Application/Service|Version
+|Mule Runtime|Mule Enterprise Edition 3.5.2 and later
+|Anypoint Studio|Only works with Studio 5.4.0 and later
+|Salesforce|v37.0, v38.0, v39.0, v40.0
+|===
+
+=== Features
+
+* Added support for Salesforce API v40.0.
+* Support for publishing platform event messages using the http://mulesoft.github.io/mule-salesforce-connector/8.4.0/apidocs/apidoc.html#_publish_platform_event_message[Publish platform event message] operation.
+* Added new metadata types
+* Provided new operations for http://mulesoft.github.io/mule-salesforce-connector/8.4.0/apidocs/apidoc.html#_convert_lead[Convert lead], http://mulesoft.github.io/mule-salesforce-connector/8.4.0/apidocs/apidoc.html#_find_duplicates_by_ids[Find duplicates by ids], http://mulesoft.github.io/mule-salesforce-connector/8.4.0/apidocs/apidoc.html#_change_own_password[Change own password]
+
+=== Fixed in this Release
+
+* Apex SOAP call did not work when reconnection was triggered. In previous versions when the session was invalidated, the connector threw an error with this message `Failed to invoke invokeApexSoapMethod` caused by the `org.apache.cxf.binding.soap.SoapFault No operation specified in request (the Body element has no child elements)` exception. With this fix, the payload is retained and the calls work correctly after the reconnection.
+ * There was a leak when the Salesforce connector performed a reconnection. In previous versions when the Salesforce connector performed a reconnection, HttpClient objects were leaking. With this fix, there are no leaks when reconnecting.
+ * No error received by clients when the Organization total events daily limit was exceeded. In the previous version when there was an error of type `403::Organization`, the total events daily limit exceeded the connector and did not throw an error or exception. In current version besides throwing an exception a notification is fired. The notification ID for this error is always be 100888 and it also contains the appropriate message.
+
+== 8.3.1
+
+*July 3, 2017*
+
+Salesforce connector version 8.3.1 is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Application/Service|Version
+|Mule Runtime|Mule Enterprise Edition 3.5.2 and later
+|Anypoint Studio|Only works with Studio 5.4.0 and later
+|Salesforce|v37.0, v38.0, v39.0
+|===
+
+=== Fixed in this Release
+
+* *Failure to refresh metadata*: In the previous version _Refresh Metadata_ failed when references (__r) were used in a *SELECT* statement. Currently statements like: `SELECT a.OtherObject_r.CustomFieldc FROM MyCustomObject_c a' should work.
+
+* *Salesforce topic subscription failure with API v37 v38 and v39*: In previous version/s, in long-running salesforce applications subscribed to a topic it threw a _org.cometd.3_0_10.shade.common.TransportException: {httpCode=404}_. Currently, after a proper configuration, topic subscription shouldn't fail after a long-running. Check xref:3.8@mule-runtime::salesforce-connector.adoc#subscribing-to-a-topic[User Manual - Subscribing to a Topic]
+
+== 8.3.0
+
+*April 17, 2017*
+
+Salesforce connector version 8.3.0 is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Application/Service|Version
+|Mule Runtime|Mule Enterprise Edition 3.5.2 and later
+|Anypoint Studio|Only works with Studio 5.4.0 and later
+|Salesforce|v37.0, v38.0, v39.0
+|===
+
+=== Features
+
+* Added support for salesforce API v39.0
+* Added support for the "WITH HIGHLIGHT" operator in the Query All operation
+
+=== Fixed in this Release
+
+* Content Type is now supported in the Create Job operation.
+
+== 8.2.1
+
+*March 10, 2017*
+
+=== Compatibility
+
+Salesforce connector version 8.2.1 is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Application/Service|Version
+|Mule Runtime|Mule Enterprise Edition 3.5.2 and later
+|Anypoint Studio|Only works with Studio 5.4.0 and later
+|Salesforce|v37.0, v38.0
+|===
+
+=== Fixed in this Release
+
+* In the previous version 8.2.0, the name of the parameter given to operations that were expecting an object of type BatchInfo as input was changed from `batch-info` to `batch-to-retrieve`, which affected  existing apps using those operations. In version 8.2.1 `batch-to-retrieve` has been changed back to `batch-info` and `batch-to-retrieve` has been removed.
+
+Example of operation using `batch-to-retrieve`:
+
+[source,xml,linenums]
+----
+<sfdc:batch-info config-ref="Salesforce__Basic_Authentication" doc:name="Salesforce">
+    <sfdc:batch-to-retrieve ref="#[payload]"/>
+</sfdc:batch-info>
+----
+
+In version 8.2.1, this operation has been changed back to how it was in the past:
+
+[source,xml,linenums]
+----
+<sfdc:batch-info config-ref="Salesforce__Basic_Authentication" doc:name="Salesforce">
+    <sfdc:batch-info ref="#[payload]"/>
+</sfdc:batch-info>
+----
+
+== 8.2.0
+
+*March 2, 2017*
+
+=== Compatibility
+
+Salesforce connector version 8.2.0 is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Application/Service|Version
+|Mule Runtime|Mule Enterprise Edition 3.5.2 and later
+|Anypoint Studio|Only works with Studio 5.4.0 and later
+|Salesforce|v37.0, v38.0
+|===
+
+=== Features
+
+* Added new configuration which is using OAuth2.0 Username-Password authentication flow, see: https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_understanding_username_password_oauth_flow.htm[Username-Password OAuth Authentication Flow].
+* Added support for providing custom headers in the *Create Job* operation that provides behavior similar to "PK Chunking", see: https://developer.salesforce.com/docs/atlas.en-us.api_asynch.meta/api_asynch/async_api_headers_enable_pk_chunking.htm[PK Chunking Header].
+* Added support for providing custom headers on *Query Result Stream* that lets you set headers on request. This can be useful if you want, for example, to receive data in GZIP format by adding "Accept-Encoding=GZIP" as a header.
+* Added support for providing custom headers on *Batch Result Stream* that lets you set headers on request. This can be useful if you want, for example, to receive data in GZIP format by adding "Accept-Encoding=GZIP" as a header.
+
+=== Fixed in this Release
+
+* When the connector was used as an inbound endpoint in case of a session expiration, it wasn't able to refresh the session, but now is fixed.
+
+== 8.1.0
+
+*December 2, 2016*
+
+=== Compatibility
+
+Salesforce connector version 8.1.0 is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Application/Service|Version
+|Mule Runtime|Mule Enterprise Edition 3.5.2 and later
+|Anypoint Studio|Only works with Studio 5.4.0 and later
+|Salesforce|v37.0, v38.0
+|===
+
+=== Features
+
+* Added a new Salesforce header to the list of headers, which is DuplicateRuleHeader, that are accepted by create(), update(), upsert() and from now on, by findDuplicates()
+* Added support for find duplicates API core call. See: https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_calls_findduplicates.htm#sforce_api_calls_findduplicates[Find Duplicates Core Call]
+* Added enhancements to the Streaming API. The connector stores the replay ID for the last processed event. The user now has the possibility to replay all unprocessed events within the 24 hour time-frame provided by Salesforce. The replay ID can now be specified as a MEL expression.
+* Added support for Batch Info List bulk API call. See: https://developer.salesforce.com/docs/atlas.en-us.202.0.api_asynch.meta/api_asynch/asynch_api_batches_get_info_all.htm[Get Information for All Batches in a Job]
+
+* From now on, exception is thrown instead of hanging when a header from response is not recognized. (For example, for this use case: when a proxy is altering response from Salesforce.)
+* Proxy configuration was not taken in consideration by streaming inbound endpoints, fixed it.
+* When domain name was containing word "services" (for example, `+https://services--dev.salesforce.com/services/c/38.0+`) the computation of service endpoint to which upcoming requests are send was wrong, so it was fixed.
+
+=== Known Issues
+
+* "Resume from the last replay id” won’t work on Cloudhub because the persistent object store is not supported by Cloudhub.
+
+=== Migration Guide
+
+Salesforce API v38 brings several API and Metadata API changes, as they are documented in the Salesforce release notes:
+
+* https://releasenotes.docs.salesforce.com/en-us/summer16/release-notes/rn_api_objects_changed.htm?edition=&impact=[Salesforce API]
+* https://releasenotes.docs.salesforce.com/en-us/summer16/release-notes/rn_api_meta.htm?edition=&impact=[Metadata API]
+
+== 8.0.0
+
+*October 26, 2016*
+
+=== Compatibility
+
+Salesforce connector version 8.0.0 is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Application/Service|Version
+|Mule Runtime|Mule Enterprise Edition 3.5.2 and later
+|Anypoint Studio|Only works with Studio 5.4.0 and later
+|Salesforce|v37.0
+|===
+
+=== Features
+
+* Added Generic Streaming support
+* Added support for record-related events replay through Salesforce Streaming API.
+
+
+=== Fixed in this Release
+
+* Improved Apex classes parsing grammar
+
+=== Migration Guide
+
+Salesforce API v37 brings several API and Metadata API changes, as they are documented in the Salesforce release notes:
+
+* https://releasenotes.docs.salesforce.com/en-us/summer16/release-notes/rn_api_objects_changed.htm?edition=&impact=[Salesforce API]
+* https://releasenotes.docs.salesforce.com/en-us/summer16/release-notes/rn_api_meta.htm?edition=&impact=[Metadata API]
+
+
+When migrating to version 8.0.0, you should consider the following changes:
+
+* The *_ChildRelationship_* SObject field *_junctionIdListName_* has become *_junctionIdListNames_* in API v37 and has changed type from *_String_* to *_String[]_*
+
+== 7.2.0
+
+*August 23, 2016*
+
+=== Compatibility
+
+Salesforce connector version 7.2.0 is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Application/Service|Version
+|Mule Runtime|Mule Enterprise Edition 3.5.2 and later
+|Anypoint Studio|Only works with Studio 5.4.0 and later
+|Salesforce|v32.0 to v37.0
+|===
+
+=== Features
+
+* Added SocketException and ConnectException to ReconnectionStrategy triggers.
+* Added a new checkbox to the configuration, allowing a user to clear fields that have a null value, without using fieldsToNull list.
+* Added new icons for the Studio Light Theme.
+* When fetching the metadata for Apex Rest Classes, if an exception is thrown for an Apex Class, the metadata is fetched for the other Apex classes, and that exception will be logged. A MetadataKey is created for that Apex Class that presents the exception message.
+
+=== Fixed in this Release
+
+* Reconnection Strategy now works if the session was invalidated when invoking an Apex Rest Class.
+* Corrected an issue that caused Salesforce Connector to fail in extracting the access token from the Salesforce Oauth response.
+* Now all 2xx HTTP status code responses are treated as success.
+* Corrected issues which caused some Apex Rest classes to be parsed incorrectly by the connector.
+
+== 7.1.2
+
+*June 3, 2016*
+
+=== Compatibility
+
+Salesforce connector version 7.1.2 is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Application/Service|Version
+|Mule Runtime|Mule Enterprise Edition 3.5.2 and later
+|Anypoint Studio|Only works with Studio 5.4.0 and later
+|Salesforce|v32.0 to v36.0
+|===
+
+=== Fixed in this Release
+
+Support for TLS version configuration for JWT, SAML authentications. It can be specified same way as for JVM by adding "https.protocols" VM option (for example, `-Dhttps.protocols=TLSv1.1,TLSv1.2`)
+
+== 7.1.1
+
+*April 25, 2016*
+
+=== Compatibility
+
+Salesforce connector version 7.1.1 is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Application/Service|Version
+|Mule Runtime|Mule Enterprise Edition 3.5.2 and later
+|Anypoint Studio|Only works with Studio 5.4.0 and later
+|Salesforce|v32.0 to v36.0
+|===
+
+=== Fixed in this Release
+
+* Fixed an issue regarding the dependencies used by the connector.
+
+== 7.1.0
+
+*April 13, 2015*
+
+=== Compatibility
+
+Salesforce connector version 7.1.0 is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Application/Service|Version
+|Mule Runtime|Mule Enterprise Edition 3.5.2 and later
+|Anypoint Studio|Only works with Studio 5.4.0 and later
+|Salesforce|v32.0 to v36.0
+|===
+
+=== Features
+
+* The connector now supports versions 32.0 to 36.0 of the Salesforce API.
+* Now the connector supports a trial version. This means that Salesforce Connector can be used with an evaluation/trial license for Mule EE
+* Added JSON support for Bulk API operations
+* Validate Configuration can now verify if the current session is valid
+* Validations are performed on Invoke Apex Rest Method to verify that restMethodName has the expected format
+
+
+=== Fixed in this Release
+
+*  Fixed issue where *Invoke Apex Soap Method* sometimes failed to transform the result, returning null or an empty array instead.
+*  When querying for attachments, the body is now properly returned as a byte array, rather than Base64.
+* Fixed issue where *Batch Commit* was incorrectly reporting that all records were successfully upserted although some actually failed.
+* Default input value for *Batch Result*, *Batch Result Stream*, *Query Result Stream* and *Batch Info* is now correctly set to payload.
+* Multiple flows can now subscribe to the same *Topic*, fixing an issue where only one flow would actually subscribe.
+
+== 7.0.1
+
+*December 9, 2015*
+
+=== Compatibility
+
+Salesforce connector version 7.0.1 is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Application/Service|Version
+|Mule Runtime|Mule Enterprise Edition 3.5.2 and later
+|Anypoint Studio|Only works with Studio 5.4.0 and later
+|Salesforce|v32.0 to v34.0
+|===
+
+
+=== Fixed in this Release
+
+* Fixed how the way query results are returned. Exceptions related to "No converter found!" are no longer thrown for inner selects (for child relationships).
+* Because the converters introduced a huge impact on production performance it was decided that all fields are to be returned as Strings and DataWeave will be used for data transformation.
+* Batch Operation Results are reported correctly now, if Batch Commit component is used. Before the connector had problems reporting how many records were successful and how many where failed (all the recors were reported as successful).
+* Invocation of Apex Rest methods that are void no longer fails.
+
+=== Known Issues
+
+* Batch Operation Results report all records as successful when the Batch Commit component is not used (only the Batch Step component is used).
+
+== 7.0.0
+
+*December 1, 2015*
+
+=== Compatibility
+
+Salesforce connector version 7.0.0 is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Application/Service|Version
+|Mule Runtime|Mule Enterprise Edition 3.5.2 and later
+|Anypoint Studio|Only works with Studio 5.4.0 and later
+|Salesforce|v32.0 to v34.0
+|===
+
+This is a *major version* change, hence the connector *might break backward compatibility* for some existing flows.
+It uses DevKit 3.7 and its new features (like multi-level Datasense for invokeApexSoapMethod and invokeApexRestMethod) and dates are no longer passed as String, but as Dates and Calendars. To see how the new metadata key ids are formed for invokeApexSoapMethod and invokeApexRestMethod please read below.
+
+=== Features
+
+* The connector now supports versions 32.0 to 34.0 of the Salesforce API.
+* *get-session-id*
+** Added an extra optional input parameter to this operation, that forces the session validation.
+* *describe-global* and *describe-sobject*
+** Added an extra optional parameter to these operations in order to add Salesforce SOAP headers on the requests.
+* *invoke-apex-rest-method*
+** Added support for Custom Types and Apex Custom Types
+** Added multilevel Datasense (the user has to choose the Apex Class first and then in a following parameter, the user must choose a Method Name from the ones available for that class)
+** The resulting metadata key id will have the following format:
+'apexClassName||apexMethodName\^resourceUrl^httpMethod\^outputType^inputParameters'
+where
+*** apexClassName is the value chosen by the user for the "Apex Class" parameter under the General section of the connector tab;
+*** apexMethodName is the value chosen by the user for the "Method Name" parameter under this General section;
+*** resourceUrl is the value of urlMapping attribute from the '@RestResource' annotation of the apex class;
+*** httpMethod is the http method annotation of the Apex Rest resource (for example, @HttpGet, @HttpPost) without the '@' symbol;
+*** outputType is the method output type (for example, 'List<Account>');
+*** inputParameters is a comma separated list of input parameters (their name and their type - for example, 'account=Account, someParameter=String');
+*** '||' is a separator used between the class name and the method name;
+*** '^' is a separator for the method details.
+* *invoke-apex-soap-method*
+** Added multilevel Datasense (the user has to choose the Apex Class first and then in a following parameter, the user must choose a Method Name from the ones available for that class)
+** The resulting metadata key ID will have the following format: 'apexClassName||apexMethodName' where:
+*** apexClassName is the value chosen by the user for the "Apex Class" parameter under the General section of the connector tab;
+*** apexMethodName is the value chosen by the user for the "Method Name" parameter under this General section;
+*** '||' is a separator used between the class name and the method name.
+* Changed *Test Connection* to *Validate Configuration* and added a validation for Apex Classes and Proxy configurations if these are set in the connector configuration.
+* *merge*
+** This is a new operation to support merging of accounts.
+* *reset-password*
+** This is a new operation to offer support to users wanting to reset their password through the connector.
+* Added the ability to use external IDs in metadata (DataMapper or DataWeave).
+* Added support for List<String> for fieldsToNull.
+
+=== Fixed in this Release
+
+* Changed the creation of the URLs used for Apex SOAP and Apex REST requests, in order to support reverse proxies.
+* Modified some Java documentation that incorrectly appeared as explanations in Studio elements like configurations.
+* Corrected the parsing of dates from Apex REST invocation responses.
+* Added validation for the existence of IDs when using the *retrieve* operation, to avoid possible exception thrown when it is called.
+* Dates are now returned as Calendars rather than Strings, for easier use (comparison or alteration).
+* Fixed issue with Apex REST URL not supporting certain characters like period ('.').
+* Improved overall performance for Apex REST invocation by avoiding the download and parsing of the Apex REST class at every invocation; instead we are relying on the information obtained during Datasense and data stored in the metadata key id related to the method to be invoked.
+//TODO: confirm wording in above bullet point was meant to be "settings" not "set", which did not make sense.
+* Removed default proxy port from the configuration as it is confusing.
+* Handle the Salesforce Address type as an object in metadata rather than a String, as before.
+
+=== Known Issues
+
+* This version of the connector breaks backward compatibility:
+** the way some metadata key ids are created was changed due to some performance enhancements (invokeApexSoapMethod and invokeApexRestMethod are affected by this).
+** the way the connector works with Dates has been changed: dates are no longer expected/returned as Strings; they are used as Dates or Calendars, for easier use (comparison and calculations), depending on their types.
+* Salesforce has a know issue with creating correct WSDLs for the Apex SOAP classes created under version 34.0 and 35.0 of the API. As a workaround Salesforce suggested that the Apex SOAP classes should be created under version 32.0 to be able to use them.
+* For versions v28.0, v29.0 of the Salesforce API use version v5.4.12 of the connector.
+
+
+== 6.2.3
+
+*July 23, 2015*
+
+=== Fixed in This Release
+
+* Fixed an error where session expiration would not be handled correctly even with a reconnection strategy set, in operations that returned a SalesforcePagingDelegate (query, queryall).
+
+== 6.2.2
+
+*July 22, 2015*
+
+=== Fixed in This Release
+
+* A bug that logged warning messages as errors once a session expired even if you had reconnection on has been fixed.
+* Support for session concurrency in multi-threaded applications has now been improved.
+
+== 6.2.1
+
+*June 19, 2015*
+
+=== Compatibility
+
+Salesforce connector version 6.2.1 is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Application/Service|Version
+|Mule Runtime|3.5.2 and later
+|Salesforce|v31.0 to v32.0
+|===
+
+=== Migrating From Older Versions of the Connector
+
+If you’re using an older version of the connector, a small popup appears in the bottom right corner of Anypoint Studio that says Updates Available.
+
+. Click that popup and check for available updates.
+. Click the Salesforce Connector version 6.2.1 checkbox, click Next, and  follow the instructions provided by the user interface.
+. Restart Studio.
+. After the restart, when creating a flow and using the Salesforce Connector, if you have several versions of the connector installed, you might be asked which version you would like to use. Select the version you would like to use.
+. Keep Mule and Studio updated.
+
+=== Fixed in this Release
+
+* IDENTITY_URL_TEMPLATE hardcoded to login.salesforce.com breaks sandbox requests - there was no way of differentiating the test sandbox from the production environment (this is done through the URL the user is logged in to).
+Renamed in the SalesforceBasicAuthConfig the parameter URL to Authentication Url
+* Added to JWT and SAML configurations the parameter Token Endpoint
+ObjectStore callback attributes are not properly loaded - fields instanceId , userId , and accessToken were renamed
+* Re-added fields instanceId, userId, and accessToken taken from ObjectStore provided by user
+* "remoteUserId" variable is not set any more in the postAuthorize
+Re-added the remoteUserId flow variable in postAuthorize
+
+=== Known Issues
+
+* Connector v6.2.1 does not work with versions v28.0, v29.0, and v30.0 of the Salesforce API.
+* Connector v6.2.1 does not support for Apex Rest the following data types:
+** Custom Types
+** Lists of Lists or Maps
+** Maps of Lists or Maps
+** Object (not able to perform DataSense on it)
+** Blob (not supported by Salesforce Rest methods as input/output)
+* For versions v28.0, v29.0 of the Salesforce API use version v5.4.12 of the connector.
+
+== 6.2.0
+
+*June 9, 2015*
+
+=== Compatibility
+
+Salesforce connector 6.2.0 is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Application/Service|Version
+|Mule Runtime|3.5.2 or later
+|Salesforce|v31.0 to v32.0
+|===
+
+=== Updating to of the Connector
+
+When a new version of a connector is released, Anypoint studio displays a popup in the bottom right corner of you screen with the following message: Updates Available.
+
+To upgrade to the later version of the Salesforce connector:
+
+. Click the popup and check for the available updates.
+. Select the Salesforce connector 6.2 checkbox and click Next.
+. Follow the instructions provided by the user interface.
+. Restart Studio when prompted.
+. After restarting, if you have several versions of the connector installed, Mule asks you for the version of the connector you like to use.
+
+=== Features
+
+* Salesforce APEX REST API: The connector now supports the following Apex operation:
+** Invoke Apex Rest method: Lets you invoke an operation from an Apex class that has previously been created in your organization. The operations from the Apex class have to be exposed as a REST service.
+* OAuth 2.0 JWT Bearer Token Flow: Allows you to authenticate salesforce via OAuth 2.0 JWT Bearer Token Flow.
+* OAuth 2.0 SAML Bearer Assertion Flow: Allows you to authenticate salesforce via OAuth 2.0 SAML Bearer Assertion Flow.
+
+=== Fixes
+
+* Created getServerURL operation to return the URL of the server.
+* Added support for  Proxy configuration for all authentication types.
+* Added Fetch All Apex SOAP Metadata checkbox (The connector tries to perform Datasense for all Apex SOAP classes  only if this checkbox is selected. )
+* NullPayloadToXMLStreamReader is hidden from the Studio as it is for internal use only.
+* SubscribeTopic operation now  supports topic names without leading /'.
+* Added support for CSV batch uploads (when contentType is set to CSV).
+Renamed the invokeApexMethod operation to invokeApexSoapMethod.
+
+=== Known Issues
+
+* This version is not compatible with Salesforce API v28.0, v29.0 and v30.0.
+* It doesn't support the following data types for Apex Rest:
+** Custom Types
+** Lists of Lists or Maps
+** Maps of Lists or Maps
+** Object (not able to perform DataSense on it)
+** Blob (not supported by Salesforce Rest methods as input/output)
+
+== 6.1.0
+
+*March 31, 2015*
+
+=== Compatibility Information
+
+* Mule Runtime: 3.5.2 and later
+* Anypoint Studio: October 2014
+* Salesforce: v32.0
+
+=== Features
+
+* Salesforce Apex API - the connector now supports the following Apex operation: +
+** *invokeApexMethod* - invokes any operation from an Apex class that is exposed as SOAP web service.
+* Added Query Builder for querySingle and queryAll operations.
+* Added payload as default value for the Ids input for retrieve() and emptyRecycleBin() operations.
+
+== 6.0.1
+
+*February 25, 2015*
+
+Fixes an issue where the Salesforce 6.0.0 connector didn't work with Java 6. The connector now works correctly with Java 6 and 7. Everything else is the same as Salesforce 6.0.0.
+
+== 6.0.0
+
+*February 23, 2015*
+
+=== Compatibility Information
+
+* Mule Runtime: 3.5.2 and later
+* Anypoint Studio: October 2014
+* Salesforce: v30.0 to v32.0
+
+=== Migrating From Older Versions
+
+If you’re currently using an older version of the connector, a small popup appears in the bottom right corner of Anypoint Studio appears as Updates Available. Click that popup and check for available updates. Click the Salesforce Connector version 6.0.0 checkbox, click *Next*, and follow the instructions provided by the user interface. When prompted, restart Studio.
+
+When creating a flow and using the Salesforce Connector, if you have several versions of the connector installed, you might be asked which version you would like to use. Choose the version you would like to use.
+
+=== Features
+
+Salesforce Metadata API - the connector now supports the following Metadata operations:
+
+* *createMedatada* - Adds one or more new metadata components to your organization.
+* *deleteMetadata* - Deletes one or more metadata components from your organization given an object's API names.
+* *describeMetadata* - Retrieves the metadata which describes your organization. This information includes Apex classes and triggers, custom objects, custom fields on standard objects, tab sets that define an app, and many other components.
+* *deployMetadata* - Use this call to take file representations of components and deploy them into an organization by creating, updating, or deleting the components they represent.
+* *listMetadata* - Retrieves property information about metadata components in your organization.
+* *readMetadata* - Returns one or more metadata components from your organization for one or more object's API Names.
+* *renameMetadata*  - Renames a metadata component in your organization, given its old API name and the new name.
+* *retrieveMetadata*  - This call retrieves XML file representations of components in an organization.
+* *updateMetadata* - Updates one or more metadata components in your organization.
+* *upsertMetadata* - Creates or updates one or more metadata components in your organization.
+
+=== Fixes
+
+* Security token is not required when IP restrictions apply.
+* Made API version configurable for OAuth connections.
+* Added ability to set readTimeout and connectionTimeout.
+* Fixed: Issue regarding missing fields on EXO created through the connector.
+* This connector no longer throws NullPointerException when an object to retrieve by ID has been deleted in Salesforce.
+* The useDefaultRule option now is passed in a SOAP request message.
+* Exposed operation to get SessionID from Salesforce connector.
+
+=== Known Issue
+
+This version is not backward compatible with Salesforce API versions v28.0 and v29.0.
+
+== 5.4.12
+
+*March 11, 2015*
+
+* Security token is not required when IP restrictions apply.
+* Made API version configurable for OAuth connections.
+* Added ability to set readTimeout and connectionTimeout.
+* Fixed: issue regarding missing fields on EXO created through the connector.
+* Fixed: SFDC connector throws NullPointerException when object to retrieve by Id has been deleted in Salesforce.
+* Fixed: useDefaultRule option not been passed in soap request message.
+* Exposed operation to get SessionID from Salesforce connector.
+* Support for the SAML "bearer assertion flow".
+
+=== Compatibility Information
+
+* Mule Runtime: 3.5.2 and later
+* Anypoint Studio: October 2014
+* Salesforce: v28.0 to v29.0
+
+=== Migration Information
+
+If you currently use an older version of the connector (5.4.10 for example):
+
+. In Anypoint Studio, click the *Updates Available* popup, which appears in the lower right corner of Studio.
+. Click the *Salesforce Connector Version 5.4.12* checkbox.
+. Click *Next* and then follow the instructions provided by the user interface. When prompted, restart Studio.
+. After restarting, when creating a flow and using the Salesforce Connector, if you have several versions of the connector installed, you may be asked which version you would like to use. Choose the version you would like to use.
+
+MuleSoft recommends that you install the latest version of Studio.
+
+== 5.4.10
+
+*October 28, 2014*
+
+* Fixed a critical bug related to URL population in the connector
+* Updated DevKit version support
+* Bug fix: Problem with retrieving metadata when a URL is not specified in a connector configuration.
+* Compatibility: +
+** Mule Runtime and DevKit: 3.5.1
+** Anypoint Studio: October 2014
+** Salesforce SOAP, Bulk, and Streaming API: 3
+
+== 5.4.9
+
+*September 18, 2014*
+
+Features:
+
+* Updated Salesforce SOAP, Bulk, and Streaming APIs to support version 31
+* Validated and documented support for SAML assertion flows using SFDC configuration
+* Tested and validated the Salesforce Connector for use with CloudHub
+* Added guidelines for connector version migration
+* Fixed issue related order-by in a query operation
+* Fixed bug related to importing a working cascade SFDC project
+
+== 5.4.7
+
+* Added Salesforce SOAP API headers support
+* Added new exception handling for REST and SOAP API
+* Removed Paginated Query operation (since AutoPaging for Query and QueryAll)
+* DevKit 3.5.0
+
+== 5.4.6
+
+* Added NonPaginatedQuery operation for backward compatibility since
+* Query uses Mule 3.5 AutoPaging
+* Added batchSize for queries
+* DevKit 3.5.0
+
+== 5.4.4
+
+* Fixed new Jetty dependencies for Mule 3.5.0
+* Fixes for authorizationUrl and accessTokenUrl in OAuth
+* DevKit 3.5.0
+
+== 5.4.3
+
+* Added compatibility with the new Mule Batch module
+* Added configurable for MAX_DEPTH for BULK API
+* DevKit 3.5.0
+
+== 5.4.2
+
+* Added getServerTimestamp operation
+* New exception handling for reconnection strategy
+* Fixed issues with proxies
+
+== 5.4.1
+
+* Added Mule 3.5 AutoPaging support for Query and QueryAll
+* Added DSQL support
+* Added operation to retrieve JobInfo
+* Added a way to allow empty security tokens
+* Fixed Date values for Nested SObjects in Bulk API
+* Fixed QueryResultStream issue when service return more than one page
+* DevKit 3.5.0
+
+== 5.4.0
+
+* Moved force-wsc as a dependency
+* Added support for API v28
+* Added support for recursive SObjects
+* Added sessionId and serviceUrl parameters on connection
+* Fixes for streaming API reconnection
+* Added support for reference types that differ from the field name
+* DevKit 3.5.0
+
+== 5.3.1
+
+* Upgraded DevKit to 3.4.0
+* Added support for streaming with OAuth
+* Fixes for streaming API
+
+== 5.3.0
+
+* Upgraded DevKit to 3.4.0
+* Added Mule 3.4 metadata support
+
+== 5.2.0
+
+* Upgraded to API v26
+* Added setPassword operation
+* Fixed documentation issues
+
+== 5.1.3
+
+* Upgraded to DevKit 3.3.2
+* Added paging capabilities with paginated-query method
+* Added support for Object Search queries using SOSL
+* Fixed SessionTimedOutException INVALID_SESSION_ID when doing
+* Fixed several concurrent requests with a timed out session
+* Fixed get-deleted and get-updated operations
+* Fixed blocking account when trying to disconnect if credentials are wrong
+* Updated documentation and fixed documentation issues
+
+== 5.1.2
+
+* Fixed issue related to ObjectStoreManager injection and get-updated-objects.
+
+== 5.1.1
+
+* Fixed issue related to URL transformer with DevKit 3.3.1.
+
+== See Also
+
+* xref:3.9@mule-runtime::salesforce-connector.adoc[Salesforce Connector]
+* http://mulesoft.github.io/mule-salesforce-connector/[Salesforce Technical Reference]
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

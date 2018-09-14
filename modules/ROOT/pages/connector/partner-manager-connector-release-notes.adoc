@@ -1,0 +1,580 @@
+= Partner Manager Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: partner-manager-connector-release-notes.adoc
+:keywords: partner manager, connector, release notes, b2b
+
+////
+
+== Active Versions
+
+* <<Version 6.4.1 - 14 September 2017>>
+* <<Version 6.4.0 - 8 September 2017>>
+* <<Version 6.3.2 - 15 September 2017>>
+* <<Version 6.3.1 - 9 August 2017>>
+* <<Version 6.3.0 - 4 August 2017>>
+* <<Version 6.2.0 - 24 July 2017>>
+* <<Version 6.1.2 - 12 July 2017>>
+* <<Version 6.1.1 - 19 June 2017>>
+* <<Version 6.1.0 - May 25 2017>>
+* <<Version 6.0.1 - May 11 2017>>
+* <<Version 6.0.0 - May 4 2017>>
+* <<Version 5.3.0 - April 10 2017>>
+
+////
+
+== 6.7.0
+
+*July 2, 2018*
+
+Supported Mule Runtime Versions: 3.6.4, 3.7.3, 3.8.1, 3.8.2
+
+=== New Features and Functionality
+
+* Reduced cache's memory footprint.
+* Logging memory usage during cache refresh.
+* Added support for HTTP proxy.
+* Added ability to tolerate un-serializable objects while deep copying in asynchronous mode.
+
+=== Fixed Issues
+
+* Solved an edge case in which an illegal nested resource transaction attempt could happen when in asynchronous mode.
+* Fixed an issue in which the cache could temporarily become inconsistent during Partner Manager deployments.
+* To prevent the disk from running out of space, cache export is now kept in-memory instead of temporarily saving it to the filesystem.
+* Saving AS2 and FTPS transmissions asynchronously when in asynchronous mode.
+* Preventing duplicate file persistence in case transaction creation failed when in asynchronous mode.
+
+
+== 6.6.3
+
+*February 6, 2018*
+
+=== Compatibility
+
+Supported Mule Runtime Versions: 3.6.4, 3.7.3, 3.8.1, 3.8.2
+
+=== Fixed Issues
+
+* Fixed minor memory leak.
+* Expiring entries in second-level cache based on last access.
+* Fixed issue in which the cache key was malformed in some instances, causing accumulation of spurious cache entries in the second-level cache.
+
+== 6.6.2
+
+*January 10, 2018*
+
+=== Compatibility
+
+Supported Mule Runtime Versions: 3.6.4, 3.7.3, 3.8.1, 3.8.2
+
+=== Fixed Issues
+
+* Serializing org.mule.el.context.MessagePropertyMapContext in transmission metadata when in asynchronous mode.
+* Fixed possible data loss during cache import following a non-fatal exception.
+* Preventing accidental access to the same cache from different applications.
+
+
+== 6.6.1
+
+*December 27, 2017*
+
+=== Compatibility
+
+Supported Mule Runtime Versions: 3.6.4, 3.7.3, 3.8.1, 3.8.2
+
+=== Fixed Issues
+
+* Support serialization of org.mule.el.context.MessagePropertyMapContext in metadata when in asynchronous mode.
+
+
+== 6.6.0
+
+*December 6, 2017*
+
+=== Compatibility
+
+Supported Mule Runtime Versions: 3.6.4, 3.7.3, 3.8.1, 3.8.2
+
+=== New Features and Functionality
+
+* Added optional *disableHostnameVerification* attribute to connector config.
+* Returning null instead of throwing exception when partnership is not found for given identifier in *get-partnership-by-identifiers* operation.
+
+=== Fixed Issues
+
+* Eliminated possible mutations to metadata when in asynchronous mode.
+
+* Addressed the following issues when _enableCaching_ is true:
+** Paging in search results (added).
+** Exception-handling (made consistent).
+** Route status calcluation when the local time zone is not UTC (made correct).
+
+
+== 6.5.0
+
+*October 13, 2017*
+
+=== Compatibility
+
+Supported Mule Runtime Versions: 3.5.2, 3.7.2, 3.7.3
+
+=== New Features and Functionality
+
+* Added optional _trustStorePath_ attribute to connector config.
+* Generating a Mule message ID per asynchronous operation in order to support idempotent persistence in *config-file-storage-custom*.
+
+=== Fixed Issues
+
+* Applying connector config HTTP settings to *retrieve-payload* operation.
+* Reduced possible superfluous errors on connector shutdown when *asynchronousMode* is enabled.
+* Consistently handling exceptions thrown when *enableCaching* is true.
+
+
+== 6.3.2
+
+*September 15, 2017*
+
+=== Compatibility
+
+Supported Mule Runtime Versions: 3.5.2, 3.7.2, 3.7.3
+
+=== Fixed Issues
+
+* Changing content encoding to UTF-8.
+
+=== Known Issues
+
+* Multiple configurations are not supported when *asynchronousMode* is enabled.
+
+
+== 6.4.1
+
+*September 14, 2017*
+
+=== Compatibility
+
+Supported Mule Runtime Versions: 3.5.2, 3.7.2, 3.7.3
+
+=== Fixed Issues
+
+* Changing content encoding to UTF-8.
+
+
+== 6.4.0
+
+*September 8, 2017*
+
+=== Compatibility
+
+Supported Mule Runtime Versions: 3.5.2, 3.7.2, 3.7.3
+
+=== New Features and Functionality
+
+* Added optional _queueName_ attribute to connector config.
+* Added _numberOfThreads_ attribute to connector config.
+
+=== Fixed Issues
+
+* Preventing runaway cache refresh thread after connector is stopped.
+* Fixed bug where the wrong environments ID is used when having multiple connector cache-enabled instances.
+* Fixed deserialization/serialization errors when a persistent queue manager is used for asynchronous mode.
+* Improved asynchronous mode performance.
+* Eliminated possible mutations to original Mule event when in asynchronous mode.
+* Supporting multiple configurations when *asynchronousMode* is enabled.
+* Fixed locking issue across cache instances while refreshing.
+* Improved caching performance.
+
+== 6.3.1
+
+*August 9, 2017*
+
+=== Compatibility
+
+Supported Mule Runtime Versions: 3.5.2, 3.7.2, 3.7.3
+
+=== Fixed Issues
+
+* Calculating correct route status when caching is enabled.
+
+=== Known Issues
+
+* Multiple configurations are not supported when *asynchronousMode* is enabled.
+
+
+== 6.3.0
+
+*August 4, 2017*
+
+=== Compatibility
+
+Supported Mule Runtime Versions: 3.5.2, 3.7.2, 3.7.3
+
+=== New Features and Functionality
+
+* Added _routeStatus_ attribute to _evaluate-transaction-release-status_ operation.
+
+=== Fixed Issues
+
+* Fixed inconsistent behavior and _NoClassDefFoundError_ exception when caching is enabled.
+
+=== Known Issues
+
+* Multiple configurations are not supported when *asynchronousMode* is enabled.
+
+
+== 6.2.0
+
+*July 24, 2017*
+
+=== Compatibility
+
+Supported Mule Runtime Versions: 3.5.2, 3.7.2, 3.7.3
+
+=== New Features and Functionality
+
+* Added support for retries.
+* Skipping export download for cache refresh if no changes were made to configuration.
+
+=== Fixed Issues
+
+* Fixed caching issue where a result with multiple items could lead to missing nested objects if the nested objects have the same ID.
+* Solved bug where _evaluate-transaction-release-status_ attempts to evaluate _target_ attribute at the wrong time.
+
+=== Known Issues
+
+* Multiple configurations are not supported when *asynchronousMode* is enabled.
+
+
+== 6.1.2
+
+*July 12, 2017*
+
+=== Compatibility
+
+Supported Mule Runtime Versions: 3.5.2, 3.7.2, 3.7.3
+
+=== Fixed Issues
+
+* Fixed race condition which allowed duplicate refresh threads.
+* Fixed issue where inboundFormatOptions and outboundFormatOptions in documentDefinition is empty when caching is enabled.
+* Reduced garbage collection overhead when caching is enabled.
+* Searching error codes from Trading Partner Manager instead of Tracker.
+* Release status returned from _evaluate-transaction-release-status_ can now be saved in any location and not just in _b2bTransmissionSession_.
+
+=== Known Issues
+
+* Multiple configurations are not supported when *asynchronousMode* is enabled.
+
+
+== 6.1.1
+
+*June 19, 2017*
+
+=== Compatibility
+
+Supported Mule Runtime Versions: 3.5.2, 3.7.2, 3.7.3
+
+=== Fixed Issues
+
+* Improved cache performance.
+* Revised HTTP connection TTL in order to reduce the risk of cached DNS entries becoming stale.
+
+=== Known Issues
+
+* Multiple configurations are not supported when *asynchronousMode* is enabled.
+
+
+== 6.1.0
+
+*May 25, 2017*
+
+=== Compatibility
+
+Supported Mule Runtime Versions: 3.5.2, 3.7.2, 3.7.3
+
+=== New Features and Functionality
+
+* Added *cacheMaxExportTries* option to connector config.
+
+=== Fixed Issues
+
+* Fixed broken behavior in unique control number enforcement of EDIFACT and X12 documents.
+* Made query attribute in *search* optional.
+* Export download no longer continues indefinitely when the number of download attempts exceeds fifteen.
+
+=== Known Issues
+
+* Multiple configurations are not supported when *asynchronousMode* is enabled.
+
+
+== 6.0.1
+
+*May 11, 2017*
+
+=== Compatibility
+
+Supported Mule Runtime Versions: 3.5.2, 3.7.2, 3.7.3
+
+=== Fixed Issues
+
+* Turned on TLS hostname verification in *retrieve-payload*.
+* Permitting at most a single refresh thread when caching is enabled.
+* Closing idle HTTP connections.
+
+=== Known Issues
+
+* Multiple configurations are not supported when *asynchronousMode* is enabled.
+* Broken with Maven.
+
+
+== 6.0.0
+
+*May 4, 2017*
+
+=== Compatibility
+
+Supported Mule Runtime Versions: 3.5.2, 3.7.2, 3.7.3
+
+=== New Features and Functionality
+
+* Re-written support for caching and exposed it as connector config option.
+* Added _connectTimeout_, _connectionRequestTimeout_, and _socketTimeout_ to configuration.
+
+=== Known Issues
+
+* Multiple configurations are not supported when *asynchronousMode* is enabled.
+* Broken with Maven.
+
+=== Migrating from Older Versions
+
+* Results returned from _Search_ operation are no longer wrapped.
+* Use _search_ instead of _get-error-codes_ to get error codes.
+
+
+== 5.3.0
+
+*April 10, 2017*
+
+=== Compatibility
+
+Supported Mule Runtime Versions: 3.5.2, 3.7.2, 3.7.3
+
+=== New Features and Functionality
+
+Added operations to:
+
+* Start errors notification.
+* End errors notification (that is, notification sent).
+* Start transactions release (when a transaction has been on-hold, this starts the process of returning the transaction to active processing).
+* End transactions release (that is, complete return to active processing).
+* Evaluate transaction release status.
+
+=== Known Issues
+
+* Multiple configurations are not supported when *asynchronousMode* is enabled.
+
+
+== 5.2.0
+
+*March 22 2017*
+
+=== Compatibility
+
+Supported Mule Runtime Versions: 3.5.2, 3.7.2, 3.7.3
+
+=== New Features and Functionality
+
+Added:
+
+* Error resource for Search Operation.
+* Ability to harvest properties using lookup table searches.
+* Operations to:
+** Retrieve error codes.
+** Return events for a transaction.
+** Search partner details by identifier.
+** Retrieve payloads using security configuration scheme.
+
+=== Fixed Issues
+
+Improved *asynchronousMode* performance.
+
+=== Known Issues
+
+* Multiple configurations are not supported when *asynchronousMode* is enabled.
+
+
+== 5.1.0
+
+*March 1, 2017*
+
+=== Compatibility
+
+Supported Mule Runtime Versions: 3.5.2, 3.6.1, 3.7.2, 3.7.3
+
+=== New Features and Functionality
+
+*harvest-document-properties* operation.
+
+=== Fixed Issues
+
+*ClassCastException* no longer happens when attempting to read an XML document from *java.io.InputStream*.
+
+=== Known Issues
+
+* Multiple configurations are not supported when *asynchronousMode* is enabled.
+
+
+== 5.0.0
+
+*February 23, 2017*
+
+=== Compatibility
+
+Supported Mule Runtime Versions: 3.5.2, 3.6.1, 3.7.2, 3.7.3
+
+=== New Features and Functionality
+
+* Added support for asynchronous tracking.
+* Removed _lastEventId_ entry from _b2bTransmissionSession_ flow variable.
+* Added support for parent transactions.
+* Made _toPartyIdentifier_ optional in _resolve-routes_ operation.
+* Allowing the maximum number of HTTP connections to each Partner Manager service to be configurable.
+* Adding support for route filtering by properties.
+
+=== Migrating from Older Versions
+
+* Replace references to lastEventId with transactionId.
+
+=== Known Issues
+
+* Multiple configs are not supported when *asynchronousMode* is enabled.
+
+
+== 4.0.1
+
+*April 6, 2017*
+
+=== Compatibility
+
+Supported Mule Runtime Versions: 3.5.2, 3.6.1, 3.7.2, 3.7.3
+
+=== Fixed Issues
+
+* Fixed SE-5706.
+
+
+== 4.0.0
+
+*December 13, 2016*
+
+=== Compatibility
+
+Supported Mule Runtime Versions: 3.5.2, 3.6.1, 3.7.2, 3.7.3
+
+=== New Features and Functionality
+
+* Added *update-transaction-status* operation.
+* Removed deprecated *transportType* attribute in *resolve-routes* operation.
+* Added *harvest-endpoint-properties* operation.
+* Added ability to *track-document* operation to harvest properties.
+* Added *propagate-endpoint-properties* operation.
+* Added *lookup* operation.
+
+=== Migrating from Older Versions
+
+* Remove *transportType* attribute in *resolve-routes* operation.
+
+
+== 3.1.0
+
+*November 11, 2016*
+
+=== Compatibility
+
+Supported Mule Runtime Versions: 3.5.2, 3.6.1, 3.7.2, 3.7.3
+
+=== New Features and Functionality
+
+* Added support for RosettaNet.
+* Added document property harvesting.
+
+=== Fixed Issues
+
+* Fixed NullPointerException happening when. *config-file-storage-custom* is used with EDIFACT or X12 module.
+* Permitting *partnerIdentifier* in *track-document* operation to override party identifiers in EDI documents.
+* Optimized caching.
+
+
+== 3.0.0
+
+*September 22, 2016*
+
+=== Compatibility
+
+Supported Mule Runtime Versions: 3.5.2, 3.6.1, 3.7.2, 3.7.3
+
+=== Migrating from Older Versions
+
+* Rename *document* attribute in *track-document* operation to *document-ref*.
+* Rename *partnerIdentifier* attribute in *resolve-routes* operation to *fromPartyIdentifier*.
+* Rename *partnerIdentifierType* attribute in *resolve-routes* operation to *partyIdentifierType*.
+
+=== New Features and Functionality
+
+* Added document definition to list of resources that can be searched.
+* Added *count*, *offset*, *orderBy*, and *descending* attributes to *search* operation.
+* Added *toPartyIdentifier* attribute to *resolve-routes* operation.
+
+=== Fixed Issues
+
+* Fixed issue where maps representing X12 and EDIFACT documents cannot be processed.
+* Fixed issue in resolve-routes operation where standard instead of version is passed to query parameter.
+* Propagating message properties to flow set in *config-file-storage-custom* config.
+* Ensuring HTTP connections are closed in instances where no content is returned.
+* Fixed issue where byte stream is mistakenly serialized to string when content is saved to custom file storage.
+* Removed test connectivity check on connector start up to make error message more friendly when testing the connection from Anypoint Studio.
+
+
+== 2.0.0
+
+*July 8, 2016*
+
+=== Compatibility
+
+Supported Mule Runtime Versions: 3.5.2, 3.6.1, 3.7.2, 3.7.3
+
+=== New Features and Functionality
+
+* Renamed *executionId* in *b2bTransmissionSession* to *transactionId*.
+* Added support for reporting errors to Anypoint Partner Manager.
+* Added operation for searching.
+* Added operation for resolving routes.
+* Added operation for tracking documents.
+* Added operations for replaying transactions.
+* Including last event ID in *b2bTransmissionSession* flowVar.
+* Removed *formatType* and *toPartyIdentifier* attributes from *track-transmission* operation.
+* Renamed *fromPartyIdentifier* attribute to *partnerIdentifier* and content attribute to *file* in *track-transmission* operation.
+* Added *transport* attribute to *track-transmission* operation.
+
+
+== 1.0.0
+
+*December 22, 2015*
+
+=== Compatibility
+
+Supported Mule Runtime Versions: 3.5.2, 3.6.1, 3.7.2, 3.7.3
+
+=== New Features and Functionality
+
+- Added facility to test connection.
+- Renamed connector to Partner Manager Connector.
+- Renamed environment attribute to environmentId and removed default value.
+- Caching options.
+
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

@@ -1,0 +1,25 @@
+= APIkit for SOAP 1.0.3 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: apikit-for-soap-1.0.3.adoc
+
+This version of APIkit for SOAP includes a fix to the runtime.
+
+In this version and later, you do not need to specify the SOAP action to route messages to the correct flow. In earlier versions of APIkit for SOAP, the SOAP action was mandatory and the scaffolding process was aborted if the WSDL did not include it.
+
+Additionally, two minor fixes were included in this release.
+
+For Studio, this version is distributed as Anypoint APIkit SOAP Extension 1.1.4.
+
+== Compatibility
+
+* Mule Runtime 3.7.3, 3.8.x, and 3.9.x
+* Anypoint Studio 6.2.3+
+
+== Fixed in This Release
+
+* APIKITSOAP-93 SOAP action should not be mandatory
+* APIKITSOAP-108 Route messages correctly when SOAP action is not specified
+* APIKITSOAP-83 SOAP Router not generated when scaffolding an existing project with no SOAP router defined
+* APIKITSOAP-81 Scaffolder now validates that the operations in WSDL have a valid input/output (SE-6113)

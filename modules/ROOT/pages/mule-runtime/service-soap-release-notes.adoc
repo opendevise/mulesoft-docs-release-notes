@@ -1,0 +1,103 @@
+= Mule SOAP Service Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: service-soap-release-notes.adoc
+:keywords: soap, service, mule, wsdl, soa
+
+== 1.1.4
+*May 30, 2018*
+
+=== New Features and Enhancements
+
+No new features were added in this version.
+
+=== Fixed Issues
+
+[%header,cols="15a,85a"]
+|===
+|Issue |Description
+| https://www.mulesoft.org/jira/browse/MULE-15064[MULE-15064]| SOAP Service not adding Content-Disposition Header when using MTOM
+| https://www.mulesoft.org/jira/browse/MULE-15025[MULE-15025] | WSC doesn't override HTTP headers when declaring custom transport headers
+| https://www.mulesoft.org/jira/browse/MULE-14978[MULE-14978] | WSDL Parser does not load schemas from WSDLs that contain multiple imports
+| https://www.mulesoft.org/jira/browse/MULE-8817[MULE-8817] | Upgrade Spring to 4.3.17
+|===
+
+== 1.1.3
+*May 13, 2018*
+
+=== New Features and Enhancements
+
+No new features were added in this version.
+
+=== Fixed Issues
+
+[%header,cols="15a,85a"]
+|===
+| https://www.mulesoft.org/jira/browse/SE-7971[SE-7971] | Schema Collector fails reading schemas with encoding problem.
+|===
+
+== 1.1.2
+*Mar 12, 2018*
+
+=== New Features and Enhancements
+
+Removed Jetty 9.4.x that is prone to a timing channel in util/security/Password.java, which makes it easier for remote attackers to obtain access by observing elapsed times before rejection of incorrect passwords.
+
+== 1.1.1
+*Mar 5, 2018*
+
+=== New Features and Enhancements
+
+No new features were added in this version.
+
+=== Fixed Issues
+
+[%header,cols="15a,85a"]
+|===
+| https://www.mulesoft.org/jira/browse/MULE-14671[MULE-14671] | MuleApplicationClassloader is leaked when through SOAP
+|===
+
+== 1.1.0
+
+*Jan 22, 2018*
+
+GA version of the Soap Service.
+
+This version includes support for consuming SOAP Web Services through HTTP.
+
+* Custom HTTP transport (Connectivity is performed with the provided transport configuration).
+* Multipart operations support
+* MTOM Support
+* SOAP with Attachments (BASE64 encoded attachments) Support
+* WSS support (username, decrypt, encrypt, timestamp, signature).
+* Support for custom HTTP headers.
+* Extensible dispatching mechanism.
+
+This version of the Service runs with the latest CXF version.
+
+=== Fixed Issues
+
+[%header,cols="15a,85a"]
+|===
+|Issue |Description
+| https://www.mulesoft.org/jira/browse/[]| MULE-14388: Extensions Client must use the correct event when used in an operation
+| https://www.mulesoft.org/jira/browse/[]| MULE-14382: Upgrade BouncyCastle to 1.59
+| https://www.mulesoft.org/jira/browse/[]| MULE-14060: Upgrade CXF to 3.2.1
+| https://www.mulesoft.org/jira/browse/[]| MULE-14008: Soap Service NPE if the config is not configured properly.
+|===
+
+== 1.0.0
+
+BETA version of the Soap Service.
+
+This BETA version includes support for consuming SOAP Web Services through HTTP.
+
+* Custom HTTP transport (Connectivity is performed with the provided transport configuration).
+* Multipart operations support
+* MTOM Support
+* SOAP with Attachments (BASE64 encoded attachments) Support
+* WSS support (username, decrypt, encrypt, timestamp, signature).
+
+
+Added more configuration options to WSS’s

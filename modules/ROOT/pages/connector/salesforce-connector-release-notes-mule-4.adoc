@@ -1,0 +1,278 @@
+= Salesforce Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: salesforce-connector-release-notes-mule-4.adoc
+:keywords: release notes, salesforce, connector
+
+*August 2018*
+
+_Select_
+
+== 9.3.2
+
+*August 30, 2018*
+
+[%header%autowidth.spread]
+|===
+|Application/Service |Version
+|Mule Runtime |Mule Enterprise Edition 4.1.1 and later
+|Anypoint Studio |Only works with Studio 7.1.0 and later
+|Salesforce |v37.0, v38.0, v39.0, v40.0, v41.0
+|===
+
+=== Fixed in this Release
+
+* Getting NullPointerException while retrieving input metadata when describing reference type objects:
+
+```
+org.mule.runtime.api.metadata.MetadataResolvingException: Unable to resolve metadata for: Account
+Caused by: java.lang.NullPointerException: Request headers cannot be null.
+```
+
+The problem was solved by reimplementing the metadata parsing for reference type objects.
+
+* The customer was getting intermittently the below exception:
+
+```
+[UnexpectedErrorFault [ApiFault  exceptionCode='INVALID_SESSION_ID'
+ exceptionMessage='Invalid Session ID found in SessionHeader: Illegal Session. Session not found, missing session hash: <hash>
+This error usually occurs after a session expires or a user logs out. '
+```
+
+The problem was solved by adding missing error handling for reconnection due to invalid session.
+
+== 9.3.1
+
+*August 1, 2018*
+
+[%header%autowidth.spread]
+|===
+|Application/Service |Version
+|Mule Runtime |Mule Enterprise Edition 4.1.1 and later
+|Anypoint Studio |Only works with Studio 7.1.0 and later
+|Salesforce |v37.0, v38.0, v39.0, v40.0, v41.0, v42.0
+|===
+
+=== Fixed in this Release
+
+*Salesforce connector disconnects and never connects back again*. The issue was fixed by making changes in the Reconnection Strategy.
+
+
+== 9.3.0
+
+*July 26, 2018*
+
+[%header%autowidth.spread]
+|===
+|Application/Service |Version
+|Mule Runtime |Mule Enterprise Edition 4.1.1 and later
+|Anypoint Studio |Only works with Studio 7.1.0 and later
+|Salesforce |v37.0, v38.0, v39.0, v40.0, v41.0, v42.0
+|===
+
+=== Features
+
+* Update the connector to support Salesforce Spring 2018 (API v42)
+
+* Support Bulk API v2
+
+=== Fixed in this Release
+
+* After a time that the connector was not being used, customers got the following error:
++
+[source,text,linenums]
+----
+Root Exception stack trace:
+[UnexpectedErrorFault [ApiFault exceptionCode='INVALID_SESSION_ID'
+exceptionMessage='Invalid Session ID found in SessionHeader: Illegal Session. Session not found, missing session hash: jiVw2Gqdz4jdt5QfJJcVLbEHzg4NFOAPHpWosGrWyUA=
+This error usually occurs after a session expires or a user logs out.'
+----
++
+The problem was solved by reimplementing reconnection strategy for paginating queries.
++
+* The customer couldn't make APEX call without parameters.
++
+The problem was solved by making APEX methods to access the objects without using them as parameters.
++
+* The customer couldn't make APEX call without parameters with array payload.
++
+The problem was solved by treated the lists of parameters separately.
++
+* When using the Salesforce connector inside a batch job that uses the Batch Aggregator with the Upsert operation, the records were not being marked as failed or successful because the result was not being returned as BulkOperationResult.
++
+The problem was solved by adding 4 new operations for create, update, upsert, and delete that return BulkOperationResult.
+
+== 9.2.2
+
+*June 28, 2018*
+
+[%header%autowidth.spread]
+|===
+|Application/Service |Version
+|Mule Runtime |Mule Enterprise Edition 4.1.1 and later
+|Anypoint Studio |Only works with Studio 7.1.0 and later
+|Salesforce |v37.0, v38.0, v39.0, v40.0, v41.0
+|===
+
+=== Fixed in this Release
+
+* When making a call to a Salesforce Apex method, if the method didn't have a parameter, Salesforce connector did not pass the flow payload to the Apex method. Now, the connector passes the flow payload.
+
+== 9.2.1
+
+*May 18, 2018*
+
+[%header%autowidth.spread]
+|===
+|Application/Service |Version
+|Mule Runtime |Mule Enterprise Edition 4.1.1 and later
+|Anypoint Studio |Only works with Studio 7.1.0 and later
+|Salesforce |v37.0, v38.0, v39.0, v40.0, v41.0
+|===
+
+=== Fixed in this Release
+
+* Salesforce connector was not working in EU.  When using Salesforce Connector in EU, it threw this exception:
++
+[source,text,linenums]
+----
+Caused by: org.springframework.beans.factory.BeanCreationException:
+Could not autowire field: private org.mule.runtime.api.store.ObjectStoreManager
+org.mule.extension.salesforce.internal.operation.UtilityOperations.objectStoreManager;
+nested exception is org.springframework.beans.factory.NoUniqueBeanDefinitionException:
+No qualifying bean of type [org.mule.runtime.api.store.ObjectStoreManager] is defined:
+expected single matching bean but found 2: _muleObjectStoreManager,_muleLocalObjectStoreManager
+----
++
+In this version Salesforce Connector works correctly in EU.
+
+== 9.1.2
+
+*May 18, 2018*
+
+[%header%autowidth.spread]
+|===
+|Application/Service |Version
+|Mule Runtime |Mule Enterprise Edition 4.1.0 and later
+|Anypoint Studio |Only works with Studio 7.1.0 and later
+|Salesforce |v37.0, v38.0, v39.0, v40.0, v41.0
+|===
+
+=== Fixed in this Release
+
+* Salesforce connector was not working in EU.  When using Salesforce Connector in EU, it threw this exception:
++
+[source,text,linenums]
+----
+Caused by: org.springframework.beans.factory.BeanCreationException:
+Could not autowire field: private org.mule.runtime.api.store.ObjectStoreManager
+org.mule.extension.salesforce.internal.operation.UtilityOperations.objectStoreManager;
+nested exception is org.springframework.beans.factory.NoUniqueBeanDefinitionException:
+No qualifying bean of type [org.mule.runtime.api.store.ObjectStoreManager] is defined:
+expected single matching bean but found 2: _muleObjectStoreManager,_muleLocalObjectStoreManager
+----
++
+In this version Salesforce Connector works correctly in EU.
+
+== 9.2.0
+
+*May 2, 2018*
+
+=== Compatibility
+
+Salesforce connector version 9.2.0 is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Application/Service |Version
+|Mule Runtime |Mule Enterprise Edition 4.1.0 and later
+|Anypoint Studio |Only works with Studio 7.1.0 and later
+|Salesforce |v37.0, v38.0, v39.0, v40.0, v41.0
+|===
+
+=== Features
+
+* Changed Minimum Mule Version to 4.1.1.
+
+== 9.1.1
+
+*May 2, 2018*
+
+=== Compatibility
+
+Salesforce connector version 9.1.1 is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Application/Service |Version
+|Mule Runtime |Mule Enterprise Edition 4.1.0 and later
+|Anypoint Studio |Only works with Studio 7.1.0 and later
+|Salesforce |v37.0, v38.0, v39.0, v40.0, v41.0
+|===
+
+=== Features
+
+* Added the isForceResubscribe method in Salesforce Bayeux Client.
+* Support for Anypoint Studio Proxy configuration as the default.
+
+=== Fixed in this Release
+
+ * Trigger operation did not retrieve MetadataKeysId. Solved by adding support for retrieving metadata in case of sources.
+ * Reply topic was losing messages in case the connection has been lost for less than 40 seconds; this is the amount of time that was needed to trigger re-subscribe naturally according to Salesforce documentation. The issue was solved by forcing re-subscription whenever the network connection is lost.
+ * Buffering capacity exceeded message was triggered when the connector consumed more than 10000 messages from a topic. The issue was solved by adding a new attribute for the "Replay streaming channel" operation: Buffer Size In Bytes, it's an optional parameter with the default value of 26 MB.
+ * Wrong transformation of fields of type Date. Trying to update or insert an Object in Salesforce with fields of type Date caused a failure, this was due to failure in serializing the objects of type Date. The issue was solved by parsing the values received from the Mule flow and converting them into the expected Salesforce accepted format.
+
+== 9.1.0
+
+*February 21, 2018*
+
+This release adds new features.
+
+=== Compatibility
+
+Salesforce connector version 9.1.0 is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Application/Service |Version
+|Mule Runtime |Mule Enterprise Edition 4.1.0
+|Anypoint Studio |Only works with Studio 7.0.0 and later
+|Salesforce |v37.0, v38.0, v39.0, v40.0, v41.0
+|===
+
+=== Features
+
+* Support for new and changed objects in metadata - API v41.
+* Support for defining any absolute path for the keystore.
+* Salesforce trigger - To address ad-hoc integrators or citizen integrators with Design Center, you can now start a flow with the Salesforce connector when
+you create an object. For example, when new data is added to a lead object
+or an opportunity object, you now have an easier way to initiate a flow.
+
+=== Fixed in this Release
+
+* Query with parameters didn't work.
+
+== 9.0.0
+
+*November 3, 2017*
+
+Mule 4 update.
+
+=== Compatibility
+
+Salesforce connector version 9.0.0 is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Application/Service |Version
+|Mule Runtime |Mule Enterprise Edition 4.0.0 and later
+|Anypoint Studio |Only works with Studio 7.0.0 and later
+|Salesforce |v37.0, v38.0, v39.0, v40.0
+|===
+
+== See Also
+
+* xref:connectors::salesforce/salesforce-connector.adoc[Salesforce Connector]
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

@@ -1,0 +1,45 @@
+= Mule 2.2.1 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: mule-2.2.1-release-notes.adoc
+:keywords: release notes, esb
+
+Mule Community Edition version 2.2.1 builds on the features that were added in version 2.2.0 and fixes the following issues:
+
+[%header%autowidth.spread]
+|===
+|Issue Type |Key |Summary
+|Improvement |MULE-4310 |Classpath order for Mule 2.2.1
+|New Feature |MULE-4816 |Can't get VFS Transport Provider with Mule 2.2.1
+|Bug |MULE-4315 |Mule 2.2.1 archetype for Maven
+|Bug |MULE-4316 |ReplyTo does not work in 2.2.1
+|Task |SMOOKS-38 |Check if the module is Mule 2.2.1 compatible
+|Sub-task |EE-1369 |EE-1216 Create branches/builds as required for 2.2.1 release
+|Task |EE-1216 |Release Mule 2.2 GA (CE 2.2.1/EE 2.2.1)
+|Task |MULE-873 |Update Smack libraries to 2.2.1 when available
+|Bug |MULEIDE-178 |Mule server does not appear as Run As option in Mule 2.2.1
+|Improvement |MULE-3739 |Upgrade to version 3.0.4 of smack API
+|Bug |MULE-4302 |Message properties need to be preserved when using invoker components
+|Bug |MULE-5827 |File connector in 3.2.0 ignores `#[header:originalFilename]` and writes no file
+|Bug |EE-1965 |There's no getRequest() method in HttpRequestMessageAdapter
+|Sub-task |EE-1406 |EE-1216 Create Development Community Article on 2.2 Release
+|Bug |MULE-4259 |NullPointerException in CxfMessageDispatcher when executing loanbroker cxf, asynchrounous for 100 requests
+|Bug |EE-1976 |Cookies are not sent with HTTP request
+|Requirement |BL-370 |Need to reduce size and clean distribution
+|New Feature |BL-174 |Mule 3.0 must be a high quality release
+|Task |MULEIDE-19 |Document Mule IDE Eclipse and EMF version pre-requisites
+|Bug |MULE-4582 |Multicast inbound endpoints do not receive data.
+|Bug |EE-2125 |Outbound CXF endpoint ignores configured URL and uses `soap:address` from WSDL
+|Bug |MULE-4240 |Filtering routers must operate on a copy of the message
+|Bug |MULE-5606 |Mule 3: Multicasting router with File outbound end-point no exchange-pattern flag
+|Bug |MULE-4647 |Service with transaction and multicasting router
+|Bug |MULE-4708 |ObjectToJMSMessage does not close the InputStream source
+|Bug |MULE-4403 |CXF SOAP connector stops working after 16th operation
+|Bug |MULE-4823 |MULE 3.0 M2 release is failing to launch mule as a windows service.
+|Bug |EE-1449 |errorhandler maven build incorrectly looking for scripting 1.0 jar
+|Bug |MULE-5612 |NPE on initialise when using jetty-ssl with CXF jaxws-service
+|Bug |MULE-5597 |response transformers applied twice on `udp:inbound-endpoint`
+|Bug |MULE-4980 |Custom Interceptors stopped working in 3.0.0M4 version
+|Bug |MULE-4455 |Mule exception-based-router performance degradation at heavy load
+|===

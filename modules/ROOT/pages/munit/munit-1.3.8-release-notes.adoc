@@ -1,0 +1,63 @@
+= MUnit 1.3.8 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: munit-1.3.8-release-notes.adoc
+:keywords: munit, 1.3.8, release notes
+
+This MUnit release is mainly focused on bug fixes.
+
+* Mule MUnit Support:
+** 3.7.8
+** 3.8.6
+** 3.9.1
+
+* Munit
+** 1.3.7
+
+* MUnit Studio Plugin
+** 1.6.2
+
+== Hardware and Software Requirements
+
+* Microsoft Windows 8 +
+* Apple Mac OS X 10.10 +
+* Linux (tested on Ubuntu 15)
+* Java 8
+* Maven 3.3.3, 3.3.9
+
+
+== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule |3.7.x, 3.8.x, 3.9.x
+|Anypoint Studio |6.5.0 and newer
+|===
+
+== Features and Functionality
+
+=== Anypoint Studio Plugin
+
+There are no new features in this release
+
+=== MUnit Runtime
+
+There are no new features in this release
+
+== Fixed Issues
+
+* MU-1324 -  Flaky coverage with Mule 3.9 that gives 0%.
+* MU-1330 -  ReusableByteArrayInputStream loops when being read with BufferedReader.
+* MU-1369 -  Iterator being read twice when expression is intercepted.
+* MU-1347 -  Parsing payload transformations fail because XMLStreamReader are read twice.
+* MU-1367 -  Failure to start MuleContext when running maven on non-canonical path.
+* MU-1349 -  Annotations not being set in MessageProcessorFactoryBeanInterceptor for scatter gather.
+* MUSP-617 -  Some environment variables are lost when not set in launch configuration.
+
+== Support
+
+* Refer to xref:1.3@munit::index.adoc[MUnit Documentation]
+* Access http://forums.mulesoft.com/[MuleSoft’s Forum] to pose questions and get help from Mule’s broad community of users.
+* To access MuleSoft’s expert support team https://www.mulesoft.com/support-and-services/mule-esb-support-license-subscription[subscribe to Mule ESB Enterprise] and log in to MuleSoft’s http://www.mulesoft.com/support-login[Customer Portal].

@@ -1,0 +1,551 @@
+= CloudHub Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: cloudhub-release-notes.adoc
+:keywords: release notes, cloudhub, cloud hub
+
+In addition to these release notes, see the complete xref:runtime-manager::cloudhub.adoc[CloudHub] documentation.
+
+== 1.66.0 - March 22, 2018
+
+This release includes the following changes and improvements:
+
+* Additional shared load balancers across APAC regions. See link://docs.mulesoft.com/runtime-manager/cloudhub-architecture#global-worker-clouds[Global Worker Clouds] for information on available regions. This change is effective March 26, 2018.
+* Security patches and bug fixes.
+
+== 1.65.0 - March 8, 2018
+
+This release enables users to:
+
+* Associate VPCs with second-level business groups.
+* Add additional firewall rules per VPC.
+
+In addition, this release also includes the following changes and improvements:
+
+* Additional shared load balancers across regions. link://docs.mulesoft.com/runtime-manager/cloudhub-architecture#global-worker-clouds[View changes in domains] used for new applications.
+* Infrastructure improvements powering mule applications.
+* A series of resiliency improvements and bug fixes.
+
+== 1.64.0 - January 13, 2018
+
+This release enables users to:
+
+* Search for and deploy applications from Exchange.
+
+In addition, this release also includes the following changes and improvements:
+
+* The default deployment region for new accounts has been updated to Ohio (US-East-2).
+* The default worker size for new applications via UI has been updated to 0.1 vCore.
+* A series of reliability and scalability enhancements.
+
+
+== 1.62.0 - November 4, 2017
+
+This release enables users to:
+
+* Increase the number of instances for a Dedicated Load Balancer from 2 to 8 instances.
+
+In addition, this release also includes the following improvements:
+
+* Dedicated Load Balancers can now support larger payload sizes up to 200MB.
+* Full support for Mule v4.0.0.
+
+
+== 1.61.0 - October 7, 2017
+
+This release enables users to:
+
+* Increase the limit of workers per application from 4 to 8 workers for customers using Fabric.
+* Deploy applications, create VPCs and create Dedicated Load Balancers in the Ohio region (US-East-2).
+
+In addition, this release also includes the following improvements:
+
+* Insights Replay data is now stored regionally local to the worker.
+* Anypoint CloudHub UI is now backed by a CDN, improving latency and resiliency.
+* Increased parallelism with CloudHub's scheduling services.
+
+In this release, the end-of-life for the CloudHub logging service is complete.
+
+
+== 1.60.0 - September 9, 2017
+
+This release enables users to:
+
+* Run applications on 16 vCore instances, allowing for even more processing power.
+* Add/edit certificates to their Dedicated Load Balancers.
+* Allocate static IPs for multi-worker applications (for supported plans).
+
+In addition, this release also includes reliability and scalability improvements, including:
+
+* Increasing availability and performance for critical CloudHub services.
+* Increasing parallelism with statistics gathering services.
+
+
+== 1.59.0 - August 12, 2017
+
+This release enables users to create and manage Dedicated Load Balancers in Anypoint UI. This release also includes backend improvements to CloudHub's permissions model.
+
+
+== 1.58.0 - July 15, 2017
+
+This release enables users to select default regions for their organizations, as well as a series of reliability and scalability enhancements.
+
+
+== 1.57.0 - June 17, 2017
+
+This release enables users to deploy applications in 3 new regions - Brazil, Canada, and UK. With these, 11 regions are supported in total: Brazil, Canada, Frankfurt, Ireland, North California, North Virginia, Oregon, Singapore, Sydney, Tokyo, and UK.
+
+This release also includes other new features, and security and reliability improvements:
+
+* Allowing CloudHub admins to select default regions in the Access Management Console.
+* Additional security monitoring through threat stack and other reliability improvements.
+
+
+== 1.56.0 - May 20, 2017
+
+This release includes a series of reliability and scalability enhancements.
+
+== 1.54.0 - March 25, 2017
+
+This release includes a series of reliability and scalability enhancements.
+
+
+== 1.53.0 - March 11, 2017
+
+This release includes:
+
+* An increased largest worker size to 8 vCores, allowing customers to handle higher transaction volume per worker.
+
+* Internal engineering efforts to improve scalability of the platform.
+
+
+
+== 1.51.0 - November 19, 2016
+
+* This release introduces “runtime updates”, a new feature which helps you track the different updates made to your runtimes such as critical security patches. You are able to control exactly when each update is applied, or if you take no action, updates are applied automatically for you after 30 days to ensure your applications run with the latest security patches.
+* Reliability improvements for the CloudHub scheduler
+* To unify MuleSoft’s runtime versioning policy of semantic versioning, API Gateway runtimes have been renamed from “API Gateway x.x.x” to “x.x.x-API-Gateway in CloudHub.
+
+== 1.50.0 - October 22, 2016
+
+* Shortened the connection timeout on load balancers from 60 seconds to 4
+* Updated the TLS algorithm used between the cloudhub.io load balancer and works to TLS 1.1
+
+== 1.49.1 - September 24, 2016
+
+This release introduces the following features and improvements:
+
+* Improvements to CloudHub reliability
+* A UI to configure VPCs has been added
+* Users can also now selectively configure load balancer connections to upstream applications using HTTPs
+
+== 1.49.0 - August 28, 2016
+
+This release introduces the following features:
+
+* When selecting a target Mule Version, CloudHub  now automatically suggests the latest runtimes, simplifying selection.
+* If a Mule version is selected that has an end-of-life date approaching, CloudHub  now warns you.
+* Cron based polls  no longer fire at the first start of an application
+* Fixed a bug where schedules would sometimes trigger twice
+* Frequency based polls  now respect the startDelay parameter in Mule 3.8.1+ on their next restart.
+
+== July 30, 2016
+
+This release introduces two major new features: A new load balancer service and VPC setup self-service through the Anypoint CLI. VPC self service includes the ability to add and manage VPCs including IP and port security setup for each VPC.
+
+The load balancer service supports vanity domains, SSL-offloading, 2 way TLS, and the ability to route one URI pattern to set of Mule applications.
+
+=== Hardware and Software Requirements
+
+No change.
+
+=== Features and Functionality
+
+* Load balancer
+** TLS enabled vanity domains
+** Proxy xref:runtime-manager::cloudhub-load-balancer.adoc#mapping-rules[mapping rules]
+** xref:runtime-manager::cloudhub-load-balancer.adoc#certificate-validation[2 way TLS authentication]
+
+* VPC functionality
+** Create a VPC from Anypoint Platform CLI and associate a VPC to a CloudHub Environment.
+** Define Firewall rules for your VPC
+** Relay DNS queries to a predefined set of internal domains
+
+=== Deprecated Features or Functionality
+
+None.
+
+===	Resolved Issues
+
+* SE-1720 - VPC Internal DNS resolution
+
+=== Migration Guidance
+
+From now on, to create a VPC you need to use the Anypoint Platform CLI set of commands, and then contact MuleSoft support with the link:{attachmentsdir}/vpc-gateway-questionnaire-v8.xlsm[VPC Discovery Form] to configure the connection to your network.
+
+No migration is required for VPCs that are already created.
+
+== April 9, 2016
+
+The CloudHub April 2016 release features an updated user interface, support for the audit logging service, a higher 200MB upload limit for applications, support for the Tokyo and Frankfurt regions, and many bug fixes. Also, the navigation bar has been updated to say "Runtime Manager" as the Anypoint Platform supports deployment to both CloudHub and on-premises applications.
+
+=== Hardware and Software Requirements
+
+No change.
+
+=== Features and Functionality
+
+* Updated user interface styles
+* Audit logging service support
+* 200 MB upload limit, raised from the previous 100 MB limit
+* Tokyo and Frankfurt are now supported deployment region s
+* Support for new runtimes API Gateway 2.0.4 and API Gateway 2.1.1
+
+=== Deprecated Features or Functionality
+
+None.
+
+===	Resolved Issues
+
+* Static IPs are now applied instantly and do not require a restart
+* Fixed a problem with replaying messages for certain Mule versions
+
+=== Migration Guidance
+
+No migration required.
+
+== November 2015 R45
+
+The CloudHub November 2015 (R45) release features static IP self-service, which allows CloudHub users to assign static IP addresses to their applications. This service also supports pre-allocating static IP addresses to an application before it is deployed (for example, in a different region).
+
+=== Hardware and Software Requirements
+
+No change.
+
+=== Compatibility
+
+All supported Mule and API Gateway runtimes will have this new feature.
+
+=== Features and Functionality
+
+* *Static IP Self Service*: CloudHub users will be able to assign static IP addresses to their applications, including pre-allocation of static IP addresses before an application is deployed. This will enable customers to set up network security rules for an application before it’s deployed.
+* *New Logs Screen Improvements*: Various improvements in the UI for enhanced log infrastructure.
+* *Enhancements to Log Aggregator Services*
+
+=== Deprecated Features or Functionality
+None.
+
+===	Resolved Issues
+
+* SE-2892: vCores cannot be changed on a running application in a Business Group
+* SE-2406: Console logs not updated after the last restart
+* SE-2874: Priority for alerts getting reset
+* ION-4625: Accounts Expiration - search in Enhanced Logs with expired account gives 403 response
+* ION-4626: Enhanced Logs search - searched term not highlighted
+
+=== Migration Guidance
+
+No migration required.
+
+
+== August 2015 R44 Update 2
+
+The CloudHub August 2015 (R44) Update 2 release includes the Anypoint Runtime Manager (ARM) 1.2. This release enables users to enhance their unified monitoring experience by easily integrating their on-premises Mule servers and API Gateways with third parties’ monitoring tools, such as Splunk & ELK, for monitoring, analytics and governance.
+
+=== Hardware and Software Requirements
+
+No change.
+
+=== Compatibility
+
+Agent plugins integrations is compatible with the following runtime versions:
+
+* Runtime Manager Agent 1.2.0 and above
+* Mule 3.6.x and above
+* API GW 2.1.x for API Analytics
+
+=== Features and Functionality
+
+==== Agent Plugins Integration (Splunk & ELK)
+
+Users will now have the ability to monitor their applications with an out-of-the box integration experience for monitoring tools such as Splunk & ELK. This enables the user to have a unified view of all applications, servers, etc.
+
+==== API Gateway Integration
+
+Users now have the ability to integrate their API Gateway with Agent/ARM and pass API Metrics for analytics and governance.
+R44 Update 2 fixes:
+
+* Bug fixes for error while deleting Servers
+* Reconnection strategy for Runtime Manager Agent
+* Usability improvements while creating Server Groups
+
+
+
+=== Deprecated Features or Functionality
+
+None.
+
+=== Resolved Issues
+
+* Bug fixes for error while deleting servers
+* Reconnection strategy for Agent
+* Usability improvements while creating server groups
+
+=== Migration Guidance
+
+See link:/runtime-manager/installing-and-configuring-mule-agent#agent-update-process[updating the Agent].
+
+=== Known Issues
+No way to configure buffering support for Splunk from the UI. Workaround: Use YAML file for configuration.
+
+=== Support
+
+No change.
+
+
+== August 2015 R44 Update 1
+
+The CloudHub August R44 Weekly 1 release on 25 August 2015 provides these features:
+
+* Enabled enhanced log management by default for new applications created under Mule 3.5.3, 3.6.2, 3.7.0, and API Gateway 2.0.3 (and newer)
+* Added tooltip over disabled versions
+* Improved performance of logs scroll function
+
+* Back to search automatically scrolls to last search result
+* Reduced logs font
+* Thread name to the log line info
+
+R44 W1 fixes:
+
+* SE-2628: Fixed apiFabric entitlement and settings for business groups
+* SE-2608: Users with read only access can still see settings
+
+== August 2015 R44
+
+The CloudHub August (R44 on 15 August 2015) release features an upgrade to the  log infrastructure  featuring higher limits for log storage, and a new improved UI. Anypoint Management Center also now supports on-premise clusters.
+
+
+=== August 2015 Compatibility
+
+The new log infrastructure supports the following (and newer) runtimes:
+
+* Mule 3.5.3
+* Mule 3.6.2
+* Mule 3.7.1
+* API Gateway 2.0.3
+
+Clustering in Anypoint Management Center supports the following (and newer) runtimes:
+
+* Mule 3.7.x
+* API GW 2.0.2
+
+=== August 2015 Features and Functionality
+
+This release provides the following features and functionality.
+
+==== August 2015 Enhanced Logging
+
+With the August 2015 Release of CloudHub, you can use an improved logging infrastructure for select Mule and API Gateway runtimes. The new logging infrastructure features higher log retention - 100 MB or 30 days worth of logs per application, whichever limit is hit first - as well as a new and improved UI. For more information, see xref:runtime-manager::viewing-log-data.adoc[Viewing Log Data].
+
+==== August 2015 Clustering Support
+
+With this release, you csn configure your on-premises Mule or API Gateway runtimes for high availability using clustering, from the CloudHub server management console. For more information, see xref:runtime-manager::managing-servers.adoc#create-a-cluster[Creating and Managing Clusters].
+
+=== August 2015 Deprecated Features or Functionality
+
+None.
+
+=== August 2015 Resolved Issues
+
+* SE-2471 - Mule 3.6.2 applications no longer time out after upgrade from Mule 3.5.1
+* SE-1949 - Mule 3.6.0 and 3.6.1 applications now permit log settings to be adjusted
+* SE-2015 - Enhanced logging introduced to enable more log storage for Mule features
+
+=== August 2015 Migration Guidance
+
+No migration required. Enterprise customers automatically receive the new functionality.
+
+=== August 2015 Known Issues
+
+When an application that hosts APIs (including API proxies) is stopped, the API’s status within the API version details page appears as “active” even though it is stopped.
+With enhanced logging enabled, to access an application’s log history past the most immediate 100 log lines, the instance logs need to be downloaded.
+
+=== August 2015 Support
+
+No change.
+
+== June 2015 R43
+
+The CloudHub June 2015 (R43) release features support for Business Groups and Hybrid management, with a single panel for managing applications and servers running in the cloud or on-premises.
+
+=== June 2015 R43 - Compatibility
+
+The Hybrid management functionality on CloudHub requires the new Runtime Manager Agent - which requires the Mule 3.6 or newer runtime, or the API Gateway 2.0 or newer.
+
+Features and Functionality
+
+=== June 2015 R43 - Hybrid Management
+
+With the June 2015 Release of CloudHub, you can manage applications and runtimes both in the cloud and on-premises from a single management panel. You can now register on-premise servers with the Anypoint Management Center console, and these servers are then available as deployment targets. You can also configure Server Groups for application deployment to multiple servers. For more information, see Managing Applications and Servers in the Cloud and On Premises.
+
+=== June 2015 R43 - Business Groups
+
+With this release, you can configure Business Groups within your main Anypoint account for delegating administrative access as well as dividing up platform entitlements to business groups within your main organization. For more information, see Manage your Organization and Business Groups.
+
+=== June 2015 R43 - Migration Guidance
+
+No migration required. Enterprise customers automatically receive the new functionality. Changes to the user interface are described in the current MuleSoft documentation, as well as a blog post and training video to be released the week after June 13, 2015.
+
+=== June 2015 R43 - Known Issues
+
+A user must have “add server” permissions to create a server group.
+
+== April 2015
+
+* Unified view of environments across Anypoint Platform (CloudHub and APIs).
+* You can now use *OpenAM* as a SAML 2.0 identity federation provider across the platform.
+
+== January 2015
+
+* Infrastructure upgrade - More instance sizes are supported for application deployment. Five instance sizes (0.1 vCores, 0.2 vCores, 1 vCore, 2 vCores, 4 vCores) are available for selection.
+* Data at rest encryption for persistent queues.
+
+=== January 2015 Known issues
+
+*  After enabling encryption for persistent queues, the application  needs to be restarted.
+
+== R40 - October 25, 2014
+
+* Unification with API Manager has resulted in significant changes to the xref:runtime-manager::deploying-to-cloudhub.adoc[user interface], xref:access-management::managing-permissions.adoc[roles and permissions], xref:access-management::environments.adoc[environments], and more. For more information on migrating from R39 to R40, see xref:cloudhub/cloudhub-r40-migration-guide.adoc[CloudHub R40 Migration Guide].
+
+=== R40 Known issues
+
+* If you deploy a newly created application from Studio to CloudHub, and then view the Settings page for that application, you may get a blank page. This can be remedied by creating your application in CloudHub first and then deploying from Studio.
+* If a browser window is zoomed to less than 100%, checkboxes in the user interface may not be visible. Change the zoom to 100% or higher to fix this issue.
+
+== R39 - July 30, 2014
+
+* *_Beta_* Improved UI unified with the xref:api-manager::index.adoc[API Manager]
+* *_Beta_* New monitoring capabilities, statistics on worker CPU and memory use
+* Fixed a bug that made applications deploy unreliably with static IPs
+* Automatic worker restart is now enabled by default
+
+Read our FAQ about API Manager and CloudHub unification
+
+== R38 - May 10, 2014
+
+* Performance improvements for the xref:runtime-manager::managing-application-data-with-object-stores.adoc[CloudHub ObjectStore]
+* Increased limits of ObjectStore to 100K keys and 1 GB of data per application
+* Support for a xref:runtime-manager::virtual-private-cloud.adoc[VPC] per CloudHub environment
+
+== R37 - March 8, 2014
+
+* Performance improvements for xref:runtime-manager::cloudhub-fabric.adoc[persistent queues].
+
+== R36 - February 1, 2014
+
+* xref:runtime-manager::managing-queues.adoc[Queues tab] provides runtime visibility into persistent queues.
+* xref:runtime-manager::worker-monitoring.adoc[Worker monitoring] enabled by default on all newly deployed applications in supported runtimes.
+
+== R35 - December 8, 2013
+
+* Enterprise xref:runtime-manager::virtual-private-cloud.adoc[Virtual Private Cloud] for high-throughput use cases.
+* xref:runtime-manager::managing-schedules.adoc[Schedule management] now generally available to all accounts, including support for Cron expressions.
+* Support for xref:3.7@mule-runtime::batch-processing.adoc[batch processing].
+
+== R34 - November 2, 2013
+
+* New xref:runtime-manager::deploying-to-cloudhub.adoc[worker sizing] capabilities for accounts that have xref:runtime-manager::cloudhub-fabric.adoc[CloudHub Fabric] enabled.
+* Support for xref:runtime-manager::worker-monitoring.adoc[worker monitoring and automatic restarts], including an  xref:runtime-manager::alerts-on-runtime-manager.adoc[Alert] based on a nonresponsive worker.
+* Support for xref:runtime-manager::secure-application-properties.adoc[secure environment variables].
+
+== R33 - September 29, 2013
+
+* Support for xref:runtime-manager::managing-deployed-applications.adoc#switching-environments[moving an application between environments].
+
+== R32 - August 26, 2013
+
+* Support for xref:runtime-manager::cloudhub-fabric.adoc[persistent queuing].
+* Bug fixes for sandbox environments, scheduling, and logging.
+
+== R31 - July 20, 2013
+
+* Introduced *CloudHub Sandbox environments*. Customers now have ability to create multiple development environments to accommodate the full lifecycle of an application, such as Development, QA and Production.
+* Introduced pricing changes. CloudHub is switching to a mix of connector- and API-worker-based pricing.
+* Improved SaaS edition customer management with various improvements and fixes based on user feedback.
+
+== R30 - June 22, 2013
+
+* Significant improvements in application deployment time.
+
+
+== R29 - May 18, 2013
+
+* Per-tenant runtime management capabilities in multi-tenanted applications (Beta)
+
+== R28 - April 14, 2013
+
+* Support for customer management in multi-tenanted applications (Beta)
+* Support for xref:runtime-manager::managing-schedules.adoc[schedule management]
+* Support for xref:runtime-manager::deploying-to-cloudhub.adoc[global deployment]
+* Mule 3.4 support
+
+== R27 - March 16, 2013
+
+* Improved Insight dashboard with new xref:runtime-manager::insight.adoc[Events Filter]
+
+== R26 - February 15, 2013
+
+* Ability to access the http://forums.mulesoft.com[forum].
+
+== R25 - January 19, 2013
+
+* Bug fixes
+
+== R24 - December 20, 2012
+
+* Transaction view for application logs
+* Ability to download log files
+* Mule 3.3.2 support
+
+== R23 - November 19, 2012
+
+* Message replay for CloudHub Insight
+
+== R22 - October 19, 2012
+
+* Bug fixes
+
+== R21 - September 27, 2012
+
+* CloudHub Insight for integration analytics and root cause analysis
+
+== R20 - July 31, 2012
+
+New features in this release:
+
+* Specify the Reply-To address and create custom email bodies for email alerts.
+* xref:runtime-manager::managing-application-data-with-object-stores.adoc[Store custom application data] using ObjectStores for storage of OAuth tokens, synchronization state, and more.
+
+== R19 - July 8, 2012
+
+* We're now known as http://blogs.mulesoft.com/introducing-cloudhub-formerly-mule-ion/[CloudHub]!
+* SDG client is updated and properties that start with "ion" in the name have been renamed to not include "ion" in the name.
+* Update CLI tools to have cloudhub in the name
+
+Bugs fixed in this release:
+
+* SDG can now connect during the deployment phase of the application
+
+== R18 - June 28, 2012
+
+New features in this release:
+
+* xref:access-management::managing-permissions.adoc[Role Based Access Control] - add multiple users to your CloudHub account, set their roles, and collaborate on application development.
+
+Bugs fixed in this release:
+
+* Chunked HTTP messages were not being processed correctly by the CloudHub load balancer
+
+See https://blogs.mulesoft.com/dev/mule-dev/role-based-access-controls-on-ion/[announcement] for more information.

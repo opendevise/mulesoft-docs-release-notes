@@ -1,0 +1,46 @@
+= APIkit 3.8.0 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: apikit-3.8.0-release-notes.adoc
+:keywords: apikit, 3.8.0, release notes
+
+== Compatibility
+
+* Mule Runtime 3.8.0
+* Anypoint Studio 6.0.0
+* Java Parser 0.1.0-alpha-2
+* Javascript Parser 0.2.10
+* Console 3.0.0
+
+== New Features and Functionality
+
+
+=== Early Access RAML 1.0
+
+This release introduces xref:platform/raml-1-early-access-support.adoc[early access] RAML 1.0 https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md[specification]. The new RAML version introduces a number of features, listed in the RAML.org https://github.com/raml-org/raml-spec/wiki/RAML-1.0-RC1-vs-RC2[comparison of releases]. For users migrating to RAML 1.0, see the list of https://github.com/raml-org/raml-spec/wiki/Breaking-Changes[breaking changes] between RAML 0.8 and RAML 1.0
+
+To support the latest version, a new Java implementation of the parser is available. Access the source code and reported issues on https://github.com/raml-org/raml-java-parser/tree/v2[github]. APIkit relies on an alpha version of the parser that isn't fully supported by RAML yet. The following table lists the features gaps. Refer to the https://github.com/raml-org/raml-java-parser/blob/0.1.0-alpha-2/MISSING.md["RAML 1.0 features gap"] for updates.
+
+[%header,cols="30a,70a"]
+|===
+|Text  | Parameter
+| uses key | The https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md#applying-libraries[spec] allows using uses in any fragment. At this moment the parser only allows its use in root level RAML documents and libraries.
+| Annotations for scalar fields | The https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md#annotating-scalar-valued-nodes[spec] allows applying annotations to scalar nodes besides certain mapping nodes. Annotations at scalar level are not supported.
+| Overlays restrictions | Overlay application is not enforcing all the required restrictions. The extra restrictions that Overlays enforce vs. Extensions are not being validated.
+.2+| Security Schemes gaps | * OAuth 1.0 `signatures` setting is not supported
+| * OAuth 2.0 `authorizationUri` is always optional, no matter which authorization grants are used
+| XML Examples validations against YAML types | Validation of XML examples against types defined in YAML are not supported. XML validations are only supported for schemas defined in XSD format.
+.8+| type system gaps | These features, related to the definition, are not supported:
+| * Inheritance of primitive types
+| * discriminator field
+| * Examples nested in a value
+| * Xml Facet field
+| * Additional properties
+| * null type
+| * Properties named with trailing question marks
+|===
+
+== Deprecated
+
+The proxy router is now Enterprise and has been marked as deprecated in this release.

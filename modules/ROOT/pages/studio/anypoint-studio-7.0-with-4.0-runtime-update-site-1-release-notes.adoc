@@ -1,0 +1,64 @@
+= Anypoint Studio 7.0 with Mule Runtime 4.0.0 Update Site 1 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: anypoint-studio-7.0-with-4.0-runtime-update-site-1-release-notes.adoc
+
+*December 15, 2017* +
+*Build ID: 201712151919*
+
+<<migration,Skip to Migration Guide>>
+
+== Compatibility
+
+[cols="30a,70a"]
+|===
+| Product | Version
+| *Mule Runtime*
+| Version: 4.0.0 EA
+
+|*Anypoint Studio*
+|Version: 7.0.0 EA  +
+Build Id: 201712151919
+
+|*Maven*
+|Version: 3.3.9
+
+|*DataWeave* +
+|Version: 2.0.0
+
+|*MUnit* +
+|Version: 2.0.0 (munit-studio-plugin)
+
+|*Eclipse* +
+|Version: 4.6.2
+
+|===
+
+== What's New
+
+This release of Studio 7.0.1 includes mainly bug fixes and support for the Anypoint EU infrastructure.
+
+[[migration]]
+== Migration Guide
+
+For first time installment, please refer to xref:studio/anypoint-studio-7.0-EA-with-4.0-runtime-release-notes.adoc[Anypoint Studio 7.0.0 EA with Mule Runtime 4.0.0 Release Notes] for hardware requirements and known issues.
+
+Studio 7 only supports Mule 4 projects. The structure of the project, export format, XML and scripting language are different. +
+Users must migrate Mule 3 projects to Mule 4 manually, before they can be used in Studio 7. See xref:4.1@mule4-runtime::mule-4-changes.adoc[Mule Runtime 4.0 Changes] for a list of changes.
+
+From the previous version of Studio 7.0 there is no special migration needed.
+
+== JIRA Ticket List for Anypoint Studio
+
+=== Bug Fixes
+
+* STUDIO-10268 - When using a connector (file) inside a try scope with an error handler, the editor doesn't show the error types from the connector.
+* STUDIO-10270 - When opening right menu having multiple message processors selected, an error is thrown
+* STUDIO-10274 - Opening the Mule Project properties page from the Package Explorer view shows an "invalid values" message
+* STUDIO-10279 - When configuring a file:read operation, it shows configuration connector field as required*
+
+== Support
+
+* http://forums.mulesoft.com/[MuleSoft’s Forum].
+* http://www.mulesoft.com/support-login[MuleSoft’s Customer Portal].

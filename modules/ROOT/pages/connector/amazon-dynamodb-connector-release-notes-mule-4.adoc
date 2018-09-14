@@ -1,0 +1,109 @@
+= Amazon DynamoDB Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: amazon-dynamodb-connector-release-notes-mule-4.adoc
+:keywords: release notes, amazon dynamodb, dynamodb, connector
+
+*February 2018*
+
+_Select_
+
+Amazon DynamoDB is a fully managed NoSQL database service that provides fast and predictable performance with seamless scalability.
+The Anypoint Connector for Amazon DynamoDB provides connectivity to the Amazon DynamoDB API, enabling you to interact with Amazon DynamoDB to create a database table that can store and retrieve any amount of data, serve any level of request traffic and it automatically spreads the data and traffic for the table over a sufficient number of servers to handle the request capacity specified by the customer and the amount of data stored, while maintaining consistent and fast performance.
+
+*Connector Guide*: xref:connectors::amazon/amazon-dynamodb-connector.adoc[Amazon DynamoDB Connector]
+
+Starting with v.1.0.0, the DynamoDB connector is licensed commercially with Anypoint Platform as with other Select connectors.
+
+== 1.1.0
+
+*February 21, 2018*
+
+Release notes for version 1.1.0 of the Amazon DynamoDB connector.
+
+=== Compatibility
+
+The Amazon DynamoDB Connector is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Application/Service|Version
+|Mule Runtime |4.1.0
+|Amazon Java SDK for DynamoDB |v1.11.247
+|Java |1.8.0_x
+|Anypoint Studio |7.0 and later
+|===
+
+=== Fixed in this Release
+
+AWS connectors shared a common library for the supported region endpoints that caused an issue when two different AWS connectors were used in a Mule app. This version fixes this issue.
+
+== 1.0.0
+
+*January 5, 2018*
+
+Release notes for version 1.0.0 of the Amazon DynamoDB connector.
+
+=== Compatibility
+
+The Amazon DynamoDB Connector is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Application/Service|Version
+|Mule Runtime |4.0.0
+|Amazon Java SDK for DynamoDB |v1.11.247
+|Java |1.8.0_x
+|Anypoint Studio |7.0 and later
+|===
+
+=== Features
+
+* Built with Mule Runtime v4.0.0
+* Built with AWS SDK v1.11.247
+* Support for Temporary Credentials - A checkbox named *Try Default AWS Credentials Provider Chain* has been added to the Global Element configuration. If selected, the connector first tries to obtain the credentials from an AWS environment.
+* Support for Retry Policy - The connector performs a maximum of 10 retries when a request fails due to server-side throttling or dropped connection.
+* The following operations are supported:
++
+** *Control Plane*
+*** CreateTable
+*** ListTables
+*** UpdateTable
+*** DeleteTable
+
+** *Data Plane*
+*** PutItem
+*** BatchWriteItem
+
+** *Reading Data*
+*** GetItem
+*** BatchGetItem
+*** Query
+*** Scan
+
+** *Updating Data*
+*** Updating Data
+
+** *Deleting Data*
+*** DeleteItem
+*** BatchDeleteItem
+
+** *DynamoDB Streams*
+*** ListStreams
+*** DescribeStream
+*** GetShardIterator
+*** GetRecords
+
+=== Fixed in this Release
+
+Initial version.
+
+=== Known Issues
+
+None.
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

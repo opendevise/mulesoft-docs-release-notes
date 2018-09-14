@@ -1,0 +1,37 @@
+= Runtime Manager Agent 1.9.5 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: runtime-manager-agent-1.9.5-release-notes.adoc
+
+_May 5, 2018_
+
+This document describes new features and enhancements, known limitations, issues, and fixes in Anypoint Runtime Manager Agent, version 1.9.5.
+
+== New Features and Enhancements
+
+This release contains no new features or enhancements.
+
+== Changes in This Release
+
+This release contains no changes to existing functionality.
+
+== Fixed Issues
+
+This release contains the following issue fixes:
+
+* Upgrades the Jackson library to version 2.9.5 to fix vulnerability.
+* Upgrades Jetty to version 9.4.8.v20171121 to fix vulnerability.
+* Fixes error when tracking notification were consumed and sent to a database.
+
+== Known Limitations and Workarounds
+
+There are no known limitations or workarounds in this release.
+
+== Upgrade Requirements
+
+There are no upgrade requirements for this release.
+
+== Compatibility Notes
+
+There are no compatibility notes for this release.

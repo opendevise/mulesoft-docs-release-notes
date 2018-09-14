@@ -1,0 +1,69 @@
+= Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:keywords: release notes
+
+** xref:platform/anypoint-november-release.adoc[Anypoint Platform July and November Release: Release Notes]
+** xref:eu-cloud/anypoint-eu-control-plane.adoc[Anypoint Platform - EU Control Plane, December 15 2017 Release Notes]
+** xref:access-management/access-management-release-notes.adoc[Anypoint Access Management Release Notes]
+** xref:analytics/anypoint-analytics-release-notes.adoc[Anypoint Analytics Release Notes]
+
+** xref:partner-manager/anypoint-b2b-release-notes.adoc[Anypoint B2B Release Notes]
+
+** xref:connector/anypoint-connector-release-notes.adoc[Anypoint Connector Release Notes]
+
+** xref:connector-devkit/anypoint-connector-devkit-release-notes.adoc[Anypoint Connector DevKit Release Notes]
+
+** xref:data-gateway/anypoint-data-gateway-release-notes.adoc[Anypoint Data Gateway Release Notes]
+
+** xref:connector/anypoint-enterprise-security-release-notes.adoc[Anypoint Enterprise Security Release Notes]
+
+** xref:exchange/exchange-release-notes.adoc[Anypoint Exchange Related Release Notes]
+
+** xref:mq/anypoint-mq-release-notes.adoc[Anypoint MQ Release Notes]
+
+** xref:object-store/anypoint-osv2-release-notes.adoc[Anypoint Object Store v2 Release Notes]
+
+** xref:cli/anypoint-platform-cli.adoc[Anypoint Platform Command Line Interface]
+
+** xref:pce/anypoint-onpremise-release-notes.adoc[Anypoint Platform On-Premises Edition]
+
+** xref:pce/anypoint-private-cloud-release-notes.adoc[Anypoint Platform Private Cloud Edition Release Notes]
+
+** xref:pcf/anypoint-platform-pcf-release-notes.adoc[Anypoint Platform for PCF Release Notes]
+
+** xref:studio/anypoint-studio.adoc[Anypoint Studio Release Notes]
+
+** xref:api-console/api-console-release-notes.adoc[API Console Release Notes]
+
+** xref:api-designer/api-designer-release-notes.adoc[API Designer Release Notes]
+
+** xref:api-gateway/api-gateway-runtime.adoc[API Gateway Runtime Release Notes]
+
+
+** xref:api-manager/api-manager-release-notes.adoc[API Manager Release Notes]
+** xref:api-mocking-service/api-mocking-service-release-notes.adoc[API Mocking Service Release Notes]
+** xref:api-notebook/api-notebook-release-notes.adoc[API Notebook Release Notes]
+**  xref:apikit/apikit-release-notes.adoc[APIkit Release Notes]
+
+** xref:cloudhub/cloudhub-release-notes.adoc[CloudHub Release Notes]
+
+** xref:design-center/design-center-release-notes.adoc[Design Center Release Notes]
+** xref:healthcare/healthcare-release-notes.adoc[Healthcare Toolkit Release Notes]
+
+
+** xref:mule-mmc/mule-management-console.adoc[Mule Management Console Release Notes]
+
+** xref:mule-maven-plugin/mule-maven-plugin-release-notes.adoc[Mule Maven Plugin Release Notes]
+
+
+** xref:platform/release-bulletins.adoc[Mule Release Bulletins]
+
+** xref:mule-runtime/mule-esb.adoc[Mule Runtime Release Notes]
+
+** xref:munit/munit-release-notes.adoc[MUnit Release Notes]
+
+** xref:runtime-manager-agent/runtime-manager-agent-release-notes.adoc[Runtime Manager Agent Release Notes]
+
+** xref:runtime-manager/runtime-manager-release-notes.adoc[Runtime Manager Release Notes]

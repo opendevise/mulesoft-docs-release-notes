@@ -1,0 +1,13 @@
+= Release Notes for Mule IDE 2.0.x
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: mule-ide-2.0.x-release-notes.adoc
+:keywords: release notes, ide
+
+* xref:studio/release-notes-for-mule-ide-2.0.0.adoc[Release Notes for Mule IDE 2.0.0]
+* xref:studio/release-notes-for-mule-ide-2.0.1.adoc[Release Notes for Mule IDE 2.0.1]
+* xref:studio/release-notes-for-mule-ide-2.0.2.adoc[Release Notes for Mule IDE 2.0.2]
+* xref:studio/release-notes-for-mule-ide-2.0.3.adoc[Release Notes for Mule IDE 2.0.3]
+* xref:studio/release-notes-for-mule-ide-2.0.4.adoc[Release Notes for Mule IDE 2.0.4]
+* xref:studio/release-notes-for-mule-ide-2.0.5.adoc[Release Notes for Mule IDE 2.0.5]

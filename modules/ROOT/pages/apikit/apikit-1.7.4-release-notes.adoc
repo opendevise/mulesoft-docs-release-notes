@@ -1,0 +1,27 @@
+= APIkit 1.7.4 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: apikit-1.7.4-release-notes.adoc
+:keywords: apikit, 1.7.4, release notes
+
+APIkit 1.7.4 release notes includes compatibility information and a list of issues fixed in this release.
+
+== Compatibility
+
+* Mule ESB Runtime 3.7.0 and later
+* API Gateway 2.0.2 and later
+* RAML Java Parser 0.8.17
+* RAML Javascript parser 0.8.11
+* APIkit Console 2.0.5
+
+== Fixed in This Release
+
+* APIKIT-517: Allow RAML console to use relative paths when requesting the RAML file
+* APIKIT-542: Payload encoding not respected for XML validation
+* APIKIT-562: Opened streams prevents undeploying app
+* APIKIT-566: A request when an invalid mime type returns 500 status code
+* APIKIT-571: Schema validation response is not including as much information as before
+* APIKIT-572: Scaffolder generates duplicated flows
+* APIKIT-573: Flows are duplicated when editing existing RAML
+* APIKIT-574: Headers ignored when resourceType specified as an include

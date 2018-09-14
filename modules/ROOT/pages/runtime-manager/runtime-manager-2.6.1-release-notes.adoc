@@ -1,0 +1,61 @@
+= Runtime Manager v2.6.1 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: runtime-manager-2.6.1-release-notes.adoc
+:keywords: arm, runtime manager, release notes
+
+**November 18, 2017**
+
+This release contains the following enhancements:
+
+[cols="2*a"]
+|===
+| Enhancement | Description
+| Deploy an application or example from Exchange | Runtime Manager enables you to deploy a Mule application or example directly from Anypoint Exchange to a server, server group, or cluster.
+| Mule 4 support | This release provides support for the Mule 4 Early Access release.
+|===
+
+
+== Hardware and Software Requirements
+
+To use Runtime Manager to specify a cluster IP and port in hybrid deployment scenarios, you must be running Mule runtime, version 3.8.5 or greater.
+
+== Compatibility
+
+Mule Agent plugin integration is compatible with the following component versions:
+
+[cols="2*a"]
+|===
+|Availability | Cloud only
+|Mule Agent Plugin | Version 1.9.0 or later is required for all new features.
+|Mule | 3.9.0 and later is required for the application properties feature.
+|API Gateway | 2.x and above for API Analytics
+|===
+
+== Fixed Issues
+
+The following issues were fixed in this release:
+
+* Fixed issue where Runtime Manager was unable to stop Mule4 applications.
+* Fixed issue where Runtime Manager was unable to delete Mule 4 applications from serverGroups or Clusters
+* Fixed issue where clusterization was working with the Mule 4 Runtime Manager Agent.
+
+== Known Issues
+
+* Schedule Management is not supported on Mule 4 EA.
+* Autodiscovery of server properties is not supported on Mule 4 EA.
+* Application Properties are not supported on Mule 4 EA.
+
+
+== Deprecated Features or Functionality
+
+No change.
+
+== Migration
+
+No change.
+
+== Support
+
+No change.

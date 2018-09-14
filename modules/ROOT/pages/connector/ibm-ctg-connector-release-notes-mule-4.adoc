@@ -1,0 +1,61 @@
+= IBM CICS Transaction Gateway Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: ibm-ctg-connector-release-notes-mule-4.adoc
+:keywords: release notes, ibm ctg, cics, jca, connector
+
+*January 2018*
+
+_Premium_
+
+The IBM CICS Transaction Gateway (IBM CTG) connector provides integration with back-end CICS applications using the CICS Transaction Gateway. For Java platforms, CTG implements the JCA resource adapter to connect Java applications to the CICS system.
+The connector serves as a handrail between Mule applications and the CTG.
+
+== 1.0.2
+
+*January 19, 2018*
+
+IBM CICS Transactions Gateway (IBM CTG) connector is available in Mule 4.0.
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime |4.0 and later
+|Java | 8
+|IBM CICS TG (for Multiplatforms and for z/OS) |9.1 and 9.2
+|IBM CICS TG SDK |9.1 and 9.2
+|===
+
+Notes:
+
+* The remote CICS TG must be at the same or a higher release level than the version of the JCA resource adapter.
+* The JCA resource adapter must match the CICS TG platform. For example, if you have CICS TG for Multiplatforms, you cannot connect to it from a CICS TG with the z/OS resource adapter.
+
+The following JAR files are required to set up a connector configuration:
+
+* ccf2.jar (CICS Common Connector Framework)
+* cicsjee.jar (CICS JEE)
+* ctgclient.jar (CTG Client Library)
+* ctgserver.jar (CTG Server Library)
+* geronimo-j2ee-connector_1.6_spec-1.0.jar (JCA 1.6 Specification)
++
+Note: JCA 1.6 is needed as a required library to overcome conflicts with JCA 1.5 shipped with the Mule Runtime.
+
+=== Features
+
+* Authentication - The connector uses, under the hood, the IPIC (IP interconnectivity) protocol to establish communication with CICS regions over TCP/IP. This type of client also supports SSL authentication.
+* Execution of CICS Programs - The connector allows users to invoke CICS programs in two manners:
+** Using Channels and Containers.
+** Using a COMMAREA. Data transfers are limited to 32 KB.
+* Transactions - The connector leverages XA Transactions by means of Mule's Transactional scope and the Bitronix Transaction Manager components.
+* DataSense - The connector supports adding metadata using through the Custom Metadata Tab option. Using the Copybook feature, a user can import a schema that describes the data structure going in and out of CTG so as to be used by a DataWeave component.
+
+=== Known Issues
+
+* Although the inclusion of JCA 1.6 as a required library is meant to solve compatibility conflicts with the JCA 1.5 shipped with the Mule Runtime, it is yet unknown if this causes side effects.
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

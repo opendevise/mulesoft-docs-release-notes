@@ -1,0 +1,236 @@
+= MUnit 2.0.0 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: munit-2.0.0-release-notes.adoc
+:keywords: munit, 2.0.0, release notes
+
+This release introduces the Spy processor and adds bug fixes.
+
+== Hardware and Software Requirements
+
+* Microsoft Windows 8 +
+* Apple Mac OS X 10.10 +
+* Linux (tested on Ubuntu 15)
+* Java 8
+* Maven 3.3.3, 3.3.9
+
+== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule | Mule 4.0.0
+|Anypoint Studio | Anypoint Studio 7.0.0-RC2
+|===
+
+== Features and Functionality
+
+=== Anypoint Studio Plugin
+
+There are no new features in this release
+
+=== MUnit Runtime
+
+
+== Known Issues
+
+There are no known issues fo this release.
+
+== Bug Fixes
+
+* MUSP-557 - Debugger is not stopping inside components on spy
+* MUSP-350 - Canvas not drawing Munit Suite correctly after creating
+* MUSP-340 - Fix npe MessageFlowEditor.getServerDefinition
+* MU-1276 - VM test fails when there is a double init
+* MU-1272 - VALIDATE - Batch with lazy init
+* MU-1270 - VALIDATE - Global error handlers not reporting coverage are fixed
+* MU-1266 - VALIDATE - Double HTTP request causes connection refused with lazy init
+* MU-1263 - App with error handler is not reporting coverage
+* MU-1262 - Test jar generated doesn't include test resources
+* MU-1260 - Lazy init doesn't find subflows on nested chain of flows
+* MU-1259 - Coverage data not correct when executing all test suites
+* MU-1258 - RunConfiguration is setting zip coverage plugin not jar
+* MU-1249 - Spy VM connector return empty event
+* MU-1244 - Fix the test in error listed here
+* MU-1243 - Fix failed test after lazy init merge
+* MU-1242 - Review failing test due to change on lazyinit
+* MU-1240 - Remove componentLocator filter WA
+* MU-1239 - Remove suiteBuilder WA due to componentLocation filename bug
+* MU-1238 - Re enable assertion test with spring config elements
+* MU-1237 - Improve Application Model Validation
+* MU-1235 - Empty m2 with lightweight package fails to run tests
+* MU-1231 - Fix Suite Runner Module Flaky Test
+* MU-1221 - ClassCastException when exception is thrown in subflow
+* MU-1215 - Fix extended/qa/set-event-test-suite.xml
+* MU-1210 - Not assume that all exceptions from the Executor are ExecutionException
+* MU-1207 - ee:transform seems to hang the execution
+* MU-1202 - Re package coverage plugin to match new structure
+* MU-1200 - Coverage is not listing sub-flows
+* MU-1144 - Do not proxy event result from chains inside before after spy
+* MU-1107 - Ensure embedded container resolve from local app
+* MU-978 - Review memory usage when starting embedded containers per suite
+* MU-876 - Fix IT with nullValue matcher
+* MU-875 - Fix IT with DW
+* MU-816 - Expecting Errors tests get stuck in integration tests
+* MU-810 - MUnit mojo is thorwing a warning when it shouldn't
+* MU-799 - make munitMojo to send absolutepaths for test suites
+* MU-771 - Fix CatchExceptionStrategy Tests in Coverage Plugin
+* MU-770 - MuleDeployPropertyLoader loadApplicationDeployProperties failing
+* MU-768 - Fix munit definition provider
+* MU-766 - Event is not being shared between before/after test and Tests
+* MU-668 - Nested folders tests not running
+* MU-388 - Remove testResources from generated pom
+
+== Tasks
+
+* MUSP-555 -	Validate XML serialization of enable flow sources and spy
+* MUSP-545 -	Review security vulnerable dependencies
+* MUSP-535 -	Update Coverage Server Plugin dependency
+* MUSP-503 -	Validate not bundling any security vulnerable dependencies
+* MUSP-477 -	Create script to update munit version inside plugin
+* MUSP-468 -	Review performance when preparing test run
+* MUSP-439 -	Validate Scaffolder status in Studio 7
+* MUSP-436 -	Re-Check generated repository size for munit dependencies
+* MUSP-370 -	Comment MunitPresetsContentsProvider class
+* MUSP-353 -	set-event custom editor should change base on the compatibility-module
+* MUSP-345 -	Validate metadata propagation for assert and setEvent
+* MU-1267  -	Validate interception API calling before of coverage
+* MU-1264  -	Clean integration tests pom and reuse properties from parent
+* MU-1255  -	Validate setEvent set attributes
+* MU-1250  -	Create tests to validate the rest of coverage scenarios
+* MU-1248  -	Clean up old 1.x classes
+* MU-1236  -	Validate embedded container dependencies resolution
+* MU-1232  -	Add mule-artifact.json to build-tools
+* MU-1230  -	Remove synchronize workaround in spy
+* MU-1229  -	Validate the following elements measure coverage properly
+* MU-1206  -	Update transports/http-test-suite.xml to use HTTP Transport
+* MU-1155  -	Split Integration test module into multi module
+* MU-1089  -	Change implementations for ContextMenuProvider
+* MU-1075  -	Validate mock scenarios for attributes of references
+* MU-1053  -	Parametrise build to update mule-plugin.json
+* MU-996	 - Validate projects from Exchange
+* MU-980	 - Remove log4j dependencies from munit-remote
+* MU-862	 - Update Batch I. Test
+* MU-839	 - Fix ignored tests
+* MU-796	 - Stop using devkit connectors in integration tests
+* MU-789	 - Review how error handling works with APIKIT error handler
+* MU-785	 - Adapt to new mule expression manager
+* MU-772	 - Fix Batch/Synchronize tests in Coverage Plugin
+* MU-752	 - Update Mule dependencies
+* MU-718	 - Validate assertion fail scenarios
+* MU-709	 - Check if plexus injected repository can work off line
+* MU-675 - DSL Changes
+
+== Enhancements
+
+* MUSP-553 - Update Debugger Server Plugin classifier
+* MUSP-552 - Move Flow Sources editor from Config to Test
+* MUSP-551 - Flow-ref editor should list all app flows
+* MUSP-549 - Contribute Spy Editor to MUnit Tools palette
+* MUSP-548 - Adapt config and test editors for new DSL
+* MUSP-544 - Find jruby-complete-1.7.17.jar dependency
+* MUSP-541 - Replace ApplicationStructureGenerator with PackageBuilder
+* MUSP-532 - Review if we are able to reduce the time to start coverage plugin
+* MUSP-518 - Create munit src folder icon
+* MUSP-514 - Use FreeMarker for template generation
+* MUSP-501 - Remove Validator Workaround to validate XML editor
+* MUSP-487 - Generate package structure in another location
+* MUSP-481 - Add icon for src/test/munit source folder
+* MUSP-434 - Contribute MUnit editor with version range
+* MUSP-348 - Update Serialiser to reflect new assert-that processor
+* MUSP-346 - Update Serializers to reflect new munit namespace
+* MUSP-342 - Disable syncrhonize support in studio
+* MUSP-337 - Re enable MunitMavenProjectDecorator features
+* MUSP-335 - Provide XML content to MuleConfiguration
+* MUSP-334 - Re Enable apikit scaffolding
+* MUSP-333 - Update to new studio target platform
+* MUSP-331 - Bundle MUnit Antman on Studio
+* MUSP-326 - Refactor new test suite wizard page class
+* MU-1277 -	Flag suite as error if fail to build
+* MU-1254 -	Don't notify suite when notifying container start failure
+* MU-1252 -	Show cause of error on Connection refused issue
+* MU-1245 -	Update coverage to avoid re deploy
+* MU-1233 -	Use mule-packager content generator to update mule-artifact.json
+* MU-1228 -	Update apikit tests autogeneration with new dsl
+* MU-1227 -	Remove Log4J warnings when running test
+* MU-1223 -	Use new Lazy init deployment
+* MU-1222 -	Replace ApplicationStructureGenerator with PackageBuilder
+* MU-1219 -	Remove old coverage tests
+* MU-1217 -	Update RunnerServer time out
+* MU-1214 -	Remove context from remove context MunitBindingContextProvider
+* MU-1213 -	Replace usage of MuleContext with inject when posible
+* MU-1192 -	Register interceptor through Application API
+* MU-1165 -	Migrate MUnit Utils FTP server to SDK
+* MU-1102 -	Take runtime product from mule-artifact.json
+* MU-1047 -	Improve how tests errors are being displayed when running from terminal
+* MU-914 -	Add CheckStyle to munit-runtime build
+* MU-904 -	Implement spy as an SDK contribution
+* MU-884 -	Register DW Functions through the SDK
+* MU-881 -	Change the mock processor to store only DTO object in MUnit registry
+* MU-880 -	Implement assert-that processor with SDK
+* MU-865 -	Update Set Event Schema to allow any order for Child Elements
+* MU-857 -	Add Tag concept to Munit test
+* MU-833 -	Create Matchers to assert MediaType and Encoding of expression
+* MU-817 -	Improve the RemoteRunner testability when using sockets
+* MU-805 -	Mule Service Loading
+* MU-786 -	Fix call to getCauseException
+* MU-784 -	Reenable ignored tests in MunitMuleContextFactoryTest
+* MU-774 -	Update Definition Provider of munit for expect excepection
+* MU-769 -	Refactor MuleContextManager
+* MU-767 -	Validate constructor arguments in AssertComponentBuildingDefinitionProvider
+* MU-749 -	Refactor Add jars to app munit maven plugin
+* MU-748 -	Adapt classpath dependency excludes to work with mule
+* MU-747 -	Change classpathDependencyExcludes in AntMan
+* MU-744 -	Store sysprop in a tem file when starting new jvm
+* MU-742 -	remove references to void mule event un munit utils
+* MU-737 -	Re write XSD to match new assertion DSL
+* MU-736 -	Re write Definition Provider of assertion
+* MU-734 -	Handle Evaluation Errors in SetEvent
+* MU-731 -	Add method to clear properties and variables in the event builder
+* MU-727 -	Allow sending absolute paths with spaces in suite files
+* MU-723 -	remove logtofile prop from maven plugin
+* MU-719 -	Re write XSD to match new expect exception DSL
+* MU-717 -	Make munit-runner build
+* MU-712 -	Specify flowConstruct when creating an event to run MUnit flows
+* MU-708 -	Expose in munit-maven-plugin the feature to add sharelibrabries
+* MU-707 -	Remove workaround form MuleClassLoaderFactory
+* MU-706 -	Refactor names in munit-runner
+* MU-704 -	Make all munit mp to implement flowConstructAware
+* MU-703 -	Generate munit apple flow if not pressent in the registry
+* MU-701 -	Refactor MunitMessageTransformer
+* MU-697 -	Update Set MP DSL
+* MU-696 -	Set Message Processor to evaluate attributes
+* MU-695 -	Event builder needs to handle typed values
+* MU-693 -	Re write expect exception logic
+* MU-689 -	Create assert that processor
+* MU-688 -	Re implement assertion module
+* MU-677 -	Move coverage reports location to match maven site way
+* MU-673 -	Remove coverage EE only limitation
+* MU-671 -	Re enable coverage support support
+* MU-661 -	Re enable ExceptionStrategyReplacer
+* MU-655 -	Find a way to create new vm with specific classloader
+* MU-652 -	Re implement org.mule.munit.runner.functional.FunctionalMunitSuite#testEvent
+* MU-646 -	Re implement SetMessageProcessor
+* MU-643 -	Create munit compatibility module
+* MU-641 -	Review usage of new Message API
+* MU-640 -	Move MUnit MEL function definitions out of Assert Module
+* MU-637 -	Re implement TestsLogConfigurationHelper
+* MU-632 -	Replace MunitMuleEventBuilder with a Mule Builder
+* MU-629 -	Replace MunitDefaultMuleMessage with the use of MuleMessageBuilder
+* MU-628 -	Create our own FileUtils
+* MU-622 -	Adapt current MUnit runner to run a MUnit test
+* MU-552 -	Create asserts NS and move munit NS to munit-common
+* MU-549 -	New MUnit Runner - merge
+* MU-547 -	Class Loading Isolation for MUnit
+* MU-339 -	Calculate duration of suite
+* MU-136 -	Add checking tools to maven
+
+== Story
+
+* MU-750 - Define exception handling strategy for migration steps
+
+== Support
+
+* Access http://forums.mulesoft.com/[MuleSoft’s Forum] to pose questions and get help from Mule’s broad community of users.
+* To access MuleSoft’s expert support team https://www.mulesoft.com/support-and-services/mule-esb-support-license-subscription[subscribe to Mule ESB Enterprise] and log in to MuleSoft’s http://www.mulesoft.com/support-login[Customer Portal].

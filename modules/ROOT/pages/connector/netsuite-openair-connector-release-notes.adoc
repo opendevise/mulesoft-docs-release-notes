@@ -1,0 +1,116 @@
+= NetSuite OpenAir Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: netsuite-openair-connector-release-notes.adoc
+:keywords: openair, netsuite, release notes
+
+*March 3, 2017*
+
+_Select_
+
+*Guide:* xref:3.9@mule-runtime::netsuite-openair-connector.adoc[NetSuite OpenAir Connector]
+
+The Anypoint Connector for NetSuite OpenAir is a closed source Enterprise connector that provides a connection between OpenAir and third party software.
+
+== 1.0.2
+
+*March 3, 2017*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Application/Service |Version
+|Mule Runtime |3.7.0 and later
+|Anypoint Studio |5.3.2 and later
+|===
+
+
+The OpenAir Connector requires an *Enterprise* License.
+
+=== Fixed in this Release
+
+* Metadata is correctly generated in Studio - Previously, when selecting any operation, the oaObject dropdown menu displayed duplicate entries and, in some cases, the input/output metadata was incomplete or truncated. Now, the connector displays a list of oaObjects and the associated metadata.
+* Connector compatibility with Windows - In some scenarios, the user would get an `Illegal character in path` error message when attempting to use the connector in a Mule environment under Windows. This was fixed.
+* Disable chunking on HTTP requests - When the requests made by the connector contained a relatively large payload, OpenAir would fail to parse it. This is no longer the case.
+* Token refresh - Previously the authentication token became invalid, the connector now refreshes it properly.
+* Namespace URI in requests - Outgoing SOAP messages may have contained illegal `||` characters in the `bodyPrefix` attribute. These characters have been removed from the URI in the SOAP envelope.
+
+
+== 1.0.1
+
+*December 14, 2016*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Application/Service |Version
+|Mule Runtime |3.7.0 and later
+|Anypoint Studio |5.3.2 and later
+|===
+
+
+The OpenAir Connector requires an *Enterprise* License.
+
+=== Features
+
+None.
+
+=== Fixed in this Release
+
+* XML External Entities (XXE) vulnerability - By default, XML parsers are weakly configured thus enabling XML External Entity attack (for example, disclosure of confidential data, denial of service, server side request forgery) when the application parses XML input. To prevent XXE,  DTDs (External Entities) have been completely disabled in all the XML parsers used by the connector.
+
+== 1.0.0
+
+*April 14, 2016*
+
+=== Compatibility
+
+The OpenAir Connector is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Application/Service |Version
+|Mule Runtime |3.7.0 and later
+|Anypoint Studio |5.3.2 and later
+|===
+
+
+The OpenAir Connector requires an *Enterprise* License.
+
+
+=== Features
+
+* WSDL is retrieved dynamically from the user's OpenAir instance
+* Supports OpenAir custom fields
+* XML based request
+* Auto Reconnection when session is expired
+
+=== Fixed Issues
+
+* The selected OpenAir object is added to the processor's Metadata.
+
+=== Supported Operations
+* Add
+* Createaccount
+* Createuser
+* Delete
+* Getcrystalinfo
+* Makeurl
+* Modify
+* Read
+* Runreport
+* Servertime
+* Servertimewithtimezone
+* Submit
+* Upsert
+* Version
+* Whoami
+
+== See Also
+
+* NetSuite http://www.openair.com/download/NetSuiteOpenAirSOAPAPIGuide.pdf[OpenAir SOAP API Guide]
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

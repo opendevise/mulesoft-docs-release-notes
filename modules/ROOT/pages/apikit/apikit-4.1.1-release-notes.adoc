@@ -1,0 +1,33 @@
+= APIkit Mule4-1.1.1 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: apikit-4.1.1-release-notes.adoc
+
+*March 12, 2018*
+
+== What's New
+
+There are no new features in this version. There are just a few enhancements and bug fixes.
+
+== Compatibility
+
+* Mule Runtime 4.1.1 and later
+* Anypoint Studio 7.1.1 and later
+* Java Parser RAML 1.0 v1.0.19
+* Java Parser RAML 0.8 v0.8.22
+* API Console 4.2.0
+
+== Fixed in the Release
+
+* BaseUri was incorrectly rewritten on CloudHub (APIKIT-1208)
+* Upgraded Jackson library to 2.9.4.
+
+GitHub RAML Java Parser issues fixed in this release:
+
+* RAML parser validates additional properties before explicit ones. #468
+* StackOverflowError parsing RAML with recursion. #460
+* Global context is not taken into account when parsing libraries. RP-273 and #457
+* NPE when parsing RAML files containing included fragments that reference types defined in the root RAML. RP-253 and #453
+* Invalid reference when using a resourceType fragment that implements a trait which uses a type defined in the root RAML. #454
+* Disabling Default Typing in ObjectMappers.  #473

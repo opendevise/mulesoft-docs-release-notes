@@ -1,0 +1,20 @@
+= Mule Management Console 3.8.4
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: mule-management-console-3.8.4.adoc
+:keywords: release notes, mmc mule management console
+
+The Mule Management Console, also known as MMC, is a platform for managing Mule applications deployed on premises. Currently, no new functionality is being added to the MMC, this release includes only bug fixes and security fixes.
+
+[NOTE]
+Version 3.8.4 of MMC is compatible with Mule runtime v3.8.x starting with version 3.5.
+
+
+== Resolved
+
+* SE-6977 - Resolved potential issue with click-jacking of application.
+
+== Known Issues
+
+No new known issues with this release

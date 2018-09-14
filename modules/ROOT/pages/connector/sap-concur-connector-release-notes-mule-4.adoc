@@ -1,0 +1,31 @@
+= SAP Concur Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: sap-concur-connector-release-notes-mule-4.adoc
+:keywords: release notes, connectors, concur
+
+*February 2018*
+
+_Select_
+
+SAP Concur is a SaaS provider of integrated travel and expense management solutions. The Anypoint Connector for Concur operates as a bi-directional gateway between instances of Concur and Mule. The Concur connector is available for deployment on-premises and in the cloud.
+
+== 4.0.0
+
+*February 28, 2018*
+
+Concur connector is available on Mule 4.0.
+
+[%header%autowidth.spread]
+|===
+|Application/Service | Version
+|Mule Runtime | 4.0.x and later
+|Anypoint Studio | 7 and later
+|===
+
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

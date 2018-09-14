@@ -1,0 +1,83 @@
+= TRADACOMS EDI Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: tradacoms-connector-release-notes.adoc
+:keywords: release notes, tradacoms, edi, b2b, connector
+
+*April 2017*
+
+_Premium_
+
+The Anypoint Connector for TRADACOMS EDI provides read and write TRADACOMS messages functionality.
+
+xref:partner-manager::edi-tradacoms.adoc[Tradacoms EDI Guide]
+
+== 1.0.2
+
+*April 27, 2017*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime |3.7.0 and later
+|Java | 7
+|===
+
+=== Features
+
+None.
+
+=== Fixed in this Release
+
+* *Unable to load metadata schemas* - In the previous version, the metadata failed to get populated and displayed an error message similar to _"Could not load schema /tradacoms/ORDERS.esl"_. This issue was caused by a dependency conflict between the EDI Parser version shipped with the connector (that contains a bugfix for TRADACOMS) and the one present in Mule Runtime 3.8.0 to 3.8.3 (that doesn't include the fix). The present version solves the issue for all the runtimes. In addition, version 1.0.1 of the connector will still work if used with any of the 3.7.x runtimes or with the latest 3.8.4.
+
+== 1.0.1
+
+*March 30, 2017*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime |3.7.0 and later
+|Java | 7
+|===
+
+=== Fixed in this Release
+
+* *Missing dependencies* - Added the required Mule dependencies related to EDI schemas and B2B Provider.
+
+== 1.0.0
+
+*December 29, 2016*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime |3.7.0 and later
+|Java | 7
+|===
+
+=== Features
+
+* *Read TRADACOMS message* - The connector provides the functionality to read TRADACOMS messages.
+* *Write TRADACOMS message* - The connector provides the functionality to write TRADACOMS messages.
+
+=== Fixed in this Release
+
+None.
+
+=== Known Issues
+
+None.
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

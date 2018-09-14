@@ -1,0 +1,35 @@
+= API Gateway Runtime 2.0.4 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: api-gateway-2.0.4-release-notes.adoc
+:keywords: api gateway, connector, release notes
+
+MuleSoft is pleased to announce the 2.0.4 release of the API Gateway runtime. This release mainly includes bug fixes and a security improvement.
+
+== Compatibility
+
+* ESB Runtime 3.7.3
+* APIkit 1.7.3
+* Anypoint Studio 5.4.3
+
+== Fixed in this Release
+
+* AGW-550: Policy is incorrectly applied to non-matching APIs.
+* AGW-551: Analytic events are not sent when client is validated online.
+* AGW-570: Throttling and Rate Limiting policies are not applied to the correct pointcut.
+* AGW-578: NullPointerException occurs while processing ping federate token if response status code was != 200.
+* AGW-691: Analytics are sent for policy violations when RL SLA is applied and validations errors occur.
+* AGW-587: OAuth's client store is not populating the client name for External AES client.
+* AGW-594: Make flowRef required and add validations in case source is null.
+* AGW-695: Enable API Platform rest client support for TLS 1.1 and 1.2 in Java 7.
+* AGW-745: When Gateway is restarted without connectivity, do not remove all applied policies.
+* AGW-752: Remove unnecessary patch from distribution.
+
+== Security Improvement in this Release
+
+AGW-734: For PCI compliance, TLS v1.0 support was removed from the `tls-default.conf` file.
+
+== Migration Guide from 1.3.x
+
+For migration information, refer to the xref:api-gateway/api-gateway-2.0-release-notes.adoc[API Gateway 2.0 release notes].

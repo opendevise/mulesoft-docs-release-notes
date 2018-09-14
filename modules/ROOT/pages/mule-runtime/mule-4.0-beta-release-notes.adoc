@@ -1,0 +1,69 @@
+= Mule Runtime 4.0 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: mule-4.0-beta-release-notes.adoc
+:keywords: mule, 4.0, runtime, release notes
+
+*June 26, 2017*
+
+Mule 4 beta evolves Mule 3 significantly to enable developers to accomplish common tasks in fewer steps, learn fewer concepts to be successful, simplify upgrades, and support for new web based tools, such as the https://docs.mulesoft.com/design-center/v/1.0/[Flow Designer] in Design Center.
+
+This initial release includes:
+
+* Simplified Event and Message Model.
+* DataWeave 2.0: the new Mule expression language.
+* Simplified Connectors and Modules Experience.
+* Simplified Error Handling and new Try Scope.
+* Transparent streaming of payloads.
+* Ability to enrich Events directly from connectors/modules.
+* Self tuning, non blocking execution engine.
+* Classloader Isolation for Mule runtime, Applications, and connectors.
+
+For a detailed overview of what’s new in Mule 4, please see the xref:4.1@mule4-runtime::mule-runtime-updates.adoc[What’s New in Mule 4 guide].
+
+== DataWeave 2.0 New Features
+
+The DataWeave language entirely replaces everything that Mule Expression Language does, as the default expression language in all Mule components. It has the following improvements over older versions of the language:
+
+* Importing of external modules with custom and specialized functions.
+* Block comments can be added over multiple lines.
+* Improved error messages with call values and stacktrace.
+* Type checking.
+* Type inference, which makes typing optional.
+* Various syntax changes.
+
+// See link:/mule4-user-guide/v/4.1/dataweave2-syntax-changes[DataWeave 2.0 Syntax Changes] for a full list of these changes.
+
+
+
+
+== Known Issues
+
+[%header,cols="20,80"]
+|===
+| Issue | Description
+| MULE-12958 | Test connectivity failure causes deployment failure
+| MULE-12935 | Live view for flow designer does not work correctly with <try>
+| MULE-12930 | No DataSense support for JMS
+| MULE-12884 | deleteAfterRetrieve only deletes half of the listed emails
+| MULE-12786 | File/FTP read and list should not receive a MediaType as parameter
+| MULE-12774 | Db connector bulk-insert operation throws a NPE when bulkInputParameters is null
+| MULE-12747 | @Query text does not allow for dynamic values.
+| MULE-12703 | Expression language does not suppot accessing system properties
+| MULE-12597 | HTTP proxy performance is slow
+| MULE-12526 | HTTP Listener source allows config-ref as optional
+| MULE-12430 | Scatter-gather router does not handle errors correctly and invokes error handler multiple times
+| MULE-12355 | OAuth operations are always executed in a blocking manner
+| MULE-12321 | When an app with OAuth Client Credentials doens't can connect at deployment it doesn't show the HTTP requester response as in 3.x
+| MULE-12284 | NPE when trying to serialize a MultiPartPayload
+| MULE-12263 | JMS Publish/consume operation should be non-blocking
+| MULE-11897 | When filter throws exception, the handler loses the reference to the filter
+| MULE-11484 | ParameterGroup's order are not populated automatically is a value was not configured manually
+| MULE-10878 | HTTP does not support multiple headers/query params (same name)
+| MULE-10375 | MuleArtifactClassLoader dispose fail
+| MULE-9196  |JAXBMarshallerTransformer fails to transform to byte array
+| MULE-9142  |Transformation service must always update message once payload has been consumed
+| EE-5531 |	Expression referencing an XML payload fails to resolve
+| EE-5393 |	Transform Message - Invalid property 'resource' of bean class
+|===

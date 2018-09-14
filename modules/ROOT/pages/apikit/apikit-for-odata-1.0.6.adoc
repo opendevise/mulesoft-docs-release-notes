@@ -1,0 +1,26 @@
+= APIkit for OData 1.0.6 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: apikit-for-odata-1.0.6.adoc
+
+December 26, 2017
+
+For Studio, this version is distributed as APIkit for OData Feature 1.0.2.
+
+== Compatibility
+
+* Mule 3.8.1+
+* APIkit 3.8.2+
+* Anypoint Studio 6.2.3+
+
+== Fixed in this Release
+
+* ODATA-7 Using maven, it's necessary to double-click "Mule > Generate OData" to generate the OData configuration.
+* ODATA-8 OData fails when getting a key value in Int64 format.
+* ODATA-9 Performance issue: OData is parsing the RAML definition on every request.
+
+== Links to Legacy OData Documentation
+
+* xref:studio/odata-extension-release-notes-101.adoc[OData Extension Studio Plugin 1.0.1 Release Notes]
+* xref:studio/odata-extension-studio-plugin-release-notes.adoc[OData Extension Studio Plugin 1.0.0 Release Notes]

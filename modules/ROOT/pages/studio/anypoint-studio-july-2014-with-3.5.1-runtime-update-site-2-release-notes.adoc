@@ -1,0 +1,66 @@
+= Anypoint Studio July 2014 with 3.5.1 Runtime - Update Site 2 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: anypoint-studio-july-2014-with-3.5.1-runtime-update-site-2-release-notes.adoc
+:keywords: release notes, anypoint studio
+
+July 31, 2014
+
+This July 31 2014 release is an update to the Studio July 2014 with 3.5.1 runtime, and complement the xref:studio/anypoint-studio-july-2014-with-3.5.1-runtime-release-notes.adoc[Anypoint Studio July 2014 with 3.5.1 Runtime Release Notes].
+
+== Current Release Versions
+
+[%header,cols="3*"]
+|===
+|
+| Enterprise Runtime
+| Community Runtime
+
+| ESB Runtime
+| n/a
+| n/a
+
+| Studio
+2+^| Version: July 2014 with 3.5.1 Runtime - Update Site 2 +
+Build Number:  201407311443
+
+| Management Console
+| n/a
+| n/a
+
+| Mule DevKit
+2+^| n/a
+
+|===
+
+
+== Improvements
+
+* Fixed a bug in Maven Support which caused the classpath not to be updated if the user edited the pom.xml file manually in some cases (STUDIO-5363).
+* Fixed a performance issue that would end up in the properties editor taking a long time to render.
+* Fixed metadata generation for some BAPIs that represented corner cases in SAP (field names with special characters).
+* Fixed a bug with the numberOfConsumers attribute in the ActiveMQ connector which would cause it to disappear.
+* Fixed an issue which would cause the General tab of the CXF element not to be drawn (STUDIO-5340).
+* Fixed a bug regarding Batch references or Flow references when the referencing element is in a file located in a different folder than the referenced element (STUDIO-5343) .
+* Fixed a bug regarding data mapping which would cause the pipe delimiter not to be respected if it was the original separator when providing an example (STUDIO-5337).
+* Fixed an issue with User defined Lookup Tables in DataMapper (STUDIO-5367)
+* Fixed an issue with BigDecimal precision in DataMapper that would cause it to default to 2 d.p. +
+
+
+== Migration Guide
+
+This section presents configuration considerations you may want to adjust when migrating from a previous version of a Mule runtime, or previous version of Studio. https://www.mulesoft.com/support-and-services/mule-esb-support-license-subscription[Contact MuleSoft Support] if you have a question about a specific migration activity or concern.
+
+To migrate from a previous version of Studio, use *Help > Check for Updates.*
+
+[TIP]
+====
+You can easily import all of the external components that you had installed in your old version of Anypoint Studio through a single action. This includes connectors, runtimes, and any other type of extension added through the Anypoint Exchange or the ​*Help -> Install new software*​ menu, as long as there are no compatibility restrictions.
+
+Do this by selecting *File->Import* and then choose *Install->From existing installation*.
+
+image::studio/import-extensions.png[import]
+
+Then specify the location of your old version of Anypoint Studio in your local drive.
+====

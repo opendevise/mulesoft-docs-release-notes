@@ -1,0 +1,44 @@
+= LDAP Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: ldap-connector-release-notes-mule-4.adoc
+:keywords: release notes, ldap, active directory, connector
+
+_Select_
+
+*November 2017*
+
+The Lightweight Directory Access Protocol (LDAP) is an open, vendor-neutral, industry standard application protocol for accessing and maintaining distributed directory information services over an Internet Protocol (IP) network. The LDAP connector allows Mule applications to interact with LDAP servers.
+
+== 3.0.0
+
+*November 18, 2017*
+
+Release notes for version 3.0.0 of the LDAP connector.
+
+=== Compatibility
+
+The LDAP Connector is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Application/Service|Version
+|Mule Runtime|4.0.0 and later
+|Java|1.8 and later
+|===
+
+=== Features
+
+* The LDAP connector is built with the new AnyPoint SDK (aka Extensions Framework) v1.0.0-rc-SNAPSHOT.
+
+=== Fixed in this Release
+
+* Fixed an exception when member ranges were used along schemaEnabled.
+  (P.S. : Member ranges are feature specific to Active Directory.)
+* Added support for custom trust store through Extended configuration parameters.
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

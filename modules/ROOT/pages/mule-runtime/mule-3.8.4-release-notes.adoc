@@ -1,0 +1,198 @@
+= Mule Runtime 3.8.4 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: mule-3.8.4-release-notes.adoc
+:keywords: mule, 3.8.4, runtime, release notes
+
+*March 31, 2017*
+
+Mule Runtime 3.8.4 includes API Gateway enhancements, bug fixes, and a library change.
+
+Key enhancements are:
+
+* Two new block definitions on the policies are defined: After and Before exception blocks.
++
+Similar to the functionality of HTTP after and before blocks, these blocks enhance the catch exception strategy of a flow without the need to modify it.
++
+* Increased security by upgrading Gatekeeper to v2.0.
++
+The enhancements include cluster support with improved performance, zero security gaps while the feature is in active mode, and small improvements in runtime startup when the feature is in active mode. Several corner cases have been fixed.
++
+* XML threat protection policy now can protect also against XXe attacks.
++
+* Various security risks related to policies not being correctly applied in particular scenarios addressed.
++
+* Performance improvements.
+
+
+== Supported Software
+
+Mule was tested on the following software:
+
+// updated per DOCS 1749 https://github.com/mulesoft/mulesoft-docs/commit/4bd356c8f2cc5d0952ee99622c0c7f0b360455df
+
+[%header,cols="15a,85a"]
+|===
+|Software |Version
+|JDK |JRE 1.7.0, JRE 1.8.0 (Recommended JRE 1.8.0_91/92)
+|OS |MacOS 10.11.4, HP-UX 11i V3, AIX 7.2, Windows 2012 R2 Server, Windows 8.1, Solaris 11.3, RHEL 7, Ubuntu Server 15.04
+|Application Servers |Tomcat 7 and 8, WebLogic 12c, WebSphere 8, WildFly 8 and 9, Jetty 8 and 9
+|Databases |Oracle 11g, Oracle 12c, MySQL 5.5+, IBM DB2 10, PostgreSQL 9, Derby 10, Microsoft SQL Server 2014
+|===
+
+The unified Mule Runtime 3.8.4 and API Gateway is compatible with APIkit 3.8.4.
+
+== Bundled Runtime Manager Agent
+
+This version of Mule runtime comes bundled with the Runtime Manager Agent plugin version 1.6.4.
+
+See xref:runtime-manager-agent/runtime-manager-agent-release-notes.adoc[Runtime Manager Agent Release Notes].
+
+
+== DataWeave Language Improvements
+
+* Now DataWeave can process input files of any size. Previously the limit was 2GB.
+* Improved CSV performance for small files
+* Added XML writer option to omit header
+* Added another option to specify how missing values are shown with flatfile/copybook output
+* Allow trimming a field as per its definition in flatfile
+* Changes to support another fill character configuration of '0' to zero-fill text numeric values but space-fill alphas in flatfile
+* Added option for truncating output values that are too long for field rather than generating an error in flatfile
+
+== DataWeave Language Bug Fixes
+
+* Fixed temporary files leak when accessing flow vars
+* Fixed output encoding in the message
+* Now XmlStreamReaders are not consumed with the MEL `dw()` function
+* Fixed data-weave not picking up the correct properties file with `p()` function
+* Coercion from number to string now doesn't lose precision
+* DW now fully supports ISO-8601 format
+* XML Indexed reader now supports escaped XML characters
+
+== Enhancements
+[%header,cols="15a,85a"]
+|===
+|Issue |Description
+| AGW-1106 | Add before-exception and after-exception injection points.
+|===
+
+== Fixed issues
+
+[%header,cols="15a,85a"]
+|===
+|Issue |Description
+| EE-5313 | Batch block size cannot be set as a context property
+| EE-5308 | Use of Round Robin with IIS results in invalid session token
+| EE-5297 | WMQ connector doesn't use endpoint attributes
+| EE-5282 | BatchRecordDispatcherDelegate does not catch RejectedExecutionException
+| EE-5250 | Resuming batchjob that finished all batch steps (send to on complete)
+| EE-5195 | Create new BatchTransactionContextFactory each time the DefaultBatchEngine is started
+| EE-5055 | Batch should auto stop job instances when queues are corrupted
+| MULE-11949 | OAuth: token refresh overrides payload when resending request
+| MULE-11918 | Credentials are shown in generic db connection when an exception is raised
+| MULE-11914 | Email transport does not invoke exception strategy when flow processing strategy is synchronous
+| MULE-11891 | NotPermittedException in http sends status 405 (method not allowed) instead of 403 (forbidden)
+| MULE-11879 | Mule does not recognize zip file as deployment units if extension is not in lowercase
+| MULE-11877 | Wrong description for org.mule.transport.sftp.getLastModifiedTime()
+| MULE-11875 | Race condition when putting an object in the registry asynchronously and disposing the muleContext at the same time
+| MULE-11865 | Sftp endpoints does not preserve session serialized variables
+| MULE-11850 | Paths for processors in dynamically referenced subflows are not recalculated
+| MULE-11829 | VM Receiver process message read from queue and does not process further message till the previous processing has ended
+| MULE-11828 | Wrapper does not log boot error before stopping wrapped JVM in WARN loglevel
+| MULE-11766 | DefaultExtensionManager's method attemptToCreateImplicitConfigurationInstance should be synchronized
+| MULE-11635 | No reconnection attempt in case of LDAP communication error
+| MULE-11598 | HTTP Listener error responses don't include content-length nor last chunk
+| MULE-11549 | VM does not manage retrieval and storage of session and loses variables when session is serialized or encoded.
+| MULE-11539 | No content response includes Transfer-Encoding header
+| MULE-11535 | HTTP transport returns 500 instead of 400 when URL isn't correctly encoded
+| MULE-11534 | XmlMetaDataFieldFactory returns empty field list for element with complexType/any
+| MULE-11532 | JsonTransformerResolver doesn't reuse transformers when there are more than one
+| MULE-11510 | Nodes coming xpath3 functions output do not work with Xquery-transformer
+| MULE-11498 | SFTP connector uses a period for listing and some implementations don't support it
+| MULE-11497 | Encoding is ignored account in SFTP endpoint
+| MULE-11488 | XmlToXMLStreamReader does not support ByteArrayOutputStream as source type
+| MULE-11479 | HTTP requester ignores socket properties connect timeout
+| MULE-11455 | JMS connector doesn't allow subclasses to change send() parameters
+| MULE-11382 | Fix: after until successful flow variables loses mime type
+| MULE-11381 | Bring ASM fix from SPR-13695 into Mule
+| MULE-11369 | Exception behavior for XML vulnerabilities is inconsistent
+| MULE-11358 | Path Element is not correctly created for elements after a MessageFilter
+| MULE-11337 | Listener sends error response when connection is closed
+| MULE-11333 | Fix: In Message Enricher a double copy is made and changes are lost after handling exception
+| MULE-11323 | Fix: A more declarative exception message has to be added to unsupported methods in DefaultMessageCollection
+| MULE-11302 | Default XML Transformer factory does nor support StAXSource
+| MULE-11300 | File outbound ignoring encoding attribute
+| MULE-11298 | Fix: wsconsumer ignores proxy when retrieving wsdl in initialization phase
+| MULE-11286 | Fix: avoid verification of timestamp action matching in request and response of a soap service.
+| MULE-11282 | Fix: QuartzMessageReceiver handles the stop message by default and does not stop current scheduled jobs.
+| MULE-11274 | MVEL optimizer does not refresh when the payload type changes
+| MULE-11271 | Fix: Multiple Quartz connectors register quartz scheduler with the same name.
+| MULE-11266 | Fix: Text file object store does not update persistent file stored record according to expiration policy.
+| MULE-11240 | Apply changes from CXF-7162 (Inconsistent reading of formatted XML when validating schema)
+| MULE-11206 | Prevent possible hash collision attacks in Java 7
+| MULE-11204 | Memory leak on mule db module on high load scenario when streaming is enabled
+| MULE-11147 | Retry HTTP requests where connection has become stale since obtaining it from connection pool
+| MULE-11145 | Apply Processors to Custom Validators
+| MULE-11125 | XMLInputFactory allows inline DTDs by default
+| MULE-11124 | content-type set in HTTP request builder should not be case sensitive
+| MULE-11118 | Return a 5xx response when thread pool is exhausted instead of ignoring the request
+| MULE-10996 | Content-Length header case conflicts with streaming
+| MULE-10995 | Negative threadWaitTimeout used with SEDA processing strategy fails rather than waiting forever to enqueue.
+| MULE-10975 | AbstractAggregator eventGroups object store ignores the object store configuration in the registry
+| MULE-9039 | NPE when doing multiple http outbound calls.
+| MULE-8777 | HttpMapParam expects multiple values in ParameterMap but ParameterMap only returns one
+| MULE-6331 | Client so_timeout is replaced by responseTimeout
+| MULE-11970 | Update of logs which are indirectly causing a deadlock condition
+| MULE-11940 | Fix: For each collection doesn't work with iterator.
+| MULE-11924 | After multiform request, Mule Message has an invalid data type.
+| MULE-11903 | Fix: Http requester can't handle large headers.
+| MULE-11869 | Default Reconnect Strategy is ignored in DB Config.
+| MULE-11835 | RSS parser isn't parsing elements with namespaces.
+| MULE-11665 | Fix: Memory Leak in Custom Agreggator.
+| MULE-11571 | Add support for the WITH clause in the DB module
+| MULE-11416 | WS Consumer Module: Should use Mule TLS implementation to read the Remote WSDL instead of using the Java classes directly
+| MULE-11293 | Fix: Session property disappearing after dispatchEvent()
+| MULE-11281 | Fix: SFTP Inbound Endpoint doesn't set the MimeType
+| MULE-11273 | ER: When a null value is passed to a request query param, it should be removed.
+| MULE-11203 | Add Error Message about not supported Asynchronous Retry Policies in DB Connection.
+| MULE-11191 | Fix: FTP reconnect Notifier is not working
+| MULE-11185 | Fix: sftpclient unable to validate duplicate files for relative paths involving ~ symbol
+| MULE-11161 | Update the cipher block used in PGP encryption
+| MULE-11159 | Fix: FileToString Transform is not able to process incoming message payload retrieved from file connector when streaming attribute is set to false.
+| MULE-11138 | Make easier to work with UDT on DB connector
+| MULE-11110 | Fix: fileAge of Connector is replaced by fileAge of endpoint
+| MULE-11080 | Add support to auto convert Strings to CLOB values
+| MULE-11079 | Fix: Set Payload doesn't work correctly with special characters in a variable value.
+| MULE-11022 | Http Conflicts with Wildcard in the middle of the path.
+| MULE-11008 | Fix: JsonData doesn't have to implement Serializable
+| MULE-10986 | Fix conflict Similar HTTP Listener Path with Wildcards
+| MULE-10979 | Remove System Properties Configuration
+| AGW-1014 | When trying to track an API and return code is not 200, policies of that API are deleted.
+| AGW-982 | NullPointerException when unapplying policy in cluster with Log4j in DEBUG mode
+| AGW-978 | When invalid proxy settings are provided, policies based on clients, do not work.
+| AGW-977 | When bad organization credentials are provided, policies based on clients, do not work.
+| AGW-936 | Small insecurity window when deploying app with Gatekeeper enabled.
+| AGW-920 | XML Threat Protection Policy does not prevent XXE attack.
+| AGW-687 | PingFederate policy is not using proxy settings by default.
+|===
+
+== Library Changes
+
+[%header,cols="15a,85a"]
+|===
+|Issue |Description
+| MULE-11983 | Upgrade JSCH to version 0.154
+| MULE-11366 | Upgrade Mockito version
+| MULE-11326 | Update JUnit to 4.12 and disable timeout when debugging
+| MULE-11262 | Update commons-net to 3.5
+|===
+
+== Migration Guide
+
+[%header,cols="15a,85a"]
+|===
+|Issue |Description
+| MULE-10979 | The default response timeout and default transaction timeout can't be configured using system properties on the command line or in the wrapper.conf file anymore. In replacement, use the configuration element. For example: <configuration defaultResponseTimeout="20000" defaultTransactionTimeout="40000"/>.
+| MULE-11118 | The HTTP listener now replies with status code 503 when the thread pool is exhausted (and poolExhaustedAction="ABORT") instead of closing the socket.
+|===

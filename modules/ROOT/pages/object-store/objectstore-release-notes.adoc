@@ -1,0 +1,14 @@
+= Object Store Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: objectstore-release-notes.adoc
+:keywords: object, store, object store, release notes
+
+The object store provides temporary storage for application data.
+
+The following release notes are provided for object store:
+
+* xref:connector/object-store-connector-release-notes.adoc[Object Store Connector for Design Center Release Notes]
+* xref:connector/objectstore-connector-release-notes.adoc[Object Store Connector for Mule 3 Release Notes]
+* xref:object-store/anypoint-osv2-release-notes.adoc[Object Store Connector v2 Release Notes]

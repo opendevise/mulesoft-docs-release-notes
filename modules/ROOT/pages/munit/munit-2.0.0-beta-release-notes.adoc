@@ -1,0 +1,273 @@
+= MUnit 2.0.0 Beta Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: munit-2.0.0-beta-release-notes.adoc
+:keywords: munit, 2.0.0, release notes
+
+We are happy to announce the new release of MUnit version 2.0.0-BETA. +
+This new release provides:
+
+* Simplified syntax
+* New Assertion DSL
+* Support for testing Mule 4 applications
+** Simpler error handling
+** Support for compatibility mode
+* Leverage use of new embedded container
+* Tags for test [new feature]
+* Cleaner Maven Integration
+* Improved Maven summary report
+* Leverage use of new mule-maven-plugin
+
+
+== Hardware and Software Requirements
+
+* Microsoft Windows 8 +
+* Apple Mac OS X 10.10 +
+* Linux (tested on Ubuntu 15)
+* Java 8
+* Maven 3.3.3, 3.3.9
+
+== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule | Mule 4.0.0-BETA
+|Anypoint Studio | Anypoint Studio 7.0.0-BETA
+|===
+
+== Features and Functionality
+
+=== Anypoint Studio Plugin
+
+There are no new features in this release
+
+=== MUnit Runtime
+
+MUnit 2.0 is the next major version of MUnit built for Mule 4.
+
+It features an easier to use DSL, and integration with Mule 4's major new capabilities. It leverages new Mule 4’s mechanisms ensuring that integration with Mule 4 will run smoothly now and for any upcoming releases.
+
+We have a brand new feature call Tags. You can now “tag” each and every single MUnit test you code. The tag works as a transversal grouping of test across all your Test Suites, offering a new way to organize your test. You can also have them run by these tags allowing you to tune your CICD times and grouping your tests, for instance, in nightly test, smoke test, full regression, etc.
+
+== Bug Fixes
+
+* MU-854 - Improve message for ExpectedErrorType mismatch
+* MU-948 - Fix munit-extension unit test
+* MU-954 - Remove embedded-impl dependency
+* MU-961 - mock-when without then-return should return same event
+* MU-997 - Create extension model for MUnit DSL
+* MU-1001 - Enable/Disable sources not work as expected
+* MU-1005 - MimeType and Encoding parameters should be optional
+* MU-1021 - Despite Before suite failing, tests are being run
+* MU-1022 - Assertion Errors are being notified as Errors and not failures
+* MU-1035 - Fix extension model to be correctly serialized
+* MU-1036 - Review expect failure integration tests
+* MU-1040 - Assertion errors on before/after test/suite are being notified as error instead of failure
+* MU-1041 - Re enable validateAssertionErrorGetPropagatedEvenWithErrorHandler
+* MU-1042 - Fix failure expectations tests
+* MU-1043 - Fix set event IT tests
+* MU-1044 - Re enable http extension IT
+* MU-1045 - ContainerFactory fails when log4j config is not present
+* MU-1046 - Cannot assert with exported exceptions from SDK connectors
+* MU-1048 - Apps with parent pom fails while deploying
+* MU-1051 - Fix mule-app-properties.xml & spring-util-test.xml IT
+* MU-1054 - Mocking flow/subflow is not working
+* MU-1056 - Variables are being lost when a mock is used
+* MU-1058 - Test fail when asserting null charset
+* MU-1059 - Not able to define old message elements inside mock
+* MU-1060 - Change MunitProcessorInterceptor to adapt to to new API
+* MU-1062 - If the payload is not defined, the mock set it as NullObject
+* MU-1064 - Unable to filter tests by name from Maven Plugin
+* MU-1066 - Cannot run test in Windows
+* MU-1069 - Set event processor does not create event error properly
+* MU-1070 - Do not force order of elements in event SDK
+* MU-1071 - Avoid trying to run coverage in M1
+* MU-1072 - Implement attachment I/O for mock-when processor
+* MU-1078 - Fix mel-evaluation-test.xml
+* MU-1079 - Workaround ESB memory leak
+* MU-1091 - Remove references to coverage in munit-maven plugin
+* MU-1093 - Update commons-lang library
+* MU-1094 - Unexpected Error is thrown when running integration tests in Windows
+* MU-1100 - Send container type to the embedded container factory
+* MUSP-343 - Remove error marker from the munit:config tag
+* MUSP-365 - src/test/munit need to be a source folder
+* MUSP-366 - Not displaying all projects when creating test if focus on XML view
+* MUSP-373 - Keep Order from schema when modifying xml
+* MUSP-387 - Run fail on MUnit end up in an error does not stop UI server
+* MUSP-390 - Update MUnit dependencies added to the pom
+* MUSP-398 - Remove MunitClasspathVerifier
+* MUSP-399 - Refactor org.mule.tooling.ui.contribution.munit.MunitFirstTimeDetector
+* MUSP-413 - Upgrade mule runtime is shown every time munit test suite is created
+* MUSP-416 - Update editors so Mock MPs appear in Setup section of Test
+* MUSP-417 - Validate test context menus
+* MUSP-428 - Configuration files with MUnit namespace are shown with MUnit icon
+* MUSP-456 - Copy StackTrace context menu appearing in successful tests
+* MUSP-470 - Generated Editors XML Order does not follow extension order when serializing
+* MUSP-471 - Point plugin to 2.0.0-BETA-SNAPSHOT
+* MUSP-472 - Cannot run MUnit in Windows
+* MUSP-473 - Update Runner View to manage new Suite Paths
+* MUSP-475 - Test editor is not mapped with latest dsl changes for expected exception
+* MUSP-478 - MUnit modules sometimes don't appear in palette when editing Suite
+* MUSP-479 - Improve handling of error when MUnit Module is not loaded before creating test in suite
+* MUSP-480 - Add Memory leak WA in studio
+* MUSP-485 - MUnit configuration not serializing flow list
+* MUSP-488 - Re run failed just execute the first failed suite
+* MUSP-489 - Send container type to RemoteRunner
+* MUSP-494 - Disable Scaffolding preferences
+* MUSP-502 - Not able to create suite when design view is empty
+
+== Tasks
+
+* MU-760 - Validate Mocks
+* MU-761 - Validate Domain Support
+* MU-792 - Validate error handle component on munit tests
+* MU-797 - Remove devkit support from munit poms
+* MU-800 - Clean MUnit pom files
+* MU-811 - Validate spring:import inside Tests
+* MU-831 - Move Assert QA IT into munit project
+* MU-838 - Extract CustomAssertion in a separate dependency
+* MU-893 - Remove Munit extension as runner dependency
+* MU-960 - Re-enable tests with flow-ref
+* MU-980 - Remove log4j dependencies from munit-remote
+* MU-1004 - Analyse if we want to support expressions for our POJO fields
+* MU-1015 - Move Set Event QA IT into munit project
+* MU-1016 - Move matchers QA IT into munit project
+* MU-1017 - Move mock QA IT into munit project
+* MU-1025 - Migrate DSL from munit-ext to munit-tools
+* MU-1026 - Analyse if we can have an empty test
+* MU-1030 - Tag IT on runtime
+* MU-1034 - Check munit-tools failWithMessage test case
+* MU-1096 - Change MUnit M1 to BETA
+* MU-1098 - Define changes in the documentation
+* MU-1103 - Run regression for BETA release
+* MU-1104 - Release runtime BETA
+* MU-1138 - Run regression with Mule 4.0.0-BETA.4
+* MUSP-380 - Remove workaround that deletes jruby-core from m2
+* MUSP-382 - Update license headers
+* MUSP-384 - Validate top level elements from SDK
+* MUSP-393 - Configure formatter in studio code
+* MUSP-414 - Remove common and visitors package
+* MUSP-415 - Validate MUnit editors can be contributed with the hardcoded extension model
+* MUSP-422 - Update munit-extension to munit-tools dependency
+* MUSP-441 - Validate test wizards
+* MUSP-442 - Validate internal repo
+* MUSP-443 - Validate pom population for MUnit dependencies
+* MUSP-444 - Validate canvas and palette
+* MUSP-445 - Validate Xml serialization
+* MUSP-446 - Validate tests runs
+* MUSP-447 - Validate test runner view
+* MUSP-448 - Validate editors and context menus
+* MUSP-449 - Validate import/export apps containing munit
+* MUSP-492 - Validate Studio packaged Embedded Container EE dependencies
+* MUSP-496 - Release plugin BETA
+
+== Enhancements
+
+* MU-229 - Add test grouping concept
+* MU-635 - Deprecate usage of the Interceptor Module
+* MU-650 - Combine the When and the throw-an message processor into one
+* MU-684 - Change name of MUnit config attribtues
+* MU-710 - Update Integration test due to change in default EL
+* MU-722 - Deprecate MUnit Java API
+* MU-754 - Create EL functions for hamcrest Matchers
+* MU-809 - Create munit-runtime bom
+* MU-858 - Add Maven support for test tagging
+* MU-861 - Improve summarizing tests results code
+* MU-866 - Make MUnit a mule-plugin
+* MU-867 - Merge setEvent and ThenReturn Models in EventModel
+* MU-871 - Merge Anthony back to Ant-man
+* MU-873 - Implement MuleEvent Builder
+* MU-877 - Make MUnitFlow to wait for all sync task to finish
+* MU-886 - Make Verify attributes to support expressions when done with SDK
+* MU-891 - Migrate Mock When and Verifiy to SDK
+* MU-901 - Implement Throw an exception
+* MU-902 - Register MUnit Interception API properly
+* MU-903 - Create MunitInterceptorProcessor through ProcessorInterceptorFactory
+* MU-907 - Implement Embebed mode API
+* MU-910 - Finish implementing set event processor with the mule builder
+* MU-911 - Re implement setEvent as part of the Munit extension
+* MU-913 - Add logs to show the classpath used to run munit
+* MU-924 - Create new MUnit Plugin Server Protocol
+* MU-925 - Remove context creation code from the runnner
+* MU-926 - Finish Embedded PoC
+* MU-933 - RemoteRunner should receive mule-runtime version as parameter
+* MU-935 - Activate logs when running MUnit
+* MU-943 - Move munit test DSL to munit-runner module
+* MU-944 - Refactor MOJO/RemoteRunner-Cli Interface impl
+* MU-947 - Use same protocol Between (Maven|Studio), RemoteRunner and MUnitServer
+* MU-967 - Refactor Processor manager and ProcessorCallAction hierarchie
+* MU-968 - Notify number of tests when notifying the start of a suite
+* MU-971 - Make MUnit Run from target folder
+* MU-984 - Refactor Suite Logic
+* MU-985 - Refactor org.mule.munit.remote.RemoteRunnerTest
+* MU-986 - Create test for FlowRunner
+* MU-988 - Use container thread pool to start RunnerServer
+* MU-989 - Create IT for async
+* MU-990 - Provide support to shutdown message sources
+* MU-994 - Send host to org.mule.munit.remote.notifiers.SocketNotifier
+* MU-999 - Leverage embedded container application structure
+* MU-1000 - Inject MunitModule to Test
+* MU-1002 - Define field order in MUnit MPs with SDK annotations
+* MU-1003 - Change MUnit Extension name, and add prefix
+* MU-1006 - Change munit:config dsl to match extension model capabilities
+* MU-1008 - Test module org.mule.runner.model
+* MU-1009 - Test package org.mule.munit.common.model
+* MU-1010 - Test package org.mule.munit
+* MU-1011 - Test package org.mule.munit.extension.assertion
+* MU-1020 - Handle Unknown code notifications
+* MU-1023 - Send pom location inside target not from root folder
+* MU-1024 - Suite should not be run if there are no tests to be run
+* MU-1027 - Redefine MUnit Test DSL
+* MU-1029 - Use camel case for mojo properties
+* MU-1039 - Allow only one before/after suite/test scope per config file
+* MU-1052 - Update mule-plugin.json with required tooling client feature to load extension model
+* MU-1061 - Trim spaces when comparing tags attributes
+* MU-1082 - Send suite relative paths to RemoteRunner
+* MU-1087 - Remove resultOfScript melFunction
+* MUSP-38 - Add canvas support for test tagging
+* MUSP-327 - Listen for connector third party libraries event
+* MUSP-330 - Reformat MUnit bundle structure
+* MUSP-336 - Re enable features related missing DSL components * error handling
+* MUSP-347 - Update Serialiser to reflect new set event processor
+* MUSP-368 - Add Studio support for test tagging
+* MUSP-371 - Contribute MUnit to the new Studio palette
+* MUSP-372 - Force MUnit into al new created project
+* MUSP-381 - Use Studio api to obtain mule-application.json model
+* MUSP-383 - Refactor RunStatus notification handling
+* MUSP-386 - Remove MUnit Utils update site
+* MUSP-388 - Remove assert and mock schema from munit XML template
+* MUSP-389 - Remove test resources section from the pom
+* MUSP-391 - Send log4j2 config file location to RemoteRunner
+* MUSP-392 - Place tag images on the bottom of a test
+* MUSP-396 - Create feature to load mule-application.json
+* MUSP-397 - Refactor getAllMunitTestSuitesConfigurations
+* MUSP-401 - Remove unnecessary custom editors
+* MUSP-402 - Bundle MUnit Scaffolder into contribution
+* MUSP-403 - Obtain gson from orbit
+* MUSP-404 - Remove syncrhonize contribution from plugin
+* MUSP-405 - Listen to number of tests notification to update UI
+* MUSP-407 - Remove MunitRuntimeClasspathContainerPage
+* MUSP-408 - Refactor util classes
+* MUSP-409 - Make MUnit run from target
+* MUSP-421 - Update Studio CLI client to run MUnit
+* MUSP-424 - Implement new Test custom editor and
+* MUSP-426 - Handle notifications when no tests were run similar to Maven
+* MUSP-430 - Trim spaces when showing tags in canvas
+* MUSP-431 - Provide MUnit dependencies through org.mule.tooling.core.m2repository
+* MUSP-435 - Maven plugin should have muleVersion referencing app.runtime property
+* MUSP-437 - Temporarily set runCoverage to false when generating pom
+* MUSP-450 - Create Coverage deactivation
+* MUSP-451 - Deactivate Debug MUnit option
+* MUSP-459 - Update munit config editor with new changes on the dsl
+* MUSP-460 - Generate application structure to run munit
+* MUSP-461 - Improve packaging phase performance before running tests
+* MUSP-462 - Make coverage tab be disable by default
+* MUSP-474 - Add expected error type field on test editor
+* MUSP-500 - Make Runner View relative to Outline since Connections Explorer is gone
+
+== Support
+
+* Access http://forums.mulesoft.com/[MuleSoft’s Forum] to pose questions and get help from Mule’s broad community of users.
+* To access MuleSoft’s expert support team https://www.mulesoft.com/support-and-services/mule-esb-support-license-subscription[subscribe to Mule ESB Enterprise] and log in to MuleSoft’s http://www.mulesoft.com/support-login[Customer Portal].

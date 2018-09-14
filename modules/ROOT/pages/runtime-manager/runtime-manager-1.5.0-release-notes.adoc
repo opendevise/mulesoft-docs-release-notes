@@ -1,0 +1,58 @@
+= Runtime Manager 1.5.0 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: runtime-manager-1.5.0-release-notes.adoc
+:keywords: arm, runtime manager, release notes
+
+The Anypoint Runtime Manager, V1.5, release that includes new functionality such as monitoring dashboards with alerts, troubleshooting tools (insight), enhancements and bug fixes.
+
+
+== Hardware and Software Requirements
+
+No change.
+
+== Compatibility
+
+
+Agent plugins integrations is compatible with the following runtime versions:
+
+[cols="2*a"]
+|===
+|Mule | 3.6.x and above.
+|Availability | Cloud only.
+|API GateWay | 2.x and above for API Analytics
+|Runtime Manager Agent | xref:runtime-manager-agent/runtime-manager-agent-1.5.0-release-notes.adoc[1.5.0 and above for Insight and Dashboards]
+|===
+
+
+== Features and Functionality
+
+
+* *Monitoring Dashboards & Alerts*: Users who deploy their apps on servers now have the ability to monitor the performance and health of the integration applications, API proxies, servers, server groups, and clusters via xref:runtime-manager::monitoring-dashboards.adoc[dashboards] or xref:runtime-manager::alerts-on-runtime-manager.adoc[alerts], within the Anypoint Platform (xref:runtime-manager-agent/runtime-manager-agent-1.5.0-release-notes.adoc[1.5.0 Runtime Manager Agent] and above is required).
+
+* *Insight for Hybrid*: xref:runtime-manager::insight.adoc[Insight] gives users the ability to troubleshoot their applications for performance and health related issues at a granular level, thus enabling users to determine the root cause of an issue quickly and efficiently. Users who need this feature will need to request access, please contact your customer success representative (xref:runtime-manager-agent/runtime-manager-agent-1.5.0-release-notes.adoc[1.5.0 Runtime Manager Agent] and above is required).
+
+* *MMC to ARM Migration Scripts*: Existing xref:3.8@mule-management-console::index.adoc[MMC users] can now migrate to Runtime Manager.  The documentation & scripts to facilitate this process are available in the Download section of the Support Center.
+
+
+
+== Deprecated Features or Functionality
+
+None.
+
+== Resolved Issues
+
+* *SE-3766*: ARM alert emails do not render HTML code correctly.
+* *SE-3676*: Start/Stop Application buttons via ARM without permissions returned an unspecific error message.
+* *SE-3786*: Can’t remove servers or applications from ARM because of some inconsistencies.
+* *SE-3687*: Servers informed DISCONNECTED status while RUNNING because of timeout issues.
+* *CHHYBRID-1428*: When a server group or cluster is deleted, any alerts associated with it need to be removed at the same time. If the Alerts aren’t deleted, they will NOT be triggered.
+* *CHHYBRID-1737*: Application with the same names deployed on different servers do not have a clear distinction while setting up alerts.
+
+
+== Migration Guidance
+
+No migration required.
+
+== Known Issues

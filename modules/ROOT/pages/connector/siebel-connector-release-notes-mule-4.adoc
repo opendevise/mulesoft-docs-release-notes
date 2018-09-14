@@ -1,0 +1,40 @@
+= Siebel Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: siebel-connector-release-notes-mule-4.adoc
+:keywords: release notes, siebel, connector
+
+*November 2017*
+
+The Anypoint Connector for Siebel allows you to create connections to Oracle's Siebel customer relationship manager (CRM) from a Mule application.
+
+The connector is comprised of three modules, conglomerated into a single connector which connects to these Siebel objects:
+
+* Oracle Siebel Business Objects: Create, update, upsert, query, and delete Siebel business components.
+* Oracle Siebel Integration Objects: Create, update, upsert, query, delete, query page, execute, and synchronize Siebel integration objects.
+* Oracle Siebel Business Services: Execute Siebel business services.
+
+== 4.0.0
+
+*November 18, 2017*
+
+=== Compatibility
+
+Siebel connector 4.0.0 is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Application/Service | Version
+|Mule Runtime | 4.0.0 and later
+|Siebel |8.1 and later
+|===
+
+=== Features
+
+This connector now is a conglomerate of the previous 3 modules (Oracle Siebel Business Objects, Oracle Siebel Integration Objects, Oracle Siebel Business Services).
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

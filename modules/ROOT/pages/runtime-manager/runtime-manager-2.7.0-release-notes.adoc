@@ -1,0 +1,57 @@
+= Runtime Manager v2.7.0 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: runtime-manager-2.7.0-release-notes.adoc
+:keywords: arm, runtime manager, release notes
+
+**January 13, 2018**
+
+This release contains the following enhancements:
+
+[cols="2*a"]
+|===
+| Enhancement | Description
+| Schedule Management for Server Groups and Clusters | Runtime Manager enables you to view and control polling elements on applications deployed to a Server Group or Cluster. See xref:runtime-manager::hybrid-schedule-mgmt.adoc[About Schedule Management (Hybrid)] for more information.
+| Mule 4 GA support | This release provides support for the Mule 4 GA release.
+|===
+
+
+== Hardware and Software Requirements
+
+To use Runtime Manager to specify a cluster IP and port in hybrid deployment scenarios, you must be running Mule runtime, version 3.8.5 or greater.
+
+== Compatibility
+
+Mule Agent plugin integration is compatible with the following component versions:
+
+[cols="2*a"]
+|===
+|Availability | Cloud only
+|Mule Agent Plugin | Version 1.9.0 or later is required for all new features.
+|Mule | 3.9.0 and later.
+|API Gateway | 2.x and above for API Analytics
+|===
+
+== Fixed Issues
+
+The following issues were fixed in this release:
+
+**TBD**
+
+== Known Issues
+
+**TBD**
+
+
+== Deprecated Features or Functionality
+
+No change.
+
+== Migration
+
+No change.
+
+== Support
+
+No change.

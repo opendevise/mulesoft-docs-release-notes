@@ -1,0 +1,30 @@
+= Anypoint Connector DevKit Studio Plugin Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: anypoint-connector-devkit-studio-plugin-release-notes.adoc
+:keywords: devkit plugin, release notes, connector, ctf
+
+== Anypoint Connector DevKit Studio Plugin Version 1.1.5
+
+Move DevKit dependencies and generation to version 3.9.0
+
+== Anypoint Connector DevKit Studio Plugin Version 1.1.4
+
+Move DevKit dependencies and generation to version 3.8.2
+
+== Anypoint Connector DevKit Studio Plugin Version 1.1.3
+
+Move DevKit dependencies and generation to version 3.8.1
+
+== Anypoint Connector DevKit Studio Plugin Version 1.1.2
+
+Move DevKit dependencies and generation to version 3.8.0
+
+== Anypoint Connector DevKit Studio Plugin Version 1.1.1
+
+* xref:connector-devkit/anypoint-connector-devkit-studio-plugin-1.1.1-release-notes.adoc[Anypoint Connector DevKit Studio Plugin 1.1.1 Release Notes]
+
+== See Also
+
+xref:3.8@connector-devkit::index.adoc[Anypoint Connector DevKit]

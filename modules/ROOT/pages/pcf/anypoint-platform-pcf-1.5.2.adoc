@@ -1,0 +1,42 @@
+= Anypoint Platform for Pivotal Cloud Foundry 1.5.2 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: anypoint-platform-pcf-1.5.2.adoc
+
+The Anypoint Platform for PCF solution is a fully integrated solution that enables organizations to design, develop, deploy, manage and operate APIs, connectivity apps and microservices within the fully automated and transparent infrastructure provided by  https://pivotal.io/platform[Pivotal Cloud Foundry]. The different deployment scenarios that Runtime Manager supports are described in detail here: xref:runtime-manager::deployment-strategies.adoc[Deployment Strategies].
+
+== System Requirements
+
+See xref:1.5@anypoint-platform-pcf::pcf-system-requirements.adoc[About Software Requirements for Anypoint Platform for PCF] for specific software requirements.
+
+See xref:1.5@private-cloud::system-requirements.adoc[About Minimum System Requirements] for information about minimum system requirements for Anypoint Platform Privte Cloud Edition.
+
+== Compatibility
+
+This version of Anypoint Platform for PCF is compatible with the following:
+
+[%header%autowidth.spread]
+|===
+|Component |Version
+|Mule Runtime |3.8.1 and later
+|Pivotal Cloud Foundry |1.7.x, 1.8.x, 1.9.x, 1.10.x
+|===
+
+== New Features
+
+This release includes the following new feature:
+
+* **PCF Metrics**: enables you to specify usage limits for development, production and staging environments from Ops Manager. Using PCF Metrics, you can also collect and view usage metrics for Mule applications running on PCF.
+
+== Fixed Issues
+
+* Fixed issue where PCF apps are appearing as servers
+* Fixed issue to enable hybrid to skip SSL for self signed certs and communicate with cloudmanager in PCF
+
+== Known Issues
+
+[%header%autowidth.spread]
+|===
+| AOP-1056 | Configured plugins might not be listed when PCF is enabled |
+|===

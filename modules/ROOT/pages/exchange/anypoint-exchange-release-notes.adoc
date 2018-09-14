@@ -1,0 +1,439 @@
+= Anypoint Exchange Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: anypoint-exchange-release-notes.adoc
+:keywords: release notes, exchange
+
+*April 2018*
+
+== 2.2.1
+
+*April 2018*
+
+We are pleased to announce the general availability of the latest release of Anypoint Exchange. This release provides structured and flexible mechanisms to enable precise searching and categorization of assets, content in EU region, and many product improvements.
+
+=== New Features
+
+* Managed categories to allow Exchange administrators and Organizations owners to create categories and group Exchange assets.
+* Exchange contributors can now organize assets into different groups to improve asset browsing and discovery.
+* Custom fields allow Exchange administrators and contributors to extend existing asset metadata.
+* Ability to reorder pages on asset detail page.
+* Public content including Anypoint Connectors, Templates, and Examples is now available in Exchange EU.
+
+=== Fixed in This Release
+
+* Add not null constraint to tag_type in asset_manager.asset_tags. (EXCP-505)
+* API Console no longer throws XML parsing error while retrieving data. (EXCP-486)
+* API Console now handles special characters in resource names. (EXCP-474)
+* API Console now shows status code RAML example blocks. (EXCP-407)
+* APIs: Client ID no longer changes after updating an application. (EXCP-401)
+* APIs: Deleting the last version no longer causes errors in the API Summary page. (EXC-2339)
+* APIs: Download as RAML now downloads all versions of an API. (EXCP-453)
+* APIs: Exchange Experience API (xAPI) categories are now ordered by displayName. (EXCP-512)
+* APIs: Exchange Experience API (xAPI) no longer returns 404 when hard deleting a previously soft deleted asset. (EXC-2329)
+* APIs: Exchange now lists whether an API is public or private in the version drop-down menu. (EXCP-297)
+* APIs: GET now correctly retrieves configurations from the master organization using an OAuth token from a business group. This allows `GET /organizations/${notAMasterOrgId}/tags/categories/` configurations and returns the configurations from the corresponding master org. (EXCP-507)
+* APIs: Mocked RAML published to Exchange no longer causes errors. (EXCP-397)
+* APIs: PATCH - If fields don't change, don't display an error that existing tags use this configuration. (EXCP-528)
+* APIs: POST managed tags configuration now returns 409 for a wrong constraint name in the configuration. (EXCP-468)
+* APIs: PUT request responses are no longer duplicated. (EXC-2368)
+* APIs: RAML v0.8 dependencies now work correctly. (EXC-2213)
+* APIs: Safari browser use of the API Console now works correctly. (EXCP-428)
+* APIs: SOAP WSDL files opened in Anypoint Studio 7 now work correctly. (EXCP-136)
+* APIs: Visibility label in the right side details menu shows whether an API is Private or Public. (EXCP-169)
+* Business Groups: Renaming or deleting business groups now works correctly with Exchange. (EXC-2292 and EXC-2325)
+* Categories now works correctly for All Types. (EXCP-521)
+* Categories UI improvements. (EXCP-532)
+* Create Client Application no longer fails when an organization has client management and the user is not an admin. (EXCP-460)
+* Creating an Asset - Information menu typos are fixed. (EXCP-143)
+* Date now updates after modifying the asset_mappings table in Asset Manager. (EXC-2206)
+* Delete: Exchange contributors can now delete draft pages they create. (EXCP-387)
+* Exchange logo: Clicking the Exchange logo in top navigation bar now redirects to the Exchange home page. (EXCP-133)
+* IE 11 no longer displays a big check mark over a drop-down menu such as in the Settings > Categories > Asset Types menu. (EXCP-523)
+* Managed tags by assets feature in the Exchange Experience API (xAPI).
+* Managed tags configuration UI service. (EXCP-508)
+* Managed tags now look up the tag configurations from the master organization. (EXCP-498)
+* Managed tags with list types that already exist had repeating elements. (EXCP-504)
+* Marketo secret key no longer displays. (EXCP-461)
+* OpenAM: Updating an application no longer creates new OpenAM OAuth client applications. (EXCP-402)
+* Pages: Page name input field position appears consistently. (EXCP-239)
+* Pages: Page order can now be changed. (EXC-2322)
+* PCE audit logs now handle HTTPS correctly. (EXC-2312)
+* Portals: Customization navbar now displays published pages only. (EXCP-138)
+* Portals: Editor buttons now work correctly in Markdown view. (EXCP-140)
+* Portals: Editor icons now display correctly in Firefox. (EXCP-145)
+* Portals: Empty display name in a tag configuration no longer throws an error. (EXCP-511)
+* Portals: Exchange Portals now correctly renders the HTML image tag in a table. (EXCP-436)
+* Portals: Login button now displays correctly in customized Public Portals. (EXCP-127)
+* Ratings: Exchange now shows the version of the asset you are reviewing. (EXC-812)
+* REST Connect now sends failure email messages to the correct region in which the error occurred. (EXC-2369)
+* Search by query now strips out the slash ('/') character in a text search, and indexes search terms for `or`, `and`, and `what`. (EXC-2233)
+* Version: Add runtime version in asset details. (EXCP-390)
+* Version: Exchange now displays the Mule Runtime version so that Anypoint Studio 7 users can choose only Mule 4 assets. (EXCP-130)
+
+== 2.1.1
+
+*January 2018*
+
+This release introduces an easy way to share searches across Business Group users and personalized saved searches for each Exchange user. We have also made various UI improvements and several bug fixes.
+
+=== New Features
+
+* Saved search for organizations provides consistent search navigation to all business group users.
+* Personalized saved searches enables users to save their own frequently used searches.
+* Ability to copy images into the Exchange visual editor eliminates the need to serve images from outside Exchange.
+
+=== Compatibility
+
+[%header,cols="30a,70a"]
+|===
+|Software |Version
+|Browsers |
+
+* Chrome (Version 56.0.x) and later
+* Firefox (Version 50.0.x) and later
+* Safari (Version 10.1.x) and later
+* Internet Explorer 11
+|Anypoint Studio |6.4 and later
+|===
+
+=== Fixed in This Release
+
+* Add terms and conditions link doesn't look good on low resolutions. (EXC-1841)
+* API Console cannot read property endpointUri of undefined error. (EXC-2190)
+* API Notebook doesn’t run in sequence. (EXC-2185)
+* API Notebook creating clients when in Markdown doesn't work. (EXCP-129)
+* API Settings is not displaying the instances URLs. (EXC-2127)
+* Asset Admin sees the make asset public option. (EXCP-141)
+* Asset Manager tsquery operator characters cause a 502 if used in text search. (EXC-1479)
+* Asset-Manager the SQL query for the GET by :groupId: and :assetId: endpoint is slow for assets with approximately 27 versions. (EXC-2067)
+* Asset-Manager when an asset publication fails, but dependencies were saved, it ends up in an inconsistent state. (EXC-1993)
+* Asset-Manager when deleting an asset version, all asset permissions are removed. (EXC-1572)
+* Can delete an asset with contracts and instances. (EXCP-308)
+* Can't create a new version of a WSDL. (EXC-2019)
+* Can't delete Asset Version when API version is changed. (EXCP-325)
+* Can't upload WSDLs with other files in the zip. (EXC-1865)
+* Change rate to review. (EXC-1847)
+* Console behavior of default values for query parameters. (EXCP-139)
+* Console error when authorizing for client credentials grant type. (EXCP-231)
+* Customization is not sending audit logs. (EXC-2089)
+* Customize navigation bar toggle icon. (EXCP-124)
+* Delete dialog shouldn't allow send two DELETE requests to Exchange API. (EXCP-336)
+* Delete message doesn't show dependents. (EXC-2040)
+* Dependency Resolver is not properly returning the list of assets that failed to be resolved. (EXC-2248)
+* Documentation files are not displaying in the console. (EXCP-123)
+* EU - Cannot create asset with files. (EXC-2211)
+* Exchange editor generates garbage characters if the text is enclosed in angle brackets. (EXCP-125)
+* Fix multi-line logs seen in Sumologic. (EXC-2234)
+* Go to existing application is not working. (EXC-2016)
+* GraphAPI - Getting only the last public version retrieves several assets. (EXC-2117)
+* Handle deleted user scenario. (EXC-2048)
+* IE-11 - Add image or link popup shows "undefined". (EXCP-128)
+* Knex throws error obtaining connections from pool in Asset Reviews Service. (EXC-2147)
+* Maven Facade returns some 403 from Asset Manager as 502 errors. (EXC-1576)
+* Maven Facade - 403 errors are always turned into 404. (EXC-1598)
+* Mocking Service is not working if baseURI has the old mocking service. (EXCP-331)
+* Optimize RAML parsing for API console. (EXCP-134)
+* Portal trying to load deleted API version. (EXC-2201)
+* Private instance is displayed in API Summary on public portal. (EXCP-335)
+* Query parameter limit with value 250 is ignored when retrieving applications from APIM. (EXCP-132)
+* RAML is downloaded twice to render API Console. (EXCP-313)
+* RAML Parser Error: Unable to parse RAML data. (EXCP-309)
+* RAML request panel shows incorrect URI parameter field. (EXCP-323)
+* Rating score is not recalculated when older version's rating changes. (EXCP-137)
+* Request API Access Modal window looks weird in IE11. (EXCP-142)
+* Studio 7 examples import not working. (EXC-2225)
+* Update Tooltip in manual publication typo and new asset type. (EXC-1206)
+* Users with permissions across organizations are failing to authorize. (EXC-1610)
+* View mode changes when you select a saved search. (EXCP-384)
+* Visibility status is not refreshed after making an API public. (EXCP-333)
+* When Publishing to Exchange via Maven, if publication fails with Forbidden, an incorrect entry is created in the database. (EXC-1935)
+* when token expires before smart connector generation finishes, then the error can’t be sent. (EXC-1528)
+
+== 2.1.0
+
+*November 2017*
+
+We are pleased to announce the general availability of the latest release of Anypoint Exchange. This release enables Anypoint Platform users to publish and share APIs with developers inside and outside of their organizations.
+
+=== New Features
+
+* Unification of Anypoint Exchange and API portals. Now all assets can be managed and shared through a single location.
+* Ability to create public portals for any APIs in Anypoint Exchange.
+* Rich documentation automatically generated for RAML or OAS specifications.
+* Interactive API use case validation through API Notebook.
+* Mocking service, which can be used to test API calls without implementing the API.
+* Ability to register clients and request access for APIs managed by Anypoint Platform.
+* Automatic indexing of API instances and endpoints via Exchange.
+* Sharing of APIs externally using Exchange portal.
+* Customization and branding features of Exchange portal.
+* HTML support for content inserted to a Markdown editor (limitations apply).
+
+=== Compatibility
+
+[%header,cols="30a,70a"]
+|===
+|Software |Version
+|Browsers |
+
+* Chrome (Version 54.0.x) and later
+* Firefox (Version 50.0.x) and later
+* Safari (Version 10.1.x) and later
+* Internet Explorer 11
+|Anypoint Studio |6.4 and later
+|===
+
+=== Known Issues
+
+* EXC-2191: Unable to use API notebook button in the WYSIWYG mode. Click on the editor window first, and then press the Notebook button.
+* EXC-2188: API notebook creators are not able to specify the API endpoint when configuring a client. Update RAML base URI to update the endpoint used by API Notebook.
+* EXC-1510: My application page is not responsive.
+
+== 2.0.0
+
+*July 29, 2017*
+
+We are pleased to announce the general availability of the latest release of Anypoint Exchange. This product enables Anypoint Platform users to publish and access Mule-related content within their own organization increasing visibility and reuse.
+
+
+=== Compatibility
+
+[%header,cols="30a,70a"]
+|===
+|Software |Version
+|Browsers |
+
+* Chrome (Version 54.0.x) and later
+* Firefox  (Version 50.0.x) and later
+* Safari (Version 10.1.x) and later
+* Internet Explorer 11
+|Anypoint Studio |6.3 and later
+|===
+
+The new Anypoint Exchange 2 in Anypoint Platform offers a complete rework of Exchange with support for OAS and RAML 1.0 specifications, an improved user interface, a new editor supporting both Visual and Markdown text creation, and the ability to rate assets.
+
+=== New Features
+
+Anypoint Exchange lets you:
+
+* Store all integration assets in one place in Exchange, such as best practices, integration patterns, API fragments, API specifications, examples, templates, and connectors.
+* Enrich portal content using the Visual editor and Markdown editor.
+* Quickly upload Open API specifications (Swagger) in Exchange which automatically converts to RAML for use across the Anypoint toolset.
+* Quickly upload WSDLs (SOAP APIs) in Exchange.
+* Consume and reuse all existing MuleSoft public content in Anypoint Studio and Design Center.
+* Collaborate with API owners and designers including the ability to comment and write reviews, ask questions, and provide feedback on each asset.
+* Share an asset within a business group with users outside of the business group to drive cross business organization collaboration.
+* Auto-generate a Mule 4.0 Design Center connector (using REST Connect) for any valid API specification for use within Design Center.
+* View a list of dependencies (API Fragments) for any API specification.
+* Version any asset published to Exchange.
+* View Dependency Snippet for connectors for use in Maven, Gradle, SBT, and Ivy.
+* Publish examples and templates using Studio 6.3 and later.
+
+=== Migration
+
+Exchange 1.7 is still accessible and will remain available for 90 days (as of July 29). None of the content on this old version of Exchange has been deleted. The URL for old Exchange is now https://anypoint.mulesoft.com/exchange1/. Existing customers with content on Private Exchange can also access the old Exchange using a link available on the Exchange 2.0 site. You can migrate the content to Exchange 2.0 using xref:exchange::migrate.adoc[migration instructions].
+
+
+=== Known Issues and Limitations
+
+* EXC-1140: Unable to type anything below an image in the Visual editor. Switch to Markdown editor to continue editing.
+* EXC-1253: Visual editor is not supported for use with Internet Explorer 11. Use the Markdown editor instead.
+* Searching by tag at the user interface only works for the latest asset version.
+* Admin user cannot delete reviews created by other users.
+* Rating is not refreshed when a version is deleted.
+* Unable to deprecate an asset.
+* EXC-1522: Incorrect error message when a user without Exchange Contributor permission within a Business Group tries to create an asset.
+* EXC-1269: In Firefox, when a token is expired and user tries to publish to exchange, it throws a 403 error page. Clear cookies for Anypoint Platform and try again.
+
+== 1.7.1
+
+*September 2016*
+
+This version of Anypoint Exchange fixes internal issues and provides
+these two updates:
+
+* The *RAMLs* label is changed to *REST APIs*
+* The *WSDLs* label is changed to *SOAP APIs*
+
+== 1.7.0
+
+*July 2016*
+
+This version of Anypoint Exchange provides new features and fixes.
+
+=== Features
+
+* Connectors linked to from a private Exchange can now be installed in Anypoint Studio.
+* Audit Logs now provide Exchange Administrators with a log of all actions that occur in a private Exchange.
+
+=== Fixed Issues
+
+[%header,cols="20a,80a"]
+|===
+|Issue |Description
+|EXCHANGE-1126 |Scope drop-down now shows the Business Group Hierarchy on search and in publish/republish drop-down.
+|EXCHANGE-1125 |Fix a bug on missing buttons when editing versions.
+|EXCHANGE-1115 |Improve error messages and avoid data lost during validations.
+|EXCHANGE-1099 |Scope drop-down now shows the Business Group Hierarchy on search and in publish/republish drop-down.
+|EXCHANGE-1073 |Fix a bug showing the version header without data and saving an empty version.
+|EXCHANGE-1072 |Changes the place of back to the list button.
+|EXCHANGE-1063 |Fix the  item and name inputs on IE when Create/Clone Artifact.
+|EXCHANGE-1006 |Improve error messages and avoid data lost during validations.
+|EXCHANGE-872 |Fix a bug showing the version header without data and saving an empty version.
+|EXCHANGE-809 |Disables the video caption field until you add a video URL.
+|EXCHANGE-779 |Add a `?` next to itemID with more information.
+|EXCHANGE-778 |Ad a `?` next to itemID with more information.
+|===
+
+
+== 1.6.2
+
+*June 2016*
+
+This version of Anypoint Exchange provides bug fixes and improvements.
+
+=== Fixed Issues
+
+[%header,cols="25a,75a"]
+|===
+|Issue |Description
+|EXCHANGE-869 |Hide non-relevant calls to actions in Exchange UI when the user launches it from Studio
+|EXCHANGE-1038 |Download and docs icons should match the 2.2.1 MuleSoft styles
+|EXCHANGE-1096 |Fix issue with removing filter terms (tags) from search results when the tag filter is launched from the item detail page
+|EXCHANGE-1106 |All link versions wrongly point to only to the first version of the artifact
+|EXCHANGE-1112 |User needs to update page to see the download icon when adding versions on an artifact
+|===
+
+=== Improvements
+
+[%header,cols="25a,75a"]
+|===
+|Issue |Description
+|EXCHANGE-553 |Simplify the artifact's share URL by removing "/mulesoft" from the path
+|EXCHANGE-1086 |MuleSoft tag should not be displayed for anonymous users
+|EXCHANGE-1087 |The focus should return to the beginning of the list when the user returns to search results from the detail page
+|EXCHANGE-1088 |Remove Exchange settings from Anypoint Platform Access Management
+|EXCHANGE-1094 |Instead of displaying the main organization name, display "Master Organization" in the Publish/Republish dropdown
+|EXCHANGE-1104 |Refactor how pre-defined search terms are treated in the backend to improve performance
+|===
+
+== May 2016
+
+This new version of Anypoint Exchange includes new features & functionality for addressing the viewing and publishing of artifacts across a hierarchical organization structure. Also within this version of Exchange aligns with the Anypoint Platform Styles and use of the new Nav Bar.
+
+=== Features and Functionality
+
+The following sections describe the new features in this release.
+
+==== Visual Enhancements
+
+Alignment with the Anypoint Platforms Styles and Integration with the latest Anypoint Platform Navigation Bar.
+
+==== Roles for Exchange
+
+Besides the existing Organization Owner, Contributor and Administrator Roles, a separate Viewer role was created.
+
+==== New State and Flow Transition of an Artifact
+
+To address the movement of an artifact across a hierarchical structure, Exchange now provides new states for an artifact and also specific actions to be performed on them.
+
+==== Business Groups
+
+Business Groups are being incorporated in Exchange . This feature across with the Exchange Roles and the new state transition flow of an artifact provides:
+
+* Ability of Central IT (maybe the root organization) to create artifacts and make them available to all Lines of Businesses (business groups)
+* Ability of Central IT to locate artifacts published in a business group and make it available to the rest of the business
+* Ability of an LOB to publish artifacts for internal (to that business group) consumption
+
+==== UI and UX Improvements
+
+New Filters and actions now support the new Business Groups, Artifacts States, and Transition Flows functionalities.
+
+==== Edit Types Removal
+
+Edit Terms only available on Master Organization for Admin and Owner Organization
+
+==== API Changes
+
+Before this release, Exchange used an internal Organization ID in the API resource, but this organization ID is replaced with the Access Management Organization ID to allow Business Groups.
+New endpoints are being incorporated in Exchange to work with Business Groups.
+New permissions are applied using the Business Groups hierarchy.
+
+==== Avoid Losing User Data
+
+When a session expires, Exchange prompts for credentials and completes the action.
+Exchange now displays a warning when a user tries to leave the edit page if there are unsaved changes.
+
+=== Removed Features
+
+* The object amount limitation for private tenants has been removed. The possibility to request to increase the object amount limit it’s already removed from the Exchange configuration in Anypoint Platform access management.
+* The possibility to edit types was removed, all organizations now share the same types.
+* The feature to edit terms can now only be enabled for users with Admin roles in master organizations.
+
+=== Architecture Changes
+
+* Split UI from backend in different servers and all the related changes to fulfill this Architecture change.
+* Update Node.js version to v4.
+
+== Dec 2015
+
+=== Features and Functionality
+
+This Anypoint Exchange release includes the following new features and functionality:
+
+* WSDL Support: At the moment WSDL type does not have a Studio integration, however WSDLs can be added and managed via web UI.
+
+* Visual enhancements such as new colors for item types and UX improvements.
+
+* Auto-populated URI when creating new items.
+
+* Automatically resizable description container when editing content.
+
+* Firefox and Internet Explore 11 bugs fixed.
+
+=== Dec 2015 Known Limitations
+
+The version of the exchange available with the on-premises installation of the Anypoint Platform comes with an empty library of content, you must populate it with your own content.
+
+== May 2015
+
+=== Features and Functionality
+
+This Anypoint Exchange release includes the following new features and functionality:
+
+* Ratings: All content has a rating associated to it. Users can rate only from Exchange in Anypoint Studio (Connectors need to be installed in Studio in order to rate them). Objects have their rating displayed only when they have two ratings or more.
+
+* Author: Objects can have the author’s name and photo. This can be used for partners or community contributors. This section is hidden if not filled out.
+
+* UI Refresh: Object type indicators have been improved . Text areas and button sizes have changed to improve readability
+
+=== Known Limitations
+
+To access private content from Anypoint Studio, version 4.2.0 or newer must be used.
+
+== February 2015
+
+=== Features and Functionality
+
+This Anypoint Exchange release includes the following new features and functionality:
+
+* Create and Publish private content: Choose between a variety of content types (templates, examples, connectors, etc) to add, describe your asset and publish it in your organization’s exchange. Only the people you choose may have access to create and publish new content.
+
+* Search for Content: Users within your organization can find the internally published content (as well as MuleSoft’s public content), increasing the chance of reuse and avoiding redundant work.  Exchange Admins can customize search filters to make internal content easier to find.
+
+* Seamless Anypoint Studio Integration: Access your private content seamlessly from Anypoint Studio.  You can open templates or install connectors by opening Anypoint Exchange from Studio and logging into your Anypoint Platform account.
+
+=== Known Limitations
+
+To access private content from Anypoint Studio, version 4.2.0 or newer must be used.
+
+== Support
+
+If you need help using the product, refer to the documentation for the xref:exchange::index.adoc[Anypoint Exchange]. If you have additional questions or want to report a problem, Contact MuleSoft.
+
+== See Also
+
+* https://www.anypoint.mulesoft.com/exchange/[Anypoint Exchange]
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

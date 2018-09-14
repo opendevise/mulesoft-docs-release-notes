@@ -1,0 +1,146 @@
+= Zuora Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: zuora-connector-release-notes.adoc
+:keywords: release notes, zuora, connector
+
+*August 2017*
+
+_Select_
+
+*Guide*: xref:3.9@mule-runtime::zuora-connector.adoc[Zuora Connector]
+
+[IMPORTANT]
+Starting with v.3.0.0, the Zuora Connector is licensed commercially with Anypoint Platform as with other xref:3.9@mule-runtime::anypoint-connectors.adoc#connector-categories[_Select_] connectors. Prior versions will remain freely available to the community.
+
+== 3.1.1
+
+*August 25, 2017*
+
+=== Compatibility
+
+The Zuora connector 3.1.1 is compatible with the following applications:
+
+[%header%autowidth.spread]
+|===
+|Application/Service|Version
+|Mule Runtime|Mule Enterprise Edition 3.7.3 and later
+|Zuora|v75
+|===
+
+=== Fixes
+
+* *Invalid ConnectionTimeout and ReadTimeout configuration parameters:* Previously, when the ConnectionTimeout or the
+ReadTimeout fields were set, they didn't affect the client and had no effect whatsoever. This led to having
+SocketTimeoutExceptions when running particularly long operations or not having them when the expected timeout was set
+to be short. Now they are working correctly and the timeouts happen when expected.
+
+== 3.1.0
+
+*October 25, 2016*
+
+=== Compatibility
+
+The Zuora connector 3.1.0 is compatible with the following applications:
+
+[%header%autowidth.spread]
+|===
+|Application/Service|Version
+|Mule Runtime|Mule Enterprise Edition 3.5.2 and later
+|Zuora|v75
+|===
+
+=== Features
+
+* Added *Post Usage* processor that receives the location of a CSV file and imports the usage data for one or more accounts from the
+csv file to Zuora  https://knowledgecenter.zuora.com/DC_Developers/REST_API/B_REST_API_reference/Usage/1_POST_usage[Zuora Post Usage].
+* Added *Check Import Status* processor that receives an import URL as input and returns the status of the input.
+* Added Multi-Entity support for Multi-Entity API for the REST operations https://knowledgecenter.zuora.com/BB_Introducing_Z_Business/Multi-entity[Multi Entity API].
+* Added connectTimeout and readTimeout fields in the connector configuration to increase the connection time and the time to wait for a response from the server.
+* Added SocketTimeoutException, ConnectTimeoutException, SocketException and ConnectException to the list of exceptions that trigger a reconnection.
+* Added  *Query* processor with support for both *DataSense Query Language* and *Native Query Language*.
+* Added support for Aqua API https://knowledgecenter.zuora.com/DC_Developers/Aggregate_Query_API[Zuora Aqua API]. Besides the processors that
+expose the Aqua API operations, to periodically check the status of a Aqua job and
+retrieve its batches when it is complete, you can use the *Aqua post query* processor and *Aqua get batch results* source. For
+more details on how to use these processors, consult the connector guide xref:3.9@mule-runtime::zuora-connector.adoc[Zuora Connector].
+
+
+=== Fixes
+
+* Modified the XML parsing classes in order to defend against the XML External Entity attacks.
+
+=== Known Issues
+
+* ConnectionTimeout and ReadTimeout fields will not affect the *Invoke Soap Service* operations.
+
+== 3.0.1
+
+*August 20, 2016*
+
+=== Compatibility
+
+The Zuora connector 3.0.1 is compatible with the following applications:
+
+[%header%autowidth.spread]
+|===
+|Application/Service|Version
+|Mule Runtime|Mule Enterprise Edition 3.5.2 and later
+|Zuora|v75
+|===
+
+=== Fixes
+
+* Fixed a compatibility issue between Zuora and other connectors.
+
+=== Known Issues
+
+None.
+
+== 3.0.0
+
+*July 21, 2016*
+
+=== Compatibility
+
+Zuora connector is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Application/Service|Version
+|Mule Runtime|Mule Enterprise Edition 3.5.2 and later
+|Zuora|v75
+|===
+
+=== Features
+
+* The connector is supported under the *Select* category
+* The connector can support older versions of the Zuora SOAP API
+(only version v75.0 was extensively tested)
+* The connector needs a Zuora WSDL to call SOAP-based operations
+* *Invoke SOAP Service* processor is used to call SOAP-based operations.
+
+== 2.1.3
+
+*September 07, 2015*
+
+=== Compatibility
+
+The Zuora connector 2.1.3 is compatible with the following applications:
+
+
+[%header%autowidth.spread]
+|===
+| Application/Service |Version
+|Mule Runtime	|3.5.0 and later
+|Zuora API version	|68.0 |
+|===
+
+=== Features
+
+* Support for 68.0 API version
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

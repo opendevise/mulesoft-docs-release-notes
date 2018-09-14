@@ -1,0 +1,250 @@
+= Anypoint Studio 7.0.0 RC with Mule Runtime 4.0.0 RC
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: anypoint-studio-7.0-rc-with-4.0-runtime-release-notes.adoc
+
+*September 29, 2017* +
+*Build ID: 201710021630*
+
+== Compatibility
+
+[cols="30a,70a"]
+|===
+| Product | Version
+| *Mule Runtime*
+| Version: 4.0.0 RC
+
+|*Anypoint Studio*
+|Version: 7.0.0 RC  +
+Build Id: 201710021630
+
+|*Maven*
+|Version: 3.3.9
+
+|*DataWeave* +
+|Version: 2.0.0 RC
+
+|*MUnit* +
+|Version: 2.0.0 RC (munit-studio-plugin)
+
+|*Eclipse* +
+|Version: 4.6.2
+
+|===
+
+== What's New
+
+* Improved palette which enables users to more quickly discover what they’re looking for by searching directly for operations and saving favorites.
+* Users can now explicitly manage which connectors and modules are associated with a project.
+* Connectors and modules are now managed directly by Anypoint Studio, and do not require users to manage update sites.
+* Easily navigate to code from visual view by right clicking on a component and clicking “View XML”.
+* Maven is now embedded out of the box inside Studio. Additionally, every project now has a Maven POM, making it easier to incorporate projects into CI/CD systems.
+* Flows and scopes are now collapsable.
+* Updated icons make flows easier to read.
+* DataSense metadata is now stored in a human readable format this is easier to share, commit and merge.
+* Support for importing API specifications from Design Center.
+* Improved user experience for connector and modules.
+* Simplified experience to manage credentials when logging into the Anypoint Platform.
+* Support for DataSense Custom Types: Java, Fixed Width, Excel, CSV.
+* Support for Batch module.
+* Fixes for debugger when using breakpoints, parallel requests and handling exceptions.
+* APIKit Console fully functional from Studio.
+* Dataweave editor now supports autocompletion and enhanced performance.
+* Support for Mule 4.0 RC.
+* This version of Anypoint Studio requires Java 8.
+
+[NOTE]
+--
+Beta status in this release indicates the functionality is open for customers to trial for the purpose of learning the new functionality and/or testing functionality in a non-production environment. Basic functionalities to enable core use cases are complete, and MuleSoft is in the process of verifying design and evolving feature completeness. There is no SLA or technical support obligations for the Beta features. Beta releases are suitable for use in test environments or for limited-use tests.  Please see our https://www.mulesoft.com/legal/product-trial-commercialfree-licenses[beta trial license] for full terms of use.
+--
+
+== Hardware Requirements
+
+* For most use cases, Anypoint Studio with the 4.0.0 Beta Runtime does not change hardware or software requirements from the previous Studio 6x versions.
+* MuleSoft recommends a minimum of 4GB of free RAM available on a developer workstation. As applications become complex, consider adding more RAM.
+
+* 4GB of free memory available.
+* 2GHz CPU.
+* 10GB free hard drive space.
+
+== Software Requirements
+
+[cols="30a,70a"]
+|===
+| Software | Version
+|Java Environments
+| * Oracle JDK 1.8.0
+|Operating Systems |* MacOS 10.12.0 +
+* Windows (32- and 64-bit) Windows 7, Windows 8, Windows 10 +
+* RHEL 7.0 +
+* Ubuntu 15.04 or later
+|Suggested Web Browsers by Platform. +
+_Studio will always use the OS default web browser_ | * Windows: +
+** Microsoft Edge 25.0  +
+** Internet Explorer 11 +
+* Linux +
+** Mozilla Firefox 51.0.1  +
+* OS X +
+** Safari 10.1
+| Maven
+| Studio comes with Maven 3.3.9 bundled, but you can externally use the versions: 3.3.3 or your own  3.3.9
+|===
+
+[NOTE]
+--
+If you are running McAfee VirusScan on your Windows OS, Eclipse-based Anypoint Studio may experience negative performance impacts. McAfee has suggested the following remedy https://kc.mcafee.com/corporate/index?page=content&id=KB58727[options].
+--
+
+== Known Issues
+
+* [MULE-11258] -  DataWeave: reader properties can only be configured in the script using the input directive and not through the UI, this is needed to read any Flat File format (Flat File, Fixed Width, Copybook, CSV)
+* [STUDIO-9901 MULE-1359] - Environment Variables to define properties files are not supported
+* [STUDIO-959] - DataSense does not work for connectors not shipped with Studio
+* [STUDIO-9845] - DataSense: imported files inside schema definitions are not being copied inside the project
+* [STUDIO-935] - DataSense: Metadata: json schemas with import do not work unless they have a full path
+* [MULE-12734] -  Some extensions return false positive when doing Test Connection
+* [STUDIO-9916] - Metadata propagation not supported when using Object as Datasource for Database Config
+* [STUDIO-9436] - Metadata: can not create XML types from samples that contains CDATA
+* [STUDIO-954] - Dependencies are not refreshed properly if the pom is updated while the dependencies are being resolved.
+* APIKit, Munit and Batch does not support metadata.
+* [STUDIO-996] - When debugging a flow with an SMART Connector Studio is stopping in the Message Processors inside the operation's flow
+* [STUDIO-9591] - Data Sense does not work for connectors not shipped with Studio.
+* Some existing features in Studio 6.x are not yet supported in Studio 7: Domains, Custom Policies, API Sync, Anypoint Private Cloud, Gateway runtime connectivity.
+* To be able to deploy a project which uses the runtime 4.0.0 into Cloudhub you need to have certain permissions in your Anypoint Platform user to see runtime 4.0.0 when deploying it.
+* Anypoint Studio uses your configured default browser to display web content such as Exchange and the Runtime Manager UI when deploying an application to Anypoint Platform. If your default internet browser does not display this content correctly, you can configure Anypoint Studio to use a  Mozilla/XULRunner runtime environment as the underlying renderer for the Web UI. See the xref:7.1@studio::faq-default-browser-config.adoc[docs around this topic] for more information.
+* [STUDIO-9684] - Menu items get grayed out after opening Exchange using XulRunner
+* [MULE-11437] -  Mule modules needs to provide icons, today many of the modules have the generic icon.
+* [MULE-12859] - XML Metadata is not generated correctly when the provided sample has namespaces.
+* [STUDIO-938] - Validation error when required attribute is written with double quotes in a Choice expression.
+* [STUDIO-970] - Debugger: payload shown while debugging is partial but there is no notification to the user or way to view the rest of the payload
+* [STUDIO-990] - Problems when Studio starts with Java 8 but tries to start the Tooling instance with Java 7
+* [STUDIO-914] - Running application "Pom.xml" is not updated when changing dependencies.
+* [STUDIO-871] - Mule plugins with snapshot versions should always be regenerated.
+* [STUDIO-995] - Metadata propagation error when not setting Config on "HTTP Request”.
+
+== Migration Guide
+
+Studio 7 only supports Mule 4 projects. The structure of the project, export format, XML and scripting language are different. For the beta, users must migrate Mule 3 projects to Mule 4 manually, before they can be used in Studio 7. See the Mule migration guide for more information.
+
+
+== JIRA Ticket List for Anypoint Studio
+
+=== Epic
+
+* [STUDIO-8626] - Platform Login
+* [STUDIO-9091] - Generated Editors (Phase 2)
+* [STUDIO-9092] - Palette Redesign (Phase 2)
+* [STUDIO-9099] - Mule 4 Elements (Phase 2)
+* [STUDIO-9224] - Connectivity and DataSense (Phase 2)
+* [STUDIO-9238] - Maven Support (Phase 2)
+* [STUDIO-9393] - DW Support (Phase 2)
+* [STUDIO-9574] - Exchange 2.0 Integration (Phase 2)
+* [STUDIO-9575] - MUnit Integration (Phase 2)
+* [STUDIO-9631] - Debugger Studio 7 (Phase 2)
+
+=== Tasks
+
+* [STUDIO-8022] - Update copybook custom metadata to use the new metadata model
+* [STUDIO-8023] - Update flatfile custom metadata to use the new metadata model
+* [STUDIO-8357] - Merge Excel support in Studio 7
+* [STUDIO-8428] - Review batch support for mule 4 when we have a working version
+* [STUDIO-8432] - Review web service consumer for mule 4 when available
+* [STUDIO-8433] - Review database connector for mule 4
+* [STUDIO-8673] - Make possible the edition of the message when debugging.
+* [STUDIO-8762] - Review how we are loading repositores from settings.xml
+* [STUDIO-8767] - Update Studio elements according to Mule 4 schema changes
+* [STUDIO-8780] - Remove transports that are no longer supported
+* [STUDIO-8781] - Move CXF to the compatibility layer
+* [STUDIO-8782] - Remove all transports and endpoints metadata resolvers code
+* [STUDIO-8919] - Move all filters to the compatibility layer
+* [STUDIO-8928] - Implement APIKit Console for APIKit for Mule 4
+* [STUDIO-8973] - Validate expressions which are not MEL
+* [STUDIO-9181] - Support specifying a dependency version range in extension points for customizing auto generated editors
+* [STUDIO-9281] - Remove MEL syntax characters from Mule Expression pop up
+* [STUDIO-9370] - Adding Modules - UX improvements
+* [STUDIO-9509] - Remove convert to mule project feature (or fix)
+* [STUDIO-9538] - Remove all evaluators from the XML autocompletion and leave only MEL
+* [STUDIO-9543] - Remove new YAML and XML Policy files form the New file menu
+* [STUDIO-9551] - Enable the add Maven dependency option in the project context menu
+* [STUDIO-9556] - Migrate mule-application.json to mule-artifact.json
+* [STUDIO-9595] - Move Studio mule dependencies to SNAPSHOT dependencies after BETA.4
+* [STUDIO-9607] - Add support for Mule 4 <import> element
+* [STUDIO-9608] - Add support for Simple Object Instantiation (<object />)
+* [STUDIO-9613] - DataSense: create POJO Custom Types based on Java classes
+* [STUDIO-9614] - DataSense: add support to create Excel Custom Types
+* [STUDIO-9615] - Generate automatic editor for HTTP Listener
+* [STUDIO-9616] - DataSense: Add Flat File custom type support
+* [STUDIO-9617] - DataSense: Add Fixed Width support
+* [STUDIO-9618] - DataSense: Add Copybook custom type support
+* [STUDIO-9627] - Update tests to remove Mule-commons from Studio 7
+* [STUDIO-9630] - [Debugger] Add support for Cursor Stream providers
+* [STUDIO-9635] - Migrate dependency resolution in Studio to use mule-maven-client
+* [STUDIO-9646] - [Debugger] Add support for Cursor Iterator providers
+* [STUDIO-9647] - Manage Modules: enhance Adding a Module experience in Global Elements UX
+* [STUDIO-9655] - Analytics: adapt backend to work in Studio 7 and add metrics
+* [STUDIO-9662] - Add foreach target attribute
+* [STUDIO-9663] - Add target attribute and change parallelized for maxConcurrency in Scatter-gather
+* [STUDIO-9664] - Add <route> to all routers in Mule 4
+* [STUDIO-9665] - Support multiple processors in the enricher
+* [STUDIO-9672] - Send suffix with runtime edition when calling APIKit Archetype and Scaffolder
+* [STUDIO-9687] - Replace the usage of 'extension' or 'connector' for 'modules'
+* [STUDIO-9688] - Update 'Add Modules' action in palette and palette search
+* [STUDIO-9689] - Add set-variable, set-payload, remove-payload to Studio 7
+* [STUDIO-9690] - Add scripting components to Studio 7
+* [STUDIO-9692] - Show publisher information per module in Manage Modules and Search
+* [STUDIO-9693] - Replace module details area in Manage Modules
+* [STUDIO-9702] - DW: Move validation to Runtime Tooling Client
+* [STUDIO-9728] - Review HTTP changes and update custom editor
+* [STUDIO-9734] - Cannot scaffold raml files from project in Anypoint Studio
+* [STUDIO-9751] - Rename 'maven' classloader model in 'mule-artifact.json' to 'mule'
+* [STUDIO-9772] - DWEL: Change 'variables' identifier to 'vars'
+* [STUDIO-9775] - Update reconnection element and references according to mule changes
+* [STUDIO-9788] - Remove processor chain, splitter, aggregator and response scope.
+* [STUDIO-9789] - Update Studio dependencies to rc.darkseid
+* [STUDIO-9796] - Validate Excel support for custom types
+* [STUDIO-9808] - Update Studio dependencies to rc.snaphot
+* [STUDIO-9809] - Remove deprecated options in Anypoint Studio preference page
+* [STUDIO-9810] - Add support for configuration-properties global element
+* [STUDIO-9817] - DataWeave autocompletion: change the quotes to single quotes when writing expressions
+* [STUDIO-9952] - Remove Batch components which no longer exists
+* [STUDIO-9974] - Integrate out-of-the-box Connectors for 7.0 RC
+* [STUDIO-9975] - Disable automatic globalRef combo selection
+* [STUDIO-9980] - Make Studio 7 RC use Mule 4.0.0 RC release
+* [STUDIO-9984] - Make a splash for Studio 7 RC
+
+=== Enhancement Request
+
+* [STUDIO-8325] - Editing file directory should open a file browser
+* [STUDIO-8555] - Improve performance to compute completion proposal for DWEL
+* [STUDIO-8563] - Add support for VM Module
+* [STUDIO-8566] - Add support for transformers for SDK Mule Modules
+* [STUDIO-8576] - Add support for SDK VM Module
+* [STUDIO-8589] - Disable all features which depends on the pom file when it's missing/malformed
+* [STUDIO-8825] - Improve local module management
+* [STUDIO-8862] - Start/Stop in Scheduler using the Polling API
+* [STUDIO-8877] - Migrate Studio debugger to use Interceptions API
+* [STUDIO-8941] - pom.xml template for Mule ESB Runtime M6
+* [STUDIO-8969] - Implement Batch for Mule 4
+* [STUDIO-9057] - Create a way to obtain user and global maven settings files
+* [STUDIO-9391] - Improve UX for Import from Design Center
+* [STUDIO-9489] - Add method in MuleConfigurationUtils to create Temporary Config leveraging file location
+* [STUDIO-9580] - Use checkboxes instead of combos for elements that are optional
+* [STUDIO-9597] - Provide a way of obtaining debugger version
+* [STUDIO-9605] - Move Mule 3.x elements to the Compatibility Layer
+* [STUDIO-9606] - Remove Mule 3.x elements
+* [STUDIO-9645] - Generated Editors: Improve UX for edition of dictionary types
+* [STUDIO-9729] - Debugger: inform the user that they payload shown is (possibly) truncated.
+* [STUDIO-9738] - Disable Add Modules functionality when pom.xml is invalid
+* [STUDIO-9739] - Disable Run/Debug option when pom.xml is invalid
+* [STUDIO-9740] - Disable Deploy to CH functionality when pom.xml is invalid
+* [STUDIO-9741] - Disable Publish to Exchange functionality when pom.xml is invalid
+* [STUDIO-9745] - Disable Add Maven Dependency functionality when pom.xml is invalid
+* [STUDIO-9746] - Disable project export functionality when pom.xml is invalid
+* [STUDIO-9748] - Disable Manage Modules functionalities when pom.xml is invalid
+* [STUDIO-9759] - [Publish to Exchange] Avoid publish SNAPSHOT version to Exchange
+
+== Support
+
+* Access http://forums.mulesoft.com/[MuleSoft’s Forum] to pose questions and get help from Mule’s broad community of users.
+* To access MuleSoft’s expert support team https://www.mulesoft.com/support-and-services/mule-esb-support-license-subscription[subscribe to Mule ESB Enterprise] and log in to MuleSoft’s http://www.mulesoft.com/support-login[Customer Portal].

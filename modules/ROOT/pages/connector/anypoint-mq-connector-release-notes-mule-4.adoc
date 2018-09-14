@@ -1,0 +1,59 @@
+= Anypoint MQ Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: anypoint-mq-connector-release-notes-mule-4.adoc
+:keywords: mq, connector, release, notes
+
+*November 2017*
+
+_Select_
+
+*Note:* Anypoint MQ version 2.0 and later only works with Mule 4 and Studio 7. For the Mule 3 Anypoint MQ Connector Release Notes, see xref:connector/mq-connector-release-notes.adoc[Anypoint MQ Connector Release Notes].
+
+To support Exchange 2.0 properly, the feature ID of Anypoint MQ Connector has changed. Before you download MQ v1.2.0 and later from Exchange 2.0, uninstall the existing version of this connector in Studio.
+
+This release of the Anypoint MQ Connector lets you add messaging access to Anypoint MQ queues and exchanges from Anypoint Studio applications.
+
+== 2.0.0
+
+*November 17, 2017*
+
+The Anypoint MQ connector now adds support for Mule 4 and Studio 7.
+
+== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software|Version
+|Mule Runtime |4.0.0 and newer
+|Anypoint Studio |7.0.0
+|===
+
+== Known Issues
+
+* The Anypoint MQ connector doesn't support tracking.
++
+Example with tracking:
++
+[source,xml,linenums]
+----
+<flow name="customers-all-get" tracking:enable-default-events="true">
+  <anypoint-mq:subscriber config-ref="Anypoint_MQ_Configuration" destination="testQueue" acknowledgementMode="AUTO"/>
+  <tracking:transaction id="customers-all-get"/>
+</flow>
+----
++
+This is the same example with the subscriber tracking statement removed:
++
+[source,xml,linenums]
+----
+<flow name="customers-all-get">
+  <anypoint-mq:subscriber config-ref="Anypoint_MQ_Configuration" destination="testQueue" acknowledgementMode="AUTO"/>
+</flow>
+----
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

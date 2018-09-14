@@ -1,0 +1,67 @@
+= Anypoint Platform Private Cloud Edition Version 1.7.1 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: anypoint-private-cloud-1.7.1-release-notes.adoc
+
+**March 2017**
+
+This document describes new features and enhancements, known limitations, issues, and fixes in Product Name Version Number.
+
+Be sure to read this document before you install this release. For reference, save these release notes to your hard drive or print a copy.
+
+
+== Changes in this release
+
+The following changes were added to this release:
+
+- Fix connection with Studio which was not working by default in v1.7.0
+- Monitoring data rollup to have up to 4-weeks-old data available
+- Removing default cron entries from base linux images that caused CPU spikes at specific times
+- Improvements in monitoring charts for pods, cluster and platorm dashboads
+- Fixed permission issues in v1.7.0 that prevented runtime manager alerts to be delivered to users
+- SSO logout is now working from landing page
+
+== Installing
+
+See xref:1.7@private-cloud::install-workflow.adoc[Workflow: Install Anypoint Private Cloud] for information on how to install Anypoint Platform Private Cloud Edition.
+
+== Upgrading from 1.6.x or 1.7.0
+
+See xref:1.7@private-cloud::upgrade.adoc[To Migrate to Anypoint Platform Private Cloud Edition, Version 1.7.x] for information on how to upgrade to the current version.
+
+Before upgrading, you must backup your system as described in xref:1.7@private-cloud::backup-and-disaster-recovery.adoc[To Backup and Restore Your System].
+
+== Fixed Issues
+
+The following issues were fixed during this release:
+
+[%header%autowidth.spread]
+|===
+| Issue
+| Studio and other clients have broken redirect_uris in database
+| Remove all `/etc/cron.*/*` files from ubuntu base image
+| Update platform monitoring charts
+| Define and create missing Grafana charts for the Redis dashboards
+| Switch default index to use the 4 weeks retention policy
+| "Pods" Dashboards is not working
+| Account Expired messages in PCE
+| Create missing default rollups in influxdb
+| Alert e-mails are not rendered in platform-messages component
+| Extend the subscription expiration for PCE installations
+| "multipleOf" facet is not being validated by the mocking service
+| Port PCE fix for using default response timeout
+| Inconsistent Runtime Manager behavior between Platform and PCE with respect to Cluster
+| SLO from landing page is not working
+| Roles on Design environment are shown while flag is disabled
+|===
+
+== Known Issues
+
+This release contains the following known issues:
+
+[%header%autowidth.spread]
+|===
+|Issue |Description |Workaround
+| When saving Ping Federate config, client credentials are always auto-generated | First time PF config for client management is saved a token validator client is always created regardless it is passed in the form. | If you need a specific client, save the values again with desired credentials, remove the auto-created client in PF side.
+|===

@@ -1,0 +1,2863 @@
+= Workday Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: workday-connector-release-notes.adoc
+:keywords: workday, connector, release notes
+
+*April 2017*
+
+_Select_
+
+Workday is a Software-as-a-Service (SaaS) solution developed by Workday Inc., comprising a set of management applications, covering several areas like human resources management, staffing, recruiting and performance management.
+
+Connector Guide: xref:3.9@mule-runtime::workday-connector.adoc[Workday Connector]
+
+== 8.2.0
+
+*April 21, 2017*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Application/Service |Version
+|Mule Runtime |3.7.0 and later
+|Anypoint Studio |5.2 and later
+|Workday API |v28.0
+|===
+
+[NOTE]
+The Workday connector requires an *Enterprise license*.
+
+
+=== Features
+
+Introduced the following new Workday APIs
+
+* Academic Advising
+* Payroll CAN
+* Settlement Services
+
+=== New, Modified, Renamed, and Deprecated Operations
+
+Minor changes on other API operations.
+
+=== Maven Dependencies
+
+As with any other Anypoint Connector, the Workday connector can be imported into your Mule application as a dependency by specifying it in the pom.xml file of your Mule project using the following Maven coordinates.
+
+[source,xml,linenums]
+----
+<groupId>org.mule.modules</groupId>
+<artifactId>workday-connector</artifactId>
+<version>8.2.0</version>
+----
+
+=== Fixes
+
+None
+
+=== Known Issues
+
+None.
+
+== 8.1.0
+
+*October 11, 2016*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Application/Service |Version
+|Mule Runtime |3.7.0 and later
+|Anypoint Studio |5.2 and later
+|Workday API |v27.0
+|===
+
+The Workday connector requires an *Enterprise license*.
+
+
+=== Features
+
+Introduced the following new Workday APIs
+
+* Dynamic Document Generation
+* Student Records
+* Student Finance
+
+=== New, Modified, Renamed and Deprecated Operations
+
+==== New Operations
+
+*Academic Foundation*
+
+* Get/Put Maintained Academic Periods
+
+*Benefits Administration*
+
+* Get/Put Health Cate Rate
+
+*Financial Aid*
+
+* Get Financial Aid Packages
+* Get ISIR Transactions
+* Get Student Aggregate Awards
+* Get Student Anticipated Disbursements
+* Get Student Award
+* Get Student Manual Awards
+* Get Student Sponsor Contracts
+* Import Financial Aid Packages
+* Import ISIR Transaction
+* Import NSLDS Transactions
+* Import Status for ISISR Transactions
+* Import Student Aggregate Awards
+* Import Student Manual Awards
+* Put ISIR Transaction
+* Put Status for ISIR Transaction
+* Put Student Anticipated Disbursement
+* Put Student Award
+* Put Student Sponsor Contract
+
+*Financial Management*
+
+* Get/Put Default Values for Worktags
+* Import Headcount Plan
+
+*Payroll*
+
+* Get/Put Payroll Tax Mappings on Location
+* Import ROE Prior Period History Results
+
+*Staffing*
+
+Get/Put Student Employment Eligibility Status
+
+*Student Finance*
+
+* Get Student Charges
+* Get Student Historical Changes
+* Get Student Historical Payments
+* Get Student Payment Sessions
+* Get Student Payments
+* Import Student Charges
+* Import Student Historical Changes
+* Import Student Historical Payment
+* Import Student Payments
+* Put Student Payment
+* Put Student Payment Session
+* Submit Student Charge
+
+*Student Records*
+
+* Get Course Equivalency Groups
+* Get Course Offering Sets
+* Get Course Section Relationship
+* Get Course Sections
+* Get Course Subjects
+* Get Historical Students
+* Get Learning Outcomes
+* Get Meeting Day Patterns
+* Get Meeting Patterns
+* Get Orientation Offerings
+* Get Orientations
+* Get Practical Learnings
+* Get Schedule Assessments
+* Get Student Accomplishments
+* Get Student Activity Registration Records
+* Get Student Competencies
+* Get Student Course
+* Get Student Course Materials
+* Get Student Course Registrations
+* Get Student Course Tag Categories
+* Get Student Course Tags
+* Get Student Portfolio Accomplishment Contents
+* Get Study Abroad Offerings
+* Get Transcript Orders
+* Import Student Course Registrations
+* Import Student Matriculations
+* Put Course Equivalency Group
+* Put Course Offering Set
+* Put Course Section Relationship
+* Put Course Subject
+* Put Learning Outcome
+* Put Meeting Day Pattern
+* Put Meeting Pattern
+* Put Orientation
+* Put Orientation Offering
+* Put Practical Learning
+* Put Practical Learning Offering
+* Put Scheduled Assessment
+* Put Student Accomplishment
+* Put Student Activity Registration Record
+* Put Student Competency
+* Put Student Course Material
+* Put Student Course Registration
+* Put Student Course Tag
+* Put Student Course Tag Category
+* Put Student Portfolio Accomplishment Content
+* Put Study Abroad Offering
+* Put Transcript Order
+* Submit Course Section
+* Submit Grades for Registrations
+* Submit Student Course
+
+*Student Recruiting*
+
+* Get Student Recruiting Event Registration Records
+* Put Unregister Student Recruiting Registration Record
+
+*Talent*
+
+* Get Connection Types
+* Put Connection type
+
+==== Modified Operations
+
+*Academic Foundation*
+
+* Get Education Test Results
+* Get/Put Programs of Study
+* Get Students
+* Import Education Test Results
+
+*Admissions*
+
+* Get/Import/Put External Student Transcripts
+* Get/Put Student Application Requirement Assignments
+* Get/Put/Import Student Application
+
+*Compensation*
+
+* Request One-Time Payment
+
+*Financial Aid*
+
+* Get/Put Student Award Item
+
+*Human Resources*
+
+* Add Academic Appointment
+* Change Legal Name
+* Get Job Profiles
+* Change Personal Information
+* Manage Committee Membership
+* Put Job Profiles
+* Put Location
+* Get Workers
+
+*Integrations*
+
+* Launch EIB
+* Put Integration System
+
+*Payroll*
+
+* Get Advanced Lookup Tables
+* Get Lookup Tables
+* Put Advances Lookup Table
+* Put Lookup Table
+* Get Payment Election Enrollments
+* Submit Payment Election Enrollment
+* Get Payroll Involuntary Withholding Orders
+* Put Payroll Involuntary Withholding Order
+* Get Payroll Off-cycle Payments
+* Put Payroll Off-cycle Payment
+* Get Payroll Payslips
+* Get Periodic Company CAN Tax Remittance Data
+* Get Quarterly Worker Tax filing
+* Get Submit Payroll Inputs
+* Submit Payroll Input
+
+*Payroll GBR*
+
+* Get/Put Worker Pensions Auto Enrollment Details
+
+*Payroll Interface*
+
+* Get Payees
+
+*Performance Management Talent*
+
+* Get School Types
+* Put School Type
+
+*Recruiting*
+
+* Create/Edit Job Requisition
+* Create/Edit/Get Job Requisitions
+* Get Assess Candidates
+* Get Job Requisitions
+* Put Candidate
+
+*Staffing*
+
+* Add Additional Job
+* Change Job
+* Assign Roles
+* Change Job Hire Employee
+* Terminate Employee
+* Contract Contingent Worker
+* Hire Employee
+
+*Student Recruiting*
+
+* Get Student Recruiting Events
+* Submit Student Recruiting Event
+* Get Student Recruitments
+* Import Student Recruitments
+* Put Student Recruitments
+
+==== Renamed Operations
+
+*Performance Management Talent*
+
+* Get Educational Institution Types to Get School Types
+* Put Educational Institution Type to Put School Type
+
+==== Deprecated Operations
+
+*Academic Foundation*
+
+* Get Educational Institution Districts
+* Get Educational Institutions
+* Put Educational Institution
+* Put Educational Institution District
+
+*Benefits Administrations*
+
+* Get/Put Employee Defined Contribution Elections
+* Put Dependent
+
+*Campus Engagement*
+
+* Get/Put Engagement Emails
+* Get/Put Engagement Plans
+
+*Compensation*
+
+* Request Stock Grant
+
+*Financial Management*
+
+* Get Companies
+* Put Budget Incremental
+* Put Business Plan Details
+* Submit Business Plan Amendment
+* Submit Position Budget
+
+*Human Resources*
+
+* Add Update Company Tax ID
+* Find Business Site
+* Find Job Classification Group
+* Find Job Family Group
+* Find Job Profile
+* Get Business Site
+* Get Company Tax ID
+* Get Company Tax IDs
+* Get Job Classification Group
+* Get Job Family Group
+* Get Job Profile
+* Put Company Tax Id
+* Put Dependent
+* Find Contingent Worker
+* Find Employee
+* Find Worker
+* Update Contingent Worker Personal Info
+* Update Employee Personal Info
+
+*Payroll*
+
+* Get Payroll Inputs
+* Get Payroll Workers
+* Put Payroll Input
+
+*Payroll Interface*
+
+* Put Batch
+
+*Performance Management Talent*
+
+* Get/Put Competency Levels
+
+*Performance Management*
+
+* Start Performance Review
+
+*Professional Services Automation*
+
+* Add Update Customer Invoice
+* Cancel Customer Invoice
+
+*Recruiting*
+
+* Add Update Applicant
+* Find Applicant
+* Get Applicant
+
+*Resource Management*
+
+* Get PO for PO Issue Outbound
+* Get Supplier Oder Contracts
+* Put Card Holder Listing File
+* Put Credit Card Transactions
+* Put Expense Credit Card
+* Put Expense Credit Card Transaction File
+* Put Supplier
+* Submit Supplier Oder Contract
+
+*Revenue Management*
+
+* Put Cash Sale
+
+*Staffing*
+
+* Get Maintain Employee Contracts
+* Maintain Academic Tenure Date
+* Put Dependent
+
+*Student Recruitment*
+
+* Get Student Prospects
+* Import Student Prospects
+* Submit Student Prospects
+
+
+==== End Of Life Operations
+
+*Recruiting*
+
+* Put Job Posting for Referrals
+
+*Resource Management*
+
+* Get Resources
+
+*Staffing*
+
+* Demote Employee
+* Promote Employee
+* Transfer Contingent Worker
+* Transfer Employee
+
+=== Maven Dependencies
+
+As with any other Anypoint Connector, the Workday connector can be imported into your Mule application as a dependency by specifying it in the pom.xml file of your Mule project using the following Maven coordinates.
+
+[source,xml,linenums]
+----
+<groupId>org.mule.modules</groupId>
+<artifactId>workday-connector</artifactId>
+<version>8.1.0</version>
+----
+
+== 8.0.0
+
+*April 25, 2016*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Application/Service |Version
+|Mule Runtime |3.7.0 and later
+|Anypoint Studio |5.2 and later
+|Workday API |v26.0
+|===
+
+The Workday connector requires an *Enterprise license*.
+
+
+=== Features
+
+Introduced the following new Workday APIs
+
+* Payroll FRA
+* External Integrations
+* Notification
+
+=== Supported Workday APIs
+
+*Human Capital Management*
+
+* Absence Management
+* Benefits Administration
+* Compensation
+* Compensation Review
+* Human Resources
+* Payroll
+* Payroll Interface
+* Payroll GBR
+* Payroll FRA
+* Performance Management
+* Recruiting
+* Staffing
+* Talent
+* Time Tracking
+* Workforce Planning
+
+*Financials*
+
+* Cash Management
+* Financial Management
+* Inventory
+* Professional Services Automation
+* Resource Management
+* Revenue Management
+
+*Student*
+
+* Academic Foundation
+* Admissions
+* Campus Engagement
+* Financial Aid
+* Student Recruiting
+
+*System*
+
+* External Integrations
+* Identity Management
+* Integrations
+* Notification
+* Tenant Data Translation
+
+=== New, Modified, and Deprecated Operations
+
+==== New Operations
+
+*External Integrations*
+
+* Receive Launch Integration Event
+
+*Financial Management*
+
+* Get Escheatment Items
+* Get Integration Worktag Mapping Source Systems
+* Get Integration Worktag Mappings
+* Get Related Worktags For Worktags
+* Import Statistic
+* Put Escheatable Payment Notification Date
+* Put Integration Worktag Mapping Source Systems
+* Put Integration Worktag Mappings
+* Put Related Worktags For Worktag
+* Submit Escheatment Items
+
+*Human Resources*
+
+* Get Committee Meetings
+* Put Committee Meeting
+
+*Notification*
+
+* Receive Notification
+
+*Payroll FRA*
+
+* Get DSN Data
+
+*Payroll GBR*
+
+* Get/Put Payroll Payee RTIs
+* Get/Put Pensions Auto Enrollment External Assessment History
+* Get/Put Worker Pensions Auto Enrollment Details
+
+
+*Performance Management*
+
+* Get Feedback and Review Questions
+* Get Review Types
+* Put Feedback and Review Question
+* Put Review Types
+
+*Resource Management*
+
+* Submit Purchase Order Change Order
+
+*Revenue Management*
+
+* Get Ad Hoc Billable Transactions
+* Get Contact Types
+* Get Sales Item Fair Value Price Lists
+* Get Subaward Risk Assessments
+* Get Subawards
+* Get Subrecipient Risk Records
+* Get Subrecipients
+* Put Ad Hoc Billable Transaction
+* Put Contact Type
+* Put Customer Invoice Adjustment Collection Information
+* Put Customer Invoice Collection Information
+* Put Sales Item Fair Value Price List
+* Put Subaward
+* Put Subaward Risk Assessment
+* Put Subrecipient
+* Put Subrecipient Risk Record
+
+==== Modified Operations
+
+*Absence Management*
+
+* Enter Time Off
+* Put Absence Input
+* Put Override Balance
+
+*Academic Foundation*
+
+* Get Education Test Results
+* Get Programs of Study
+* Get Student Educational Institution
+* Get Students
+* Import Education Test Results
+* Put Education Test Result
+* Put Program of Study
+* Put Student Educational Institution
+
+*Admissions*
+
+* Get External Student Transcripts
+* Get Student Application Requirement Assignments
+* Get Student Applications
+* Import External Student Transcripts
+* Import Student Applications
+* Put External Student Transcript
+* Put Student Application
+* Put Student Application Requirement Assignment
+
+*Campus Engagement*
+
+* Put Engagement Record
+
+*Cash Management*
+
+* Get Bank Accounts
+* Get Bank Statements
+* Import Ad hoc Bank Transaction
+* Import Bank Statement
+* Put Bank Account
+* Put Bank Statement
+* Submit Payment Election Enrollment
+
+*Compensation*
+
+* Request One-time Payment
+
+*Financial Aid*
+
+* Get Student Preliminary Awards
+
+*Financial Management*
+
+* Get Accounting Journals
+* Get Basic Gifts
+* Get Custom Worktags
+* Get Gifts
+* Get Loans
+* Get Program
+* Import Accounting Journal
+* Import Accounting Journal
+* Import Budget
+* Import Budget Amendment
+* Put Basic Gift
+* Put Custom Worktag
+* Put Loan
+* Put Program
+* Submit Accounting Journal
+* Submit Gift
+
+*Human Resources*
+
+* Add Academic Appointment
+* Get Committee Definition
+* Get Manage Committee Membership
+* Maintain Committee Definition
+* Manage Committee Membership
+* Manage Committee Membership
+* Manage Committee Membership
+* Put Committee Type
+* Update Academic Appointment
+* Change Personal Information
+
+*Integrations*
+
+* Get Integration Systems
+* Put Integration System
+
+*Inventory*
+
+* Get Inventory Quick Issue
+* Submit Inventory Quick Issue
+
+*Payroll*
+
+* Assign Costing Allocation
+* Get Payroll Balances
+* Get Payroll History Payments
+* Get Payroll Results
+* Get/Put Off-cycle Payment
+* Get/Submit Payroll Input
+* Put Payroll Deduction Recipient
+
+*Performance Management*
+
+* Get Competency Categories
+* Import Employee Reviews
+
+*Recruiting*
+
+* Create Job Requisition
+* Edit Job Requisition
+* Get Background Check
+* Get Candidates
+* Put Background Check
+* Put Candidate
+* Create Position
+* Edit Position Restrictions
+
+*Resource Management*
+
+* Get Requisitions
+* Get Asset Depreciation Schedule
+* Get Assets
+* Get Procurement Card Transaction Verifications
+* Get Project Worker Roles
+* Get Projects
+* Get Purchase Items
+* Get Purchase Orders
+* Get Purchase Orders
+* Get Request for Quote Awards
+* Get Resource Plans
+* Get Spend Authorizations
+* Submit Spend Authorization
+* Import Credit Card Transactions
+* Import Supplier Invoice
+* Put Purchase Item
+* Submit Purchase Order
+* Submit Requisition
+* Submit Procurement Card Transaction Verification
+* Submit Project
+* Submit Purchase Order
+* Submit Request for Quote Award
+* Submit Resource Plan
+* Submit Workday Project Hierarchy
+* Transfer Asset
+* Update Asset Depreciation Schedule
+
+*Revenue Management*
+
+* Get Award Amendments
+* Submit Award Amendment
+* Get Awards
+* Submit Award
+* Get Customer Contract
+* Get Customer Contract Amendments
+* Get Customer Invoice Adjustment
+* Get Customer Invoices
+* Submit Customer Invoice
+* Get Customers
+* Put Customer
+* Get Opportunities
+* Put Opportunity
+* Get Usage Based Transactions
+* Put Usage Based Transaction
+* Submit Billing Schedule
+* Submit Customer Contract
+* Submit Customer Contract
+* Submit Customer Contract Amendment
+* Submit Customer Invoice Adjustment
+* Submit Revenue Recognition Schedule
+
+
+*Staffing*
+
+* Edit Position Restrictions
+* Change Job
+* Hire Employee
+* Terminate Employee
+* Change Job
+* Contract Contingent Worker
+* Edit Position
+* Hire Employee
+* Get Applicants
+
+*Student Recruiting*
+
+* Get Student Recruitments
+* Import Student Recruitments
+* Put Student Recruitment
+
+*Talent*
+
+* Get Competency Categories
+* Get Proficiency Rating Scales
+* Put Proficiency Rating Scale
+
+
+==== Deprecated Operations
+
+*Academic Foundation*
+
+* Get Educational Institution Districts
+* Get Educational Institutions
+* Put Educational Institution
+* Put Educational Institution District
+
+*Benefits Administration*
+
+* Get Employee Defined Contribution Elections
+* Put Dependent
+* Put Employee Defined Contribution Elections
+
+*Campus Engagement*
+
+* Get Engagement Emails
+* Get Engagement Plans
+* Put Engagement Email
+* Put Engagement Plan
+
+*Compensation*
+
+* Request Stock Grant
+
+*Financial Management*
+
+* Get Companies
+* Put Budget Incremental
+* Put Business Plan Details
+* Submit Business Plan Amendment
+* Submit Position Budget
+
+*Human Resources*
+
+* Add Update Company Tax ID
+* Find Business Site
+* Find Job Classification Group
+* Find Job Family Group
+* Find Job Profile
+* Get Business Site
+* Get Company Tax ID
+* Get Company Tax IDs
+* Get Job Classification Group
+* Get Job Family Group
+* Get Job Profile
+* Put Company Tax ID
+* Put Dependent
+* Find Contingent Worker
+* Find Employee
+* Find Worker
+* Update Contingent Worker Personal Info
+* Update Employee Personal Info
+
+*Payroll*
+
+* Get Payroll Inputs
+* Put Payroll Input
+
+*Payroll Interface*
+
+* Put Batch
+
+*Performance Management*
+
+* Get Competency Levels
+* Put Competency Level
+* Start Performance Review
+
+*Professional Services Automation*
+
+* Add Update Customer Invoice
+* Cancel Customer Invoice
+
+*Recruiting*
+
+* Add Update Applicant
+* Find Applicant
+* Get Applicant
+
+*Resource Management*
+
+* Get PO for PO Issue Outbound
+* Get Supplier Order Contracts
+* Put Card Holder Listing File
+* Put Credit Card Transactions
+* Put Expense Credit Card
+* Put Expense Credit Card Transaction File
+* Put Supplier
+* Submit Supplier Order Contract
+
+*Revenue Management*
+
+* Put Cash Sale
+
+*Staffing*
+
+* Get Maintain Employee Contracts
+* Maintain Academic Tenure Date
+* Put Dependent
+
+*Student Recruiting*
+
+* Get Student Prospects
+* Import Student Prospects
+* Submit Student Prospect
+
+*Talent*
+
+* Get Competency Levels
+* Put Competency Level
+
+
+==== End of Life Operations
+
+*Recruiting*
+
+* Put Job Posting for Referrals
+
+*Resource Management*
+
+* Get Resources
+
+*Staffing*
+
+* Demote Employee
+* Promote Employee
+* Transfer Contingent Worker
+* Transfer Employee
+
+
+=== Maven Dependencies
+
+As with any other Anypoint Connector, the Workday connector can be imported into your Mule application as a dependency by specifying it in the pom.xml file of your Mule project using the following Maven coordinates.
+
+[source,xml,linenums]
+----
+<groupId>org.mule.modules</groupId>
+<artifactId>workday-connector</artifactId>
+<version>8.0.0</version>
+----
+
+== 7.0
+
+*October 19, 2015*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Application/Service |Version
+|Mule Runtime |3.7.0 and later
+|Anypoint Studio |5.2 and later
+|Workday API |v25.0
+|===
+
+The Workday connector requires an Enterprise License.
+
+
+=== Features
+
+Introduced the following new Workday APIs
+
+* Admissions
+* Compensation Review
+* Financial Aid
+* Inventory
+
+=== Supported Workday APIs
+
+==== Human Capital Management
+
+* Absence Management
+* Benefits Administration
+* Compensation
+* Compensation Review
+* Human Resources
+* Payroll
+* Payroll Interface
+* Payroll GBR
+* Performance Management
+* Recruiting
+* Staffing
+* Talent
+* Time Tracking
+* Workforce Planning
+
+==== Financials
+
+* Cash Management
+* Financial Management
+* Inventory
+* Professional Services Automation
+* Resource Management
+* Revenue Management
+
+==== Student
+
+* Academic Foundation
+* Admissions
+* Campus Engagement
+* Financial Aid
+* Student Recruiting
+
+==== System
+
+* Identity Management
+* Integrations
+* Tenant Data Translation
+
+=== New, Modified, and Deprecated Operations
+
+==== New Operations
+
+===== Academic Foundation
+
+* Get Educational Institution Course
+* Get Student Educational Institution
+* Get Student Educational Institution Districts
+* Import Education Test Results
+* Put Educational Institution Course
+* Put Student Educational Institution
+* Put Student Educational Institution District
+
+===== Admissions
+
+* Get Student Application Admission Responses
+* Get Student Application Requirement Assignments
+* Put Student Application Admission Response
+* Put Student Application Requirement Assignment
+
+===== Financial Aid
+
+* Get Student Award Items
+* Get Student Preliminary Awards
+* Put Student Award Item
+* Put Student Preliminary Award
+
+===== Human Resources
+
+* Assign Members to Custom Organization
+* Change Veteran Status Identification
+
+===== Performance Management
+
+* Get Goal Units
+* Put Goal Units
+
+===== Recruiting
+
+* Get Job Application Additional Data
+* Put Job Application Additional Data
+* Edit Job Requisition Additional Data
+* Edit Position Restrictions Additional Data
+
+===== Resource Management
+
+* Get Cash Advance Repayment
+* Get Resource Forecasts
+* Get Supplier Contact Information
+* Import Resource Forecast
+* Put Cash Advance Repayment
+* Submit Supplier Contact Information
+
+===== Revenue Management
+
+* Get Company as Business Entity
+* Put Company as Business Entity
+
+===== Staffing
+
+* Change Organization Assignments
+* Edit Worker Additional Data
+* Edit Job Requisition Additional Data
+* Edit Position Restrictions Additional Data
+
+===== Student Recruiting
+
+* Get Student Recruitments
+* Import Student Recruitments
+* Put Student Recruitment
+
+===== Talent
+
+* Get Skill Profile Categories
+* Get Skill Profiles
+* Get Talent Statement Types
+* Put Skill Profile
+* Put Skill Profile Category
+* Put Talent Statement Type
+
+===== Time Tracking
+
+* Assign Work Schedule
+
+==== Modified Operations
+
+===== Absence Management
+
+* Adjust Time Off
+* Enter Time Off
+* Get Absence Inputs
+* Put Absence Input
+* Put Override Balance
+* Request Leave of Absence
+* Request Return from Leave of Absence
+
+===== Academic Foundation
+
+* Get Programs of Study
+* Put Program of Study
+
+===== Cash Management
+
+* Get Ad Hoc Payment
+* Put Bank Account
+* Submit Ad Hoc Payment
+
+===== Compensation
+
+* Add Stock Grant
+* Update Stock Grant
+* Get Employee Awards
+* Get Compensation Plans
+* Put Compensation Plans
+* Request Compensation Change
+* Request Compensation Change
+* Request Compensation Change
+
+===== Financial Management
+
+* Get Alternate Account Set Mappings
+* Get Customer Contract
+* Get Gift
+* Get Journals
+* Get Payments
+* Get Recurring Journal Templates
+* Import Accounting Journal
+* Put Alternate Account Set Mappings
+* Put Grant
+* Put Recurring Journal Template
+* Put Statistic Definitions
+* Submit Customer Contract
+* Submit Gift
+
+===== Human Resources
+
+* Add Academic Appointment
+* Change Emergency Contacts
+* Change Personal Information
+* Get Work Schedule Calendars
+* Manage Committee Membership
+* Put Work Schedule Calendar
+* Get Workers
+* Get Payroll Involuntary Withholding Orders
+* Put Payroll Involuntary Withholding Order
+* Get Payroll Results
+
+===== Payroll Interface
+
+* Get Payees
+
+===== Performance Management
+
+* Manage Goals
+
+===== Recruiting
+
+* Create Job Requisition
+* Create Position
+* Get Headcounts
+* Get Positions
+* Edit Job Requisition
+* Get Background Check
+* Get Candidates
+* Get Create Job Requisition
+* Get Edit Job Requisition
+* Put Candidate
+* Put Candidate Attachment
+* Get Applicants
+* Put Applicant
+
+===== Resource Management
+
+* Cancel Supplier Invoice
+* Cancel Supplier Invoice Adjustment
+* Get Expense Item
+* Get Expense Report
+* Get Requisition
+* Get Spend Authorization
+* Get Travel City
+* Import Supplier Invoice
+* Put Expense Item
+* Put Purchase Item
+* Put Travel City
+* Resume Asset Depreciation
+* Submit Expense Report
+* Submit Expense Report
+* Submit Expense Report for Applicant
+* Submit Requisition
+* Submit Spend Authorization
+* Submit Supplier
+* Submit Supplier Invoice
+* Submit Supplier Invoice
+* Submit Supplier Invoice Adjustment
+
+===== Revenue Management
+
+* Correct Award
+* Put Award Schedule
+* Put Customer Payment
+* Submit Award
+* Submit Customer Contract
+* Submit Customer Invoice
+
+===== Staffing
+
+* Add Additional Job
+* Edit Hiring Restrictions
+* Get Headcounts
+* Get Positions
+* Promote Employee (DEPRECATED)
+* Demote Employee (DEPRECATED)
+* Start International Assignment
+* Assign Organization
+* Change Job
+* Contract Contingent Worker
+* Edit Position
+* Edit Service Dates
+* Hire Employee
+* Put Start International Assignment
+* Get Workers
+* Get Applicants
+* Put Applicant
+* Create Position
+* Edit Position Restrictions
+
+===== Talent
+
+* Get Manager Certifications
+* Manage Certifications
+
+==== Deprecated Operations
+
+===== Academic Foundation
+
+* Get Educational Institution Districts
+* Get Educational Institutions
+* Put Educational Institution
+* Put Educational Institution District
+
+===== Benefits Administration
+
+* Get Employee Defined Contribution Elections
+* Put Dependent
+* Put Employee Defined Contribution Elections
+
+===== Campus Engagement
+
+* Get Engagement Emails
+* Get Engagement Plans
+* Put Engagement Email
+* Put Engagement Plan
+
+===== Compensation
+
+* Request Stock Grant
+
+===== Financial Management
+
+* Get Companies
+* Put Budget Incremental
+* Put Business Plan Details
+* Submit Business Plan Amendment
+* Submit Position Budget
+
+===== Human Resources
+
+* Add Update Company Tax ID
+* Find Business Site
+* Find Job Classification Group
+* Find Job Family Group
+* Find Job Profile
+* Get Business Site
+* Get Company Tax ID
+* Get Company Tax IDs
+* Get Job Classification Group
+* Get Job Family Group
+* Get Job Profile
+* Put Company Tax ID
+* Put Dependent
+* Find Contingent Worker
+* Find Employee
+* Find Worker
+* Update Contingent Worker Personal Info
+* Update Employee Personal Info
+
+===== Payroll
+
+* Get Payroll Inputs
+* Put Payroll Input
+
+===== Payroll Interface
+
+* Put Batch
+
+===== Performance Management
+
+* Get Competency Levels
+* Put Competency Level
+
+===== Professional Services Automation
+
+* Add Update Customer Invoice
+* Cancel Customer Invoice
+
+===== Recruiting
+
+* Add Update Applicant
+* Find Applicant
+* Get Applicant
+
+===== Resource Management
+
+* Get PO for PO Issue Outbound
+* Get Supplier Order Contracts
+* Put Card Holder Listing File
+* Put Credit Card Transactions
+* Put Expense Credit Card
+* Put Expense Credit Card Transaction File
+* Put Supplier
+* Submit Supplier Order Contract
+
+===== Revenue Management
+
+* Put Cash Sale
+
+===== Staffing
+
+* Get Maintain Employee Contracts
+* Maintain Academic Tenure Date
+* Put Dependent
+
+===== Student Recruiting
+
+* Get Student Prospects
+* Import Student Prospects
+* Submit Student Prospect
+
+===== Talent
+
+* Get Competency Levels
+* Put Competency Level
+
+==== End of Life Operations
+
+===== Recruiting
+
+* Put Job Posting for Referrals
+
+===== Resource Management
+
+* Get Resources
+
+===== Staffing
+
+* Demote Employee
+* Promote Employee
+* Transfer Contingent Worker
+* Transfer Employee
+
+
+=== Maven Dependencies
+
+As with any other Anypoint Connector, the Workday connector can be imported into your Mule application as a dependency by specifying it in the pom.xml file of your Mule project using the following Maven coordinates.
+
+[source,xml,linenums]
+----
+<groupId>org.mule.modules</groupId>
+<artifactId>workday-connector</artifactId>
+<version>7.0.0</version>
+----
+
+== 6.0
+
+*July 31, 2015*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Application/Service|Version
+|Mule Runtime|3.7.0 and later
+|Anypoint Studio|5.2 and later
+|===
+
+The Workday connector requires an Enterprise License.
+
+=== Features
+
+* Updated the connector to DevKit v3.7.0.
+* Combined Workday APIs into one single connector.
+* Changed the Requests and Responses to XML format.
+* Added support for HttpRequestConfig in the Global Elements Configuration, which enables the user to set an HTTP proxy connection, and adjust the Connection Timeout and Receive Timeout values.
+* Enabled the connector to automatically generated the service endpoints.
+
+=== Supported Workday APIs
+
+==== Human Capital Management
+
+* Absence Management
+* Benefits Administration
+* Compensation
+* Human Resources
+* Payroll
+* Payroll Interface
+* Payroll GBR
+* Performance Management
+* Recruiting
+* Staffing
+* Talent
+* Time Tracking
+* Workforce Planning
+* Financials
+
+==== Cash Management
+
+* Financial Management
+* Professional Services Automation
+* Resource Management
+* Revenue Management
+
+==== Student
+
+* Academic Foundation
+* Campus Engagement
+* Student Recruiting
+
+==== System
+
+* Identity Management
+* Integrations
+* Tenant Data Translation
+
+=== Maven Dependencies
+
+As with any other Anypoint Connector, the Workday connector can be imported into your Mule application as a dependency by specifying it in the pom.xml file of your Mule project using the following Maven coordinates.
+
+[source,xml,linenums]
+----
+<groupId>org.mule.modules</groupId>
+<artifactId>workday-connector</artifactId>
+<version>6.0.0</version>
+----
+
+== 5.0
+
+*July 1, 2015*
+
+Release Notes for version v5.0 of the Workday connector.
+
+[NOTE]
+With the release of version 5.0, the Workday Connector was upgraded from _Standard_ to _Select_ tier.
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Application/Service|Version
+|Mule Runtime|EE 3.5.0 and later
+|Anypoint Studio|5.2 and later
+|Workday API|V24.0
+|Java|JDK 7
+|===
+
+
+=== Updating from an Older Version
+
+When a new version of a connector is released, Anypoint Studio displays a popup in the bottom right corner of you screen with the following message: Updates Available.
+
+To upgrade to the newer version of the Workday connector:
+
+. Click the popup and check for the available updates.
+. Install the individual Workday connectors from the update site.
+. Ensure that the maven dependencies have been updated correctly from `mule-module-workday` to `mule-module-workday-<wd_module_name>`.
+. Follow the instructions provided in the user interface.
+. Restart Studio when prompted.
+. After restarting, if you have several versions of the connector installed, Mule asks you for the version of the connector you like to use.
+
+=== Features
+
+* Added support for the Payroll GBR module and the following operations:
+** Get Payee Tax Codes
+** Get Payroll Payee NIs
+** Get Payroll Payee Student Loans
+** Put Payee Tax Code
+** Put Payroll Payee NI
+** Put Payroll Payee Student Loan
+* Updated the connector to support Workday API v24.0.
+* Updated the connector to use DevKit 3.6.1.
+* Added support for connection through proxy servers.
+* Enabled support for adjusting the Connection Timeout and Receive Timeout values in the global configuration.
+* Migrated the connector to CXF 2.7.15.
+* Added support for HTTP proxies.
+* Added options to specify the connection timeout and receive timeout values in the global configuration.
+
+=== Maven Dependencies
+
+The Workday Payroll GBR module can be imported into your Mule application as a dependency, using the following Maven coordinates:
+
+[%header%autowidth.spread]
+|===
+|Module/Service|Maven Artifact
+|HCM|
+
+[source,xml,linenums]
+----
+<groupId>org.mule.modules</groupId>
+<artifactId>mule-module-workday-payroll-gbr</artifactId>
+----
+
+|Payroll GBR|
+
+[source,xml]
+----
+<version>5.0.0</version>
+----
+
+|===
+
+=== Fixes
+
+* The names of some of the supported operations have been changed.
+* Some XSD namespaces have been renamed.
+* Fixed an issue where Latin1 encoding was being used instead of UTF-8.
+* The mule-connector-test dependency was being incorrectly packaged with the Workday modules. This has been fixed.
+* XMLGregorianCalender is no longer used by the connector.
+
+=== List of New and Deprecated Operations
+
+==== HCM Changes
+
+* *Benefits Administration*
+** New Operations:
+*** Put Evidence Of Insurability
+** Deprecated Operations:
+*** Get Employee Defined Contribution Elections
+*** Put Dependent Benefits
+*** Put Employee Defined Contribution Elections
+* *Compensation*
+** New Operations:
+*** Import Eligible Earnings Override
+*** Get Stock Participation Rate Tables
+*** Put Stock Participation Rate Table
+** Deprecated Operations:
+*** Request Stock Grant
+* *Human Resources*
+** New Operations:
+*** Put Appointment Specialty
+*** Assign Establishment
+*** Get LGBT Identifications
+*** Put Work Schedule Calendar
+*** Put Establishment
+*** Get Work Schedule Calendars
+*** End Collective Agreement Assignment
+*** Get Establishments
+*** Put LGBT Identification
+*** Get Appointment Specialties
+** Deprecated Operations:
+*** Update Contingent Worker Personal Info (New)
+*** Update Employee Personal Info (New)
+*** Add Update Company Tax ID
+*** Find Business Site
+*** Find Contingent Worker
+*** Find Employee
+*** Find Job Classification Group
+*** Find Job Family Group
+*** Find Job Profile
+*** Find Worker
+*** Get Business Site
+*** Get Company Tax ID
+*** Get Company Tax IDs
+*** Get Job Classification Group
+*** Get Job Family Group
+*** Get Job Profile
+*** Put Company Tax ID
+*** Put Dependent
+* *Payroll*
+** New Operations:
+*** Get Successor Employers
+*** Get Payroll Payee PT1S
+*** Put Payroll Payee RPP Or DPSP Registration Number
+*** Put W2W2C Printing Election
+*** Put Payroll Payee TD1
+*** Put Payroll Payee PT1
+*** Put Tax Levy Deduction Restriction
+*** Get Single Legal Entities
+*** Get Payroll Payee RPPOrDPSP Registration Numbers
+*** Put Single Legal Entity
+*** Put Successor Employer
+*** Get W2W2C Printing Election
+*** Get Tax Levy Deduction Restrictions
+*** Get Payroll Payee TD1S
+** Removed Operations:
+*** Put Payroll Input
+*** Get Payroll Inputs
+* *Recruiting*
+** New Operations:
+*** Get Assess Candidate
+*** Assess Candidate
+** Removed Operations:
+*** Add Update Applicant
+*** Get Applicant
+*** Find Applicant
+* *Staffing*
+** New Operations:
+*** End International Assignment
+*** Start International Assignment
+** Deprecated Operations:
+*** Maintain Academic Tenure Date
+*** Put Dependent
+** Removed Operation:
+*** Get Maintain Employee Contracts
+* *Talent*
+** New Operations:
+*** Put Subspecialty
+*** Get Specialties
+*** Put Specialty
+*** Get Professional Affiliation Relationship Types
+*** Put Professional Affiliation Relationship Type
+*** Put Professional Affiliation
+*** Get Professional Affiliation Types
+*** Put Professional Affiliation Type
+*** Get Subspecialties
+*** Get Professional Affiliations
+
+=== Financials Changes
+
+* Financial Management
+** New Operations:
+*** Get Alternate Account Set Mappings
+*** Get Budget Fringe Rate Tables
+*** Import Position Budget
+*** Put Fringe Rate Table
+*** Put Alternate Account Set Mapping
+** Deprecated Operations:
+*** Get Companies
+** Removed Operations:
+*** Submit Position Budget
+* *Resource Management*
+** New Operations:
+*** Get Request For Quote Awards
+*** Get Supplier Connections
+*** Get Project Phases
+*** Import Credit Cards
+*** Get Project Tasks
+*** Get Requirements For Resource Plan
+*** Put Requirements For Resource Plan
+*** Submit Request For Quote Award
+*** Submit Supplier Connection
+*** Put Project Task
+*** Get Request For Quote Responses
+*** Submit Request For Quote
+*** Put Project phase
+*** Submit Request For Quote Response
+*** Get Request For Quote
+** Deprecated Operations:
+*** Get PO For PO Issue Outbound
+*** Get Project Resource Plans
+*** Get Supplier Order Contracts
+*** Get Workday Projects
+*** Put Supplier
+*** Put Card Holder Listing File (New)
+*** Put Expense Credit Card (New)
+*** Put Expense Credit Card Transaction (New)
+*** Put Expense Credit Card Transaction File (New)
+*** Put Project Resource Plan (New)
+* *Revenue Management*
+** New Operations:
+*** CorrectAward
+*** Get Contract Rate Sheets
+*** Put Usage Based Transaction
+*** Put Contract Rate Sheet
+*** Put Project Rate Category
+*** Put Project Billing Rate Sheet
+*** Get Project Billing Rate Sheets
+*** Get Usage Based Transactions
+*** Import Customer Invoice
+*** Get Project Rate Categories
+** Deprecated Operations:
+*** Put Cash Sale
+
+==== Student Changes
+
+* *Campus Engagement*
+** New Operations:
+*** Put Engagement Record
+** Removed Operations:
+*** Get Engagement Emails
+*** Put Engagement Plan
+*** Put Engagement Email
+*** Get Engagement Plans
+* *Student Recruiting*
+** New Operations:
+*** Put Marketing Activity Definition
+*** Get Marketing Activity Definitions
+** Removed Operations:
+*** Put Admission Stage Progression Rule
+*** Get Admission Stage Progression Rules
+
+==== System Changes
+
+* *Integrations*
+** New Operations:
+*** Reassign Business Process Step
+
+=== Renamed Operations
+
+Previously, the names of the operations supported by the connector included the name of the corresponding Workday module as a suffix. These suffixes have been removed:
+
+[%header%autowidth.spread]
+|===
+|Module|Previous Name|Current Name
+|Benefits Administration|putDependentBenefits|putDependent
+|Financial Management|getPaymentMessagesFinancial|getPaymentMessages
+|Financial Management|getSearchSettingsFinancial|getSearchSettings
+|Financial Management|putSearchSettingsFinancial|putSearchSettings
+|Financial Management|getBusinessEntityContactsFinancial|getBusinessEntityContacts
+|Financial Management|getPaymentsFinancial|getPayments
+|Financial Management|putBusinessEntityContactFinancial|putBusinessEntityContact
+|Financial Management|getOrganizationsFinancial|getOrganizations
+|Human Resources|putDependentHr|putDependent
+|Payroll Interface|getPeriodSchedulesPayrollInterface|getPeriodSchedules
+|Payroll Interface|putPeriodSchedulePayrollInterface|putPeriodSchedule
+|Payroll Interface|getWorkerCostingAllocationsPayrollInterface|getWorkerCostingAllocations
+|Recruiting|getOrganizationsRecruiting|getOrganizations
+|Recruiting|getServerTimestampRecruiting|getServerTimestamp
+|Resource Management|getBusinessEntityContactsResource|getBusinessEntityContacts
+|Resource Management|getResourceCategoriesResource|getResourceCategories
+|Resource Management|getSpendCategoryHierarchiesResource|getSpendCategoryHierarchies
+|Resource Management|getSupplierCategoriesResource|getSupplierCategories
+|Resource Management|putBusinessEntityContactResource|putBusinessEntityContact
+|Resource Management|putResourceCategoryResource|putResourceCategory
+|Resource Management|putSpendCategoryHierarchyResource|putSpendCategoryHierarchy
+|Resource Management|putSupplierCategoryResource|putSupplierCategory
+|Revenue Management|getBusinessEntityContactsRevenue|getBusinessEntityContacts
+|Revenue Management|getCustomerCategoriesRevenue|getCustomerCategories
+|Revenue Management|getRevenueCategoriesRevenue|getRevenueCategories
+|Revenue Management|getRevenueCategoryHierarchiesRevenue|getRevenueCategoryHierarchies
+|Revenue Management|putBusinessEntityContactRevenue|putBusinessEntityContact
+|Revenue Management|putCustomerCategoryRevenue|putCustomerCategory
+|Revenue Management|putRevenueCategoryRevenue|putRevenueCategory`
+|Revenue Management|putRevenueCategoryHierarchyRevenue|putRevenueCategoryHierarchy
+|Staffing|putApplicantStaffing|putApplicant
+|Staffing|createPositionStaffing|createPosition
+|Staffing|editPositionRestrictionsStaffing|editPositionRestrictions
+|Staffing|getApplicantsStaffing|getApplicants
+|Staffing|getHeadcountsStaffing|getHeadcounts
+|Staffing|getPositionsStaffing|getPositions
+|Staffing|putJobClassificationGroupStaffing|putJobClassificationGroup
+|Staffing|putJobFamilyStaffing|putJobFamily
+|Staffing|getWorkersStaffing|getWorkers
+|Staffing|getJobClassificationGroupsStaffing|getJobClassificationGroups
+|Staffing|getJobFamilyGroupsStaffing|getJobFamilyGroups
+|Staffing|getOrganizationsStaffing|getOrganizations
+|Staffing|putJobFamilyGroupStaffing|putJobFamilyGroup
+|Staffing|getJobFamiliesStaffing|getJobFamilies
+|Talent|getCertificationsTalent|getCertifications
+|Talent|getCompetenciesTalent|getCompetencies
+|Talent|getCompetencyCategoriesTalent|getCompetencyCategories
+|Talent|getDegreesTalent|getDegrees
+|Talent|getEducationalInstitutionTypesTalent|getEducationalInstitutionTypes
+|Talent|getFieldsOfStudyTalent|getFieldsOfStudy
+|Talent|getSkillSourcePrecedencesTalent|getSkillSourcePrecedences
+|Talent|putCertificationTalent|putCertification
+|Talent|putCompetencyTalent|putCompetency
+|Talent|putDegreeTalent|putDegree
+|Talent|putEducationalInstitutionTypeTalent|putEducationalInstitutionType
+|Talent|putFieldOfStudyTalent|putFieldOfStudy
+|Talent|putCertificationIssuerTalent|putCertificationIssuer
+|Talent|getCertificationIssuersTalent|getCertificationIssuers
+|===
+
+=== Renamed XSD Namespaces
+
+[%header%autowidth.spread]
+|===
+| |From|To
+|Absence Management|`+http://www.mulesoft.org/schema/mule/wd-absence/2.0/mule-wd-absence.xsd+`|`+http://www.mulesoft.org/schema/mule/wd-absence/current/mule-wd-absence.xsd+`
+|Benefits Administration|`+http://www.mulesoft.org/schema/mule/wd-benefits/2.0/mule-wd-benefits.xsd+`|`+http://www.mulesoft.org/schema/mule/wd-benefits/current/mule-wd-benefits.xsd+`
+|Compensation|`+http://www.mulesoft.org/schema/mule/wd-compensation/2.0/mule-wd-compensation.xsd+`|`+http://www.mulesoft.org/schema/mule/wd-compensation/current/mule-wd-compensation.xsd+`
+|Human Resources|`+http://www.mulesoft.org/schema/mule/wd-hr/2.0/mule-wd-hr.xsd+`|`+http://www.mulesoft.org/schema/mule/wd-hr/current/mule-wd-hr.xsd+`
+|Staffing|`+http://www.mulesoft.org/schema/mule/wd-staffing/2.0/mule-wd-staffing.xsd+`|`+http://www.mulesoft.org/schema/mule/wd-staffing/current/mule-wd-staffing.xsd+`
+|Talent|`+http://www.mulesoft.org/schema/mule/wd-talent/2.0/mule-wd-talent.xsd+`|`+http://www.mulesoft.org/schema/mule/wd-talent/current/mule-wd-talent.xsd+`
+|===
+
+== 4.2.0
+
+*March 20, 2015*
+
+Release Notes for version v4.2.0 of the Workday connector.
+
+The Workday connector requires an Enterprise License.
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Application/Service |Version
+|Mule Runtime |EE 3.4.2 and later
+|Workday API |v23.0
+|===
+
+=== Features
+
+The following modules have been added to the existing Workday connector. The list of all operations that have been added for each module can be found below.
+
+*Student:*
+
+* Academic Foundation
+* Campus Engagement
+* Student Recruiting
+
+*System:*
+
+* Identity Management
+* Integrations
+* Tenant Data Translation
+
+=== Supported Operations: Workday Student Connector
+
+==== Academic Foundation
+
+* Get_Academic_Contacts
+* Get_Educational_Institution_Districts
+* Get_Educational_Institutions
+* Get_External_Associations
+* Get_Extracurricular_Activities
+* Get_Programs_of_Study
+* Get_Student_Tag_Categories
+* Get_Student_Tags
+* Put_Academic_Contact
+* Put_Educational_Institution
+* Put_Educational_Institution_District
+* Put_External_Association
+* Put_Extracurricular_Activity
+* Put_Program_of_Study
+* Put_Student_Tag
+* Put_Student_Tag_Category
+
+==== Campus Engagement
+
+* Get_Engagement_Conversation_Tags
+* Get_Engagement_Conversations
+* Get_Engagement_Emails
+* Get_Engagement_External_Items
+* Get_Engagement_Plans
+* Put_Engagement_Conversation
+* Put_Engagement_Conversation_Tag
+* Put_Engagement_Email
+* Put_Engagement_External_Item
+* Put_Engagement_Plan
+
+==== Student Recruiting
+
+* Get_Ad_Hoc_Locations
+* Get_Recruiting_Regions
+* Get_Search_Service_Definitions
+* Get_Student_Prospects
+* Get_Student_Recruiters
+* Get_Student_Recruiting_Campaigns
+* Get_Student_Recruiting_Cycles
+* Get_Student_Recruiting_Events
+* Import_Student_Prospects
+* Put_Ad_Hoc_Location
+* Put_Recruiting_Region
+* Put_Search_Service_Definition
+* Put_Student_Recruiting_Cycle
+* Put_Student_Recruiting_Event_Registration_Record
+* Submit_Student_Prospect
+* Submit_Student_Recruiter
+* Submit_Student_Recruiting_Campaign
+* Submit_Student_Recruiting_Event
+
+=== Supported Operations: Workday System Connector
+
+==== Identity Management
+
+* Get_Unidentified_Signons
+* Get_Workday_Account_Signons
+
+==== Integrations
+
+* Approve_Business_Process
+* Cancel_Business_Process
+* Deny_Business_Process
+* Get_EIB_Definitions
+* Get_Event_Detail
+* Get_Event_Documents
+* Get_Import_Process_Messages
+* Get_Import_Processes
+* Get_Integration_Events
+* Get_Integration_System_Users
+* Get_Integration_Systems
+* Get_References
+* Get_Sequence_Generators
+* Get_Subscriptions
+* Increment_Sequence_Generator
+* Launch_EIB
+* Launch_Integration
+* Put_Integration_Event
+* Put_Integration_Message
+* Put_Integration_System
+* Put_Integration_System_User
+* Put_Reference
+* Put_Sequence_Generator
+* Put_Subscription
+
+==== Tenant Data Translation
+
+* Get_Translatable_Tenant_Data_Public
+* Put_Translatable_Tenant_Data_Public
+
+=== Maven Dependencies
+
+As with any other Anypoint Connector, the Workday connector can be referred to as a dependency in the pom.xml file of your Mule project. The following table indicates the groupIds and artifactIds for each Workday Student and Workday System connector.
+
+[%header%autowidth.spread]
+|===
+|Module|Maven Artifacts
+|*Student* +
+Academic Foundation |`<groupId>org.mule.modules</groupId>` +
+`<artifactId>mule-module-workday-academicfoundation</artifactId>` +
+`<version>4.2.0</version>`
+|*Student* +
+Campus Engagement |`<groupId>org.mule.modules</groupId>` +
+`<artifactId>mule-module-workday-campusengagement</artifactId>` +
+`<version>4.2.0</version>`
+|*Student* +
+Student Recruiting |`<groupId>org.mule.modules</groupId>` +
+`<artifactId>mule-module-workday-studentrecruiting</artifactId>` +
+`<version>4.2.0</version>`
+|*System* +
+Identity Management |`<groupId>org.mule.modules</groupId>` +
+`<artifactId>mule-module-workday-identitymanagement</artifactId>` +
+`<version>4.2.0</version>`
+|*System* +
+Integrations |`<groupId>org.mule.modules</groupId>` +
+`<artifactId>mule-module-workday-integrations</artifactId>` +
+`<version>4.2.0</version>`
+|*System* +
+Tenant Data Translation |`<groupId>org.mule.modules</groupId>` +
+`<artifactId>mule-module-workday-tenantdatatranslation</artifactId>` +
+`<version>4.2.0</version>`
+|===
+
+=== Fixed in this Release
+
+Password - Workday connectors no longer show passwords in plain-text when inputting them in Anypoint Studio.
+
+== 4.1.1
+
+*December 12, 2014*
+
+The Anypoint Workday connector has been updated to 4.1.1 to support Workday 23.0 API with minor improvements from the Workday Connector 4.0.0 release. For more information on Workday, see the https://community.workday.com/current/wsrelnotes[Workday Release Notes for v23.0].
+
+For more information on upgrade paths or how to use Workday's API, see:
+
+* https://community.workday.com/custom/developer/API/versions/v23.0/index.html[Workday v23.0 API]
+* https://community.workday.com/[General knowledge on Workday operations]
+
+The MuleSoft Workday 4.1.1 Connector release fixes issues that have surfaced in the previous release of the Workday Connector (4.0.1).
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Application/Service |Version
+|Mule Runtime |Mule 3.4.2 and later
+|Anypoint Studio |October 2014
+|Workday API |v 23.0
+|===
+
+=== Supported Workday v23.0 API Modules
+
+* Absence Management
+* Benefits Administration
+* Cash Management
+* Compensation
+* Financial Management
+* Human Resources
+* Payroll
+* Payroll Interface
+* Performance Management
+* Professional Services Automation
+* Recruiting
+* Resource Management
+* Revenue Management
+* Staffing
+* Talent
+* Time Tracking
+* Workforce Planning
+
+=== Supported Operations per Module
+
+==== Absence Management
+
+No operations were added or removed
+
+==== Benefits Administration
+
+No operations were added or removed
+
+==== Cash Management
+
+*Supported Operations*
+
+* CancelAdHocBankTransaction
+* CancelAdHocPayment
+* GetAdHocBankTransactions
+* GetAdHocPayees
+* GetAdHocPayments
+* GetBankAccountTransfers
+* GetBankAccounts
+* GetBankBranches
+* GetBankStatementFiles
+* GetBankStatements
+* GetBusinessEntityContacts
+* GetDonorContributions
+* GetDonors
+* GetFinancialInstitutions
+* GetInvestmentPoolAdjustments
+* GetInvestmentPoolPurchases
+* GetInvestmentPoolSales
+* GetInvestmentPoolTransfers
+* GetInvestmentStatements
+* GetPaymentElectionEnrollments
+* GetPaymentElectionOptions
+* GetPaymentMessages
+* GetPayments
+* GetPettyCashAccounts
+* ImportAdhocBankTransaction
+* ImportBankStatement
+* PutAdHocPayee
+* PutBankAccount
+* PutBankBranch
+* PutBankStatement
+* PutBankStatementFile
+* PutBusinessEntityContact
+* PutDonor
+* PutFinancialInstitution
+* PutPaymentAcknowledgementMessage
+* PutPaymentElectionOption
+* PutPettyCashAccount
+* SubmitAdHocBankTransaction
+* SubmitAdHocPayment
+* SubmitBankAccountTransfer
+* SubmitDonorContribution
+* SubmitInvestmentPoolAdjustment
+* SubmitInvestmentPoolPurchase
+* SubmitInvestmentPoolSale
+* SubmitInvestmentPoolTransfer
+* SubmitInvestmentStatement
+* SubmitPaymentElectionEnrollment
+
+==== Compensation
+
+No operations were added or removed
+
+==== Financial Management
+
+*Supported operations*
+
+* CancelAccountingJournal
+* Get1042-SIncomeCodes
+* Get1099MISCAdjustments
+* Get1099MISCs
+* GetAccountSets
+* GetAccountSetsWithoutDependencies
+* GetAwardPersonnelResponsibilities
+* GetBasicCustomers
+* GetBasicGifts
+* GetBasicGrants
+* GetBasicProjects
+* GetBasicSalesItems
+* GetBasicSuppliers
+* GetBeginningBalanceJournals
+* GetBeginningBalanceTranslationAmounts
+* GetBusinessEntityContacts
+* GetBusinessPlanDetails
+* GetBusinessUnitHierarchies
+* GetBusinessUnits
+* GetCompany1099MISCData
+* GetCostCenters
+* GetCurrencyConversionRates
+* GetCurrencyRateTypes
+* GetCustomValidationRules
+* GetCustomValidationRuleswithoutDependencies
+* GetCustomWorktags
+* GetCustomerCategories
+* GetEffortCertificationChangeReasonCodes
+* GetEffortCertificationEligibilityRules
+* GetEffortCertificationEligibilityRuleswithoutDependencies
+* GetEffortCertificationTypes
+* GetEffortCertifyingTexts
+* GetFundHierarchies
+* GetFundTypes
+* GetFunds
+* GetGiftHierarchies
+* GetGifts
+* GetGrantHierarchies
+* GetGrants
+* GetInvestors
+* GetJournals
+* GetLedgerAccountSummaries
+* GetLoanInvestorTypes
+* GetLoanReferralTypes
+* GetLoans
+* GetObjectClassSets
+* GetOrganizations
+* GetPaymentMessages
+* GetPaymentTerms
+* GetPaymentTypes
+* GetPayments
+* GetPositionBudgets
+* GetProgramHierarchies
+* GetPrograms
+* GetReceivableWriteoffCategories
+* GetRecurringJournalTemplates
+* GetRegions
+* GetResourceCategories
+* GetRevenueCategories
+* GetRevenueCategoryHierarchies
+* GetSearchSettings
+* GetSpendCategoryHierarchies
+* GetStatisticDefinitions
+* GetStatistics
+* GetSupplierCategories
+* GetSurveys
+* GetTaxApplicabilities
+* GetTaxAuthorities
+* GetTaxCategories
+* GetTaxCodes
+* GetTaxRates
+* GetWorkdayCompanies
+* ImportAccountingJournal
+* ImportBudgetAmendment
+* ImportBudgetDetails
+* ImportBudgetDetailsIncremental
+* Put1042-SIncomeCode
+* PutAccountSet
+* PutAwardPersonnelResponsibility
+* PutBasicCustomer
+* PutBasicGift
+* PutBasicGrant
+* PutBasicProject
+* PutBasicSalesItem
+* PutBasicSupplier
+* PutBeginningBalanceJournal
+* PutBeginningBalanceTranslationAmounts
+* PutBudgetIncremental
+* PutBusinessEntityContact
+* PutBusinessPlanDetails
+* PutBusinessUnit
+* PutBusinessUnitHierarchy
+* PutContingentWorkerTaxAuthorityFormType
+* PutCurrencyConversionRate
+* PutCurrencyConversionRates
+* PutCurrencyRateType
+* PutCustomValidationRule
+* PutCustomWorktag
+* PutCustomerCategory
+* PutEffortCertificationChangeReasonCode
+* PutEffortCertificationType
+* PutEffortCertifyingText
+* PutFund
+* PutFundHierarchy
+* PutFundType
+* PutGiftHierarchy
+* PutGrant
+* PutGrantHierarchy
+* PutInvestor
+* PutLedgerAccountSummary
+* PutLoan
+* PutLoanInvestorType
+* PutLoanReferralType
+* PutObjectClassSet
+* PutPaymentTerm
+* PutPaymentType
+* PutProgram
+* PutProgramHierarchy
+* PutReceivableWriteoffCategory
+* PutRecurringJournalTemplate
+* PutResourceCategory
+* PutRevenueCategory
+* PutRevenueCategoryHierarchy
+* PutSearchSettings
+* PutSpendCategoryHierarchy
+* PutStatistic
+* PutStatisticDefinition
+* PutSupplierCategory
+* PutSurvey
+* PutTaxApplicability
+* PutTaxAuthority
+* PutTaxCategory
+* PutTaxCode
+* PutTaxRate
+* PutThirdPartyCalculatedTaxInformation
+* Submit1099MISCAdjustment
+* SubmitAccountingJournal
+* SubmitBusinessPlanAmendment
+* SubmitGift
+* SubmitPositionBudget
+* UnpostAccountingJournal
+
+*Deprecated Operations*
+
+* GetCompanies
+
+==== Human Resources
+
+No operations were added or removed
+
+==== Payroll
+
+No operations were added or removed
+
+==== Payroll Interface
+
+No operations were added or removed
+
+==== Performance Management
+
+No operations were added or removed
+
+==== Professional Services Automation
+
+Supported operations:
+
+* AddUpdateExpenseReport
+* CancelExpenseReportOld
+
+==== Recruiting
+
+No operations were added or removed
+
+==== Resource Management
+
+Supported operations:
+
+* AddSupplierContractLineHold
+* AdjustAssetCost
+* CancelExpenseReport
+* CancelPurchaseOrder
+* CancelReceipt
+* CancelRequisition
+* CancelSupplierInvoice
+* CancelSupplierInvoiceAdjustment
+* CancelTimesheet
+* DisposeAsset
+* EditAsset
+* GetAirlines
+* GetAirports
+* GetAssetBookRules
+* GetAssetDepreciationSchedules
+* GetAssetPoolingRules
+* GetAssets
+* GetBusinessEntityContacts
+* GetCarRentalAgencies
+* GetCardHolderListingFiles
+* GetCatalogItems
+* GetExpenseCreditCardTransactionFiles
+* GetExpenseCreditCardTransactions
+* GetExpenseCreditCards
+* GetExpenseItemAttributeGroups
+* GetExpenseItemGroups
+* GetExpenseItems
+* GetExpensePolicyGroups
+* GetExpenseRateTableRules
+* GetExpenseRateTables
+* GetExpenseReports
+* GetHotels
+* GetPayrollTimesheetsTimeInTimeOut
+* GetPayrollTimesheetsTotalHours
+* GetPrepaidSpendAmortizationSchedules
+* GetPrepaidSpendAmortizations
+* GetProcurementCardTransactionVerifications
+* GetProcurementMassClose
+* GetProjectAsset
+* GetProjectPlans
+* GetProjectScenarioGroups
+* GetProjectScenarios
+* GetProjectTaskResources
+* GetProjectTimesheets
+* GetProjects
+* GetPurchaseItemGroups
+* GetPurchaseItems
+* GetPurchaseOrderSchedules
+* GetPurchaseOrders
+* GetReceipts
+* GetRequisitions
+* GetResourceCategories
+* GetResourcePlans
+* GetReturns
+* GetSpendAuthorizations
+* GetSpendCategoryHierarchies
+* GetSupplierCategories
+* GetSupplierContracts
+* GetSupplierGroups
+* GetSupplierInvoiceAdjustments
+* GetSupplierInvoiceHistories
+* GetSupplierInvoiceSchedules
+* GetSupplierInvoices
+* GetSuppliers
+* GetTimesheets
+* GetTravelBookingFiles
+* GetTravelCities
+* GetWorkdayProjectHierarchies
+* GetWorkdayProjectHierarchieswithoutDependencies
+* ImpairAsset
+* ImportCatalogLoad
+* ImportCreditCardTransactions
+* ImportSupplierInvoice
+* ImportTravelBookingRecords
+* IssueAsset
+* PlaceAssetinService
+* PutAirline
+* PutAirport
+* PutAssetBookRules
+* PutAssetPoolingRule
+* PutBusinessEntityContact
+* PutCarRentalAgency
+* PutCardHolderListingFile
+* PutExpenseCreditCard
+* PutExpenseCreditCardTransaction
+* PutExpenseCreditCardTransactionFile
+* PutExpenseItem
+* PutExpenseItemAttributeGroup
+* PutExpenseItemGroup
+* PutExpensePolicyGroup
+* PutExpenseRateTable
+* PutExpenseRateTableRule
+* PutHotel
+* PutProjectAsset
+* PutProjectPlan
+* PutProjectScenarioGroup
+* PutProjectTaskResources
+* PutPurchaseItem
+* PutPurchaseItemGroup
+* PutResourceCategory
+* PutSpendCategoryHierarchy
+* PutSupplierCategory
+* PutSupplierGroup
+* PutSupplierInvoiceHistory
+* PutTravelCity
+* RegisterAsset
+* ReinstateAsset
+* RemoveAsset
+* RemoveSupplierContractLineHold
+* ResumeAssetDepreciation
+* SubmitCatalogLoad
+* SubmitExpenseReport
+* SubmitExpenseReportforApplicant
+* SubmitPayrollTimesheetTimeInTimeOut
+* SubmitPayrollTimesheetTotalHours
+* SubmitPrepaidSpendAmortization
+* SubmitPrepaidSpendAmortizationSchedule
+* SubmitProcurementCardTransactionVerification
+* SubmitProcurementMassClose
+* SubmitProject
+* SubmitProjectScenario
+* SubmitProjectTimesheet
+* SubmitPurchaseOrder
+* SubmitPurchaseOrderSchedule
+* SubmitReceipt
+* SubmitRequisition
+* SubmitResourcePlan
+* SubmitReturn
+* SubmitSpendAuthorization
+* SubmitSupplier
+* SubmitSupplierContract
+* SubmitSupplierInvoice
+* SubmitSupplierInvoiceAdjustment
+* SubmitSupplierInvoiceContract
+* SubmitSupplierInvoiceSchedule
+* SubmitWorkdayProjectHierarchy
+* SuspendAssetDepreciation
+* TransferAsset
+* TransferAssetToDifferentCompany
+* UpdateAssetDepreciationSchedule
+* UpdateAssetUsefulLife
+
+==== Resource Management Deprecated Operations
+
+* GetPOforPOIssueOutbound
+* GetProjectResourcePlans
+* GetSupplierOrderContracts
+* GetWorkdayProjects
+* PutProjectResourcePlan
+* PutSupplier
+* SubmitSupplierOrderContract
+* SubmitWorkdayProject
+
+==== Revenue Management
+
+Supported operations:
+
+* CancelCashSale
+* CancelCustomerContract
+* CancelCustomerInvoice
+* CancelCustomerInvoiceAdjustment
+* GetAwardProposalLifecycleStatuses
+* GetAwardProposalSubmissionTypes
+* GetAwardProposals
+* GetAwardSchedules
+* GetAwardTaskStatuses
+* GetAwardTaskTypeGroups
+* GetAwardTasks
+* GetAwards
+* GetBillingSchedules
+* GetBusinessConnections
+* GetBusinessEntityContacts
+* GetCashSales
+* GetCreditCardAuthorization
+* GetCustomerActivity
+* GetCustomerCategories
+* GetCustomerContractAmendments
+* GetCustomerContracts
+* GetCustomerDateMilestones
+* GetCustomerDeposits
+* GetCustomerGroups
+* GetCustomerInvoiceAdjustments
+* GetCustomerInvoices
+* GetCustomerPayments
+* GetCustomerRefunds
+* GetCustomerRequests
+* GetCustomers
+* GetFacilitiesandAdministrationExceptions
+* GetFacilitiesandAdministrationWaivedExpenseAllocationProfiles
+* GetMerchantCustomerProfile
+* GetOpportunities
+* GetProspects
+* GetRevenueCategories
+* GetRevenueCategoryHierarchies
+* GetRevenueRecognitionScheduleTemplates
+* GetRevenueRecognitionSchedules
+* GetSalesItemGroups
+* GetSalesItems
+* GetSponsors
+* PutAwardProposalLifecycleStatus
+* PutAwardProposalSubmissionType
+* PutAwardSchedule
+* PutAwardTaskStatus
+* PutAwardTaskTypeGroup
+* PutAwardTasksforAward
+* PutBusinessConnection
+* PutBusinessEntityContact
+* PutCreditCardAuthorization
+* PutCustomer
+* PutCustomerCategory
+* PutCustomerDateMilestone
+* PutCustomerGroup
+* PutCustomerPayment
+* PutCustomerRequest
+* PutFacilitiesandAdministrationException
+* PutFacilitiesandAdministrationWaivedExpenseAllocationProfile
+* PutMerchantCustomerProfile
+* PutOpportunity
+* PutProspect
+* PutRevenueCategory
+* PutRevenueCategoryHierarchy
+* PutRevenueRecognitionScheduleTemplate
+* PutSalesItem
+* PutSalesItemGroup
+* PutSponsor
+* SubmitAward
+* SubmitAwardAmendment
+* SubmitAwardProposal
+* SubmitBillingSchedule
+* SubmitCashSale
+* SubmitCustomerContract
+* SubmitCustomerContractAmendment
+* SubmitCustomerDeposit
+* SubmitCustomerInvoice
+* SubmitCustomerInvoiceAdjustment
+* SubmitCustomerRefund
+* SubmitRevenueRecognitionSchedule
+
+*Revenue Management Deprecated Operations*
+
+* PutCashSale
+
+==== Staffing
+
+No operations were added or removed.
+
+==== Talent
+
+No operations were added or removed.
+
+==== Time Tracking
+
+No operations were added or removed.
+
+==== Workforce Planning
+
+No operations were added or removed.
+
+=== Fixed Issues
+
+* Significantly reduced the amount of classes that were being exported with the update sites, thus reducing the file size from 500mb to 5mb
+* Fixed an issue where Mule applications were running out of memory when using the HCM connector.
+
+=== Features in this Release
+
+Users are now able to choose specifically which modules of the HCM connector they would like to install in Anypoint Studio, and use in their Mule applications.
+
+=== Upgrading from Workday HCM Connector 4.0.1 or Older
+
+In this release, each of the above modules is now available as an individual update site. Note that this release is NOT backward compatible with Workday HCM Connector 4.0.1 or lower.
+
+If you would like to start using of the Workday connector, follow these instructions.
+
+==== New Users
+
+. Open Anypoint Studio.
+. Go to *File* > *New* > *Project From Template*.
+. Click the *Connectors* category and locate the Workday Connector from the connectors list.
+. Click the *View Details* button.
+. Click the *Share URL* button and copy the provided link.
+. Go to *Help* > *Install New Software* and paste the link inside the *Work with* text box.
+. Select the desired Workday module and click the *Next* button to continue installing the connector.
+
+==== Existing Users
+
+There are several ways to determine which HCM module you were using in the previous versions of the connector. One way is to check the XML namespaces for the Workday message processors. This table helps you determine which modules your application uses:
+
+[%header%autowidth.spread]
+|===
+|Namespace |Workday Module
+|wd:absence |Absence Management
+|wd:benefits |Benefits Administration
+|wd:compensation |Compensation
+|wd:hr |Human Resources
+|wd:payroll |Payroll
+|wd:payroll-interface |Payroll Interface
+|wd:performance |Performance Management
+|wd:recruiting |Recruiting
+|wd:staffing |Staffing
+|wd:talent |Talent
+|wd:timetracking |Time Tracking
+|wd:workforce |Workforce Planning
+|===
+
+===== Non-Maven Mule Projects
+
+. Uninstall any existing Workday connector.
+. Install the Workday connectors that your application requires from the `Anypoint Connectors Update Site`. Follow the instructions in the "New users" section. Your application should be running as it was previously.
+
+===== Mavenized Mule Projects
+
+. Remove any references to the Workday connector from your pom.xml file.
+. Update the mule-maven-plugin, if it exists, by modifying the artifactId property that is located inside the _inclusion_ tag as follows:
++
+[%header%autowidth.spread]
+|===
+|Module |Artifact ID
+|*Absence Management* |mule-module-workday-absencemanagement
+|*Benefits Administration* |mule-module-workday-benefitsadministration
+|*Compensation* |mule-module-workday-compensation
+|*Human Resources* |mule-module-workday-humanresources
+|*Payroll* |mule-module-workday-payroll
+|*Payroll Interface* |mule-module-workday-payrollinterface
+|*Performance Management* |mule-module-workday-performancemanagement
+|*Recruiting* |mule-module-workday-recruiting
+|*Staffing* |mule-module-workday-staffing
+|*Talent* |mule-module-workday-talent
+|*Time Tracking* |mule-module-workday-timetracking
+|*Workforce Planning* |mule-module-workday-workforceplanning
+|===
++
+. Add any dependencies that your application needs for each Workday module. The following dependency snippets can be used to add the necessary Workday HCM connectors.
++
+[%header%autowidth.spread]
+|===
+|  |
+|*Absence Management* a|
+[source,xml,linenums]
+----
+<dependency>
+  <groupId>org.mule.modules</groupId>
+  <artifactId>mule-module-workday-absencemanagement</artifactId>
+  <version>4.1.1</version>
+</dependency>
+----
+|*Benefits Administration* a|
+[source,xml,linenums]
+----
+<dependency>
+  <groupId>org.mule.modules</groupId>
+    <artifactId>mule-module-workday-benefitsadministration</artifactId>
+    <version>4.1.1</version>
+</dependency>
+----
+|*Compensation* a|
+[source,xml,linenums]
+----
+<dependency>
+  <groupId>org.mule.modules</groupId>
+  <artifactId>mule-module-workday-compensation</artifactId>
+  <version>4.1.1</version>
+</dependency>
+----
+|*Human Resources* a|
+[source,xml,linenums]
+----
+<dependency>
+  <groupId>org.mule.modules</groupId>
+  <artifactId>mule-module-workday-humanresources</artifactId>
+  <version>4.1.1</version>
+</dependency>
+----
+|*Payroll* a|
+[source,xml,linenums]
+----
+<dependency>
+  <groupId>org.mule.modules</groupId>
+  <artifactId>mule-module-workday-payroll</artifactId>
+  <version>4.1.1</version>
+</dependency>
+----
+|*Payroll Interface* a|
+[source,xml,linenums]
+----
+<dependency>
+  <groupId>org.mule.modules</groupId>
+  <artifactId>mule-module-workday-payrollinterface</artifactId>
+  <version>4.1.1</version>
+</dependency>
+----
+|*Performance Management* a|
+[source,xml,linenums]
+----
+<dependency>
+  <groupId>org.mule.modules</groupId>
+  <artifactId>mule-module-workday-performancemanagement</artifactId>
+  <version>4.1.1</version>
+</dependency>
+----
+|*Recruiting* a|
+[source,xml,linenums]
+----
+<dependency>
+  <groupId>org.mule.modules</groupId>
+  <artifactId>mule-module-workday-recruiting</artifactId>
+  <version>4.1.1</version>
+</dependency>
+----
+|*Staffing* a|
+[source,xml,linenums]
+----
+<dependency>
+  <groupId>org.mule.modules</groupId>
+  <artifactId>mule-module-workday-staffing</artifactId>
+  <version>4.1.1</version>
+</dependency>
+----
+|*Talent* a|
+[source,xml,linenums]
+----
+<dependency>
+  <groupId>org.mule.modules</groupId>
+  <artifactId>mule-module-workday-talent</artifactId>
+  <version>4.1.1</version>
+</dependency>
+----
+|*Time Tracking* a|
+[source,xml,linenums]
+----
+<dependency>
+  <groupId>org.mule.modules</groupId>
+  <artifactId>mule-module-workday-timetracking</artifactId>
+  <version>4.1.1</version>
+</dependency>
+----
+|*Workforce Planning* a|
+[source,xml,linenums]
+----
+<dependency>
+  <groupId>org.mule.modules</groupId>
+  <artifactId>mule-module-workday-workforceplanning</artifactId>
+  <version>4.1.1</version>
+</dependency>
+----
+|===
+
+== 4.0.1
+
+*October 29, 2014*
+
+The Anypoint Workday connector has been updated to 4.0.1 to support Workday 23.0 API with minor improvements from the Workday Connector 4.0.0 release. For more information on Workday, see the https://community.workday.com/current/wsrelnotes[Workday Release Notes for v23.0] .
+
+For more information on upgrade paths or how to use Workday's API, see:
+
+* https://community.workday.com/custom/developer/API/versions/v23.0/index.html[Workday v23.0 API]
+* https://community.workday.com/[General knowledge on Workday operations]
+
+The MuleSoft Workday 4.0.1 Connector release fixes issues that have surfaced in the previous release of the Workday Connector (4.0.0).
+
+*Guide*: xref:3.7@mule-runtime::workday-connector.adoc[Workday Connector]
+
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Application/Service |Version
+|Mule Runtime |3.5.1 and later
+|Anypoint Studio |October 2014
+|Workday API |23.0
+|===
+
+=== Supported Modules
+
+* Absence Management
+* Benefits Administration
+* Compensation
+* Human Resources
+* Payroll
+* Payroll Interface
+* Performance Management
+* Recruiting
+* Staffing
+* Talent
+* Time Tracking
+* Workforce Planning
+
+=== Fixed Issues
+
+Connectivity initialization in the Workforce Planning and Time Tracking modules has been fixed.
+
+== 4.0.0
+
+*September 29, 2014*
+
+Workday Connector 4.0.0 consists of an increased number of supported modules and operations, and a few operations that are modified from the previous version for improved functionality.
+
+Anypoint Connector for Workday facilitates connections between Mule integration applications and Workday by allowing you to access the information in your organization's Workday instance. Use of the Workday connector requires MuleSoft Premium access.
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+a|
+Application/Service
+
+ a|
+Version
+
+|Mule Runtime |3.5.1
+|Anypoint Studio |July 2014
+|Workday API |v23.0
+|===
+
+=== Supported Modules
+
+Workday connector now supports the following Workday HCM modules:
+
+* Absence Management
+* Benefits Administration
+* Compensation
+* Human Resources
+* Payroll
+* Payroll Interface
+* Performance Management
+* Recruiting
+* Staffing
+* Talent
+* Time Tracking
+* Workforce Planning
+
+=== Operations
+
+The following operations have been added in the current version of the connector:
+
+[%header%autowidth.spread]
+|===
+|Module |Operations
+|*Human_Resources* a|
+*  Change_Emergency_Contacts
+*  Get_Committee_Classification_Groups
+*  Get_Committee_Classifications
+*  Get_Committee_Definition
+*  Get_Committee_Membership_Types
+*  Get_Committee_Types
+*  Get_Service_Center_Representative_Workday_Accounts
+*  Get_Service_Center_Representatives
+*  Maintain_Committee_Definition
+*  Manage_Committee_Membership
+*  Manage_Employee_Probation_Periods_Event
+*  Put_Committee_Classification
+*  Put_Committee_Classification_Group
+*  Put_Committee_Membership_Type
+*  Put_Committee_Type
+*  Put_Service_Center_Representative
+*  Put_Service_Center_Representative_Workday_Account
+
+|*Payroll* a|
+*  Get_Paycheck_Deliveries
+*  Put_Paycheck_Delivery_Public
+
+|*Recruiting* a|
+*  Get_Candidate_Attachments
+*  Get_Candidate_Photos
+*  Get_Candidates
+*  Get_Job_Posting_Sites
+*  Get_Job_Postings
+*  Put_Candidate
+*  Put_Candidate_Attachment
+*  Put_Candidate_Photo
+*  Put_Job_Posting_Site +
+
+|*Talent* a|
+*  Get_Competency_Classes
+*  Get_Proficiency_Rating_Scales
+*  Put_Competency_Class
+*  Put_Proficiency_Rating_Scale
+
+|===
+
+=== Removed Operations
+
+The operations listed below have been removed from the connector in this release:
+
+[%header%autowidth.spread]
+|===
+|Module |Operations
+|*Performance_Management* a|
+* Get_Competency_Levels
+* Put_Competency_Level
+
+|*Talent* a|
+* Get_Competency_Levels
+* Put_Competency_Level
+
+|===
+
+=== Fixed in this Release
+
+The following issue with the Workday connector has been resolved in the current release.
+
+[%header%autowidth.spread]
+|===
+|Issue |Description
+|Workforce module has incorrect package declarations a|
+Previously, Workforce module was listed under the timetracking package.
+
+This issue has been fixed.
+|===
+
+== See Also
+
+* Refer to the xref:3.9@mule-runtime::workday-connector-6.0-migration-guide.adoc[Workday Connector 6.0 or above Migration Guide]to learn how to upgrade to Workday connector v6.0 or above.
+* For more information on the Workday v27.0 API, see https://community.workday.com/custom/developer/API/versions/v27.0/index.html[Workday API documentation].
+* Workday v27.0 https://community.workday.com/current/wsrelnotes[Release Notes] (Requires Workday Community login)
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

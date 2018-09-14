@@ -1,0 +1,175 @@
+= Mule Runtime 3.8.7 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: mule-3.8.7-release-notes.adoc
+:keywords: mule, 3.8.7, runtime, release notes
+
+// Product_Name Version number/date Release Notes
+
+*May 28, 2018*
+
+// <All sections are required. If there is nothing to say, then the body text in the section should read, “Not applicable.”
+Mule Runtime 3.8.7 includes enhancements, changes, and fixes.
+
+This release is supported on Anypoint Private Cloud Edition 1.6.1 and later.
+
+== Key Enhancements
+
+Key Enhancements
+
+* New Features and Enhancements
+Mule Runtime 3.8.7 includes the following enhancements, changes, and fixes:
+
+- This release is mainly focused in fixing bugs and stability issues.
+
+
+
+
+== Changes
+
+N/A
+
+
+== Known Issues
+
+N/A
+
+== Issues Impacting Migration
+
+[%header,cols="15a,85a"]
+|===
+|Issue |Description
+| MULE-8817 | spring-messaging was upgraded from 4.1.9 to 4.3.17
+| MULE-15004 | The HTTP listener's socket server timeout default was changed from 0 to 60 seconds, while respecting the connectionIdleTimeout settings.
+|===
+
+== Fixed Issues
+
+[%header,cols="15a,85a"]
+|===
+|Issue |Description
+// Fixed Issues
+| MULE-15064 | WSConsumer not adding Content-Disposition Header when MTOM is enabled
+| MULE-15062 | Infinite timeout conflicts with socket timeout
+| MULE-15039 | CXF leaking responseContext in the ClientImpl
+| MULE-15021 | TLS restrictions are not enforced to implicit connections
+| MULE-15004 | Using serverTimeout has no effect
+| MULE-14969 | PartitionInMemoryObjectStore is leaking ExpiryInfo objects
+| MULE-14949 | SSL issue log message has wrong debug data
+| MULE-14946 | Async scope is not allowed in the same flow after Transactional scope
+| MULE-14944 | HTTP Listener parse errors expose request data without escaping it
+| MULE-14940 | EndpointTransactionalInterceptingMessageProcessor not creating the transactional execution template for JMS since 3.8.0
+| MULE-14929 | HTTP with one config and two listeners fails to find the correct resolution path
+| MULE-14887 | HTTP listener does not stream OutputHandlers
+| MULE-14878 | Mule 3 and 4 HTTP connectors' correlation ids should interop
+| MULE-14866 | Only asynchronous notifications should receive a copy of the MuleEvent.
+| MULE-14835 | In until-successful scope, if an exception occurs only the last retry payload is closed.
+| MULE-14833 | SFTP tests filing due to error during login in 3.8.x
+| MULE-14829 | HTTP listener does not close streams when NEVER is set
+| MULE-14775 | JMSConnector can't reconnect if the broker breaks when the application is stopped
+| MULE-14764 | HttpRequester lifecycle is not managed properly in OAuth scenarios.
+| MULE-14683 | Mime Type Disappears Dissapears in VM inbound when under load
+| MULE-14623 | JMSMessageToObject causes NPE in debug mode.
+| MULE-14605 | Deadlock when two JDBC connections are created concurrently before the DriverManager classloading takes place
+| MULE-14601 | Json Schema Validator treats duplicate keys in an inconsistent way depending on the input type.
+| MULE-14549 | CXF is writing payload after the latest boundary in multipart/related scenarios
+| MULE-14541 | Status code validators cannot handle spaces in the values
+| MULE-14540 | Use an independent lock to synchronize the lifecycle of the MuleContext
+| MULE-14531 | In XML Schema Validation Filter, ErrorHandler doesn't receive validation error notifications
+| MULE-14529 | XMLSecureFactories is setting unsupported properties at factories creation.
+| MULE-14507 | When payload is empty, HTTP Requester should send a zero content length.
+| MULE-14461 | transactional element not propagating flowConstruct
+| MULE-14421 | After domain full redeployment failure, all dependent applications are removed.
+| MULE-14408 | MVEL error in chained calls where two or more objects of the chain possess the same method signature
+| MULE-14357 | ClassCastException in FileConnector restart
+| MULE-14319 | encoded characters in SMTP username cause failure on reconnection
+| MULE-14309 | Domain is not being disposed with its own classloader.
+| MULE-14304 | SFTP Connector not masking Passwords in Exceptions and Logs with bad host/port
+| MULE-14297 | OAuth is not supported in domain scenarios.
+| MULE-14287 | MEL caching strategy is inconsistent when the variable accesor is set
+| MULE-14178 | JMS connector is printing DEBUG logs as ERROR
+| MULE-14123 | In FTP Transport, checking if a resource is a file degrades performance
+| MULE-14030 | SAXParseException when trying to import nested xsd
+| MULE-13398 | Propagation of SSL prevents Jackson serialization of InboundProperties
+| MULE-13034 | Error responses with special characters should be scaped
+| MULE-12617 | Prefetch size cannot be set for activemq-connector to guarantee order
+| MULE-8923 | maxRows on db:select element is not really substitutable
+| EE-5988 | Jdbc object store in cluster creates a connection pool for every JdbcMap
+| EE-5960 | Provide capability to transform file names in database cluster object store
+| EE-5901 | JDBCMapStore is commiting auto-commit transactions.
+| EE-5895 | JdbcMapStore is not SQL92 compliant.
+| EE-5866 | HTTP request fails when certain multiple encoded characters are included.
+| EE-5700 | Bitronix does not clean ActiveMQ ended transaction contexts in case of failure/recovery
+| EE-5518 | World-Readable Java KeyStore and Configuration Files
+| EE-5069 | Possible DoS in HTTP transport due to old commons-httpclient
+| EE-4965 | JDBC Map Store - Application name length limitation
+| AGW-2108 | API Gateway expression language fails when processing windows style file separator
+| AGW-2011 | Unhandled NPE when autodiscovery points at not defined flow
+| AGW-1951 | Pointcut cache can have key collisions when using resource level policies and +1 sources
+| SE-7263 | DataWeave: `BufferUnderflowException` when upgrading to 3.9.0.
+| SE-7459 | DataWeave: Add `com.mulesoft.dw.noDefaultRecordTerminator` property.
+| SE-7459 | DataWeave: Add `com.mulesoft.dw.noNoncopybookMissingValuesDefault`.
+| SE-7556 | API Gateway is returning `invalid_api` errors.
+| SE-7618 | DataWeave: DataWeave failed to parse XML attribute.
+| SE-7772 | Applications with Autodiscovery and client ID enforcement policy were not creating a database when redeployed in clustered environment.
+| SE-7776 | DataWeave: Excel was not able to do random access.
+| SE-7803 | DataWeave: Add support for surrogated chars in UTF-8.
+| SE-7871 | DataWeave: We should never pop up Scala values to the Java writer.
+| SE-8039 | DataWeave: Relative timezones such as Australia/NSW should be resolved against the shifted time and not local.
+| SE-8064 | DataWeave: Equals should work based on values and not types.
+| SE-8118 | DataWeave: Enum should not be kept as Enum and not converted to String.
+| SE-8296 | DataWeave: CSV Should behave the same way in streaming and in indexed. And be compliant with the RFC-4180.
+| SE-8353 | DataWeave: Close stream when file is GC to avoid `tmp` files leak.
+property. Fixes security vulnerability in Apache POI.
+//
+// -------------------------------
+// - Enhancement Request Issues
+// -------------------------------
+| MULE-14580 | Update DefaultResourceReleaser for newer mysql versions
+| MULE-14416 | Optimise HTTP retry on remotely close logic
+| MULE-14383 | Disable RSA encryption ciphers
+| EE-5991 | Allow the user to configure cluster datasource as cluster properties
+| EE-5816 | Need to validate Hostname resolution and error reporting in Mule HTTP module
+| EE-4945 | JDBC Map Store: Add support for configurable DataSource
+| EE-5938 | Delegate Distributed Object Store Expiration to hazelcast
+| EE-5959 | Add optional functionality to manage license keys in default env preferences location
+|===
+
+== Software Compatibility Testing
+
+Mule was tested on the following software:
+
+[%header,cols="15a,85a"]
+|===
+|Software |Version
+| JDK | JDK 1.7.0, JDK 1.8.0 (Recommended JDK 1.8.0_151/52)
+| OS | MacOS 10.11.x, HP-UX 11i V3, AIX 7.2, Windows 2016 Server, Windows 10, Solaris 11.3, RHEL 7, Ubuntu Server 16.04
+| Application Servers | Tomcat 7, Tomcat 8, Weblogic 12c, Wildfly 8, Wildfly 9, Websphere 8, Jetty 8, Jetty 9
+| Databases | Oracle 11g, Oracle 12c, MySQL 5.5+, DB2 10, PostgreSQL 9, Derby 10, Microsoft SQL Server 2014
+|===
+
+The unified Mule Runtime 3.8.7 and API Gateway is compatible with APIkit 3.8.7.
+
+This version of Mule runtime is bundled with the Runtime Manager Agent plugin version 1.10.0.
+
+== LibraryChanges
+
+[%header,cols="15a,85a"]
+|===
+|Issue |Description
+| MULE-14832 | Upgrade commons-httpclient 3.1-14-MULE-001
+| MULE-14831 | Upgrade Jackson 1 to 1.9.14-MULE-002
+| MULE-14795 | Upgrade Jackson 2 to 2.9.5
+| MULE-14763 | Upgrade Jetty to 9.2.24.v20180105
+| MULE-14639 | Upgrade jruby-stdlib to 9.1.16.0 in Scripting Module
+| MULE-14618 | Upgrade Spring JMS to 4.1.9.RELEASE-MULE-001
+| MULE-14462 | Upgrade MVEL to 2.1.9-MULE-015 version
+| MULE-14442 | Upgrade Grizzly version 2.3.35
+| MULE-14382 | Upgrade BouncyCastle to 1.59
+| MULE-14859 | Upgrade c3p0 to Mule fork version c3p0-0.9.5.2-MULE-001
+| MULE-15039 | Upgrade CXF to 2.7.19-MULE-SPRING-3-001
+| MULE-8817 | Upgrade spring-expression and spring-messaging to 4.1.17
+| EE-5566 | Upgrade hazelcast version to 3.8.9
+| EE-5799 | Upgrade JAXB 2.3.0-MULE-001
+|===

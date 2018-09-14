@@ -1,0 +1,110 @@
+= CloudHub Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: cloudhub-connector-release-notes.adoc
+:keywords: cloudhub, connector, release notes
+
+*July 2016*
+
+_Select_
+
+*Guide:* xref:3.9@mule-runtime::cloudhub-connector.adoc[CloudHub Connector]
+
+The CloudHub connector provides the ability to interact with CloudHub from within a Mule application. The operations allow you to deploy, start, stop, and update applications as well as send notifications from your Mule application to CloudHub.
+
+
+== Upgrading to the Latest Version
+
+When a new version of a connector is released, Anypoint Studio displays a popup in the bottom right corner of you screen with the following message: Updates Available.
+
+To upgrade to version 2.0 of the CloudHub connector:
+
+. Click the popup and check for the available updates.
+. Select the CloudHub Connector version checkbox and click Next.
+. Follow the instructions provided by the user interface.
+. Restart Studio when prompted.
+. After restarting, if you have several versions of the connector installed, Mule asks you for the version of the connector you like to use.
+
+== 2.0.2
+
+*July 27, 2016*
+
+CloudHub connector has been moved from Community support policy to Select support policy.
+
+CloudHub connector 2.0.2 is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Software|Version
+|Mule Runtime|3.5.3, 3.6.2, 3.7.x, 3.8.x
+|===
+
+=== Features and Fixes
+
+The following parameters were added to CloudHub connector configuration options:
+
+- `readTimeout` : Specifies the amount of time, in milliseconds, that the consumer waits for a response before it times out. Default value is 0, which means infinite.
+- `connectionTimeout` : Specifies the amount of time, in milliseconds, that the consumer attempts to establish a connection before it times out. Default value is 0, which means infinite.
+
+
+== 2.0.1
+
+*November 20, 2015*
+
+Minor improvements to the Test Connectivity functionality.
+
+The CloudHub connector 2.0.1 is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Software|Version
+|Mule Runtime|3.5.3, 3.6.2, and 3.7.x
+|===
+
+== 2.0.0
+
+*July 30, 2015*
+
+The CloudHub connector 2.0 is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Software|Version
+|Mule Runtime|3.5.3, 3.6.2, and 3.7.x
+|===
+
+
+=== Features and Fixes
+
+* Added multi configuration support:
+** Basic Authentication: Authenticates using username and password.
+** Inherited Token Authentication (for CloudHub only): Doesn't require configuration; retrieves the token from the CloudHub instance.
+* Added the following new processors:
+** Create Application: Creates an application without deploying a Mule application.
+** Create And Deploy Application: Creates and deploys a Mule application.
+** Change Notification Status: Changes the status (Read or Unread) of a notification.
+** Change Application Status: Changes the status (Start or Stop) of an application.
+** Get Notification: Retrieves a notification by their ID.
+** Retrieve Application Log: Retrieves the log from an application.
+* CloudHub connector as a Source: Added the operation to poll for notifications.
+* Deleted the following processors:
+** Start application: Migrated to Change Application Status processor.
+** Stop application: Migrated to Change Application Status processor.
+** Dismiss notification: Migrated to Change Notification Status.
+* Modified the following processors:
+** Create notification: Now the domain needs to be provided. To have the same behavior for CloudHub instances, use `${domain}` place holder.
+** Create tenant: Now the Tenant configuration can only be filled by reference.
+** Deploy application: Now only deploys application, and cannot modify anymore CloudHub configuration. To modify a CloudHub configuration, use Update Application.
+** List notifications: Now the domain needs to be provided. To have the same behavior for CloudHub instances, use the `${domain}` place holder.
+** List tenants: Now the Tenant configuration can only be filled by reference.
+** Update application: Modified to comply with the existing CloudHub API.
+
+=== Known Issues
+
+The use of application Domain has become mandatory in many operations. This breaks backward compatibility with older applications. This is due to a CloudHub requirement and cannot be removed.
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

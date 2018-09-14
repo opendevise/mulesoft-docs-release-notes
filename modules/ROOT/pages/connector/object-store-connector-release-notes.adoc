@@ -1,0 +1,39 @@
+= Object Store Connector Release Notes (Design Center)
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: object-store-connector-release-notes.adoc
+:keywords: release notes, object, store, object store
+
+*July 2017*
+
+_Select_
+
+*Guide:* xref:connectors::object-store/object-store-connector.adoc[Object Store Connector]
+
+== 0.8.1
+
+*July 29, 2017*
+
+The Object Store Connector is new for use in Design Center > Mule Application.
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Anypoint Studio |7.x
+|Design Center |0.8.1
+|===
+
+=== Features
+
+* Enables applications to store data for access by other applications.
+* Stores key/value pair content.
+* Works easily with Design Center.
+
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

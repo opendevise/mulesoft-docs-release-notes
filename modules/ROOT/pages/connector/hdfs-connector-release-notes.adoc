@@ -1,0 +1,93 @@
+= HDFS Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: hdfs-connector-release-notes.adoc
+:keywords: release notes, connectors, hdfs
+
+*September 2016*
+
+_Select_
+
+The Anypoint Connector for the Hadoop Distributed File System (HDFS) is used as a bi-directional gateway between Mule applications and HDFS.
+
+xref:3.9@mule-runtime::hdfs-connector.adoc[HDFS Connector User Guide]
+
+== 5.0.0
+
+*September 13, 2016*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime
+|3.6 and later
+|Hadoop Distribute File System
+|2.7.1 or later
+|===
+
+=== Features
+
+* Upgraded the connector category from *Community* to *Select*.
+* *Read from path* - added operation to read from a file into HDFS. This is different from the existing one that polls data and can be used as an endpoint.
+
+=== Fixed in this Release
+
+None; only new features.
+
+=== Known Issues
+
+No known issues.
+
+== 4.0.0
+
+*March 5, 2015*
+
+Release notes for of the HDFS connector.
+
+The Anypoint Connector for HDFS facilitates connections between Mule integration applications and your Apache Hadoop instance.
+
+=== Compatibility
+
+HDFS Hadoop connector is compatible with the following:
+
+[%header%autowidth.spread]
+|===
+|Application/Service |Version
+|Mule Runtime
+|3.6 or higher
+|Apache Hadoop
+|2.6.0 or higher
+|===
+
+=== New Features and Functionality
+
+HDFS connector now supports 2.6.X Apache Hadoop hosts. Other highlights of the release include:
+
+* Enhanced Read from Path operation to act as an inbound endpoint that can stream data
+* Added seven new operations:
+** Copy to Local File
+** Copy from Local File
+** Glob Status
+** List Status
+** Rename
+** Set Owner
+** Set Permission
+
+=== Fixed in this Release
+
+Issues with the following operations have been fixed in this release:
+
+* Append to File
+* Read from Path
+
+=== Known Issues
+
+Read from Path operation does not support Polling and Move functions.
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum].
+* https://support.mulesoft.com[Contact MuleSoft Support].

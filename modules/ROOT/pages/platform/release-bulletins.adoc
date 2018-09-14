@@ -1,0 +1,12 @@
+= Mule Release Bulletins
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: release-bulletins.adoc
+:keywords: release notes, security
+
+This section contains bulletins created by MuleSoft in response to key patches made to the products, especially around security vulnerabilities.
+
+* xref:connector/http-connector-security-update.adoc[HTTP Connector Security Update]
+* xref:mule-runtime/mule-enterprise-management-console-security-update.adoc[Mule Enterprise Management Console Security Update]
+* xref:mule-runtime/xml-issues-in-mule-esb.adoc[XML Issues in Mule ESB]

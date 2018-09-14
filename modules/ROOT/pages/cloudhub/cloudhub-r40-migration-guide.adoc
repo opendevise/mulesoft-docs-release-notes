@@ -1,0 +1,34 @@
+= CloudHub R40 Migration Guide
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: cloudhub-r40-migration-guide.adoc
+:keywords: release notes, cloudhub, cloud hub
+
+For CloudHub release 40 in October 2014, API Manager and CloudHub have a unified single sign-on experience and user interface. Please read the following migration guide to understand how you might be impacted by these changes.
+
+== Accessing the Management Console
+
+CloudHub is now accessible from the https://anypoint.mulesoft.com/[anypoint.mulesoft.com] URL. Going forward, if you visit http://cloudhub.io[cloudhub.io] to sign in, you will be redirected to https://anypoint.mulesoft.com/[anypoint.mulesoft.com]. All applications will still be available at their respective domains on cloudhub.io.
+
+== Account Migration
+
+If you have a user with the same username for API Manager and CloudHub, your username may be changed.
+
+If you have a CloudHub organization and an API Manager organization with the same set of administrators, we will merge your accounts so you have a completely unified account.
+
+However, if they do not match, then we will not merge accounts because that could result in inadvertently granting access to parts of your organization to unauthorized users. In this case, we will create a second account for you with the postfix `_cloudhub`. For example, if your username was `joe` and you have accounts in both API Manager and CloudHub, a second account will be created with the username `joe_cloudhub`. If this condition applies to your username, you will receive an email notifying you of this change.
+
+If you have two organizations because of the condition above (e.g. `joe` and `joe_cloudhub`), you can merge these organizations by inviting all the users into a single organization and migrating your applications or APIs manually. If you are a customer and would like to do this, please open a support case at: https://support.mulesoft.com[https://support.mulesoft.com] so that the old organization can be disabled.
+
+== Roles & Permissions
+
+The underlying roles and permissions model in the platform has become much more powerful. Because of this, users will notice that they now have individual roles for each environment.
+
+For example, if you had two environments in CloudHub, Production and QA, then you will end up with the following set of roles: CloudHub Admin (Production), CloudHub Admin (QA), CloudHub Developer (Production), CloudHub Developer (QA), CloudHub Support (Production), and CloudHub Support (QA).
+
+For more information on how roles and permissions work, see the xref:access-management::index.adoc[Access Management] guide.
+
+== Further Information
+
+In addition to the above, see the xref:cloudhub/cloudhub-release-notes.adoc[release notes] to see a complete list of new capabilities and errata.

@@ -1,0 +1,197 @@
+= Anypoint Studio 6.2 with 3.8.3 Runtime Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: anypoint-studio-6.2-with-3.8.3-runtime-release-notes.adoc
+
+*December 2, 2016* +
+*Build ID: 201612021641*
+
+<<migration,Skip to Migration Guide>>
+
+== Compatibility
+
+[cols="30a,70a"]
+|===
+| *Mule Runtime*
+| Version: 3.8.3 EE
+
+|*Anypoint Studio*
+|Version: 6.2 +
+Build Id: -201612021641-
+
+|*APIkit*
+|Versions: 3.8.3 - 3.8.2 - 3.8.1 - 3.8.0 - 1.7.4 - 1.6.2 - 1.5.3
+
+|*DataWeave* +
+|Version: 1.1.3
+
+|*MUnit* +
+|Version: 1.2.1, 1.3.0 (munit-studio-plugin)
+
+|*SAP Connector*
+|Versions: 3.0.1
+|===
+
+
+== What's New
+
+This release adds support to Private Cloud Edition of Anypoint Platform.
+
+* For our Private Cloud Edition customers, now they can configure their credentials and URL to let Studio connect to platform services hosted  on premises, such as APISync, API Autodiscovery and Exchange.
+
+We also addressed a few enhancement requests based on customer feedback, such as:
+
+* Support for Gzip Compress/Uncompress transformers in Studio
+* Add application/java to list of default mime types in Json To Object Transformer
+
+Additionally, the new release of MUnit (MUnit 1.3.0 runtime and MUnit 1.4.0 studio plugin) incorporates many significant improvements around Maven usability:
+
+* We have dramatically improved the way our tests run from the Maven command line. MUnit runs now in a new VM. We’ve added a new set of features to our MUnit Maven Plugin, to allow the user to have as much control as possible. This provides support for running tests over applications using connectors who depend on native libraries (e.g. SAP). A short list of other new features are below:
+
+** Run Tests in a separate VM.
+** Allow setting argument lines from the Maven Plugin.
+** Allow users to add/remove classpath entries from the Maven Plugin.
+** Allow users to set environment variables from the Maven Plugin.
+** Allow users to set the Mule Working Directory.
+** Allow test output redirection of a file.
+** Allow shutting down Surefire reports.
+
+For more, please refer to xref:munit/munit-1.3.0-release-notes.adoc[MUnit release notes].
+
+== Hardware and Software System Requirements
+
+* For most use cases, Anypoint Studio with the 3.8.1 Runtime does not change hardware or software requirements.
+* MuleSoft recommends a minimum of 4GB RAM on a developer workstation. As applications become complex, consider adding more RAM.
+* This version of Anypoint Studio requires Java 7 or Java 8.
+
+=== Hardware Requirements:
+
+* 4GB of free memory available
+* 2GHz CPU
+* 10GB free hard drive space
+
+=== Software Requirements
+
+[cols="30a,70a"]
+|===
+|Java Environments |* Oracle JDK 1.8.0 +
+* Oracle JDK 1.7.0
+|Operating Systems |* MacOS 10.10.0 +
+* Windows (32- and 64-bit) Windows 7, Windows 8, Windows 10 +
+* RHEL 7.0 +
+* Ubuntu 15.04 or later
+|Suggested Web Browsers by Platform. +
+_Studio will always use the OS default web browser_ | * Windows: +
+** Microsoft Edge 25.0  +
+** Internet Explorer 11 +
+* Linux +
+** Mozilla Firefox 46.0  +
+* OS X +
+** Safari 9.1
+|===
+
+[NOTE]
+--
+If you are installing Anypoint Studio on a Mac computer with OS X that has no Java installed, the OS may require that you first download and install http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase6-419409.html[JDK 1.6]. Install JDK 1.6 first and then install JDK 1.7.
+--
+
+[NOTE]
+--
+If you are running McAfee VirusScan on your Windows OS, Eclipse-based Anypoint Studio may experience negative performance impacts. McAfee has suggested the following remedy https://kc.mcafee.com/corporate/index?page=content&id=KB58727[options].
+--
+
+== Known Issues
+
+* Studio 6.2 does not support the following Mule 3.8 features:
+** RecordVars and record payload should be editable in a commit block.
+** Object Store support gaps around Idempotent Redelivery Policy, Aggregators and DevKit token manage
+* Create JSON metadata from example does not support Big Integers
+* When importing a zipped project related to the API Gateway's default domain (for example, proxies generated from API Platform), if the domain project does not exist in the workspace already, there is a chance that it will be generated incorrectly, resulting in an entry in the Package Explorer like "api-gateway_2_0_3 : ". The workaround is to delete the corrupt domain project and right click in the imported project -> Mule -> Associate with API Gateway domain, until the project is generated correctly displaying, for example, "api-gateway_2_0_3 : api-gateway".
+* When changing API Platform environments from production to another environment, Studio would try to update offline projects, showing connection error marker. The workaround is to use different workspaces for each environment so that there will no be problem with users authentication.
+* Folder decorators are not being shown correctly when users eliminate them. It shows them as modified and not as eliminated.
+* When creating a new project with an invalid raml zip, Studio does not copy those files to the workspace.
+* API Custom Policy Editing is a beta feature. We have a few known gaps.
+* When having some projects connected to the Platform and using an invalid On Premises URL, two error messages per project will be thrown. This issue will be fixed in 6.2.1.
+
+
+
+[[migration]]
+== Migration Guide
+
+Users running Studio 6.0 can update to this new version directly from the Studio xref:6@studio::studio-update-sites.adoc[Update Site].
+
+[TIP]
+--
+Updating your Anypoint Studio version using the update site does not update the bundled version of the Mule runtime. +
+To get the latest runtime version after updating Studio follow xref:6@studio::download-and-launch-anypoint-studio.adoc#updating-studio[these steps].
+--
+
+If you are running an older version than Studio 6.0, then instead of updating your existing version of Studio, you would need to download and run the latest installer to install a fresh new full copy.
+
+When opening a previous workspace with projects that were created with Studio 5.1.0 or older, and which has metadata stored in disk, Studio asks you to perform an update to all the projects so that the Metadata Manager can handle the existing types and show them in your project.
+
+[TIP]
+====
+You can easily import all of the external components that you had installed in your old version of Anypoint Studio through a single action. This includes connectors, runtimes, and any other type of extension added through the Anypoint Exchange or the ​*Help -> Install new software*​ menu, as long as there are no compatibility restrictions.
+
+Do this by selecting *File->Import* and then choose *Install->From existing installation*.
+
+image::studio/import-extensions.png[import]
+
+Then specify the location of your old version of Anypoint Studio in your local drive.
+====
+
+== Eclipse Plugin
+
+If you are using Studio as an Eclipse plugin, you can get this version of Studio using the Eclipse update site `+http://studio.mulesoft.org/r5/plugin+`.
+
+This allows you to download Anypoint Studio core and third-party components version 6.x.x and with an embedded version of Mule Runtime v3.8.x along with other optional components. +
+For a detailed description of the update site's content visit the xref:6@studio::studio-in-eclipse.adoc#available-software-in-the-update-site[Studio in Eclipse] section.
+
+
+
+== JIRA Ticket List for Anypoint Studio
+
+=== New Features
+
+* STUDIO-8466 - [APIKit] Add support for new property: `keepRamlBaseUri`
+
+=== Bug Fixes
+
+* STUDIO-6787 - Exception while running a new project
+* STUDIO-6892 - DataWeave preview show an exception in error log when output is Java using some Date fields
+* STUDIO-7925 - Exporting application duplicates configuration
+* STUDIO-8011 - [APIKit for SOAP] Must only be available for 3.7.0+ runtime versions
+* STUDIO-8082 - Malformated XML Config when creating MySQL connector
+* STUDIO-8088 - [SE] Unneeded dependencies are added to the export of a mavenized project
+* STUDIO-8316 - [SE] Saving dw script into a file, it overwrites the content of other target's file
+* STUDIO-8378 - [Metadata] Refresh does not work for CSV type
+* STUDIO-8389 - [SE] Char encoding issue on the compare editor
+* STUDIO-8393 - Problem when debugging DataWeave
+* STUDIO-8441 - [SE] Adding a cron expression to a Poll element should add the scheduler dependency in the pom
+* STUDIO-8443 - [SE] Studio wrongly validating protocol when using a property placeholder in HTTP request config
+* STUDIO-8500 - [SE] Change in XSD Generator from XML example, UI Improvements
+* STUDIO-8524 - Problem creating XML Metadata using an XSD
+* STUDIO-8530 - [SE] wsdl loading does not go through proxy
+* STUDIO-8533 - Generate Flow from WSDL is not working
+* STUDIO-8534 - Change gateway urls when activating on prem.
+
+=== Improvements
+
+* STUDIO-7757 - [UX] OData
+* STUDIO-8526 - [SE-2160] Support for Gzip Compress/Uncompress transformers in Studio
+
+=== Tasks
+
+* STUDIO-8402 - Support HTTP request config "enableCookies" parameter
+* STUDIO-8488 - Remove Beta label from DataMapper Migration tool
+* STUDIO-8492 - Remove Beta label from Copybook Metadata type
+
+== Support
+
+* Refer to MuleSoft Documentations:
+** xref:6@studio::setting-up-your-development-environment.adoc#enable-on-premises-setup[On-Premises Configuration of Studio].
+** xref:1.3@munit::munit-maven-support.adoc[MUnit Maven Support].
+* Access http://forums.mulesoft.com/[MuleSoft’s Forum] to pose questions and get help from Mule’s broad community of users.
+* To access MuleSoft’s expert support team https://www.mulesoft.com/support-and-services/mule-esb-support-license-subscription[subscribe to Mule ESB Enterprise] and log in to MuleSoft’s http://www.mulesoft.com/support-login[Customer Portal].

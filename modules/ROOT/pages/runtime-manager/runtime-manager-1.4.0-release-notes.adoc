@@ -1,0 +1,62 @@
+= Runtime Manager 1.4.0 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: runtime-manager-1.4.0-release-notes.adoc
+:keywords: arm, runtime manager, release notes
+
+The Anypoint Runtime Manager, V1.4, release includes new functionality such as audit logging, performance enhancements, and bug fixes. It also includes an Early Access version of Alerts for Runtime Manager that is available for select beta users and available as a GA on April 23rd 2016.
+
+Additionally, once logged in to the Anypoint Platform, CloudHub and Runtime Manager users will now be able to access the console via a link that says *Runtime Manager* instead of "CloudHub", on the nav bar.
+
+
+== Hardware and Software Requirements
+
+No change.
+
+== Compatibility
+
+
+Agent plugins integrations is compatible with the following runtime versions:
+
+[cols="2*a"]
+|===
+|Mule | 3.6.x and above.
+|Availability | Cloud only.
+|API GateWay | 2.x and above for API Analytics
+|Runtime Manager Agent | 1.2.0 and above. However it is recommended that you use the latest version of Agent. Click xref:runtime-manager-agent/runtime-manager-agent-1.4.0-release-notes.adoc[here] for the latest version of Agent.
+|===
+
+
+
+== Features and Functionality
+
+* *Audit Logging for Runtime Manager Events:* User actions within the Anypoint Platform are now recorded and available for auditing. See xref:access-management::audit-logging.adoc[Audit Logging].
+
+* *Name change on homepage:* Cloudhub and Runtime Manager customers will now access the console via a link that says “Runtime Manager” instead of "CloudHub" on the nav bar.
+
+
+* *(Beta Users only) Unified Alerts for Cloudhub + Anypoint Runtime Manager:* Unified event based xref:runtime-manager::alerts-on-runtime-manager.adoc[alerts] for Cloudhub and Runtime Manager. It enables IT Operations users to have the ability to proactively monitor several incidents. Support for business groups enables admins to manage read & write access to alerts. The GA date for this feature is April 23rd 2016.
+
+
+
+== Deprecated Features or Functionality
+
+None.
+
+== Resolved Issues
+
+Includes usability, performance enhancements, and bug fixes. The main ones are listed below:
+
+////
+* SE-2919:		Static IP Addresses support for Agent.
+////
+* SE-3401:		ARM marks applications as undeployed (Communication Issue).
+* CHHYBRID-1271:	Deleting a cluster with a deployment throws an internal server error.
+* CHHYBRID-1107:	Redeployment of domains results in undeployment of applications
+associated with the domain.
+* CHHYBRID-1293:	Fixed behavior while deploying an application to a cluster with a failed Deployment
+
+== Migration Guidance
+
+No migration required.

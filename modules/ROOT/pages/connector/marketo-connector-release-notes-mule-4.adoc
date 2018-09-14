@@ -1,0 +1,33 @@
+= Marketo Connector Release Notes for Mule 4
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: marketo-connector-release-notes-mule-4.adoc
+:keywords: release notes, connectors, marketo
+
+*May 2018*
+
+_Select_
+
+== 3.0.0
+
+*May 7, 2018*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime |4.1.0 and later
+|Anypoint Studio |7.0 and later
+|Marketo REST API |1.0
+|===
+
+=== Features
+
+* Mule 4 and Anypoint Studio 7 compatible.
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

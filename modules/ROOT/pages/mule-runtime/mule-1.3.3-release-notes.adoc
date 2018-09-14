@@ -1,0 +1,7 @@
+= Mule 1.3.3 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: mule-1.3.3-release-notes.adoc
+
+:keywords: release notes, esb

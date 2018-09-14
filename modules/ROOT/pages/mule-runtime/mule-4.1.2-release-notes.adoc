@@ -1,0 +1,153 @@
+= Mule Runtime 4.1.2 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: mule-4.1.2-release-notes.adoc
+:keywords: mule, 4.1.2, runtime, release notes
+
+// Product_Name Version number/date Release Notes
+
+*May 14, 2018*
+
+// // <All sections are required. If there is nothing to say, then the body text in the section should read, “Not applicable.”
+http://s3.amazonaws.com/new-mule-artifacts/mule-ee-distribution-standalone-4.1.2.zip[Download Mule 4.1.2 EE Distribution]
+// <This section lists all the major new features available with this latest version. Do not provide links to documentation and do not use images, which make reusing the release note content more difficult.>
+
+== New Features and Enhancements
+
+Mule Runtime 4.1.2 includes the following enhancements, changes, and fixes:
+
+* This release is mainly focused in fixing bugs and stability issues.
+
+
+== Changes
+
+* Disable TLS_RSA encryption ciphers as part of protection against the ROBOT attack (https://robotattack.org/)
+
+
+
+== Known Limitations and Workarounds
+
+[%header,cols="15a,85a"]
+|===
+|Issue |Description
+| MULE-14958 | For the WorkDay connector, the datasense is coming back with @type instead of ns0:type  - this is on the get_workers operation and type is part of the ns0#ID reference.
+| MULE-14897 | Transformation service changes Map<K, List<V>> to a MultiMap
+| MULE-14781 | DW does not require a Java class to be exported in order to be invoked
+| MULE-14725 | Non blocking operations use connector's thread to do internal mule processing
+|===
+
+== Upgrade Requirements
+
+[%header,cols="15a,85a"]
+|===
+|Issue |Description
+| MULE-14910 | logged event ID will not be formatted anymore. Replace "%X{correlationId}" by "[event: %X{correlationId}]" in log config files to keep behavior.
+| MULE-14962 | increased default value for fixed-frequency component to 1 minute. Add 'frequency="1000"' to keep behavior (e.g. '<fixed-frequency frequency="1000"/>').
+|===
+
+
+== Fixed Issues
+
+[%header,cols="1,4]
+|===
+|Issue |Description
+// Fixed Issues
+| MULE-14973 | Artifact URL is not escaped when added to Mule Application or Domain class loader
+| MULE-14962 | Default frequency for fixed frequency scheduler is too short
+| MULE-14950 | Error deploying HTTP 1.1.1 to runtime 4.1.1
+| MULE-14934 | Cannot deserialize classes loaded by APP classloader in ArtifactFuntionalTestCase
+| MULE-14927 | App with a particular Smart Connector not working in Windows
+| MULE-14919 | [SE] Value providers fails to get values if an expression is present
+| MULE-14910 | The Correlation Id in the MDC should not include format
+| MULE-14905 | High GC pressure due to CGLib Enhancer misusage
+| MULE-14903 | ByteArrayCursorStreamProvider and ListCursorIteratorProvider should never close
+| MULE-14893 | When requesting datasense for an element in a subflow, an exception signaling an invalid component id is raised
+| MULE-14877 | Properties files packaged in a jar file cannot be use in configuration-properties
+| MULE-14873 | Mule tries to connect to internet to download XSD
+| MULE-14855 | ConfigReference String parameter is not lazy initialized properly
+| MULE-14850 | When policy has source and operation, same pointcuts parameters should be available
+| MULE-14849 | DuplicateExportedPackageException: There are multiple artifacts exporting the same package
+| MULE-14847 | Operation retry with transaction changes thread
+| MULE-14836 | Failure to evaluate parse expressions for logger when intercepting
+| MULE-14828 | Some services are not being stopped
+| MULE-14827 | Smart connectors and OAuth module cannot load an external HTTP listener config that is defined below
+| MULE-14811 | ProcessingStrategy not propagated to `async` children
+| MULE-14804 | File watermark picks up existing file
+| MULE-14803 | XML SDK modules do not support reading properties from an external file
+| MULE-14801 | SimpleRetryPolicy: Use mule schedulers with Mono.delay instead of reactor ones
+| MULE-14788 | TypeAwareConfigurationFactory should lazily add annotations to the configurationType
+| MULE-14778 | NameUtils should a compiled regular expression for camelScatterConcat function
+| MULE-14769 | ForEach is not non-blocking
+| MULE-14768 | Extension with an operation with raw List return type breaks at compile time.
+| MULE-14757 | Foreach with child with different processing types behaves asynchronously
+| MULE-14755 | Interception API: Error XML-SDK operation with non-blocking operation is handled twice
+| MULE-14754 | Flowstack: Exception when flow-ref is combined with failing interceptor and smart connector
+| MULE-14752 | The wording in the Info Dialog doesn't make sense and is not consistent
+| MULE-14749 | Logger extension model claims DEBUG is default
+| MULE-14743 | Processor interceptor after() runs in connector thread and not flow thread when processor is ASYNC_CPU_LITE
+| MULE-14739 | EventContext keeps references to already finished ChildContext's results
+| MULE-14735 | Avoid iterating parameters map on operation policies
+| MULE-14696 | Static Metadata resolvers doesn't work with nonblocking operations
+| MULE-14681 | Returned stream is closed when using pooled connections
+| MULE-14670 | IllegalStateException when disposing application after initialise phase failed
+| MULE-14660 | Smart connector using HTTP extension fails to deploy
+| MULE-14603 | Expression Regex fails on detect expression when this have an unbalanced opening bracket
+| MULE-14597 | ExpressionExecutionException when element that expects a DW starts with space
+| MULE-14557 | When a Service/CoreExtension start fails, not started objects are tried to stop
+| MULE-14528 | Log4JMDCAdaptor introduces significant contention
+| MULE-14456 | Message toString message features exceptionPayload and no data
+| MULE-13034 | Error responses with special characters should be scaped
+| EE-5958 | Cache Scope doesn't handle correctly streams
+| EE-5518 | World-Readable Java KeyStore and Configuration Files
+| EE-5069 | Possible DoS in HTTP transport due to old commons-httpclient
+//
+// -------------------------------
+// - Enhancement Request Issues
+// -------------------------------
+| MULE-14383 | Disable RSA encryption ciphers
+| EE-5991 | Allow the user to configure cluster datasource as cluster properties
+| MULE-14832 | Update commons-httpclient to version 3.1-14-MULE-001
+| MULE-14795 | Update Jackson to 2.9.5
+| MULE-14859 | Update c3p0 to c3p0-0.9.5.2-MULE-001
+| DataWeave Fixes  a|
+
+* SE-7776: Excel was not able to do random access.
+* SE-7803: Add support for surrogated chars in UTF-8.
+* SE-7871: Never pop up Scala values to the Java writer.
+* Fixes security vulnerability in Apache POI.
+* Type parameters can now set and unset implicit bounds.
+* Changes TimeZone internal representation from `ZoneOffset` to `ZoneId` to support things like Australia/NZC.
+* No longer fails if XML header differs from encoding in DataType. Takes XML header before the other.
+* Adds new property to avoid schema being written.
+* Fixes stack trace to improve how exceptions are printed.
+|===
+
+== Compatibility Testing Notes
+
+Mule was tested on the following software:
+
+[%header,cols="15a,85a"]
+|===
+|Software |Version
+| JDK | JDK 1.8.0 (Recommended JDK 1.8.0_151/52)
+| OS | MacOS 10.11.x, HP-UX 11i V3, AIX 7.2, Windows 2016 Server, Windows 10, Solaris 11.3, RHEL 7, Ubuntu Server 16.04
+| Application Servers | Tomcat 7, Tomcat 8, Weblogic 12c, Wildfly 8, Wildfly 9, Websphere 8, Jetty 8, Jetty 9
+| Databases | Oracle 11g, Oracle 12c, MySQL 5.5+, DB2 10, PostgreSQL 9, Derby 10, Microsoft SQL Server 2014
+|===
+
+This version of Mule runtime is bundled with the Runtime Manager Agent plugin version 2.1.2.
+
+== API Gateway v4.1.2
+
+See Fixed Issues.
+
+=== Fixed Issues
+
+In this patch version, a critical issue when using OpenID connect policy applied to a HTTP Mule Proxy is fixed (when a valid access token was provided, a 500 HTTP status code was returned because of a runtime Exception triggered after successful validation of said token).
+
+[%header,cols="15a,85a"]
+|===
+|Issue |Description
+| AGW-2076 | HTTP proxy failing to perform the request with OpenId policy in front.
+|===

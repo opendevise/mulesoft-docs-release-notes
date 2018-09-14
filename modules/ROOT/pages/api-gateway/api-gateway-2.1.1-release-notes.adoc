@@ -1,0 +1,43 @@
+= API Gateway Runtime 2.1.1 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: api-gateway-2.1.1-release-notes.adoc
+:keywords: api gateway, connector, release notes
+
+MuleSoft is pleased to announce the 2.1.1 release of the API Gateway runtime. This release mainly includes bug fixes and a security improvement.
+
+== Compatibility
+
+* Mule ESB Runtime 3.7.3
+* APIkit 1.7.3
+* Anypoint Studio 5.4.3
+* Anypoint Runtime Manager 1.3.1
+
+== Fixed in this release
+
+* AGW-242: Move restClient initialization logic for fast deploy on CloudHub.
+* AGW-411: When Gateway is started in offline mode, and comes online again, communication with API Manager stops.
+* AGW-557: If a tracked api is deleted from API Platform, an unexpected error logs indefinitely.
+* AGW-594: Make flowRef required and add validations in case the source is null.
+* AGW-625: Gateway is removing policies when it is unable to parse its contents correctly.
+* AGW-695: Enable API Platform rest client support for TLS 1.1 and 1.2 in Java 7.
+* AGW-700: Performance degrades when analytics is enabled.
+* AGW-708: Analytics events are not sent for RAML proxies when calling a host that is unknown to Gateway.
+* AGW-745: When Gateway is restarted without connectivity, do not remove all applied policies.
+* AGW-752: Remove unnecessary patch from distribution.
+* AGW-759: Validation of headers in extended CORS is wrong.
+* Reverted AGW-502: Avoiding Content-Length header to be filtered by the CopyHeadersTransformer. Also, removed Connection header, as it is filtered by the mule transport.
+
+== Security Improvement in this Release
+
+AGW-734: For PCI compliance, TLS v1.0 support was removed from the `tls-default.conf` file.
+
+== Patches Included in this Release
+
+* SE-3090: Grizzly connection-pool-delays-thread-pool thread blocking the other threads
+* SE-3213: Infinite loop in error handling when HTTP listener response sending fails in some scenarios with non-blocking processing strategy.
+
+== Migration Guide from 1.3.x
+
+For migration information, refer to the xref:api-gateway/api-gateway-2.0-release-notes.adoc[API Gateway 2.0 release notes].

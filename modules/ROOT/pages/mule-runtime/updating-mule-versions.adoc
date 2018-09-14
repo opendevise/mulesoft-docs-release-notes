@@ -1,0 +1,234 @@
+= Upgrading Mule Runtime Versions
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: updating-mule-versions.adoc
+:keywords: mule, runtime, release notes, migration, installation, downtime, uptime, best practices
+
+This document describes considerations and best practices when changing the Mule Runtime versions on your servers on-premises. This covers the use cases of deploying to Mule standalone instances, to Mule instances on premises through xref:runtime-manager::index.adoc[Runtime Manager], and to Mule instances on premises through the xref:3.8@mule-management-console::index.adoc[Mule Management Console].
+
+[TIP]
+Keep in mind that if you're deploying your applications to *CloudHub*, then this content is not relevant to you, with the exception of the steps outlined in the section <<Application Runtime Version>>. Changing the Mule runtime version of a Mule application that's deployed to on CloudHub is simply managed from the xref:runtime-manager::deploying-to-cloudhub.adoc#runtime-tab[runtime version drop-down box] in the application settings deployment configuration page.
+
+
+== Application Runtime Version
+
+[NOTE]
+====
+Mule runtimes use semantic versioning, therefore please note that Mule applications:
+
+* Are most likely not compatible between major runtime versions releases (e.g. *z*.0.0)
+* Are potentially compatible between minor runtime version releases (e.g: 3.*y*.0), but MuleSoft recommends executing a regression test cycle to validate this.
+* Are assured to be fully compatible for patch releases of the Mule runtime (e.g: 3.8.*x*)
+====
+
+
+Before you begin, read the xref:mule-runtime/mule-esb.adoc[release notes] for the Mule Runtime version you wish to upgrade to (which we will call the target version, from here on), to know if you must make any necessary changes to your applications to ensure compatibility. For example, if you migrate from a version that's older than 3.6 to a version that's newer, you might want to xref:3.8@mule-runtime::migrating-to-the-new-http-connector.adoc[change all HTTP connectors] to the newer version of this connector as the old one is deprecated as of Mule Runtime 3.6.
+
+If there are no relevant changes between the Mule Runtime version in which the application is developed and the target Mule Runtime version to which you're migrating, then you shouldn't need to modify your application. Mule Runtimes support having applications that are built with older Mule versions deployed to them.
+
+If you do decide to change your Mule application's version, you must:
+
+. xref:6@studio::studio-update-sites.adoc[Download the newest Mule runtime] on Anypoint Studio so that you can handle that version in the IDE.
++
+[TIP]
+You can check xref:6@studio::adding-community-runtime.adoc[this documentation page], as a reference on how to install additional runtimes on Anypoint Studio.
+
+. For every application that you update:
+.. xref:6@studio::importing-and-exporting-in-studio.adoc#exporting-a-mule-deployable-archive[Import the application] to Anypoint Studio as a Mule project.
+.. Navigate the package explorer on the left to find its `mule-project.xml` file and open it. Change the Mule version by selecting it from the *Server Runtime* dropdown menu.
++
+image::mule-runtime/updating-mule-versions-364d6.png[]
+
+.. Make any other changes to your Mule project that may be necessary depending on the version gap you're transitioning.
+.. xref:6@studio::importing-and-exporting-in-studio.adoc#exporting-a-mule-deployable-archive[Export your project] as a Mule Deployable Archive (.zip file).
+
+If you use Maven to build your application, edit its *pom.xml* file to change the `muleVersion` property value, so that it matches the target version.
+
+Once the Mule Deployable Archives (.zip files) are in versions that you're sure are compatible with the target runtime version and you've also validated that any other necessary changes that ensure compatibility have been applied, you can move on to installing the corresponding Mule Runtime on your servers.
+
+
+== Mule Standalone Runtime Version
+
+[TIP]
+To ensure that you have faster downtime and an easier backup route, we recommend that you initially install your new Mule Runtime on a separate server from where you have your current Mule Runtime installed.
+
+. Download the new Mule version from the Customer Portal and install it (preferably on a different server or virtual machine).
+. If any of your applications use shared custom libraries, make sure you copy those .jar files to the `<MULE_HOME>/lib/user` directory of the new version.
++
+[NOTE]
+====
+If any of your previous applications rely on a full or a partial custom patch in order to work properly (these would be found in the folder `<MULE_HOME>/lib/user`), please verify that the fix is included in this target release by reviewing the corresponding xref:mule-runtime/mule-esb.adoc[release notes] page.
+
+Otherwise, please contact MuleSoft Support by creating a new support case, to request a new patch compatible with the target version. Patch files are version specific and MUST NOT be used in a different runtime version.
+====
++
+. Download a new copy of your license from the Customer Portal and install it on the target version, by following the instructions described at xref:3.8@mule-runtime::installing-an-enterprise-license.adoc[Installing an Entrerprise License].
+. If you have set any custom configurations to your runtime instance – for example: if you defined a different maximum heap size in the `wrapper.conf` file –  you might want to replicate these settings manually.
+. xref:3.8@mule-runtime::starting-and-stopping-mule-esb.adoc[Run your new Mule Server] to verify your installation is working as expected.
+. Depending on the circumstances and your current infrastructure, you might want to consider shutting down your previous Mule Server at this point. Please evaluate the impact of this action before proceeding.
+. If you have previously set any environment variables, such as `MULE_HOME` or `PATH`, make sure that they are now pointing to the new Runtime's installation path.
+. Deploy your applications to your new Mule Server.
+
+[[mulerunvers]]
+== Mule Runtime Version on Runtime Manager
+
+[NOTE]
+To migrate following these steps, you must have the xref:runtime-manager::runtime-manager-agent.adoc[Runtime Management Agent] installed. The agent comes bundled with Mule runtime as of version 3.6.0 and later. In case you're migrating from a Mule runtime version that is is older than that, you must do this migration manually.
+
+[TIP]
+To ensure that you'll have less downtime and an easier backup route, we recommend that you initially install your new Mule Runtime on a separate server from where you have your current Mule Runtime installed. That way you can set everything up and only then decouple the old server and initiate the new one.
+
+To migrate your Mule servers on-premises that are being managed through Runtime Manager, you must perform these steps on each:
+
+. Go through steps 1 through to 5 of the previous section, <<Mule Standalone Runtime Version>>
+. Copy the following three files from the path `<MULE_HOME>/conf` from your old Mule installation into the same on the new installation:
+* `mule-agent.yml`
+* `mule-agent.jks`
+* `truststore.jks`
+. Copy the mule-agent-plugin folder from the path `<MULE_HOME>/plugins` from your old Mule installation into the same on the new installation.
+. Open a terminal window and navigate to the `<MULE_HOME>/bin` of your new Mule installation. Once there, run the following command:
++
+----
+amc_setup -U
+----
++
+Through executing this command, you're installing the latest version of the Runtime Manager Agent on your Mule runtime, which is assured to be compatible with your target runtime version. The files you copied from your old installation hold all of the configuration information that registers the Mule instance on Runtime Manager, so no further steps should be needed.
++
+[NOTE]
+====
+Even when you're installing your new Mule runtime version on another server or VM, the copied configuration files should suffice to smoothly transition the Mule instance's identity on the Runtime Manager.
+
+If your origin server had apps that were deployed to it through the Runtime Manager, there's no need to manually copy these, as they automatically upload to your new server when instructed to deploy them through Runtime Manager.
+====
++
+. At this point the Mule server is already updated to the target version. Updating the Mule applications that are deployed to it is optional. If wish to do so to take full advantage of the features of the target runtime, then you must also:
+.. Follow the steps in <<Application Runtime Version>> to update your application.
+.. Find the application on the *Applications* tab on Runtime Manager and click *Choose File* to xref:runtime-manager::managing-deployed-applications.adoc#updating-your-application[upload] the new Mule Deployable Archive (.zip file).
+
+//_TODO DOCS-2030
+// Based on cases where customers encounter an incompatibility communication protocol between new clusters and their hazelcasts instances, no zero-downtime migration can be guranteed from the docs.
+
+== Upgrading a Runtime Manager Cluster
+
+Zero downtime cannot be guaranteed when migrating clusters to another version. At some point during the migration the cluster is in a mixed state, with coexisting nodes running two different versions. This might lead to incompatible communication protocols between Hazelcast instances. +
+When such errors occur, every node in the cluster must be shut down to proceed with the migration.
+
+// === Upgrading a Runtime Manager Cluster With Zero Downtime
+//
+// If you wish to migrate your Mule servers in a cluster from one Mule version to another, the procedure is simple and doesn't require any downtime.
+//
+// Follow the steps in <<mulerunvers,Mule Runtime Version on Runtime Manager>> for each server in your cluster, one by one.
+//
+// *Notes:*
+//
+// * If you are migrating policies, follow the steps in <<Upgrading an MMC Cluster With Zero Downtime>>. When a different runtime version starts on the same cluster, the runtime tries to download the serialized policies classes from ARM. As the
+// policies are on a previous version the runtime crashes. The only way to do this is following the steps described for MMC, that requires that you replicate the whole cluster in a new runtime version.
+//
+// * Although you're not allowed to create a new cluster that includes servers that run different Mule runtime versions, your cluster may exist in a mixed state if you update your already registered Mule instances. This allows you to migrate the Mule instances on your cluster in a safe progressive way.
+//
+// * After all of your servers have been migrated to the target version, you may also wish to migrate the applications that are deployed to it to that version. After you update the <<Application Runtime Version>>, upload its new Mule Deployable Archive (.zip file) to the cluster. Runtime Manager installs the new application version progressively on each server, one at a time, to keep the service working with no downtime throughout the update process.
+
+== Mule Management Console Versions
+
+[NOTE]
+Note that unless instructed otherwise, you need to upgrade your MMC version to handle the corresponding Mule Runtime. See our https://www.mulesoft.com/legal/versioning-back-support-policy#mmc[policies] regarding MMC versioning. Keep in mind that Mule versions prior to 3.5 aren't supported on MMC.
+
+For each of the servers that you manage through MMC, go through steps 1 through to 5 of the section, <<Mule Standalone Runtime Version>>
+
+If you use default persistence on MMC, the recommended way to migrate to a newer MMC version is to perform a clean install of MMC and then register your existing Mule Servers to this new version. In that case, before installing the new version you must:
+
+. Disband any existing cluster (if any).
+. Unregister all your servers from the old MMC version.
+. Undeploy the previous MMC version from your servlet `container/application` server.
+. Delete the `mmc-data` folder (after making a backup of it)
+
+For more information about registering and unregistering Mule Servers and/or creating or disbanding a cluster of Mule Servers see xref:3.8@mule-management-console::setting-up-mmc-mule-esb-communications.adoc[Setting Up MMC-Mule ESB Communications] and xref:3.8@mule-management-console::creating-or-disbanding-a-cluster.adoc[Creating or Disbanding a Cluster]
+
+On the other hand, if you prefer to perform an upgrade directly, once you have the latest copy of the MMC `.war` file (available for download through our Support Center), you must then follow these steps:
+
+. Stop your application server (E.g: Tomcat).
+. In case you have enabled LDAP support and/or configured an External Database, you must backup all the custom configuration files ( see the <<Backing up MMC Configuration Files>> section below).
+. Uncompress the recently downloaded MMC .war file (you can simply manually change the .war extension to .zip and it can then be handled by any software that supports the .zip extension).
+. Replace the configuration files on this new MMC version with the files that you backed up from the older version in the previous step.
+. Pack/Compress the folder contents back, and make sure its extension is `.war` (simply rename the file's extension, if necessary).
+. Start you application server and undeploy the previously installed MMC version.
+. Restart your application server and deploy the new version of MMC.
+
+
+=== Backing up MMC Configuration Files
+
+[NOTE]
+The following information applies to MMC versions 3.4.2 and 3.5.x onwards to the latest.
+
+The following files need to be backed up from your current MMC installation in order to preserve any custom configuration it may have, such as LDAP support and External Database configurations:
+
+
+. `<MMC_HOME>/WEB-INF/web.xml`
+. `<MMC_HOME>/WEB-INF/classes/META-INF/mmc-ldap.properties`
+. `<MMC_HOME>/WEB-INF/classes/META-INF/databases/<type_of_data>-<database name>.properties`
+
+[TIP]
+The `<MMC_HOME>` path could either refer to the copy of your `custom/"already configured"` MMC .war file you are currenlty deploying, or to the current exploded MMC's application folder at your application server `application` directory.
+
+
+[NOTE]
+====
+Please note that these are only configuration files, by backing them up you are NOT preserving the current state of your MMC.
+
+Make sure that MMC and the application servers are not running at the moment you back these files up
+====
+
+
+For more information, refer to: xref:3.8@mule-management-console::upgrading-the-management-console.adoc[Upgrading the Mule Management Console]
+
+
+=== MMC Agent Version
+
+Also, for earlier MMC versions than 3.4.0, make sure the version of the Mule Agent you use is also compatible with your target Runtime version.
+
+For MMC Agent versions, the rule of thumb is the following:
+
+For Mule versions 3.4.0 and later:
+
+* The MMC Console (or Server) version should be greater or equal to the ESB version.
+* Since the MMC Agent comes bundled with the Mule Runtime, there is no need to download it separately. If the MMC version is later than the ESB version, the bundled agent works transparently and there is no need to download it separately.
+
+For Mule versions earlier than 3.4.0:
+
+* The MMC Agent version should be the same as the Mule Runtime version.
+* The MMC Console (or Server) version should be greater or equal to the Runtime version.
+
+=== Upgrading an MMC Cluster With Zero Downtime
+
+[NOTE]
+These steps are only valid for clusters created with MMC. For doing this on Runtime Manager see <<Upgrading a Runtime Manager Cluster With Zero Downtime>>.
+
+To achieve a zero downtime upgrade you need to have an external load balancer and set up two different clusters (it is not possible to have a cluster with mixed Mule Runtime versions).
+
+You need to implement the following procedure:
+
+. Install the new Mule Runtime in all of the servers.
+. Configure these new Mule instances as members of a different cluster.
+. Node by node, do the following:
+.. Remove the old Mule instance from the load balancer so it won't receive new invocations.
+.. Shut down the old Mule instance.
+.. Start up the new Mule instance.
+.. Deploy all the applications to this new Mule instance.
+.. Register the new Mule instance to the load balancer.
+
+////
+== Migrating From MMC to Runtime Manager
+
+See link:
+////
+
+
+
+
+
+
+== See Also
+
+
+Please feel free to contact MuleSoft Support if you have any question that is not covered by this article.

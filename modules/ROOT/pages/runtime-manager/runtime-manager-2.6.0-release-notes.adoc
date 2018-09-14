@@ -1,0 +1,57 @@
+= Runtime Manager v2.6.0 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: runtime-manager-2.6.0-release-notes.adoc
+:keywords: arm, runtime manager, release notes
+
+**October 21, 2017**
+
+This release contains the following enhancements:
+
+[cols="2*a"]
+|===
+| Enhancement | Description
+| Autodiscovery of remote server properties | Enables Runtime Manager to display environment and system properties of remote servers and Mule runtimes. This feature is applicable to hybrid deployment scenarios only.
+| Application properties | Enables you to set application properties from Runtime Manager during application deployment. This feature is applicable to hybrid deployment scenarios only.
+| Schedule management | Adds support for polls to applications deployed in a hybrid deployment scenario. The feature is only supported on single-server environments. It is not supported on servers within server groups or clusters.
+| Disable Insights | Adds ability to control access to the Insights component for an organization or sub-organization. To prohibit this component, contact your customer success representative.
+| Increased application size | Adds support for asynchronous uploads of files and increased the supported application file size from 100MB to 200MB
+|===
+
+
+== Hardware and Software Requirements
+
+To use Runtime Manager to specify a cluster IP and port in hybrid deployment scenarios, you must be running Mule runtime, version 3.8.5 or greater.
+
+== Compatibility
+
+Mule Agent plugin integration is compatible with the following component versions:
+
+[cols="2*a"]
+|===
+|Availability | Cloud only
+|Mule Agent Plugin | Version 1.9.0 or later is required for all new features.
+|Mule | 3.9.0 and later is required for the application properties feature.
+|API Gateway | 2.x and above for API Analytics
+|===
+
+== Fixed Issues
+
+None.
+
+== Known Issues
+
+None.
+
+== Deprecated Features or Functionality
+
+No change.
+
+== Migration
+
+No change.
+
+== Support
+
+No change.

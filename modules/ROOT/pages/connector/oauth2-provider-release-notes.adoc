@@ -1,0 +1,25 @@
+= OAuth2 Provider Module Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: oauth2-provider-release-notes.adoc
+:keywords: oauth, provider, module, release notes
+
+*June 2018*
+
+_Premium_
+
+xref:connectors::oauth/oauth2-provider-documentation-reference.adoc[OAuth2 Provider Documentation Reference]
+
+== 1.0.0
+
+*June 15, 2018*
+
+=== Compatibility
+The OAuth2 Provider Module is compatible with:
+
+|===
+|Application/Service|Version
+
+|Mule Runtime|4.1.1 and higher.
+|===

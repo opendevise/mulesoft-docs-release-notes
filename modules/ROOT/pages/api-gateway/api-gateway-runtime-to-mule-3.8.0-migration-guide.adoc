@@ -1,0 +1,126 @@
+= API Gateway Runtime to Mule 3.8.0 Migration Guide
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: api-gateway-runtime-to-mule-3.8.0-migration-guide.adoc
+:keywords: api, gateway, mule, migration guide
+
+Migrating APIs and apps to Mule Runtime 3.8.0 involves adapting to changes in access token enforcement policies, blocked APIs, and API Gateway domain migration.
+
+== Access token enforcement policies
+Adapt APIs to handle the improvement in the token enforcement policies behavior. Ping Federate, OpenAM and OAuth access token enforcement policies returned a 403 status code when the request, token or scope was invalid.To conform to the best practice described in https://tools.ietf.org/html/rfc6750#section-3.1[RFC6750], this behavior was modified to return one of the following responses:
+400 (Bad Request): The request is invalid
+401 (Unauthorized): The access token is invalid
+403 (Forbidden): The scope is insufficient
+In every invalid response, the WWW-Authenticate header is included.
+
+== Blocked APIs
+
+As part of the link:/api-manager/gatekeeper[Gatekeeper security improvement], on startup, managed API traffic is disabled until the online policies are successfully applied. Until traffic is enabled, the API receives a 503 status code in response to requests.
+
+This blocking behavior is enabled by default and is only present on a standalone instance. To disable the blocking behavior, set the `anypoint.platform.gatekeeper` property to false.
+
+
+== API Gateway Domain Migration
+
+As a result of the unification of API Gateway Runtime with Mule Runtime 3.8.0 and several usability issues reported in previous Gateway versions, the default API Gateway domain is no longer bundled with the distribution. If you want to use the domain for sharing resources as you did with the previous release, follow the migration procedure in this document.
+
+== Migration Procedure—​CloudHub Users
+
+Users migrating in Cloudhub to Mule 3.8.0 need to copy the domain’s listener configuration to the API or generated proxy.
+
+== Migration Procedure—​Other Users
+
+If you want to continue using the domain, run one of the following scripts included in the Mule 3.8.0 distribution to generate the API Gateway domain before deploying the proxy:
+
+* Windows: `gateway_domain_setup.bat`
+* Linux and Mac OSX: `gateway_domain_setup`
+
+In the absence of a domain in the Mule 3.8 distribution, this script generates an api-gateway domain having one http-listener-config and one https-listener-config.
+
+Alternatively, you can copy the api-gateway domain from your old release to the new one, but MuleSoft recommends running the provided script. Users migrating from API Gateway 2.x On Premises need to execute the script before creating the proxy or copy the api-gateway domain.
+
+API Manager continues to support generating a proxy for referencing the domain, as described in link:/api-manager/api-gateway-domain[API Gateway domain] documentation.
+
+=== Syntax
+
+The syntax of the `gateway_domain_setup` script is:
+
+----
+gateway_domain_setup -[http-port] -[http-host]
+                     -[https-port]
+                     -[https-host]
+                     -[key-store-file]
+                     -[store-password]
+                     -[key-password] -[force]
+                     -[print-output]
+----
+where:
+
+[cols="2*a"]
+|===
+|-f,--force | Overwrites the `mule-domain-config.xml` file if it already exists
+|-h,--help | Show usage information
+|-hh,--http-host <http-host> | Host of the http listener configuration
+|-hp,--http-port <http-port> | Port of the http listener configuration
+|-hsh,--https-host <https-host> | Host of the https listener configuration
+|-hsp,--https-port <https-port> | Port of the https listener configuration
+|-kp,--key-password <key-password> | Key password
+|-ksf,--key-store-file <key-store-file> | Path to the key store file
+|-sp,--store-password <store-password> | Store password
+|===
+
+=== Creating a Domain Using the Default Configuration
+
+The default configuration of the domain includes a listener configuration binding to all interfaces and using port 8081. The following procedure shows the output of running the script on Mac OSX that creates a new domain using a different configuration.
+
+To create a default domain:
+
+. Run the gateway_domain_setup script in the bin directory of the Mule Enterprise Standalone 3.8.0 distribution.
++
+A prompt appears asking if you want to use default values for creating an HTTP-listener-config.
+. Type `y`.
++
+Output is:
++
+----
+$ bin/gateway_domain_setup
+
+MULE_HOME is set to /Users/muleuser/Downloads/mule-enterprise-standalone-3.8.0-RC1
+No parameters were provided. Do you want to use the default values for creating a HTTP-listener-config? [y/n]: y
+Domain successfully created
+----
+
+=== Creating a Domain Using a Custom Configuration
+
+Optionally, install https://en.wikipedia.org/wiki/GNU_Readline[readline] if you do not have it installed and you want to use tab completion to automatically fill in values when running the migration script. With readline installed, the script runs as follows:
+
+* If you do not provide any arguments to the script (or provide -f), the script uses the default values when you use tab completion.
+* If you provide some of the http values, the script fills in the rest using default values only for the http listener configuration.
+* If you do not provide any http listener config information, but do provide all the https listener configuration information, the script creates the https listener configuration.
+
+As mentioned earlier, the script generates the api-gateway domain having one http-listener-config and one https-listener-config. You can generate a domain with only one of those listener configs or you can have both listener configs in the domain.
+
+To create a domain using a custom http listener configuration:
+
+Create a domain and change the http listener configuration from the default to the following http listener config:
+
+* From the default listener configuration:
++
+`<http:listener-config name="http-lc-0.0.0.0-8081" host="0.0.0.0" port="8081" />`
++
+* To the custom configuration:
++
+`<http:listener-config name="http-lc-0.0.0.0-8081" host=“localhost" port=“999" />`
+
+This is a one-step procedure. Run the gateway_domain_setup script in the bin directory of the Mule Enterprise Standalone 3.8.0 distribution, specifying the HTTP port 8111 and port 999 as follows:
+
+`bin/gateway_domain_setup -f -hh localhost -hp 999`
+
+Output is:
+
+----
+bin/gateway_domain_setup -f -hh localhost -hp 999
+MULE_HOME is set to /Users/muleuser/Downloads/mule-enterprise-standalone-3.8.0-RC1
+Domain successfully created
+----

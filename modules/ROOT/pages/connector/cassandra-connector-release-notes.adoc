@@ -1,0 +1,60 @@
+= Cassandra Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: cassandra-connector-release-notes.adoc
+:keywords: cassandra
+
+*June 2018*
+
+_Select_
+
+The Anypoint Cassandra connector provides the capability to connect a Mule app to a Cassandra database or cluster. The MuleSoft support category for the Cassandra connector is xref:3.9@mule-runtime::anypoint-connectors.adoc#connector-categories[Select].
+
+== 2.1.0
+
+*June 2018*
+
+This version supports the Cassandra cluster setting. Users can provide comma separated Cassandra server values, such as `127.0.0.1:9160, 127.0.0.2:9160`.
+
+== 2.0.0
+
+*May 2017*
+
+The Cassandra connector was implemented using the DataStax Java Driver for Apache Cassandra 3.1. The connector is compatible with the following software:
+
+* Cassandra database or cluster 1.2 or later
+* Cassandra 3.0.11 or earlier if you use the Change Column Type operation
+* CQL spec 3.x
+* Anypoint Studio 6.x and Mule Runtime 3.6 or later, or Mule Runtime only
+
+The capability to change the data type of a column using the CQL alter table query was removed from Cassandra 3.0.11 and later; consequently, the Cassandra connector Change Column Type operation does not work if you connect to a Cassandra database that does not support this capability.
+
+
+== Key Features
+
+The Cassandra connector supports the following capabilities:
+
+* Basic Authentication for accessing the database as configured in the cassandra.yaml
+* Executing any CQL query using a custom POJO
+* Performing the following Cassandra Query Language (CQL) database operations, which are described in the Cassandra Connector javadoc, using a wizard:
++
+[frame=none]
+|===
+| Add new column | Delete columns value | Drop table | Select
+| Change column type | Delete rows | Drop keyspace | Update
+| Create keyspace | Drop Column  | Rename column |
+| Create table | Get table names from keyspace | Insert |
+|===
++
+* Configuring Cassandra cluster operations, such as compression and SSL
+* All CQL primitive data types except:
+** list
+** map
+** set
+** tuple
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

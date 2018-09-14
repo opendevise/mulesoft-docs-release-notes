@@ -1,0 +1,46 @@
+= Anypoint Platform for Pivotal Cloud Foundry 1.6.1 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: anypoint-platform-pcf-1.6.1.adoc
+
+The Anypoint Platform for PCF solution is a fully integrated solution that enables organizations to design, develop, deploy, manage and operate APIs, connectivity apps and microservices within the fully automated and transparent infrastructure provided by  Pivotal Cloud Foundry.
+
+See xref:runtime-manager::deployment-strategies.adoc[Deployment Strategies] for a description of the different deployment scenarios that Runtime Manager supports.
+
+== System Requirements
+
+See xref:1.5@anypoint-platform-pcf::pcf-system-requirements.adoc[About Software Requirements for Anypoint Platform for PCF] for specific software requirements.
+
+See xref:1.5@private-cloud::system-requirements.adoc[About Minimum System Requirements] for information about minimum system requirements for Anypoint Platform Private Cloud Edition.
+
+== Compatibility
+
+This version of Anypoint Platform for PCF is compatible with the following:
+
+[%header%autowidth.spread]
+|===
+|Component |Version
+|Mule Runtime |3.8.1 and 3.8.5
+|Pivotal Cloud Foundry |1.7.x, 1.8.x, 1.9.x, 1.10.x, 1.11.x
+|===
+
+== Feature Enhancements
+
+This release includes the following feature enhancements:
+
+[%header%autowidth.spread]
+|===
+|Enhancement  |Description
+| Buildpack upgrade | The buildpack was updated to the latest version of the Cloud Foundry Java buildpack, based on version 4.2.
+| Space Configuration Tool | Modifies how PCF apps are deleted. Apps are deleted asynchronously by deleting the application code first, then deleting the database associated with the app. This helps avoid an inconsistent state.
+| Runtime Manager | Calls to the Runtime Manager API are verified through cores services. This improves security and stability of the platform.
+|===
+
+== Fixed Issues
+
+None
+
+== Known Issues
+
+None

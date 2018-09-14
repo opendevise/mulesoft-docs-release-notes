@@ -1,0 +1,53 @@
+= RosettaNet Connector Release Notes - Mule 4
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: rosettanet-connector-release-notes-mule-4.adoc
+
+*June 2018*
+
+_Premium_
+
+The Anypoint Connector for RosettaNet sends and receives RosettaNet messages
+using RNIF 2.00.01. The connector automatically handles send timeouts and retries,
+and responds to received messages with the appropriate HTTP response and/or
+signal. Users work directly with the RosettaNet message service content as an XML document.
+
+== 2.0.0
+
+*June 29, 2018*
+
+This release adapts RosettaNet for use with Mule 4 and Studio 7.
+
+=== Compatibility
+
+RosettaNet Connector v2.0.0 is compatible with the following:
+
+[%header,cols="30a,70a"]
+|===
+|Application/Service |Version
+|Mule Runtime |4.1.0 and later
+|Anypoint Studio |7.1.0 and later
+|PIP 0A1 Notification of Failure |v02.00
+|3A4 Request Purchase Order |v02.02 |
+|3A6 Distribute Order Status |v02.00, v02.02, v02.03
+|3B2 Notify of Advance Shipment |v01.00
+|3C3 Notify of Invoice |v01.00, v01.11
+|===
+
+=== Known Issues
+
+The Mule 4 RosettaNet connectory only supports:
+
+* Not supported on Flow Designer
+* Asynchronous response messages
+* RNIF 2.00.01
+* Cluster 3 PIPs (limited selection)
+* Message signing (optional), not encryption
+* Certificate revocation managed directly by user in keystore
+* The maximum supported message size is 5 MB.
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Foum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

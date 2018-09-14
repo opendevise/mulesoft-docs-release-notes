@@ -1,0 +1,53 @@
+= Runtime Manager v2.3.0 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: runtime-manager-2.3.0-release-notes.adoc
+:keywords: arm, runtime manager, release notes
+
+This release contains the following new features and enhancements:
+
+[cols="2*a"]
+|===
+|Feature |Description
+|Application uptime information |Runtime Manager displays the amount of time an application has been running. This information is displayed on the Settings page and information panel for each application.
+|View and edit server properties on hybrid servers |Runtime Manager enables you to define, view, and edit properties for servers running in a hybrid deployment scenario. Properties are defined as key/value pairs on the Manage Servers page.
+|Specify the IP address and port for a cluster node |Runtime Manager enables you to specify the IP address and port of a cluster running in a hybrid deployment scenario. To use this feature, your server must be running Mule runtime, version 3.8.5 or greater.
+|===
+
+
+== Hardware and Software Requirements
+
+To user Runtime Manager to specify a cluster IP and port in hybrid deployment scenarios, you must be running Mule runtime, version 3.8.5 or greater.
+
+== Compatibility
+
+Mule Agent plugin integration is compatible with the following component versions:
+
+[cols="2*a"]
+|===
+|Availability | Cloud only
+|Mule Agent Plugin | 1.7.0 is required when specifying clustering ports, retrieving application uptime and Mule runtime shutdown and restart.
+|Mule | 3.6.x and above
+|API Gateway | 2.x and above for API Analytics
+|===
+
+== Deprecated Features or Functionality
+
+No change.
+
+== Resolved Issues
+
+No change.
+
+== Migration
+
+No change.
+
+== Known Issues
+
+None.
+
+== Support
+
+No change.

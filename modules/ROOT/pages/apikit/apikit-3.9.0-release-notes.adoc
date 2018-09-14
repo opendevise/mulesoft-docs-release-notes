@@ -1,0 +1,31 @@
+= APIkit 3.9.0 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: apikit-3.9.0-release-notes.adoc
+
+*October 6, 2017*
+
+This release supports the latest Mule Runtime release and corresponding Studio version.
+
+== Compatibility
+
+* Mule Runtime 3.9.0
+* Anypoint Studio 6.4.0
+* Java Parser RAML 1.0 v1.0.15
+* Java Parser RAML 0.8 v0.8.19
+* API Console 3.0.20
+
+This release includes all fixes to versions up to and including APIkit 3.8.5.
+
+**https://github.com/raml-org/raml-java-parser/releases[Github RAML Parser Issues] Fixed**
+
+* #372 Stack Overflow when generating XML schema with recursive types
+* #364 Parser wrongly complains on the AnnotationTypeDeclaration fragment about allowedTargets
+* #388 Error parsing XML schemas with relative schema locations in RAML 1.0
+* #386 TypeDeclaration validation fails if value is null
+* #375 displayName is not valid for Methods (get, post, put, etc.)
+* #407 Allow absolute path includes using the classpath
+* #414 Update json-schema-validator to version 2.2.8
+* #423/4 Validation error over API Query Params
+* #421/2 RP-89 Root RAML file relative includes don't work for URLs

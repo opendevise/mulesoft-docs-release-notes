@@ -1,0 +1,330 @@
+= Anypoint Studio 7.0.0 Beta with Mule Runtime 4.0.0 Beta
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: anypoint-studio-7.0-beta-with-4.0-runtime-release-notes.adoc
+
+*July 25, 2017* +
+*Build ID: 201707230157*
+
+== Compatibility
+
+[cols="30a,70a"]
+|===
+| Product | Version
+| *Mule Runtime*
+| Version: 4.0.0 BETA
+
+|*Anypoint Studio*
+|Version: 7.0.0 BETA  +
+Build Id: 201707230157
+
+|*Maven*
+|Version: 3.3.9
+
+|*DataWeave* +
+|Version: 2.0.0 BETA
+
+|*MUnit* +
+|Version: 2.0.0 BETA (munit-studio-plugin)
+
+|*Eclipse* +
+|Version: 4.6.2
+
+|===
+
+== What's New
+
+* Improved palette which enables users to more quickly discover what they’re looking for by searching directly for operations and saving favorites
+* Users can now explicitly manage which connectors and modules are associated with a project.
+* Connectors and modules are now managed directly by Anypoint Studio, and do not require users to manage update sites.
+* Easily navigate to code from visual view by right clicking on a component and clicking “View XML”
+* Maven is now embedded out of the box inside Studio. Additionally, every project now has a Maven POM, making it easier to incorporate projects into CI/CD systems.
+* Flows and scopes are now collapsable.
+* Updated icons make flows easier to read.
+* DataSense metadata is now stored in a human readable format this is easier to share, commit and merge.
+* Support for importing API specifications from Design Center
+* Improved user experience for connector and modules
+* Simplified experience to manage credentials when logging into the Anypoint Platform
+
+
+[NOTE]
+--
+Beta status in this release indicates the functionality is open for customers to trial for the purpose of learning the new functionality and/or testing functionality in a non-production environment. Basic functionalities to enable core use cases are complete, and MuleSoft is in the process of verifying design and evolving feature completeness. There is no SLA or technical support obligations for the Beta features. Beta releases are suitable for use in test environments or for limited-use tests.  Please see our https://www.mulesoft.com/legal/product-trial-commercialfree-licenses[beta trial license] for full terms of use.
+--
+
+== Hardware Requirements
+
+* For most use cases, Anypoint Studio with the 4.0.0 Beta Runtime does not change hardware or software requirements from the previous Studio 6x versions.
+* MuleSoft recommends a minimum of 4GB of free RAM available on a developer workstation. As applications become complex, consider adding more RAM.
+* This version of Anypoint Studio requires Java 8.
+
+* 2GHz CPU
+* 10GB free hard drive space
+
+== Software Requirements
+
+[cols="30a,70a"]
+|===
+| Software | Version
+|Java Environments
+| * Oracle JDK 1.8.0
+|Operating Systems |* MacOS 10.10.0 +
+* Windows (32- and 64-bit) Windows 7, Windows 8, Windows 10 +
+* RHEL 7.0 +
+* Ubuntu 15.04 or later
+|Suggested Web Browsers by Platform. +
+_Studio will always use the OS default web browser_ | * Windows: +
+** Microsoft Edge 25.0  +
+** Internet Explorer 11 +
+* Linux +
+** Mozilla Firefox 46.0  +
+* OS X +
+** Safari 9.1
+| Maven
+| Studio comes with Maven 3.3.9 bundled, but you can externally use the versions: 3.3.3 or your own  3.3.9
+|===
+
+[NOTE]
+--
+If you are running McAfee VirusScan on your Windows OS, Eclipse-based Anypoint Studio may experience negative performance impacts. McAfee has suggested the following remedy https://kc.mcafee.com/corporate/index?page=content&id=KB58727[options].
+--
+
+== Known Issues
+
+* DataWeave editor does not support regex as function parameters STUDIO-9069
+* Metadata: can not create XML types from samples that contains CDATA STUDIO-9436
+* Application-types file is not updated when deleting MP from XML view. STUDIO-9505
+* Metadata tree is not being updated for Flows. STUDIO-9522
+* Dependencies are not refreshed properly if the pom is updated while the dependencies are being resolved.STUDIO-9540
+* APIKit does not support metadata
+* First time you create a MUnit test from a Flow you get a message saying that you have to wait for the dependencies to be added to the project and then try again. +
+Some existing features in Studio 6.x are not yet supported in Studio 7: Domains, Custom Policies, APISync, Anypoint Private Cloud, Gateway runtime connectivity.
+* To be able to deploy a project which uses the runtime 4.0.0 into Cloudhub you need to have certain permissions in your Anypoint Platform user to see runtime 4.0.0 when deploying it.
+* Anypoint Studio uses your configured default browser to display web content such as Exchange and the Runtime Manager UI when deploying an application to Anypoint Platform. If your default internet browser does not display this content correctly, you can configure Anypoint Studio to use a Mozilla/XULRunner runtime environment as the underlying renderer for the Web UI. See xref:7.1@studio::faq-default-browser-config.adoc[Troubleshooting Issues with Your Default OS Browser] for more information.
+* Mule modules needs to provide icons, today many of the modules have the generic icon. MULE-11437
+* XML Metadata is not generated correctly when the provided sample has namespaces. MULE-12859
+* Validation error when required attribute is written with double quotes in a Choice expression. STUDIO-9386
+* Generated UI in Mule properties editors for Modules that use Map<String,List<String>> type of structures such as MongoDB will not work. STUDIO-9570
+* Includes are not resolved correctly when creating a new apikit project.  STUDIO-9573
+* Running application "Pom.xml" is not updated when changing dependencies. STUDIO-9148
+* Mule plugins with snapshot versions should always be regenerated.STUDIO-8716
+* DataSense does not work for connectors not shipped with Studio. STUDIO-9591
+
+== Migration Guide
+
+Studio 7 only supports Mule 4 projects. The structure of the project, export format, XML and scripting language are different. For the beta, users must migrate Mule 3 projects to Mule 4 manually, before they can be used in Studio 7. Please see the Mule migration guide for more information.
+
+
+== JIRA Ticket List for Anypoint Studio
+
+=== Tasks
+
+* STUDIO-5560 - Make all containers collapsible
+* STUDIO-6797 - Define embedded documentation experience
+* STUDIO-7505 - Move to java 8
+* STUDIO-7664 - Update autocompletion to use the new Metadata Model
+* STUDIO-7665 - Update studio metadata cache to use the new Medatada model
+* STUDIO-7666 - POC: Have a mule running in background to make datasense requests
+* STUDIO-7667 - Update Metadata explorer to use the new Medata Data model
+* STUDIO-7668 - Define migration strategy for metadata
+* STUDIO-7669 - Update Studio metadata propagation to use the new metadata model
+* STUDIO-7670 - Create a Datasense Mule agent client
+* STUDIO-7675 - Create Metadata request using the new Metadata model
+* STUDIO-7767 - Update SAP Connector to generate the new metadata model
+* STUDIO-8058 - Load extension from mule server
+* STUDIO-8059 - Remove datamapper code from studio 7 branch
+* STUDIO-8066 - Use RAML parser v2 for RAML 0.8
+* STUDIO-8093 - POC: Change studio model to use the native XML editor model
+* STUDIO-8119 - Add MUnit to studio 7 build when there is a mule 4 working version
+* STUDIO-8141 - Add mechanism to override editors provided by connectors
+* STUDIO-8288 - Remove black list when all elements are in place
+* STUDIO-8356 - Use the DisplayName property provided by the extensions to generate the caption
+* STUDIO-8360 - Rename icons so that they match the name of the generated ones
+* STUDIO-8361 - Create a sockets icon for Mule 4
+* STUDIO-8362 - Refactor icons cache
+* STUDIO-8377 - Define UI for configuring elements that can be defined inline, globaly or by expression
+* STUDIO-8400 - Reduce maven startup/download time (prepackage m2 repo)
+* STUDIO-8401 - Add Mule extensions to project from exchange
+* STUDIO-8406 - Add test connecton in SDK generated editor, for extensions that have connection providers
+* STUDIO-8434 - Review validation connector for mule 4
+* STUDIO-8436 - Review DFL test for mule 4
+* STUDIO-8452 - Add an option to collapse or expand all flows/containers
+* STUDIO-8458 - Add an APIKit version compatible with mule 4
+* STUDIO-8568 - Review with Mule, what core modules will be handled as external modules
+* STUDIO-8622 - ExtensionModel should be loaded using the runtime-tooling-client
+* STUDIO-8665 - DW: validate Drag and Drop code generation changes
+* STUDIO-8709 - Remove zip type from mule plugin dependencias, as we need to depend from jars
+* STUDIO-8729 - Add a maven populate task for mule-plugins that don't come with the distribution
+* STUDIO-8752 - Verify that extension's streaming strategy is correctly integrated
+* STUDIO-8777 - Remove transactional element
+* STUDIO-8786 - Remove OGNL Expression Language
+* STUDIO-8787 - Rename attributes that changed in mule core xsd
+* STUDIO-8789 - Remove threading profile as child element
+* STUDIO-8790 - Remove unsupported elements
+* STUDIO-8791 - Remove jersey module from Studio 7
+* STUDIO-8792 - Remove validations module from mule 4
+* STUDIO-8815 - Rename block scope to try
+* STUDIO-8816 - Reenable custom metadata actions in DW
+* STUDIO-8821 - Remove poll-wrapping options
+* STUDIO-8828 - Define the design for the Properties View "Shell"
+* STUDIO-8834 - Define the design for field validation
+* STUDIO-8835 - Make a list of all generated UI cases
+* STUDIO-8836 - Define the design for each generated UI case
+* STUDIO-8842 - Understand the HTTP Listener/Request domain model
+* STUDIO-8843 - Mockups of HTTP Request general properties
+* STUDIO-8844 - Mocks for HTTP configuration Overrides
+* STUDIO-8845 - Mocks for HTTP Listener configuration overrides
+* STUDIO-8846 - Mocks for HTTP Listener response Settings
+* STUDIO-8847 - Spike on incorporating custom editor components
+* STUDIO-8848 - Change Exchange URL to version 2.0 by default
+* STUDIO-8859 - DW: Change grammar according to new DW schema
+* STUDIO-8916 - Remove Watermark (Poll)
+* STUDIO-8917 - Remove Flow processing Strategy
+* STUDIO-8918 - Rename idempotent redelivery policy in Studio to Redelivery Policy
+* STUDIO-8932 - Make the "Map to" field editable.
+* STUDIO-8933 - Remove "Add libraries..." option
+* STUDIO-8936 - Use Mule 4 M6/SNAPSHOT in Studio 7
+* STUDIO-8937 - Update Eclipse framework to 4.6.3
+* STUDIO-8948 - Change mule-app.properties to mule-artifact.properties
+* STUDIO-8953 - Create icon grid & guidelines
+* STUDIO-8954 - Improve DataSense fetching and propagation performance
+* STUDIO-8958 - Technical Spike on APIKit Console integration
+* STUDIO-8964 - Update of HTTP Request mocks based on feedback
+* STUDIO-9010 - Review Metadata related UX when for some reason the Service mule instance can not be started
+* STUDIO-9026 - Automatic repository/credentials management for Exchange in pom.xml
+* STUDIO-9027 - When adding extensions from Exchange, required extensions should be informed/added
+* STUDIO-9039 - Remove CXF from Studio
+* STUDIO-9056 - Remove Anypoint Platform for Apis preference page.
+* STUDIO-9059 - Bundle core modules in Studio 7
+* STUDIO-9083 - Create/migrate missing Canvas/Palette icon images
+* STUDIO-9156 - Remove Context Properties Placeholder from Global Elements
+* STUDIO-9159 - Make RAML 1.0 default in Studio 7
+* STUDIO-9189 - Remove src/main/api folder from the project structure
+* STUDIO-9193 - Remove analytics preference page and Make Studio better pop up for Beta
+* STUDIO-9194 - Remove OnPrem preference page for Beta
+* STUDIO-9197 - Remove Connectors preference page
+* STUDIO-9206 - Boolean Field Improvements
+* STUDIO-9240 - Remove compatibility icons from new project dialog
+* STUDIO-9241 - Remove XSD Validations option from Preference menu
+* STUDIO-9288 - Point embedded container repository to Mule Beta Version
+* STUDIO-9291 - Update What's new for Studio 7 BETA
+* STUDIO-9395 - Bundle Embedded Container EE dependencies
+* STUDIO-9429 - Define which Update sites will come with Studio 7 BETA
+* STUDIO-9468 - Update log4j template
+* STUDIO-9495 - Improvements in UI for Publish to Exchange fields
+* STUDIO-9529 - Inline & Tables - size by default (Beta fix)
+* STUDIO-9561 - Remove Publish to Exchange option
+* STUDIO-9491 - Implement improvement of message when overwriting files from Design System
+
+=== Enhancement Request
+
+* STUDIO-7436 - Allow studio to discover and instantiate ExtensionModels
+* STUDIO-7525 - Add support for SDK message sources
+* STUDIO-7593 - Support SDK maps
+* STUDIO-7655 - Support new Metadata Model when generating editor for extensions
+* STUDIO-7750 - Create new metadata model from JSON Example
+* STUDIO-7751 - Create new metadata model from XML Example
+* STUDIO-7752 - Create new metadata model from CSV
+* STUDIO-7753 - Create new metadata model from custom MAP
+* STUDIO-7764 - Allow mule4 extensions to show operations by configuration
+* STUDIO-7966 - Refresh operations combo when the config changes
+* STUDIO-8172 - Add support for inline TLS Context editor when generating editors for extensions
+* STUDIO-8181 - Support New Mule Message
+* STUDIO-8204 - Add New Mule 4 External Connectors
+* STUDIO-8342 - Improve UX when configuring optional boolean fields
+* STUDIO-8344 - Load the Types from the extension model types field
+* STUDIO-8348 - Define UI for org.mule.runtime.api.metadata.MediaType for generated editors.xml
+* STUDIO-8359 - Use the @Placement information to generate the extensionsUI
+* STUDIO-8388 - Use the display name to populate the combos for the connection providers
+* STUDIO-8413 - Implement DataSense fetching and propagation
+* STUDIO-8429 - Spike on Custom HTTP Editor UI
+* STUDIO-8457 - Provide some feedback to the user when terminating a mule
+* STUDIO-8480 - Implement type fetching for DataSense
+* STUDIO-8490 - Add support for Metadata in new extensions when generating editors.xml
+* STUDIO-8529 - DW 2.0 editor changes for Studio 7
+* STUDIO-8544 - Spike on how to enable Mule Modules (external contribution) to contribute to the error handling
+* STUDIO-8567 - Add UI support for external libraries for SDK Mule Modules
+* STUDIO-8575 - Add support for SDK Notifications Module
+* STUDIO-8642 - Palette: add ability to search modules in exchange and add them to the Pom / Palette
+* STUDIO-8662 - DW: Add the ability to create variables in the input tree and define it's type as well as Payload Type
+* STUDIO-8663 - DW: adapt Sample Data editor
+* STUDIO-8664 - DW: adapt preview to DW 2.0
+* STUDIO-8669 - Editors: Calculate Spacing based on the longest string in a group
+* STUDIO-8672 - Editors: Radio Booleans should have a default value set
+* STUDIO-8674 - Editors: Radio booleans should have a None / Default option to be selected
+* STUDIO-8679 - Editors: Background in Validation global config Radio Buttons is too dark
+* STUDIO-8682 - Allow user to go to the search result list from the search filter when hitting down
+* STUDIO-8684 - Improve labels for favorites when there are name collisions
+* STUDIO-8698 - Improve tabs order for generated editors
+* STUDIO-8764 - Mule app project should come with a mule-application.json instead of a mule-deploy.properties
+* STUDIO-8775 - Add support for DW inside multiline text editors
+* STUDIO-8817 - Improve autogenerated global config UI
+* STUDIO-8818 - Improve properties UX
+* STUDIO-8820 - Change Poll from scope to MP
+* STUDIO-8827 - Move Studio icons to a separate plugin
+* STUDIO-8829 - Remove old themes/have only one theme
+* STUDIO-8832 - Change old icons
+* STUDIO-8837 - Spike on Custom Editors for Studio
+* STUDIO-8838 - Support for adding required libraries to components in pom.xml
+* STUDIO-8854 - Support publish Studio projects to Exchange 2.0
+* STUDIO-8856 - Add support for consumption of Smart Connectors
+* STUDIO-8858 - Add Custom Types support for DataSense (CSV, XML, JSON, Objects)
+* STUDIO-8863 - Get Templates/Examples from Exchange 2.0
+* STUDIO-8895 - Search for Modules from Exchange: Environment setup / test data.
+* STUDIO-8897 - Search for Modules from Exchange. Define UI/UX.
+* STUDIO-8898 - Search for Modules from Exchange. Create Client.
+* STUDIO-8901 - Change mule-deploy.properties to mule-app.json.
+* STUDIO-8902 - Bundle Packager M3 into Studio
+* STUDIO-8903 - Threading Configuration improvements
+* STUDIO-8904 - Define how to show MUnit in the palette
+* STUDIO-8905 - Add support for MUnit Assertions DSL
+* STUDIO-8906 - Add support for MUnit Mocking DSL
+* STUDIO-8907 - Add support for MUnit Error Handling
+* STUDIO-8908 - MUnit Test Tagging
+* STUDIO-8909 - Run MUnit tests in Studio 7
+* STUDIO-8910 - Review Studio Project export
+* STUDIO-8911 - Import a standard Studio project from exported file
+* STUDIO-8920 - Migrate idempotent-message-filter to new element
+* STUDIO-8922 - DataSense fetching and propagation for WSC
+* STUDIO-8923 - Implement Custom HTTP Editor for Request
+* STUDIO-8926 - Modify New Project dialog to support APIKit for Mule 4
+* STUDIO-8927 - Use APIKit for Mule 4 to scaffold new projects based on Raml files
+* STUDIO-8947 - Allow decorating bottom-right and bottom-left sides of a container
+* STUDIO-8962 - Error Handling: Extension model based editors must use this base element in order to support Error Mappings
+* STUDIO-8965 - Change default log4j2-test.xml
+* STUDIO-9018 - Trigger plugin resolution when modifying pom through MavenMuleProjectDecorator
+* STUDIO-9050 - Review support for the different kind of mule-application packages
+* STUDIO-9095 - Put the host and port fields on the top of the section in the HTTP global configuration
+* STUDIO-9117 - HTTP Request: add None placeholder to the Combo options in Proxy, Authentication and Reconnection
+* STUDIO-9129 - [Publish to Exchange 2.0] Create a dialog with artifact type, progress bar, information and cancellation button
+* STUDIO-9131 - [Publish to Exchange 2.0] Show an Exchange 2.0 link to the artifact after a successful publishing
+* STUDIO-9132 - [Publish to Exchange 2.0] Create reusable Login Widget
+* STUDIO-9141 - [VCS integration] Add support for "Import from VCS"
+* STUDIO-9155 - [Autogenerated UX] Use tabs in editors to prevent long lists of attributes.
+* STUDIO-9157 - Adapt to changes in the transform element.
+* STUDIO-9158 - Adapt changes done to the scheduler component
+* STUDIO-9195 - Create feature to package EmbeddedContainer required libraries
+* STUDIO-9257 - Upgrade mule maven plugin version property name on app pom
+* STUDIO-9340 - Improve message for overwriting the file when importing from Design System
+* STUDIO-9404 - [VCS] Add validation when there are not projects listed for that business group
+* STUDIO-9405 - [VCS] "Show more" button should not be displayed when there are not more projects to show.
+
+=== Epic
+
+* STUDIO-8290 - Palette Re-design
+* STUDIO-8364 - Error Handling
+* STUDIO-8374 - Maven Support in Studio 7
+* STUDIO-8409 - Connectivity Testing & DataSense Epic for Studio 7
+* STUDIO-8422 - DWEL in Studio 7
+* STUDIO-8444 - Exchange 2.0 - Studio 7.0 Integration
+* STUDIO-8607 - Custom HTTP Editors
+* STUDIO-8619 - Improve generated Editors
+* STUDIO-8819 - Mule 4 syntax changes
+* STUDIO-8822 - ApiKit integration for Studio 7
+* STUDIO-8823 - MUnit integration for Studio 7
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

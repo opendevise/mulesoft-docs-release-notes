@@ -1,0 +1,115 @@
+= Windows Gateway Services Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: windows-gateway-services-release-notes.adoc
+:keywords: windows, gateway, .net, windows server
+
+*July 2016*
+
+_Select_
+
+Windows Gateway Services was originally released as a supporting component of the
+xref:connector/msmq-connector-release-notes.adoc[MSMQ Connector]. This service is
+now a product of its own providing services to the following connectors:
+
+* MSMQ connector
+* PowerShell Connector
+* Dynamics CRM Connector
+* Dynamics AX Connector
+
+These release notes describe the features of the latest release.
+
+See:
+
+* xref:3.9@mule-runtime::windows-gateway-services-guide.adoc[Windows Gateway Services Guide]
+* https://repository-master.mulesoft.org/nexus/content/repositories/releases/org/mule/modules/anypoint-windows-gateway-service/1.12.0/anypoint-windows-gateway-service-1.12.0.zip[Download zip file to install this service]
+
+== Compatibility
+
+[%header,cols="30a,70a"]
+|===
+|Software |Version
+|Mule and Anypoint Studio |All versions from 3.5 and later
+|.NET Framework |4.5 and later
+|Windows |Windows 2008 Server, Windows 2008 R2 Server, Windows 2012 Server
+|===
+
+*Note*: For development environments, Windows 7, 8, and 10 also work. For the operational environment, a server-based OS is required.
+
+== 1.12.0
+
+*July 11, 2016*
+
+Included in this release:
+
+* Added support to run MSMQ cleanup task impersonating an user.
+* Fixed impersonation issues for MSMQ when building access context.
+
+== 1.11.1
+
+*June 7, 2016*
+
+Included in this release:
+
+* Handled GZIP encoding scenario when message is in faulted state.
+
+== 1.11.0
+
+*June 3, 2016*
+
+Included in this release:
+
+* Added service timeouts support for the Dynamics AX connector.
+* Added GZIP support to the routing service for the Dynamics AX & CRM connectors.
+* Added trace of routing errors (used by AX & CRM connectors).
+* Added support to operate disabling 2PC for the MSMQ connector.
+* Installation improved to update/migrate configuration settings through updates.
+* Keeping Windows Service configuration settings (after installing this version, future upgrades will keep the Windows Service configuration if customized).
+
+== 1.10.0
+
+*May 11, 2016*
+
+Included in this release:
+
+* Fixed input parameters for Powershell connector.
+* Support timeouts configuration for AX services.
+* Improved error messages for MSMQ connector.
+
+== 1.9.1
+
+*March 21, 2016*
+
+Included in this release:
+
+* Installation pre-requisites checking added.
+* Core impersonation logic fixed (crashing due to bug in unmanaged code).
+* Impersonation fixes for the MSMQ and PowerShell connectors.
+
+== 1.9.0
+
+*January 28, 2016*
+
+Included in this release:
+
+* Added: Support for `mule-msmq-queue-override-authenticate` and `mule-msmq-queue-override-transactional` headers.
+* Fixed: Memory leak due to accumulating queue cleanup state.
+* Fixed: Better exception handling during queue exists check.
+
+== 1.8.5
+
+*December 11, 2015*
+
+Included in this release:
+
+* Improved preservation of configuration file settings during upgrade.
+* Reduced TTL of state cache items to 1 hour to reduce memory usage under peak load.
+* Fixed inconsistency in cleanup-delay behavior when set to 0.
+* Fixed issue where installation directory during setup was not honored.
+* Fixed issue with setup app where uninstall did not cleanly remove all directories.
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

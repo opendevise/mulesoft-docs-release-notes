@@ -1,0 +1,64 @@
+= MUnit 1.3.5 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: munit-1.3.5-release-notes.adoc
+:keywords: munit, 1.3.5, release notes
+
+We are happy to announce the new release of MUnit version 1.3.5, this release include vital library upgrades.
+
+* Mule MUnit Support:
+** 3.7.8
+** 3.8.5
+
+* Munit
+** 1.3.5
+
+* MUnit Studio Plugin
+** 1.5.3
+
+== Hardware and Software Requirements
+
+* Microsoft Windows 8 +
+* Apple Mac OS X 10.10 +
+* Linux (tested on Ubuntu 15)
+* Java 7, Java 8
+* Maven 3.1+
+
+
+== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule |3.6.x, 3.7.x, 3.8.x
+|Anypoint Studio |6.3.0 and newer
+|===
+
+== Features and Functionality
+
+=== Anypoint Studio Plugin
+
+There are no new features in this release
+
+=== MUnit Runtime
+
+There are no new features in this release
+
+== Fixed Issues
+
+* MUSP-491 - Update unsafe dependency
+* MU-1152 - Review security vulnerable dependencies jackson-databind, xercesImpl and xstream
+
+== Enhancements
+
+* MU-1116 - Upgrade Xstream 1.2 from Munit Mule Extension Loader
+* MU-1115 - Ensure application name is send to Run configuration builder
+
+Tests that work in 1.0.0 also work in 1.3.5
+
+== Support
+
+* Refer to xref:1.3@munit::index.adoc[MUnit Documentation]
+* Access http://forums.mulesoft.com/[MuleSoft’s Forum] to pose questions and get help from Mule’s broad community of users.
+* To access MuleSoft’s expert support team https://www.mulesoft.com/support-and-services/mule-esb-support-license-subscription[subscribe to Mule ESB Enterprise] and log in to MuleSoft’s http://www.mulesoft.com/support-login[Customer Portal].

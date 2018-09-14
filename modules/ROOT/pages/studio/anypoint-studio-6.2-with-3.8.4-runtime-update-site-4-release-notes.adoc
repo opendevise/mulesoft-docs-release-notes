@@ -1,0 +1,109 @@
+= Anypoint Studio 6.2 with 3.8.4 Update Site 4 Runtime Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: anypoint-studio-6.2-with-3.8.4-runtime-update-site-4-release-notes.adoc
+
+*April 27, 2017* +
+*Build ID: 201704271520*
+
+<<migration,Skip to Migration Guide>>
+
+== Compatibility
+
+[cols="30a,70a"]
+|===
+| *Mule Runtime*
+| Version: 3.8.4 EE
+
+|*Anypoint Studio*
+|Version: 6.2.4 +
+Build Id: 201704271520
+
+|*APIkit*
+|Versions: 3.8.3 - 3.8.2 - 3.8.1 - 3.8.0 - 1.7.4 - 1.6.2 - 1.5.3
+
+|*DataWeave* +
+|Version: 1.1.3
+
+|*MUnit* +
+|Version: 1.2.1, 1.3.0, 1.3.1 (munit-studio-plugin)
+
+|*SAP Connector*
+|Versions: 3.1.0
+|===
+
+
+== What's New
+
+In this release, we focused on bug fixes and performance enhancements for xref:studio/anypoint-studio-6.2-with-3.8.3-runtime-update-site-3-release-notes.adoc[Anypoint Studio 6.2.3].
+
+
+[[migration]]
+== Migration Guide
+
+For first time installment, please refer to xref:studio/anypoint-studio-6.2-with-3.8.3-runtime-release-notes.adoc#hardware-requirements[Studio 6.2 release notes] for hardware requirements and known issues.
+
+From the previous versions of Studio 5.1.0, 5.1.1, 5.2.0, 5.2.1, 5.3.0, 5.4.1, 5.4.2 and 5.4.3, there is no special migration needed, but when opening a previous Workspace with projects that were created with Studio 5.1.0 or older, and which has metadata stored in disk, Studio asks you to perform an update to all the projects so that the Metadata Manager can handle the types and to show the types in your project.
+
+
+[TIP]
+====
+You can easily import all of the external components that you had installed in your old version of Anypoint Studio through a single action. This includes connectors, runtimes, and any other type of extension added through the Anypoint Exchange or the ​*Help -> Install new software*​ menu, as long as there are no compatibility restrictions.
+
+Do this by selecting *File->Import* and then choose *Install->From existing installation*.
+
+image::studio/import-extensions.png[import]
+
+Then specify the location of your old version of Anypoint Studio in your local drive.
+====
+
+== Eclipse Plugin
+
+If you are using Studio as an Eclipse plugin, you can get this version of Studio using the Eclipse update site `+http://studio.mulesoft.org/r5/plugin+`.
+
+This allows you to download Anypoint Studio core and third-party components version 6.x.x and with an embedded version of Mule Runtime v3.8.x along with other optional components. +
+For a detailed description of the update site's content visit the xref:6@studio::studio-in-eclipse.adoc#available-software-in-the-update-site[Studio in Eclipse] section.
+
+
+== JIRA Ticket List for Anypoint Studio
+
+
+=== Bug Fixes
+
+* STUDIO-7134 - RAML file overwritten with basic one when importing into Studio
+* STUDIO-8813 - Json schemas referencing the root of another schema generate recursive metadata
+* STUDIO-8814 - Studio fails to validate native libraries if located in a subfolder of src/main/app/lib
+* STUDIO-8840 - Having JSON schemas with $ref over HTTPS throw null
+* STUDIO-8841 - Studio fails to find flow in dependent project
+* STUDIO-8855 - JSON Schema with internal references can't be parsed by Anypoint Studio
+* STUDIO-8873 - Target folder is being cleaned after running maven deploy
+* STUDIO-8884 - Api Sync issue when changing credentials
+* STUDIO-8912 - Studio shows an error when JMS inbound endpoint contains idempotent-redelivery-policy
+* STUDIO-8913 - Problem with Exception Breakpoint
+* STUDIO-8925 - HTTP connector's OAuth2 protocol authentication complains about refresh token when condition
+* STUDIO-8938 - Add support for file filter at SFTP inbound endpoint
+* STUDIO-8939 - Catalog changes order for MetaDataProperties
+* STUDIO-8966 - Cannot resolve metadata for WSDLs with relative references to XSD schemas
+* STUDIO-8967 - Renaming an application descriptor XML doesn't update mule-deploy.properties
+* STUDIO-9003 - [SE] Adding option to change between XSD generators (Trang or XmlBeans).
+* STUDIO-9014 - flowvars and flowVars are formatted correctly in MEL
+* STUDIO-9017 - [SE] Reloading RAML in HTTP Request Config clears URL Configs without warning
+* STUDIO-9022 - [SE] FTP connector configuration reset in UI after restart
+* STUDIO-9032 - Undo (ctrl + z) does not work in database connector's "parameterized query box"
+
+=== Improvements
+
+* STUDIO-8800 - Support RAML files from private API portals in HTTP request
+
+=== Tasks
+
+* STUDIO-8812 - Update Raml Java parser version 1.0.7 in Wizard and Raml editor for next Studio update site
+* STUDIO-8935 - Add ramlV1Snippet to YAML Policies parser
+* STUDIO-8955 - DataSense parser gives error when ORDER is used as an object to retrieve data from
+* STUDIO-9037 - Update Raml Java parser version 1.0.8 in Project creation Wizard and Raml editor (For Studio 6.2.4 update site)
+
+== Support
+
+* Access http://forums.mulesoft.com/[MuleSoft’s Forum] to pose questions and get help from Mule’s broad community of users.
+* To access MuleSoft’s expert support team https://www.mulesoft.com/support-and-services/mule-esb-support-license-subscription[subscribe to Mule ESB Enterprise] and log in to MuleSoft’s http://www.mulesoft.com/support-login[Customer Portal].

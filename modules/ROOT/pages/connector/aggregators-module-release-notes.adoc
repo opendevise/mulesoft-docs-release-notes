@@ -1,0 +1,28 @@
+= Aggregators Module Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: aggregators-module-release-notes.adoc
+:keywords: aggregators, module, release notes
+
+*August 2018*
+
+xref:connectors::aggregator/aggregators-module-reference.adoc[Aggregators Module Reference]
+
+== 1.0.0
+
+*August 17, 2018*
+
+=== Compatibility
+
+The Aggregators Module is compatible with:
+
+|===
+|Application/Service|Version
+|Mule Runtime|4.1.1 and higher.
+|===
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

@@ -1,0 +1,66 @@
+= Amazon SNS Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: amazon-sns-connector-release-notes-mule-4.adoc
+:keywords: release notes, amazon sns, sns, connector
+
+*February 2018*
+
+_Select_
+
+Amazon Simple Notification Service (SNS) provides a hosted multi-protocol "push" messaging for applications. The Anypoint Connector for Amazon SNS allows Mule applications to interact with Amazon SNS.
+
+Starting with v.3.0.0, the SNS connector is licensed commercially with Anypoint Platform as with other Select connectors.  Prior versions remain freely available to the community.
+
+== 4.1.0
+
+*February 21, 2018*
+
+Release notes for version 4.1.0 of the Amazon SNS connector.
+
+=== Compatibility
+
+The Amazon SNS connector v4.1.0 is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Application/Service |Version
+|Mule Runtime |4.1.0 and later
+|Amazon Java SDK for SNS |v1.11.79
+|Java |1.8.x
+|Anypoint Studio |7.0 and later
+|===
+
+=== Fixed in this Release
+
+AWS connectors shared a common library for the supported region endpoints that caused an issue when two different AWS connectors were used in a Mule app. This version fixes this issue.
+
+== 4.0.0
+
+*November 18, 2017*
+
+Release notes for version 4.0.0 of the Amazon SNS connector.
+
+=== Compatibility
+
+The Amazon SNS Connector v4.0.0 is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Application/Service |Version
+|Mule Runtime |4.0.0 and later
+|Amazon Java SDK for SNS |v1.11.79
+|Java |1.8.x
+|Anypoint Studio |7.0 and later
+|===
+
+=== Features
+
+* Upgraded to support AWS SDK v1.11.79
+* Upgraded to Mule Runtime v4.0.0
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

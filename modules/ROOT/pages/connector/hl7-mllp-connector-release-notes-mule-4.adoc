@@ -1,0 +1,36 @@
+= HL7 MLLP Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: hl7-mllp-connector-release-notes-mule-4.adoc
+
+*June 2018*
+
+_Premium_
+
+The Mule HL7 MLLP connector provides connectivity and parsing functionality for MLLP messages.
+
+xref:connectors::hl7/hl7-mllp-connector.adoc[HL7 MLLP Connector Guide]
+
+== 2.0.0
+
+*June 18, 2018*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime |4.0.0 and later
+|Anypoint Studio |7.1 and later
+|===
+
+=== Features
+
+* Receive Message - The HL7 MLLP connector provides the functionality to receive MLLP messages.
+* Send Message - The HL7 MLLP connector provides the functionality to send MLLP messages.
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

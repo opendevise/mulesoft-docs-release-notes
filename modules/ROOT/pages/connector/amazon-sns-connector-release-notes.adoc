@@ -1,0 +1,197 @@
+= Amazon SNS Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: amazon-sns-connector-release-notes.adoc
+:keywords: release notes, amazon sns, sns, connector
+
+*September 2016*
+
+_Select_
+
+Amazon Simple Notification Service (SNS) provides a hosted multi-protocol "push" messaging for applications. The Anypoint Connector for Amazon SNS allows Mule applications to interact with Amazon SNS.
+
+*Connector Guide*: xref:3.9@mule-runtime::amazon-sns-connector.adoc[Amazon SNS Connector]
+
+[IMPORTANT]
+Starting with v.3.0.0, the SNS connector is licensed commercially with Anypoint Platform as with other Select connectors. Prior versions remain freely available to the community.
+
+== Installing this Connector
+
+. In Anypoint Studio, click the Exchange icon in the Studio task bar.
+. Click Login in Anypoint Exchange.
+. Search for the connector and click Install.
+. Follow the prompts to install the connector.
+
+== 3.1.0
+
+*September 30, 2016*
+
+Release notes for version 3.1.0 of the Amazon SNS connector.
+
+=== Compatibility
+
+The Amazon SNS Connector is compatible with:
+
+|===
+|Application/Service|Version
+|Mule Runtime|3.8.x or higher
+|Amazon Java SDK for SNS|v1.11.21
+|Anypoint Studio|5.2 or higher
+|===
+
+=== Features
+
+* Built with Anypoint Devkit v3.9.0
+* Upgraded to support AWS SDK v1.11.21
+* Support for Temporary Credentials - A checkbox named *Try Default AWS Credentials Provider Chain* has been added to the Global Element configuration. If selected, the connector will first try to obtain the credentials from an AWS environment.
+* Support for Retry Policy - The connector will perform a maximum of 10 retries when a request fails due to server-side throttling or dropped connection.
+
+=== Fixed in this Release
+
+None.
+
+=== Known Issues
+
+None.
+
+== 3.0.0
+
+*January 6, 2016*
+
+Release notes for version 3.0.0 of the Amazon SNS connector.
+
+=== Compatibility
+
+The Amazon SNS Connector is compatible with:
+
+|===
+|Application/Service|Version
+|Mule Runtime|3.6.x and later
+|Amazon Java SDK for SNS|v1.10.1
+|Anypoint Studio|5.2 and later
+|===
+
+=== Features
+
+* Upgraded Anypoint DevKit to v3.8.0
+* The following new operations have been added:
+** CreatePlatformApplication
+** CreatePlatformEndpoint
+** DeleteEndpoint
+** DeletePlatformApplication
+** GetEndpointAttributes
+** GetPlatformApplicationAttributes
+** ListEndpointsByPlatformApplication
+** ListPlatformApplications
+** SetEndpointAttributes
+** SetPlatformApplicationAttributes
+
+=== Fixed in this Release
+
+None.
+
+=== Known Issues
+
+None.
+
+== 2.1.0
+
+*November 3, 2015*
+
+=== Features
+
+* Upgraded AWS SDK for Java (SNS) to v1.10.1
+
+=== Fixed in this Release
+
+* Issue with Region Endpoints URLs has been fixed.
+
+=== Known Issues
+
+None.
+
+== 2.0.0
+
+*October 15, 2015*
+
+=== Compatibility
+
+Amazon SNS Connector 2.0.0 is compatible with:
+
+|===
+|Application/Service|Version
+|Mule Runtime|3.6.x and later
+|Amazon Java SDK for SNS|v1.9.39
+|Anypoint Studio|5.2 and later
+|===
+
+=== Features and Functionality
+
+* Upgraded the AWS SDK for Java(SNS) to v1.9.39.
+* Migrated to DevKit v3.7.1
+* The message processors I/O parameters have been wrapped into corresponding objects.
+
+=== Fixed in this Release
+
+None.
+
+=== Known Issues
+
+None.
+
+== 1.1.0
+
+*July 19, 2013*
+
+=== Compatibility
+
+Amazon SNS Connector 1.1.0 is compatible with:
+
+[%header,cols="2*"]
+|===
+|Application/Service|Version
+|Mule Runtime|3.4.x and later
+|Amazon Java SDK|v1.3.13
+|===
+
+=== Features and Functionality
+
+* Added RegionEndpoint configuration.
+
+=== Fixed in this Release
+
+None.
+
+=== Known Issues
+
+None.
+
+== 1.0.0
+
+*February 17, 2013*
+
+=== Public Beta Compatibility
+
+Amazon SNS Connector 1.0 is compatible with:
+
+[%header,cols="2*"]
+|===
+|Application/Service|Version
+|Mule Runtime|3.4.x and later
+|Amazon Java SDK|v1.3.13
+|===
+
+=== Features and Functionality
+
+* Initial Version
+
+=== Fixed in this Release
+
+None.
+
+== See Also
+
+* Read more about the xref:3.9@mule-runtime::amazon-sns-connector.adoc[Amazon SNS Connector], including examples of how to use it.
+* https://forums.mulesoft.com[MuleSoft Forum].
+* https://support.mulesoft.com[Contact MuleSoft Support].

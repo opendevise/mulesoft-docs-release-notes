@@ -1,0 +1,169 @@
+= Marketo Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: marketo-connector-release-notes.adoc
+:keywords: release notes, connectors, marketo
+
+*January 2018*
+
+_Select_
+
+== 2.0.2
+
+*January 25, 2018*
+
+=== Compatibility
+
+[%header%autowidth]
+|===
+|Software |Version
+|Mule Runtime |3.7.0 or later
+|Marketo REST API |1.0
+|===
+
+=== Features
+
+None.
+
+=== Fixed in this Release
+
+* Incorrect date parsing - Marketo changed the date format on many of their responses, making the connector fail when attempting to parse them. This no longer happens.
+* NullPointerException on processor call - The Activities > Get Lead Changes processor would throw a NullPointerException if the lead didn't have the rest attribute. This was fixed.
+* Value in LeadAttributes entity can be a list - Some calls to the Activities > Get Lead Changes processor would fail due to a returned field being a list instead of a string. This no longer happens and the responses are parsed correctly.
+* Missing field in LeadActivities response - The connector's LeadActivities entity was missing the campaignId field. It was added and it is now returned when calling the Activities > Get Lead Activities processor.
+* Parameter made optional - The Status parameter of the Program > Browse Programs processor was marked as optional, in compliance with the API documentation.
+
+== 2.0.1
+
+*May 19, 2017*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime |3.7.0 or later
+|Marketo REST API |1.0
+|===
+
+=== Features
+
+None.
+
+=== Fixed in this Release
+
+* Missing fields in the response - Marketo made multiple small changes in their REST API, resulting in some of our entities not mapping to all of the new fields. These entities were updated. In addition, the connector no longer fails when there are unknown fields present in the response.
+
+== 2.0.0
+
+*April 29, 2016*
+
+Release notes for version 2.0.0 of the Marketo connector.
+
+=== Compatibility
+
+The Marketo connector is compatible with:
+
+|===
+|Application/Service|Version
+|Mule Runtime| 3.7.0 or later
+|Java version| 1.7 or later
+|Marketo REST APIs| 1.0
+|===
+
+=== Features
+
+This version of the Marketo connector is fully REST since REST is the primary focus of Marketo’s API development. The connector covers the Marketo API completely, and supports all available REST operations. SOAP operations were replaced with REST operations and Datasense support was added, allowing you to access the metadata structure and data types coming from Marketo, within Anypoint Studio.
+
+=== Supported Operations
+
+Marketo connector currently supports the following APIs:
+
+* Activity
+* Asset Objects
+* Campaign Objects
+* Company Objects
+* Custom Objects
+* Lead
+* List
+* Opportunity Objects
+* Program Objects
+* Sales Person Object
+
+=== Fixed in this Release
+
+This version implements a different Marketo API.
+
+=== Known Issues
+
+None.
+
+== 1.2.5
+
+*February 26, 2015*
+
+Release notes for version 1.2.5 of the Marketo connector.
+
+=== Compatibility
+
+Marketo connector 1.2.5 is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Application/Service |Version
+|Mule Runtime |3.5.0 or later
+|Marketo SOAP API |v2.2
+|===
+
+=== Features and Functionality
+
+* Updated to Anypoint Connector DevKit version 3.5.2.
+* Added support for Marketo SOAP API version 2.2.
+
+=== Supported Operations
+
+Marketo connector currently supports the following operations:
+
+* deleteCustomObjects
+* deleteMObjects
+* describeMObject
+* getCampaignsForSource
+* getChannels
+* getCustomObjects
+* getImportToListStatus
+* getLead
+* getLeadActivity
+* getLeadChanges
+* getMultipleLeads
+* getTags
+* importToList
+* listMObjects
+* listOperation
+* mergeLeads
+* query
+* requestCampaign
+* scheduleCampaign
+* syncCustomObjects
+* syncLead
+* syncMObjects
+* syncMultipleLeads
+* syncMultipleLeadsFromList
+
+=== Deprecated Operations
+
+The getMObjects operation has been deprecated in this release.
+
+=== Fixed in this Release
+
+None.
+
+=== Known Issues
+
+Due to limitations in the query API, the LeadRecord lastUpdatedAt field can be queried using DataSense, but cannot be displayed in the results.
+
+== See Also
+
+* xref:3.9@mule-runtime::marketo-connector.adoc[Marketo Connector User Guide]
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

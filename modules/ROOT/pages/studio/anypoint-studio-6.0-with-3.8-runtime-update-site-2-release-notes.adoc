@@ -1,0 +1,95 @@
+= Anypoint Studio 6.0 with 3.8.0 Runtime Update Site 2 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: anypoint-studio-6.0-with-3.8-runtime-update-site-2-release-notes.adoc
+
+*July 7, 2016* +
+*Build ID: 201607072344*
+
+<<migration,Skip to Migration Guide>>
+
+== Compatibility
+
+[cols="30a,70a"]
+|===
+| *Mule Runtime*
+| Version: 3.8.0 EE
+
+|*Anypoint Studio*
+|Version: 6.0.2 +
+Build Id: 201607072344
+
+|*APIkit*
+|Versions:  3.8.0 - 1.7.3 - 1.6.2 - 1.5.3
+
+|*DataWeave* +
+|Version: 1.1.0
+
+|*MUnit* +
+|Version: 1.2.0 , 3.6.3, 3.7.3, 3.8.0 (mule-munit-support), 1.2.1 (munit-studio-plugin)
+
+|*SAP Connector*
+|Versions: 3.0.0
+|===
+
+
+== What's New
+
+6.0.2 is a patch release. In this release, we have fixed several usability issues around Linux and included various improvements.
+
+
+[[migration]]
+== Migration Guide
+
+For first time installment, please refer to xref:studio/anypoint-studio-6.0-with-3.8-runtime-release-notes.adoc#hardware-requirements[Studio 6.0.0 release notes] for hardware requirements and known issues.
+
+From the previous versions of Studio 5.1.0, 5.1.1, 5.2.0, 5.2.1, 5.3.0, 5.4.1, 5.4.2 and 5.4.3, there is no special migration needed, but when opening a previous Workspace with projects that were created with Studio 5.1.0 or older, and which has metadata stored in disk, Studio asks you to perform an update to all the projects so that the Metadata Manager can handle the types and to show the types in your project.
+
+
+[TIP]
+====
+You can easily import all of the external components that you had installed in your old version of Anypoint Studio through a single action. This includes connectors, runtimes, and any other type of extension added through the Anypoint Exchange or the ​*Help -> Install new software*​ menu, as long as there are no compatibility restrictions.
+
+Do this by selecting *File->Import* and then choose *Install->From existing installation*.
+
+image::studio/import-extensions.png[import]
+
+Then specify the location of your old version of Anypoint Studio in your local drive.
+====
+
+== Eclipse Plugin
+
+If you are using Studio as an Eclipse plugin, you can get this version of Studio using the Eclipse update site `+http://studio.mulesoft.org/r5/plugin+`.
+
+This allows you to download Anypoint Studio core and third-party components version 6.x.x and with an embedded version of Mule Runtime v3.8.x along with other optional components. +
+For a detailed description of the update site's content visit the xref:6@studio::studio-in-eclipse.adoc#available-software-in-the-update-site[Studio in Eclipse] section.
+
+== JIRA Ticket List for Anypoint Studio
+
+=== Bug Fixes
+
+* STUDIO-8111 - CXF Component Reports wrong error
+* STUDIO-8117 - Add flag to use GTK 2 in Studio for Linux
+* STUDIO-8178 - [Deploy to AMC] Try to open web UIs with firefox or safari first before using the system's default
+* STUDIO-8170 - DataWeave UI doesn't render with a particular script and it breaks all DW UIs
+* STUDIO-8173 - WebService configuration screen is not shown properly when it cannot reach anypoint platform
+* STUDIO-7988 - Not possible to use keyboard to select operation in Linux
+
+=== Improvements
+
+* STUDIO-2402 - Nest Schema Validation Filter inside Message Filter
+
+=== New Features
+
+* STUDIO-7989 - Timezone attribute in Poll (Cron Scheduler)
+
+=== Tasks
+
+* STUDIO-8025 - Include each connector icon into each connector package.
+
+== Support
+
+
+* Access http://forums.mulesoft.com/[MuleSoft’s Forum] to pose questions and get help from Mule’s broad community of users.
+* To access MuleSoft’s expert support team https://www.mulesoft.com/support-and-services/mule-esb-support-license-subscription[subscribe to Mule ESB Enterprise] and log in to MuleSoft’s http://www.mulesoft.com/support-login[Customer Portal].

@@ -1,0 +1,17 @@
+= API Functional Monitoring 1.1 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: api-functional-monitoring-1.1-release-notes.adoc
+
+July 12, 2018
+
+This release of API Functional Monitoring introduces an enhancement and a new feature.
+
+== Enhancement
+
+When you create a monitor in the *Functional Monitoring* section of Anypoint Monitoring, you can now specify more than one endpoint to test and more than one assertion per endpoint.
+
+== New Feature
+
+You can write and run BAT tests in IntelliJ IDEA with the support of the DataWeave 2.0 IntelliJ plugin. For details, see xref:api-functional-monitoring::bat-intellij-idea.adoc[Write and Run BAT Tests in IntelliJ IDEA].

@@ -1,0 +1,75 @@
+= MUnit 2.0.0 RC Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: munit-2.0.0-rc-release-notes.adoc
+:keywords: munit, 2.0.0, release notes
+
+This new release provides:
+
+* Coverage Information
+* New Assertion DSL
+* Support for testing Mule 4 applications
+** Simpler error handling
+** Support for compatibility mode
+* Leverate use of new embedded container
+* Tags for test [new feature]
+* Cleaner Maven Integration
+** Improved Maven summary report
+* Leverage use of new mule-maven-plugin
+* New Coverage Plugin
+* Anypoint Studio Debugger support
+
+== Hardware and Software Requirements
+
+* Microsoft Windows 8 +
+* Apple Mac OS X 10.10 +
+* Linux (tested on Ubuntu 15)
+* Java 8
+* Maven 3.3.3, 3.3.9
+
+== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule | Mule 4.0.0-RC
+|Anypoint Studio | Anypoint Studio 7.0.0-RC
+|===
+
+== Features and Functionality
+
+=== Anypoint Studio Plugin
+
+There are no new features in this release
+
+=== MUnit Runtime
+
+MUnit 2.0 is the next major version of MUnit built for Mule 4.
+
+It features an easier to use DSL, and integration with Mule 4's major new capabilities. It leverages new Mule 4’s mechanisms ensuring that integration with Mule 4 will run smoothly now and for any upcoming releases.
+
+We have a brand new feature call Tags. You can now “tag” each and every single MUnit test you code. The tag works as a transversal grouping of test across all your Test Suites, offering a new way to organize your test. You can also have them run by these tags allowing you to tune your CICD times and grouping your tests, for instance, in nightly test, smoke test, full regression, etc.
+
+== Known Issues
+
+* *MUnit Runtime*
+** No Spy Processor
+** Maven Multi module support
+
+* *Anypoint Studio Plugin*
+** No Data Sense support
+** No Test auto generation based on RAML APIs
+
+== Bug Fixes
+
+== Tasks
+
+== Enhancements
+
+
+
+== Support
+
+* Access http://forums.mulesoft.com/[MuleSoft’s Forum] to pose questions and get help from Mule’s broad community of users.
+* To access MuleSoft’s expert support team https://www.mulesoft.com/support-and-services/mule-esb-support-license-subscription[subscribe to Mule ESB Enterprise] and log in to MuleSoft’s http://www.mulesoft.com/support-login[Customer Portal].

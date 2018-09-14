@@ -1,0 +1,198 @@
+= Mule Runtime 3.8.5 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: mule-3.8.5-release-notes.adoc
+:keywords: mule, 3.8.5, runtime, release notes
+
+*June 30, 2017*
+
+// In Aug/Sept release, mention AGW-1217 supports client OpenID Connect token enforcement.
+
+Mule Runtime 3.8.5 includes the following enhancements, changes, and fixes:
+
+* DataWeave (SE) and API Gateway (AGW) enhancements
+* Fixes to HTTP request streaming
+* Issues resolved in Mule Runtime Enterprise Edition (EE), Mule Runtime (MULE), DataWeave, and API Gateway
+* Mule Runtime library changes
+
+This release is supported on Anypoint Private Cloud Edition 1.6.1 and later.
+
+== Key Enhancements
+
+Key enhancements are:
+
+* Improvements in the communication with the Platform by implementing a backoff logic in the event of failed requests. A failure in the connection triggers incremental reconnection times up to a maximum of 15 minutes.
+* Several fixes related to resource level policies and cluster scenarios.
+* A security enhancement to the OAuth token enforcement and PingFederate token enforcement policies to ensure that the client that was granted the access token has access to the API.
+* Introducing Open ID Connect support. If the organization is suitably configured, you may leverage the out-of-the-box oAuth token enforcement policy based on Open ID Connect.
+
+////
++
+When you don't want to validate the client id, you can download the following custom policies, which are based on the original policies. These policies do not include the client validation step:
++
+** OpenAM OAuth Token Enforcement zip file (xml and yaml)...Exchange link TBD
+** PingFederate OAuth Token Enforcement zip file (xml and yaml)...Exchange link TBD
+
+////
+
+== Changes
+
+*HTTP Streaming*
+
+HTTP request streaming of responses is added to this release. Since you might not be consuming response streams in your existing apps, this addition is disabled by default. Set the following system properties to override this default for all HTTP requests in a container:
+
+* Enable streaming: `mule.http.streamResponse` = true
+* Response buffer size:  `mule.http.responseBufferSize` = NUMBER_OF_BYTES
+
+For information about how to set system properties, see xref:3.8@mule-runtime::configuring-properties.adoc#system-properties[Configuring Properties, System Properties].
+
+*Flat File Processing in DataWeave*
+
+When a DataWeave transformation outputs in Flat File, Fixed Width or Cobol Copybook format, one of the writer properties behaves differently. The property `recordTerminator` now defines what is placed as a termination for every record, in previous releases this is only used as a separator when there are multiple records. If you don't want this value to appear when writing single records, you must set the `recordTerminator` property to `none`.
+
+
+
+== Software Compatibility Testing
+
+Mule was tested on the following software:
+
+// updated per DOCS 1749 https://github.com/mulesoft/mulesoft-docs/commit/4bd356c8f2cc5d0952ee99622c0c7f0b360455df
+
+[%header,cols="15a,85a"]
+|===
+|Software |Version
+|JDK |JRE 1.7.0, JRE 1.8.0 (Recommended JRE 1.8.0_91/92)
+|OS |MacOS 10.11.4, HP-UX 11i V3, AIX 7.2, Windows 2012 R2 Server, Windows 8.1, Solaris 11.3, RHEL 7, Ubuntu Server 15.04 - 16.04
+|Application Servers |Tomcat 7 and 8, WebLogic 12c, WebSphere 8, WildFly 8 and 9, Jetty 8 and 9
+|Databases |Oracle 11g, Oracle 12c, MySQL 5.5+, IBM DB2 10, PostgreSQL 9, Derby 10, Microsoft SQL Server 2014
+|===
+
+The unified Mule Runtime 3.8.5 and API Gateway is compatible with APIkit 3.8.5.
+
+This version of Mule runtime is bundled with the Runtime Manager Agent plugin version 1.7.1.
+
+== Enhancements
+
+[%header,cols="15a,85a"]
+|===
+|Issue |Description
+| DataWeave | Improve number coercion performance
+| DataWeave | Improve performance on XML value access
+| DataWeave | Performance improvement on json writer with skipNull
+| DataWeave | Improve performance on mel functions
+| AGW-1264 | Implement exponential backoff logic on failed requests with Platform
+|===
+
+== Fixed Issues
+
+[%header,cols="15a,85a"]
+|===
+|Issue |Description
+| EE-5345 | Allow setting of tcpInboundPort property in ClusteringTicket
+| EE-5376 | Force only one polling node after merge of clusters
+| EE-5380 | Remove src/README.txt from the distribution
+| EE-5447 | targetClient property of wmq:outbound-endpoint isn't parsed correctly
+| EE-5457 | Application stats cannot be cleaned when serialized in an embedded app
+| EE-5467 | Race condition in AMI when the thread dispatcher reads from the persistent queue before tx commit
+| EE-5514 | When the replyTo consumer in JMSMessageDispatcher is created, the correlation id is not appropriately resolved
+| EE-5547 | Performance degradation in MEL caused by MULE-11274
+| MULE-8747 | Inconsistent mule state on deployment failed
+| MULE-8990 | State param encoding in OAuth support incompatible with certain services like Concur
+| MULE-10646 | Refactor GrizzlyHttpClient to use BodyDeferringAsyncHandler
+| MULE-11206 | Prevent possible hash collision attacks in Java 7
+| MULE-11825 | Template-query isn't validating the definition of params used in query text
+| MULE-11966 | JmxAgent registers objects using the object name and not the original registry name
+| MULE-11973 | PGP secret key should not be needed for encryption
+| MULE-11976 | Token splitter in Invoke processor does not handle inner commas
+| MULE-11992 | An Exception is raised if reconnect-notifier is used within a global configuration
+| MULE-11998 | It should be possible to define endpoints with different names and the same address for stp/ftp connectors
+| MULE-12017 | JMSAppender not property closed after application is undeployed
+| MULE-12023 | In HttpMultipartMuleMessageFactory, multiple threads use instance variable without syncronization
+| MULE-12041 | Globalfunctions are overriden each time they are defined
+| MULE-12042 | Empty Failure Expression evaluated positive in Catch Message Exception
+| MULE-12043 | In AbstractXPathExpressionEvaluator, replace the cache WeakHashMap with a guava cache
+| MULE-12046 | IMAP decode special character in username and password twice
+| MULE-12068 | Add TransformerFactory to our XMLSecureFactories
+| MULE-12076 | TLS Context is not replicated in wsdl retrieval when importing xsd's
+| MULE-12105 | Provide a way to avoid properties being overridden when Runtime is run as Windows Service
+| MULE-12112 | Database Connector unable to handle CLOB during sql query
+| MULE-12147 | Add proxy support for SFTP connector in 3.x
+| MULE-12153 | WS RequestBodyGenerator fails and generates a warning when imports/includes demands a TLS context
+| MULE-12179 | Remove old fallback mechanism for TransformerFactory implementations
+| MULE-12206 | SedaStageInterceptingMessageProcessor thread should clear RequestContext
+| MULE-12230 | FtpConnector should take into account that Files could have been consumed
+| MULE-12252 | Race condition when writing to cache stream through MuleUniversalConduit
+| MULE-12267 | NotificationUtils not checking for null parentElement
+| MULE-12273 | Add validations in PGP Module to avoid NPE and improve traceability
+| MULE-12335 | Database Connector unable to handle BLOB conversion
+| MULE-12360 | XsltTransformer should close underlying InputStream when using XMLStreamReader
+| MULE-12366 | Temporary Queues aren't deleted when JMS is used with BTM
+| MULE-12402 | `until-successful` retries fail after application restart due to inner flow still stopped
+| MULE-12418 | Fix: When `wmq` outbound applies `request-reply` exchange, `correlationId` attribute is ignored
+| MULE-12442 | TextFileObjectStore: File grows indefinitely when entries are overwritten
+| MULE-12510 | Apply the changes from CXF-6665
+| MULE-12522 | ProcessorNotificationPath badly generated for Transactional scope
+| MULE-12585 | Allow HTTP streaming to be turned off
+| MULE-12595 | HTTP transport endpoint >30% performance drop on Mule 3.8.5
+| MULE-12612 | FTP should only allow synchronous Reconnection Strategy
+| MULE-12647 | Mimetype is not updated in DefaultMuleMessage when payload is null
+| MULE-12667 | When the replyTo consumer in JMSMessageDispatcher is created the correlation id is not appropriately resolved
+| MULE-12718 | Performance degradation in MEL caused by MULE-11274
+| MULE-12739 | Set Drools Assert Behavior Option to EQUALITY to avoid duplicated facts be saved
+| MULE-12745 | Set HeapMemoryManager as Default Grizzly Memory Manager
+| MULE-12752 | Http should have locally closed
+| MULE-12808 | JMS doesn't close consumers in transaction scope
+| MULE-12818 | Xml Schema Validator filter changes mimetype
+| MULE-12828 | The version of Xerces used in endorsed directory performs service provider lookup for each new DocumentBuilder
+| MULE-12885 | Add javax.json dependencies into whitelist
+| SE-6158 | Problem selecting keys with multiple byte encoding in dataweave
+| SE-6037 | Improve performance of value selector when value is not present
+| SE-5951 | Transforming JSONObject.NULL throws No reader method for property
+| SE-5890 | Dataweave p() function not picking new values after redeploying
+| SE-5899 | Avoid consuming payload when it is not used
+| SE-5835 | Fixed Excel support for cell references
+| SE-5382 | Fixed problem with asynchronously flow with flowRef Lookups
+| SE-5802 | Avoid contention when creating mel bridge functions
+| SE-5780 | Classcast on dynkeys comming from java
+| DataWeave | Fixed java converters for xmlgregorian calendar
+| DataWeave | Fixed skipNull should not skip if tag has attributes. Add writeNilOnNull to avoid nil entry on null
+| DataWeave | Updated apache poi to 3.15 that fixes XXE vulnerability
+| AGW-895| AES and PingFederate OAuth providers allow the token being shared by all applications using the same OAuth 2.0 server
+| AGW-1141 | Requester in a Custom Policy logs on System log instead of App log
+| AGW-1173 | DataWeave in Custom Policies doesn’t work as expected
+| AGW-1235 | Gatekeeper is disabled by default in 3.8.4. Default switched back to enabled
+| AGW-1236 | Resource Level policies don’t work with content-type routing
+| AGW-1263 | When an Access Management token expires and is not reset, subsequent logins to Platform fail
+| AGW-1289 | Gatekeeper blocks the API when the policy is applied at a Resource level
+| AGW-1292 | Error is generated on Autodiscovery when the API doesn’t exist
+| AGW-1311 | Error generated on slave node when a policy is unapplied
+| AGW-1314 | Client based policies don’t cache the client credentials on the slave nodes of a cluster when applied at a Resource level
+| AGW-1315 | Fixed NPE when stopping a Mule Runtime without setting it up as a GW
+|===
+
+== Library Changes
+
+[%header,cols="15a,85a"]
+|===
+| Issue | Description
+| MULE-11075 | Upgrade BouncyCastle to 1.56
+| MULE-12152 | Update Jackson Version to 2.6.6
+| MULE-12530 | Upgrade commons-beanutils to 1.9.3
+| MULE-12541 | Upgrade log4j2 to 2.8.2
+| MULE-12565 | Upgrade Ant to 1.9.6
+| MULE-12590 | Upgrade JRuby to 1.7.27 or newer
+| MULE-12754 | Upgrade XStream to 1.4.10
+| MULE-12755 | Upgrade Drools to 5.2.1.Final
+| MULE-12755 | Downgrade EJC to 3.5.1
+|===
+
+== Issues Impacting Migration
+
+[%header,cols="15a,85a"]
+|===
+|Issue |Description
+| MULE-12017 | log4j was updated from 2.5 to 2.8.2 and slf4j from 1.7.7 to 1.7.24. There is a minor incompatibility with code using `logger.error(null, "message", e)`, in which case the first null argument should be omitted.
+| MULE-12147 | Added proxy support to the SFTP connector through system properties: `mule.sftp.proxy.host`, `mule.sftp.proxy.port`, `mule.sftp.proxy.protocol` (can be `HTTP`, `SOCKS4` or `SOCKS5`), `mule.sftp.proxy.username` (if required), `mule.sftp.proxy.password` (if required)
+| MULE-12612 | As FTP reconnection is at operation level, FTP connector does not support asynchronous reconnection strategies because it only makes sense if reconnection takes place during the start phase of the connector lifecycle. In case you use this kind of reconnection, change reconnections as follows: <reconnect blocking="true"/> inside FTP Connector, or just remove the blocking attribute.
+|===

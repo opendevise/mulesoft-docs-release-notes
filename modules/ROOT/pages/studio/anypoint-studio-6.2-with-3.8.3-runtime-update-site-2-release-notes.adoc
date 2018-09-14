@@ -1,0 +1,99 @@
+= Anypoint Studio 6.2 with 3.8.3 Update Site 2 Runtime Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: anypoint-studio-6.2-with-3.8.3-runtime-update-site-2-release-notes.adoc
+
+*January 30, 2017* +
+*Build ID: 201701271427*
+
+<<migration,Skip to Migration Guide>>
+
+== Compatibility
+
+[cols="30a,70a"]
+|===
+| *Mule Runtime*
+| Version: 3.8.3 EE
+
+|*Anypoint Studio*
+|Version: 6.2.2 +
+Build Id: 201701271427
+
+|*APIkit*
+|Versions: 3.8.3 - 3.8.2 - 3.8.1 - 3.8.0 - 1.7.4 - 1.6.2 - 1.5.3
+
+|*DataWeave* +
+|Version: 1.1.3
+
+|*MUnit* +
+|Version: 1.2.1, 1.3.0, 1.3.1 (munit-studio-plugin)
+
+|*SAP Connector*
+|Versions: 3.0.1
+|===
+
+
+== What's New
+
+In this release, we focused on bug fixes and performance enhancements for xref:studio/anypoint-studio-6.2-with-3.8.3-runtime-update-site-1-release-notes.adoc[Anypoint Studio 6.2.1].
+
+
+[[migration]]
+== Migration Guide
+
+For first time installment, please refer to xref:studio/anypoint-studio-6.2-with-3.8.3-runtime-release-notes.adoc#hardware-requirements[Studio 6.2 release notes] for hardware requirements and known issues.
+
+From the previous versions of Studio 5.1.0, 5.1.1, 5.2.0, 5.2.1, 5.3.0, 5.4.1, 5.4.2 and 5.4.3, there is no special migration needed, but when opening a previous Workspace with projects that were created with Studio 5.1.0 or older, and which has metadata stored in disk, Studio asks you to perform an update to all the projects so that the Metadata Manager can handle the types and to show the types in your project.
+
+
+[TIP]
+====
+You can easily import all of the external components that you had installed in your old version of Anypoint Studio through a single action. This includes connectors, runtimes, and any other type of extension added through the Anypoint Exchange or the ​*Help -> Install new software*​ menu, as long as there are no compatibility restrictions.
+
+Do this by selecting *File->Import* and then choose *Install->From existing installation*.
+
+image::studio/import-extensions.png[import]
+
+Then specify the location of your old version of Anypoint Studio in your local drive.
+====
+
+== Eclipse Plugin
+
+If you are using Studio as an Eclipse plugin, you can get this version of Studio using the Eclipse update site `+http://studio.mulesoft.org/r5/plugin+`.
+
+This allows you to download Anypoint Studio core and third-party components version 6.x.x and with an embedded version of Mule Runtime v3.8.x along with other optional components. +
+For a detailed description of the update site's content visit the xref:6@studio::studio-in-eclipse.adoc#available-software-in-the-update-site[Studio in Eclipse] section.
+
+
+== JIRA Ticket List for Anypoint Studio
+
+
+=== Bug Fixes
+
+* STUDIO-6986 - DataSense not showing all flowVars for URI params
+* STUDIO-7023 - Duplicated property metadata when setting custom metadata for an already defined property
+* STUDIO-7031 - DataWeave syntax error when using functions.
+* STUDIO-7656 - [SE] JSON Parser not working as expected
+* STUDIO-8162 - Custom Metadata: when creating FF metadata using a single structure schema the UI fails with null error
+* STUDIO-8294 - [Custom Policies] Editing apiVersionName after opening a saved configuration
+* STUDIO-8609 - [SE] Unable to Refresh Manually Created Metadata Type
+* STUDIO-8653 - [SE] Error while defining FlatFile metadata
+* STUDIO-8657 - [SE-5084] Transform Message node - Failed to define metadata using sample XML
+* STUDIO-8686 - [SE-5043] Segment combo box doesn't update
+* STUDIO-8687 - [SE] Studio Metadata - Fixed Width - Align and Pad fields are hidden
+* STUDIO-8699 - [SE] Make 'Create new type' window resizable when defining metadata
+* STUDIO-8714 - [SE] API from WSDL file is not created
+* STUDIO-8720 - [SE] Improving validations of the config files
+* STUDIO-8725 - [SE] Reader Configuration UI for DataWeave always shows first element of combos
+* STUDIO-8726 - [SE] Allow status 207 in APIKIT global exception
+
+=== Improvements
+
+* STUDIO-8525 - [SE-4489] Add application/java to list of default mime types in Json To Object Transformer
+* STUDIO-8688 - Add more useful loggers to default log4j.xml file
+
+== Support
+
+* Access http://forums.mulesoft.com/[MuleSoft’s Forum] to pose questions and get help from Mule’s broad community of users.
+* To access MuleSoft’s expert support team https://www.mulesoft.com/support-and-services/mule-esb-support-license-subscription[subscribe to Mule ESB Enterprise] and log in to MuleSoft’s http://www.mulesoft.com/support-login[Customer Portal].

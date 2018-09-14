@@ -1,0 +1,8 @@
+= API Gateway Runtime Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: api-gateway-runtime.adoc
+:keywords: release notes, gateway, runtime, api, proxy
+
+xref:mule-runtime/mule-3.8.0-release-notes.adoc[Mule 3.8.0 Runtime] unifies API Gateway Runtime with core Mule runtime. See the xref:api-gateway/api-gateway-runtime-to-mule-3.8.0-migration-guide.adoc[API Gateway to Mule 3.8.0 Migration Guide]. Access release notes for API Gateway Runtime from the navigation bar on the left of this documentation.

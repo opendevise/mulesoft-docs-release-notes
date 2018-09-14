@@ -1,0 +1,244 @@
+= API Console Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: api-console-release-notes.adoc
+
+* <<API Console 3.0.27>>
+* <<API Console 3.0.26>>
+* <<API Console 3.0.25>>
+* <<API Console 3.0.21>>
+* <<API Console 3.0.20>>
+* <<API Console 3.0.19>>
+* <<API Console 3.0.18>>
+* <<API Console 3.0.17>>
+* <<API Console 3.0.16>>
+* <<API Console 3.0.14>>
+* <<API Console 3.0.13>>
+* <<API Console 3.0.12>>
+* <<API Console 3.0.11>>
+* <<API Console 3.0.9>>
+
+== API Console 3.0.27
+
+April 21, 2018
+
+This release includes the following enhancement and resolves a number of issues:
+
+=== Enhancements
+
+* Bumped RAML Parser to version to https://github.com/raml-org/raml-js-parser-2/releases/tag/1.1.41[1.1.41].
+
+=== Fixed Issues
+
+* Properties defined in the *items* facet were not displayed.
+* Values in optional headers were required to be specified.
+* Properties defined in response bodies for custom data types were not displayed in the console.
+* The error message “Cannot read property 'type' of undefined” appeared when a type was defined as an array and the array did not contain any elements.
+
+
+
+== API Console 3.0.26
+
+February 24, 2018
+
+This release includes the following enhancements and resolves a number of issues:
+
+=== Enhancements
+
+* Bumped RAML Parser to version to https://github.com/raml-org/raml-js-parser-2/releases/tag/1.1.40[1.1.40].
+* Because API Manager 1.x does not support digest authentication, the error message has been changed for Digest Authentication as follows: _Digest Authentication is not supported in Try it._
+
+=== Fixed Issues
+
+* When including a data type, the invalid error in IE _Object doesn’t support property or method `include`_ appeared.
+* When selecting the Try It option, if the Request section is expanded and has the details, the Response section remained collapsed.
+* The problem declaring Arrays using defining items.
+* Partially blocked visibility of the tooltip for traits help.
+* A problem with the example defined for the query parameter.
+
+
+== API Console 3.0.25
+
+January 13, 2018
+
+This release resolves a number of issues.
+
+=== Resolved Issues
+
+* Fixed an issue that caused a missing description and examples when using a security scheme.
+* Body extending from a type defined at a library is now displayed correctly.
+* Fixed the issue that required you to scroll to the right to see an example having many attibutes.
+* Fixed the issue causing API Console to throw &quot;Custom Security Schemes are not
+supported in Try It”.
+* Fixed an issue related to using inline !include in query param rendering.
+
+
+== API Console 3.0.21
+
+November 4, 2017
+
+This release introduces improvements and bug fixes.
+
+=== Improvements
+
+Bump JS RAML Parser to https://github.com/raml-org/raml-js-parser-2/releases/tag/1.1.31[v1.1.31]
+
+=== Resolved Issues
+
+Display descriptions in sub-level resources.
+
+== API Console 3.0.20
+
+August 26, 2017
+
+This release focuses on a few RAML 1.0-related improvements and bug fixes.
+
+=== Resolved Issues
+
+* The description of types was not being displayed when defined using libraries.
+* Types were not displayed correctly at Types section.
+* Description of inner resources (those defined at sublevels) were not displayed.
+* API Console would not parse Raml files when using IE 11.
+* API Console was not rendered in IE.
+
+=== Improvements
+
+Bumped RAML Parser to version to https://github.com/raml-org/raml-js-parser-2/releases/tag/1.1.29[1.1.29]
+
+
+== API Console 3.0.19
+
+July 15, 2017
+
+This release focuses on a few RAML 1.0-related improvements and bug fixes.
+
+=== Resolved Issues
+
+* Fixed an issue causing types defined in libraries to display incorrect information.
+* Fixed an issue preventing libraries from expanding and causing a display problem with the console library preview.
+
+=== Improvements
+
+* Bumped RAML Parser to version https://github.com/raml-org/raml-js-parser-2/releases/tag/1.1.24[1.1.24].
+* Added support for the file type to the Try It view.
+
+
+== API Console 3.0.18
+
+June 17, 2017
+
+This release focuses on a few RAML 1.0 related improvements and bug fixes.
+
+=== Resolved Issues
+
+* Fixed an issue preventing the console from showing schemas that contain patterns that used `|`.
+* Fixed an issue preventing body parameters of type 'application/x-www-form-urlencoded' from being rendered in the Try It view.
+
+=== Improvements
+
+* Bumped the RAML Parser to version https://github.com/raml-org/raml-js-parser-2/releases/tag/1.1.24[1.1.24]
+* Added showing the request URL in the Try It view even before you send out the request.
+
+== API Console 3.0.17
+
+June 3, 2017
+
+This release focuses on a few RAML 1.0 related improvements and bug fixes.
+
+=== Resolved Issues
+
+* API Console was not accurately displaying enum values defined in a library.
+* Arrays defined using type expression shortcut were not displayed correctly.
+* The order of query parameters and types properties were not preserved when navigating to a resource.
+* API Console was not showing DataTypes examples when using inheritance.
+* API Console returned an Invalid Type error inside the TryIt panel when using RAML 1.0 array types.
+* API Console renders example information twice.
+* Parameter examples were not shown when defined in a response.
+* The description and examples of Pass Through security scheme were missing from API console.
+* Validation of uriParameters failed when using a custom type.
+* API Console did not entirely show examples when provided in type definitions (either for the entire type or single properties).
+* Rendering issues occurred when a type extends from another type declaration.
+* A validation issue occurred when the type is a number and has a related enum.
+
+=== Improvements
+
+* Bumped RAML Parser to version https://github.com/raml-org/raml-js-parser-2/releases/tag/1.1.20[1.1.20]
+* Enhanced performance when rendering large projects.
+
+// removed from this release--bug (kris may 29, 2017) Added the capability to upload a file when you define the payload type as a `file`. You need to explicitly define `type: file` for API Console to render the uploaded element.
+
+
+== API Console 3.0.16
+
+April 8, 2017
+
+This release focuses on minor bug fixes.
+
+== Resolved Issues
+
+* Fixed an issue preventing API documentation from being displayed at the Portal due to incorrect url resolution after library expansion.
+* Fixed an issue preventing error feedback from being displayed (white page or greyed page was displayed instead, depending on implementation).
+* Fixed an issue that prevented response type and examples from being refreshed accurately when changing methods.
+* Fixed an issue causing multiple inheritance types to be incompletely rendered in the method response.
+
+=== Improvements
+
+* Bumped RAML Parser to version to https://github.com/raml-org/raml-js-parser-2/releases/tag/1.1.19[1.1.19]
+* Added an improvement for rendering the root description of an API on the top of the page.
+
+
+== API Console 3.0.14
+
+March 11, 2017
+
+This release includes a JS parser update.
+
+=== Improvements
+
+Bumped JS parser version to https://github.com/raml-org/raml-js-parser-2/releases/tag/1.1.14[1.1.14].
+
+== API Console 3.0.13
+
+February 3, 2017
+
+This release includes a JS parser update.
+
+=== Improvements
+
+Bumped JS parser version to 1.1.13.
+
+== API Console 3.0.12
+
+January 14, 2017
+
+This release includes a JS parser update.
+
+=== Improvements
+
+Bumped JS parser version to 1.1.12.
+
+== API Console 3.0.11
+
+December 3, 2016
+
+This release includes several fixes for rendering information as well as fixes for issues around RAML 1.0.
+
+=== Resolved Issues
+
+* Add support for Pass Through to reflect the complete set of security schemes defined in RAML 1.0.
+* In the previous version, the error output was not correctly handled and had to be updated.
+* Several other smaller bug fixes.
+
+=== Improvements
+
+* Bumped JS parser version to 1.1.8.
+* Several other smaller improvements.
+
+== API Console 3.0.9
+
+November 19, 2016
+
+=== Improvements
+
+Bumped JS parser version to 1.1.6.

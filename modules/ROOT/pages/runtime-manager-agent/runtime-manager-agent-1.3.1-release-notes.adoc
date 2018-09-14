@@ -1,0 +1,58 @@
+= Runtime Manager Agent 1.3.1 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: runtime-manager-agent-1.3.1-release-notes.adoc
+:keywords: mule, agent, 1.3, release notes
+
+_Enterprise Edition_
+
+*January 26, 2016*
+
+Runtime Manager Agent 1.3.0 provides a new downloadable zip file to easily update Runtime Manager Agent. Download the Runtime Manager agent from the following URL.
+
+https://support.mulesoft.com/s/downloads
+
+You must supply your Anypoint login and password to access this page.
+
+*Runtime Manager Agent Install Guide*: link:/runtime-manager/installing-and-configuring-mule-agent[installing and configuring Runtime Manager Agent]
+
+== Compatibility
+
+[%header,cols="2*a",width=70%]
+|===
+|Software|Version
+|Mule Runtime|3.6.n and 3.7.n
+|API Gateway|2.n
+|===
+
+== Features in this Release
+
+* AGENT-243 - Add TCP and HTTP Event Collector sending mechanism to Splunk Internal Handler.
+
+== Improvements
+
+[%header,cols="20a,80a"]
+|===
+|Issue|Description
+|AGENT-271 |Keep the API Analytics events when no Internal Handler is active.
+|AGENT-269 |Improve the SSL Connections of the Runtime Manager Agent to use TLSv1.2.
+|AGENT-247 |Added the Nagios JMX Internal Handler to the Runtime Manager Agent Plugin distribution.
+|AGENT-228 |Remove fields annotated as password from administration api response instead of returning empty values.
+|===
+
+== Fixed Issues
+
+[%header,cols="20a,80a"]
+|===
+|AGENT-239 |The DomainDeploymentService is setting in null on runtime shutdown.
+|===
+
+== Known Issues
+
+None.
+
+== See Also
+
+* xref:runtime-manager::runtime-manager-agent.adoc[Runtime Manager Agent]
+* https://support.mulesoft.com[Contact MuleSoft]

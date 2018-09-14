@@ -1,0 +1,112 @@
+= Auto-Upgrade Notice for Anypoint Platform (November Release)
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: anypoint-november-release-upgrades.adoc
+
+The November release includes many improvements across API Designer, API Portal, and API Manager.
+
+MuleSoft is _automatically_ upgrading customers with twenty (20) or fewer APIs and customers in Crowd (July release) unless your platform administrator opts out (<<opt_out>>). The automatic upgrades occur on a rolling schedule. A self-service upgrade process is available for other customers.
+
+*Note:* After the upgrade and before classifying your APIs, thoroughly test your APIs, Notebooks, and Portals. After APIs are classified, your organization cannot be rolled back in the event you encounter upgrade related issues.
+
+The upgrade schedule depends on the number of APIs in your organization:
+
+* April 30th - May 1st: Customers with twenty (20) or fewer APIs and customers in Crowd (July release) will be automatically upgraded.
+* All other customers will be offered self-service experience to migrate.
+
+== What’s in the Release?
+
+* New experience (video on YouTube): https://www.youtube.com/watch?v=oL827WlMmfM&feature=youtu.be[Nov. 2017 Release: UI Updates for Existing Users]
+* Changes and features: xref:platform/anypoint-november-release.adoc[Anypoint Platform July and November Release: Release Notes]
+* Changes to Anypoint Platform APIs: xref:platform/upgrade.adoc#anypoint-platform-apis-november-2017-release[See Changes]
+
+Because many of the new products have new features and a different UX, please consider the following:
+
+* For API Portal, the look and feel is changing. This change is especially important for public API portals that are exposed to external developers.
+* The API lifecycle is slightly different, so if you are in the middle of a big release, be sure to communicate this to your team(s).
+* Other Anypoint accounts used by you or other developers in your organization might retain the same, “old” Anypoint Platform experience.
+
+
+== After the Upgrade
+
+All your APIs in API Manager will be in the unclassified environment.
+
+To access your APIs:
+
+. Go to API Manager.
+. Select the unclassified environment.
++
+From the unclassified environment, you can manage your APIs in the same way that you did before the November release.
++
+. When you are ready for the new environment capabilities of the November release, classify your APIs into environments, or create new APIs in them.
+
+== New and Changed Features
+
+What’s new:
+
+* All APIs created using existing API Manager appear in the Unclassified Environment after the upgrade.
+* APIs in the Unclassified environment can be classified into the corresponding environment following this process.
+* Autodiscovery element for new APIs after the upgrade should be configured in the following way (all values can be gotten from the API and the UI):
+** `name=”groupId:{{groupId}}:assetId:{{assetId}}”`
+** `version=”{{version}}:{{instanceId}}”`
+* A new version of API Manager API (v3.x) is available to leverage all new API Manager capabilities.
+* User’s permissions model has changed to be action-based at the environment level, which is aligned to the rest of the management center. After the upgrade, administrators should set environment-level permissions to all users. Default environment-level admin roles are available. The permission model in the unclassified environment works in the same way as API Manager permission model worked before migration. Assigned permissions for APIs in the unclassified environment also remained untouched during the upgrade process.
+
+=== API Designer
+
+* To make changes to a RAML of a running or published API, users need to republish any specifications in Exchange that have versions.
+* Design Center projects do not have tags like old API Manager projects.
+* API sync from Studio 6 and 7 only supports pull only.
+
+=== API Portals in Exchange
+
+* External links from the navigation panel are grouped under the Helpful links section in Exchange.
+* Existing portal URLs redirect to corresponding API Portals in a new Exchange.
+* Invisible pages are deprecated and replaced with draft functionality of Exchange. All invisible pages become draft after the upgrade is complete.
+* Branding at the API portal level is deprecated and replaced with global branding control. This means that all API portal pages inherit global styles.
+* To update an API specification available in Exchange or used by an API proxy in API Manager, users need to publish a new version of API specification to Exchange using API designer.
+* Internal API consumers can see all API endpoints and versions through an API portal they have access to. Existing API Manager controls permissions per API version.
+* Onboarding of external users of API Public Portals onboarding has been simplified and there’s no need to invite external users for them to be able to consume APIs and request API keys.
+* When APIs are migrated to Exchange, Exchange calls REST Connect to generate connectors for Mule 4 and Mule 3. Because REST Connect only supports RAML v1.0, owners for API specifications based on RAML v0.8 receive an email notification with a message that the connector creation has failed. They can still use Design Center to open and edit these API specifications, but these specifications cannot be used as a connector in Design Center, Studio 6, and Studio 7.
+
+=== APIs in API Manager Changes After the Upgrade
+
+* APIs utilizing an autodiscovery element now use API Manager instead.
+* API Manager API can be used with APIs in the unclassified environment with some restrictions (see below).
+* Because the upgrading to the latest software is moving all portals and RAMLs cannot be used to modify, create, or delete them after the upgrade. After the upgrade, the API Manager API v2.x changes its behavior in the following way:
+** The following resources related to managing RAMLs return 400. Use Design Center APIs instead.
++
+[source,text,linenums]
+----
+/organizations/{organizationId}/apis/{apiId}/versions/{apiVersionId}/addRootRaml
+/organizations/{organizationId}/apis/{apiId}/versions/{apiVersionId}/files/*
+----
++
+** The following resources related to managing portals (including permission setting) return 400. Use Exchange APIs instead.
++
+[source,text,linenums]
+----
+/organizations/{organizationId}/apis/{apiId}/portals
+/organizations/{organizationId}/apis/{apiId}/versions/{apiVersionId}/portal/*
+/organizations/{organizationId}/portals/*
+organizations/{organizationId}/public/*
+----
++
+** API creation needs to be done in Exchange first, thus creation of an API using API Manager API return 400.
+* APIs exported before the upgrade cannot be imported after upgrade.
+
+== Learn More Here
+
+* link:/api-manager/manage-exchange-api-task[Manage an API from Exchange]
+* link:/api-manager/environment-permission-task[Grant Permission to Access Environments]
+* link:/api-manager/classify-api-task[Classify an API]
+
+[[opt_out]]
+== Want to Opt Out?
+
+Send us an email with your organization ID to crowd@mulesoft.com if you want to be excluded from the automatic upgrade. You can find the ID from Anypoint Platform by navigating to Access Management > Organization > _your_organization_ and then finding the Organization ID in the Organization Info window.
+
+Note that all customers are required to upgrade in 2018.
+
+If you have problems with the new experience of Anypoint Platform, you can open a support ticket from https://support.mulesoft.com/s/[MuleSoft Support].

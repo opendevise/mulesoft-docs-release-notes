@@ -1,0 +1,91 @@
+= Anypoint Platform Private Cloud Edition 1.5.1 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: anypoint-private-cloud-1.5.1-release-notes.adoc
+
+**March 4, 2017**
+
+[WARNING]
+This product was previously named Anypoint Platform On-Premises Edition. Beginning with the 1.5.1 release, it is named Anypoint Platform Private Cloud Edition. For the Release Notes of previous versions, see xref:pce/anypoint-on-premise-1.5.0-release-notes.adoc[1.5.0] and xref:pce/anypoint-on-premise-1.1.0-release-notes.adoc[1.1.0].
+
+== Software Compatibility
+
+[%header,cols="2*a"]
+|===
+| Compatible with |Version
+| Mule runtime | 3.7.x - 3.8.x
+| API Gateway Runtime | 2.1.x - 2.2.x
+| Runtime Manager Agent | 1.5.2 - 1.5.3
+| Infrastructure providers |
+* VMWare
+* Bare Metal
+| Compatible browsers when running the installer |
+* Firefox (latest version)
+* Chrome (latest version)
+* Safari (latest version)
+|===
+
+== New Features and Functionality
+
+The following sections outline the new features and enhancements added to this release.
+
+=== Security Enhancements
+
+* Improves Docker app execution security when running as `root`
+* Provides support for the latest Runtime Manager Agent, which includes security fixes
+
+=== General Enhancements
+
+* Provides support for CentOS / and Red Hat Enterprise Linux (RHEL) 7.3
+* Provides unified SMTP configuration for Runtime Manager and API Platform alerts
+* Improves backup error reporting
+
+=== Platform Management and Monitoring Enhancements
+
+* Adds a monitoring dashboard to the Ops Center
+* Improves the dashboard for viewing the object store, pods, database and services
+
+=== Installer Enhancements
+
+* Adds support for 3 and 6 node configurations
+* Enables the installer to perform automatic checking and validation, including disk and network verification
+* Provides out-of-the-box scaling
+* Provides an embedded LDAP server for demo and testing
+* Improves diagnostic error reporting during installation failure
+* Creates a default Ops Center admin user during installation
+
+=== Stability Enhancements
+
+* Enables the Cassandra database to perform periodic repair
+
+== Fixed Issues
+
+* `journald` restart causes iptables to be broken and traffic flow-through stops.
+* Multiple localhost hostnames entries causes installer failure
+* Ignored localhost /etc/hosts entry
+* PostgreSQL restart causes stale replica being elected
+* NodeJS for API Platform updated to 4.6.1 version to include the latest security fixes.
+* Issue that prevents enabling API Analytics
+* Solves disclaimer Javascript errors in Internet Explorer 11
+* Solves invalid URL error rendering  in API Platform in cases of wrong address
+* Mule-message-processor and amc-facade logs are now collected in OpsCenter
+* Runtime Manager server alerts is a MuleSoft Cloud feature not supported in Anypoint Platform Private Cloud. Edition The fix removes the configuration of this type of alerts in the Runtime Manager console.
+* Fix custom policies support policy dependencies
+
+== Known Issues
+
+[%header%autowidth.spread]
+|===
+|Issue ID |Description |Workaround
+|N/A | Only LVM2 versions 2.02.166-1.el7_3.5 and earlier are supported. Later versions of LVM2 are not supported.
+|AOP-342 | LDAP group mapping not working with uppercase group names | Use role group mapping with LDAP group names in lowercase.
+|AOP-651 |`./install` never exits after install completes | After the installation finishes, close the installer manually with Cntrl-C.
+|AOP-660 |OpsCenter 'Console' disconnects after a while | Try reonnecting to the console after it disconnects.
+|AOP-942 |OpsCenter is logging "harmless" error messages every 2 sec|
+|AOP-1024 |Migration script required to migrate from version 1.5.0 to 1.5.1 |
+|CHHYBRID-2447 | Concurrent deployment in the same cluster fails | Avoid concurrency when deploying in the same clusters or retry deploying until it succeeds.
+|CHHYBRID-2572 | On the UI, when stopping an application, the reported status is not updated. | Refresh the screen.
+|CS-3005 | OpenAM configuration must be set using the API, using the UI form leaves the config incomplete. | Use the API directly instead of the UI.
+|EXCHANGE-1155 |Terms Group is not collapsed by default |
+|===

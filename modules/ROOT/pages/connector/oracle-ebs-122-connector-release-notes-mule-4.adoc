@@ -1,0 +1,50 @@
+= Oracle E-Business Suite 12.2 Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: oracle-ebs-122-connector-release-notes-mule-4.adoc
+:keywords: release notes, oracle, ebs, e-business suite, connector
+
+*January 2018*
+
+_Premium_
+
+The Anypoint Connector for Oracle E-Business Suite (EBS) 12.2 provides real-time connectivity to query and update Oracle EBS using REST web services. The connector has been developed for the Oracle EBS v12.2.x.
+
+== 2.0.0
+
+*January 12, 2018*
+
+Oracle E-Business Suite 12.2 connector is available on Mule 4.0.
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime |4.0
+|Oracle EBS |12.2.x
+|Java | 8
+|===
+
+== 1.0.0
+
+*December 22, 2016*
+
+=== Version 1.0.0 Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime |3.7
+|Oracle EBS |12.2.x
+|Java | 7
+|===
+
+=== Features
+
+* PL/SQL REST Integration - The connector provides the functionality to invoke both standard and user-defined PL/SQL functions that are deployed as REST services. There is a single processor that takes the alias of a given WADL (REST service endpoint), the name of a service operation available for that WADL and the input parameters required by the selected operation.
+
+== See Also
+
+* For more information about Oracle EBS, visit http://www.oracle.com/us/products/applications/ebusiness/overview/index.html[Oracle's official site]
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

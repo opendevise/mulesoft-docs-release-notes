@@ -1,0 +1,16 @@
+= Runtime Manager Agent 1.8.0 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: runtime-manager-agent-1.8.0-release-notes.adoc
+:keywords: mule, agent, release notes
+
+*October 19, 2017*
+
+This version of the Runtime Manager Agent is deprecated. Please use version 1.9.0. See xref:runtime-manager-agent/runtime-manager-agent-1.9.0-release-notes.adoc[Runtime Manager Agent 1.9.0 Release Notes] for more information
+
+== See Also
+
+* xref:runtime-manager::runtime-manager-agent.adoc[Runtime Manager Agent]
+* xref:runtime-manager::installing-and-configuring-runtime-manager-agent.adoc[Installing and configuring Runtime Manager Agent]
+* xref:runtime-manager::installing-and-configuring-runtime-manager-agent.adoc#updating-a-previous-installation[Updating the Runtime Manager Agent]

@@ -1,0 +1,20 @@
+= Anypoint Platform Private Cloud Edition Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: anypoint-private-cloud-release-notes.adoc
+
+[WARNING]
+This product was previously named Anypoint Platform On-Premises Edition. Starting with the 1.5.1 release, it is named Anypoint Platform Private Cloud Edition.
+
+* xref:pce/anypoint-private-cloud-1.7.1-release-notes.adoc[Anypoint Platform Private Cloud Edition 1.7.1 Release Notes]
+* xref:pce/anypoint-private-cloud-1.7.0-release-notes.adoc[Anypoint Platform Private Cloud Edition 1.7.0 Release Notes]
+* xref:pce/anypoint-private-cloud-1.6.1-release-notes.adoc[Anypoint Platform Private Cloud Edition 1.6.1 Release Notes]
+* xref:pce/anypoint-private-cloud-1.6.0-release-notes.adoc[Anypoint Platform Private Cloud Edition 1.6.0 Release Notes]
+* xref:pce/anypoint-private-cloud-1.5.2-release-notes.adoc[Anypoint Platform Private Cloud Edition 1.5.2 Release Notes]
+* xref:pce/anypoint-private-cloud-1.5.1-release-notes.adoc[Anypoint Platform Private Cloud Edition 1.5.1 Release Notes]
+
+For older versions of this product, see:
+
+* xref:pce/anypoint-on-premise-1.5.0-release-notes.adoc[Anypoint Platform On-Premises Edition 1.5.0 Release Notes]
+* xref:pce/anypoint-on-premise-1.1.0-release-notes.adoc[Anypoint Platform On-Premises Edition 1.1.0 Release Notes]

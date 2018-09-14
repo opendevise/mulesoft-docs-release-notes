@@ -1,0 +1,48 @@
+= Runtime Manager Agent 1.9.1 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: runtime-manager-agent-1.9.1-release-notes.adoc
+:keywords: mule, agent, release notes
+
+*November 10, 2017*
+
+Download Runtime Manager Agent, version 1.9.1 at the following URL:
+
+https://support.mulesoft.com/s/downloads
+
+== Compatibility
+
+[%header,cols="2*a",width=70%]
+|===
+|Software|Version
+|Mule Runtime|3.6.x, 3.7.x, 3.8.x, 3.9.x
+|API Gateway|2.x and above
+|Runtime Manager | V2.0
+|===
+
+
+== Hardware and Software Requirements
+
+No change.
+
+== Improvements and Fixed Issues
+
+* Updated runtime status displayed in Runtime Manager to CONNECTED when the runtime is boot instead of when the application starts. This resolve an issue with servers experiencing disconnection issues when an application took longer than 50 seconds to start.
+* Fixed issue where application properties managed in Runtime Manager did not default to the correct values.
+* Changed the log level in situations when JMX is not found.
+* Fixed issue where Memory Server Metrics were not being collected correctly when configuring a different garbage collector in the `wrapper.conf` file.
+* Fixed issue with `FileNotFoundException` after installing the RUagent with -I flag.
+* [SE-6934] Fixed issue where global flags were not being considered when they were not set for `trackedApplication`.
+* [SE-6307] Fixed issue where the Runtime Manager Agent failed to work on the IBM JDK.
+* Added support for deploying applications to regions within the European Union. *Update:* Due a change in the SSL certificates, 1.9.1 has NO longer support for the European Union region. Please use the 1.9.2 and above version of the Mule Agent for that region's support.
+
+== Known Issues
+
+None
+
+== See Also
+
+* xref:runtime-manager::runtime-manager-agent.adoc[Runtime Manager Agent]
+* xref:runtime-manager::installing-and-configuring-runtime-manager-agent.adoc[Installing and configuring Runtime Manager Agent]
+* xref:runtime-manager::installing-and-configuring-runtime-manager-agent.adoc#updating-a-previous-installation[Updating the Runtime Manager Agent]

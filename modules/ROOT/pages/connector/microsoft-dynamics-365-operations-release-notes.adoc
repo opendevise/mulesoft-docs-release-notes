@@ -1,0 +1,50 @@
+= Microsoft Dynamics 365 for Operations Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: microsoft-dynamics-365-operations-release-notes.adoc
+:keywords: microsoft, dynamics, 365, operations, release notes
+
+*May 2018*
+
+_Select_
+
+*Guide:* xref:3.9@mule-runtime::microsoft-dynamics-365-operations-connector.adoc[Microsoft Dynamics 365 for Operations Connector]
+
+MuleSoft provides OAuth 2.0 Connection and OAuth 2.0 Username-Password access to the Microsoft Dynamics 365 for Operations server.
+
+== 1.0.1
+
+*May 3, 2018*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime | Mule Runtime Enterprise Edition 3.6.0 and later
+|Microsoft Dynamics 365 for Operations | 1.0.1
+|===
+
+=== Fixed in this Release
+
+* Dynamic 365 for Operations Connector was not refreshing the OAuth token after expiration because the expiration timestamp sent by the server was not taken into consideration. Now the token is refreshed.
+* Import Data Recurring Job was not working because the payload of the operation was not properly sent to the API. Now, it is working properly.
+
+== 1.0.0
+
+*June 1, 2017*
+
+Operations:
+
+* xref:3.9@mule-runtime::microsoft-dynamics-365-operations-connector.adoc#authop[Authorize - (OAuth 2.0 Connection only)]
+* xref:3.9@mule-runtime::microsoft-dynamics-365-operations-connector.adoc#unauthop[Unauthorize - (OAuth 2.0 Connection only)]
+* xref:3.9@mule-runtime::microsoft-dynamics-365-operations-connector.adoc#exop[Execute Operation]
+* xref:3.9@mule-runtime::microsoft-dynamics-365-operations-connector.adoc#impdata[Import Data Recurring Job]
+* xref:3.9@mule-runtime::microsoft-dynamics-365-operations-connector.adoc#retmultop[Retrieve Multiple]
+* xref:3.9@mule-runtime::microsoft-dynamics-365-operations-connector.adoc#retmultqop[Retrieve Multiple by Query]
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

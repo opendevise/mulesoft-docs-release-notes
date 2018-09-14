@@ -1,0 +1,75 @@
+= Anypoint Studio January 2015 with 3.6.0 Runtime - Update Site 1 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: anypoint-studio-january-2015-with-3.6.0-runtime-update-site-1-release-notes.adoc
+:keywords: release notes, anypoint studio
+
+January 30, 2015
+
+This January 30 2015 release is an update to the Studio January 2015 with 3.6.0 runtime, and complement the xref:studio/anypoint-studio-january-2015-with-3.6.0-runtime-release-notes.adoc[Anypoint Studio January 2015 with 3.6.0 Runtime Release Notes].
+
+== Current Release Versions
+
+[%header,cols="3*"]
+|===
+|
+| Enterprise Runtime
+| Community Runtime
+
+| ESB Runtime
+| n/a
+| n/a
+
+| Studio
+2+>| Version: January 2015 with 3.6.0 Runtime - Update Site 1 +
+Build Number:  201501301032
+|
+
+| Management Console
+| n/a
+| n/a
+
+| Mule DevKit
+2+>| n/a
+
+|===
+
+
+== Fixed Issues
+
+* Problem importing from Library if the project was exported with Studio version 5.x.x (STUDIO-5961)
+* Validation error for rollback-exception-strategy (name attribute as required) (STUDIO-5962)
+* Debugger does not stop on breakpoint in APIkit flow (STUDIO-5964)
+* Update RAML parser to latest version (STUDIO-5966)
+* Studio erases attributes from <spring:beans> when switching between XML and graphical views (STUDIO-5967)
+* Datamapper is not being added automatically to the pom file when project is maven based (STUDIO-5968)
+* RAML metadata is not retrieved when focus is lost inside http:request editor (STUDIO-5970)
+* When adding dependencies automatically to the pom file the <inclusion> element is not added (STUDIO-5971)
+* Adding <http:listener> in the XML through autocompletion adds duplicated attributes path and config-ref (STUDIO-5972)
+* src/main/api directory isn't being added as resource folder in maven projects with APIkit (STUDIO-5973)
+* Maven repo population is installing groovy-all as commons-cli locally (STUDIO-5977)
+* Authentication fields not marked as mandatory in http:request (STUDIO-5983)
+* RAMLs with custom baseUriParameters are not supported, only \{version} is correctly processed in http:request global configuration (STUDIO-5984)
+* Large flow files take too long to open (STUDIO-5990)
+* DataMapper leaves out charset attribute when generating grf for WSC (XML) to \{type} (STUDIO-5994)
+* Default exception strategy in Global Configuration doesn't offer the existing global exception strategies (STUDIO-6005)
+* Invalid attributes in HTTP Request global configuration (STUDIO-6016)
+* Error when trying to run a project with Mule 3.3.3 (STUDIO-6022) +
+
+== Migration Guide
+
+This section presents configuration considerations you may want to adjust when migrating from a previous version of a Mule runtime, or previous version of Studio. https://www.mulesoft.com/support-and-services/mule-esb-support-license-subscription[Contact MuleSoft Support] if you have a question about a specific migration activity or concern.
+
+To migrate from a previous version of Studio, use *Help > Check for Updates.*
+
+[TIP]
+====
+You can easily import all of the external components that you had installed in your old version of Anypoint Studio through a single action. This includes connectors, runtimes, and any other type of extension added through the Anypoint Exchange or the ​*Help -> Install new software*​ menu, as long as there are no compatibility restrictions.
+
+Do this by selecting *File->Import* and then choose *Install->From existing installation*.
+
+image::studio/import-extensions.png[import]
+
+Then specify the location of your old version of Anypoint Studio in your local drive.
+====

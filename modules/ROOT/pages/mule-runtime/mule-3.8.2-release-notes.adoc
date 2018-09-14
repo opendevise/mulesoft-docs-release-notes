@@ -1,0 +1,117 @@
+= Mule Runtime 3.8.2 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: mule-3.8.2-release-notes.adoc
+:keywords: mule, 3.8.2, runtime, release notes
+
+*October 11, 2016*
+
+Mule Runtime 3.8.2 fixes a number of issues to improve error handling and efficiency when deploying applications managed by policies.
+
+== Supported Software
+
+Mule was tested on the following software:
+
+[%header,cols="15a,85a"]
+|===
+|Software |Version
+|JDK |JRE 1.7.0, JRE 1.8.0 (Recommended JRE 1.8.0_91/92)
+|OS |MacOS 10.11.4, HP-UX 11i V3, AIX 7.2, Windows 2012 R2 Server, Windows 8.1, Solaris 11.3, RHEL 7, Ubuntu Server 15.04
+|Application Servers |Tomcat 7, Tomcat 8, WebLogic 12c, WildFly 8, WildFly 9, WebSphere 8, Jetty 8, Jetty 9
+|Databases |Oracle 11g, Oracle 12c, MySQL 5.5+, DB2 10, PostgreSQL 9, Derby 10, Microsoft SQL Server 2014
+|===
+
+The unified Mule Runtime 3.8.2 and API Gateway is compatible with APIkit 3.8.2.
+
+== Bundled Runtime Manager Agent
+
+This version of Mule runtime comes bundled with the Runtime Manager Agent plugin version 1.5.2.
+
+See xref:runtime-manager-agent/runtime-manager-agent-release-notes.adoc[Runtime Manager Agent Release Notes].
+
+
+== Migration Guide
+
+XML entity expansion in XML transformers is now disabled by default because it allows DoS attacks. To restore previous behavior use the expandInternalEntities="true" attribute.
+
+XML entity expansion in Jersey is now disabled by default because it allows DoS attacks. To restore previous behavior use the mule.xml.expandInternalEntities=true property.
+
+Processing after a `synchronous until successful` resulting in a `VoidMuleEvent` will now continue with the original event.
+
+== Fixed issues
+
+[%header,cols="15a,85a"]
+|===
+|Issue |Description
+|EE-5028|MMC agent not started in embedded mode
+|EE-5164|Use secure XML factories to avoid XXE and BL vulnerabilities
+|Mule-10078|Properly handle disposal of XaTransactedJmsMessageReceiver
+|Mule-10091|Properties missing when using jetty-ssl
+|Mule-10095|OOM when starting Mule with large tx log file
+|Mule-10100|Until successful returns event copy causing uses in other scopes to fail
+|Mule-10107|High contention when many threads try to create exceptions
+|Mule-10120|Map not sent as form data if mimeType is application/java
+|Mule-10171|String attachments do not maintain content type when sent on HTTP transport
+|Mule-10178|InputStream not closed on core, launcher, and spring-config
+|Mule-10180|Classloader leak when Oracle JDBC Driver is not used but included in application lib folder
+|Mule-10186|Classloader leak due to shutdown listeners are not cleared
+|Mule-10187|HTTPS Requester thread hangs intermittently
+|Mule-10191|Query named parameters are not validated properly
+|Mule-10193|HttpListener - MuleMessage cast exception when sending duplicate Content-Type header
+|Mule-10196|When AbstractConnector fails to connect receivers, it leaves the connector connection active
+|Mule-10230|SQL query parser prevents SQL variable assignment
+|Mule-10233|HTTP Requester is not sending custom headers for multipart requests
+|Mule-10242|Dynamic Pipeline cannot be obtained after failure while updating for the first time
+|Mule-10268|Proxy Authentication Header is not included when using proxy for HTTPS target server
+|Mule-10298|Deploy applications in parallel
+|Mule-10306|Add option to disable internal entity expansion in XML (leads to DoS)
+|Mule-10306|Add option to disable internal entity expansion in XML with XSLT
+|Mule-10348|Processors in DefaultMessageProcessorChain are not completely initialized
+|Mule-10352|Make HttpClient `Startable` instead of `Initializable` to match `Stoppable`
+|Mule-10356|Http inbound endpoint returns additional headers in 100 Continue response
+|Mule-10417|When sending multiple HTTP headers with the same key using a Requester, the format is not the one expected by the HTTP specification
+|Mule-10500|SoapFaultException must keep the original SoapFault
+|Mule-10507|OAuth Authorization in HTTP Requester redirection URL only works on localhost
+|Mule-10510|Remove "final" modifier from process method in MessageProcessor implementations
+|Mule-10527|Error processing stored procedure with output parameters
+|Mule-10578|Exception thrown from a Work#run() is ignored by the WorkManager
+|Mule-10593|App with missing config fails to deploy but has status "created"
+|Mule-10598|Apply changes from CXF-7058: Extra CDATA elements added on long CDATA payload
+|Mule-10686|Disable entity expansion in the Jersey module when processing XML
+|Mule-8414|Jetty-ssl transport not setting some HTTP inbound properties
+|Mule-8989|Mule returns an error when making http request from JBoss
+|Mule-9567|AHC/Grizzly: Read locally closed connection validation
+|Mule-9737|Chunked transfer encoding is not given precedence when both chunked and content-length headers exist in response
+|Mule-9826|HTTP timeout when sending x-www-form-urlencoded POST
+|AGW-866|Client ID enforcement policy returns 500 with multiple Client IDs
+|AGW-869|Failed policies are not updated until the runtime is restarted
+|AGW-879|Duplicated x-forwarded-for headers in a HTTP request will throw an exception
+|AGW-880|All policies are parsed for every deployed application
+|AGW-886|Moving client credentials logic to initialize breaks a fast deployment
+|AGW-911|Issue with `api-platform-gw:api` and `apikit:config`
+|AGW-914|Autodiscovery constantly tries to upload RAML and register source to platform
+|===
+
+== Library Changes
+
+[%header,cols="15a,85a"]
+|===
+|Issue |Description
+|MULE-10106|Upgrade CXF to 2.7.18
+|MULE-10109|Upgrade Tomcat libraries to 6.0.45
+|MULE-10158|Upgrade Spring to 4.1.9 & Spring Security to 4.0.4
+|MULE-10164|Upgrade grizzly to 2.3.26
+|MULE-10165|Upgrade AHC to 1.9.39
+|MULE-10599|Upgrade XStream to Version 1.4.9
+|MULE-10612|Upgrade JAXB to 2.1.17
+|===
+
+== Cloudhub additional changes for 3.8.2
+
+[%header,cols="15a,85a"]
+|===
+|Issue |Description
+|SE-4183|SFTP inbound-endpoint can not delete the file when deployed to CloudHub and Insight is NOT Disabled
+|SE-1680|CH Scheduler doesn't respect the startDelay of the fixed-frequency-scheduler
+|===

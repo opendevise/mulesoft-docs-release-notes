@@ -1,0 +1,17 @@
+= APIkit for SOAP 1.0.1 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: apikit-for-soap-1.0.1.adoc
+:keywords: apikit, 1.0.1, soap, release notes
+
+This version of APIKit for SOAP includes a fix in the runtime. This solves a problem when using a SOAP Envelope element with an xmlns:xsi namespace definition.
+
+== Compatibility
+
+* Mule Runtime 3.7.3 and 3.8.x
+* Anypoint Studio 6.2.3
+
+== Fixed in This Release
+
+APIKITSOAP-58 APIKit SOAP + DataWeave = Undeclared namespace prefix "xsi"

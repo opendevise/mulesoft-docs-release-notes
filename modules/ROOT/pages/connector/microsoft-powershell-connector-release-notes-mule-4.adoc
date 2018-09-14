@@ -1,0 +1,45 @@
+= PowerShell Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: microsoft-powershell-connector-release-notes-mule-4.adoc
+
+*January 2018*
+
+_Select_
+
+PowerShell is a Windows command line shell for system administrators. Windows PowerShell includes an interactive prompt and a scripting environment that can be used independently or in combination.
+
+== 2.0.0
+
+*January 27, 2018*
+
+Release notes for version 2.0.0 of the PowerShell connector.
+
+=== Compatibility
+
+The PowerShell Connector is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Application/Service |Version
+|Mule Runtime |4.0.0 and later
+|Java |1.8 and later
+|===
+
+=== Features
+
+* The PowerShell connector is built with the new AnyPoint SDK v1.0.1-SNAPSHOT.
+* The PowerShell connector also works with Linux-based Ubuntu systems.
+* You can execute commands and scripts on Windows and Linux machines.
+* You can run commands and scripts on remote machines.
+
+* The following operations are supported:
+
+** ExecuteScriptFile - Executes Script file on remote machine or local machine based on given configuration.
+** ExecuteCommand - Executes command on remote machine or local machine based on given configuration.
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

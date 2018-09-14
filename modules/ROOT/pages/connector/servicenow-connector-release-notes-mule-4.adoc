@@ -1,0 +1,73 @@
+= ServiceNow Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: servicenow-connector-release-notes-mule-4.adoc
+:keywords: servicenow, connector, release notes
+
+*March 2018*
+
+_Select_
+
+== 6.2.0
+
+*March 14, 2018*
+
+[%header%autowidth.spread]
+|===
+|Application/Service |Version
+|Mule Runtime |4.0.0 and later
+|ServiceNow |Eureka, Fuji, Geneva, Helsinki, Istanbul, Jakarta, and Kingston
+|===
+
+=== Features
+
+- The ServiceNow connector now supports the ServiceNow Kingston release.
+
+=== Fixed in this Release
+
+- Fixed the test connectivity.
+
+== 6.1.0
+
+*December 22, 2017*
+
+Updated to support the ServiceNow Jakarta release.
+
+=== Compatibility
+
+The ServiceNow connector 6.0.0 is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Application/Service |Version
+|Mule Runtime |4.0.0 and later
+|ServiceNow |Eureka, Fuji, Geneva, Helsinki, Istanbul, Jakarta -- Default is Jakarta
+|===
+
+== 6.0.0
+
+*November 18, 2017*
+
+ServiceNow connector is available on Mule 4.0.
+No new updates.
+
+=== Features
+
+This version is compatible with Mule 4.0.0.
+
+=== Compatibility
+
+The ServiceNow connector 6.0.0 is compatible with:
+
+[%header%autowidth.spread]
+|===
+|Application/Service |Version
+|Mule Runtime |4.0.0 and later
+|ServiceNow |Eureka, Fuji, Geneva, Helsinki, and Istanbul -- Default is Istanbul
+|===
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

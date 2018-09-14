@@ -1,0 +1,71 @@
+= MongoDB Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: mongodb-connector-release-notes-mule-4.adoc
+:keywords: mongo db, release notes, connector
+
+*September 2018*
+
+_Select_
+
+Mule supports MongoDB integration by using the MongoDB Java Driver.
+
+== 5.2.0
+
+*September 4, 2018*
+
+=== New Features
+
+* Added the new operation 'Execute Generic Command' to run any MongoDB command using the connector.
+This command is supplied as a parameter in the form of a MongoDB document.
+* MongoDB Java Driver Update - The connector has been updated with the MongoDB Java Driver v3.8.0.
+
+== 5.1.1
+
+*June 28, 2018*
+
+=== Fixed in This Version
+
+* Connector did not work using the 3.6 driver when a TLS global context was not present. This error appeared:
+
+[source,text,linenums]
+----
+2018-06-28T18:07:06.764+0000 I NETWORK  [conn262] Error receiving request from client: SSLHandshakeFailed: SSLHandshakeFailed. Ending connection from ...
+----
+
+Now it is working.
+
+== 5.1.0
+
+*June 28, 2018*
+
+This is a minor release that includes one new feature.
+
+=== New Features
+
+* MongoDB Java Driver Update - The connector has been updated with the MongoDB Java Driver v3.6.0.
+
+== 5.0.0
+
+*November 18, 2017*
+
+[%header]
+|===
+|Software|Version
+|Mule Runtime|4.0.0 and later
+|MongoDB| 3.0 to 3.2
+|===
+
+=== Features
+
+* This version adds the optimization of input variables of some operations for the easier mapping.
+* This version is compatible with Mule 4.0.
+* Added feature for autocomplete the Collection Name field in operations.
+* Added metadata for Documents and Files.
+
+=== See Also
+
+* http://mongodb.github.io/mongo-java-driver/[MongoDB Java Driver]
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

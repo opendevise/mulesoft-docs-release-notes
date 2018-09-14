@@ -1,0 +1,321 @@
+= REST Connect Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: rest-connect-release-notes.adoc
+:keywords: rest, connect, release notes
+
+*June 2018*
+
+*Guide:* xref:exchange::to-deploy-using-rest-connect.adoc[Converting a RAML to a Connector Using REST Connect]
+
+REST Connect quickly converts a RAML 1.0 API specification to a connector, which you can use in a Mule application in the Design Center feature of Anypoint Platform.
+
+== 1.7.0
+
+*August 24, 2018*
+
+This release incorporates the following improvements:
+
+* Uses the latest version of AMF (1.8.0)
+* Adds an annotation that lets users select which security scheme to use for an operation when creating a flow for Smart Connectors
+* Fixes DevKit connectors signature to work properly
+* Improves error messages when Rest Connect fails generating Mule 4 connectors
+* Exchange improvements: Moves error email management to the Rest Connect Service
+
+=== Fixes
+
+* Parameters defined for pass through or custom authentication schemes are now sent correctly
+* Fixed error that caused some generated smart connectors to not be able to be included in a project
+* Fixed some string sanitization issues
+
+== 1.6.2
+
+*August 6, 2018*
+
+Fixes:
+
+* Types defined using XML Schemas work properly for Mule 4 Connectors
+
+== 1.6.1
+
+*July 27, 2018*
+
+Fixes:
+
+* Types defined using XML Schemas work properly for Mule 4 Connectors
+
+== 1.6.0
+
+*July 26, 2018*
+
+This release incorporates the following improvements:
+
+* Implemented conversion for OAS 2.0.
+* Updated to AMF Parser v1.7.1.
+* Supporting external files references for JSON and XSD schemas.
+* Supporting inner references for JSON and XSD schemas.
+
+=== Fixes
+
+* Set default base path when the RAML does not provide one.
+* Failing to generate a connector when the API defines a JSON schema using AMF.
+* Failing to resolve a type defined using a trait when using.
+* Failing with duplicated parameters.
+* Failing with elements with the same name within XSD Schemas.
+* Failing when using two security schemes of the same type.
+
+== 1.5.0
+
+*June 28, 2018*
+
+This release adds support for OData Specs, Proxies, and Enums.
+
+=== Fixes
+
+* Fixed string sanitization issues.
+
+== 1.4.1
+
+*May 29, 2018*
+
+This is a HotFix release.
+
+=== Fixes
+
+* Pass-through security scheme header did not work under certain conditions. (RESTC-410)
+
+== 1.4.0
+
+*May 24, 2018*
+
+This release includes support for complex multipart requests containing parts with different types. Additionally, it now supports multilevel objects for sending form URL encoded requests.
+
+=== Fixes
+
+* Added new Resource Loader for AMF parser to support Exchange Modules.
+* Added support for array of arrays in DevKit connectors. (RESTC-405)
+* Added support for invalid base URIs. (RESTC-356)
+* Created JAR files correctly on Windows. (RESTC-330)
+* Encapsulated POJO generation errors.
+* Fixed error generating POJOs on Windows. (RESTC-392)
+* Fixed illegal argument exception. (RESTC-365)
+* Fixed StringOutOfRange exception.
+* Moved to AMF parser 1.3.3.
+* Moved to latest version of Java RAML parser. (RESTC-381)
+* Removed unused Manifest from Smart Connectors JAR.
+* Updated Extensions Maven Plugin version to fix packaging in Windows. (RESTC-393)
+
+== 1.3.3
+
+*April 27, 2018*
+
+This is a HotFix release.
+
+=== Fixes
+
+* Fixed "scopes" parameter in Smart Connectors for OAuth2 Schemes without defined scopes.
+
+== 1.3.2
+
+*April 17, 2018*
+
+This is a HotFix release.
+
+=== Fixes
+
+* Fixed Mule 3 Connectors with several security schemas not being generated.
+
+== 1.3.1
+
+*April 17, 2018*
+
+This is a HotFix release.
+
+=== Fixes
+
+* Fix bug occurring when an OAuth2 scheme had scopes defined.
+* Performance improvement: Building Smart Connector merged security schema only once.
+
+== 1.3.0
+
+*April 13, 2018*
+
+This release includes support for custom security schemes. Connectors will be generated based on security schemes defined in an API specification.
+
+=== Fixes
+
+* Fixed support for securedBy nodes.
+* Fixed several issues of Mule 3 connector generation with a proper string sanitization.
+
+== 1.2.11
+
+*March 1, 2018*
+
+This release fixes a bug.
+
+=== Fixes
+
+* Fixed Pass-through authentication for Mule 3 connectors.
+
+== 1.2.10
+
+*February 29, 2018*
+
+This release fixes a bug.
+
+=== Fixes
+
+* Fixed an issue to use the correct parameter name to make requests.
+
+== 1.2.9
+
+February 23, 2018
+
+This release fixes a bug.
+
+=== Fixes
+
+* Avoid NPE when display name is not present in RAML.
+
+== 1.2.8
+
+February 23, 2018
+
+This release fixes a bug.
+
+=== Fixes
+
+* Added support for Mule 4 Connectors to have a default output type.
+
+== 1.2.7
+
+February 6, 2018
+
+This release fixes a bug.
+
+=== Fixes
+
+* REST Connect v1.2.7 now supports use with the Windows file system.
+
+== 1.2.6
+
+February 1, 2018
+
+This release fixes a bug.
+
+=== Fixes
+
+* Using URL-encoded only inside Smart Connectors.
+
+== 1.2.5
+
+February 1, 2018
+
+This release provides a bug fix.
+
+=== Fixes
+
+* Fixed the media type for a form URL-encoded use case.
+
+== 1.2.4
+
+January 30, 2018
+
+This release provides a bug fix.
+
+=== Fixes
+
+* Removed unsupported modes for Basic Auth and Passthrough.
+
+== 1.2.3
+
+January 25, 2018
+
+REST Connect v1.2.3 provides the following features:
+
+* Added Friendly Name support for operations and parameters by using the operationName and parameterName annotations on the rest-connect library.
+* Added support for OPTIONS and HEAD HTTP verbs.
+
+=== Fixes
+
+* Support for placeholders in the baseUri.
+* Improved error messages for duplicated operations or parameters.
+* Fixed outOfMemoryError when generating certain Mule 3 connectors.
+* Fixed error generating Mule3 connector when the RAML included a dot in its title.
+* Sanitized some property names that could break the build of Mule 3 connectors.
+
+== 1.2.2
+
+December 16, 2017
+
+This release provides a bug fix.
+
+=== Fixes
+
+REST Connect v1.2.2 now supports the PATCH method and properly sends the payload as a JSON rather than as a String.
+
+== 1.2.1
+
+December 16, 2017
+
+Version 1.2.1 supports Java RAML Parser 1.0.16.
+
+== 1.2.0
+
+November 18, 2017
+
+Version 1.2.0 supports the following security schemes defined in RAML v1.0:
+
+ * OAuth2 - Authorization code
+ * Digest authentication
+ * Pass through
+
+== 1.1.0
+
+October 2, 2017
+
+Version 1.1.0 supports creating Mule 3 connectors. When an API specification publishes to Exchange, REST Connect generates two connectors: one for Mule 4 and the other for Mule 3.
+
+=== Version 1.1.0 - Fixes
+
+REST Connect v1.1.0 now generates a connector properly whether a description is present or not.
+In REST Connect v1.0.0, if a description was not provided, REST Connector was unable to generate a connector properly.
+
+== 1.0.0
+
+July 28, 2017
+
+Version 1.0.0 provides the following features:
+
+* Transforms a RAML 1.0 specification into a connector in Design Center.
+* Support for unauthorized requests, basic authentication, and OAuth2 (Client Credentials).
+* Support for query parameters, URI parameters, and headers as input attributes.
+* Support for metadata defined as RAML datatypes, XML schemas, or JSON schemas.
+* Inference of operation names given their parameters.
+
+=== Known issues
+
+* A RAML with the following type definition is not supported:
++
+[source,text,linenums]
+----
+types:
+  RecursiveType:
+    type: object
+    properties:
+      aString:
+        type: RecursiveType
+        description: This modifies the reference and causes a stack overflow error.
+----
++
+* No support for connectivity testing in the configuration for Design Center.
+* REST Connect doesn’t generate friendly names for input attributes.
+* Connector for Mule 3.x is not supported.
+* Custom SSL certificates are not supported.
+
+== See Also
+
+* xref:exchange::index.adoc[Anypoint Exchange Documentation]
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

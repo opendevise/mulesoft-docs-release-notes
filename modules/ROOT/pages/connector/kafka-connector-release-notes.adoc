@@ -1,0 +1,159 @@
+= Apache Kafka Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: kafka-connector-release-notes.adoc
+:keywords: apache kafka connector, user guide, apachekafka, apache kafka, release notes
+
+*October 2017*
+
+_Select_
+
+The Anypoint Connector for Kafka allows you to connect to the Apache Kafka messaging system over Mule runtime, enabling seamless integration between your applications and an Apache Kafka cluster.
+
+Guide: xref:3.9@mule-runtime::kafka-connector.adoc[Kafka Connector] +
+Reference: https://mulesoft.github.io/mule-kafka-connector/[Mule Apache Kafka Connector]
+
+== 2.1.0
+
+*October 27, 2017*
+
+New features release.
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime | Mule Runtime Enterprise Edition 3.7.0 and later
+|Apache Kafka | 0.10.2.0
+|===
+
+=== Features
+
+* Added topic-offset initial configuration to the consumer. New optional field "partitionOffsetsMEL (Partition Offsets MEL) has been added to the consumer source. You have to provide a MEL expression that evaluates to a `Map<String, String>` that has a partition number as key and offset for that partition as value. For example, `#[["0":"3", "1": "4"]]` means that the consumer starts to consume from partition 0 starting at offset 3 and from partition 1 starting at offset 4.
+* Added inboundProperties containing information for the topic, partition, offset, and key to a message returned by consumer.
+
+== 2.0.1
+
+*August 25, 2017*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime | Mule Runtime Enterprise Edition 3.7.0 and later
+|Apache Kafka | 0.10.2.0
+|===
+
+=== Fixed in this Release
+
+* Too many open files open Error. In  previous versions when using an external property location for producer properties, a `Too many files open` error appeared when the same number of requests were sent as the file limit on the machine. Now, it works as expected.
+* Kafka client exceptions lost by Kafka consumer operation. In previous versions, the Kafka client exceptions were lost and so the errors were not being reported back to the connector, and not reporting a `not consumed message`. Now the connector reports the error as expected.
+* Unhandled exceptions when using the Kafka Connector in a synchronous flow. When using the connector in synchornous flow , exceptions were not handled and the flow didn't go into the Exception Strategy. Now the exceptions are handled and the flow goes to the Exception Strategy as expected.
+
+== 2.0.0
+
+*June 30, 2017*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime | Mule Runtime Enterprise Edition 3.7.0 and later
+|Apache Kafka | 0.10.2.0
+|===
+
+=== Features
+
+* Upgraded Kafka client to be compatible with 0.10.2.0 version of server.
+* Supports access to properties files from outside of a Mule application.
+
+[[v110]]
+== 1.1.0
+
+*October 27, 2017*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime | Mule Runtime Enterprise Edition 3.7.0 and later
+|Apache Kafka | 0.9.0.0
+|===
+
+=== Features
+
+* Added topic-offset initial configuration to consumer. New optional field partitionOffsetsMEL (Partition Offsets MEL) has been added to the consumer source. You have to provide a MEL expression that evaluates to a `Map<String, String>` that has a partition number as the key and offset for that partition as value. For example, `#[["0":"3", "1": "4"]]`  means that the consumer starts to consume from partition 0 starting at offset 3 and from partition 1 starting at offset 4.
+* Added inboundProperties containing information regarding the topic, partition, offset, and key to message returned by a consumer.
+
+== 1.0.2
+
+*March 31, 2017*
+
+New features release.
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime | Mule Runtime Enterprise Edition 3.7.0 and later
+|Apache Kafka | 0.9.0.0
+|===
+
+=== Fixed in this Release
+
+* Producer operation was not synchronous so in case of exception that was raised, now it works.
+* Producer was not reusing connection which makes it slow, now there is an option Reuse Producer at operation level and based on that it reuses it or not.
+
+== 1.0.1
+
+*July 11, 2016*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime | Mule Runtime Enterprise Edition 3.7.0 and later
+|Apache Kafka | 0.9.0.0
+|===
+
+=== Features
+
+* Produce message - Operation enabling you to push a key/message pair to a topic.
+* Consume messages - Inbound endpoint for consuming messages from a topic.
+
+=== Fixed in this Release
+
+* Consumer was consuming messages from the beginning with every restart of the app. Now it is consuming from last consumed messages even if you restart the app.
+* Consumer was failing when consuming from topoic with more than one partition because of concurrent access. Now it is working for more than one partition.
+
+== 1.0.0
+
+*June 22, 2016*
+
+First release.
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime | Mule Runtime Enterprise Edition 3.7.0 and later
+|Apache Kafka | 0.9.0.0
+|===
+
+=== Features
+
+* Produce message - Operation enabling you to push a key/message pair to a topic.
+* Consume messages - Inbound endpoint for consuming messages from a topic.
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum].
+* https://support.mulesoft.com[Contact MuleSoft Support].

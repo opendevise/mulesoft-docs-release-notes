@@ -1,0 +1,63 @@
+= Anypoint Platform Private Cloud Edition 1.5.2 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: anypoint-private-cloud-1.5.2-release-notes.adoc
+
+**April 7, 2017**
+
+== Software Compatibility
+
+[%header,cols="2*a"]
+|===
+| Compatible with |Version
+| Mule runtime | 3.7.x - 3.8.x
+| API Gateway Runtime | 2.1.x - 2.2.x
+| Runtime Manager Agent | 1.5.2 - 1.5.3
+| Infrastructure providers |
+* VMWare
+* Bare Metal
+| Compatible browsers when running the installer |
+* Firefox (latest version)
+* Chrome (latest version)
+* Safari (latest version)
+|===
+
+
+== Feature Enhancements
+
+This release includes the following feature enhancement:
+
+* **Added support for RedHat SELinux**: Anypoint Platform Private Cloud Edition supports any default SELinux profile running in strict mode. If your environment uses a custom profile, it must provide an unconstrained user context when running the installer. Review any custom profiles with your customer support representative.
+
+== Fixed Issues
+
+* Fixed issue that improves the upgrade process from version 1.5.0
+* Fixed issue where administrator accounts were being disabled during upgrade
+* Fixed issue related to log viewer caching
+* Fixed SMTP issues related to EHLO validation
+* Fixed issue where SMTP parameters should not be sent as multi-part
+* Fixed issue to sanitized disclaimer to avoid XSS and unwanted HTML tags
+* Improved error messages when configuring disclaimer
+
+== Known Issues
+
+[%header%autowidth.spread]
+|===
+|Issue ID |Description |Workaround
+|N/A | Only LVM2 versions 2.02.166-1.el7_3.5 and earlier are supported. Later versions of LVM2 are not supported.
+| AOP-1151 | The `smtp-configuration` and `platform-configuration` Kubernetes secrets are backed up automatically, but are not restored | After a performing a system restore, you must reconfigure the SMTP and DNS configuration from the platfom.
+| N/A | The `sudo ./update` command may display an error indicating that no account migration is needed. | You can safely ignore this error.
+| AOP-1135 | SMTP configuration does not allow empty username/password |
+| AOP-1056 | Configured plugins might not be listed when PCF is enabled |
+| CHHYBRID-2083 | The link to view an application’s proxy in API Manager will redirect to Runtime Manager and display an error. The application is running but the link is incorrect. |
+|AOP-342 | LDAP group mapping not working with uppercase group names |Use role group mapping with LDAP group names in lowercase.
+|AOP-651 |`./install` never exits after install completes |After the installation finishes, close the installer manually with Cntrl-C.
+|AOP-660 |OpsCenter 'Console' disconnects after a while |Try reconnecting to the console after it disconnects.
+|AOP-942 |OpsCenter is logging "harmless" error messages every 2 sec|
+|AOP-1024 |Migration script required to migrate from version 1.5.0 to 1.5.1 |
+|CHHYBRID-2447 | Concurrent deployment in the same cluster fails |Avoid concurrency when deploying in the same clusters or retry deploying until it succeeds.
+|CHHYBRID-2572 | On the UI, when stopping an application, the reported status is not updated. |Refresh the screen.
+|CS-3005 | OpenAM configuration must be set using the API, using the UI form leaves the configuration incomplete. |Use the API directly instead of the UI.
+|EXCHANGE-1155 |Terms Group is not collapsed by default |
+|===

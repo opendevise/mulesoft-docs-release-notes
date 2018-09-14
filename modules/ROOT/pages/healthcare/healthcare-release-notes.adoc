@@ -1,0 +1,16 @@
+= Healthcare Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: healthcare-release-notes.adoc
+
+The Mule Healthcare toolkit allows you to send and receive HL7 messages over MLLP (using the HL7 connector) and other transport protocols (and corresponding connectors) supported by Mule, such as HTTP.
+
+Documentation:
+
+* xref:connector/hl7-connector-release-notes.adoc[HL7 Connector Release Notes]
+* xref:connector/hl7-mllp-connector-release-notes.adoc[HL7 MLLP Connector Release Notes]
+
+See Also:
+
+* xref:3.0@healthcare-toolkit::index.adoc[Healthcare Toolkit]

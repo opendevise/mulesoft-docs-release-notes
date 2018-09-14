@@ -1,0 +1,50 @@
+= Sockets Connector Release Notes for Mule 4
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: connector-sockets.adoc
+:keywords: mule, sockets, connector, release notes
+
+*March 2018*
+
+== 1.1.1
+
+*Mar 14, 2018*
+
+=== Min Mule Version
+
+*Mule 4.0.0*
+
+=== New Features and Enhancements
+
+* Metadata for the Attributes of this connector is more accurate and now tells which fields are nullable.
+
+=== Fixed Issues
+
+* Connectors don't communicate correctly if their POJOs properties are nullable or not. (MULE-14701)
+
+== 1.1.0
+
+*Jan 22, 2018*
+
+=== Min Mule Version
+
+*Mule 4.1.0*
+
+=== Fixed Issues
+
+* Upgrade Guava to 23.5. (MULE-14215)
+* Make sure all Serializable classes have UUID. (MULE-13670)
+
+== 1.0.0
+
+*Nov 13, 2017*
+
+=== Min Mule Version
+
+*Mule 4.0.0*
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

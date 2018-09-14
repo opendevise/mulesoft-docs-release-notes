@@ -1,0 +1,32 @@
+= Microsoft Dynamics AX 2012 Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: ms-dynamics-ax-connector-release-notes-mule-4.adoc
+:keywords: release notes, connectors, ax, dynamics
+
+*March 2018*
+
+_Select_
+
+== 2.0.0
+
+*March 23, 2018*
+
+New release of the Microsoft Dynamics Ax version.
+
+Supported operations:
+
+* Query Table
+* Static Query
+* Invoke Document Service Operation
+
+=== Compatibility
+
+* Mule Runtime 4.1 and later
+* Anypoint Studio 7 and later
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

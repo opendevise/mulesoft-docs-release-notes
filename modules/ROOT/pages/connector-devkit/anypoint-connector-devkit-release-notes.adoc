@@ -1,0 +1,36 @@
+= Anypoint Connector DevKit Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: anypoint-connector-devkit-release-notes.adoc
+:keywords: release notes
+
+The xref:3.8@connector-devkit::index.adoc[Anypoint Connector DevKit] provides the following features to help you develop or maintain a connector:
+
+* Visual design and implementation using Anypoint Studio with an Eclipse-oriented interface that helps simplify and speed up development
+* Maven support for development and building
+* Connector development and packaging tools
+* Authentication support for multiple types of authentication like OAuth and Basic Authentication
+* DataSense support to acquire metadata from endpoints
+* Extensive testing capability
+* Examples, training, and support to simplify startup and solve issues
+* Provides Batch, query pagination, and DataSense Query Language support
+
+== Release Notes
+
+* xref:connector-devkit/anypoint-connector-devkit-3.9.x-release-notes.adoc[Anypoint Connector DevKit 3.9.0 and Newer]
+* xref:connector-devkit/anypoint-connector-devkit-3.8.0-release-notes.adoc[Anypoint Connector DevKit 3.8.0 and Newer]
+* xref:connector/connector-migration-guide-mule-3.6-to-3.7.adoc[Connector Migration Guide - Mule 3.6 to 3.7]
+* xref:connector/connector-migration-guide-mule-3.5-to-3.6.adoc[Connector Migration Guide - Mule 3.5 to 3.6]
+* xref:connector-devkit/anypoint-connector-devkit-3.7.2-release-notes.adoc[Anypoint Connector DevKit 3.7.2]
+* xref:connector-devkit/anypoint-connector-devkit-3.7.1-release-notes.adoc[Anypoint Connector DevKit 3.7.1]
+* xref:connector-devkit/anypoint-connector-devkit-3.7.0-release-notes.adoc[Anypoint Connector DevKit 3.7.0]
+* xref:connector-devkit/anypoint-connector-devkit-3.6.1.1-release-notes.adoc[Anypoint Connector DevKit 3.6.1.1]
+* xref:connector-devkit/anypoint-connector-devkit-3.6.1-release-notes.adoc[Anypoint Connector DevKit 3.6.1]
+* xref:connector-devkit/anypoint-connector-devkit-3.6.0-release-notes.adoc[Anypoint Connector DevKit 3.6.0]
+* xref:connector-devkit/anypoint-connector-devkit-3.5.0-release-notes.adoc[Anypoint Connector DevKit 3.5.0]
+* xref:connector-devkit/anypoint-connector-devkit-3.5.2-release-notes.adoc[Anypoint Connector DevKit 3.5.2]
+
+== See Also
+
+xref:3.8@connector-devkit::index.adoc[Anypoint Connector DevKit]

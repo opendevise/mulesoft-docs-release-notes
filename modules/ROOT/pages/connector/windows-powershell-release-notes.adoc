@@ -1,0 +1,53 @@
+= Powershell Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: windows-powershell-release-notes.adoc
+:keywords: release notes, powershell, ps
+
+*June 2016*
+
+_Select_
+
+Microsoft Windows PowerShell connector.
+
+*Guides:*
+
+* xref:3.9@mule-runtime::windows-powershell-connector-guide.adoc[Powershell Connector]
+* xref:3.9@mule-runtime::windows-gateway-services-guide.adoc[Windows Gateway Services Guide]
+* xref:connector/windows-gateway-services-release-notes.adoc[Windows Gateway Services Release Notes]
+
+*Important*: Install the xref:3.8@mule-runtime::windows-gateway-services-guide.adoc[Windows Gateway Service] first before installing and configuring Powershell connector.
+
+== 1.6.1
+
+*June 3, 2016*
+
+Included in this release:
+
+* Fixed encoding issue with long script parameters.
+
+== 1.6.0
+
+*May 11, 2016*
+
+Included in this release:
+
+* Allowing to use 'classpath:' to define external script location.
+* Fixed encoding issues while loading external script.
+* Fixed encoding issues when sending script parameters to Windows Gateway Services.
+* Added 'test connection' button when configuring connection settings.
+* Stability & reliability improvements.
+
+== 1.5.1
+
+*March 21, 2016*
+
+Included in this release:
+
+* Supporting BOM encoding within external script files.
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

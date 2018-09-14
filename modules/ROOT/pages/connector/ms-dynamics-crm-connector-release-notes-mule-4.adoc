@@ -1,0 +1,35 @@
+= Microsoft Dynamics CRM Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: ms-dynamics-crm-connector-release-notes-mule-4.adoc
+:keywords: release notes, dynamics, crm, connector
+
+*April 2018*
+
+_Select_
+
+The Microsoft Dynamics Customer Relationship Management (CRM) connector lets you access the Microsoft Dynamics CRM SOAP Organization Service. You can add this connector to an Anypoint Studio flow and in Design Center.
+
+== 3.0.0
+
+*April 10, 2018*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Application/Service |Version
+|Mule Runtime |Mule Enterprise Edition 4.0.0 and 4.1.0 and later
+|Anypoint Studio |Only works with Studio 7.0.0 and later
+|Dynamics CRM version |2013, 2015, 2016
+|===
+
+=== Features
+
+Same as 2.9.1 (last release)
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

@@ -1,0 +1,62 @@
+= Anypoint Connector DevKit 3.7.0 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: anypoint-connector-devkit-3.7.0-release-notes.adoc
+:keywords: devkit, release notes
+
+*July 7, 2015*
+
+== Compatibility
+
+[%header,cols="2*"]
+|===
+a|
+Software
+a|
+Version
+|Mule ESB Runtime |3.7.0 and newer
+|Anypoint Studio |June 2015
+|===
+
+== Features
+
+This release provides these features:
+
+[%header,cols="4*"]
+|===
+|Feature |Description |JIRA |Documentation Impact
+|*SOAP Connect For DevKit* |New way to create WSDL based connector, adds: +
+@WsdlProvider +
+@WsdlServiceEndpoint +
+@WsdlServiceRetriever  |DEVKIT-1527 a|
+New: xref:3.7@connector-devkit::creating-a-soap-connector.adoc[Creating a SOAP Connector]
+
+Updated: xref:3.7@connector-devkit::annotation-reference.adoc[Annotation Reference]
+
+|*SOAP Connect UI Plugin* |DevKit plugin support for connectors |DEVKITP-369 |New: xref:3.7@connector-devkit::creating-a-soap-connector.adoc[Creating a SOAP Connector]
+|*Multi-Level DataSense Keys* |Support for multiple level DataSense keys |DEVKIT-1756, DEVKIT-1614 |New: xref:3.7@connector-devkit::multiple-level-datasense-support.adoc[Multiple Level DataSense Support]
+|*Support for MimeTypes* |Supports MIME types for returned content. Adds @UserDefinedMetaData |DEVKIT-1765 a|
+New: xref:3.7@connector-devkit::mime-type-and-encoding.adoc[MIME Type and Encoding]
+
+Updated: xref:3.7@connector-devkit::annotation-reference.adoc[Annotation Reference]
+
+|*Support for TestConnectivity on ConnectionManagement* |Support for TestConnectivity on ConnectionManagement |DEVKIT-1513 |Updated: xref:3.7@connector-devkit::annotation-reference.adoc[Annotation Reference]
+|*@Configurable deprecated as part of the Connector* |@Configurable deprecated in @Connector context |DEVKIT-1794 |Updated:  xref:3.7@connector-devkit::annotation-reference.adoc[Annotation Reference]
+|*DevKit Plugin Maven Settings Config* |A new step in the wizard for creating a connector configures Maven related properties.   +
+ *Note* : This is available for beta only. |  a|
+Updated: xref:3.7@connector-devkit::creating-a-java-sdk-based-connector.adoc[Creating a Java SDK-Based Connector]
+
+New: xref:3.7@connector-devkit::creating-a-soap-connector.adoc[Creating a SOAP Connector]
+|===
+
+== Known Issues
+
+None.
+
+== See Also
+
+* xref:mule-runtime/mule-esb-3.7.0-release-notes.adoc[Mule ESB 3.7.0 Release Notes]
+* xref:studio/anypoint-studio-june-2015-with-3.7.0-runtime-release-notes.adoc[Anypoint Studio June 2015 with 3.7.0 Runtime Release Notes]
+* Access MuleSoft’s http://forums.mulesoft.com[Forum] to pose questions and get help from Mule’s broad community of users.
+* To access MuleSoft’s expert support team, https://www.mulesoft.com/support-and-services/mule-esb-support-license-subscription[subscribe] to Mule ESB Enterprise and log in to MuleSoft’s http://www.mulesoft.com/support-login[Customer Portal].

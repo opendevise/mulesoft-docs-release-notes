@@ -1,0 +1,211 @@
+= Amazon EC2 Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: amazon-ec2-connector-release-notes.adoc
+:keywords: release notes, amazon ec2, ec2, connector
+
+*July 2017*
+
+_Select_
+
+Amazon Elastic Compute Cloud (Amazon EC2) provides scalable computing capacity in the Amazon Web Services (AWS)
+cloud.The Anypoint Connector for Amazon EC2 provides connectivity to the Amazon Elastic Compute Cloud (Amazon EC2) API, enabling you to interface with Amazon EC2 to launch as many or as few virtual servers as you need, configure security and networking, and manage storage.
+
+*Connector Guide*: xref:3.9@mule-runtime::amazon-ec2-connector.adoc[Amazon EC2 Connector]
+
+Starting with v.1.0.0, the EC2 connector is licensed commercially with Anypoint Platform as with other Select connectors.
+
+== Installing this Connector
+
+. In Anypoint Studio, click the Exchange icon in the Studio task bar.
+. Click Login in Anypoint Exchange.
+. Search for the connector and click Install.
+. Follow the prompts to install the connector.
+
+== 1.0.0
+
+*July 03, 2017*
+
+Release notes for version 1.0.0 of the Amazon EC2 connector.
+
+=== Compatibility
+
+The Amazon EC2 Connector is compatible with:
+
+|===
+|Application/Service|Version
+|Mule Runtime|3.8.x or higher
+|Amazon Java SDK for EC2|v1.11.134
+|Anypoint Studio|5.2 or higher
+|===
+
+=== Features
+
+* Built with Anypoint Devkit v3.9.0
+* Built with AWS SDK v1.11.134
+* Support for Temporary Credentials - A checkbox named *Try Default AWS Credentials Provider Chain* has been added to the Global Element configuration. If selected, the connector will first try to obtain the credentials from an AWS environment.
+* Support for Retry Policy - The connector performs a maximum of 10 retries when a request fails due to server-side throttling or dropped connection.
+* The following operations are supported:
+** AllocateAddress
+** AssignIpv6Addresses
+** AssignPrivateIpAddresses
+** AssociateAddress
+** AssociateDhcpOptions
+** AssociateIamInstanceProfile
+** AssociateRouteTable
+** AttachInternetGateway
+** AttachNetworkInterface
+** AttachVolume
+** AttachVpnGateway
+** AuthorizeSecurityGroupEgress EC2-VPC only
+** AuthorizeSecurityGroupIngress
+** BundleInstance
+** CancelBundleTask
+** CancelConversionTask
+** CancelExportTask
+** CancelSpotInstanceRequests
+** ConfirmProductInstance
+** CopySnapshot
+** CreateCustomerGateway
+** CreateDhcpOptions
+** CreateImage
+** CreateInstanceExportTask
+** CreateInternetGateway
+** CreateKeyPair
+** CreateNetworkAcl
+** CreateNetworkAclEntry
+** CreateNetworkInterface
+** CreatePlacementGroup
+** CreateRoute
+** CreateRouteTable
+** CreateSecurityGroup
+** CreateSnapshot
+** CreateSpotDatafeedSubscription
+** CreateSubnet
+** CreateTags
+** CreateVolume
+** CreateVpc
+** CreateVpnConnection
+** CreateVpnGateway
+** DeleteCustomerGateway
+** DeleteDhcpOptions
+** DeleteInternetGateway
+** DeleteKeyPair
+** DeleteNetworkAcl
+** DeleteNetworkAclEntry
+** DeleteNetworkInterface
+** DeletePlacementGroup
+** DeleteRoute
+** DeleteRouteTable
+** DeleteSecurityGroup
+** DeleteSnapshot
+** DeleteSpotDatafeedSubscription
+** DeleteSubnet
+** DeleteTags
+** DeleteVolume
+** DeleteVpc
+** DeleteVpnConnection
+** DeleteVpnGateway
+** DeregisterImage
+** DescribeAddresses
+** DescribeAvailabilityZones
+** DescribeBundleTasks
+** DescribeConversionTasks
+** DescribeCustomerGateways
+** DescribeDhcpOptions
+** DescribeExportTasks
+** DescribeIamInstanceProfileAssociations
+** DescribeImageAttribute
+** DescribeImages
+** DescribeInstanceAttribute
+** DescribeInstances
+** DescribeInstanceStatus
+** DescribeInternetGateways
+** DescribeKeyPairs
+** DescribeMovingAddresses
+** DescribeNetworkAcls
+** DescribeNetworkInterfaceAttribute
+** DescribeNetworkInterfaces
+** DescribePlacementGroups
+** DescribeRegions
+** DescribeReservedInstances
+** DescribeReservedInstancesOfferings
+** DescribeRouteTables
+** DescribeSecurityGroupReferences EC2-VPC only
+** DescribeSecurityGroups
+** DescribeSnapshotAttribute
+** DescribeSnapshots
+** DescribeSpotDatafeedSubscription
+** DescribeSpotInstanceRequests
+** DescribeSpotPriceHistory
+** DescribeStaleSecurityGroups EC2-VPC only
+** DescribeSubnets
+** DescribeTags
+** DescribeVolumeAttribute
+** DescribeVolumes
+** DescribeVolumesModifications
+** DescribeVolumeStatus
+** DescribeVpcs
+** DescribeVpnConnections
+** DescribeVpnGateways
+** DetachInternetGateway
+** DetachNetworkInterface
+** DetachVolume
+** DetachVpnGateway
+** DisassociateAddress
+** DisassociateIamInstanceProfile
+** DisassociateRouteTable
+** EnableVolumeIO
+** GetConsoleOutput
+** GetConsoleScreenshot
+** GetPasswordData
+** ImportInstance
+** ImportKeyPair
+** ImportVolume
+** ModifyImageAttribute
+** ModifyInstanceAttribute
+** ModifyNetworkInterfaceAttribute
+** ModifySnapshotAttribute
+** ModifyVolume
+** ModifyVolumeAttribute
+** MonitorInstances
+** MoveAddressToVpc
+** PurchaseReservedInstancesOffering
+** RebootInstances
+** ReleaseAddress
+** ReplaceIamInstanceProfileAssociation
+** ReplaceNetworkAclAssociation
+** ReplaceNetworkAclEntry
+** ReplaceRoute
+** ReplaceRouteTableAssociation
+** ReportInstanceStatus
+** RequestSpotInstances
+** ResetImageAttribute
+** ResetInstanceAttribute
+** ResetNetworkInterfaceAttribute
+** ResetSnapshotAttribute
+** RestoreAddressToClassic
+** RevokeSecurityGroupEgress EC2-VPC only
+** RevokeSecurityGroupIngress
+** RunInstances
+** StartInstances
+** StopInstances
+** TerminateInstances
+** UnassignIpv6Addresses
+** UnassignPrivateIpAddresses
+** UnmonitorInstances
+
+=== Fixed in this Release
+
+Initial version.
+
+=== Known Issues
+
+None.
+
+== See Also
+
+* Read more about the xref:3.9@mule-runtime::amazon-ec2-connector.adoc[Amazon EC2 Connector], including examples of how to use it.
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

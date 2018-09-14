@@ -1,0 +1,88 @@
+= File Connector Release Notes for Mule 4
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: connector-file.adoc
+:keywords: mule, File, connector, runtime, release notes
+
+*Aug 2018*
+
+== 1.2.0
+
+*Aug 14, 2018*
+
+=== Min Mule Version
+
+*Mule 4.1.0*
+
+=== New Features and Enhancements
+
+* You can make use of `timeBetweenSizeCheck` to prevent the connector from processing files while they are being written.
+
+=== Fixed Issues
+
+* File getting partial files. (MULE-14881)
+* `file:listener` does not delete source file when moving to a file that already exists. (MULE-15030)
+* File Polling Source does not communicate their Attributes correctly. (MULE-15351)
+* When File connector listeners are configured to move to a directory, auto-delete deletes files but does not move them. (MULE-15448)
+* Encoding parameter should be removed from the write operation. (MULE-15503)
+
+== 1.1.3
+
+*May 7, 2018*
+
+=== Min Mule Version
+
+*Mule 4.1.0*
+
+=== New Features and Enhancements
+
+* Fixed an issue that happened when using a filter by filenamePattern, failing to search files recursively in folders.
+
+=== Fixed Issues
+
+* File Connector does not check for files recursively if a filenamePattern is given. (MULE-14863)
+
+
+== 1.1.2
+
+*Mar 14, 2018*
+
+=== Min Mule Version
+
+*Mule 4.1.0*
+
+=== Fixed Issues
+
+* Connectors doesn't communicate correctly if their POJOs properties are nulleable or not. (MULE-14701)
+
+== 1.1.1
+
+*Feb 2, 2018*
+
+=== Fixed Issues
+
+* file:listener has undescriptive display name. (MULE-14584)
+
+== 1.1.0
+
+*Jan 19, 2018*
+
+=== New Features and Enhancements
+
+This release includes the following enhancements, changes, and fixes:
+
+* Added a message source that automatically polls for new files, while handling clustering, idempotency, post actions and watermark automatically.
+
+=== Upgrade Requirements
+
+Mule 4.1
+
+=== Fixed Issues
+
+* Support processing files in all nodes of the cluster as we did in 3.x. (MULE-14128)
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

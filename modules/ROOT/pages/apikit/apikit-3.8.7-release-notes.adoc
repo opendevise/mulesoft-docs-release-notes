@@ -1,0 +1,69 @@
+= APIkit 3.8.7 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: apikit-3.8.7-release-notes.adoc
+
+*May 29, 2018*
+
+There are no new features in this version. There are just a few enhancements and bug fixes.
+
+APIkit now includes the latest API Console 3.0.27.
+
+== Compatibility
+
+* Mule Runtime 3.8.x
+* Anypoint Studio 6.4.x
+* Java Parser RAML 1.0 v1.0.22
+* Java Parser RAML 0.8 v0.8.24
+* API Console 3.0.27
+
+== Fixed in this Release
+
+* API error when receiving "Accept" Request-header - '*'. (APIKIT-1230)
+* APIkit changed behavior for HTTP payloads. (APIKIT-1157)
+* APIkit Console not handling RAML includes with spaces in a filename. (APIKIT-1183)
+* APIkit RAML Validation is failing to invalidate a body with only a blank node. (APIKIT-1232)
+* APIkit router fails when converting text/xml to application/xml. (APIKIT-1159)
+* APIkit router won't work if HTTP listener has BaseUriParameter. (APIKIT-1233)
+* APIkit unable to parse and validate JSON against schema referenced using $ref at design time. (APIKIT-1225)
+* Arrays not working in headers. (APIKIT-1086)
+* date-only accepts values outside of RAML specification. (APIKIT-1193)
+* ErrorNode cannot be cast to KeyValueNode. (APIKIT-1185)
+* Issue with APIKit console and array query param. (APIKIT-1180)
+* java.lang.ClassCastException: org.mule.transport.NullPayload cannot be cast to java.util.Map. (APIKIT-1223)
+* NPE in ApikitResponseTransformer. (APIKIT-1145)
+* Performance issue: APIKit introduces about 33% TPS degradation. (APIKIT-1184)
+* Performance overhead using APIkit router. (APIKIT-1146)
+* The body doesn't get validated if the body is empty. (APIKIT-1235)
+* The patch does not honor the encoding set. (APIKIT-1195)
+* Unable to generate flows with API Designer when the library is applied using "uses" in fragment type of DataType. (APIKIT-1132)
+* Update console to the last version in 3.x. (APIKIT-1187)
+* Upgrade Jackson library to 2.9.5. (APIKIT-1238)
+* When validating JSON against RAML, there is no obvious way to identify the failing element. (APIKIT-1222)
+* Wrong Date Only Validation. (APIKIT-1186)
+
+https://github.com/raml-org/raml-java-parser[GitHub RAML Java Parser Issues Fixed in this Release]
+
+* Datetime with RFC-3339 validated invalid examples. #470
+* Disabling Default Typing in ObjectMappers. #473
+* Error merging media types from resourceType. #501
+* Global context is not taken into account when parsing libraries. #457
+* Improve error message when validation fails due to maxLength. #476
+* Incorrect merging of properties when extending from a type. #488
+* Invalid reference when using a resourceType fragment that implements a trait which uses a type defined in the root. #454
+* JSON schema validation error is not precise when using a not normalized URI in a $ref. #474
+* NPE when parsing RAML files containing included fragments that reference types defined in the root raml. #453
+* RAML parser validates additionalProperties before explicit ones. #468
+* StackOverflowError parsing RAML with recursion. #460
+* Unexpected key error when having global mediaType. #498
+* Upgrade Jackson to 2.9.5. #484
+* Validate method in ExampleValidationPhase returns no error when validating a blank or empty String against an object. #491
+* validate() in TypeDeclaration doesn't work as expected when validating a blank space. #485
+* Validation fails when using "uses" inside a DataType fragment. #444
+
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum].
+* https://support.mulesoft.com[Contact MuleSoft Support].

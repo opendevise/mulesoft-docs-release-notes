@@ -1,0 +1,51 @@
+= Twilio Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: twilio-connector-release-notes.adoc
+:keywords: release notes, twilio, connector
+
+*March 2017*
+
+_Select_
+
+Twilio is an API cloud provider for voice and SMS communications for customers who want to use phone services as marketing leverage. The Mule Twilio Connector allows users to interact with the Twilio API within the Mule Runtime.
+
+xref:3.9@mule-runtime::twilio-connector.adoc[Twilio Connector]
+
+== 2.0.0
+
+*March 28, 2017*
+
+MuleSoft now maintains this connector under the https://www.mulesoft.com/legal/versioning-back-support-policy#anypoint-connectors[_Select_]support policy.
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime |3.8.0 and later
+|Twilio REST API |2010-04-01
+|===
+
+=== Migrating from Older Versions
+
+This version of the connector is not compatible with v1.0.0. To migrate your applications using the older version, remove all your current *Twilio* endpoints and replace them with ones from the latest version.
+
+=== Features
+
+The following message operations are supported:
+
+* Get Media
+* Get Media List
+* Get Message
+* Get Message List
+* Delete Media
+* Delete Message
+* Redact Message
+* Send Message
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

@@ -1,0 +1,29 @@
+= APIkit Mule4-1.1.0 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: apikit-4.1-release-notes.adoc
+
+*January 19, 2018*
+
+== What's New
+
+APIkit for SOAP
+
+== Compatibility
+
+* Mule Runtime 4.1.0
+* Anypoint Studio 7.1.0
+* Java Parser RAML 1.0 v1.0.17
+* Java Parser RAML 0.8 v0.8.21
+* API Console 4.2.0
+
+== Fixed in the Release
+
+* APIkit config does not resolve RAMLs defined as a URL. (APIKIT-1091)
+* Field localAddress added to APIkit metadata. (APIKIT-1107)
+* Resolve {version} at resource level. (APIKIT-754)
+* Implement a custom ResourceLoader to manage Exchange Modules. (APIKIT-1099)
+* If query param starts with asterisk, surround it with quotes when validating. (APIKIT-1013)
+* API Console does not work with XML schema. (APIKIT-1131)
+* Performance overhead using APIkit router. (APIKIT-1146)

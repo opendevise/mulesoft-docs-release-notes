@@ -1,0 +1,83 @@
+= Anypoint Exchange Private Cloud Edition Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: exchange-on-prem-release-notes.adoc
+:keywords: release notes, exchange, on-premise
+
+*October, 2016*
+
+Anypoint Exchange Private Cloud Edition takes the power of cloud-based Anypoint Exchange and enables companies to manage Exchange from their site.
+
+[IMPORTANT]
+====
+Because this is a private version of Anypoint Exchange, you cannot see the public content available in the Cloud Version.  Accessing Exchange from Anypoint Studio does not work with the Private Cloud Edition Exchange. When you first start the customer-managed version of Exchange, no content displays:
+
+image::exchange/exchange-on-prem-starting-screen.png[]
+====
+
+== System Requirements
+
+See "System Requirements" in the xref:pce/anypoint-on-premise-1.1.0-release-notes.adoc[Anypoint Platform Private Cloud Edition Release Notes].
+
+== 1.7.1
+
+This release provides new features and bug fixes for the Exchange on-premises release.
+
+=== Features
+
+The following features comprise changes that occurred between the previous Anypoint Exchange
+On-Premises version 1.4.1 (May 2015) and the currently release:
+
+. Content ratings
+. Objects can now have the author's name and photo
+. xref:exchange::exchange1.adoc#soap-apis[SOAP API (WSDL) support]
+. Item type colors
+. Auto populating URI for new items
+. Auto resizing description container for editing
+. Access Management Organization ID
+. xref:exchange::index.adoc#business-groups-in-private-exchanges[Business groups]
+. Artifact states
+. Transition flows
+. xref:exchange::index.adoc#enabling-exchange-permissions[Exchange roles]
+. xref:exchange::index.adoc#install-private-exchange-connector-in-studio[Private Exchange connectors can be installed in Studio]
+. xref:exchange::index.adoc#audit-logs[Audit log of all actions in a private Exchange]
+. xref:exchange::index.adoc#rest-apis[The RAMLs label was changed to REST APIs]
+. xref:exchange::index.adoc#soap-apis[The WSDLs label was changed to SOAP APIs]
+. Requires Studio 4.2.0 and newer
+
+=== Changed Features
+
+The following features changed between versions 1.4.1 and 1.7.1:
+
+. Removed video caption field until a video URL is added.
+. Removed `/mulesoft` from a path.
+. Removed object amount limitation for private Exchanges.
+. Removed editing types within an organization.
+. Editing terms are now only available to Admin roles.
+
+=== Current Differences with the Cloud Version
+
+At the time of this release notes, the Anypoint Exchange Cloud version is at 1.7.0. The only
+change in the on-premises beta is the new REST APIs and SOAP APIs labels.
+
+=== Known Issues
+
+None.
+
+== 1.4.1
+
+This Anypoint Exchange release includes the following new features and functionality:
+
+* Create and Publish private content: Choose between a variety of content types (templates, examples, connectors, and more) to add, describe your asset, and publish it in your organization’s exchange. Only the people you choose may have access to create and publish new content.
+
+* Search for Content: Users within your organization can find the internally published content (as well as MuleSoft’s public content), increasing the chance of reuse and avoiding redundant work. Exchange Admins can customize search filters to make internal content easier to find.
+
+=== Known Issues
+
+To access private content from Anypoint Studio, version 4.2.0 or newer must be used.
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

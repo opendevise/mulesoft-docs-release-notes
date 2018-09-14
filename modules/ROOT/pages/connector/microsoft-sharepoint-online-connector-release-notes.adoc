@@ -1,0 +1,28 @@
+= Microsoft SharePoint Online Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: microsoft-sharepoint-online-connector-release-notes.adoc
+:keywords: release notes, connectors, sharepoint, online
+
+*September 2017*
+
+_Select_
+
+*Guide*: xref:3.9@mule-runtime::microsoft-sharepoint-online-connector.adoc[Microsoft SharePoint Online Connector]
+
+== 1.0.0
+
+New release of the SharePoint Online version.
+
+Supported operations:
+
+* Lists and List Items API: Create, delete, retrieve, update lists, and list items.
+* Files and Folders API:
+** Files: Add, retrieve content, retrieve metadata, delete, check out, undo check out, check in, publish, unpublish, approve, deny, recycle, and copy files.
+** Folders: Create, delete, and retrieve folders.
+
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]

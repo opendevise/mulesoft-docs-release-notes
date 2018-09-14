@@ -1,0 +1,133 @@
+= MongoDB Connector Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: mongodb-connector-release-notes.adoc
+:keywords: mongo db, release notes, connector
+
+*June 2018*
+
+_Select_
+
+Mule Runtime supports MongoDB integration by using the http://mongodb.github.io/mongo-java-driver/[MongoDB Java Driver].
+
+== 4.4.0
+
+June 20, 2017
+
+This is a minor release that includes one new feature.
+
+=== New Features
+
+* MongoDB Java Driver Update - The connector is updated with MongoDB Java Driver v3.6.0.
+
+==  4.3.0
+
+December 28, 2017
+
+This is a minor release that includes one new feature and two bug fixes.
+
+===  New Features
+
+* SNI Support - The connector now supports SNI for TLS connections, provided that the user updates to Java version 1.8 update 131 or greater.
+
+===  Fixed in this Release
+
+* BsonInvalidOperationException on upsert operations - Under certain scenarios, the connector threw `org.bson.BsonInvalidOperationException: Value expected to be of type OBJECT_ID is of unexpected type STRING` when upserting documents, if the _id was not of type ObjectId. This now works as expected.
+* InvalidLicenseException when config is in a domain - Mule apps calling the Mongo connector that had its config in a domain would randomly throw `InvalidLicenseException`. This was fixed.
+
+=== Known Issues
+
+* When connecting to a MongoDB instance that requires SNI, the Test Connectivity functionality in Studio may not work. The connector will still work despite this.
+
+== 4.2.0
+
+September 9, 2016
+
+This is a minor release which includes two new features and one bug fix.
+
+=== New Features
+
+* New operation Insert Documents added: This supports multiple inserts and batch integration.
+* Connection String Authentication: Connector now supports standard MongoDB connection URI format used to connect to a MongoDB database server.
+* Separate authentication database support: This version supports a collection of users/passwords to authenticate against a MongoDB database different from MongoDB database storing data.
+
+=== Fixed in this Release
+
+* Fixed an issue where non-fully-qualified DNS names in *Hosts* field did not let you connect to MongoDB.
+
+== 4.1.0
+
+January 20, 2016
+
+Release Notes for version 4.1.0 of the MongoDB connector.
+
+This is a minor release which includes some new features.
+
+=== Features
+
+* Upgraded MongoDB Java Driver - Now compatible Mongo Java Driver v3.2.
+* New processors - FindAndUpdateDocument which is an implementation of Mongo *Find and Modify* operation. The other new processor is UpdateDocumentsByFunctions, which will let you provide a set of MongoDB operators instead of just one as before.
+
+== 4.0.2
+
+December 14, 2015
+
+Release notes for version 4.0.2 of the MongoDB connector.
+
+This is a minor release with a few bug fixes.
+
+=== Fixed in this Release
+
+- Fixed issue where if DataWeave output was set as JSON, MongoDB Connector could not transform it into the required input for the next processor.
+- Fixed an issue with DataWeave, where static metadata could not let you use file manipulation processors.
+- Added support for implicit transformers when running Mule ESB 3.6.X.
+- Fixed documentation issues.
+
+== 4.0.1
+
+September 24, 2015
+
+Release Notes for version 4.0.1 of the MongoDB connector.
+
+This is a minor release with only one bug fix.
+
+=== Fixed in this Release
+
+- Fixed transformer resolution bug
+- When using DataWeave for creating a payload with an object to insert into MongoDB, an implicit transformer
+should take place and create the Document object that is passed on to the Insert Document processor. This creation was not picked up and it was not working.
+
+== 4.0.0
+
+August 11, 2015
+
+=== Compatibility
+
+The MongoDB connector is compatible with:
+
+|===
+|Application/Service|Version
+
+|Mule Runtime| 3.6.0 and later
+|MongoDB| 3.0 or higher
+|Java version| 1.7 and later
+|===
+
+=== Features
+
+* Upgraded MongoDB Java Driver - Now exposing the new APIs available in Mongo Java Driver v3.0. Older (2.x) APIs have been removed.
+* SSL support - Added SSL support to encrypt all network traffic. Now both secure and non-secure options are available.
+* Multi-port support - Added multi-port support for replica sets. Each host now can contain a particular port, rather than having one port for all hosts.
+
+=== Fixed in this Release
+
+- Exception handling in Mongo Object Store - Exceptions thrown in MongoObjectStore were not in line with the other ObjectStore implementations. It has now been updated as per ObjectStore API documentation.
+- Object Store configurable default partition name - It is now possible to configure the default partition name within Mongo Object Store.
+- Update operations results - The results of an update operation are now returned to the user.
+
+
+== See Also
+
+* Guide: xref:3.9@mule-runtime::mongodb-connector.adoc[MongoDB Connector User Guide]
+* Access http://forums.mulesoft.com[MuleSoft Forums] to pose questions and get help from Mule’s broad community of users.

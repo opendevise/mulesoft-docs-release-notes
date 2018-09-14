@@ -1,0 +1,48 @@
+= APIkit 3.8.6 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: apikit-3.8.6-release-notes.adoc
+
+*December 15, 2017*
+
+There are no new features in this version. There are just a few enhancements and bug fixes.
+
+APIkit now includes the latest API Console 3.0.19.
+
+== Compatibility
+
+* Mule Runtime 3.8.x
+* Anypoint Studio 6.4.x
+* Java Parser RAML 1.0 v1.0.16
+* Java Parser RAML 0.8 v0.8.20
+* API Console 3.0.19
+
+== Fixed in this Release
+
+* APIKIT-752 Examples should be generated taking into account the response mimetype.
+* APIKIT-815 APIKit Parser fails on nulls.
+* APIKIT-854 Performance issue fixed using RAML 1.0.
+* APIKIT-857 CORS Headers not being handled correctly with an error response.
+* APIKIT-876 Upgrading Jackson library to 2.8.9.
+* APIKIT-888 Includes with absolute paths are not correctly resolved.
+* APIKIT-1013 String arrays as query params cause the response to failing if asterisk(*) is the first parameter char.
+* APIKIT-1059 Update CORS in APIkit.
+* APIKIT-1061 Raml 1.0 files not exposed when they are inside /classes/<folder>/.
+* APIKIT-1092 APIKit overrides incorrectly the default transformation graph.
+* APIKIT-1099 Implement a custom ResourceLoader to manage Exchange Modules.
+
+https://github.com/raml-org/raml-java-parser[Github RAML Java Parser Issues Fixed in this Release]
+
+* #377: `displayName` is not valid for methods in RAML 0.8.
+* #386: `TypeDeclaration` validation fails if value is null.
+* #388: Error parsing XML schemas with relatives schema locations in RAML 1.0.
+* #375: `displayName` is not valid for Methods (get, post, put, and so on).
+* #395: Removing redundant `type` on JSON schema references.
+* #423/4: Validation error over API Query Params.
+* #421/2: RP-89 Root RAML file relative includes don’t work for URLs.
+* #436: Upgrade Jackson to 2.9.2.
+* #433: Traits are not applied when having unimplemented optional methods with resourcePathName in type.
+* #434: Apply traits when having unimplemented optional methods.
+* #427: Number example of a type with `multipleOf` throws "Can not divide by 0".
+* #429: JSON Schema validation fails when relative `$ref` is used.

@@ -1,0 +1,70 @@
+= OAuth Module Release Notes for Mule 4
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: oauth-module-release-notes.adoc
+:keywords: mule, oauth, module, release notes
+
+== 1.1.2
+
+*May 7, 2018*
+
+=== Min Mule Version
+*Mule 4.1.0*
+
+=== New Features and Enhancements
+
+=== Fixed Issues
+
+[%header,cols="15a,85a"]
+|===
+|Issue |Description
+| https://www.mulesoft.org/jira/browse/MULE-14822[MULE-14822] | ConfigurationException: Element 'tokenManagerConfig-MyConfigName' is not defined in the Mule Registry
+|===
+
+== 1.1.1
+
+*Jan 23, 2018*
+
+=== Min Mule Version
+*Mule 4.1.0*
+
+=== New Features and Enhancements
+
+=== Fixed Issues
+
+[%header,cols="15a,85a"]
+|===
+|Issue |Description
+| https://www.mulesoft.org/jira/browse/MULE-14544[MULE-14544] | Provide a singleton MultiMap instance
+|===
+
+== 1.1.0
+
+*Jan 23, 2018*
+
+=== Min Mule Version
+*Mule 4.1.0*
+
+=== New Features and Enhancements
+
+=== Upgrade Requirements
+
+This version will not work with Mule 4.0.0, you will need to move to 4.1.0 or a higher version to use it.
+
+=== Fixed Issues
+
+[%header,cols="15a,85a"]
+|===
+|Issue |Description
+| https://www.mulesoft.org/jira/browse/MULE-14446[MULE-14446] | OAuth Module exports internal classes
+| https://www.mulesoft.org/jira/browse/MULE-14379[MULE-14379] | Users should not be able to use an expression when configuring a proxy
+| https://www.mulesoft.org/jira/browse/MULE-14160[MULE-14160] | HTTP Connector does not route OAuth tokens request through proxy
+|===
+
+== 1.0.0
+
+*Nov 27, 2017*
+
+=== Min Mule Version
+*Mule 4.0.0*
