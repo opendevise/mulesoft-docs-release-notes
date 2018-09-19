@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: api-notebook-release-notes.adoc
 
 == API Notebook 1.2.1
 

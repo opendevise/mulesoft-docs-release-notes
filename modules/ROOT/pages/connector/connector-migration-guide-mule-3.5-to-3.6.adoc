@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: connector-migration-guide-mule-3.5-to-3.6.adoc
 :keywords: release notes, devkit, migration
 
 *January 16, 2015*

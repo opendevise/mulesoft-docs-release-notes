@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: cloudhub-r40-migration-guide.adoc
 :keywords: release notes, cloudhub, cloud hub
 
 For CloudHub release 40 in October 2014, API Manager and CloudHub have a unified single sign-on experience and user interface. Please read the following migration guide to understand how you might be impacted by these changes.

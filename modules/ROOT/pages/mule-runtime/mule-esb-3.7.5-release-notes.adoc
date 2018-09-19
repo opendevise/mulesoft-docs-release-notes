@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: mule-esb-3.7.5-release-notes.adoc
 :keywords: mule, 3.7.5, release notes
 
 Release notes for Mule 3.7.5 release, an Enterprise Only maintenance release for 3.7.x users, includes fixed issues, library changes, and <<migration-guidance,migration information>>.

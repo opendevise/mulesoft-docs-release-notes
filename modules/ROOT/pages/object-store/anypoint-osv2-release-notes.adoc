@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: anypoint-osv2-release-notes.adoc
 :keywords: osv2, release notes, object store v2, object, store, v2
 
 *July 2018*

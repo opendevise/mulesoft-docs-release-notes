@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: objectstore-connector-release-notes.adoc
 :keywords: object store, connector, release notes, mule
 
 *June 2018*

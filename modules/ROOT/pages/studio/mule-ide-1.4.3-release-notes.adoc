@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: mule-ide-1.4.3-release-notes.adoc
 :keywords: release notes
 
 See the IDE Home page for installation instructions and how to create and run sample projects.

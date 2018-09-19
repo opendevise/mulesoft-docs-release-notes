@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: mule-esb-3.7.3-release-notes.adoc
 :keywords: mule, 3.7.3, release notes
 
 MuleSoft is pleased to announce the release of Mule 3.7.3, an Enterprise Only maintenance release for 3.7.x users. We updated libraries due to security vulnerabilities, including commons-collections and fixed more than 40 bugs.

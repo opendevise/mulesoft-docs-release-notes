@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: mule-1.0-release-notes.adoc
 
 The Mule team is very pleased to announce that version 1.0 has been released!
 

@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: salesforce-composite-connector-release-notes-mule-4.adoc
 
 *March 2018*
 

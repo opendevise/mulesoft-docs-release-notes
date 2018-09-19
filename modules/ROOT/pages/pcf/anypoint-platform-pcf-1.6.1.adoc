@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: anypoint-platform-pcf-1.6.1.adoc
 
 The Anypoint Platform for PCF solution is a fully integrated solution that enables organizations to design, develop, deploy, manage and operate APIs, connectivity apps and microservices within the fully automated and transparent infrastructure provided by  Pivotal Cloud Foundry.
 

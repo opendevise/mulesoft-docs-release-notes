@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: mule-esb.adoc
 :keywords: release notes, mule, 3.8, 3.7, 3.6, 3.5, 3.4, 3.3, 3.2, 3.1
 
 *Mule 4.1.n:*

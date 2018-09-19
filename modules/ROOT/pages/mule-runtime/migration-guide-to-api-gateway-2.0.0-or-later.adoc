@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: migration-guide-to-api-gateway-2.0.0-or-later.adoc
 :keywords: migration, api gateway, http, connector
 
 API Gateway version 2.0 introduces important changes that require transforming any proxy that was built for a prior gateway version. The main change is the adoption of the new high performance  xref:3.7@mule-runtime::migrating-to-the-new-http-connector.adoc[HTTP Connector] , also the properties defined for the proxy are different.

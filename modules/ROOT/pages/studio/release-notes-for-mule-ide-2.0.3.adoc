@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: release-notes-for-mule-ide-2.0.3.adoc
 :keywords: release notes, mule, ide
 
 This is a maintenance release for Mule IDE which has a number of bug fixes to existing features. It is the first release of Mule IDE which supports creating configuration files using the upcoming Mule 3 Milestone release.

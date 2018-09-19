@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: anypoint-on-premise-1.1.0-release-notes.adoc
 :keywords: release notes, devkit
 
 *December 16, 2015*

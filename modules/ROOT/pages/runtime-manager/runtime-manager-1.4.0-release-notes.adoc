@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: runtime-manager-1.4.0-release-notes.adoc
 :keywords: arm, runtime manager, release notes
 
 The Anypoint Runtime Manager, V1.4, release includes new functionality such as audit logging, performance enhancements, and bug fixes. It also includes an Early Access version of Alerts for Runtime Manager that is available for select beta users and available as a GA on April 23rd 2016.

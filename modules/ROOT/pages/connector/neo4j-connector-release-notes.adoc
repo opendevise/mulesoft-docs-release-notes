@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: neo4j-connector-release-notes.adoc
 :keywords: release notes, connector, neo4j
 
 *June 2017*

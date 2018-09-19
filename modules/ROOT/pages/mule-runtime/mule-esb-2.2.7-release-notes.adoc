@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: mule-esb-2.2.7-release-notes.adoc
 :keywords: release notes, esb
 
 This is a maintenance release for Mule ESB 2.2.x Enterprise line, mostly around bug fixes, but it also incorporate some enhancements in Mule.

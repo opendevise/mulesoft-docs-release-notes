@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: mule-esb-3.2.1-release-notes.adoc
 :keywords: release notes, esb
 
 The Mule team is proud to announce the availability of Mule ESB 3.2.1. This is a follow-up release to xref:mule-runtime/mule-esb-3.2.0-release-notes.adoc[Mule ESB 3.2.0], which continues MuleSoft's commitment to making Mule the industry's most powerful, complete, and up-to-date enterprise ESB solution.

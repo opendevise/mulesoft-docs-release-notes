@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: aggregators-module-release-notes.adoc
 :keywords: aggregators, module, release notes
 
 *August 2018*

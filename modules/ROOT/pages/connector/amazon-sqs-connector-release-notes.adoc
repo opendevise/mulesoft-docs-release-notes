@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: amazon-sqs-connector-release-notes.adoc
 :keywords: release notes, connectors, amazon, sqs
 
 *December 2017*

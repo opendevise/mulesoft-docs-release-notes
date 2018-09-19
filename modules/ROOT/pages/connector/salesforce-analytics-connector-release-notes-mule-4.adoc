@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: salesforce-analytics-connector-release-notes-mule-4.adoc
 :keywords: release notes, salesforce, analytics, cloud, connector
 
 *January 2018*

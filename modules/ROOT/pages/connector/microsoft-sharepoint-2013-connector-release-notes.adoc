@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: microsoft-sharepoint-2013-connector-release-notes.adoc
 :keywords: release notes, connectors, sharepoint
 
 *April 2017*

@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: anypoint-mq-connector-release-notes-mule-4.adoc
 :keywords: mq, connector, release, notes
 
 *November 2017*

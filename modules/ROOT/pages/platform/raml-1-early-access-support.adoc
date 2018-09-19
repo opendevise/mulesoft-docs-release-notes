@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: raml-1-early-access-support.adoc
 
 With the latest releases of the tooling and Anypoint Platform, MuleSoft introduces early access based on the official https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md[RAML 1.0 specification].  The new version introduces a number of new features listed in the RAML.org https://github.com/raml-org/raml-spec/wiki/RAML-1.0-RC1-vs-RC2[comparison of releases].
 

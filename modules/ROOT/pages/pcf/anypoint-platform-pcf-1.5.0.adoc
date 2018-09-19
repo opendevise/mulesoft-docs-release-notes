@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: anypoint-platform-pcf-1.5.0.adoc
 
 *October 14, 2016*
 

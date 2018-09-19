@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: anypoint-studio-january-2015-with-3.6.0-runtime-update-site-1-release-notes.adoc
 :keywords: release notes, anypoint studio
 
 January 30, 2015

@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: runtime-manager-1.5.0-release-notes.adoc
 :keywords: arm, runtime manager, release notes
 
 The Anypoint Runtime Manager, V1.5, release that includes new functionality such as monitoring dashboards with alerts, troubleshooting tools (insight), enhancements and bug fixes.

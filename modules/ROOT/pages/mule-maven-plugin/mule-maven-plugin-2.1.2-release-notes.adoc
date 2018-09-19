@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: mule-maven-plugin-2.1.2-release-notes.adoc
 
 MuleSoft is pleased to announce the release of the Mule Maven Plugin 2.1.2. This release fixes a bug where redeployment failed for an existing application in ARM.
 

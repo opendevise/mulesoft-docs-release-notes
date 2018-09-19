@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: mule-0.8-release-notes.adoc
 
 Mule has undergone a major overhaul since version 0.7.1. The purpose of the rearchitecture was to simplify use and development, improve extensibility, and create a more flexible and robust Enterprise Service Bus server. The following changes have been made.
 

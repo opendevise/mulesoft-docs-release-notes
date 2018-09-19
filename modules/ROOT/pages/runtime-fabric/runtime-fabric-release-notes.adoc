@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: runtime-fabric-release-notes.adoc
 :keywords: release notes, runtime fabric, runtimefabric, fabric, rtf
 
 In addition to these release notes, see the complete xref:1.0@runtime-fabric::index.adoc[Anypoint Runtime Fabric] documentation.

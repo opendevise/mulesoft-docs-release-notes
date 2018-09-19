@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: odata-extension-studio-plugin-release-notes.adoc
 :keywords: apikit, apikit extension, odata
 
 October 11, 2016

@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: json-module-release-notes.adoc
 :keywords: mule, json, module, release notes
 
 == 2.0.0

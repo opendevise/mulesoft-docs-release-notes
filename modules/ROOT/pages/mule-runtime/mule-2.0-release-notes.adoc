@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: mule-2.0-release-notes.adoc
 :keywords: release notes, esb
 
 With no critical issues remaining, we are proud to announce the final/GA release of Mule 2.0. We would like to specially thank all those users who have provided feedback on and reported bugs in the Milestones and Release Candidates.

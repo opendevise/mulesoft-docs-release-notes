@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: anypoint-platform-cli.adoc
 :keywords: cli, command line interface, command line, release notes, anypoint platform cli
 
 == Version 2.3.2 - April 3, 2018

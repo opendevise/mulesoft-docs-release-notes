@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: cloudhub-connector-release-notes.adoc
 :keywords: cloudhub, connector, release notes
 
 *July 2016*

@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: ms-service-bus-connector-release-notes-mule-4.adoc
 
 *May 2018*
 

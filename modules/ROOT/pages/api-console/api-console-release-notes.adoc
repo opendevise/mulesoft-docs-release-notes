@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: api-console-release-notes.adoc
 
 * <<API Console 3.0.27>>
 * <<API Console 3.0.26>>

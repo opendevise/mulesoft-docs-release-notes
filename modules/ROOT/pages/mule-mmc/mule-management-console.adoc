@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: mule-management-console.adoc
 :keywords: release notes, mmc mule management console
 
 See the release notes from the navigation to find the latest bug fixes and security fixes for the Mule Management Console.

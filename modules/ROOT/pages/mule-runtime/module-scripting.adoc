@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: module-scripting.adoc
 :keywords: mule, scripting, groovy, module, release notes
 
 == 1.1.3

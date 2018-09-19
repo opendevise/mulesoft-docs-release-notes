@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: anypoint-connector-devkit-3.7.2-release-notes.adoc
 
 == New Features
 

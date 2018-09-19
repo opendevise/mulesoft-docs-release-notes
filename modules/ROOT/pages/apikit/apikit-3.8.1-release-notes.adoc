@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: apikit-3.8.1-release-notes.adoc
 :keywords: apikit, 3.8.1, release notes
 
 This release implements fully compliant https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md[RAML 1.0 validation]. https://github.com/raml-org/raml-spec/wiki/Breaking-Changes[The RAML.org web site] describes changes from RAML 0.8 to RAML 1.0.

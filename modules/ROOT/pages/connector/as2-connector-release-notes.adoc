@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: as2-connector-release-notes.adoc
 :keywords: as2, connector, b2b, release notes
 
 *August 2018*

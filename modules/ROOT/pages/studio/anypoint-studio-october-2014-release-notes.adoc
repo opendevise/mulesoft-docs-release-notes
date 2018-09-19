@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: anypoint-studio-october-2014-release-notes.adoc
 :keywords: release notes, anypoint studio
 
 October 14, 2014

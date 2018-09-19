@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: mule-esb-3.7.2-release-notes.adoc
 :keywords: mule, 3.7.2, release notes
 
 MuleSoft is pleased to announce the release of the Mule Runtime Engine 3.7.2, an Enterprise Only maintenance release. This release contains several bug fixes.

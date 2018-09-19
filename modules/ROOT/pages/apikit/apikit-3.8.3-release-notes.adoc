@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: apikit-3.8.3-release-notes.adoc
 :keywords: apikit, 3.8.3, release notes
 
 APIkit 3.8.3 solves the problem that occurs when a load balancer or reverse proxy is configured in front of an APIkit application. By default the console uses the URL as defined in the listener or the URL provided by CloudHub. When you need a different URL, configure the keepRamlBaseUri attribute. When enabled, APIkit uses the RAML baseUri unmodified. This attribute is false by default. If the RAML Base URI is relative, APIkit now uses the relative URI without overwriting it.

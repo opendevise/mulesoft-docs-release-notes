@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: api-gateway-2.0.2-release-notes.adoc
 :keywords: api gateway, connector, release notes
 
 MuleSoft is pleased to announce the 2.0.2 release of the API Gateway runtime. This release mainly includes bug fixes and performance improvements.

@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: mule-esb-2.2.6-release-notes.adoc
 :keywords: release notes, esb
 
 This release of Mule ESB Enterprise Edition introduces substantial MMC improvements, including UI support for configuration of email alerts, Autodiscovery of Mule server instances, external LDAP configuration, and improved performance.

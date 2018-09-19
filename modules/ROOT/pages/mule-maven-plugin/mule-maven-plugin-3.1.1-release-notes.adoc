@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: mule-maven-plugin-3.1.1-release-notes.adoc
 
 Mule Maven Plugin 3.1.1 is mainly focused in fixing bugs found on Wirndows OS.
 

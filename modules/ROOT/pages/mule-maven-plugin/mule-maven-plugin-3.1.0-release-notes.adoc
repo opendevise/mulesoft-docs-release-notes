@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: mule-maven-plugin-3.1.0-release-notes.adoc
 
 Mule Maven Plugin 3.1.0 is the first iteration after our major release of Mule Maven Plugin 3. +
 We have manage to fix a small number of issues that were affecting the product and also added several key features that were intentionally left out of Mule Maven Plugin 3.0.0.

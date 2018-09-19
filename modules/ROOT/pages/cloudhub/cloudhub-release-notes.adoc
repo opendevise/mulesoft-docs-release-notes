@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: cloudhub-release-notes.adoc
 :keywords: release notes, cloudhub, cloud hub
 
 In addition to these release notes, see the complete xref:runtime-manager::cloudhub.adoc[CloudHub] documentation.

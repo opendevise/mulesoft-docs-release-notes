@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: mule-0.9.1-release-notes.adoc
 :keywords: release notes
 
 Mule 0.9.1 server sees the introduction of the Mule Extras module that hosts all the Spring Framework, PicoContainer and other extensions, webbapp support, improved Test compatibility Kit for your own extensions and numerous bug fixes and other improvements.

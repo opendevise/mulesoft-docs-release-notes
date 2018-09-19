@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: release-notes-for-mule-ide-2.1.0.adoc
 :keywords: release notes, mule, ide
 
 This is the first release of Mule IDE featuring support for Mule 3.

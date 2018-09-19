@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: mule-4.1.0-release-notes.adoc
 :keywords: mule, 4.1.0, runtime, release notes
 
 // Product_Name Version number/date Release Notes

@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: zuora-connector-release-notes.adoc
 :keywords: release notes, zuora, connector
 
 *August 2017*

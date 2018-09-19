@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: runtime-manager-agent-1.11.0-release-notes.adoc
 
 _September 10, 2018_
 

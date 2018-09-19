@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: ibm-ctg-connector-release-notes.adoc
 :keywords: release notes, ibm ctg, cics, jca, connector
 
 *April 2018*

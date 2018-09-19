@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: rest-connect-release-notes.adoc
 :keywords: rest, connect, release notes
 
 *June 2018*

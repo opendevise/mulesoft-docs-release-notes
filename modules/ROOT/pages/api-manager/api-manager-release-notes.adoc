@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: api-manager-release-notes.adoc
 :keywords: release notes, apis, anypoint platform for apis, anypoint platform
 
 API Manager release notes include information about changes, new features, improvements, and resolved issues in releases of API Manager.

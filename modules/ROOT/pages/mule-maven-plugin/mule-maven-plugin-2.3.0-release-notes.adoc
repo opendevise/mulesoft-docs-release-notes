@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: mule-maven-plugin-2.3.0-release-notes.adoc
 
 This release fixes several issues and major improvements for the deployment to the different environments of the platform.
 

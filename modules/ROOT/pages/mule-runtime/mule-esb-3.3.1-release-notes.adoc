@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: mule-esb-3.3.1-release-notes.adoc
 :keywords: release notes, esb
 
 Skip to <<Migrating from Mule ESB 3.3.0 to 3.3.1>>

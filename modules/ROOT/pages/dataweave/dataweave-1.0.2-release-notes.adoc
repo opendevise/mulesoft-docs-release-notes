@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: dataweave-1.0.2-release-notes.adoc
 :keywords: dataweave, 1.0.2, release notes
 
 *September 17, 2015*

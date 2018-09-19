@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: mule-esb-3.7.1-release-notes.adoc
 
 MuleSoft is pleased to announce the release of the Mule Runtime Engine 3.7.1, an Enterprise Only maintenance release. This release contains important fixes in DataWeave and also includes more than 20 bug fixes.
 

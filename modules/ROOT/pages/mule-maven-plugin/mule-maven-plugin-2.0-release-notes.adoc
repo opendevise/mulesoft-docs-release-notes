@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: mule-maven-plugin-2.0-release-notes.adoc
 
 MuleSoft is pleased to announce the release of the Mule Maven Plugin 2.0, a Maven plugin for deploying Mule applications, enabling continuous deployment, and running integration tests. This release provides a unified way to deploy/undeploy Mule applications to different deployment targets. It includes support for deploying to Mule standalone instances, Mule cluster instances, CloudHub, Anypoint Runtime Manager*, and the Runtime Manager Agent.
 

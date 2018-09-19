@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: mule-1.4-release-notes.adoc
 :keywords: release notes, esb
 
 Mule 1.4 marks a rich feature release for the leading open source ESB and integration platform. The Mule team would like to thank the user community for all their input, patches and ideas that contributed to this release. Keep 'em coming!
