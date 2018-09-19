@@ -21,10 +21,10 @@ This release allows you to:
 Additionally, this version of the API Gateway introduces mechanisms for alleviating disaster recovery conditions. +
 
 * Gatekeeper is now able to use the last known state of each tracked API.
-:: If at initialization time, Anypoint API Platform is unreachable for any reason, the runtime will use the last known state of each tracked API (ie applied policies and registered API Contracts before the disaster condition), until connection is reestablished again; in which case the normal cyclic reconciliation mechanism will be triggered. +
+ If at initialization time, Anypoint API Platform is unreachable for any reason, the runtime will use the last known state of each tracked API (ie applied policies and registered API Contracts before the disaster condition), until connection is reestablished again; in which case the normal cyclic reconciliation mechanism will be triggered. +
 This Gatekeeper functionality also works on Cloudhub workers.
 * Deploying or redeploying an app now runs a reconciliation cycle, independently from the general reconciliation mechanism.
-:: This behavior is introduced for the benefit of customers that have long reconciliation cycles and when deploying or redeploying an app have to wait a long time for policies to be applied or restart the runtime itself. +
+ This behavior is introduced for the benefit of customers that have long reconciliation cycles and when deploying or redeploying an app have to wait a long time for policies to be applied or restart the runtime itself. +
 Both reconciliation mechanisms follow BackOff and BackOn rules to make connection attempts. Logs were also improved to show this with fine grained details.
 
 
@@ -51,7 +51,7 @@ API Gateway is compatible with the following software:
 *Flow*
 
 * The initialState property of a flow now supports a property placeholder.
-:: You can set The initalState of a flow using a property placeholder such as:
+ You can set The initalState of a flow using a property placeholder such as:
 +
 [source,xml,linenums]
 ----
@@ -69,9 +69,9 @@ This is helpful when working in a disaster-recovery environment.
 *HTTP  Listener*
 
 * Support CRL in the HTTP listener.
-:: Implement certificate validation through revocation lists for clients connecting to the HTTP listener.
+ Implement certificate validation through revocation lists for clients connecting to the HTTP listener.
 * Support flag ``-Dmule.timeout.disable=true` in HTTP Listeners.
-:: Disable timeout when listening to external resources.
+ Disable timeout when listening to external resources.
 
 *Remote Hazelcast*
 
@@ -80,7 +80,7 @@ This is helpful when working in a disaster-recovery environment.
 *Java Service Wrapper*
 
 * Change the default tanuki timeout action
-:: When the wrapper detects a timeout in the ping to the runtime, it will generate a DUMP and then restart in place of just restart as it was done before. This is useful for troubleshooting purposes.
+ When the wrapper detects a timeout in the ping to the runtime, it will generate a DUMP and then restart in place of just restart as it was done before. This is useful for troubleshooting purposes.
 
 == Bundled Runtime Manager Agent
 
