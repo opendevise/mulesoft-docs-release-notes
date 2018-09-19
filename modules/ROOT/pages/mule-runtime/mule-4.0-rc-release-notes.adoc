@@ -8,7 +8,7 @@ endif::[]
 *September 29, 2017*
 
 Mule 4 beta evolves Mule 3 significantly to enable developers to accomplish common tasks in fewer steps, learn fewer concepts to be successful, simplify upgrades, and support for new web based tools, such as the Flow Designer in Design Center. +
-For a detailed overview of what’s new in Mule 4, please see the xref:4.1@mule4-runtime::mule-runtime-updates.adoc[What’s New in Mule 4 guide].
+For a detailed overview of what’s new in Mule 4, please see the xref:4.1@mule-runtime::mule-runtime-updates.adoc[What’s New in Mule 4 guide].
 
 Beyond the updates introduced on Mule Runtime 4.0 Beta, this RC release includes:
 

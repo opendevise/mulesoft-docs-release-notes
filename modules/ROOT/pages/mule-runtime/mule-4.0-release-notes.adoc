@@ -14,10 +14,10 @@ This is an Early Access release of Mule 4. We do not recommend that existing Mul
 * Partners and community who are updating their Mule connectors and other materials
 
 == What’s new?
-This release contains only bug fixes. See xref:4.1@mule4-runtime::mule-runtime-updates.adoc[What’s New in Mule 4] for a complete overview of what’s included in Mule 4.
+This release contains only bug fixes. See xref:4.1@mule-runtime::mule-runtime-updates.adoc[What’s New in Mule 4] for a complete overview of what’s included in Mule 4.
 
 == Gateway 4
-Gateway leverages many of the improvements added in Mule 4. See xref:4.1@mule4-runtime::mule-runtime-updates.adoc[What’s New in Mule 4] for a complete overview.
+Gateway leverages many of the improvements added in Mule 4. See xref:4.1@mule-runtime::mule-runtime-updates.adoc[What’s New in Mule 4] for a complete overview.
 
 * There is classloading isolation between the policies, the application and the runtime.
 * Policies can be distributed outside of the runtime, providing frictionless upgrades
