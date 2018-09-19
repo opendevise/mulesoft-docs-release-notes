@@ -20,7 +20,7 @@ This initial release includes:
 * Self tuning, non blocking execution engine.
 * Classloader Isolation for Mule runtime, Applications, and connectors.
 
-For a detailed overview of what’s new in Mule 4, please see the xref:4.1@mule4-runtime::mule-runtime-updates.adoc[What’s New in Mule 4 guide].
+For a detailed overview of what’s new in Mule 4, please see the xref:4.1@mule-runtime::mule-runtime-updates.adoc[What’s New in Mule 4 guide].
 
 == DataWeave 2.0 New Features
 

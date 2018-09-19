@@ -46,7 +46,7 @@ This Patch version of Studio has APIKit 1.0.1 and a bug fixes.
 For first time installment, please refer to xref:studio/anypoint-studio-7.0-EA-with-4.0-runtime-release-notes.adoc[Anypoint Studio 7.0.0 EA with Mule Runtime 4.0.0 Release Notes] for hardware requirements and known issues.
 
 Studio 7 only supports Mule 4 projects. The structure of the project, export format, XML and scripting language are different. +
-Users must migrate Mule 3 projects to Mule 4 manually, before they can be used in Studio 7. See xref:4.1@mule4-runtime::mule-4-changes.adoc[Mule Runtime 4.0 Changes] for a list of changes.
+Users must migrate Mule 3 projects to Mule 4 manually, before they can be used in Studio 7. See xref:4.1@mule-runtime::mule-4-changes.adoc[Mule Runtime 4.0 Changes] for a list of changes.
 
 From the previous version of Studio 7.0 there is no special migration needed.
 
