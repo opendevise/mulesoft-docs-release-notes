@@ -291,4 +291,4 @@ A continuous integration system:
 * xref:1.3@munit::index.adoc[MUnit]
 * xref:3.9@mule-runtime::mule-maven-plugin.adoc[Mule Maven Plugin]
 * https://forums.mulesoft.com[MuleSoft Forum]
-* https://support.mulesoft.com[Contact MuleSoft Support]
+* https://support.mulesoft.com[Review Knowledge Base Articles]
