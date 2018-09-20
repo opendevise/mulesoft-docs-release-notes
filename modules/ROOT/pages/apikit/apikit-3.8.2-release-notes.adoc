@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: apikit-3.8.2-release-notes.adoc
 :keywords: apikit, 3.8.2, release notes
 
 This release contains several bug fixes including: Non-blocking processing strategy fix, console rendering problems when !include is used in a resourceType definition and various Java parser fixes for both RAML 0.8 and 1.0 versions.

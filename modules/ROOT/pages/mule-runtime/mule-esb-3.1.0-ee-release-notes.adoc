@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: mule-esb-3.1.0-ee-release-notes.adoc
 :keywords: release notes, esb
 
 Mule Enterprise Version 3.1 is the first Enterprise Edition of Mule 3, and it includes lots of new features added in Community editions 3.0 and 3.0.1:

@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: apikit-for-soap-1.0.2.adoc
 
 This version of APIkit for SOAP includes a fix to the runtime. In Studio, if a SOAP action is not defined, an attempt to generate flows based on a WSDL (scaffold a WSDL) now throws an error message: `SOAP action is required`. The scaffolding process is aborted. No flows are generated.
 For Studio, this version is distributed as Anypoint APIkit SOAP Extension 1.1.3.

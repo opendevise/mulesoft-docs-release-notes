@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: access-management-release-notes.adoc
 :keywords: release notes, access management, anypoint platform, permissions, entitlements, roles, users, administrator, gear icon
 
 == August 25, 2018

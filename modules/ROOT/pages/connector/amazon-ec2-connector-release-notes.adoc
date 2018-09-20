@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: amazon-ec2-connector-release-notes.adoc
 :keywords: release notes, amazon ec2, ec2, connector
 
 *July 2017*

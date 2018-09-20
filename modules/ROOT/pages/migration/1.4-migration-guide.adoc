@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: 1.4-migration-guide.adoc
 :keywords: release notes, esb, migration
 
 There are some changes in 1.4 that may break compatibility from 1.3 depending on the way you are using Mule. The following describes those changes and how to migrate.

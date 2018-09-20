@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: release-bulletins.adoc
 :keywords: release notes, security
 
 This section contains bulletins created by MuleSoft in response to key patches made to the products, especially around security vulnerabilities.

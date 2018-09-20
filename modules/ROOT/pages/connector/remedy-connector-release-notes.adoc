@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: remedy-connector-release-notes.adoc
 :keywords: release notes, bmc, remedy, connector
 
 *Guide*: xref:3.9@mule-runtime::remedy-connector.adoc[Remedy Connector]

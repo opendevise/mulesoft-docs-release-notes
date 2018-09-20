@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: mule-esb-3.1.4-release-notes.adoc
 :keywords: release notes, esb
 
 June 26, 2013

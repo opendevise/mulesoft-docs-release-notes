@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: secure-properties.adoc
 :keywords: mule, release notes, secure configuration properties, secure properties, extension
 
 // Product_Name Version number/date Release Notes

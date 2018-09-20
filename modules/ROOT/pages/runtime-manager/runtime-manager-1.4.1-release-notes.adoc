@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: runtime-manager-1.4.1-release-notes.adoc
 :keywords: arm, runtime manager, release notes
 
 The Anypoint Runtime Manager, V1.4.1, is a minor release that officially GAs Unified Alerts for Cloud & Hybrid deployments. Runtime Managers (hybrid) users now have the alerts functionality and existing cloud users now have a global view of all their alerts.

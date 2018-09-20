@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: dmt-release-notes.adoc
 :keywords: mule, dmt, connector, release notes, migration, tool, dmt
 
 The DMT enables the migration of a Connector built with Devkit that runs on Mule 3.x

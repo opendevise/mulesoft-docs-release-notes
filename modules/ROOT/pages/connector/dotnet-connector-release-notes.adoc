@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: dotnet-connector-release-notes.adoc
 :keywords: release notes, connectors, dotnet
 
 *December 2015*

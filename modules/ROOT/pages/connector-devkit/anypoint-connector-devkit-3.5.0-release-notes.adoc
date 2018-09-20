@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: anypoint-connector-devkit-3.5.0-release-notes.adoc
 :keywords: release notes, devkit
 
 May 15, 2014

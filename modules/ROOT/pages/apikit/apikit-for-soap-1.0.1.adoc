@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: apikit-for-soap-1.0.1.adoc
 :keywords: apikit, 1.0.1, soap, release notes
 
 This version of APIKit for SOAP includes a fix in the runtime. This solves a problem when using a SOAP Envelope element with an xmlns:xsi namespace definition.

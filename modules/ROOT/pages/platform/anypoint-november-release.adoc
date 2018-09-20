@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: anypoint-november-release.adoc
 
 This topic describes the major feature enhancements added for the July and November releases of Anypoint Platform. To prepare for the upgrade see xref:platform/upgrade.adoc[Anypoint Platform Upgrade to Latest Software Guide].
 

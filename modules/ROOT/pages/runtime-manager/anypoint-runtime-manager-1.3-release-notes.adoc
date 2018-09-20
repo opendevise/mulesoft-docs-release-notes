@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: anypoint-runtime-manager-1.3-release-notes.adoc
 :keywords: arm, runtime manager, release notes
 
 The Anypoint Runtime Manager, V1.3, release features usability enhancements on clustering support, backend improvements to enhance performance and functionality for the upcoming releases, and bug fixes. Including, but not limited to the mule connection manager.

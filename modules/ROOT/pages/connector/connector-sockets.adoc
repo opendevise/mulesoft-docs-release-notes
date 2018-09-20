@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: connector-sockets.adoc
 :keywords: mule, sockets, connector, release notes
 
 *March 2018*

@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: mule-esb-console-2.2.5-release-notes.adoc
 :keywords: release notes, esb
 
 The new version of the Mule ESB Management Console replaces the console formerly known as Mule HQ. While Mule HQ was built on technology from Hyperic, the new version of the management console was built from the ground up and reflects significant feedback from our customers.

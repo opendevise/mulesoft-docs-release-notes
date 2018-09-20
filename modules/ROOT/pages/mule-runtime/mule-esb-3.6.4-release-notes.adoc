@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: mule-esb-3.6.4-release-notes.adoc
 :keywords: mule, 3.6.4, release notes
 
 MuleSoft is pleased to announce the release of the Mule ESB 3.6.4 runtime and an Enterprise-only maintenance release for 3.6 users.

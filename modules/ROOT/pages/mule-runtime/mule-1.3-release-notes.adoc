@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: mule-1.3-release-notes.adoc
 :keywords: release notes, esb
 
 Mule 1.3 is out! And there are quite a few changes from the last major release and over 200 issues closed!

@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: apikit-release-notes.adoc
 
 * xref:apikit/apikit-for-odata-1.0.7.adoc[APIkit for OData 1.0.7 Release Notes]
 * xref:apikit/apikit-for-odata-1.0.6.adoc[APIkit for OData 1.0.6 Release Notes]

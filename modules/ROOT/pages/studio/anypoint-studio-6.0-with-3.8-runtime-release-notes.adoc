@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: anypoint-studio-6.0-with-3.8-runtime-release-notes.adoc
 
 *May 16, 2016* +
 *Build ID: 201605161739*

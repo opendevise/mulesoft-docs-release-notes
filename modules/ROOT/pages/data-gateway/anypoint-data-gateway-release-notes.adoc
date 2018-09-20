@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: anypoint-data-gateway-release-notes.adoc
 :keywords: release notes, data gateway
 
 == August 27, 2016 Release

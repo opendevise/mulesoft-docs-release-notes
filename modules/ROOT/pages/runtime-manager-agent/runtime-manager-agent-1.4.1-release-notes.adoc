@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: runtime-manager-agent-1.4.1-release-notes.adoc
 :keywords: mule, agent, release notes
 
 _Enterprise Edition_

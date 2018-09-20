@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: anypoint-visualizer-1.0-release-notes.adoc
 
 This document describes new features and enhancements, known limitations, issues, and fixes for Anypoint Visualizer. See xref:visualizer::index.adoc[Anypoint Visualizer] for more information.
 

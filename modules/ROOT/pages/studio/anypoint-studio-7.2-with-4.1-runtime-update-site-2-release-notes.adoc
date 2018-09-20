@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: anypoint-studio-7.2-with-4.1-runtime-update-site-2-release-notes.adoc
 
 *September 11, 2018* +
 *Build ID: 201809111517*

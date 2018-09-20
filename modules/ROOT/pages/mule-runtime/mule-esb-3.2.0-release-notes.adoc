@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: mule-esb-3.2.0-release-notes.adoc
 :keywords: release notes, esb
 
 The Mule team is proud to announce the release of Mule 3.2 Enterprise, the most stable and reliable version of Mule with radically more powerful capabilities for reliability and visibility

@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: connector-email.adoc
 :keywords: mule, email, connector, release notes, pop3, smtp, imap
 
 *May 2018*

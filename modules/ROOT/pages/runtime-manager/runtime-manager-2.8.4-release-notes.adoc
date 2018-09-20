@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: runtime-manager-2.8.4-release-notes.adoc
 
 _May 19, 2018_
 

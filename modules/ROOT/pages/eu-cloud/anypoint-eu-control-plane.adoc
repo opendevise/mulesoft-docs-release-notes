@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: anypoint-eu-control-plane.adoc
 
 This document describes new features and enhancements, known limitations, issues, and fixes in EU control plane.
 

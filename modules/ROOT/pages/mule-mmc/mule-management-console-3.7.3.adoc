@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: mule-management-console-3.7.3.adoc
 :keywords: release notes, mmc mule management console
 
 The Mule Management Console, also known as MMC, is a platform for managing Mule applications deployed on premises. Most of its functionality is being replaced by the Anypoint Runtime Manager, which is available both on premises and in the cloud (accessible via the xref:runtime-manager::cloudhub.adoc[CloudHub]) link. Moving forward, MMC will be deprecated and the Anypoint Runtime Manager alone will be updated.

@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: anypoint-november-release-upgrades.adoc
 
 The November release includes many improvements across API Designer, API Portal, and API Manager.
 

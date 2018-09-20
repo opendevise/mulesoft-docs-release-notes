@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: microsoft-sharepoint-2010-connector-release-notes.adoc
 
 *December 2015*
 

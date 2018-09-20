@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: cloudhub-dedicated-load-balancer-release-notes.adoc
 :keywords: release notes, cloudhub, cloud hub
 
 == CloudHub Dedicated Load Balancer 1.1.4

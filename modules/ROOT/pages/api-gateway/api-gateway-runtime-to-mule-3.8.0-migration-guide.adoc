@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: api-gateway-runtime-to-mule-3.8.0-migration-guide.adoc
 :keywords: api, gateway, mule, migration guide
 
 Migrating APIs and apps to Mule Runtime 3.8.0 involves adapting to changes in access token enforcement policies, blocked APIs, and API Gateway domain migration.

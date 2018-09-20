@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: mule-esb-3.0.0-release-notes.adoc
 :keywords: release notes
 
 The Mule team is pleased to announce the General Availability of Mule 3.0. This is a new major iteration of the world's most widely used open source enterprise service bus. This latest version of Mule represents the next generation of integration infrastructure software that enables developers to easily integrate enterprise data and applications seamlessly with today's SaaS and cloud-based web applications.

@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: apikit-1.7.5-release-notes.adoc
 :keywords: apikit, 1.7.5, release notes
 
 This version of APIKit includes a fix for an XXE attack vulnerability and a fix for a stack overflow error when a user sends large list of URI parameters. In addition, this release also delivers various Java parser improvements for RAML 0.8 version including validation services, checking for duplicated properties in JSON, and inconsistency around type `date`.

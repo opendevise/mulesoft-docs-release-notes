@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: mule-studio-release-notes-march-21-2012.adoc
 :keywords: release notes, anypoint studio
 
 == Introduction

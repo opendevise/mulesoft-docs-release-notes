@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: mule-management-console-3.8.2.adoc
 :keywords: release notes, mmc mule management console
 
 The Mule Management Console, also known as MMC, is a platform for managing Mule applications deployed on premises. Currently, no new functionality is being added to the MMC, this release includes only bug fixes and security fixes. Hybrid & cloud users can check out our latest monitoring & management tool xref:runtime-manager::cloudhub.adoc[Runtime Manager].

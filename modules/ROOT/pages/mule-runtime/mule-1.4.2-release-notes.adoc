@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: mule-1.4.2-release-notes.adoc
 :keywords: release notes, esb
 
 The Mule Team are pleased to announce the release of version 1.4.2. This is a maintenance release that sees nearly 100 reported issues closed. The highlights of this release are -

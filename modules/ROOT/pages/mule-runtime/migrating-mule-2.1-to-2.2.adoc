@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: migrating-mule-2.1-to-2.2.adoc
 :keywords: release notes, esb
 
 This page describes the major configuration and code changes in Mule 2.2 to help Mule 2.1 users understand what has changed between releases. If you are migrating from an earlier 1.x version of Mule ESB, please read xref:mule-runtime/migrating-mule-1.x-to-2.0.adoc[Migrating Mule 1.x to 2.0] and xref:mule-runtime/migrating-mule-2.0-to-2.1.adoc[Migrating Mule 2.0 to 2.1] respectively.

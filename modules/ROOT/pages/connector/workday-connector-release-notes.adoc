@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: workday-connector-release-notes.adoc
 :keywords: workday, connector, release notes
 
 *April 2017*

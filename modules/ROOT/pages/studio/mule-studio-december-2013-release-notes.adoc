@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: mule-studio-december-2013-release-notes.adoc
 :keywords: release notes, anypoint studio, cloudhub, devkit
 
 December 9, 2013

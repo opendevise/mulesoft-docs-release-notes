@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: mule-0.9.3-release-notes.adoc
 
 This latest release sees some important changes to mule. Configuration has been greatly simplified with the introduction of Uri endpoints. There are improved Jms features such as Jsm 1.1 support, client acknowledge transactions and jndi destinations. The Mule client API can now make remote requests and register objects as Mule managed objects directly. There are 3 new providers, namely Tcp, Udp and Multicast. And a whole load of bug fixes and enhancements.
 

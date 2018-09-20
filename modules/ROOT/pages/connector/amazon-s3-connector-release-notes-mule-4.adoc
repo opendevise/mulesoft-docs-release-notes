@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: amazon-s3-connector-release-notes-mule-4.adoc
 :keywords: release notes, amazon s3, s3, connector
 
 *August 2018*

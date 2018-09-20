@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: odata-extension-release-notes-101.adoc
 
 October 10, 2017
 

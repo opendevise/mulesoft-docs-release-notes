@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: netsuite-openair-connector-release-notes-mule-4.adoc
 :keywords: openair, netsuite, release notes
 
 *May 2018*

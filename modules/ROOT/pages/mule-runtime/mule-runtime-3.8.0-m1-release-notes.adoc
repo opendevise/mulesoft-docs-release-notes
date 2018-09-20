@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: mule-runtime-3.8.0-m1-release-notes.adoc
 :keywords: mule, 3.8.0-M1, release notes
 
 MuleSoft is pleased to announce the milestone M1 release of the Mule 3.8.0, containing many exciting improvements:

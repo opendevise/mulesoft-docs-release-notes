@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: windows-gateway-services-release-notes.adoc
 :keywords: windows, gateway, .net, windows server
 
 *July 2016*

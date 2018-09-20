@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: microsoft-dynamics-365-connector-release-notes-mule-4.adoc
 :keywords: Microsoft Dynamics 365 connector, user guide, Dynamics 365, 365, release notes
 
 _Select_

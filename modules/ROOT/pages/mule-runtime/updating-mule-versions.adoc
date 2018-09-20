@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: updating-mule-versions.adoc
 :keywords: mule, runtime, release notes, migration, installation, downtime, uptime, best practices
 
 This document describes considerations and best practices when changing the Mule Runtime versions on your servers on-premises. This covers the use cases of deploying to Mule standalone instances, to Mule instances on premises through xref:runtime-manager::index.adoc[Runtime Manager], and to Mule instances on premises through the xref:3.8@mule-management-console::index.adoc[Mule Management Console].

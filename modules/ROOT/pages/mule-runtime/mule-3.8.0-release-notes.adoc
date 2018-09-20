@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: mule-3.8.0-release-notes.adoc
 :keywords: mule, 3.8.0, runtime, release notes
 
 *May 16, 2016*

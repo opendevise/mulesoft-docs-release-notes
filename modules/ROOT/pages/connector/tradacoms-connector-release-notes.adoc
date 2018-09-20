@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: tradacoms-connector-release-notes.adoc
 :keywords: release notes, tradacoms, edi, b2b, connector
 
 *April 2017*

@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: mule-esb-2.2-release-notes.adoc
 :keywords: release notes, esb
 
 Mule Enterprise Version 2.2 includes Mule ESB 2.2.4 and either Mule HQ 3.5.0 or the new Mule management console (see below). This page describes the known and fixed issues in this release.

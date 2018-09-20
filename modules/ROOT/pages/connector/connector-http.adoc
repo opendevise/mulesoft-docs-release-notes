@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: connector-http.adoc
 :keywords: mule, HTTP, connector, release notes
 
 == 1.3.0

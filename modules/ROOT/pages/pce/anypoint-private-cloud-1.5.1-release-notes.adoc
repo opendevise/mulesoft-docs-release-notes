@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: anypoint-private-cloud-1.5.1-release-notes.adoc
 
 **March 4, 2017**
 

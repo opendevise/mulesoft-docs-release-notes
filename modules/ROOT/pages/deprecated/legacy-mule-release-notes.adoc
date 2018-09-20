@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: legacy-mule-release-notes.adoc
 :keywords: release notes
 
 This page lists Mule Community Edition Release Notes prior to Mule 3.0. For both Community Edition and Enterprise Edition Release Notes subsequent to Mule 2.x, see xref:index.adoc[Release Notes].

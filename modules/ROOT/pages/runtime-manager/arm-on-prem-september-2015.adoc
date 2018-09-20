@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: arm-on-prem-september-2015.adoc
 :keywords: release notes, arm, runtime manager, on premises, on premise, on-premise, local
 
 The Anypoint Runtime Manager Private Cloud Edition September 2015 release enables users to enhance their unified monitoring experience by easily integrating their on-premises Mule servers and API Gateways with third parties’ monitoring tools, such as Splunk & ELK, for monitoring, analytics and governance.

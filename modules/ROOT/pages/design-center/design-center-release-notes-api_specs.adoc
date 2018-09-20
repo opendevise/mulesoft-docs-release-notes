@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: design-center-release-notes-api_specs.adoc
 
 These release notes cover the following versions of these features:
 

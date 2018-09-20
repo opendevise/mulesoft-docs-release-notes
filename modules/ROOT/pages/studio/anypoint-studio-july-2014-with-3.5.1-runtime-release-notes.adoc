@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: anypoint-studio-july-2014-with-3.5.1-runtime-release-notes.adoc
 :keywords: release notes, anypoint studio
 
 *<<Migration Guide, Skip to Migration Guide>>*

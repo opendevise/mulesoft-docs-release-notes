@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: migrating-mule-1.x-to-2.0.adoc
 :keywords: release notes
 
 This page describes the major configuration and code changes in Mule 2.0 to help Mule 1.x users understand what has changed between releases. For more information on new features and changes, see Whats New in This Release.

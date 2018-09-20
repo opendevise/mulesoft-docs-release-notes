@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: migrating-mule-esb-2.2-to-mule-esb-3.0.adoc
 :keywords: release notes, esb
 
 [TIP]

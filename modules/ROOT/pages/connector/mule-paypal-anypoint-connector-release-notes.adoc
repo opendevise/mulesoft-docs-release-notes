@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: mule-paypal-anypoint-connector-release-notes.adoc
 :keywords: paypal, connector
 
 *August 2015*

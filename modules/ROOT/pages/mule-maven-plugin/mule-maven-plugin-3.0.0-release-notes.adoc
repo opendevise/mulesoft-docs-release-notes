@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: mule-maven-plugin-3.0.0-release-notes.adoc
 
 Mule Maven Plugin 3.0.0 is our first major release to package and deploy Mule artifacts running on Mule 4.x Runtime. +
 This new version of the Mule Maven Plugin aggregates everything a user should need to package any Mule artifact and/or to deploy to an Anypoint Environment (CloudHub, ARM, Standalone, and Agent).
