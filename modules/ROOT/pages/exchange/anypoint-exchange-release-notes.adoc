@@ -444,4 +444,4 @@ If you need help using the product, refer to the documentation for the xref:exch
 
 * https://www.anypoint.mulesoft.com/exchange/[Anypoint Exchange]
 * https://forums.mulesoft.com[MuleSoft Forum]
-* https://support.mulesoft.com[View Knowledge Base]
+* https://support.mulesoft.com/s/knowledge[Knowledge Base Articles]
