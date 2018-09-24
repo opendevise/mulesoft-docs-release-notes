@@ -70,4 +70,4 @@ This is the same example with the subscriber tracking statement removed:
 == See Also
 
 * https://forums.mulesoft.com[MuleSoft Forum]
-* https://support.mulesoft.com[View Knowledge Base]
+* https://support.mulesoft.com[View MuleSoft Knowledge Base Articles]
