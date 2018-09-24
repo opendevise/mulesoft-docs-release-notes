@@ -42,4 +42,4 @@ Initial release.
 == See Also
 
 * https://forums.mulesoft.com[MuleSoft Forum]
-* https://support.mulesoft.com[View Knowledge Base]
+* https://support.mulesoft.com[View MuleSoft Knowledge Base Articles]
