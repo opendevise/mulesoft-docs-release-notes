@@ -25,7 +25,7 @@ xref:connectors::hl7/hl7-mllp-connector.adoc[HL7 MLLP Connector Guide]
 
 === Fixed in this Release
 
- ACK like messages weren't flowing back to sender. Fixed now :)
+ ACK like messages weren't flowing back to sender.
 
 == 2.0.0
 
