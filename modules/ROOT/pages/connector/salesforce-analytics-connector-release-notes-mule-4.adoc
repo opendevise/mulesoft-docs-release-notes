@@ -57,5 +57,5 @@ The Salesforce Analytics Cloud connector is compatible with:
 * https://developer.salesforce.com/docs/atlas.en-us.bi_dev_guide_ext_data.meta/bi_dev_guide_ext_data/[Salesforce External Data API]
 * https://developer.salesforce.com/docs/atlas.en-us.bi_dev_guide_ext_data.meta/bi_dev_guide_ext_data/bi_ext_data_add_data.htm[Add the Data]
 * https://forums.mulesoft.com[MuleSoft Forums]
-* https://support.mulesoft.com[View Knowledge Base]
+* https://support.mulesoft.com/s/knowledge[Knowledge Base Articles]
 
