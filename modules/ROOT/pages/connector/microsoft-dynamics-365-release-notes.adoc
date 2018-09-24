@@ -4,13 +4,37 @@ include::_attributes.adoc[]
 endif::[]
 :keywords: microsoft, dynamics, 365, crm, release notes
 
-*July 2018*
+*September 2018*
 
 _Select_
 
-*Guide:* xref:3.8@mule-runtime::microsoft-dynamics-365-connector.adoc[Microsoft Dynamics 365  Connector]
+*Guide:* xref:3.9@mule-runtime::microsoft-dynamics-365-connector.adoc[Microsoft Dynamics 365  Connector]
 
 MuleSoft provides OAuth 2.0 Connection and Username-Password access to the Microsoft Dynamics 365 server.
+
+== 1.0.6
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime | Mule Runtime Enterprise Edition 3.6.0 and later
+|Microsoft Dynamics 365 | 1.0.6
+|===
+
+=== Features
+
+* No new features added.
+
+=== Fixed in this Release
+
+* Dynamics 365 Connector stopped making calls after the maximum number of connections (maxHttpConnections). Even if no value was set, it stopped when 100 (default value) was reached. The issue was fixed by removing the HTTP request from the request pool.
+* Under certain scenarios, connections were being kept open after performing requests. This was fixed.
+
+=== Known Issues
+
+* No known issues.
 
 
 == 1.0.5

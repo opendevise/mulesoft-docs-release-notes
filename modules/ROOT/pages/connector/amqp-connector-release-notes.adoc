@@ -4,10 +4,29 @@ include::_attributes.adoc[]
 endif::[]
 :keywords: amqp, release, notes
 
-*June 2018 - 3.8.0* +
+*September 2018 - 3.8.1* +
 *June 2018 - 3.7.9*
 
 _Select_
+
+== 3.8.1
+
+*September 14, 2018*
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Mule Runtime |3.9 and later
+|Anypoint Studio |3.5 and later
+|===
+
+*Note:* This version requires Java 8 or greater.
+
+=== Features
+
+Add RabbitMQ broker blocking handler in the Mule 3 Connector. (AMQP-99)
 
 == 3.8.0
 
@@ -254,5 +273,5 @@ This release includes improvements and fixes.
 
 == See Also
 
-* https://forums.mulesoft.com[MuleSoft Forum].
-* https://support.mulesoft.com[Contact MuleSoft Support].
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[View Knowledge Base]

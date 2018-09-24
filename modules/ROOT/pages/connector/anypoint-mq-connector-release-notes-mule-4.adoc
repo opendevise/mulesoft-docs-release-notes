@@ -4,7 +4,7 @@ include::_attributes.adoc[]
 endif::[]
 :keywords: mq, connector, release, notes
 
-*November 2017*
+*September 2018*
 
 _Select_
 
@@ -13,6 +13,21 @@ _Select_
 To support Exchange 2.0 properly, the feature ID of Anypoint MQ Connector has changed. Before you download MQ v1.2.0 and later from Exchange 2.0, uninstall the existing version of this connector in Studio.
 
 This release of the Anypoint MQ Connector lets you add messaging access to Anypoint MQ queues and exchanges from Anypoint Studio applications.
+
+== 2.0.4
+
+*September 19, 2018*
+
+This release of the Anypoint MQ Connector implements retry logic with exponential backoff.
+
+=== Compatibility
+
+[%header%autowidth.spread]
+|===
+|Software|Version
+|Mule Runtime |4.0.0 and later
+|Anypoint Studio |7.0.0 and later
+|===
 
 == 2.0.0
 
@@ -55,4 +70,4 @@ This is the same example with the subscriber tracking statement removed:
 == See Also
 
 * https://forums.mulesoft.com[MuleSoft Forum]
-* https://support.mulesoft.com[Contact MuleSoft Support]
+* https://support.mulesoft.com[View Knowledge Base]
