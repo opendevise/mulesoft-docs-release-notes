@@ -22,26 +22,24 @@ NOTE: Before the classification step, test your APIs, Notebooks, and Portals. Af
 
 == Why Group your APIs?
 
-Grouping your APIs helps you organize your APIs by name and version in the new platform experience and improve how you deploy these APIs to environments.
+Prior to the release, you may have stored the name of the environment in the name of the API. Grouping your APIs helps you organize your APIs by name and version in the new platform experience. The new version of the platform supports API environments where you can manage API instances.
+
+For example, the "Orders API" may have had "Staging" or "Prod" in the name to indicate use in those environments:
+
+_Orders API - v1 - Dev +
+_Orders API - v2 - Staging_ +
+_Orders API - v1 Prod - v1_
+
+By removing any reference to environments like "Dev" or "Stg" or "Prod" before the upgrade, you can associate the API instances to such named environments, "Dev", "Staging" or "Prod" through API Manager (you will have the old names as reference).
 
 *Note:* If you use Business Groups instead of environments to group your APIs, API grouping is not needed or recommended.
 
-The November 2017 version of the platform supports APIs that are assigned or classified into environments. Prior to the release, you may have stored the name of the environment in the name of the API.
-
-For example, the "Customer API" may have had "Staging" or "Prod" in the name to indicate use in those environments:
-
-_Customer API Staging - v1_ +
-_Customer API Staging - v2_ +
-_Customer API Prod - v1_
-
-If you labeled your APIs or versions using the names of your environments, consider renaming your APIs before scheduling your upgrade. After the upgrade, each API is associated to a single Design Center Project with a corresponding Exchange asset per API version. By removing the environment name you avoid having extraneous Exchange assets.
-
-After the upgrade, you will be able to see the *original API names* so you know which to deploy to each of your environments.
+After the upgrade, you will be able to see the *original API names* so you know which to deploy to each of your environments. API autodiscovery and API Manager platform APIs have changed, so be sure to review them below.
 
 Notes:
 
 * If you do not perform the grouping step, you may find duplicate projects or a degraded platform experience.
-* After you add one or more APIs to an API group (New API Name in the API Grouping screen), you can't ungroup the APIs. However you can change the group for each API individually to direct it to a different API group, by changing an API or API version name.
+* After you add one or more APIs to an API group (New API Name in the API Grouping screen), you can't ungroup the APIs. However you can change the group for each API individually to a different it to a different API group, by changing an API name or API version name.
 
 == To Group your APIs
 
@@ -154,6 +152,7 @@ Yes. If you have problems with the new experience of Anypoint Platform, you can 
 ** Configure Autodiscovery element for new APIs after the upgrade in the following way (retrieve all values from the API and the UI):
 ** `name=”groupId:{{groupId}}:assetId:{{assetId}}”`
 ** `version=”{{version}}:{{instanceId}}”`
+** Auto-discovery changes only apply to the newly created APIs and its instances The existing APIs remain unaffected even after the upgrade. New auto-discovery changes only apply to the newly created APIs and its instances.
 * API Manager API (v2.x) is available to leverage all new API Manager capabilities.
 * User permissions model has changed to be action-based at the environment level, which is aligned to the rest of the management center. After the upgrade, administrators should set environment-level permissions for all users. Default environment-level admin roles are available. The permission model in the Unclassified environment works in the same way as API Manager permission model worked before the upgrade. Assigned permissions for APIs in the Unclassified environment also remain untouched during the upgrade process.
 
