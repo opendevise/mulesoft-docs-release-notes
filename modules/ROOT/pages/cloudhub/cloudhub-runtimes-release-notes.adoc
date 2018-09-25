@@ -6,17 +6,43 @@ endif::[]
 
 These are the release notes for patches which are made to the Mule runtimes on CloudHub. In addition to these release notes, see the xref:cloudhub/cloudhub-release-notes.adoc[CloudHub release notes] and complete xref:runtime-manager::cloudhub.adoc[CloudHub] documentation.
 
+== September 21, 2018
+
+4.1.2 Runtime update:
+
+* Client Enforcement Policy throwing "No value present" error [SE-8736]
+
+4.1.1 Runtime update:
+
+* Change token expiration log level from ERROR to WARN [SE-8613]
+* Client Enforcement Policy throwing "No value present" error [SE-8736]
+
+3.9.1 Runtime update:
+
+* OAuth2 provider not working when offline; support RestClient reconnection [SE-9455]
+* RAML parser uncaught exception [SE-9228]
+* API console RAML validatioan errors [SE-8773]
+
+
 == September 17, 2018
- 
-3.9.1, 4.1.2, 4.1.3 Runtimes: 
+
+4.1.3 Runtime Update:
+
+* DW2 lookup function blocks CPU intensive threads [SE-9104]
+* Ability to send "Base64 Encoded client_id and client_secret" in Authorization header for authorization-code-grant-type [SE-9065]
+* Unknown error on Object Store operation [SE-9285]
+
+3.9.1, 4.1.2, 4.1.3 Runtime Updates: 
 
 * Application visualizer related error seen in multiple applications in Cloudhub [SE-9143]
 
+
 == August 23, 2018
 
-All 3.8.x, 3.9.x and 4.1.x Runtimes:
+All 3.8.x, 3.9.x and 4.1.x Runtime Updates:
 
 * A kernel-level patch to the operating system against the SegmentSmack vulnerability (CVE-2018-5390)
+
 
 == August 14, 2018
 
