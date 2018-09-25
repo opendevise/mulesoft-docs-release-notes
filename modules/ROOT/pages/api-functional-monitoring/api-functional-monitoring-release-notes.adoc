@@ -3,5 +3,5 @@ ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
 
-* link:api-functional-monitoring-1.1-release-notes[API Functional Monitoring 1.1 Release Notes]
-* link:api-functional-monitoring-1.0-release-notes[API Functional Monitoring 1.0 Release Notes]
+* xref:api-functional-monitoring/api-functional-monitoring-1.1-release-notes[API Functional Monitoring 1.1 Release Notes]
+* xref:api-functional-monitoring/api-functional-monitoring-1.0-release-notes[API Functional Monitoring 1.0 Release Notes]
