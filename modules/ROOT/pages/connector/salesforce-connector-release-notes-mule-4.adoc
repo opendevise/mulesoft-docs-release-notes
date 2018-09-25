@@ -9,6 +9,7 @@ endif::[]
 _Select_
 
 == 9.4.0
+
 *September 24, 2018*
 [%header%autowidth.spread]
 |===
@@ -18,11 +19,12 @@ _Select_
 |Salesforce |v37.0, v38.0, v39.0, v40.0, v41.0, v42.0, v43
 |===
 
-Features
+=== Features
 
 Added support for Salesforce V43.
 
 == 9.3.3
+
 *September 19, 2018*
 [%header%autowidth.spread]
 |===
@@ -54,20 +56,23 @@ Added support for Salesforce V43.
 
 * Getting NullPointerException while retrieving input metadata when describing reference type objects:
 
-```
+[source,text,linenums]
+----
 org.mule.runtime.api.metadata.MetadataResolvingException: Unable to resolve metadata for: Account
 Caused by: java.lang.NullPointerException: Request headers cannot be null.
-```
+----
 
 The problem was solved by reimplementing the metadata parsing for reference type objects.
 
-* The customer was getting intermittently the below exception:
+* Customers saw this intermittent exception:
 
-```
+[source,text,linenums]
+----
 [UnexpectedErrorFault [ApiFault  exceptionCode='INVALID_SESSION_ID'
- exceptionMessage='Invalid Session ID found in SessionHeader: Illegal Session. Session not found, missing session hash: <hash>
-This error usually occurs after a session expires or a user logs out. '
-```
+exceptionMessage='Invalid Session ID found in SessionHeader: Illegal Session. 
+Session not found, missing session hash: <hash>
+This error usually occurs after a session expires or a user logs out.'
+----
 
 The problem was solved by adding missing error handling for reconnection due to invalid session.
 
@@ -304,4 +309,4 @@ Salesforce connector version 9.0.0 is compatible with:
 
 * xref:connectors::salesforce/salesforce-connector.adoc[Salesforce Connector]
 * https://forums.mulesoft.com[MuleSoft Forum]
-* https://support.mulesoft.com[Contact MuleSoft Support]
+* https://support.mulesoft.com/s/knowledge[Knowledge Base Articles]
