@@ -8,11 +8,10 @@ endif::[]
 
 _Select_
 
-*Note:* Anypoint MQ version 2.0 and later only works with Mule 4 and Studio 7. For the Mule 3 Anypoint MQ Connector Release Notes, see xref:connector/mq-connector-release-notes.adoc[Anypoint MQ Connector Release Notes].
+*Note:* Anypoint MQ version 2.x only works with Mule 4 and Studio 7. For the Mule 3 Anypoint MQ Connector Release Notes, see xref:connector/mq-connector-release-notes[Anypoint MQ Connector Release Notes].
 
-To support Exchange 2.0 properly, the feature ID of Anypoint MQ Connector has changed. Before you download MQ v1.2.0 and later from Exchange 2.0, uninstall the existing version of this connector in Studio.
+Anypoint MQ Connector lets you add messaging access to Anypoint MQ queues and exchanges from Anypoint Studio applications.
 
-This release of the Anypoint MQ Connector lets you add messaging access to Anypoint MQ queues and exchanges from Anypoint Studio applications.
 
 == 2.0.4
 
@@ -29,6 +28,28 @@ This release of the Anypoint MQ Connector implements retry logic with exponentia
 |Anypoint Studio |7.0.0 and later
 |===
 
+=== Fixed in This Release
+
+* Improved logger precision to avoid issues during transaction tracing.
+* Allows MQ Subscriber prefetch to be disabled for predictability on API calls (see Known Issues).
+
+=== Known Issues
+
+Using Prefetch can result in the loss of predictability of API calls. If prefetch is used, the connector aggressively tries to fetch messages, which results in increased API calls. If predictability and control on API requests is important, use the following steps to disable prefetch and strictly follow the polling time.
+
+IMPORTANT: Only disable Prefetch if predictability on API calls is more important than performance. Maximum possible performance is only available when prefetch is enabled.
+
+To disable Prefetch:
+
+. Access a new or existing connector configuration of the MQ Subscriber component.
+. Navigate to the Prefetch tab.
+. Specify a Fetch size of 0. This disables the Prefetch.
+. In the Studio General tab, specify a *Polling time* in milliseconds. This time interval is strictly adhered to when making API calls. Polling time defaults to 10 seconds if an explicit configuration is not present.
++
+If there are no messages in the queue, each poll that a subscriber makes waits for the duration of exactly half of the *Polling time* specified in the General tab. Polling time has a maximum value of 20000 milliseconds.
+
+*Note:* Versions 2.0.1 - 2.0.3 were internal releases only without changes to the user interface or product usage.
+
 == 2.0.0
 
 *November 17, 2017*
@@ -40,8 +61,8 @@ The Anypoint MQ connector now adds support for Mule 4 and Studio 7.
 [%header%autowidth.spread]
 |===
 |Software|Version
-|Mule Runtime |4.0.0 and newer
-|Anypoint Studio |7.0.0
+|Mule Runtime |4.0.0 and later
+|Anypoint Studio |7.0.0 and later
 |===
 
 == Known Issues
@@ -53,7 +74,8 @@ Example with tracking:
 [source,xml,linenums]
 ----
 <flow name="customers-all-get" tracking:enable-default-events="true">
-  <anypoint-mq:subscriber config-ref="Anypoint_MQ_Configuration" destination="testQueue" acknowledgementMode="AUTO"/>
+  <anypoint-mq:subscriber config-ref="Anypoint_MQ_Configuration" 
+  destination="testQueue" acknowledgementMode="AUTO"/>
   <tracking:transaction id="customers-all-get"/>
 </flow>
 ----
@@ -63,11 +85,12 @@ This is the same example with the subscriber tracking statement removed:
 [source,xml,linenums]
 ----
 <flow name="customers-all-get">
-  <anypoint-mq:subscriber config-ref="Anypoint_MQ_Configuration" destination="testQueue" acknowledgementMode="AUTO"/>
+  <anypoint-mq:subscriber config-ref="Anypoint_MQ_Configuration" 
+  destination="testQueue" acknowledgementMode="AUTO"/>
 </flow>
 ----
 
 == See Also
 
 * https://forums.mulesoft.com[MuleSoft Forum]
-* https://support.mulesoft.com[View Knowledge Base]
+* https://support.mulesoft.com/s/knowledge[Knowledge Base Articles]
