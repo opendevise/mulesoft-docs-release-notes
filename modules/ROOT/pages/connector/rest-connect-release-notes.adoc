@@ -4,7 +4,7 @@ include::_attributes.adoc[]
 endif::[]
 :keywords: rest, connect, release notes
 
-*June 2018*
+*August 2018*
 
 *Guide:* xref:exchange::to-deploy-using-rest-connect.adoc[Converting a RAML to a Connector Using REST Connect]
 
