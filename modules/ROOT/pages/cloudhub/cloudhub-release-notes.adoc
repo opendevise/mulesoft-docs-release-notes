@@ -10,7 +10,7 @@ In addition to these release notes, see the complete xref:runtime-manager::cloud
 
 This release includes the following changes and improvements:
 
-* Additional shared load balancers across APAC regions. See link://docs.mulesoft.com/runtime-manager/cloudhub-architecture#global-worker-clouds[Global Worker Clouds] for information on available regions. This change is effective March 26, 2018.
+* Additional shared load balancers across APAC regions. See xref:runtime-manager::cloudhub-architecture.adoc#global-worker-clouds[Global Worker Clouds] for information on available regions. This change is effective March 26, 2018.
 * Security patches and bug fixes.
 
 == 1.65.0 - March 8, 2018
@@ -22,7 +22,7 @@ This release enables users to:
 
 In addition, this release also includes the following changes and improvements:
 
-* Additional shared load balancers across regions. link://docs.mulesoft.com/runtime-manager/cloudhub-architecture#global-worker-clouds[View changes in domains] used for new applications.
+* Additional shared load balancers across regions. xref:runtime-manager::cloudhub-architecture.adoc#global-worker-clouds[View changes in domains] used for new applications.
 * Infrastructure improvements powering mule applications.
 * A series of resiliency improvements and bug fixes.
 
@@ -293,7 +293,7 @@ None.
 
 === Migration Guidance
 
-See link:/runtime-manager/installing-and-configuring-mule-agent#agent-update-process[updating the Agent].
+See xref:runtime-manager::installing-and-configuring-runtime-manager-agent.adoc#agent-update-process[updating the Agent].
 
 === Known Issues
 No way to configure buffering support for Splunk from the UI. Workaround: Use YAML file for configuration.
