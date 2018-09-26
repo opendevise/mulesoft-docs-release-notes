@@ -7,7 +7,7 @@ endif::[]
 ====
 The upgrade to the November 2017 or "Crowd" release changes the existing Anypoint Platform APIs, which affects continuous integration and continuous development (CI/CD) pipelines built against the API Manager API and autodiscovery. See the <<apis-in-api-manager-post-upgrade,APIs in API Manager - Post-Upgrade>> and <<ci-cd-changes-to-make,CI/CD Changes to Make>> sections. A high-level overview is in the <<ci-cd-architecture,CI/CD Architecture>> section.
 
-*Note:* After the upgrade and before classifying your APIs into environments, test your APIs, Notebooks, and Portals. After APIs are classified, your organization cannot roll back in the event you encounter upgrade related issues.
+*Note:* After the upgrade and before classifying your APIs into environments, test your APIs, Notebooks, and Portals. After APIs are classified, your organization cannot roll back if you encounter upgrade related issues. Portal URLs are updated, so update these links accordingly.
 ====
 
 == To Complete Upgrade to November Release
@@ -22,19 +22,21 @@ NOTE: Before the classification step, test your APIs, Notebooks, and Portals. Af
 
 == Why Group your APIs?
 
-Prior to the release, you may have stored the name of the environment in the name of the API. Grouping your APIs helps you organize your APIs by name and version in the new platform experience. The new version of the platform supports API environments where you can manage API instances.
+Group APIs by name and version only to simplify the new platform experience for your API developers and consumers. 
 
-For example, the "Orders API" may have had "Staging" or "Prod" in the name to indicate use in those environments:
+Prior to the release, you may have stored the name of the environment in the name of the API. The new version of the platform supports moving APIs between environments, so you won't need the name of the environment in the API name or version.
+
+For example, you may have had "Staging" or "Prod" in the name to indicate use in those environments:
 
 _Orders API - v1 - Dev +
 _Orders API - v2 - Staging_ +
 _Orders API - v1 Prod - v1_
 
-By removing any reference to environments like "Dev" or "Stg" or "Prod" before the upgrade, you can associate the API instances to such named environments, "Dev", "Staging" or "Prod" through API Manager (you will have the old names as reference).
+By removing any reference to environments like "Dev" or "Stg" or "Prod" before the upgrade, you avoid having to change the API or version names as you promote the API instances through environments using API Manager in the post-upgrade platform experience.
 
 *Note:* If you use Business Groups instead of environments to group your APIs, API grouping is not needed or recommended.
 
-After the upgrade, you will be able to see the *original API names* so you know which to deploy to each of your environments. API autodiscovery and API Manager platform APIs have changed, so be sure to review them below.
+After the upgrade, you will be able to see the *original API names* so you know which to deploy to each of your environments through API Manager. API autodiscovery and API Manager platform APIs have changed, so be sure to review them below before creating new APIs. APIs created before upgrade continue to work with the old autodiscovery.
 
 Notes:
 
