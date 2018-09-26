@@ -7,7 +7,7 @@ endif::[]
 ====
 The upgrade to the November 2017 or "Crowd" release changes the existing Anypoint Platform APIs, which affects continuous integration and continuous development (CI/CD) pipelines built against the API Manager API and autodiscovery. See the <<apis-in-api-manager-post-upgrade,APIs in API Manager - Post-Upgrade>> and <<ci-cd-changes-to-make,CI/CD Changes to Make>> sections. A high-level overview is in the <<ci-cd-architecture,CI/CD Architecture>> section.
 
-*Note:* After the upgrade and before classifying your APIs into environments, test your APIs, Notebooks, and Portals. After APIs are classified, your organization cannot roll back in the event you encounter upgrade related issues. Portal URLs will be updated, so update these links accordingly.
+*Note:* After the upgrade and before classifying your APIs into environments, test your APIs, Notebooks, and Portals. After APIs are classified, your organization cannot roll back if you encounter upgrade related issues. Portal URLs are updated, so update these links accordingly.
 ====
 
 == To Complete Upgrade to November Release
