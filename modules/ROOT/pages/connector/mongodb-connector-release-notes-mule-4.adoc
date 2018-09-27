@@ -12,12 +12,12 @@ Mule supports MongoDB integration by using the MongoDB Java Driver.
 
 == 5.3.0
 
-*September X, 2018*
+*September 27, 2018*
 
 === New Features
 
-* Added Triggers for *new*, *modified* and *deleted* Objects.
-These triggers allow you to execute a flow every time a new Object is created, or an existing Object is modified or deleted.
+* Added Triggers for *new*, *modified*, and *deleted* Objects.
+These triggers allow you to execute a flow each time a new Object is created, or when an existing Object is modified or deleted.
 
 == 5.2.0
 
