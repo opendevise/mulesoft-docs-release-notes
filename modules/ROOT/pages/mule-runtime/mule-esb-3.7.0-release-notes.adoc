@@ -336,7 +336,7 @@ MULE-8583 also introduced hostname validation in the HTTP requester since the up
 |===
 |Issue |Description
 |EE-4333 |mule-transport-axis was removed from standalone and embedded EE distributions. Following libraries were also removed as they are not required anymore: axis-1.4.jar, commons-discovery-0.4.jar and geronimo-jaxrpc_1.1_spec-1.1.jar
-|SEC-240 |Mule ESB 3.7.0 requires version of link:/api-manager/external-oauth-2.0-token-validation-policy[Anypoint Enterprise Security] to be 1.5.0 or greater
+|SEC-240 |Mule ESB 3.7.0 requires version of xref:api-manager::external-oauth-2.0-token-validation-policy.adoc[Anypoint Enterprise Security] to be 1.5.0 or greater
 |EE-4441 |The wrapper.conf file now contains default garbage collection and memory settings configured to improve performance in an environment with 2 GB+ memory. If you need to run Mule with less than 2 GB of RAM, edit the wrapper.conf file.
 |EE-4346 a|
 To migrate DataMapper applications, install the DataMapper plugin manually following these steps:

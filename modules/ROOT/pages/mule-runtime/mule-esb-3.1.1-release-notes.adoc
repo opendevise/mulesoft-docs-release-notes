@@ -29,20 +29,20 @@ Both the Community and the Enterprise editions of Mule ESB Version 3.1.1 include
 
 A number of new reference topics are included in the Mule ESB documentation. In short, the topics listed below represent more complete, consistent, and hopefully more useful documentation for the modules and transports that constitute the core value of the Mule ESB. At the top of each new page, you can rate the usefulness of each page. Also, you can give feedback by clicking on the thumbs up or down icons at the bottom of each of these new topics.
 
-* link:/mule-user-guide/v/3.2/ajax-transport-reference[AJAX Transport Reference]
-* link:/mule-user-guide/v/3.2/bpm-transport-reference[BPM Module Reference]
-* link:/mule-user-guide/v/3.2/email-transport-reference[Email Transport Reference]
-* link:/mule-user-guide/v/3.2/file-transport-reference[File Transport Reference]
-* link:/mule-user-guide/v/3.2/ftp-transport-reference[FTP Transport Reference]
-* link:/mule-user-guide/v/3.2/imap-transport-reference[IMAP Transport Reference]
-* link:/mule-user-guide/v/3.2/multicast-transport-reference[Multicast Transport Reference]
-* link:/mule-user-guide/v/3.2/pop3-transport-reference[POP3 Transport Reference]
-* link:/mule-user-guide/v/3.2/sftp-transport-reference[SFTP Transport Reference]
-* link:/mule-user-guide/v/3.2/smtp-transport-reference[SMTP Transport Reference]
-* link:/mule-user-guide/v/3.2/ssl-and-tls-transports-reference[SSL and TLS Transports Reference]
-* link:/mule-user-guide/v/3.2/tcp-transport-reference[TCP Transport Reference]
-* link:/mule-user-guide/v/3.2/udp-transport-reference[UDP Transport Reference]
-* link:/mule-user-guide/v/3.2/xmpp-transport-reference[XMPP Transport Reference]
+* https://docs.archive.mulesoft.com/mule-user-guide/v/3.2/ajax-transport-reference[AJAX Transport Reference]
+* https://docs.archive.mulesoft.com/mule-user-guide/v/3.2/bpm-transport-reference[BPM Module Reference]
+* https://docs.archive.mulesoft.com/mule-user-guide/v/3.2/email-transport-reference[Email Transport Reference]
+* https://docs.archive.mulesoft.com/mule-user-guide/v/3.2/file-transport-reference[File Transport Reference]
+* https://docs.archive.mulesoft.com/mule-user-guide/v/3.2/ftp-transport-reference[FTP Transport Reference]
+* https://docs.archive.mulesoft.com/mule-user-guide/v/3.2/imap-transport-reference[IMAP Transport Reference]
+* https://docs.archive.mulesoft.com/mule-user-guide/v/3.2/multicast-transport-reference[Multicast Transport Reference]
+* https://docs.archive.mulesoft.com/mule-user-guide/v/3.2/pop3-transport-reference[POP3 Transport Reference]
+* https://docs.archive.mulesoft.com/mule-user-guide/v/3.2/sftp-transport-reference[SFTP Transport Reference]
+* https://docs.archive.mulesoft.com/mule-user-guide/v/3.2/smtp-transport-reference[SMTP Transport Reference]
+* https://docs.archive.mulesoft.com/mule-user-guide/v/3.2/ssl-and-tls-transports-reference[SSL and TLS Transports Reference]
+* https://docs.archive.mulesoft.com/mule-user-guide/v/3.2/tcp-transport-reference[TCP Transport Reference]
+* https://docs.archive.mulesoft.com/mule-user-guide/v/3.2/udp-transport-reference[UDP Transport Reference]
+* https://docs.archive.mulesoft.com/mule-user-guide/v/3.2/xmpp-transport-reference[XMPP Transport Reference]
 
 === Change to Mule Configuration Pattern Namespace
 
@@ -86,11 +86,11 @@ to specify a range:
 
 === Migration from Previous Versions
 
-For instructions on migrating from a previous version, consult the link:/mule-user-guide/v/3.2/release-and-migration-notes[Mule Migration page].
+For instructions on migrating from a previous version, consult the https://docs.archive.mulesoft.com/mule-user-guide/v/3.2/release-and-migration-notes[Mule Migration page].
 
 == Open Issues in This Release
 
-* link:/mule-user-guide/v/3.2/mule-high-availability[Limitations to High Availability]
+* https://docs.archive.mulesoft.com/mule-user-guide/v/3.2/mule-high-availability[Limitations to High Availability]
 
 Open Issues +
   +

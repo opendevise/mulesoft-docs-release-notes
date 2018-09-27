@@ -188,7 +188,7 @@ If you have externalized the persistence of status/environment data or business 
 
 ==== Migrating Status/Environment Configuration
 
-Copy the configuration from the previously backed up files. Look at link:/mule-management-console/v/3.3/persisting-environment-data[this guide] to determine the list of changes you need to copy over. Do not override the files with the old ones. Only jackrabbit-repo.xml can be safely overwritten.
+Copy the configuration from the previously backed up files. Look at https://docs.archive.mulesoft.com/mule-management-console/v/3.3/persisting-environment-data[this guide] to determine the list of changes you need to copy over. Do not override the files with the old ones. Only jackrabbit-repo.xml can be safely overwritten.
 
 You need to modify the following files to include the connection parameters:
 
@@ -203,7 +203,7 @@ You need to restart the application for these changes to take effect.
 
 ==== Migrating Business Events (Tracking) configuration
 
-You need to copy the configuration from the previously backed up files. Look at link:/mule-management-console/v/3.3/persisting-transaction-data[this guide] to determine the list of changes you need to copy over. Do not override the files with the old ones. Only jackrabbit-repo.xml can be safely overwritten.
+You need to copy the configuration from the previously backed up files. Look at https://docs.archive.mulesoft.com/mule-management-console/v/3.3/persisting-transaction-data[this guide] to determine the list of changes you need to copy over. Do not override the files with the old ones. Only jackrabbit-repo.xml can be safely overwritten.
 
 You need to modify the following files to include the connection parameters:
 

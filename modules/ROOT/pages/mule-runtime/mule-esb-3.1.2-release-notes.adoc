@@ -27,7 +27,7 @@ Application logging has been the number one requested feature in Mule since the 
 
 Now you can fine-tune the logging for each application you are running in Mule. This is highly useful if you have multiple applications running and you need each one logging events at different levels to application-specific log files. You can also dynamically modify the logging configuration for each application at runtime. So if you want to track down an issue, you don't need to restart your application or server to change the level of your logs. Just change your application log config (typically through your log4j.properties file), and it starts logging with the new settings.
 
-You can read more details about this on link:/mule-user-guide/v/3.2/logging-with-mule-esb-3.x[Logging with Mule ESB 3.X].
+You can read more details about this on https://docs.archive.mulesoft.com/mule-user-guide/v/3.2/logging-with-mule-esb-3.x[Logging with Mule ESB 3.X].
 
 === RESTlets Supported by Mule ESB
 
@@ -37,7 +37,7 @@ This project was also supported by members of the community.
 
 == Migrating From a Previous Version
 
-For instructions on migrating from a previous version, consult the link:/mule-user-guide/v/3.2/[Mule documentation page].
+For instructions on migrating from a previous version, consult the https://docs.archive.mulesoft.com/mule-user-guide/v/3.2/[Mule documentation page].
 
 == Known Issues in This Release
 

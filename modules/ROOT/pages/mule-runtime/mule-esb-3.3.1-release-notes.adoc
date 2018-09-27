@@ -66,7 +66,7 @@ The following list details the improvements to *Mule Studio*.
 
 * Enhanced ability to *drag and drop* building blocks within the canvas
 * Improved building block filter which enables *search by keyword*
-* Improved behavior of link:/mule-user-guide/v/3.3/choice-flow-control-reference[Choice Flow Control]
+* Improved behavior of https://docs.archive.mulesoft.com/mule-user-guide/v/3.3/choice-flow-control-reference[Choice Flow Control]
 * Improved usability for the xref:5@studio::datamapper-user-guide-and-reference.adoc[Anypoint DataMapper Transformer]
 
 === Mule DevKit

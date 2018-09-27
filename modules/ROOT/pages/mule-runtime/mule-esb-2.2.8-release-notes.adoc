@@ -30,7 +30,7 @@ If you want to rollback on any `InvalidRequestException`, on previous versions y
 </default-connector-exception-strategy>
 ----
 
-You can read more about link:/anypoint-connector-devkit/v/3.2/error-handling[Error Handling]
+You can read more about https://docs.archive.mulesoft.com/anypoint-connector-devkit/v/3.2/error-handling[Error Handling]
 in Mule ESB.
 
 == Support for Custom JMX Authenticator
@@ -42,7 +42,7 @@ Before the JMX Agent only supported simple password authentication (SimplePasswo
 <spring:bean name="customJMXAuthenticator" class="org.mule.management.config.ManagementCustomJMXAuthenticatorTestCase$CustomJMXAuthenticator" />
 <management:jmx-default-config jmxAuthenticator-ref="customJMXAuthenticator"/>
 ----
-Here you can read more about link:/mule-user-guide/v/3.2/jmx-management[JMX Management] in Mule.
+Here you can read more about https://docs.archive.mulesoft.com/mule-user-guide/v/3.2/jmx-management[JMX Management] in Mule.
 
 == Exception Strategy can stop the Service
 
@@ -55,12 +55,12 @@ We added a new property in the default service exception strategy (org.mule.serv
 </default-service-exception-strategy>
 ----
 
-Read more about link:/anypoint-connector-devkit/v/3.2/error-handling[Error Handling] in Mule ESB.
+Read more about https://docs.archive.mulesoft.com/anypoint-connector-devkit/v/3.2/error-handling[Error Handling] in Mule ESB.
 
 == Caching of JNDI entry for JMS queue location
 
 We added a way to configure the JNDI resolver to use to look for your JMS queue location. Now you have the `SimpleJndiNameResolver` and the new `CachedJndiNameResolver`. The cache stores the queue location internally and does not try to resolve it every time the queue location is needed. To read more about this visit the
-link:/mule-user-guide/v/3.2/jms-transport-reference[JMS Transport page].
+https://docs.archive.mulesoft.com/mule-user-guide/v/3.2/jms-transport-reference[JMS Transport page].
 
 == Supported Platforms and Deployments
 

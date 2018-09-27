@@ -92,8 +92,8 @@ For a detailed description of the update site's content visit the xref:6@studio:
 == Support
 
 * Refer to MuleSoft’s documentations related to OData:
-** link:/apikit/creating-an-odata-api-with-apikit#installing-the-apikit-odata-extension[Installation] and link:/apikit/creating-an-odata-api-with-apikit#odata-mysql-example[Example].
-** link:/apikit/apikit-odata-extension-reference[EDM and Annotation Reference].
+** xref:3.x@apikit::creating-an-odata-api-with-apikit.adoc#installing-the-apikit-odata-extension[Installation] and xref:3.x@apikit::creating-an-odata-api-with-apikit.adoc#odata-mysql-example[Example].
+** xref:3.x@apikit::apikit-odata-extension-reference.adoc[EDM and Annotation Reference].
 ** https://github.com/mulesoft/apikit-odata-example[Example in Exchange].
 * Access http://forums.mulesoft.com/[MuleSoft’s Forum] to pose questions and get help from Mule’s broad community of users.
 * To access MuleSoft’s expert support team https://www.mulesoft.com/support-and-services/mule-esb-support-license-subscription[subscribe to Mule ESB Enterprise] and log in to MuleSoft’s http://www.mulesoft.com/support-login[Customer Portal].

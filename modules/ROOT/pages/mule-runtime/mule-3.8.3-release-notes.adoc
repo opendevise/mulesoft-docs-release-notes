@@ -13,7 +13,7 @@ Mule Runtime 3.8.3 key enhancements are:
 * Support for Mule xref:3.8@mule-runtime::application-deployment.adoc#deploying-applications-in-parallel[parallel application deployment]
 +
 Deploying applications in parallel reduces the startup time when you deploy a large number.
-* Availability of the link:/api-manager/gatekeeper[gatekeeper feature] on clusters
+* Availability of the xref:api-manager::gatekeeper.adoc[gatekeeper feature] on clusters
 +
 APIs on a cluster are blocked and return a 503 status code until a complete reconciliation cycle with API Manager occurs. Policies declared as applied on the UI are applied. Policies unapplied since the last restart are removed.
 +
@@ -31,7 +31,7 @@ Policies are now applied to an API version as soon as retrieved instead of waiti
 
 *Important change*:
 
-The default policy polling time has been extended to reduce the load on API Manager and improve scalability. MuleSoft based this change on careful examination of actual customer experiences. A minimum 60-second delay now occurs between the time you apply a policy in the UI and the time the policy actually goes into effect. The same delay occurs when you disable or edit a policy. You can link:/api-manager/using-policies#configuring-the-policy-polling-time[configure the length of the delay].
+The default policy polling time has been extended to reduce the load on API Manager and improve scalability. MuleSoft based this change on careful examination of actual customer experiences. A minimum 60-second delay now occurs between the time you apply a policy in the UI and the time the policy actually goes into effect. The same delay occurs when you disable or edit a policy. You can xref:api-manager::using-policies.adoc#configuring-the-policy-polling-time[configure the length of the delay].
 
 
 == Supported Software

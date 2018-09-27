@@ -13,7 +13,7 @@ Our new version of Studio functions as a single download with two runtimes:
 * Mule 3.4.1 Enterprise Runtime - available for deployment on premises and to CloudHub
 * CloudHub Mule Runtime (October 2013) - available for deployment to CloudHub
 
-These release notes apply to Mule Studio (October 2013) and the CloudHub Mule Runtime (October 2013). Note that the new features and functionality described here are only available for deployment in CloudHub using the CloudHub Mule Runtime (October 2013). If you intend to deploy your application to an on-premise production server, use a Mule 3.4.1 runtime when you begin a new project in Mule Studio. Access link:/mule-user-guide/v/3.4/[Mule 3.4 documentation] for details.
+These release notes apply to Mule Studio (October 2013) and the CloudHub Mule Runtime (October 2013). Note that the new features and functionality described here are only available for deployment in CloudHub using the CloudHub Mule Runtime (October 2013). If you intend to deploy your application to an on-premise production server, use a Mule 3.4.1 runtime when you begin a new project in Mule Studio. Access https://docs.archive.mulesoft.com/mule-user-guide/v/3.4/[Mule 3.4 documentation] for details.
 [TIP]
 Refer to our Release Strategy for full details about our most recently released runtimes and their deployment options.
 http://www.mulesoft.com/mule-esb-open-source-esb[Download Mule Studio (October 2013)] to take advantage of the latest and greatest!  +

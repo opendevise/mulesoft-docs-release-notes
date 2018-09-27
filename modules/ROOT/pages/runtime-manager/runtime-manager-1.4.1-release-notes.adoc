@@ -32,7 +32,7 @@ Agent plugins integrations is compatible with the following runtime versions:
 
 * *Unified Alerts for Cloudhub + Anypoint Runtime Manager*: Unified event based alerts for CloudHub and Runtime Manager. It enables IT Operations users to have the ability to proactively monitor several incidents. Support for business groups enables admins to manage read & write access to alerts. See xref:runtime-manager::alerts-on-runtime-manager.adoc[Alerts on Runtime Manager].
 
-* *Support for static IP addresses*: Agent can now support specific static addresses. See link:/runtime-manager/installing-and-configuring-mule-agent#ports-ips-and-hostnames-to-whitelist[static IP addresses].
+* *Support for static IP addresses*: Agent can now support specific static addresses. See xref:runtime-manager::installing-and-configuring-runtime-manager-agent.adoc#ports-ips-and-hostnames-to-whitelist[static IP addresses].
 
 
 

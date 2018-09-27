@@ -22,7 +22,7 @@ The new version of the Mule ESB Management Console replaces the console formerly
 
 Hyperic is optimized for general-purpose monitoring, while the new management console is tightly integrated with Mule ESB and optimized for Mule use cases, including deep Mule-specific diagnostics and auditing capabilities, as well as intelligent alerting for Mule SLAs. The new management console both complements and integrates with open source and commercial monitoring tools, including Hyperic.
 
-To find out more about the Mule Management Console release version 2.2.5, please see the xref:deprecated/legacy-mule-release-notes.adoc[Release Notes] and the Mule Management Console link:/mule-management-console/v/3.7[Home] page.
+To find out more about the Mule Management Console release version 2.2.5, please see the xref:deprecated/legacy-mule-release-notes.adoc[Release Notes] and the Mule Management Console https://docs.archive.mulesoft.com/mule-management-console/v/3.7/[Home] page.
 
 == Mule ESB
 

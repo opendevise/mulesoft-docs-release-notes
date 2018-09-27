@@ -4,4 +4,4 @@ include::_attributes.adoc[]
 endif::[]
 :keywords: release notes, migration
 
-The i18n code has changed throughout the codebase. See link:/mule-user-guide/v/3.2/internationalizing-strings[Internationalizing Strings] for more information.
+The i18n code has changed throughout the codebase. See https://docs.archive.mulesoft.com/mule-user-guide/v/3.2/internationalizing-strings[Internationalizing Strings] for more information.

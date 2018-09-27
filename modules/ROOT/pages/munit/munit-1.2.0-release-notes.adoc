@@ -43,8 +43,8 @@ This release provides the following new artifact versions:
 === Anypoint Studio Plugin
 
 * Multiple Suite Run
-* MUnit link:/munit/v/1.2.0/using-munit-in-anypoint-studio#running-a-tests-inside-a-folder[Nested Folders]
-* Create link:/munit/v/1.2.0/munit-maven-support#coverage[Coverage Reports from inside Studio]
+* MUnit https://docs.archive.mulesoft.com/munit/v/1.2/using-munit-in-anypoint-studio#running-a-tests-inside-a-folder[Nested Folders]
+* Create https://docs.archive.mulesoft.com/munit/v/1.2/munit-maven-support#coverage[Coverage Reports from inside Studio]
 * Support Autocompletion for MUnit’s MEL functions
 * Add Metadata support to MUnit message processors
 
@@ -120,8 +120,8 @@ The workaround is to overwrite that property in the lunch configuration: `Djava.
 
 == See Also
 
-* link:/munit/v/1.2/[MUnit Documentation]
-* link:/munit/v/1.1[MUnit 1.1 Documentation]
-* link:/munit/v/1.0[MUnit 1.0 Documentation]
+* https://docs.archive.mulesoft.com/munit/v/1.2/[MUnit Documentation]
+* https://docs.archive.mulesoft.com/munit/v/1.1/[MUnit 1.1 Documentation]
+* https://docs.archive.mulesoft.com/munit/v/1.0/[MUnit 1.0 Documentation]
 * https://forums.mulesoft.com/search.html?q=munit[MuleSoft MUnit Forum]
 * https://support.mulesoft.com[Contact MuleSoft]

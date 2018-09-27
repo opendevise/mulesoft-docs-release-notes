@@ -36,7 +36,7 @@ Build Id: 201606141728
 == What's New
 
 In this release, we have completed the maven support for domain within Studio. +
-We recently released link:/munit/v/1.2.0/munit-domain-support[MUnit 1.2.0], which includes domain support as one of the features. +
+We recently released https://docs.archive.mulesoft.com/munit/v/1.2/munit-domain-support[MUnit 1.2.0], which includes domain support as one of the features. +
 Our customers very often relies on Maven for MUnit automated testing, domain support within Studio removes frictions for _mavenizing_ projects and running MUnit tests.
 
 In addition, we have also fixed various issues and improved the xref:general:getting-started:implement-and-test.adoc#create-a-project-based-on-a-raml[API Import] / xref:6@studio::api-sync-reference.adoc[Sync] feature introduced in 6.0.0.
@@ -139,6 +139,6 @@ For a detailed description of the update site's content visit the xref:6@studio:
 
 == Support
 
-* Refer to MuleSoft’s documentations related to link:/munit/v/1.2.0/munit-domain-support[Domain Support in MUnit and Studio].
+* Refer to MuleSoft’s documentations related to https://docs.archive.mulesoft.com/munit/v/1.2/munit-domain-support[Domain Support in MUnit and Studio].
 * Access http://forums.mulesoft.com/[MuleSoft’s Forum] to pose questions and get help from Mule’s broad community of users.
 * To access MuleSoft’s expert support team https://www.mulesoft.com/support-and-services/mule-esb-support-license-subscription[subscribe to Mule ESB Enterprise] and log in to MuleSoft’s http://www.mulesoft.com/support-login[Customer Portal].

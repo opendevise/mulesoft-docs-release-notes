@@ -35,7 +35,7 @@ The Mule team is proud to announce the release of Mule 3.2 Enterprise, the most 
 * The default rules for how a Mule flow is processed have been made more consistent, and configurations have been given the ability to override these defaults:
 ** A Mule flow that is not transactional and whose inbound endpoint uses the one-way exchange pattern will, by default, use a SEDA queue and be processed asynchronously.
 ** A Mule flow that is either transactional or whose inbound endpoint uses the request-response exchange pattern will, by default,be processed synchronously.
-** These defaults can be overridden with a new construct called a Processing Strategy. See link:/mule-user-guide/v/3.2/flow-processing-strategies[Flow Processing Strategies] for information on this.
+** These defaults can be overridden with a new construct called a Processing Strategy. See https://docs.archive.mulesoft.com/mule-user-guide/v/3.2/flow-processing-strategies[Flow Processing Strategies] for information on this.
 ** Processing strategies also allow the details of threading to be configured. Thus, the threading-profile element is no longer supported on flows.
 * Request Reply messaging style has been added to flows. This messaging style is well suited for scenarios where you want to send a request that results in an asynchronous reply message.
 

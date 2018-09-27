@@ -26,23 +26,23 @@ We have eliminated a memory leak which occurred when Transformers and Dynamic En
 
 In this release we solved multiple problems regarding the handling of message properties through different Transports and Routers. We have added many tests to ensure that the problems do not reappear. We also invested much time to make sure that Mule ESB handles message properties consistently within Flows. If you encountered problems in this area with previous releases, please try out version 3.1.3.
 
-For more about message properties, see: link:/mule-user-guide/v/3.2/message-property-scopes[Message Property Scopes].
+For more about message properties, see: https://docs.archive.mulesoft.com/mule-user-guide/v/3.2/message-property-scopes[Message Property Scopes].
 
 === Error Handling Consistency
 
 We also devoted much effort to improving error handling consistency throughout Mule ESB. We uncovered and fixed many error handling inconsistencies across multiple components, particularly those related to Flows. If you rely on exception strategies to get the most out of ESB, version 3.1.3 should be your choice.
 
-For additional details on error handling, see: link:/mule-user-guide/v/3.2/error-handling[Error Handling]
+For additional details on error handling, see: https://docs.archive.mulesoft.com/mule-user-guide/v/3.2/error-handling[Error Handling]
 
 === Multiple Fixes on JMS and WMQ Transport
 
 We have resolved multiple issues involving the JMS and WMQ Transports. Transactionality and error handling now work as expected. The replyTo and request-response features now work consistently. We also fixed the feature that includes a Message Processor in the response chain. These fixes should prove critical if you use either the JMS or WMQ Transport.
 
-For reference information on the JMS Transport, see link:/mule-user-guide/v/3.2/jms-transport-reference[JMS Transport Reference].
+For reference information on the JMS Transport, see https://docs.archive.mulesoft.com/mule-user-guide/v/3.2/jms-transport-reference[JMS Transport Reference].
 
-For details about the WMQ Transport, see link:/mule-user-guide/v/3.2/mule-wmq-transport-reference[WMQ Transport Reference].
+For details about the WMQ Transport, see https://docs.archive.mulesoft.com/mule-user-guide/v/3.2/mule-wmq-transport-reference[WMQ Transport Reference].
 
-For overview disscusion of Mule Transports, see link:/mule-user-guide/v/3.2/connecting-using-transports[Connecting Using Transports].
+For overview disscusion of Mule Transports, see https://docs.archive.mulesoft.com/mule-user-guide/v/3.2/connecting-using-transports[Connecting Using Transports].
 
 == Known Issues in This Release
 

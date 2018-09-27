@@ -97,9 +97,9 @@ organizations/{organizationId}/public/*
 
 == Learn More Here
 
-* link:/api-manager/manage-exchange-api-task[Manage an API from Exchange]
-* link:/api-manager/environment-permission-task[Grant Permission to Access Environments]
-* link:/api-manager/classify-api-task[Classify an API]
+* xref:api-manager::manage-exchange-api-task.adoc[Manage an API from Exchange]
+* xref:api-manager::environment-permission-task.adoc[Grant Permission to Access Environments]
+* xref:api-manager::classify-api-task.adoc[Classify an API]
 
 [[opt_out]]
 == Want to Opt Out?

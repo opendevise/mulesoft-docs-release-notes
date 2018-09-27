@@ -74,9 +74,9 @@ We revised and simplified the XML schema for this release. This was a final revi
 
 The Mule development team is very pleased to announce the first Release Candidate for 2.0, the next generation of the Mule ESB, and believe it or not we even have some documentation available!
 
-First take a look at the link:/mule-user-guide/v/3.2/about-mule-configuration[Mule 2.0 Configuration Guide] to see how a 2.0 Mule config compares to a 1.4 config.
+First take a look at the https://docs.archive.mulesoft.com/mule-user-guide/v/3.2/about-mule-configuration[Mule 2.0 Configuration Guide] to see how a 2.0 Mule config compares to a 1.4 config.
 
-For those interested in creating an XML Namespace for their custom module/transport (or just want to know the gory details of how it works), read link:/mule-user-guide/v/3.2/creating-a-custom-xml-namespace[How to Create an XML Namespace].
+For those interested in creating an XML Namespace for their custom module/transport (or just want to know the gory details of how it works), read https://docs.archive.mulesoft.com/mule-user-guide/v/3.2/creating-a-custom-xml-namespace[How to Create an XML Namespace].
 
 A lot of work has gone into Mule 2.0 (see the 425 issues listed below, for example), so we'd really like you to try it out and let us know how it goes.
 

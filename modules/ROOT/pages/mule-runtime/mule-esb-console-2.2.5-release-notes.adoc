@@ -65,5 +65,5 @@ The following are the known issues with the current release of the console:
 * Deploying the Mule Management Console WAR in WebLogic Server is known not to work at this time.
 * Deploying the Mule Management Console WAR in JBoss is known not to work at this time.
 * XsltTransformer does not work in Hot Deployment. The XsltTransformer cannot load an XSL file when Mule is deployed in an EAR outside the WAR.
-* Migrating the early access 2 (EA2) release to the current GA 2.2.5 release. This migration requires extra steps. See also the link:/mule-user-guide/v/3.2/troubleshooting[Troubleshooting Tips].
+* Migrating the early access 2 (EA2) release to the current GA 2.2.5 release. This migration requires extra steps. See also the https://docs.archive.mulesoft.com/mule-user-guide/v/3.2/troubleshooting[Troubleshooting Tips].
 * Mule Management Console does not work properly when Mule ESB is installed as a service.

@@ -123,7 +123,7 @@ See the full xref:runtime-manager/runtime-manager-1.5.0-release-notes.adoc[Anypo
 This release includes the following new features:
 
 * xref:runtime-manager::alerts-on-runtime-manager.adoc[Alerts] for applications and servers on-premises
-* Support for link:/runtime-manager/installing-and-configuring-mule-agent#ports-ips-and-hostnames-to-whitelist[static IP addresses]
+* Support for xref:runtime-manager::installing-and-configuring-runtime-manager-agent.adoc#ports-ips-and-hostnames-to-whitelist[static IP addresses]
 
 See the full xref:runtime-manager/runtime-manager-1.4.1-release-notes.adoc[Anypoint Runtime Manager 1.4.1 Release Notes].
 

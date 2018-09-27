@@ -51,36 +51,36 @@ We are excited to launch a new set of tools in Mule ESB 3.3 that have been desig
 
 === Mule ESB and Studio
 
-* *Cache*: *_Enterprise Edition_* Improves performance with “in memory” caching of messages, such as the results of service calls. Refer to link:/mule-user-guide/v/3.3/cache-scope[Cache] documentation for more details.
+* *Cache*: *_Enterprise Edition_* Improves performance with “in memory” caching of messages, such as the results of service calls. Refer to https://docs.archive.mulesoft.com/mule-user-guide/v/3.3/cache-scope[Cache] documentation for more details.
 
 * *Anypoint DataMapper*: Transforms data, using a graphical interface, from one format to another. This powerful, new feature can even map specific fields within the message structure and it supports the transformation to and from the following data formats: XML, JSON, CSV, POJOs, collections of POJOs, and EXCEL. Refer to xref:5@studio::datamapper-user-guide-and-reference.adoc[DataMapper] documentation for more details. +
  +
  DataMapper is fully available only in Mule ESB Enterprise Edition. *_Enterprise Edition_* Experiment with DataMapper in Mule ESB Community Edition to evaluate this powerful new tool in Studio; download Mule ESB Enterprise to RUN an application and see DataMapper in action.
 
-* *Improved error handling*: Integrates new exception strategies into Studio. These include: Catch and Rollback exception strategies, and Choice exception strategy, which handles errors conditionally, according to the type of exception thrown. Refer to link:/mule-user-guide/v/3.3/error-handling[Error Handling] documentation for more details.
+* *Improved error handling*: Integrates new exception strategies into Studio. These include: Catch and Rollback exception strategies, and Choice exception strategy, which handles errors conditionally, according to the type of exception thrown. Refer to https://docs.archive.mulesoft.com/mule-user-guide/v/3.3/error-handling[Error Handling] documentation for more details.
 
-* *Iterative processing using Foreach*: Allows for iterative, loop-type processing of a message payload or properties while maintaining the original message context. Refer to link:/mule-user-guide/v/3.3/foreach[Foreach] documentation for more details.
+* *Iterative processing using Foreach*: Allows for iterative, loop-type processing of a message payload or properties while maintaining the original message context. Refer to https://docs.archive.mulesoft.com/mule-user-guide/v/3.3/foreach[Foreach] documentation for more details.
 
-* *Simplified expressions*: Unifies an expression language to promote consistency and ease-of-use for message validation, filtering, routing, or transformation. Refer to link:/mule-user-guide/v/3.3/mule-expression-language-mel[Mule Expression Language MEL] documentation for more details.
+* *Simplified expressions*: Unifies an expression language to promote consistency and ease-of-use for message validation, filtering, routing, or transformation. Refer to https://docs.archive.mulesoft.com/mule-user-guide/v/3.3/mule-expression-language-mel[Mule Expression Language MEL] documentation for more details.
 
 * *SAP Endpoint*: *_Enterprise Edition_*  +
- Presents an efficient, new SAP Endpoint in Studio that facilitates seamless SAP integration, including SAP-to-SalesForce integration. Further, Mule can now send and receive messages in SAP iDocs format. Refer to the link:/mule-user-guide/v/3.3/sap-endpoint-reference[SAP Endpoint] documentation to learn about the additional libraries required to enable the SAP Endpoint in Studio.
+ Presents an efficient, new SAP Endpoint in Studio that facilitates seamless SAP integration, including SAP-to-SalesForce integration. Further, Mule can now send and receive messages in SAP iDocs format. Refer to the https://docs.archive.mulesoft.com/mule-user-guide/v/3.3/sap-endpoint-reference[SAP Endpoint] documentation to learn about the additional libraries required to enable the SAP Endpoint in Studio.
 
-* *Business events*: *_Enterprise Edition_* Enables the configuration and tracking of business events and key performance indicators in Studio. Refer to link:/mule-management-console/v/3.3/business-events-use-cases[Business Events] documentation for more details.
+* *Business events*: *_Enterprise Edition_* Enables the configuration and tracking of business events and key performance indicators in Studio. Refer to https://docs.archive.mulesoft.com/mule-management-console/v/3.3/business-events-use-cases[Business Events] documentation for more details.
 
 * *SCM support*: Controls the evolution of a Studio project by supporting popular Software Configuration Management tools: Git and Subversion. Install SCM plugins to track and control changes in a Studio project. Refer to Git and xref:5@studio::using-subversion-with-studio.adoc[Subversion] documentation for more details.
 
-* *Maven support*: Enables import of projects built within the Maven framework into Studio, and export of Studio-built projects to Maven. Install Maven’s plugins to move projects back and forth between build tools. Refer to link:/mule-user-guide/v/3.3/importing-maven-into-studio[Importing and Exporting] documentation for more details.
+* *Maven support*: Enables import of projects built within the Maven framework into Studio, and export of Studio-built projects to Maven. Install Maven’s plugins to move projects back and forth between build tools. Refer to https://docs.archive.mulesoft.com/mule-user-guide/v/3.3/importing-maven-into-studio[Importing and Exporting] documentation for more details.
 
 === MuleSoft Management Console
 
 _Enterprise Edition_
 
-* *High availability support*: Supports Active/Passive (that is, cold standby) configuration for the management system. Refer to link:/mule-management-console/v/3.3/persisting-environment-data[Persisting Environment Data] for more details.
+* *High availability support*: Supports Active/Passive (that is, cold standby) configuration for the management system. Refer to https://docs.archive.mulesoft.com/mule-management-console/v/3.3/persisting-environment-data[Persisting Environment Data] for more details.
 
-* *Persistence alternatives*: Officially supports Oracle and PostgreSQL database options for persisting management configuration, deployment and business event data. Refer to link:/mule-management-console/v/3.3/persisting-transaction-data[Persisting Transaction Data] and link:/mule-management-console/v/3.3/persisting-environment-data[Persisting Environment Data] documentation for more details.
+* *Persistence alternatives*: Officially supports Oracle and PostgreSQL database options for persisting management configuration, deployment and business event data. Refer to https://docs.archive.mulesoft.com/mule-management-console/v/3.3/persisting-transaction-data[Persisting Transaction Data] and https://docs.archive.mulesoft.com/mule-management-console/v/3.3/persisting-environment-data[Persisting Environment Data] documentation for more details.
 
-* *Audit log*: Offers an Audit Log that enables searches for user login activity such as, adding server registration/de-registration. Refer to link:/mule-management-console/v/3.3/audit-logs[Audit Logs] documentation for more details.
+* *Audit log*: Offers an Audit Log that enables searches for user login activity such as, adding server registration/de-registration. Refer to https://docs.archive.mulesoft.com/mule-management-console/v/3.3/audit-logs[Audit Logs] documentation for more details.
 
 == Noteworthy Improvements
 
@@ -92,11 +92,11 @@ What follows is a list of major improvements MuleSoft is proud to include and ma
 
 * **Apache CXF 2.5.1 upgrade**: Supports the latest bug fixes and enhancements in the CXF Web Services framework.
 
-* **WS-Security access**: _*Enterprise Edition*_ Enables WS-Security on a SOAP component in Studio to provide application-layer security for a Web service. Refer to link:/mule-user-guide/v/3.3/enabling-ws-security[Enabling WS-Security] documentation for more details.
+* **WS-Security access**: _*Enterprise Edition*_ Enables WS-Security on a SOAP component in Studio to provide application-layer security for a Web service. Refer to https://docs.archive.mulesoft.com/mule-user-guide/v/3.3/enabling-ws-security[Enabling WS-Security] documentation for more details.
 
 * *Message property improvements*: Scopes, copies, and consistently stores session and invocation message properties.
 
-* *Message and variable transformer addition*: Simplifies the management of properties, variables and attachments; replaces the Message Property transformer, which is now deprecated. Refer to link:/mule-user-guide/v/3.3/transformer-reference[Transformers] documentation for more details.
+* *Message and variable transformer addition*: Simplifies the management of properties, variables and attachments; replaces the Message Property transformer, which is now deprecated. Refer to https://docs.archive.mulesoft.com/mule-user-guide/v/3.3/transformer-reference[Transformers] documentation for more details.
 
 * *HTTP improvements*: Extends the set of HTTP-specific message properties and makes their behavior more consistent. Further, adds specific components and transformers to facilitate the creation of HTTP response elements.
 
@@ -392,7 +392,7 @@ Neither MULE_HOME nor MULE_BASE is required or recommended to run Mule 3.3. If e
 
 === Message Properties
 
-Mule ESB 3.3 resolves several issues involving message properties and includes two improvements. Refer to link:/mule-user-guide/v/3.3/transformer-reference[Transformers] documentation for further details on Mule Studio’s new transformers.
+Mule ESB 3.3 resolves several issues involving message properties and includes two improvements. Refer to https://docs.archive.mulesoft.com/mule-user-guide/v/3.3/transformer-reference[Transformers] documentation for further details on Mule Studio’s new transformers.
 
 * *Fixed*: Mule does not lose invocation properties in a flow with request-response outbound endpoints. (Also fixed in Mule versions 3.1.4 and 3.2.2.)
 * *Fixed*: Mule correctly propagates invocation properties in flows with splitters and routers. (Also fixed in Mule versions 3.1.4 and 3.2.2.)
@@ -618,7 +618,7 @@ If you do not wish to enforce this new error handling behavior for private flows
 </flow>
 ----
 
-Refer to link:/mule-user-guide/v/3.3/error-handling[Error Handling] documentation to learn more about Mule ESB 3.3’s exception strategies.
+Refer to https://docs.archive.mulesoft.com/mule-user-guide/v/3.3/error-handling[Error Handling] documentation to learn more about Mule ESB 3.3’s exception strategies.
 
 === Web Services
 
@@ -641,13 +641,13 @@ Mule ESB 3.3 offers the following improvements to the way it handles errors that
 . CXF propagates the correct exception whenever an exception occurs.
 . Mule ESB3.3 has removed the `onException` attribute from the CXF inbound message processors. (Previously, Mule ESB 3.x used `onException` as a workaround in order to be able to return a SOAP fault to a caller or invoke and exception strategy.)
 
-Refer to link:/mule-user-guide/v/3.3/cxf-error-handling[CXF Error Handling] for more detailed information regarding Web services and error handling.
+Refer to https://docs.archive.mulesoft.com/mule-user-guide/v/3.3/cxf-error-handling[CXF Error Handling] for more detailed information regarding Web services and error handling.
 
 ==== WS-Security
 
 _Enterprise Edition_
 
-In Mule ESB 3.3, you can implement application-layer security by enabling WS-security (a CXF configuration) on your Web service. WS-security defines a new SOAP header which is capable of carrying various security tokens that systems use to identify a Web service caller's identity and privileges. Refer to the link:/mule-user-guide/v/3.3/enabling-ws-security[Enabling WS-Security] for detailed instructions on how to enable it on your Web service.
+In Mule ESB 3.3, you can implement application-layer security by enabling WS-security (a CXF configuration) on your Web service. WS-security defines a new SOAP header which is capable of carrying various security tokens that systems use to identify a Web service caller's identity and privileges. Refer to the https://docs.archive.mulesoft.com/mule-user-guide/v/3.3/enabling-ws-security[Enabling WS-Security] for detailed instructions on how to enable it on your Web service.
 
 Working in Studio, you can add key-value pairs to a SOAP component in order to create a map of key-value pairs that correspond to the CXF WSS4J security-configuration text strings in WSHandlerConstants and WSConstants. In XML, you add a key-value pair inside the ws-config child element of a ws-security element.
 
@@ -668,7 +668,7 @@ Further, you can add custom Token Validators to authenticate the message credent
 
 ==== Mule Security Manager
 
-Because the newest version of Apache’s WSS4J has changed the way it processes UserNameTokens — and because Mule supports the newest version of WSS4J — Mule ESB 3.3 introduces a new way to configure the link:/mule-user-guide/v/3.3/security-manager-configuration-reference[Mule Security Manager] to integrate with CXF.
+Because the newest version of Apache’s WSS4J has changed the way it processes UserNameTokens — and because Mule supports the newest version of WSS4J — Mule ESB 3.3 introduces a new way to configure the https://docs.archive.mulesoft.com/mule-user-guide/v/3.3/security-manager-configuration-reference[Mule Security Manager] to integrate with CXF.
 
 To configure the Mule Security Manager in CXF in Mule ESB 3.2, you add the security manager callback as a password callback in the WSS4J map configuration, and CXF injects WSS4J configuration into the WSS4J interceptor. However, in the latest version of WSS4J, the callback handlers no longer perform validation activities; instead, they merely set the password on the callback. In other words, the authentication and validation tasks have been stripped from the WSS4J processors and transferred to http://coheigea.blogspot.com/2011/04/wss4j-16-introducing-validators.html[token validators]. This WSS4J change precipitated the modified way in which Mule ESB 3.3 configures the Mule Security Manager to work with CXF.
 
@@ -719,7 +719,7 @@ Within the context of the CXF framework, http://cxf.apache.org/docs/data-binding
 |org.mule.api.MuleSession.setProperty(String, Object) |*Deprecated* |Use org.mule.api.MuleSession.setProperty(String, Serializable)
 |org.mule.api.MuleSession.getProperty(Object) |*Deprecated* |Use org.mule.api.MuleSession.getProperty(String)
 |org.mule.api.MuleSession.removeProperty(Object) |*Deprecated* |Use org.mule.api.MuleSession.removeProperty(String)
-|org.mule.expression.MuleExpressionEvaluator |*Deprecated* |Use the default expression evaluators. Consult the link:/mule-user-guide/v/3.3/mule-expression-language-mel[expressions configuration reference] for more information.
+|org.mule.expression.MuleExpressionEvaluator |*Deprecated* |Use the default expression evaluators. Consult the https://docs.archive.mulesoft.com/mule-user-guide/v/3.3/mule-expression-language-mel[expressions configuration reference] for more information.
 |org.mule.module.cxf.CxfComponentExceptionStrategy |*Deprecated* |Mule ESB 3.3 introduced improved error handling, therefore, the CXF custom exception strategy no longer adds value.
 |org.mule.module.cxf.component.WebServiceWrapper Component |*Deprecated* |Mule ESB 3.3 enables you to send the result of a web service call to another endpoint using a flow.
 |===
