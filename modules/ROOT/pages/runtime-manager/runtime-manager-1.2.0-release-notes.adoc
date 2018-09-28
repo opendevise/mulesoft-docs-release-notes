@@ -42,7 +42,7 @@ None.
 
 == Migration Guidance
 
-See link:/runtime-manager/installing-and-configuring-mule-agent#agent-update-process[updating the Agent].
+See xref:runtime-manager::installing-and-configuring-runtime-manager-agent.adoc#agent-update-process[updating the Agent].
 
 == Known Issues
 

@@ -100,25 +100,25 @@ This release of API Manager includes new and enhanced features for accounts that
 
 === Key Changes and Enhancements
 
-* A tight integration of Anypoint Platform components extends the link:/api-manager/environments-concept[use of environments] to API management.
+* A tight integration of Anypoint Platform components extends the xref:api-manager::environments-concept.adoc[use of environments] to API management.
 * API permissions are now environment-based.
-* You can now link:/api-manager/create-instance-task[create multiple instances] of an API.
-* APIs in Exchange can be link:/api-manager/manage-exchange-api-task[managed from API Manager].
+* You can now xref:api-manager::create-instance-task.adoc[create multiple instances] of an API.
+* APIs in Exchange can be xref:api-manager::manage-exchange-api-task.adoc[managed from API Manager].
 * There are two new APIs for managing APIs:
 ** API Manager API v1.0 to manage API.
 ** API Manager proxy API v1.0 to manage deployment of API proxies through API Manager.
 * Support for Mule 4 Early Access. Mule 4-related changes to API Manager are:
 ** Classloader isolation exists between the application, the runtime and the connectors, and policies.
-** This release of Mule 4 link:/api-manager/policy-scope-size-concept[changes the packaging, size, and scope] of a policy.
+** This release of Mule 4 xref:api-manager::policy-scope-size-concept.adoc[changes the packaging, size, and scope] of a policy.
 ** All policies are non-blocking.
 ** All policies except CORS, which is executed first, can be ordered.
-* link:/api-manager/develop-custom-policies-reference[Custom policy development] has changed.
+* xref:api-manager::develop-custom-policies-reference.adoc[Custom policy development] has changed.
 * Header propagation no longer occurs by default and needs to be configured.
 * Resource level policy support, which was restricted to RAML-based APIs, is extended to any HTTP API.
 
 === Changes Related to Using Mule 4 Early Access
 
-* API Manager link:/api-manager/latest-overview-concept[does not support auto-generation and deployment of proxies].
+* API Manager xref:api-manager::latest-overview-concept.adoc[does not support auto-generation and deployment of proxies].
 * The Throttling policy is not supported in this Mule release.
 * Mule 4 replaces the security manager policies with two HTTP Basic Authentication policies:
 ** A combination of HTTP Basic Authentication and Simple Security Manager
@@ -157,9 +157,9 @@ In this release, the invalid console path generated for RAML proxies with paths 
 
 === Resource Level Policies
 
-This feature provides the flexibility to apply policies to specific resources and/or methods of an API instead to the entire API. This feature is enabled only for RAML-based APIs or proxies. For more information, see link:/api-manager/resource-level-policies-about["About Resource Level Policies"] and link:/api-manager/tutorial-manage-an-api["To Apply Policies and SLA Tiers."]
+This feature provides the flexibility to apply policies to specific resources and/or methods of an API instead to the entire API. This feature is enabled only for RAML-based APIs or proxies. For more information, see xref:api-manager::resource-level-policies-about.adoc["About Resource Level Policies"] and xref:api-manager::tutorial-manage-an-api.adoc["To Apply Policies and SLA Tiers."]
 
-Custom policies require changes to enable Resource Level granularity. For more information, see link:/api-manager/add-rlp-support-task["To Add Resource Level Policy Support to a Custom Policy."]
+Custom policies require changes to enable Resource Level granularity. For more information, see xref:1.x@api-manager::add-rlp-support-task.adoc["To Add Resource Level Policy Support to a Custom Policy."]
 
 === Layout Changes
 
@@ -178,7 +178,7 @@ This release introduces the following enhancements:
 * Added pagination on the custom policies page.
 * Increased granularity of the Rate Limiting and Throttling policy configuration.
 +
-You can now specify multiple throughput limits for an SLA tier using link:/api-manager/rate-limiting-and-throttling-sla-based-policies#creating-an-sla-tier-or-layered-slas[different time periods and units].
+You can now specify multiple throughput limits for an SLA tier using xref:api-manager::rate-limiting-and-throttling-sla-based-policies.adoc#creating-an-sla-tier-or-layered-slas[different time periods and units].
 
 == 1.14.2
 
@@ -204,10 +204,10 @@ This release includes new API Manager features, support for xref:api-designer/ap
 
 API Manager 1.14.1 includes the following new features:
 
-* The capability to link:/api-manager/using-api-alerts[set alerts] for policy violations, response time, count, and codes.
-* An advanced configuration to customize the response timeout of the link:/api-manager/setting-up-an-api-proxy[auto-generated proxy].
+* The capability to xref:api-manager::using-api-alerts.adoc[set alerts] for policy violations, response time, count, and codes.
+* An advanced configuration to customize the response timeout of the xref:1.x@api-manager::setting-up-an-api-proxy.adoc[auto-generated proxy].
 +
-To customize the response timeout of the deployed proxy, use the advanced options as described in step 5-h of section "link:/api-manager/setting-up-an-api-proxy#setting-up-a-proxy[Setting up a Proxy]".
+To customize the response timeout of the deployed proxy, use the advanced options as described in step 5-h of section "xref:1.x@api-manager::setting-up-an-api-proxy.adoc#setting-up-a-proxy[Setting up a Proxy]".
 
 === Resolved Issues
 
@@ -236,11 +236,11 @@ This release includes a new feature, an improvement, and bug fixes.
 
 === New Feature
 
-API Manager 1.13.0 includes the capability to link:/api-manager/using-policies#disabling-and-enabling-policies[enable and disable policies].
+API Manager 1.13.0 includes the capability to xref:api-manager::using-policies.adoc#disabling-and-enabling-policies[enable and disable policies].
 
 === Resolved Issues and Improvements
 
-API Manager 1.13.0 fixes API Tooling bugs to support new API tooling. API Manager has been improved to support dependencies between policies that you configure using the link:/api-manager/custom-policy-reference#policy-definition-yaml-file[required characteristics] parameter.
+API Manager 1.13.0 fixes API Tooling bugs to support new API tooling. API Manager has been improved to support dependencies between policies that you configure using the xref:1.x@api-manager::custom-policy-reference.adoc#policy-definition-yaml-file[required characteristics] parameter.
 
 == 1.12.0
 
@@ -269,7 +269,7 @@ As of this release, Anypoint Platform accounts must have the appropriate API ent
 
 === New Features
 
-API Manager 1.10.0 includes the capability to sort the list of API Portals and the list of applications on the Developer Portal, as described in the link:/api-manager/engaging-users-of-your-api#developer-portal[Developer portal documentation].
+API Manager 1.10.0 includes the capability to sort the list of API Portals and the list of applications on the Developer Portal, as described in the xref:1.x@api-manager::engaging-users-of-your-api.adoc#developer-portal[Developer portal documentation].
 
 * Search/sort API portals on the Developer portal
 +
@@ -280,7 +280,7 @@ On the *API portals* tab you can now search for and sort the list of API portals
 On the *My applications* tab, you can search for and sort apps approved to access an API.
 // (kris 7.11.2016 not ready for release on the 16th * Search/sort your own APIs
 //+
-//You can search, browse, and sort the apps listed on //Applications tab on the link:/api-manager/tutorial-set-up-and-deploy-an-api-proxy#navigate-to-the-api-version-details-page[API version details] page.
+//You can search, browse, and sort the apps listed on //Applications tab on the xref:1.x@api-manager::tutorial-set-up-and-deploy-an-api-proxy.adoc#navigate-to-the-api-version-details-page[API version details] page.
 //* Search/sort your organization's APIs
 //+
 //On the *API administration* page, click the hamburger menu and select *Applications*. The list of APIs appears. Click the sort icon to sort alphabetically by name in ascending or descending.
@@ -304,7 +304,7 @@ This release introduces API Gateway Runtime 3.8.0 that provides early access to 
 +
 * Client ID enforcement
 +
-When you apply link:/api-manager/client-id-based-policies[client ID-based policies], the credentials are expected in the form of expressions, the default being query parameters named client_id and client_secret. The default configuration of the policy requires the link:/api-manager/client-id-based-policies#required-fields-in-api-calls[Client Id and Client Secret expressions]. In Mule Runtime 3.8.0, another option is available. You can also select HTTP Basic Authorization Header to use Basic Authentication as the origin of the credentials.
+When you apply xref:api-manager::client-id-based-policies.adoc[client ID-based policies], the credentials are expected in the form of expressions, the default being query parameters named client_id and client_secret. The default configuration of the policy requires the xref:api-manager::client-id-based-policies.adoc#required-fields-in-api-calls[Client Id and Client Secret expressions]. In Mule Runtime 3.8.0, another option is available. You can also select HTTP Basic Authorization Header to use Basic Authentication as the origin of the credentials.
 +
 * Add property referencesUserDomain to endpoint
 * Add validation to avoid having CloudHub endpoints with custom port
@@ -396,10 +396,10 @@ This release has the following updates:
 
 This release includes the following new features and functionality:
 
-* link:/api-manager/defining-sla-tiers[Layered SLAs]﻿ that can impose multiple limiting policies on the API.
+* xref:api-manager::defining-sla-tiers.adoc[Layered SLAs]﻿ that can impose multiple limiting policies on the API.
 * xref:access-management::audit-logging.adoc[Audit Logging]﻿ of change events made within the API management and platform services capabilities of the Anypoint Platform.
-* link:/api-manager/engaging-users-of-your-api#adding-terms-and-conditions[Adding Terms and Conditions] ﻿of an API Portal can now be defined in two different ways.
-* Files and Attachments can be imported/exported to an link:/api-manager/engaging-users-of-your-api[API Portal]﻿.
+* xref:1.x@api-manager::engaging-users-of-your-api.adoc#adding-terms-and-conditions[Adding Terms and Conditions] ﻿of an API Portal can now be defined in two different ways.
+* Files and Attachments can be imported/exported to an xref:1.x@api-manager::engaging-users-of-your-api.adoc[API Portal]﻿.
 * Improved API for portal search.
 
 There are no new known issues or any changes that impact compatibility or that require migration considerations.
@@ -470,13 +470,13 @@ The July 2014 version of the Anypoint Platform for APIs offers the following new
 
 * Single-sign on and all-new shared user interface across the platform.
 * Self-sign up for Anypoint Platform organizations.
-* link:/api-manager/configuring-an-api-gateway[New API Gateway distribution] with enhanced API Autodiscovery, including Autodiscovery for APIkit projects, and improved HTTP transport performance using an NIO-based transport.
-* link:/api-manager/setting-up-an-api-proxy[Automatic proxy generation] for API endpoints defined by HTTP, WSDL, and RAML.
+* xref:1.x@api-manager::configuring-an-api-gateway.adoc[New API Gateway distribution] with enhanced API Autodiscovery, including Autodiscovery for APIkit projects, and improved HTTP transport performance using an NIO-based transport.
+* xref:1.x@api-manager::setting-up-an-api-proxy.adoc[Automatic proxy generation] for API endpoints defined by HTTP, WSDL, and RAML.
 * xref:access-management::roles.adoc[Fine grained permissions and role-based access] support from an administrative dashboard, as well as in-context permissions for API versions.
-* link:/api-manager/browsing-and-accessing-apis[Streamlined application registration and management] for application developers.
-* link:/api-manager/viewing-api-analytics[New, robust API Analytics] with customizable charts and dashboards and export capabilities.
+* xref:1.x@api-manager::browsing-and-accessing-apis.adoc[Streamlined application registration and management] for application developers.
+* xref:api-manager::viewing-api-analytics.adoc[New, robust API Analytics] with customizable charts and dashboards and export capabilities.
 * xref:access-management::external-identity.adoc[External identity management] support with PingFederate.
-* link:/api-manager/using-policies[Three new governance policies]: PingFederate Access Token Enforcement, JSON Threat Protection, XML Threat Protection.
+* xref:api-manager::using-policies.adoc[Three new governance policies]: PingFederate Access Token Enforcement, JSON Threat Protection, XML Threat Protection.
 
 This release includes selected limitations that you need to be aware of as you create new organizations and populate them with your API metadata.
 
@@ -505,10 +505,10 @@ If you have an existing Anypoint Platform for APIs account on a previous version
 
 * Terminology has changed to standardize around APIs and applications rather than services and consumers.
 * Each API version now has only a single endpoint.
-* The administrative view of your API version (called the link:/api-manager/tutorial-set-up-and-deploy-an-api-proxy#navigate-to-the-api-version-details-page[API version details page]) is now accessible only to API Version Owners or Organization Administrators. The Developer Portal, containing the API Portals that you create and share, now acts as the developer-facing view of your API.
-* link:/api-manager/using-policies[Policy application] has been streamlined to a single step for each policy. Contract enforcement and related policies have been replaced with client ID and secret enforcement. SLA-based policies now incorporate client ID and secret enforcement automatically.
-* link:/api-manager/browsing-and-accessing-apis[Application management] flows have changed. You can now set SLA tiers for automatic approval to reduce your management overhead. Manual approval is also available.
-* link:/api-manager/viewing-api-analytics[Analytics] are now available only to Organization Administrators.
+* The administrative view of your API version (called the xref:1.x@api-manager::tutorial-set-up-and-deploy-an-api-proxy.adoc#navigate-to-the-api-version-details-page[API version details page]) is now accessible only to API Version Owners or Organization Administrators. The Developer Portal, containing the API Portals that you create and share, now acts as the developer-facing view of your API.
+* xref:api-manager::using-policies.adoc[Policy application] has been streamlined to a single step for each policy. Contract enforcement and related policies have been replaced with client ID and secret enforcement. SLA-based policies now incorporate client ID and secret enforcement automatically.
+* xref:1.x@api-manager::browsing-and-accessing-apis.adoc[Application management] flows have changed. You can now set SLA tiers for automatic approval to reduce your management overhead. Manual approval is also available.
+* xref:api-manager::viewing-api-analytics.adoc[Analytics] are now available only to Organization Administrators.
 * Taxonomies, policy characteristic tags, and environments are deprecated.
 * API Designer is now accessible through the API Version Details page rather than in the Developer Portal.
 

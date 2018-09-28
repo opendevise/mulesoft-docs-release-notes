@@ -16,10 +16,10 @@ MuleSoft is pleased to announce the 2.1.0 release of the API Gateway runtime. Th
 
 * AGW-185: Implement policies support for connectors.
 * AGW-249: Put a limit (anypoint.platform.analytics_batch_size) on the analytics events batch events count.
-* AGW-412: On link:/api-manager/api-auto-discovery[API Autodiscovery], add a flag to allow the possibility to disable API creation.
+* AGW-412: On xref:1.x@api-manager::api-auto-discovery.adoc[API Autodiscovery], add a flag to allow the possibility to disable API creation.
 * AGW-421: Add a unique key to the Analytics event data
-* AGW-434: link:/api-manager/defining-sla-tiers[Layered Policies]
-* AGW-496: Ability to configure CORS on an link:/api-manager/oauth2-provider-configuration#applying-cors[External OAuth 2.0 Provider Application]
+* AGW-434: xref:api-manager::defining-sla-tiers.adoc[Layered Policies]
+* AGW-496: Ability to configure CORS on an xref:api-manager::oauth2-provider-configuration.adoc#applying-cors[External OAuth 2.0 Provider Application]
 * AGW-500: Save token context after successfully validated against any of the federated policies
 * AGW-501: Add property to enable analytics in wrapper.conf
 * AGW-511: Analytics Events available for external consumption
@@ -55,5 +55,5 @@ Refer to xref:api-gateway/api-gateway-2.0-release-notes.adoc[API Gateway Runtime
 
 == See Also
 
-* Learn more about the link:/api-manager/api-gateway-runtime-archive[API Gateway Runtime]
+* Learn more about the xref:1.x@api-manager::api-gateway-runtime-archive.adoc[API Gateway Runtime]
 * xref:api-gateway/api-gateway-2.0.2-release-notes.adoc[API Gateway Runtime 2.0.2 Release Notes]

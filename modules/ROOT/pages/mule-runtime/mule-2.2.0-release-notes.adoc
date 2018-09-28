@@ -31,19 +31,19 @@ For example, the following Jaxen filter declares a namespace with the prefix "e"
 </outbound>
 ----
 
-For more information, see link:/mule-user-guide/v/3.2/using-expressions[Using Expressions] in the Mule Runtime.
+For more information, see https://docs.archive.mulesoft.com/mule-user-guide/v/3.2/using-expressions[Using Expressions] in the Mule Runtime.
 
 == Support for Spring Security 2.0
 
-You can now use Spring Security 2.0 as a Security Manager inside of Mule. Spring Security is the next version of Acegi and provides a number of authentication and authorization providers such as JAAS, LDAP, CAS (Yale Central Authenication service), and DAO. You can use any of the library's security providers with Mule. For more information, see link:/mule-user-guide/v/3.2/configuring-security[Configuring Security] in the Mule Runtime documentation.
+You can now use Spring Security 2.0 as a Security Manager inside of Mule. Spring Security is the next version of Acegi and provides a number of authentication and authorization providers such as JAAS, LDAP, CAS (Yale Central Authenication service), and DAO. You can use any of the library's security providers with Mule. For more information, see https://docs.archive.mulesoft.com/mule-user-guide/v/3.2/configuring-security[Configuring Security] in the Mule Runtime documentation.
 
 == Support for Spring-first Deployments for Mule Embedded in a Webapp
 
-Submitted as a patch by a Mule community user, this feature lets Mule use your existing application context (WebApplicationContext), if it has already been created by Spring, as the parent application context for the Mule configuration builder. This gives Mule easy access to all the beans you've configured in your Spring application context. For more information, see link:/mule-user-guide/v/3.2/spring-application-contexts[Spring Application Contexts] in the Mule Runtime documentation.
+Submitted as a patch by a Mule community user, this feature lets Mule use your existing application context (WebApplicationContext), if it has already been created by Spring, as the parent application context for the Mule configuration builder. This gives Mule easy access to all the beans you've configured in your Spring application context. For more information, see https://docs.archive.mulesoft.com/mule-user-guide/v/3.2/spring-application-contexts[Spring Application Contexts] in the Mule Runtime documentation.
 
 == Simplified Message Styles
 
-The synchronous messaging style now inherently supports remote synchronous mode, so you no longer have to set the `remoteSync` attribute on endpoints. Additionally, you specify the synchronous attribute explicitly on each synchronous endpoint (default is false, creating asynchronous endpoints), which makes your configuration easier to interpret and control. For more information, see link:/mule-user-guide/v/3.2/service-messaging-styles[Messaging Styles] in the Mule Runtime documentation.
+The synchronous messaging style now inherently supports remote synchronous mode, so you no longer have to set the `remoteSync` attribute on endpoints. Additionally, you specify the synchronous attribute explicitly on each synchronous endpoint (default is false, creating asynchronous endpoints), which makes your configuration easier to interpret and control. For more information, see https://docs.archive.mulesoft.com/mule-user-guide/v/3.2/service-messaging-styles[Messaging Styles] in the Mule Runtime documentation.
 
 == Additional Improvements
 
@@ -64,4 +64,4 @@ The synchronous messaging style now inherently supports remote synchronous mode,
 * Improved and expanded documentation
 * Many bug fixes and increased test coverage
 
-For more details and for information on migrating from Mule 2.1 to Mule 2.2, click link:/mule-user-guide/v/3.2/release-and-migration-notes[here].
+For more details and for information on migrating from Mule 2.1 to Mule 2.2, click https://docs.archive.mulesoft.com/mule-user-guide/v/3.2/release-and-migration-notes[here].

@@ -85,7 +85,7 @@ This will create a dump from what’s in your MMC instance in your mmc-data fold
 You may want to take advantage of this opportunity to update your servers to a new version of Mule Runtime. If that’s the case, then this last step is irrelevant as you’d be using a fresh new installation of the Mule Runtime on your servers. Note that as long as these new Mule Runtime instances run are named identically when registered, the migration process should consider them the same, regardless of them running with a newer Mule Runtime version. If the instances are on servers with the same IP addresses, then all of the coupling of clusters and server groups should also be implemented by the script.
 
 
-. xref:runtime-manager::managing-servers.adoc#add-a-server[Register] your Mule Runtime instances in Runtime Manager (using the same names these had in MMC). For details on how to do this, see link:/runtime-manager/installing-and-configuring-mule-agent[installing and configuring Mule Agent]
+. xref:runtime-manager::managing-servers.adoc#add-a-server[Register] your Mule Runtime instances in Runtime Manager (using the same names these had in MMC). For details on how to do this, see xref:runtime-manager::installing-and-configuring-runtime-manager-agent.adoc[installing and configuring Mule Agent]
 . Via the command line, xref:3.8@mule-runtime::starting-and-stopping-mule-esb.adoc[start your Mule Runtimes]
 
 

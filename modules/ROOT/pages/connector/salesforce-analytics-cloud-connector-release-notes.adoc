@@ -13,7 +13,7 @@ The Anypoint Connector for Salesforce Analytics Cloud lets you connect to the Sa
 == 2.2.1
 
 Release notes for version 2.2.1 of the Salesforce Analytics Cloud connector. These release notes accompany the
-link:/mule-user-guide/v/3.8/salesforce-analytics-cloud-connector[Salesforce Analytics Cloud Connector User Guide].
+xref:3.8@mule-runtime::salesforce-analytics-cloud-connector.adoc[Salesforce Analytics Cloud Connector User Guide].
 
 === Compatibility
 

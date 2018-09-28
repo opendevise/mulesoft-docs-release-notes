@@ -184,5 +184,5 @@ The improvements and fixes that Mule ESB 3.4.2 introduces require no specific mi
 
 Refer to the following resources for assistance using Mule ESB 3.4.2.
 
-* Access link:/mule-management-console/v/3.4/[MMC 3.4 docs].
-* See Also: link:/mule-management-console/v/3.7/encrypting-ldap-and-database-passwords-in-mmc[Encrypting LDAP and Database Passwords in MMC]
+* Access https://docs.archive.mulesoft.com/mule-management-console/v/3.4/[MMC 3.4 docs].
+* See Also: https://docs.archive.mulesoft.com/mule-management-console/v/3.7/encrypting-ldap-and-database-passwords-in-mmc[Encrypting LDAP and Database Passwords in MMC]

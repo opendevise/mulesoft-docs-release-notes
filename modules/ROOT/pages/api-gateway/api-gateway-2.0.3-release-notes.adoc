@@ -20,5 +20,5 @@ Refer to xref:api-gateway/api-gateway-2.0-release-notes.adoc[API Gateway Runtime
 
 == See Also
 
-* Learn more about the link:/api-manager/api-gateway-runtime-archive[API Gateway Runtime]
+* Learn more about the xref:1.x@api-manager::api-gateway-runtime-archive.adoc[API Gateway Runtime]
 * xref:api-gateway/api-gateway-2.0-release-notes.adoc[API Gateway Runtime 2.0 Release Notes]

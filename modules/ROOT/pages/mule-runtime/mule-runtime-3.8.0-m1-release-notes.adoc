@@ -6,7 +6,7 @@ endif::[]
 
 MuleSoft is pleased to announce the milestone M1 release of the Mule 3.8.0, containing many exciting improvements:
 
-* This release unifies the link:/api-manager/api-gateway-runtime-archive[API Gateway runtime] with the core Mule runtime, simplifying development and operations. Please see the xref:api-gateway/api-gateway-runtime-to-mule-3.8.0-migration-guide.adoc[migration guide] for information on how to migrate.
+* This release unifies the xref:1.x@api-manager::api-gateway-runtime-archive.adoc[API Gateway runtime] with the core Mule runtime, simplifying development and operations. Please see the xref:api-gateway/api-gateway-runtime-to-mule-3.8.0-migration-guide.adoc[migration guide] for information on how to migrate.
 * Improved troubleshooting messages, so that you can see the location of any errors in the flow and you receive better error messages for common problems.
 
 * xref:3.8@mule-runtime::tls-configuration.adoc[TLS Improvements]: TLS context can be shared in a xref:3.8@mule-runtime::shared-resources.adoc[domain], the cipher suite and protocol configuration is allowed at a connector level. TLS 1.0 is now disabled by default and there is a new "insecure" mode for local testing which doesn't perform certificate validation.

@@ -75,7 +75,7 @@ xref:connector-devkit/anypoint-connector-devkit-studio-plugin-release-notes.adoc
 |xref:design-center/design-center-release-notes.adoc[Design Center]
 |Build applications and API definitions that enable connectivity throughout your application network.
 
-*Documentation*: link:/design-center/v/1.0/[Design Center]
+*Documentation*: xref:design-center::index.adoc[Design Center]
 
 |xref:healthcare/healthcare-release-notes.adoc[Healthcare Toolkit]
 |Sends and receives HL7 messages over MLLP (using the HL7 connector) and other transport protocols.

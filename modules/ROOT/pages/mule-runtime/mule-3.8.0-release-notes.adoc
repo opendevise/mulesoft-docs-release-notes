@@ -39,7 +39,7 @@ Mule HA includes a number of new improvements. First, it contains a new xref:3.8
 
 === Client ID Enforcement Policy with Basic Authentication
 
-This release introduces an improvement in the link:/api-manager/client-id-based-policies#client-id-enforcement[Client ID enforcement] policy, an option to use Basic Authentication as a way to provide the client credentials. The default configuration of the policy remains to provide the Client Id and Client Secret expressions, but there is a new option to select the HTTP Basic Authorization Header as the origin of the credentials. This option is available only in Mule Runtime 3.8.0 and later.
+This release introduces an improvement in the xref:api-manager::client-id-based-policies.adoc#client-id-enforcement[Client ID enforcement] policy, an option to use Basic Authentication as a way to provide the client credentials. The default configuration of the policy remains to provide the Client Id and Client Secret expressions, but there is a new option to select the HTTP Basic Authorization Header as the origin of the credentials. This option is available only in Mule Runtime 3.8.0 and later.
 
 === Gatekeeper: Enhanced Security on Startup
 

@@ -23,30 +23,30 @@ In previous versions of Mule, you were required to set the MULE_HOME environment
 
 == Mule Cloud Connect
 
-*Mule Cloud Connect* enables simple integration of cloud-based applications and data without any programming. Mule 3.1 includes major improvements to *Cloud Connect*, including custom schemas for each connector, much simpler invocation of connectors, a new polling mechanism, link:/mule-user-guide/v/3.2/mql-enrich-data[message enrichment] capabilities, and a simple yet powerful logging facility. Cloud connectors can also access the full range of Mule expressions allowing for very powerful integration and orchestration without any coding.
+*Mule Cloud Connect* enables simple integration of cloud-based applications and data without any programming. Mule 3.1 includes major improvements to *Cloud Connect*, including custom schemas for each connector, much simpler invocation of connectors, a new polling mechanism, https://docs.archive.mulesoft.com/mule-user-guide/v/3.2/mql-enrich-data[message enrichment] capabilities, and a simple yet powerful logging facility. Cloud connectors can also access the full range of Mule expressions allowing for very powerful integration and orchestration without any coding.
 
 == Web Services
 
-Mule 3 dramatically simplified SOAP web services in Mule with the link:/mule-user-guide/v/3.2/simple-service-pattern[Simple Service] configuration pattern and a new implementation of CXF leveraging the Mule 3 message processor architecture. In 3.1, Mule's link:/mule-user-guide/v/3.2/cxf-module-reference[CXF support] has been upgraded to use the most recent version of CXF, 2.3.0. Support for the link:/mule-user-guide/v/3.2/supported-web-service-standards[WS-Stack] was also improved. Most notably, Mule now supports WS-ReliableMessaging and asynchronous reply to endpoints for WS-Addressing. Validation of web services has also been enhanced. You can now turn on validation of incoming SOAP messages with CXF through a new _validationEnabled_ configuration attribute.
+Mule 3 dramatically simplified SOAP web services in Mule with the https://docs.archive.mulesoft.com/mule-user-guide/v/3.2/simple-service-pattern[Simple Service] configuration pattern and a new implementation of CXF leveraging the Mule 3 message processor architecture. In 3.1, Mule's https://docs.archive.mulesoft.com/mule-user-guide/v/3.2/cxf-module-reference[CXF support] has been upgraded to use the most recent version of CXF, 2.3.0. Support for the https://docs.archive.mulesoft.com/mule-user-guide/v/3.2/supported-web-service-standards[WS-Stack] was also improved. Most notably, Mule now supports WS-ReliableMessaging and asynchronous reply to endpoints for WS-Addressing. Validation of web services has also been enhanced. You can now turn on validation of incoming SOAP messages with CXF through a new _validationEnabled_ configuration attribute.
 
 == Security Updates
 
-In Mule 3.1, link:/mule-user-guide/v/3.2/configuring-security[Spring Security] has been upgraded from 2.0.4 to 3.0.3. This should be transparent to Mule configurations, except in two areas:
+In Mule 3.1, https://docs.archive.mulesoft.com/mule-user-guide/v/3.2/configuring-security[Spring Security] has been upgraded from 2.0.4 to 3.0.3. This should be transparent to Mule configurations, except in two areas:
 
 * Schema changes
 * Java package changes
 
-For more information on how to update your applications, refer to link:/mule-user-guide/v/3.2/configuring-security[Configuring Security] and the xref:deprecated/legacy-mule-migration-notes.adoc[Migration Guide].
+For more information on how to update your applications, refer to https://docs.archive.mulesoft.com/mule-user-guide/v/3.2/configuring-security[Configuring Security] and the xref:deprecated/legacy-mule-migration-notes.adoc[Migration Guide].
 
 == BPM Integration
 
-Mule provides strong orchestration capabilities via the new Flow configuration in Mule 3 for short-lived transaction, where the goal is to maximize throughput and scalability. For other use cases like long running transaction, Mule has long included link:/mule-user-guide/v/3.2/bpm-transport-reference[BPM Module Reference] between Mule, commercial and open source BPM vendors (like jBPM, Activiti, BonitaSoft BPM, etc.).
+Mule provides strong orchestration capabilities via the new Flow configuration in Mule 3 for short-lived transaction, where the goal is to maximize throughput and scalability. For other use cases like long running transaction, Mule has long included https://docs.archive.mulesoft.com/mule-user-guide/v/3.2/bpm-transport-reference[BPM Module Reference] between Mule, commercial and open source BPM vendors (like jBPM, Activiti, BonitaSoft BPM, etc.).
 
 In these release the Mule team has worked on the following integrations:
 
 === jBPM Integration
 
-A jBPM business process is now a component in Mule rather than a transport, this not only enable the use case when we are connecting to an external BPM engine but also enable the use case when using jBPM "inside" Mule to process messages. Incoming messages to the component automatically advance the process, and the running process can send messages to any outbound endpoint. For more info., refer to link:/mule-user-guide/v/3.2/bpm-transport-reference[BPM Module Reference].
+A jBPM business process is now a component in Mule rather than a transport, this not only enable the use case when we are connecting to an external BPM engine but also enable the use case when using jBPM "inside" Mule to process messages. Incoming messages to the component automatically advance the process, and the running process can send messages to any outbound endpoint. For more info., refer to https://docs.archive.mulesoft.com/mule-user-guide/v/3.2/bpm-transport-reference[BPM Module Reference].
 
 === Activiti Integration
 
@@ -67,13 +67,13 @@ Mule 3.1 also includes fixes for over 40 bugs. Details can be found in the xref:
 Other important changes in this release:
 
 * Support for Spring Security v3
-* Asynchronous reply to endpoints for link:/mule-user-guide/v/3.2/enabling-ws-addressing[WS-Addressing]
+* Asynchronous reply to endpoints for https://docs.archive.mulesoft.com/mule-user-guide/v/3.2/enabling-ws-addressing[WS-Addressing]
 * WS-ReliableMessaging support
 * You can now turn on validation of incoming SOAP messages with CXF through a new "validationEnabled" configuration attribute
 
 === Migration from Previous Versions
 
-For instructions on migrating from a previous version, consult the link:/mule-user-guide/v/3.2/release-and-migration-notes[Mule Migration page].
+For instructions on migrating from a previous version, consult the https://docs.archive.mulesoft.com/mule-user-guide/v/3.2/release-and-migration-notes[Mule Migration page].
 
 == Fixed in this Release
 

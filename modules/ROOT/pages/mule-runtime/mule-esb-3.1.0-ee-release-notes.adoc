@@ -12,7 +12,7 @@ Mule Enterprise Version 3.1 is the first Enterprise Edition of Mule 3, and it in
 * New routing message processors
 * Support for jBPM 4.4
 * Support for Spring Security v3
-* New link:/mule-user-guide/v/3.2/bpm-transport-reference[BPM message processor/component]
+* New https://docs.archive.mulesoft.com/mule-user-guide/v/3.2/bpm-transport-reference[BPM message processor/component]
 * Over 40 important fixes
 
 == Current Release Version
@@ -36,7 +36,7 @@ The biggest enhancements in Mule 3.1 are the new features for Mule Cloud-Connect
 
 === Migration from Previous Versions
 
-For instructions on migrating from a previous version, consult the link:/mule-user-guide/v/3.2/release-and-migration-notes[Mule Migration page].
+For instructions on migrating from a previous version, consult the https://docs.archive.mulesoft.com/mule-user-guide/v/3.2/release-and-migration-notes[Mule Migration page].
 
 === Invocation Improvements
 

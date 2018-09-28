@@ -52,7 +52,7 @@ In addition to these API-related functionalities, Studio also includes many othe
 * DataWeave now includes supports for new file formats, allowing you to read and write fixed-width and other flat files using DataWeave. The structure of these files can be easily defined via a new xref:3.8@mule-runtime::dataweave-flat-file-schemas.adoc[Flat File Definition file] format. You can also import COBOL Copybook files into this schema format using Studio (Early Access). Finally, if you have previous DataMapper transformations, you can use the xref:3.8@mule-runtime::dataweave-migrator.adoc[migration tool] to convert them to DataWeave transformations now.
 * The xref:3.8@mule-runtime::dataweave-language-introduction.adoc[DataWeave language] also adds several new xref:3.8@mule-runtime::dataweave-operators.adoc[operators].
 * DataWeave functions can now be called from other Mule components via a second MEL function, called xref:3.8@mule-runtime::mel-dataweave-functions.adoc#split[split].
-* MUnit now can run multiple suites, and allow link:/munit/v/1.2.0/using-munit-in-anypoint-studio#running-a-tests-inside-a-folder[nested folders for tests]. Users can also now create MUnit link:/munit/v/1.2.0/munit-maven-support#coverage[coverage reports from inside Studio]. We have also added autocompletion support for MUnit’s MEL functions and metadata support to MUnit message processors
+* MUnit now can run multiple suites, and allow https://docs.archive.mulesoft.com/munit/v/1.2/using-munit-in-anypoint-studio#running-a-tests-inside-a-folder[nested folders for tests]. Users can also now create MUnit https://docs.archive.mulesoft.com/munit/v/1.2/munit-maven-support#coverage[coverage reports from inside Studio]. We have also added autocompletion support for MUnit’s MEL functions and metadata support to MUnit message processors
 * Metadata support to MUnit message processors
 
 SAP R/3 Business Suite Connector v3.0.0:
@@ -476,7 +476,7 @@ For a detailed description of the update site's content visit the xref:6@studio:
 * For support, refer to the relevant MuleSoft documentation.
 ** API-related: Building APIs in Studio User Guide
 *** xref:6@studio::api-sync-reference.adoc[API Sync View]
-*** Implementing a link:/apikit/apikit-tutorial#creating-a-new-project[REST API] / link:/apikit/apikit-for-soap#creating-a-new-project[SOAP API] /
+*** Implementing a xref:3.x@apikit::apikit-tutorial.adoc#creating-a-new-project[REST API] / xref:3.x@apikit::apikit-for-soap.adoc#creating-a-new-project[SOAP API] /
 *** xref:general:getting-started:implement-and-test.adoc#automatically-create-a-test-suite[Testing an API using MUnit]
 ** xref:3.8@mule-runtime::dataweave-flat-file-schemas.adoc[DataWeave flat file]
 ** xref:3.8@mule-runtime::dataweave.adoc[Improved DataWeave docs].

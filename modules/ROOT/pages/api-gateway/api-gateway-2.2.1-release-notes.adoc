@@ -69,7 +69,7 @@ The enhancements include cluster support with improved performance, zero securit
 
 == See Also
 
-* Learn more about the link:/api-manager/api-gateway-runtime-archive[API Gateway Runtime]
-* link:/api-manager/configuring-an-api-gateway[Configuring an API Gateway]
-* link:/api-manager/api-gateway-domain[API Gateway Domain]
+* Learn more about the xref:1.x@api-manager::api-gateway-runtime-archive.adoc[API Gateway Runtime]
+* xref:1.x@api-manager::configuring-an-api-gateway.adoc[Configuring an API Gateway]
+* xref:1.x@api-manager::api-gateway-domain.adoc[API Gateway Domain]
 * https://support.mulesoft.com[Contact MuleSoft]

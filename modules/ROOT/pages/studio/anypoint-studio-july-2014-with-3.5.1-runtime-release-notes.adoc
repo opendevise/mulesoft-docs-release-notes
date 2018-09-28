@@ -443,6 +443,6 @@ image::studio/mflow.png[mflow.png]
 
 === Migrating to the Latest Version of Mule Management Console
 
-The current version of MMC requires migration steps that vary according to the version and setup of the MMC you are migrating from. Please either perform a clean install or follow the steps targeted to your current version in the instructions for link:/mule-management-console/v/3.7/upgrading-the-management-console[Upgrading the Management Console].
+The current version of MMC requires migration steps that vary according to the version and setup of the MMC you are migrating from. Please either perform a clean install or follow the steps targeted to your current version in the instructions for https://docs.archive.mulesoft.com/mule-management-console/v/3.7/upgrading-the-management-console[Upgrading the Management Console].
 
 MMC can now be deployed in two different "flavors", both as a `.war` file or as a `.ear` file. The `.ear` file is necessary for Weblogic servers, which don't support MMC as a `.war`; the `.war` file is recommended for all servers that support it.

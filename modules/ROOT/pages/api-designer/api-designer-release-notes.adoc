@@ -174,7 +174,7 @@ This release focuses on bug fixes and closing gaps in RAML 1.0 support.
 ** API Designer prevents you from importing certain file types.
 ** File names having certain characters are not allowed.
 +
-See link:/api-manager/designing-your-api#supported-extensions[supported extensions and mime types] and link:/api-manager/designing-your-api#supported-file-names[supported file names].
+See xref:1.x@api-manager::designing-your-api.adoc#supported-extensions[supported extensions and mime types] and xref:1.x@api-manager::designing-your-api.adoc#supported-file-names[supported file names].
 +
 * Export to OAS 2.0
 +
@@ -268,7 +268,7 @@ This release focuses on minor bug fixes.
 
 December 3, 2016
 
-This release includes a new, link:/api-manager/designing-your-api#saving-importing-and-exporting-files[improved menu] to simplify creating RAML documents, as well as a beta version for link:/api-manager/designing-your-api#importing-an-oas-2-0-specification[importing OAS 2.0 documents].
+This release includes a new, xref:1.x@api-manager::designing-your-api.adoc#saving-importing-and-exporting-files[improved menu] to simplify creating RAML documents, as well as a beta version for xref:1.x@api-manager::designing-your-api.adoc#importing-an-oas-2-0-specification[importing OAS 2.0 documents].
 
 === Resolved Issues
 
