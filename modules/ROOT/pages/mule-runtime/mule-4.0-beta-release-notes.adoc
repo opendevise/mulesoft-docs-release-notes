@@ -32,11 +32,6 @@ The DataWeave language entirely replaces everything that Mule Expression Languag
 * Type inference, which makes typing optional.
 * Various syntax changes.
 
-// See link:/mule4-user-guide/v/4.1/dataweave2-syntax-changes[DataWeave 2.0 Syntax Changes] for a full list of these changes.
-
-
-
-
 == Known Issues
 
 [%header,cols="20,80"]
