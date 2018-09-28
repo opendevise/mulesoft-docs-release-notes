@@ -11,7 +11,7 @@ Version: 1.1.0
 === New Features and Enhancements
 
 * Improved node layout to minimize crossing arrows.
-* Improved environment selector
+* Environment selector aligned to platform-level business group user experience.
 
 === Fixed Issues
 
