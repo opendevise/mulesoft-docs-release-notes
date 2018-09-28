@@ -760,7 +760,7 @@ Compatible with:
 
 ===  New Features
 
-Add support for DUNS (http://www.dnb.com/duns-number.html[Data Universal Number System]) number to Identifiers Page.
+Add support for DUNS (Data Universal Number System) number to Identifiers Page.
 
 ===  Fixed in this Release
 
