@@ -6,7 +6,7 @@ endif::[]
 
 *August 2018*
 
-*Guide:* xref:exchange::to-deploy-using-rest-connect.adoc[Converting a RAML to a Connector Using REST Connect]
+*Guide:* xref:exchange::to-deploy-using-rest-connect.adoc[Convert a RAML to a Connector Using REST Connect]
 
 REST Connect quickly converts a RAML 1.0 API specification to a connector, which you can use in a Mule application in the Design Center feature of Anypoint Platform.
 
