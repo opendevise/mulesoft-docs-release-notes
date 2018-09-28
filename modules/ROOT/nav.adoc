@@ -1,4 +1,5 @@
 .xref:index.adoc[Release Notes]
+* xref:index.adoc[Anypoint Platform Release Notes]
 * xref:platform/anypoint-november-release.adoc[Anypoint Platform July and November Release: Release Notes]
 * xref:eu-cloud/anypoint-eu-control-plane.adoc[Anypoint Platform - EU Control Plane, December 15 2017 Release Notes]
 * xref:access-management/access-management-release-notes.adoc[Anypoint Access Management Release Notes]
@@ -163,6 +164,7 @@
 * xref:exchange/exchange-release-notes.adoc[Anypoint Exchange Related Release Notes]
  ** xref:exchange/anypoint-exchange-release-notes.adoc[Anypoint Exchange Release Notes]
  ** xref:connector/rest-connect-release-notes.adoc[REST Connect Release Notes]
+ ** xref:runtime-fabric/runtime-fabric-release-notes.adoc[Anypoint Runtime Fabric Release Notes]
  ** xref:exchange/exchange-on-prem-release-notes.adoc[Anypoint Exchange Private Cloud Edition Release Notes]
 * xref:monitoring/anypoint-monitoring-release-notes.adoc[Anypoint Monitoring Release Notes]
 * link:anypoint-visualizer-1.0-release-notes[Anypoint Visualizer Release Notes]
