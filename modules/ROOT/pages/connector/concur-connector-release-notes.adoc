@@ -13,6 +13,20 @@ Concur is a SaaS provider of integrated travel and expense management solutions.
 
 xref:3.9@mule-runtime::concur-connector.adoc[Concur Connector User Guide]
 
+== 3.1.4
+
+*March 04, 2020*
+
+=== Compatibility
+
+[%header,cols="20s,80a"]
+|===
+|Software |Version
+|Mule | 3.6.1 and later
+|===
+
+Fixed NexusIQ Security Vulnerability.
+
 == 3.1.1
 
 *January 29, 2018*
