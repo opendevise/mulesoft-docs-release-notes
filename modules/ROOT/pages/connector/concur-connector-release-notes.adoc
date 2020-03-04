@@ -25,7 +25,7 @@ xref:3.9@mule-runtime::concur-connector.adoc[Concur Connector User Guide]
 |Mule | 3.6.1 and later
 |===
 
-Fixed NexusIQ Security Vulnerability, jackson-databind and jackson-core.
+Fixed NexusIQ Security Vulnerability.
 
 == 3.1.1
 
